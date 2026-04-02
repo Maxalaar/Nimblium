@@ -13,6 +13,9 @@
   enchant_weapon,
   flame_barrier,
   pyroclasm,
+  fiery_embrace,
+  living_inferno,
+  dragonform,
 )
 
 #paginated_card_grid(all_cards, cards-per-page: 9, columns: 3)

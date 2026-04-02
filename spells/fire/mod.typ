@@ -4,3 +4,6 @@
 #import "enchant_weapon.typ": enchant_weapon
 #import "flame_barrier.typ": flame_barrier
 #import "pyroclasm.typ": pyroclasm
+#import "fiery_embrace.typ": fiery_embrace
+#import "living_inferno.typ": living_inferno
+#import "dragonform.typ": dragonform
