@@ -1,6 +1,6 @@
 #import "@preview/cetz:0.4.0"
 
-#let creat_card_frame(
+#let creat_frame(
   name,
   type: none,
   data: (),
