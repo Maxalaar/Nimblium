@@ -15,8 +15,16 @@
     data = data + (text(size: 8pt)[*Range:* #spell.range],)
   }
 
+  if "reach" in spell {
+    data = data + (text(size: 8pt)[*Reach:* #spell.reach],)
+  }
+
   if "damage" in spell {
     data = data + (text(size: 8pt)[*Damage:* #spell.damage],)
+  }
+  
+  if "reaction" in spell {
+    data = data + (text(size: 8pt)[*Reaction:* #spell.reaction],)
   }
 
   if "effect" in spell {

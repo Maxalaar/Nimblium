@@ -11,6 +11,8 @@
   hearts_fire,
   ignite,
   enchant_weapon,
+  flame_barrier,
+  pyroclasm,
 )
 
 #paginated_card_grid(all_cards, cards-per-page: 9, columns: 3)
