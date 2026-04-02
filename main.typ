@@ -1,4 +1,11 @@
 #import "spells/mod.typ": *
 
-#creat_flame_dart
-#creat_hearts_fire
+#set page(
+  paper: "a4",
+  margin: 0.5cm,
+)
+
+#flame_dart
+#hearts_fire
+#ignite
+#enchant_weapon

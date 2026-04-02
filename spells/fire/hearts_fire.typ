@@ -1,10 +1,11 @@
 #import "../../card_structure/creat_spell.typ": creat_spell
 
-#let hearts_fire = (
+#let spell_data = (
     name: "Heart's Fire",
     type: (
         "Spell",
         "Cantrip",
+        "Fire",
     ),
     cost: (
         "1 Action",
@@ -14,4 +15,4 @@
     high_Levels: "+1 Range every 5 levels.",
 )
 
-#let creat_hearts_fire = creat_spell(hearts_fire)
+#let hearts_fire = creat_spell(spell_data)

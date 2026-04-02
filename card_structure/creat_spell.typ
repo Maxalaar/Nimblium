@@ -4,7 +4,11 @@
   let data = ()
 
   if "cost" in spell {
-    data = data + (text(size: 8pt, weight: "bold")[*Cost: *#spell.cost.join(" • ")],)
+    data = data + (text(size: 8pt)[*Cost:* #spell.cost.join(", ")],)
+  }
+
+  if "concentration" in spell {
+    data = data + (text(size: 8pt)[*Concentration:* #spell.concentration],)
   }
 
   if "range" in spell {
@@ -16,18 +20,22 @@
   }
 
   if "effect" in spell {
-    data = data + (text(size: 8pt)[*Effect: *#spell.effect],)
+    data = data + (text(size: 8pt)[*Effect:* #spell.effect],)
   }
 
   if "high_Levels" in spell {
     data = data + (text(size: 8pt)[*High Levels:* #spell.high_Levels],)
   }
 
+  if "upcast" in spell {
+    data = data + (text(size: 8pt)[*Upcast:* #spell.upcast],)
+  }
+
   if "reminder" in spell {
     let reminder_content = {
       for (i, r) in spell.reminder.enumerate() {
         if i > 0 { v(0.3em, weak: true) }
-        text(size: 7pt, style: "italic", fill: rgb("#666666"))[#r]
+        text(size: 7pt, fill: rgb("#666666"))[#r]
       }
     }
     data = data + (reminder_content,)
