@@ -1,3 +1,4 @@
+#import "paginated_card_grid.typ": paginated_card_grid
 #import "spells/mod.typ": *
 
 #set page(
@@ -5,7 +6,11 @@
   margin: 0.5cm,
 )
 
-#flame_dart
-#hearts_fire
-#ignite
-#enchant_weapon
+#let all_cards = (
+  flame_dart,
+  hearts_fire,
+  ignite,
+  enchant_weapon,
+)
+
+#paginated_card_grid(all_cards, cards-per-page: 9, columns: 3)
