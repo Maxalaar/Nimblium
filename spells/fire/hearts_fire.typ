@@ -14,8 +14,4 @@
     high_Levels: "+1 Range every 5 levels.",
 )
 
-#creat_spell(
-    hearts_fire
-)
-
 #let creat_hearts_fire = creat_spell(hearts_fire)

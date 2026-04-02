@@ -1,7 +1,7 @@
 #import "../../card_structure/creat_spell.typ": creat_spell
 
-#let hearts_fire = (
-    name: "Heart's Fire",
+#let flame_dart = (
+    name: "Flame Dart",
     type: (
         "Spell",
         "Cantrip",
@@ -9,13 +9,11 @@
     cost: (
         "1 Action",
     ),
-    range: "4",
-    effect: "Give an ally within Range an extra action. Spend 1 mana to cast this when it is not your turn.",
-    high_Levels: "+1 Range every 5 levels.",
+    range: "8",
+    damage: "1d10",
+    effect: "On crit: Smoldering.",
+    high_Levels: "+5 damage every 5 levels.",
+    reminder: ("Smoldering: This condition does nothing on its own, though some spells and abilities have additional effects against Smoldering creatures.",)
 )
 
-#creat_spell(
-    hearts_fire
-)
-
-#let creat_hearts_fire = creat_spell(hearts_fire)
+#let creat_flame_dart = creat_spell(flame_dart)
