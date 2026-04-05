@@ -4,8 +4,8 @@
     name: "Pyroclasm",
     type: (
       "Spell",
-      "Tier 4",
       "Fire",
+      "Tier 4",
       "AoE",
     ),
     cost: (

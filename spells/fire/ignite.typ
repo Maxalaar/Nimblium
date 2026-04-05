@@ -4,8 +4,8 @@
     name: "Ignite",
     type: (
         "Spell",
-        "Tier 1",
         "Fire",
+        "Tier 1",
     ),
     cost: (
         "2 Action",

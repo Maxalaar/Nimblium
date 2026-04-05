@@ -4,8 +4,8 @@
     name: "Dragonform",
     type: (
         "Spell",
-        "Tier 9",
         "Fire",
+        "Tier 9",
     ),
     cost: (
         "5 Action",

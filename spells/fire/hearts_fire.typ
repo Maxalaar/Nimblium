@@ -4,8 +4,8 @@
     name: "Heart's Fire",
     type: (
         "Spell",
-        "Cantrip",
         "Fire",
+        "Cantrip",
     ),
     cost: (
         "1 Action",

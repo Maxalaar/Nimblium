@@ -4,8 +4,8 @@
     name: "Flame Barrier",
     type: (
         "Spell",
-        "Tier 3",
         "Fire",
+        "Tier 3",
     ),
     cost: (
         "1 Action",

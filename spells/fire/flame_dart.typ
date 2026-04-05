@@ -4,8 +4,8 @@
     name: "Flame Dart",
     type: (
         "Spell",
-        "Cantrip",
         "Fire",
+        "Cantrip",
     ),
     cost: (
         "1 Action",

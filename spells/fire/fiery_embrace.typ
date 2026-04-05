@@ -4,8 +4,8 @@
     name: "Fiery Embrace",
     type: (
         "Spell",
-        "Tier 5",
         "Fire",
+        "Tier 5",
     ),
     cost: (
         "1 Action",

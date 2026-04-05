@@ -4,8 +4,8 @@
     name: "Living Inferno",
     type: (
         "Spell",
-        "Tier 7",
         "Fire",
+        "Tier 7",
     ),
     cost: (
         "3 Action",
