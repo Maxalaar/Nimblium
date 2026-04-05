@@ -1,4 +1,4 @@
-#import "../../card_structure/creat_spell.typ": creat_spell
+#import "../../global.typ": *
 
 #let spell_data = (
     name: "Living Inferno",

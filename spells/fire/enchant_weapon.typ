@@ -1,7 +1,7 @@
-#import "../../card_structure/creat_spell.typ": creat_spell
+#import "../../global.typ": *
 
 #let spell_data = (
-    name: "Ignite",
+    name: "Enchant Weapon",
     type: (
         "Spell",
         "Fire",
@@ -14,6 +14,7 @@
     concentration: "Up to 1 minute.",
     effect:"A weapon you touch is enchanted with magical flame. It deals +KEY damage and inflicts Smoldering on crit.",
     upcast: "+KEY damage.",
+    reminder: (conditions.smoldering,)
 )
 
 #let enchant_weapon = creat_spell(spell_data)

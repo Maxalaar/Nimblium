@@ -1,4 +1,4 @@
-#import "../../card_structure/creat_spell.typ": creat_spell
+#import "../../global.typ": *
 
 #let spell_data = (
     name: "Flame Dart",
@@ -14,7 +14,7 @@
     damage: "1d10",
     effect: "On crit: Smoldering.",
     high_Levels: "+5 damage every 5 levels.",
-    reminder: ("Smoldering: This condition does nothing on its own, though some spells and abilities have additional effects against Smoldering creatures.",)
+    reminder: (conditions.smoldering,)
 )
 
 #let flame_dart = creat_spell(spell_data)

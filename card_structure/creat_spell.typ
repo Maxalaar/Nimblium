@@ -19,6 +19,10 @@
     data = data + (text(size: 8pt)[*Reach:* #spell.reach],)
   }
 
+  if "area" in spell {
+    data = data + (text(size: 8pt)[*Area:* #spell.area],)
+  }
+
   if "damage" in spell {
     data = data + (text(size: 8pt)[*Damage:* #spell.damage],)
   }

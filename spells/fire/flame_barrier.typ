@@ -1,4 +1,4 @@
-#import "../../card_structure/creat_spell.typ": creat_spell
+#import "../../global.typ": *
 
 #let spell_data = (
     name: "Flame Barrier",
@@ -13,6 +13,7 @@
     ),
     reaction: "When attacked, Defend for free. Until the start of your next turn, melee attackers against you take KEY damage (ignoring armor) and gain Smoldering.",
     upcast: "+KEY damage.",
+    reminder: (conditions.smoldering,)
 )
 
 #let flame_barrier = creat_spell(spell_data)
