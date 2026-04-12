@@ -30,21 +30,21 @@
 //   arctic_annihilation,
 // )
 
-// #let all_cards = (
-//   goblin_minion,
-//   goblin,
-//   goblin_ratrider,
-// )
-
 #let all_cards = (
-  skeleton,
-  zombie,
-  ghoul,
-  specter,
-  ogre_zombie,
-  mummy,
-  giant_zombie,
-  wraith,
+  goblin_minion,
+  goblin,
+  goblin_ratrider,
 )
+
+// #let all_cards = (
+//   skeleton,
+//   zombie,
+//   ghoul,
+//   specter,
+//   ogre_zombie,
+//   mummy,
+//   giant_zombie,
+//   wraith,
+// )
 
 #paginated_card_grid(all_cards, cards-per-page: 9, columns: 3)
