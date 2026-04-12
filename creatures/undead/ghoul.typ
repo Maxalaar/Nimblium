@@ -6,9 +6,12 @@
     "Creature",
     "Undead",
   ),
-  ability: (
+  passive: (
+    passive_abilities.undying,
+  ),
+  active: (
     [
-      *Crunch:* 1d4+8 damage. On damage: Dazed.
+      *Sickening Claw:* 1d4+8 damage. On damage: Dazed.
     ],
   ),
   hit_points: 20,

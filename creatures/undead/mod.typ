@@ -6,3 +6,4 @@
 #import "mummy.typ": mummy
 #import "giant_zombie.typ": giant_zombie
 #import "wraith.typ": wraith
+#import "mummy_lord.typ": mummy_lord

@@ -7,7 +7,7 @@
         "Goblin",
         "Minion",
     ),
-    ability: (
+    active: (
         [
             *Stab:* 1d6 damage.
         ],

@@ -6,7 +6,10 @@
     "Creature",
     "Undead",
   ),
-  ability: (
+  passive: (
+    passive_abilities.undying,
+  ),
+  active: (
     [
       *Decaying Swipe:*. 2 attaques. 1d4+10 damage. On damage: knockback Primary Die spaces.
     ],

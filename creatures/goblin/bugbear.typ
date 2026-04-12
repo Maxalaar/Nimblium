@@ -6,7 +6,7 @@
         "Creature",
         "Goblin",
     ),
-    ability: (
+    active: (
         [
             *Cleave:* 2d6+4 damage.\
             or\

@@ -6,7 +6,7 @@
         "Creature",
         "Goblin",
     ),
-    passive: (
+    active: (
         [
             *Charge:* If you move at least 4 spaces in straight line, attack with advantage once.
         ],

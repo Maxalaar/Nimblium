@@ -31,14 +31,14 @@
     data = data + (passive_content,)
   }
 
-  if "ability" in creature {
+  if "active" in creature {
     let ability_content = {
       v(passive_spacing, weak: true)
       if "passive" in creature {
         section_line("Active")
       }
       v(passive_item_spacing, weak: true)
-      for (i, a) in creature.ability.enumerate() {
+      for (i, a) in creature.active.enumerate() {
         if i > 0 { v(passive_item_spacing, weak: true) }
         a
       }

@@ -6,7 +6,10 @@
     "Creature",
     "Undead",
   ),
-  ability: (
+  passive: (
+    passive_abilities.undying,
+  ),
+  active: (
     [
       *Greatclub:*. 2 attaques. 1d4+8 damage. On crit: Prone.
     ],

@@ -6,7 +6,10 @@
         "Creature",
         "Undead",
     ),
-    ability: (
+    passive: (
+        passive_abilities.undying,
+    ),
+    active: (
         [
             *Grave Arrow:* 1d4+3 damage.
         ],

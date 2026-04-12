@@ -6,7 +6,10 @@
     "Creature",
     "Undead",
   ),
-  ability: (
+  passive: (
+    passive_abilities.undying,
+  ),
+  active: (
     [
       *Soul Rend:*. 2 attaques. Range 8. 1d4+10 damage. On damage: deal 1 Wound.
     ],

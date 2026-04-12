@@ -6,7 +6,10 @@
     "Creature",
     "Undead",
   ),
-  ability: (
+  passive: (
+    passive_abilities.undying,
+  ),
+  active: (
     [
       *Deathly Touch:* 1d4 damage. On damage: set HP to 0.
     ],

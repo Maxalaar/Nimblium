@@ -6,7 +6,10 @@
     "Creature",
     "Undead",
   ),
-  ability: (
+  passive: (
+    passive_abilities.undying,
+  ),
+  active: (
     [
       *Crunch:* 1d4+4 damage. On damage: Grappled.
     ],
