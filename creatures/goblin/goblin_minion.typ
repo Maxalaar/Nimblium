@@ -9,8 +9,8 @@
     ),
     ability: (
         [
-*Stab:* 1d6 damage.
-],
+            *Stab:* 1d6 damage.
+        ],
     ),
     level: "1/4",
 )

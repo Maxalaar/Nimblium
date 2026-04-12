@@ -1,0 +1,8 @@
+#import "skeleton.typ": skeleton
+#import "zombie.typ": zombie
+#import "ghoul.typ": ghoul
+#import "specter.typ": specter
+#import "ogre_zombie.typ": ogre_zombie
+#import "mummy.typ": mummy
+#import "giant_zombie.typ": giant_zombie
+#import "wraith.typ": wraith
