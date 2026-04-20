@@ -9,6 +9,10 @@
 #let creat_ability(ability) = {
   let data = ()
 
+  if "cost" in ability {
+    data = data + (text(size: ability_text_size)[*Cost:* #ability.cost.join(", ")],)
+  }
+
   if "limitation" in ability {
     data = data + (text(size: ability_text_size)[*Limitation:* #ability.limitation],)
   }

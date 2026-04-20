@@ -16,4 +16,3 @@
 )
 
 #let cheat = creat_ability(ability_data)
-#cheat

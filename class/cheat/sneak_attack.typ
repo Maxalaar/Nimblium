@@ -20,4 +20,3 @@
 )
 
 #let sneak_attack = creat_ability(ability_data)
-#sneak_attack

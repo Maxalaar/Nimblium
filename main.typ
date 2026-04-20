@@ -53,6 +53,13 @@
   sneak_attack,
   vicious_opportunist,
   cheat,
+  creative_accounting,
+  exploit_weakness,
+  creative_accounting,
+  exploit_weakness,
+  feinting_attack,
+  how_you_get_here,
+  i_outta_here,
 )
 
 #paginated_card_grid(all_cards, cards-per-page: 9, columns: 3)

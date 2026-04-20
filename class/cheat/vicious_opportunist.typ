@@ -12,4 +12,3 @@
 )
 
 #let vicious_opportunist = creat_ability(ability_data)
-#vicious_opportunist
