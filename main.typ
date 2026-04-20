@@ -60,6 +60,10 @@
   feinting_attack,
   how_you_get_here,
   i_outta_here,
+  amidst_all_this_commotion,
+  leave_no_trace,
+  low_blow,
+  sweet_talk,
 )
 
 #paginated_card_grid(all_cards, cards-per-page: 9, columns: 3)
