@@ -49,21 +49,31 @@
 //   mummy_lord,
 // )
  
+// // Cheat Abilities
+// #let all_cards = (
+//   sneak_attack,
+//   vicious_opportunist,
+//   cheat,
+//   creative_accounting,
+//   exploit_weakness,
+//   feinting_attack,
+//   how_you_get_here,
+//   i_outta_here,
+//   amidst_all_this_commotion,
+//   leave_no_trace,
+//   low_blow,
+//   sweet_talk,
+// )
+
+// Hunter Abilities
 #let all_cards = (
-  sneak_attack,
-  vicious_opportunist,
-  cheat,
-  creative_accounting,
-  exploit_weakness,
-  creative_accounting,
-  exploit_weakness,
-  feinting_attack,
-  how_you_get_here,
-  i_outta_here,
-  amidst_all_this_commotion,
-  leave_no_trace,
-  low_blow,
-  sweet_talk,
+  hunter_mark,
+  forager,
+  thrill_of_the_hunt,
+  roll_strike,
+  addling_arrow,
+  come_get_some,
+  decoy,
 )
 
 #paginated_card_grid(all_cards, cards-per-page: 9, columns: 3)
