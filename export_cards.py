@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parent
 OUTPUT_DIR = ROOT / "cards"
 PPI = 300
 CARD_DIRS = ["class", "spells", "creatures"]
-EXCLUDED_NAMES = {"mod.typ", "passive_abilities.typ"}
+EXCLUDED_NAMES = {"mod.typ", "passive_abilities.typ", "raging.typ"}
 
 WRAPPER_TEMPLATE = """\
 #import "{filename}": {symbol}

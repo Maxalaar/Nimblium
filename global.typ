@@ -1,6 +1,8 @@
 #import "card_structure/creat_ability.typ": creat_ability
 #import "card_structure/creat_creature.typ": creat_creature
 #import "card_structure/creat_spell.typ": creat_spell
+#import "card_structure/creat_mechanic.typ": creat_mechanic
 #import "creatures/passive_abilities.typ": passive_abilities
 #import "conditions.typ": conditions
 #import "keywords.typ": keywords
+#import "class/berserker/raging.typ": berserker_keywords

@@ -4,7 +4,7 @@
   bloodied: [*Bloodied:* At half HP or less.],
   charmed: [*Charmed:* Sees the charmer as an ally. Charmer has advantage on social interactions with you.],
   dazed: [*Dazed:* Heroes: lose 1 action; monsters: can perform one less action on their next turn.],
-  dying: [*Dying:* At 0 HP. Taking damage while dying causes 2 Wounds, a crit causes 3 instead.],
+  dying: [*Dying:* You are limited to 1 action per turn. You cannot concentrate. Attacking or casting spells causes 1 Wound unless you make a DC 10 STR save. Taking damage causes 2 Wounds or 3 on a critical hit.],
   frightened: [*Frightened:* Disadvantage on rolls when source of fear is nearby; speed halved when moving closer to it.],
   grappled: [*Grappled:* Cannot move. Attacks against you have advantage.],
   restrained: [*Restrained:* Cannot move. Attacks against you have advantage.],

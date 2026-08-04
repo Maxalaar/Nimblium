@@ -2,4 +2,5 @@
   difficult_terrain: [*Difficult Terrain:* Moving through costs 2 movement points.],
   d66: [*D66:* The leftmost die is the tens place, and the second is the ones.],
   distracted: [*Distracted:* A target is distracted if it is adjacent to or Taunted by an ally, or if it cannot see you.],
+  blindsight: [*Blindsight X:* You can sense creatures and obstacles normally within X spaces, ignoring Blinded, darkness, and invisibility.],
 )

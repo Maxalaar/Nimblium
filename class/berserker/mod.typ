@@ -1,0 +1,9 @@
+#import "subclasses/mod.typ": *
+#import "rage.typ": rage
+#import "fury_dice.typ": fury_dice
+#import "that_all_you_got.typ": that_all_you_got
+#import "intensifying_fury.typ": intensifying_fury
+#import "one_with_the_ancients.typ": one_with_the_ancients
+#import "bloodlust.typ": bloodlust
+#import "enduring_rage.typ": enduring_rage
+#import "deep_rage.typ": deep_rage

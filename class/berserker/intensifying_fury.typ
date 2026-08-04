@@ -1,0 +1,15 @@
+#import "../../global.typ": *
+
+#let ability_data = (
+    name: "Intensifying Fury",
+    type: (
+        "Ability",
+        "Berserker",
+    ),
+    effect:[
+      If you are Raging at the beginning of your turn, roll 1 Fury Die for free.
+    ],
+    reminder: (berserker_keywords.raging,),
+)
+
+#let intensifying_fury = creat_ability(ability_data)
