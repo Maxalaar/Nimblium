@@ -7,10 +7,13 @@
         "Berserker",
         "Mountainheart",
     ),
-    limitation: "1/encounter",
-    effect:[
-      While Raging, if you would suffer your last Wound or other negative condition of your choice, you don’t.
-    ],
+    blocks: (
+      (
+        kind: "passive",
+        limitation: "1/encounter",
+        effect: [While Raging, if you would suffer Wound or other negative condition of your choice, you don’t.],
+      ),
+    ),
     reminder: (berserker_keywords.raging,),
 )
 

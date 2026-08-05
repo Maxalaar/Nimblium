@@ -7,9 +7,9 @@
         "Berserker",
         "Red Mist",
     ),
-    effect:[
-      While Raging, you can make opportunity attacks without disadvantage, and you may make them whenever an enemy enters your melee weapon’s reach.
-    ],
+    blocks: (
+      (kind: "passive", effect: [While Raging, whenever an enemy enters your melee weapon’s reach you can make opportunity attack without disadvantage for free.]),
+    ),
     reminder: (berserker_keywords.raging,),
 )
 

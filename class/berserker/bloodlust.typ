@@ -6,9 +6,9 @@
         "Ability",
         "Berserker",
     ),
-    effect:[
-      Expend 1 or more Fury Dice on your turn, move DEX spaces per die spent for free.
-    ],
+    blocks: (
+      (kind: "active", effect: [Expend 1 or more Fury Dice on your turn, move DEX spaces per die spent.]),
+    ),
 )
 
 #let bloodlust = creat_ability(ability_data)

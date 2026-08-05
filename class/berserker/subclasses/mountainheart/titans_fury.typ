@@ -7,9 +7,9 @@
         "Berserker",
         "Mountainheart",
     ),
-    effect:[
-      After you miss an attack or are crit by an enemy, Rage for free.
-    ],
+    blocks: (
+      (kind: "passive", effect: [After you miss an attack or are crit by an enemy, Rage for free.]),
+    ),
 )
 
 #let titans_fury = creat_ability(ability_data)

@@ -6,9 +6,9 @@
         "Ability",
         "Berserker",
     ),
-    effect:[
-      Dropping to 0 HP does not cause your Rage to end.
-    ],
+    blocks: (
+      (kind: "passive", effect: [Dropping to 0 HP does not cause your Rage to end.]),
+    ),
     reminder: (berserker_keywords.raging,),
 )
 

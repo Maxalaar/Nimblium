@@ -6,9 +6,9 @@
         "Ability",
         "Berserker",
     ),
-    effect:[
-      If you are Raging at the beginning of your turn, roll 1 Fury Die for free.
-    ],
+    blocks: (
+      (kind: "passive", effect: [If you are Raging at the beginning of your turn, roll 1 Fury Die for free.]),
+    ),
     reminder: (berserker_keywords.raging,),
 )
 

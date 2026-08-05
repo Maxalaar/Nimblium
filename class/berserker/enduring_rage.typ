@@ -6,9 +6,10 @@
         "Ability",
         "Berserker",
     ),
-    effect:[
-      While Dying, you become Raging automatically for free at the beginning of your turn, have a max of 2 actions instead of 1, and ignore the STR saves to make attacks.
-    ],
+    blocks: (
+      (kind: "passive", effect: [While Dying, you become Raging automatically for free at the beginning of your turn.]),
+      (kind: "passive", effect: [While Dying, you have a max of 2 actions instead of 1, and ignore the STR saves to make attacks.]),
+    ),
     reminder: (conditions.dying, berserker_keywords.raging),
 )
 
