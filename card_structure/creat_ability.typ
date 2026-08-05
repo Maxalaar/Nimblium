@@ -9,13 +9,11 @@
 #let mode_shades = (
   passive: rgb("#8A8A8A"),
   active: rgb("#4D4D4D"),
-  reactive: rgb("#1A1A1A"),
 )
 
 #let mode_order = (
   active: 0,
-  reactive: 1,
-  passive: 2,
+  passive: 1,
 )
 
 #let mode_badge(kind) = {

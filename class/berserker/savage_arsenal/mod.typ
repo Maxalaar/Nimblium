@@ -1,0 +1,12 @@
+#import "death_blow.typ": death_blow
+#import "deathless_rage.typ": deathless_rage
+#import "eager_for_battle.typ": eager_for_battle
+#import "into_the_fray.typ": into_the_fray
+#import "mighty_endurance.typ": mighty_endurance
+#import "more_blood.typ": more_blood
+#import "rampage.typ": rampage
+#import "swift_fury.typ": swift_fury
+#import "thunderous_steps.typ": thunderous_steps
+#import "unstoppable_force.typ": unstoppable_force
+#import "whirlwind.typ": whirlwind
+#import "youre_next.typ": youre_next

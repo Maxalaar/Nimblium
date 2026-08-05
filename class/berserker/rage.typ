@@ -12,7 +12,7 @@
         cost: ("1 Action",),
         limitation: "1/turn",
         effect: [
-          Roll a 1d4 Fury Die and you become Raging.\
+          Roll a Fury Die and you become Raging.\
           *Level 5:* roll 2 Fury Dice instead.\
         ],
       ),

@@ -1,4 +1,5 @@
 #import "subclasses/mod.typ": *
+#import "savage_arsenal/mod.typ": *
 #import "rage.typ": rage
 #import "fury_dice.typ": fury_dice
 #import "that_all_you_got.typ": that_all_you_got
