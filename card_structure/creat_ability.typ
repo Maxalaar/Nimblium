@@ -33,7 +33,7 @@
     radius: 2pt,
     inset: (x: 3pt, y: 1.5pt),
     baseline: 10%,
-  )[#text(size: 6pt, weight: "bold", fill: black)[#upper(label)]]
+  )[#text(size: 6pt, weight: "bold", fill: black)[#label]]
 }
 
 #let ability_block(block) = {

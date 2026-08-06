@@ -7,7 +7,7 @@
         "Berserker",
     ),
     blocks: (
-      (kind: "passive", effect: [While Dying, you become Raging automatically for free at the beginning of your turn.]),
+      (kind: "passive", effect: [While Dying, at the beginning of your turn you become Raging.]),
       (kind: "passive", effect: [While Dying, you have a max of 2 actions instead of 1, and ignore the STR saves to make attacks.]),
     ),
     reminder: (conditions.dying, berserker_keywords.raging),

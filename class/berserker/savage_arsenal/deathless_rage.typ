@@ -12,7 +12,7 @@
         kind: "active",
         cost: ("1 Wound",),
         limitation: "1/turn",
-        effect: [While Dying, gain 1 action.],
+        effect: [Gain 1 action.],
       ),
     ),
     reminder: (conditions.dying,),

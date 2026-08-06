@@ -11,7 +11,7 @@
       (
         kind: "active",
         cost: ("1 Action",),
-        effect: [Leap up to 2×DEX spaces toward an enemy. If you land adjacent to at least 2 enemies, make an attack against 1 of them for free.],
+        effect: [Leap up to 2 $times$ DEX spaces toward an enemy. If you land adjacent to at least 2 enemies, make an attack against one them.],
       ),
     ),
 )

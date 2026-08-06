@@ -13,7 +13,7 @@
         limitation: "1/turn",
         effect: [
           Roll a Fury Die and you become Raging.\
-          *Level 5:* roll 2 Fury Dice instead.\
+          *Level 5:* Roll 2 Fury Dice instead.\
         ],
       ),
     ),

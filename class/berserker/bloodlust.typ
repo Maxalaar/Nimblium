@@ -7,7 +7,7 @@
         "Berserker",
     ),
     blocks: (
-      (kind: "active", effect: [Expend 1 or more Fury Dice on your turn, move DEX spaces per die spent.]),
+      (kind: "active", cost: ("X Fury Dice",), effect: [On your turn, move up X DEX spaces per die spent.]),
     ),
 )
 

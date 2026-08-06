@@ -8,7 +8,7 @@
         "Savage Arsenal",
     ),
     blocks: (
-      (kind: "passive", effect: [Whenever you gain one or more Fury Dice, move up to DEX spaces for free, ignoring difficult terrain.]),
+      (kind: "passive", effect: [Whenever you gain one or more Fury Dice, move up to DEX spaces ignoring difficult terrain.]),
     ),
     reminder: (keywords.difficult_terrain,),
 )

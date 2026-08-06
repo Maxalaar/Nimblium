@@ -9,7 +9,7 @@
     ),
     blocks: (
       (kind: "passive", effect: [Gain advantage on Initiative.]),
-      (kind: "passive", effect: [On the start a you first turn on each encounter you can move 2×DEX spaces for free.]),
+      (kind: "passive", effect: [On the start a you first turn on each encounter you can move 2 $times$ DEX spaces.]),
     ),
 )
 

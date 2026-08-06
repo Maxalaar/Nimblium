@@ -8,7 +8,7 @@
         "Savage Arsenal",
     ),
     blocks: (
-      (kind: "passive", effect: [After moving at least 4 spaces while Raging, you may deal STR Bludgeoning damage to all adjacent creatures where you stop.]),
+      (kind: "passive", effect: [After moving at least 4 spaces while Raging, you may deal STR Bludgeoning damage to all adjacent creatures.]),
     ),
     reminder: (berserker_keywords.raging,),
 )

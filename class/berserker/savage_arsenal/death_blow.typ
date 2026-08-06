@@ -8,7 +8,7 @@
         "Savage Arsenal",
     ),
     blocks: (
-      (kind: "passive", effect: [After you deal damage from a critical hit, you may expend any number of Fury Dice. Add their total to the base damage, then deal double that amount of damage.]),
+      (kind: "passive", effect: [After you deal damage from a critical hit, you may expend any number of Fury Dice. Add their values together, then double that total and deal the result as additional damage to the target.]),
     ),
 )
 
