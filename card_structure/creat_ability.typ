@@ -56,24 +56,10 @@
 #let creat_ability(ability) = {
   let data = ()
 
-  if "blocks" in ability {
-    let sorted_blocks = ability.blocks.sorted(key: blk => mode_order.at(blk.kind, default: 99))
-    for (i, blk) in sorted_blocks.enumerate() {
-      if i > 0 { data = data + (v(passive_item_spacing, weak: true),) }
-      data = data + (ability_block(blk),)
-    }
-  } else {
-    if "cost" in ability {
-      data = data + (text(size: ability_text_size)[*Cost:* #ability.cost.join(", ")],)
-    }
-
-    if "limitation" in ability {
-      data = data + (text(size: ability_text_size)[*Limitation:* #ability.limitation],)
-    }
-
-    if "effect" in ability {
-      data = data + (text(size: ability_text_size)[*Effect:* #ability.effect],)
-    }
+  let sorted_blocks = ability.blocks.sorted(key: blk => mode_order.at(blk.kind, default: 99))
+  for (i, blk) in sorted_blocks.enumerate() {
+    if i > 0 { data = data + (v(passive_item_spacing, weak: true),) }
+    data = data + (ability_block(blk),)
   }
 
   if "reminder" in ability {
