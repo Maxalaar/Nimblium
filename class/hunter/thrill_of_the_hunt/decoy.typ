@@ -7,13 +7,13 @@
         "Hunter",
         "Thrill of the hunt"
     ),
-    cost: (
-        "1 Action",
-        "1 TotH charge",
+    blocks: (
+      (
+        kind: "active",
+        cost: ("1 Action", "1 TotH charge"),
+        effect: [When you Defend, the attack targeting you misses, and you may move up to half your speed.],
+      ),
     ),
-    effect:[
-      When you Defend: The attack misses instead, and you can move up to half your speed away (where you really were all along!).
-    ],
 )
 
 #let decoy = creat_ability(ability_data)

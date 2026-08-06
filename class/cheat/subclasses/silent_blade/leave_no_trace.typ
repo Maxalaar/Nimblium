@@ -7,9 +7,9 @@
         "Cheat",
         "Silent Blade",
     ),
-    effect:[
-        Advantage on Stealth checks when you are at full health.
-    ],
+    blocks: (
+      (kind: "passive", effect: [Advantage on Stealth checks when you are at full health.]),
+    ),
 )
 
 #let leave_no_trace = creat_ability(ability_data)

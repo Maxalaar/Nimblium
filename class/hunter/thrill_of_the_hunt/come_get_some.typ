@@ -7,13 +7,13 @@
         "Hunter",
         "Thrill of the hunt"
     ),
-    cost: (
-        "1 Action",
-        "1 TotH charge",
+    blocks: (
+      (
+        kind: "active",
+        cost: ("1 Action", "1 TotH charge"),
+        effect: [Attack a target, this attack cannot miss. The target is Taunted by you until the end of their next turn.],
+      ),
     ),
-    effect:[
-      Attack a target. This attack cannot miss. The target is Taunted by you until the end of their next turn.
-    ],
     reminder: (conditions.taunted,),
 )
 
