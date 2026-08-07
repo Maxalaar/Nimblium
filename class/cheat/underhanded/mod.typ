@@ -3,3 +3,8 @@
 #import "feinting_attack.typ": feinting_attack
 #import "how_you_get_here.typ": how_you_get_here
 #import "i_outta_here.typ": i_outta_here
+#import "misdirection.typ": misdirection
+#import "steal_tempo.typ": steal_tempo
+#import "sunder_armor_medium.typ": sunder_armor_medium
+#import "sunder_armor_heavy.typ": sunder_armor_heavy
+#import "trickshot.typ": trickshot
