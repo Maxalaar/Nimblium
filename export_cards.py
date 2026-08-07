@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Export every card as an individual PDF, mirroring the project's folder
-hierarchy under cards/ (e.g. class/cheat/underhanded/creative_accounting.typ
--> cards/class/cheat/underhanded/creative_accounting.pdf).
+"""Export every card as an individual PDF, right next to its source .typ
+file (e.g. class/cheat/underhanded/creative_accounting.typ ->
+class/cheat/underhanded/creative_accounting.pdf).
 
 PDF output (instead of PNG) lets Typst-aware viewers (e.g. the Tinymist
 VS Code extension) jump straight to the source .typ file on click.
@@ -11,7 +11,6 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-OUTPUT_DIR = ROOT / "cards"
 CARD_DIRS = ["class", "spells", "creatures"]
 EXCLUDED_NAMES = {"mod.typ", "passive_abilities.typ", "raging.typ"}
 
@@ -32,8 +31,7 @@ def find_card_files():
 
 def export_card(path: Path) -> Path:
     symbol = path.stem
-    out_path = OUTPUT_DIR / path.relative_to(ROOT).with_suffix(".pdf")
-    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path = path.with_suffix(".pdf")
 
     wrapper = path.with_name(f".export_{symbol}.typ")
     wrapper.write_text(WRAPPER_TEMPLATE.format(filename=path.name, symbol=symbol))
@@ -64,7 +62,7 @@ def main():
         print(f"  {path.relative_to(ROOT)} -> {out_path.relative_to(ROOT)}")
         count += 1
 
-    print(f"Exported {count} cards to {OUTPUT_DIR.relative_to(ROOT)}/")
+    print(f"Exported {count} cards")
 
 
 if __name__ == "__main__":

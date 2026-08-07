@@ -15,7 +15,6 @@
         effect: [Gain 1 action.],
       ),
     ),
-    reminder: (conditions.dying,),
 )
 
 #let deathless_rage = creat_ability(ability_data)
