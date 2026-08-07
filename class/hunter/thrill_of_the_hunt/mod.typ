@@ -1,3 +1,14 @@
 #import "addling_arrow.typ": addling_arrow
 #import "come_get_some.typ": come_get_some
 #import "decoy.typ": decoy
+#import "fleet_feet.typ": fleet_feet
+#import "grease_trap.typ": grease_trap
+#import "hail_of_arrows.typ": hail_of_arrows
+#import "heavy_shot.typ": heavy_shot
+#import "incendiary_shot.typ": incendiary_shot
+#import "multishot.typ": multishot
+#import "pinning_shot.typ": pinning_shot
+#import "snare_trap.typ": snare_trap
+#import "sharpshooter.typ": sharpshooter
+#import "vital_shot.typ": vital_shot
+#import "wild_instinct.typ": wild_instinct

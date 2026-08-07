@@ -3,3 +3,15 @@
 #import "forager.typ": forager
 #import "thrill_of_the_hunt_charge.typ": thrill_of_the_hunt_charge
 #import "roll_strike.typ": roll_strike
+#import "trackers_intuition.typ": trackers_intuition
+#import "explorer_of_the_wilds.typ": explorer_of_the_wilds
+#import "hunters_resolve.typ": hunters_resolve
+#import "final_takedown.typ": final_takedown
+#import "versatile_bowmaster.typ": versatile_bowmaster
+#import "no_escape.typ": no_escape
+#import "veteran_stalker.typ": veteran_stalker
+#import "keen_eye_steady_hand.typ": keen_eye_steady_hand
+#import "keen_sight.typ": keen_sight
+#import "peerless_hunter.typ": peerless_hunter
+#import "wild_endurance.typ": wild_endurance
+#import "nemesis.typ": nemesis
