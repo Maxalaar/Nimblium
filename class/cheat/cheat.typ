@@ -10,7 +10,7 @@
       (kind: "active", limitation: "1/round", effect: [You may Move.]),
       (kind: "active", limitation: "1/day", effect: [You may change any skill check result to 10+INT.]),
       (kind: "passive", effect: [If you roll less than 10 on Initiative, you may change it to 10 instead.]),
-      (kind: "passive", effect: [You may gain advantage on skill checks while playing any games, competitions, or placing wagers.]),
+      (kind: "narrative", effect: [You may gain advantage on skill checks while playing any games, competitions, or placing wagers.]),
     ),
 )
 

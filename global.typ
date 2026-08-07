@@ -6,3 +6,4 @@
 #import "conditions.typ": conditions
 #import "keywords.typ": keywords
 #import "class/berserker/raging.typ": berserker_keywords
+#import "style.typ": reminder_color, keyword_style

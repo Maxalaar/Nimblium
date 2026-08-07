@@ -10,7 +10,7 @@
       \
       • When you roll a Fury Die, roll 1d4 and set it aside.\
       • You can have a maximum of KEY Fury Dice at once.\
-      • Fury Dice are lost when your Rage ends.\
+      • Fury Dice are lost when your #keyword_style[Raging] ends.\
       • If you gain a Fury Die while already at your max, roll as normal and choose which dice to keep.\
       • On every STR-based attack, you may add all your Fury Dice to the damage, they count as damage dice when calculating monster armor.\
       \

@@ -1,4 +1,5 @@
 #import "creat_frame.typ": creat_frame
+#import "../style.typ": reminder_color
 
 #let reminder_spacing = 1em
 #let reminder_item_spacing = 0.3em
@@ -51,7 +52,7 @@
       v(reminder_spacing, weak: true)
       for (i, r) in creature.reminder.enumerate() {
         if i > 0 { v(reminder_item_spacing, weak: true) }
-        text(size: 7pt, fill: rgb("#666666"))[#r]
+        text(size: 7pt, fill: reminder_color)[#r]
       }
     }
     data = data + (reminder_content,)

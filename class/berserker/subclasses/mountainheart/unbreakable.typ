@@ -11,7 +11,7 @@
       (
         kind: "passive",
         limitation: "1/encounter",
-        effect: [While Raging, if you would suffer Wound or other negative condition of your choice, you don’t.],
+        effect: [While #keyword_style[Raging], if you would suffer Wound or other negative condition of your choice, you don’t.],
       ),
     ),
     reminder: (berserker_keywords.raging,),

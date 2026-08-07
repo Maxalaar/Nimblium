@@ -11,9 +11,10 @@
       (
         kind: "active",
         cost: ("2 Action",),
-        effect: [Instantly place yourself up to 4 spaces away, adjacent to a Distracted target, and make a melee attack against them. If you crit, you may place yourself again.],
+        effect: [Place yourself adjacent to a #keyword_style[Distracted] target within Reach 4. Make a melee attack against them. If you crit, you may place yourself within Reach 4.],
       ),
     ),
+    reminder: (keywords.distracted,),
 )
 
 #let how_you_get_here = creat_ability(ability_data)

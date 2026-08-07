@@ -14,7 +14,7 @@
     [
       * Scarab Swarm:* Summon 10 scarab minions (d6) within 6 spaces.\
       then\
-      *Slam:* 2 attaques. 1d4+20. On damage: Dazed.
+      *Slam:* 2 attaques. 1d4+20. On damage: #keyword_style[Dazed].
     ],
   ),
   reminder: (conditions.dazed,),

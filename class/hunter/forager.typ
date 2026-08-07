@@ -7,7 +7,7 @@
         "Hunter",
     ),
     blocks: (
-      (kind: "passive", effect: [Gain advantage on skill checks to find food and water in the wild.]),
+      (kind: "narrative", effect: [Gain advantage on skill checks to find food and water in the wild.]),
     ),
 )
 

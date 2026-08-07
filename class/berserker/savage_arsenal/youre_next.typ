@@ -11,7 +11,7 @@
       (
         kind: "active",
         cost: ("1 Action",),
-        effect: [While Raging, you can make a Might skill check to demoralize an enemy within Reach 12 (DC: their current HP). On a success, they immediately flee the battle.],
+        effect: [While #keyword_style[Raging], target a creature within Reach 12 and make a Might skill check with a DC equal to the target creature's HP. On a success, they immediately flee the battle.],
       ),
     ),
     reminder: (berserker_keywords.raging,),

@@ -12,7 +12,7 @@
     ),
     range: "8",
     damage: "1d10",
-    effect: "On crit: Smoldering.",
+    effect: [On crit: #keyword_style[Smoldering].],
     high_Levels: "+5 damage every 5 levels.",
     reminder: (conditions.smoldering,)
 )

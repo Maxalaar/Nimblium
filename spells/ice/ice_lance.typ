@@ -12,7 +12,7 @@
     ),
     range: "12",
     damage: "1d6",
-    effect: "On hit: Slowed.",
+    effect: [On hit: #keyword_style[Slowed].],
     high_Levels: "+3 damage every 5 levels.",
     reminder: (conditions.slowed,)
 )

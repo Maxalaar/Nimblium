@@ -1,4 +1,5 @@
 #import "creat_frame.typ": creat_frame
+#import "../style.typ": reminder_color
 
 #let ability_text_size = 8pt
 #let reminder_spacing = 1em
@@ -7,8 +8,9 @@
 #let passive_item_spacing = 0.3em
 
 #let mode_shades = (
-  passive: rgb("#8A8A8A"),
-  active: rgb("#4D4D4D"),
+  active: rgb("#2e2e2e"),
+  passive: rgb("#474747"),
+  narrative: rgb("#868686"),
 )
 
 #let mode_order = (
@@ -67,7 +69,7 @@
       v(reminder_spacing, weak: true)
       for (i, r) in ability.reminder.enumerate() {
         if i > 0 { v(reminder_item_spacing, weak: true) }
-        text(size: 7pt, fill: rgb("#666666"))[#r]
+        text(size: 7pt, fill: reminder_color)[#r]
       }
     }
     data = data + (reminder_content,)

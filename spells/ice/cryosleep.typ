@@ -14,7 +14,7 @@
     ),
     reach: "12",
     area: "2×2",
-    effect: " Creatures in the area are Dazed. On a failed STR save, they fall asleep instead.",
+    effect: [ Creatures in the area are #keyword_style[Dazed]. On a failed STR save, they fall #keyword_style[asleep] instead.],
     reminder: (conditions.dazed, conditions.asleep),
     upcast: "+1 area, +1 turn asleep.",
 )

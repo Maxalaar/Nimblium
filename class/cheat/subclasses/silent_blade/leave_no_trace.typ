@@ -8,7 +8,7 @@
         "Silent Blade",
     ),
     blocks: (
-      (kind: "passive", effect: [Advantage on Stealth checks when you are at full health.]),
+      (kind: "narrative", effect: [Advantage on Stealth checks when you are at full health.]),
     ),
 )
 

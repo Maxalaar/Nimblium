@@ -12,7 +12,7 @@
     ),
     range: "1",
     damage: "1d6",
-    effect: "On hit: Blinded until the end of their next turn.",
+    effect: [On hit: #keyword_style[Blinded] until the end of their next turn.],
     high_Levels: "+3 damage every 5 levels.",
     reminder: (conditions.blinded,)
 )

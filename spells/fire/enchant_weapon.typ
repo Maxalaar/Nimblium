@@ -12,7 +12,7 @@
         "2 Mana",
     ),
     concentration: "Up to 1 minute.",
-    effect:"A weapon you touch is enchanted with magical flame. It deals +KEY damage and inflicts Smoldering on crit.",
+    effect: [A weapon you touch is enchanted with magical flame. It deals +KEY damage and inflicts #keyword_style[Smoldering] on crit.],
     upcast: "+KEY damage.",
     reminder: (conditions.smoldering,)
 )

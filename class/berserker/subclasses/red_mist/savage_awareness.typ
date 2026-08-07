@@ -8,8 +8,8 @@
         "Red Mist",
     ),
     blocks: (
-      (kind: "passive", effect: [Advantage on perception checks to notice or track down blood.]),
-      (kind: "passive", effect: [While Raging you get Blindsight 2.]),
+      (kind: "passive", effect: [While #keyword_style[Raging] you get #keyword_style[Blindsight] 2.]),
+      (kind: "narrative", effect: [Advantage on perception checks to notice or track down blood.]),
     ),
     reminder: (berserker_keywords.raging, keywords.blindsight),
 )

@@ -7,7 +7,7 @@
         "Berserker",
     ),
     blocks: (
-      (kind: "passive", effect: [If you are Raging at the beginning of your turn, roll 1 Fury Die.]),
+      (kind: "passive", effect: [If you are #keyword_style[Raging] at the beginning of your turn, roll 1 Fury Die.]),
     ),
     reminder: (berserker_keywords.raging,),
 )

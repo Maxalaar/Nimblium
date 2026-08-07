@@ -7,7 +7,7 @@
         "Berserker",
     ),
     blocks: (
-      (kind: "passive", effect: [Dropping to 0 HP does not cause your Rage to end.]),
+      (kind: "passive", effect: [Dropping to 0 HP does not cause your #keyword_style[Rage] to end.]),
     ),
     reminder: (berserker_keywords.raging,),
 )

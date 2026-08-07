@@ -11,7 +11,7 @@
   ),
   active: (
     [
-      *Crunch:* 1d4+4 damage. On damage: Grappled.
+      *Crunch:* 1d4+4 damage. On damage: #keyword_style[Grappled].
     ],
   ),
   hit_points: 15,

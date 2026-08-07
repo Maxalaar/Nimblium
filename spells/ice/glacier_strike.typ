@@ -14,8 +14,8 @@
     ),
     range: "12",
     area: "3x3",
-    damage: "d66",
-    effect: "Inflict damage in the area. Creatures adjacent to that area take half. The entire area becomes difficult terrain.",
+    damage: [#keyword_style[d66]],
+    effect: [Inflict damage in the area. Creatures adjacent to that area take half. The entire area becomes #keyword_style[difficult terrain].],
     reminder: (keywords.d66, keywords.difficult_terrain,),
     upcast: "+1 Reach.",
 )

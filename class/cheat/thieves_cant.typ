@@ -7,7 +7,7 @@
         "Cheat",
     ),
     blocks: (
-      (kind: "passive", effect: [You learn the secret language of rogues and scoundrels.]),
+      (kind: "narrative", effect: [You learn the secret language of rogues and scoundrels.]),
     ),
 )
 

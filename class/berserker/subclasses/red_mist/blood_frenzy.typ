@@ -11,7 +11,7 @@
       (
         kind: "passive",
         limitation: "1/turn",
-        effect: [While Raging, whenever you crit or kill an enemy, change 1 Fury Die to the maximum.],
+        effect: [While #keyword_style[Raging], whenever you crit or kill an enemy, change 1 Fury Die to the maximum.],
       ),
     ),
     reminder: (berserker_keywords.raging,),

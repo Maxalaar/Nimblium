@@ -9,7 +9,7 @@
     ),
     blocks: (
       (kind: "active", limitation: "1/round", effect: [Move for free.]),
-      (kind: "passive", effect: [While Raging, gain +2 speed.]),
+      (kind: "passive", effect: [While #keyword_style[Raging], gain +2 speed.]),
     ),
     reminder: (berserker_keywords.raging,),
 )

@@ -11,7 +11,7 @@
         "1 Action",
         "3 Mana",
     ),
-    reaction: "When attacked, Defend for free. Until the start of your next turn, melee attackers against you take KEY damage (ignoring armor) and gain Smoldering.",
+    reaction: [When attacked, Defend for free. Until the start of your next turn, melee attackers against you take KEY damage (ignoring armor) and gain #keyword_style[Smoldering].],
     upcast: "+KEY damage.",
     reminder: (conditions.smoldering,)
 )

@@ -10,7 +10,7 @@
       (
         kind: "active",
         cost: ("1 Action",),
-        effect: [If you have no Thrill of the Hunt charges, move up to your speed toward your quarry. If you end adjacent to them, make a melee attack against them for free.],
+        effect: [If you have no TotH charges, move up to your speed toward your quarry. If you end adjacent to them, make a melee attack against them for free.],
       ),
     ),
 )
