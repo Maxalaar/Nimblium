@@ -6,9 +6,12 @@
         "Ability",
         "Hunter",
     ),
-    limitation: "1/turn",
     blocks: (
-      (kind: "passive", effect: [Whenever one allie make an opportunity attack, you may also make a ranged opportunity attack against the same target.]),
+      (
+        kind: "passive",
+        limitation: "2/round",
+        effect: [Whenever one allie make an opportunity attack, you may also make a ranged opportunity attack against the same target.]
+      ),
     ),
 )
 

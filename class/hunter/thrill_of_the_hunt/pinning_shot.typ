@@ -11,7 +11,7 @@
       (
         kind: "active",
         cost: ("3 Action", "1 TotH charge"),
-        effect: [Shoot your quarry. They are #keyword_style[Restrained] until they can escape (DC 10+WIL).],
+        effect: [Shoot your quarry. They are #keyword_style[Restrained] until they can escape DC 10+WIL.],
       ),
     ),
     reminder: (conditions.restrained,),

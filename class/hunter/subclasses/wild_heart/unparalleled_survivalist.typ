@@ -9,7 +9,7 @@
     ),
     blocks: (
       (kind: "passive", limitation: "1/turn", effect: [When you attack with a ranged weapon, you may first move half your speed.]),
-      (kind: "passive", effect: [Gain +WIL in DEF.]),
+      (kind: "passive", effect: [Gain WIL in DEF.]),
     ),
 )
 
