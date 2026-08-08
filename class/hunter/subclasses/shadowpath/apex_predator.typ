@@ -9,7 +9,7 @@
     ),
     blocks: (
       (kind: "passive", effect: [You may use your Primal Predator ability twice each encounter.]),
-      (kind: "passive", effect: [Gain 1 Thrill of the Hunt charge when you roll Initiative.]),
+      (kind: "passive", effect: [Gain 1 TotH charge when you roll Initiative.]),
     ),
 )
 

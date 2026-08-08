@@ -9,11 +9,12 @@
     description:[
       \
       Gain a Thrill of the Hunt (TotH) charge during that encounter whenever:\
-      • You hit your quarry in melee.\
-      • You crit your quarry at range.\
-      • Your quarry dies.\
+      • You hit a #keyword_style[Marked] creature in melee.\
+      • You crit a #keyword_style[Marked] creature at range.\
+      • A #keyword_style[Marked] creature dies.\
       Unused charges are lost when combat ends.
     ],
+    reminder: (hunter_keywords.marked,),
 )
 
 #let thrill_of_the_hunt_charge = creat_mechanic(mechanic_data)

@@ -7,8 +7,9 @@
         "Hunter",
     ),
     blocks: (
-      (kind: "passive", effect: [Whenever you have no TotH charges, treat all creatures as your quarry for movement and melee attacks.]),
+      (kind: "passive", effect: [Whenever you have no TotH charges, treat all creatures as #keyword_style[marked] for movement and melee attacks.]),
     ),
+    reminder: (hunter_keywords.marked,),
 )
 
 #let hunters_resolve = creat_ability(ability_data)

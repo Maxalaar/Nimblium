@@ -11,10 +11,10 @@
       (
         kind: "active",
         cost: ("3 Action", "1 TotH charge"),
-        effect: [Shoot your quarry. They are #keyword_style[Restrained] until they can escape DC 10+WIL.],
+        effect: [Shoot a #keyword_style[Marked] creature. They are #keyword_style[Restrained] until they can escape DC 10+WIL.],
       ),
     ),
-    reminder: (conditions.restrained,),
+    reminder: (hunter_keywords.marked, conditions.restrained,),
 )
 
 #let pinning_shot = creat_ability(ability_data)

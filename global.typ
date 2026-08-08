@@ -5,5 +5,6 @@
 #import "creatures/passive_abilities.typ": passive_abilities
 #import "conditions.typ": conditions
 #import "keywords.typ": keywords
-#import "class/berserker/raging.typ": berserker_keywords
+#import "class/berserker/berserker_keywords.typ": berserker_keywords
+#import "class/hunter/hunter_keywords.typ": hunter_keywords
 #import "style.typ": reminder_color, keyword_style

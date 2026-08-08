@@ -12,7 +12,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 CARD_DIRS = ["class", "spells", "creatures"]
-EXCLUDED_NAMES = {"mod.typ", "passive_abilities.typ", "raging.typ"}
+EXCLUDED_NAMES = {
+    "mod.typ",
+    "passive_abilities.typ",
+    "berserker_keywords.typ",
+    "hunter_keywords.typ"
+}
 
 WRAPPER_TEMPLATE = """\
 #import "{filename}": {symbol}
