@@ -12,6 +12,7 @@
         limitation: "1/turn",
         effect: [
             When you crit, deal +1d6 damage.\
+            \
             *Level 3:* Your Sneak Attack becomes 1d8.\
             *Level 7:* Your Sneak Attack becomes 2d8.\
             *Level 9:* Your Sneak Attack becomes 2d10.\

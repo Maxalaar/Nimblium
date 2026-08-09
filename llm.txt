@@ -1,0 +1,182 @@
+# Contexte pour LLM — Nimblium
+
+Ce fichier résume les instructions et conventions établies au fil des sessions précédentes
+pour ce projet. Il sert à éviter que l'utilisateur doive tout réexpliquer à chaque nouvelle
+conversation. À lire avant de continuer le travail sur les classes/sorts/créatures.
+
+## Le projet
+
+Générateur de cartes Typst pour un jeu de rôle basé sur le système **Nimble**. Le contenu de
+référence (texte des classes, sorts, capacités) provient de `nimble_documents/Heroes.pdf`.
+Chaque carte (capacité, sort, créature, mécanique) est un fichier `.typ` individuel, exporté
+en PDF/PNG via `export_cards.py` qui parcourt `class/`, `spells/`, `creatures/` et génère un
+PDF par fichier `.typ` trouvé (hors `mod.typ`, `passive_abilities.typ`, `raging.typ`). Pas
+besoin de maintenir de liste centrale : ajouter le fichier suffit pour qu'il soit exporté.
+
+## Extraction du texte source
+
+`pdftotext -f <début> -l <fin> -layout nimble_documents/Heroes.pdf -`
+
+- Les numéros de page imprimés en pied de page sont décalés de -1 par rapport à la page PDF
+  demandée (ex: demander les pages PDF 14-17 donne des pieds de page 13-16).
+- Le layout est en deux colonnes sur beaucoup de pages : le texte peut s'entrelacer entre
+  colonnes dans la sortie de `pdftotext`. Si l'ordre semble suspect, réextraire une page seule.
+- Sommaire utile pour localiser les classes : Berserker p.6, Cheat p.12, Commander p.18,
+  Hunter p.24, Mage p.30, Oathsworn p.36, Shadowmancer p.42, Shepherd p.48, Songweaver p.54,
+  Stormshifter p.60, Zephyr p.66, Extra Subclasses p.73.
+
+## Types de cartes (`card_structure/`)
+
+- `creat_ability.typ` → cartes de type **Ability**
+- `creat_spell.typ` → cartes de type **Spell**
+- `creat_creature.typ` → cartes de type **Creature**
+- `creat_mechanic.typ` → cartes de type **Mechanic**
+
+### Ability (`creat_ability.typ`)
+
+`blocks` est une liste de `(kind, [cost], [limitation], effect)`.
+
+- `kind` : `"active"` (coûte une action/ressource, déclenché par choix du joueur),
+  `"passive"` (effet automatique/déclenché, pas de dépense d'action pour l'activer),
+  `"narrative"` (avantage sur jets de compétence / flavor / roleplay — ex: Forager, Leave No
+  Trace, Thieves' Cant, Keen Sight, Quick Read).
+- `cost` : tuple de tags affichés en badge, ex `("1 Action",)`, `("2 Action",)`,
+  `("1 TotH charge",)`, `("Reaction",)`.
+- `limitation` : tag affiché en badge, ex `"1/turn"`, `"1/encounter"`, `"1/day"`,
+  `"1/Safe Rest"`, `"2/round"`.
+- **Progression par niveau** : si une capacité évolue avec le niveau (ex: Sneak Attack, Twist
+  the Blade), intégrer les niveaux suivants comme lignes `*Level X:*` en gras DANS le même bloc
+  d'effet, plutôt que créer plusieurs cartes. Voir `class/cheat/sneak_attack.typ`.
+- **Clauses multiples** : si une capacité a plusieurs effets distincts, préférer plusieurs
+  blocks séparés (même carte) plutôt qu'un seul paragraphe. Voir `explorer_of_the_wilds.typ`,
+  `misdirection.typ`, `apex_predator.typ`, `unparalleled_survivalist.typ`.
+- `type` : `("Ability", "<Classe>")` pour une capacité de base, avec un 3e élément pour un
+  sous-groupe (subclass ou pool de choix), ex `("Ability","Cheat","Underhanded")`,
+  `("Ability","Cheat","Scoundrel")`, `("Ability","Hunter","Thrill of the hunt")` (attention,
+  minuscule établie sur "hunt"), `("Ability","Hunter","Shadowpath")`,
+  `("Ability","Shepherd","Sacred Grace")`.
+
+### Mechanic (`creat_mechanic.typ`)
+
+Utilisé pour centraliser une règle/ressource qui s'étale sur plusieurs niveaux ou toute la
+classe, plutôt que d'en faire une carte capacité par niveau. Champ `description` (pas
+`blocks`/`effect`). Précédents : `class/hunter/thrill_of_the_hunt_charge.typ` (règles de gain
+de charge TotH), `class/shepherd/shepherd_mana_pool.typ` (formule du pool de mana + déblocage
+des tiers de sorts par niveau, avec le même style `*Level X:*` que `sneak_attack.typ`).
+
+### Spell (`creat_spell.typ`)
+
+Champs disponibles : `cost`, `concentration`, `range`, `reach`, `area`, `damage`, `reaction`,
+`effect`, `high_Levels`, `upcast`, `reminder`. `type` inclut école/tier, ex
+`("Spell","Fire","Cantrip")`, `("Spell","Radiant","Tier 1")`.
+
+### Creature (`creat_creature.typ`)
+
+Champs lus : `passive` (tuple d'entrées avec label en gras), `active` (idem, coûts décrits en
+prose car pas de champ `cost` dédié), `hit_points`, `armor`, `speed`, `level`. **Attention** :
+seuls `passive` et `active` sont reconnus — une clé `ability` ou autre est silencieusement
+ignorée (piégé une fois sur `spirit_companion.typ`).
+
+## Compagnons de classe : séparer le sort de la créature
+
+Quand une capacité de classe invoque un compagnon (ex: Lifebinding Spirit du Shepherd), séparer
+en deux cartes :
+- Le **sort** (`creat_spell`) dit juste "invoque ton Compagnon... dure jusqu'à X" et ne redit
+  pas les stats/attaques.
+- La **créature** (`creat_creature`) documente tout le détail (attaques, soin, portée, dé qui
+  scale, etc.) en sections `passive`/`active`.
+
+Voir `class/shepherd/lifebinding_spirit.typ` + `class/shepherd/spirit_companion.typ`.
+
+## Reminders / mots-clés
+
+- `conditions.typ` : dictionnaire des conditions (Bloodied, Blinded, Prone, Restrained,
+  Invisible, Dying, Smoldering, etc.)
+- `keywords.typ` : mots-clés génériques (Distracted, Difficult Terrain, D66, Blindsight,
+  Advantage, Disadvantage, Vulnerable).
+- Fichiers de mots-clés spécifiques à une classe : `class/berserker/berserker_keywords.typ`,
+  `class/hunter/hunter_keywords.typ` (définit "Marked", qui remplace la prose "quarry" du PDF
+  d'origine — vérifier son contenu actuel avant de le réutiliser).
+- Quand le texte d'une capacité référence un terme défini, l'entourer de
+  `#keyword_style[Mot]` (défini dans `style.typ`) et ajouter l'entrée correspondante dans le
+  tuple `reminder: (...)` de la carte pour qu'un rappel s'affiche en bas de carte.
+- Ne pas inventer de reminder pour un terme non défini dans ces fichiers (ex: "Defend" n'a pas
+  de définition, donc pas de reminder pour lui).
+
+## Règle importante : pas de carte pour "tu débloques juste un sort"
+
+Ne JAMAIS créer de carte capacité/mécanique dont le seul contenu est "tu apprends/débloques tel(s)
+sort(s)/cantrip(s)". En vrai jeu, les cartes de sort correspondantes sont données directement
+au joueur — une carte capacité qui dit juste "tu connais maintenant ces sorts" est redondante et
+inutile. Exemples supprimés pour cette raison : `keeper_of_life_and_death.typ` ("You know
+Radiant and Necrotic cantrips") et `master_of_twilight.typ` ("Choose Necrotic/Radiant Utility
+Spells... know all at level 11"). Par contre, le pool de Mana a été gardé en carte Mechanic
+car il définit aussi la formule/règle de la ressource, pas seulement "tu obtiens des sorts".
+
+## Organisation des fichiers par classe (`class/<nom_classe>/`)
+
+- Capacités de base de la classe : fichiers `.typ` à plat directement dans `class/<nom>/`.
+- Un pool de capacités à choisir (Underhanded Ability du Cheat, Thrill of the Hunt du Hunter,
+  Sacred Grace du Shepherd) va dans son propre sous-dossier `class/<nom>/<pool>/` avec son
+  propre `mod.typ`, importé via `#import "<pool>/mod.typ": *` depuis le mod.typ de la classe.
+- Les sous-classes vont dans `class/<nom>/subclasses/<sous_classe>/`, chacune avec son
+  `mod.typ` ; `class/<nom>/subclasses/mod.typ` agrège toutes les sous-classes ; le mod.typ de
+  la classe importe `subclasses/mod.typ`.
+- Chaque nouveau fichier doit être ajouté au `mod.typ` de son dossier (remonte en cascade
+  jusqu'à `class/mod.typ`) — nécessaire pour compiler/tester via `#nom_symbole`, même si
+  `export_cards.py` découvre les fichiers indépendamment par parcours du système de fichiers.
+- Noms de fichiers en snake_case dérivés du nom de la capacité, ponctuation retirée (ex:
+  "How'd YOU get here?!" → `how_you_get_here.typ`).
+
+## Éléments qu'on ne transforme JAMAIS en carte
+
+- Augmentations de stats pures ("+1 DEX or WIL", "Key/Secondary Stat Increase").
+- "Epic Boon. Choose an Epic Boon..." (placeholder, renvoie à un autre livre).
+- "Subclass. Gain your X subclass feature." (placeholder de niveau, pas une capacité en soi).
+- Toute capacité qui ne fait que débloquer des sorts (voir règle ci-dessus).
+
+## Vérification après création/édition
+
+Compiler avec un fichier wrapper jetable (jamais commité) qui importe le mod.typ concerné et
+référence les nouveaux symboles :
+`typst compile --root <racine_repo> fichier.typ sortie.pdf`
+puis supprimer le fichier jetable derrière soi. Pour un contrôle visuel, exporter en PNG à
+300ppi avec une page 63mm×88mm marge 0 (correspond au wrapper réel d'`export_cards.py`) et
+relire l'image.
+
+**Ne pas exporter de PNG systématiquement** — seulement si demandé, ou pour un contrôle de
+mise en page ponctuel quand la structure est vraiment nouvelle (nouveau champ, nouveau type de
+carte). Si l'utilisateur dit "je m'en charge" pour les exports, ne plus en faire jusqu'à
+nouvelle demande.
+
+## Rythme de collaboration
+
+L'utilisateur pilote le rythme explicitement : parfois "les deux suivantes", parfois "tout le
+reste d'un coup", parfois un seul élément nommé. Par défaut, suivre l'ordre des niveaux/pages
+du PDF, sauter les entrées qui ne deviennent pas des cartes (voir section ci-dessus). En cas
+d'ambiguïté sur "les deux suivantes" (ex: après plusieurs niveaux sans contenu carte),
+faire un choix raisonnable et avancer plutôt que de bloquer sur une question — l'utilisateur
+relit et corrige après coup plutôt que de valider en amont.
+
+**L'utilisateur édite fréquemment les fichiers juste après leur création** (reformulation,
+correction de kind/cost/limitation, nouveaux fichiers de mots-clés, simplification). Ces
+modifications arrivent en system-reminder ("modified by the user or a linter"). Ne jamais les
+annuler : elles deviennent la nouvelle vérité de base. Toujours relire le contenu actuel d'un
+fichier avant de le modifier à nouveau (ne pas se fier à une version obsolète en mémoire).
+
+## État des classes (voir aussi `git log` / le contenu réel de `class/` pour l'état exact)
+
+- **Berserker** : préexistant, pas touché en session.
+- **Cheat** (p.12-17) : COMPLET — niveaux de base 1-20, toutes les Underhanded Abilities, les
+  deux sous-classes (Scoundrel, Silent Blade).
+- **Hunter** (p.24-29 base+TotH, sous-classes après p.29) : COMPLET — niveaux de base, toutes
+  les Thrill of the Hunt, les deux sous-classes (Shadowpath, Wild Heart). Utilise
+  `hunter_keywords.typ` pour "Marked" (remplace la prose "quarry" du PDF).
+- **Shepherd** (p.48-53) : EN COURS — niveau 1 (Searing Light) fait, mécanique de mana faite
+  (`shepherd_mana_pool.typ`), Lifebinding Spirit (sort) + Spirit Companion (créature) faits,
+  1ère Sacred Grace faite (Assist Me, My Friend!). Reste : les ~7 autres Sacred Graces
+  (Empowered Companion, Guiding Spirit, Hasty Companion, Illuminate Soul, Light Bearer, Not
+  Beyond MY Reach, Vengeful Spirit), les sous-classes Shepherd (pas encore localisées dans le
+  PDF, après p.53).
+- **Mage, Commander, Oathsworn, Shadowmancer, Songweaver, Stormshifter, Zephyr, Extra
+  Subclasses** : pas commencés.
