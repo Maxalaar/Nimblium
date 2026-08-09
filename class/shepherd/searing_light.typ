@@ -12,8 +12,8 @@
         cost: ("1 Action",),
         limitation: "WIL/Safe Rest",
         effect: [
-            Heal WIL d8 HP to a #keyword_style[Dying] creature within Reach 6.\
-            Or inflict WIL d8 radiant damage to an undead or #keyword_style[Bloodied] enemy within Reach 6.
+            Heal WIL$times$d8 HP to a #keyword_style[Dying] creature within Reach 6.\
+            Or inflict WIL$times$d8 radiant damage to an undead or #keyword_style[Bloodied] enemy within Reach 6.
           ],
       ),
     ),

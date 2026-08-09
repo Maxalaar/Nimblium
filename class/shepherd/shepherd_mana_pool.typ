@@ -7,7 +7,7 @@
         "Shepherd",
     ),
     description: [
-      Your mana pool's maximum is equal to (WIL $times$ 3)+LVL and recharges on a Safe Rest.\
+      Your mana pool's maximum is equal to (WIL$times$3)+LVL and recharges on a Safe Rest.\
       \
       *Level 2:* Unlock tier 1 spells. You may now cast tier 1 spells and upcast spells at tier 1.\
       *Level 4:* Unlock tier 2 spells.\
