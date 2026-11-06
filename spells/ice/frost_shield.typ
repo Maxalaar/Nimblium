@@ -11,7 +11,7 @@
         "1 Action",
         "1 Mana",
     ),
-    reaction: "When attacked, Gain 2×KEY temp HP and Defend for free. The ice melts and these temp HP are lost at the start of your next turn.",
+    effect: "Once per round, when you are attacked, you may gain 2×KEY temp HP and Defend for free. The ice melts and these temp HP are lost at the start of your next turn.",
     upcast: "+2×KEY temp HP.",
 )
 

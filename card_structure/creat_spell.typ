@@ -25,9 +25,6 @@
   if "damage" in spell {
     data = data + (text(size: spell_text_size)[*Damage:* #spell.damage],)
   }
-  if "reaction" in spell {
-    data = data + (text(size: spell_text_size)[*Reaction:* #spell.reaction],)
-  }
   if "effect" in spell {
     data = data + (text(size: spell_text_size)[*Effect:* #spell.effect],)
   }
