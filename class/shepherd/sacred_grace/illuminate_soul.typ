@@ -10,8 +10,8 @@
     blocks: (
       (
         kind: "active",
-        cost: ("1 Action",),
-        limitation: "WIL/safe rest",
+        cost: (actions(1),),
+        limitation: per_safe_rest(WIL),
         effect: [Target a creature within 6 spaces. For 1 round, attacks against them are made with your choice of advantage or disadvantage.],
       ),
     ),

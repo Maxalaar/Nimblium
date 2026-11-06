@@ -10,7 +10,7 @@
     blocks: (
       (
         kind: "active",
-        limitation: "1/turn",
+        limitation: per_turn(1),
         effect: [After you hit, you may treat your next attack this turn as if you rolled that same amount instead of rolling again.],
       ),
     ),

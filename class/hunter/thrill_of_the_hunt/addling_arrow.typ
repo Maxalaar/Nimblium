@@ -5,12 +5,12 @@
     type: (
         "Ability",
         "Hunter",
-        "Thrill of the hunt"
+        thrill_of_the_hunt
     ),
     blocks: (
       (
         kind: "active",
-        cost: ("1 Action", "1 TotH charge"),
+        cost: (actions(1), toth_charges(1)),
         effect: [Attack with a ranged weapon. On its next turn, the target must attack the closest creature to it, chosen at random.],
       ),
     ),

@@ -8,7 +8,7 @@
         "Shadowpath",
     ),
     blocks: (
-      (kind: "passive", effect: [Whenever you #keyword_style[Mark] a creature, you may also mark another creature within 6 spaces of them.]),
+      (kind: "passive", effect: [Whenever you make a creature #kw_marked, you may also make another creature within 6 spaces of it #kw_marked.]),
     ),
     reminder: (hunter_keywords.marked,),
 )

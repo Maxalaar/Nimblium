@@ -8,11 +8,11 @@
         "Luminary of Mercy",
     ),
     blocks: (
-      (kind: "passive", effect: [When an effect caused by you heals a #keyword_style[Dying] creature, they are healed for twice as much.]),
+      (kind: "passive", effect: [When an effect caused by you heals a #kw_dying creature, they are healed for twice as much.]),
       (
         kind: "passive",
-        limitation: "1/round",
-        effect: [Your Spirit Companion can act for free while you are #keyword_style[Dying].],
+        limitation: per_round(1),
+        effect: [Your Spirit Companion can act for free while you are #kw_dying.],
       ),
     ),
     reminder: (conditions.dying,),

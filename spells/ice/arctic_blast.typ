@@ -9,13 +9,13 @@
         "AoE",
     ),
     cost: (
-        "2 Action",
-        "5 Mana",
+        actions(2),
+        mana(5),
     ),
     reach: "Cone 4",
     damage: "4d6+10",
-    effect: [This area is #keyword_style[difficult terrain] until the end of your next turn. Surviving creatures must make a STR save or be frozen in place (Restrained) until the end of their next turn; creatures already Hampered are Incapacitated for 1 turn instead.],
-    reminder: (keywords.difficult_terrain,),
+    effect: [This area is #kw_difficult_terrain until the end of your next turn. Surviving creatures that are already #kw_hampered are #kw_restrained until the end of their next turn.],
+    reminder: (keywords.difficult_terrain, conditions.hampered, conditions.restrained),
     upcast: "+1 Reach.",
 )
 

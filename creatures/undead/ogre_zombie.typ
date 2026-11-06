@@ -11,7 +11,7 @@
   ),
   active: (
     [
-      *Greatclub:*. 2 attaques. 1d4+8 damage. On crit: #keyword_style[Prone].
+      *Greatclub:*. 2 attaques. 1d4+8 damage. On crit: #kw_prone.
     ],
   ),
   hit_points: 45,

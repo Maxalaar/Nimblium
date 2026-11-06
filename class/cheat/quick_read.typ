@@ -7,8 +7,8 @@
         "Cheat",
     ),
     blocks: (
-      (kind: "narrative", limitation: "1/encounter", effect: [Gain advantage on an Assess check.]),
-      (kind: "narrative", limitation: "1/day", effect: [Gain advantage on an Examination check.]),
+      (kind: "narrative", limitation: per_encounter(1), effect: [Gain advantage on an Assess check.]),
+      (kind: "narrative", limitation: per_day(1), effect: [Gain advantage on an Examination check.]),
     ),
 )
 

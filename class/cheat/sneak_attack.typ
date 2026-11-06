@@ -9,7 +9,7 @@
     blocks: (
       (
         kind: "passive",
-        limitation: "1/turn",
+        limitation: per_turn(1),
         effect: [
             When you crit, deal +1d6 damage.\
             \

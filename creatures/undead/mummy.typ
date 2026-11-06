@@ -11,7 +11,7 @@
   ),
   active: (
     [
-      *Slam:*. 2 attaques. 1d4+8 damage. On crit: #keyword_style[Dazed].
+      *Slam:*. 2 attaques. 1d4+8 damage. On crit: #kw_dazed.
     ],
   ),
   hit_points: 55,

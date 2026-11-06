@@ -5,13 +5,13 @@
     type: (
         "Ability",
         "Hunter",
-        "Thrill of the hunt"
+        thrill_of_the_hunt
     ),
     blocks: (
       (
         kind: "active",
-        cost: ("3 Action", "1 TotH charge"),
-        effect: [Shoot a #keyword_style[Marked] creature. They are #keyword_style[Restrained] until they can escape DC 10+WIL.],
+        cost: (actions(3), toth_charges(1)),
+        effect: [Shoot a #kw_marked creature. They are #kw_restrained until they can escape #dc(10, stat: WIL).],
       ),
     ),
     reminder: (hunter_keywords.marked, conditions.restrained,),

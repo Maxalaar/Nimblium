@@ -8,7 +8,7 @@
         "Wild Heart",
     ),
     blocks: (
-      (kind: "passive", effect: [+5 max HP.]),
+      (kind: "passive", effect: [+5 max #HP.]),
       (kind: "passive", effect: [Upgrade your Hit Dice to d10s.]),
     ),
 )

@@ -9,11 +9,11 @@
     blocks: (
       (
         kind: "active",
-        cost: ("1 Action",),
-        limitation: "WIL/Safe Rest",
+        cost: (actions(1),),
+        limitation: per_safe_rest(WIL),
         effect: [
-            Heal WIL$times$d8 HP to a #keyword_style[Dying] creature within Reach 6.\
-            Or inflict WIL$times$d8 radiant damage to an undead or #keyword_style[Bloodied] enemy within Reach 6.
+            Heal #times(WIL, "d8") #HP to a #kw_dying creature within Reach 6.\
+            Or inflict #times(WIL, "d8") radiant damage to an undead or #kw_bloodied enemy within Reach 6.
           ],
       ),
     ),

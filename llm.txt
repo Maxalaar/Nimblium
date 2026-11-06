@@ -10,8 +10,44 @@ Générateur de cartes Typst pour un jeu de rôle basé sur le système **Nimble
 référence (texte des classes, sorts, capacités) provient de `nimble_documents/Heroes.pdf`.
 Chaque carte (capacité, sort, créature, mécanique) est un fichier `.typ` individuel, exporté
 en PDF/PNG via `export_cards.py` qui parcourt `class/`, `spells/`, `creatures/` et génère un
-PDF par fichier `.typ` trouvé (hors `mod.typ`, `passive_abilities.typ`, `raging.typ`). Pas
-besoin de maintenir de liste centrale : ajouter le fichier suffit pour qu'il soit exporté.
+PDF par fichier `.typ` trouvé (hors `mod.typ`, `passive_abilities.typ` et les fichiers
+`*_keywords.typ`). Pas besoin de maintenir de liste centrale : ajouter le fichier suffit pour
+qu'il soit exporté.
+
+## Ordre de priorité des règles
+
+1. Les décisions de l'utilisateur (règles maison, voir plus bas).
+2. Le changelog de la réimpression :
+   https://nimblerpg.com/blogs/news/core-rules-reprint-full-changelog
+3. Les PDF de `nimble_documents/`, qui datent d'AVANT ce changelog et ne peuvent pas être mis à
+   jour. Toute règle tirée d'un PDF doit donc être confrontée au changelog.
+
+Règles du changelog déjà appliquées :
+
+- **Defense** : la stat de héros "Armor" s'appelle "Defense" ; Defend réduit les dégâts de la
+  Defense. "Armor" désigne l'équipement porté et l'armure des monstres. Garder donc "ignoring
+  armor", Sunder Armor et la case `ARM` des créatures.
+- **Armure des monstres** : Medium = -5 dégâts, Heavy = -10 dégâts. Les crits l'ignorent toujours.
+- **Vulnerable** = +10 dégâts. **Resistant** = -10 dégâts.
+- **Hide** : Stealth DC 10 ; on ne reste plus caché après un kill que personne n'a vu.
+- **Conditions** : Blinded devient Blind ; Silenced est ajoutée ; elles ne se cumulent pas (une
+  créature a une condition ou ne l'a pas).
+- **Sorts défensifs** : 0 action, lançables uniquement pendant un Defend.
+- **Capacités** : les limites se réinitialisent à la FIN de ton tour.
+- **Sorts Fire et Ice** du dépôt : déjà alignés. Les autres écoles (Lightning, Wind, Radiant,
+  Necrotic) ont aussi des changements : relire le changelog avant de les créer.
+
+Règles maison, à ne pas "corriger" d'après le livre ou le changelog :
+
+- **Le mot "Reaction" n'existe plus sur les cartes** : c'est une action avec un déclencheur
+  "When...", un coût `actions(1)` et une limite `per_round(1)` (dans le texte des sorts : "Once per
+  round, ..."). Les actions se rechargent à la fin de ton tour, comme dans le livre.
+- **"For free"** : exprimé par l'absence de badge de coût. À garder seulement quand la capacité
+  annule le coût d'une autre action (Defend, Rage, Hunter's Mark, Hide...).
+- **Cover et Full Cover** : ne concernent que les attaques à distance ; "line of attack".
+- **Spirit Companion** : réserve de PV (Tier × 10) au lieu de charges de soin ; agit au contact.
+- **Créatures** : les valeurs par défaut (speed 6, peut subir des dégâts, disparaît à 0 PV) ne sont
+  pas écrites sur la carte.
 
 ## Extraction du texte source
 
@@ -40,10 +76,9 @@ besoin de maintenir de liste centrale : ajouter le fichier suffit pour qu'il soi
   `"passive"` (effet automatique/déclenché, pas de dépense d'action pour l'activer),
   `"narrative"` (avantage sur jets de compétence / flavor / roleplay — ex: Forager, Leave No
   Trace, Thieves' Cant, Keen Sight, Quick Read).
-- `cost` : tuple de tags affichés en badge, ex `("1 Action",)`, `("2 Action",)`,
-  `("1 TotH charge",)`, `("Reaction",)`.
-- `limitation` : tag affiché en badge, ex `"1/turn"`, `"1/encounter"`, `"1/day"`,
-  `"1/Safe Rest"`, `"2/round"`.
+- `cost` : tuple de tags affichés en badge, ex `(actions(1),)`, `(actions(2), toth_charges(1))`.
+- `limitation` : tag affiché en badge, ex `per_turn(1)`, `per_encounter(1)`, `per_day(1)`,
+  `per_safe_rest(WIL)`, `per_round(2)`.
 - **Progression par niveau** : si une capacité évolue avec le niveau (ex: Sneak Attack, Twist
   the Blade), intégrer les niveaux suivants comme lignes `*Level X:*` en gras DANS le même bloc
   d'effet, plutôt que créer plusieurs cartes. Voir `class/cheat/sneak_attack.typ`.
@@ -52,8 +87,8 @@ besoin de maintenir de liste centrale : ajouter le fichier suffit pour qu'il soi
   `misdirection.typ`, `apex_predator.typ`, `unparalleled_survivalist.typ`.
 - `type` : `("Ability", "<Classe>")` pour une capacité de base, avec un 3e élément pour un
   sous-groupe (subclass ou pool de choix), ex `("Ability","Cheat","Underhanded")`,
-  `("Ability","Cheat","Scoundrel")`, `("Ability","Hunter","Thrill of the hunt")` (attention,
-  minuscule établie sur "hunt"), `("Ability","Hunter","Shadowpath")`,
+  `("Ability","Cheat","Scoundrel")`, `("Ability","Hunter",thrill_of_the_hunt)`,
+  `("Ability","Hunter","Shadowpath")`,
   `("Ability","Shepherd","Sacred Grace")`.
 
 ### Mechanic (`creat_mechanic.typ`)
@@ -66,8 +101,8 @@ des tiers de sorts par niveau, avec le même style `*Level X:*` que `sneak_attac
 
 ### Spell (`creat_spell.typ`)
 
-Champs disponibles : `cost`, `concentration`, `range`, `reach`, `area`, `damage`, `reaction`,
-`effect`, `high_Levels`, `upcast`, `reminder`. `type` inclut école/tier, ex
+Champs disponibles : `cost`, `concentration`, `range`, `reach`, `area`, `damage`, `effect`,
+`high_Levels`, `upcast`, `reminder`. `type` inclut école/tier, ex
 `("Spell","Fire","Cantrip")`, `("Spell","Radiant","Tier 1")`.
 
 ### Creature (`creat_creature.typ`)
@@ -97,11 +132,35 @@ Voir `class/shepherd/lifebinding_spirit.typ` + `class/shepherd/spirit_companion.
 - Fichiers de mots-clés spécifiques à une classe : `class/berserker/berserker_keywords.typ`,
   `class/hunter/hunter_keywords.typ` (définit "Marked", qui remplace la prose "quarry" du PDF
   d'origine — vérifier son contenu actuel avant de le réutiliser).
-- Quand le texte d'une capacité référence un terme défini, l'entourer de
-  `#keyword_style[Mot]` (défini dans `style.typ`) et ajouter l'entrée correspondante dans le
-  tuple `reminder: (...)` de la carte pour qu'un rappel s'affiche en bas de carte.
+- Quand le texte d'une capacité référence un terme défini, utiliser sa fonction `#kw_...` de
+  `terms.typ` et ajouter l'entrée correspondante dans le tuple `reminder: (...)` de la carte pour
+  qu'un rappel s'affiche en bas de carte.
 - Ne pas inventer de reminder pour un terme non défini dans ces fichiers (ex: "Defend" n'a pas
   de définition, donc pas de reminder pour lui).
+
+## Vocabulaire : toujours passer par `terms.typ`
+
+Les termes de jeu ne s'écrivent jamais à la main : on appelle leur fonction ou constante, définie
+dans `terms.typ` et disponible partout via `global.typ`. Lancer `python3 check_terms.py` après
+chaque modification : il signale les formes écrites à la main.
+
+| Type | À écrire | Résultat |
+|---|---|---|
+| Coût | `actions(2)`, `mana(3)`, `toth_charges(1)`, `wounds(1)`, `fury_dice_cost("X")` | `2 Actions` |
+| Limite | `per_turn(1)`, `per_round(1)`, `per_encounter(1)`, `per_day(1)`, `per_safe_rest(WIL)` | `WIL/Safe Rest` |
+| Acronyme | `#STR #DEX #INT #WIL #KEY #LVL #HP #TotH` | `WIL` |
+| Terme | `#safe_rest #defense #speed #primary_die #thrill_of_the_hunt` | `Safe Rest` |
+| Mot-clé | `#kw_marked`, `#kw_raging`, `#kw_difficult_terrain`... | mot stylé |
+| Formule | `#times(WIL, "d8")`, `#times(2, DEX)`, `#dc(10)`, `#dc(10, stat: WIL)` | `WIL×d8`, `DC 10+WIL` |
+
+Pièges de syntaxe Typst :
+
+- Dans les champs de données (`cost`, `limitation`, `type`), pas de `#` : `actions(1)`, `WIL`.
+  Dans le texte entre `[...]`, avec `#` : `#WIL`, `#times(WIL, "d8")`.
+- Un texte qui utilise ces termes doit être entre `[...]`, pas entre guillemets.
+- `#STR-based` ne compile pas (le tiret fait partie du nom en Typst) : reformuler.
+- Les acronymes sont en majuscules car `str` et `int` sont des fonctions Typst. Les mots-clés ont
+  le préfixe `kw_` car `rage` et d'autres sont des noms de cartes.
 
 ## Style de rédaction formel
 
@@ -201,11 +260,7 @@ fichier avant de le modifier à nouveau (ne pas se fier à une version obsolète
 - **Hunter** (p.24-29 base+TotH, sous-classes après p.29) : COMPLET — niveaux de base, toutes
   les Thrill of the Hunt, les deux sous-classes (Shadowpath, Wild Heart). Utilise
   `hunter_keywords.typ` pour "Marked" (remplace la prose "quarry" du PDF).
-- **Shepherd** (p.48-53) : EN COURS — niveau 1 (Searing Light) fait, mécanique de mana faite
-  (`shepherd_mana_pool.typ`), Lifebinding Spirit (sort) + Spirit Companion (créature) faits,
-  1ère Sacred Grace faite (Assist Me, My Friend!). Reste : les ~7 autres Sacred Graces
-  (Empowered Companion, Guiding Spirit, Hasty Companion, Illuminate Soul, Light Bearer, Not
-  Beyond MY Reach, Vengeful Spirit), les sous-classes Shepherd (pas encore localisées dans le
-  PDF, après p.53).
+- **Shepherd** (p.48-53) : COMPLET — niveaux de base, toutes les Sacred Graces, les deux
+  sous-classes (Luminary of Mercy, Luminary of Malice).
 - **Mage, Commander, Oathsworn, Shadowmancer, Songweaver, Stormshifter, Zephyr, Extra
   Subclasses** : pas commencés.

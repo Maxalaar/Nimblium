@@ -1,7 +1,7 @@
 #import "../../../global.typ": *
 
 #let ability_data = (
-    name: "How’d YOU get here?!",
+    name: "How'd YOU get here?!",
     type: (
         "Ability",
         "Cheat",
@@ -10,8 +10,8 @@
     blocks: (
       (
         kind: "active",
-        cost: ("2 Action",),
-        effect: [Place yourself adjacent to a #keyword_style[Distracted] target within Reach 4. Make a melee attack against them. If you crit, you may place yourself within Reach 4.],
+        cost: (actions(2),),
+        effect: [Place yourself adjacent to a #kw_distracted target within Reach 4. Make a melee attack against them. If you crit, you may place yourself within Reach 4.],
       ),
     ),
     reminder: (keywords.distracted,),

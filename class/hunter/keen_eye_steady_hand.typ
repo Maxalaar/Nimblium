@@ -7,7 +7,7 @@
         "Hunter",
     ),
     blocks: (
-      (kind: "passive", effect: [Add WIL to your ranged weapon damage.]),
+      (kind: "passive", effect: [Add #WIL to your ranged weapon damage.]),
     ),
 )
 

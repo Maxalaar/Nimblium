@@ -9,7 +9,7 @@
     blocks: (
       (
         kind: "narrative",
-        limitation: "1/safe rest",
+        limitation: per_safe_rest(1),
         effect: [When faced with a decision about which direction or course of action to take, you can call upon your ancestors to guide you toward the most dangerous or challenging path.],
       ),
     ),

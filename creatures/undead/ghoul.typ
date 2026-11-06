@@ -11,7 +11,7 @@
   ),
   active: (
     [
-      *Sickening Claw:* 1d4+8 damage. On damage: #keyword_style[Dazed].
+      *Sickening Claw:* 1d4+8 damage. On damage: #kw_dazed.
     ],
   ),
   hit_points: 20,

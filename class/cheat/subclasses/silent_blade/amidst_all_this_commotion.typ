@@ -10,7 +10,7 @@
     blocks: (
       (
         kind: "passive",
-        effect: [If a creature dies while you Sneak Attack, you may turn #keyword_style[Invisible] until you attack again or until the beginning of your next turn.],
+        effect: [If a creature dies while you Sneak Attack, you may turn #kw_invisible until you attack again or until the beginning of your next turn.],
       ),
     ),
     reminder: (conditions.invisible,),

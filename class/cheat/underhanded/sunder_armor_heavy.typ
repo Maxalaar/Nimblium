@@ -10,7 +10,7 @@
     blocks: (
       (
         kind: "active",
-        cost: ("1 Action",),
+        cost: (actions(1),),
         effect: [Requires Sunder Armor Medium. When you crit an enemy with heavy armor, until the start of your next turn, all melee attacks against that target ignore its armor.],
       ),
     ),

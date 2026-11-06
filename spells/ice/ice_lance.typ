@@ -8,11 +8,11 @@
         "Cantrip",
     ),
     cost: (
-        "1 Action",
+        actions(1),
     ),
     range: "12",
     damage: "1d6",
-    effect: [On hit: #keyword_style[Slowed].],
+    effect: [On hit: #kw_slowed.],
     high_Levels: "+3 damage every 5 levels.",
     reminder: (conditions.slowed,)
 )

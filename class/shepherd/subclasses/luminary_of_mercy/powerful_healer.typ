@@ -10,8 +10,8 @@
     blocks: (
       (
         kind: "passive",
-        limitation: "WIL/Safe Rest",
-        effect: [Whenever you would roll dice to heal damage, you may instead heal the max amount you could roll, or give that many temp HP.],
+        limitation: per_safe_rest(WIL),
+        effect: [Whenever you would roll dice to heal damage, you may instead heal the max amount you could roll, or give that many temp #HP.],
       ),
     ),
 )

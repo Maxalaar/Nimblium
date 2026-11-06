@@ -11,7 +11,7 @@
   ),
   active: (
     [
-      *Deathly Touch:* 1d4 damage. On damage: set HP to 0.
+      *Deathly Touch:* 1d4 damage. On damage: set #HP to 0.
     ],
   ),
   hit_points: 30,

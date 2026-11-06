@@ -8,12 +8,13 @@
         "Tier 2",
     ),
     cost: (
-        "1 Action",
-        "2 Mana",
+        actions(1),
+        mana(2),
     ),
     concentration: "Up to 1 minute.",
-    effect: [A weapon you touch is enchanted with magical flame. It deals +KEY damage and inflicts #keyword_style[Smoldering] on crit.],
-    upcast: "+KEY damage.",
+    reach: "8",
+    effect: [A weapon within Reach is enchanted with magical flame. It deals +#KEY damage and inflicts #kw_smoldering on crit.],
+    upcast: [+#KEY damage.],
     reminder: (conditions.smoldering,)
 )
 

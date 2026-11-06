@@ -5,13 +5,13 @@
     type: (
         "Ability",
         "Hunter",
-        "Thrill of the hunt"
+        thrill_of_the_hunt
     ),
     blocks: (
       (
         kind: "active",
-        cost: ("1 Action", "1 TotH charge"),
-        effect: [Attack with a ranged weapon at half the weapon's range, add WIL $times$ d8 fire damage.],
+        cost: (actions(1), toth_charges(1)),
+        effect: [Attack with a ranged weapon at half the weapon's range, add #times(WIL, "d8") fire damage.],
       ),
     ),
 )

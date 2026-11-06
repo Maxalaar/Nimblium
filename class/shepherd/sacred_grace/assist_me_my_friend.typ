@@ -10,7 +10,7 @@
     blocks: (
       (
         kind: "passive",
-        limitation: "1/round",
+        limitation: per_round(1),
         effect: [On your melee attack, if your Spirit Companion is within 6 spaces of the target, it also attacks the target, even if not in contact.]),
     ),
 )

@@ -10,8 +10,8 @@
     blocks: (
       (
         kind: "passive",
-        limitation: "1/safe rest",
-        effect: [When you would drop to 0 HP or gain a Wound, you don't. Instead, you turn #keyword_style[Invisible] for 1 minute or until you attack.],
+        limitation: per_safe_rest(1),
+        effect: [When you would drop to 0 #HP or gain a Wound, you don't. Instead, you turn #kw_invisible for 1 minute or until you attack.],
       ),
     ),
     reminder: (conditions.invisible,),

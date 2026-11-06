@@ -8,8 +8,8 @@
         "Tier 1",
     ),
     cost: (
-        "1 Action",
-        "1 Mana",
+        actions(1),
+        mana(1),
     ),
     effect: [
         Summon your Spirit Companion. It lasts until you cast this spell again.

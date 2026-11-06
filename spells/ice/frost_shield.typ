@@ -8,11 +8,10 @@
         "Tier 1",
     ),
     cost: (
-        "1 Action",
-        "1 Mana",
+        mana(1),
     ),
-    effect: "Once per round, when you are attacked, you may gain 2×KEY temp HP and Defend for free. The ice melts and these temp HP are lost at the start of your next turn.",
-    upcast: "+2×KEY temp HP.",
+    effect: [Once per round, you may cast this spell while Defending. Gain #times(2, KEY) temp #HP. The ice melts and these temp #HP are lost at the start of your next turn.],
+    upcast: [+#times(2, KEY) temp #HP.],
 )
 
 #let frost_shield = creat_spell(spell_data)

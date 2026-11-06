@@ -10,10 +10,10 @@
     blocks: (
       (
         kind: "passive",
-        limitation: "1/round",
-        effect: [Your first melee attack against a #keyword_style[Bloodied] creature is an automatic critical hit.],
+        limitation: per_round(1),
+        effect: [Your first melee attack against a #kw_bloodied creature is an automatic critical hit.],
       ),
-      (kind: "passive", effect: [Your Spirit Companion deals additional damage equal to your STR.]),
+      (kind: "passive", effect: [Your Spirit Companion deals additional damage equal to your #STR.]),
     ),
     reminder: (conditions.bloodied,),
 )

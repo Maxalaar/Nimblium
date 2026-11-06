@@ -7,8 +7,8 @@
         "Hunter",
     ),
     blocks: (
-      (kind: "passive", effect: [+2 speed.]),
-      (kind: "passive", effect: [Gain a climbing speed.]),
+      (kind: "passive", effect: [+2 #speed.]),
+      (kind: "passive", effect: [Gain a climbing #speed.]),
     ),
 )
 

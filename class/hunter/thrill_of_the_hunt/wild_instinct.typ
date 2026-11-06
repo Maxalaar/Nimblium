@@ -5,13 +5,13 @@
     type: (
         "Ability",
         "Hunter",
-        "Thrill of the hunt"
+        thrill_of_the_hunt
     ),
     blocks: (
       (
         kind: "active",
-        limitation: "1/round",
-        effect: [If you have no TotH charges, assess with advantage.],
+        limitation: per_round(1),
+        effect: [If you have no #TotH charges, assess with advantage.],
       ),
     ),
 )

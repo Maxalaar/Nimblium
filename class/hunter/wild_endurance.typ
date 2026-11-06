@@ -7,7 +7,7 @@
         "Hunter",
     ),
     blocks: (
-      (kind: "passive", effect: [Gain 1 TotH charge at the start of your turns.]),
+      (kind: "passive", effect: [Gain 1 #TotH charge at the start of your turns.]),
     ),
 )
 

@@ -13,7 +13,7 @@
     ),
     ability: (
         [
-            *Bite & Stab:* 2 attaques. 1d6+2 damage. On crit: #keyword_style[Prone].
+            *Bite & Stab:* 2 attaques. 1d6+2 damage. On crit: #kw_prone.
         ],
     ),
     reminder: (conditions.prone,),

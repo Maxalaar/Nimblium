@@ -5,13 +5,13 @@
     type: (
         "Ability",
         "Hunter",
-        "Thrill of the hunt"
+        thrill_of_the_hunt
     ),
     blocks: (
       (
         kind: "active",
-        cost: ("2 Action", "1 TotH charge"),
-        effect: [Shoot all creatures within a 3$times$3 area at half the weapon's range. Their speed is halved until the end of their next turn.],
+        cost: (actions(2), toth_charges(1)),
+        effect: [Shoot all creatures within a #times(3, 3) area at half the weapon's range. Their #speed is halved until the end of their next turn.],
       ),
     ),
 )

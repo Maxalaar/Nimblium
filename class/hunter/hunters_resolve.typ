@@ -7,7 +7,7 @@
         "Hunter",
     ),
     blocks: (
-      (kind: "passive", effect: [Whenever you have no TotH charges, treat all creatures as #keyword_style[marked] for movement and melee attacks.]),
+      (kind: "passive", effect: [Whenever you have no #TotH charges, treat all creatures as #kw_marked for movement and melee attacks.]),
     ),
     reminder: (hunter_keywords.marked,),
 )

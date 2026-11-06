@@ -5,13 +5,13 @@
     type: (
         "Ability",
         "Hunter",
-        "Thrill of the hunt"
+        thrill_of_the_hunt
     ),
     blocks: (
       (
         kind: "active",
-        cost: ("1 Action", "1 TotH charge"),
-        effect: [When you Defend, the attack targeting you misses, and you may move up to half your speed.],
+        cost: (actions(1), toth_charges(1)),
+        effect: [When you Defend, the attack targeting you misses, and you may move up to half your #speed.],
       ),
     ),
 )

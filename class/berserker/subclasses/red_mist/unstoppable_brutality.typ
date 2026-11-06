@@ -8,7 +8,7 @@
         "Red Mist",
     ),
     blocks: (
-      (kind: "passive", effect: [While #keyword_style[Raging], you may gain 1 Wound to reroll any attack or save.]),
+      (kind: "passive", effect: [While #kw_raging, you may gain 1 Wound to reroll any attack or save.]),
     ),
     reminder: (berserker_keywords.raging,),
 )

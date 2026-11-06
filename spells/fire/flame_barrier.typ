@@ -6,13 +6,13 @@
         "Spell",
         "Fire",
         "Tier 3",
+        "AoE",
     ),
     cost: (
-        "1 Action",
-        "3 Mana",
+        mana(3),
     ),
-    effect: [Once per round, when you are attacked, you may Defend for free. Until the start of your next turn, melee attackers against you take KEY damage (ignoring armor) and gain #keyword_style[Smoldering].],
-    upcast: "+KEY damage.",
+    effect: [Once per round, you may cast this spell while Defending. Until the start of your next turn, whenever you are attacked in melee, all creatures within Reach 1 take #KEY damage and gain #kw_smoldering.],
+    upcast: [+#KEY damage or +1 Reach.],
     reminder: (conditions.smoldering,)
 )
 

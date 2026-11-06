@@ -5,13 +5,13 @@
     type: (
         "Ability",
         "Hunter",
-        "Thrill of the hunt"
+        thrill_of_the_hunt
     ),
     blocks: (
       (
         kind: "active",
-        cost: ("1 Action", "1 TotH charge"),
-        effect: [Attack a target. It is #keyword_style[Taunted] by you until the end of its next turn.],
+        cost: (actions(1), toth_charges(1)),
+        effect: [Attack a target. It is #kw_taunted by you until the end of its next turn.],
       ),
     ),
     reminder: (conditions.taunted,),

@@ -10,9 +10,9 @@
     blocks: (
       (
         kind: "active",
-        cost: ("1 Action",),
-        limitation: "1/round",
-        effect: [While #keyword_style[Raging], you can make opportunity attacks without disadvantage, including whenever an enemy enters your melee weapon's reach.],
+        cost: (actions(1),),
+        limitation: per_round(1),
+        effect: [While #kw_raging, you can make opportunity attacks without disadvantage, including whenever an enemy enters your melee weapon's reach.],
       ),
     ),
     reminder: (berserker_keywords.raging,),

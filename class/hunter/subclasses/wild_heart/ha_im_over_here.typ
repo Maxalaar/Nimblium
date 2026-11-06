@@ -10,8 +10,8 @@
     blocks: (
       (
         kind: "passive",
-        limitation: "1/safe rest",
-        effect: [If an attack would cause you to drop to 0 HP, you instead move up to your speed and take no damage.],
+        limitation: per_safe_rest(1),
+        effect: [If an attack would cause you to drop to 0 #HP, you instead move up to your #speed and take no damage.],
       ),
     ),
 )

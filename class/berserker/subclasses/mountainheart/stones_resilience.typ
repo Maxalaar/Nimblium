@@ -1,7 +1,7 @@
 #import "../../../../global.typ": *
 
 #let ability_data = (
-    name: "Stone’s Resilience",
+    name: "Stone's Resilience",
     type: (
         "Ability",
         "Berserker",

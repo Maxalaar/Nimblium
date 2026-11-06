@@ -10,7 +10,7 @@
     blocks: (
       (
         kind: "active",
-        limitation: "1/encounter",
+        limitation: per_encounter(1),
         effect: [Your weapon attacks ignore cover and armor this turn.],
       ),
     ),

@@ -8,8 +8,8 @@
         "Tier 1",
     ),
     cost: (
-        "2 Action",
-        "1 Mana",
+        actions(2),
+        mana(1),
     ),
     range: "8",
     damage: "4d10",

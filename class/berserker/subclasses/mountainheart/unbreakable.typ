@@ -10,8 +10,8 @@
     blocks: (
       (
         kind: "passive",
-        limitation: "1/encounter",
-        effect: [While #keyword_style[Raging], if you would suffer your last Wound or other negative condition of your choice, you don’t.],
+        limitation: per_encounter(1),
+        effect: [While #kw_raging, if you would suffer your last Wound or other negative condition of your choice, you don't.],
       ),
     ),
     reminder: (berserker_keywords.raging,),

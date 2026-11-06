@@ -10,8 +10,8 @@
     blocks: (
       (
         kind: "passive",
-        limitation: "1/turn",
-        effect: [While #keyword_style[Raging], whenever you crit or kill an enemy, change 1 Fury Die to the maximum.],
+        limitation: per_turn(1),
+        effect: [While #kw_raging, whenever you crit or kill an enemy, change 1 Fury Die to the maximum.],
       ),
     ),
     reminder: (berserker_keywords.raging,),

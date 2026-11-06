@@ -9,8 +9,8 @@
     blocks: (
       (
         kind: "active",
-        cost: ("1 Action", "1 TotH charge"),
-        effect: [Make a melee attack against a #keyword_style[Bloodied] #keyword_style[Marked] creature. Turn it into a crit and double the damage of your Hunter's Mark. If they survive, they crit you back.],
+        cost: (actions(1), toth_charges(1)),
+        effect: [Make a melee attack against a #kw_bloodied #kw_marked creature. Turn it into a crit and double the damage of your Hunter's Mark. If they survive, they crit you back.],
       ),
     ),
     reminder: (hunter_keywords.marked, conditions.bloodied,),

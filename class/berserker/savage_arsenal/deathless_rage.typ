@@ -10,9 +10,9 @@
     blocks: (
       (
         kind: "active",
-        cost: ("1 Wound",),
-        limitation: "1/turn",
-        effect: [While #keyword_style[Dying], gain 1 action.],
+        cost: (wounds(1),),
+        limitation: per_turn(1),
+        effect: [While #kw_dying, gain 1 action.],
       ),
     ),
     reminder: (conditions.dying,),

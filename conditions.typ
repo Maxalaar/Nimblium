@@ -1,11 +1,13 @@
+#import "terms.typ": *
+
 #let conditions = (
-  asleep: [*Asleep:* This creature is Incapacitated until two of its turns have passed, until it takes damage, or until an ally spends 1 action to wake it.],
-  blinded: [*Blinded:* This creature can't see. Attacks against it have advantage. Its attacks have disadvantage.],
-  bloodied: [*Bloodied:* This creature is at half its max HP or less.],
+  asleep: [*Asleep:* This creature is Incapacitated until two of its turns have passed or until it takes damage.],
+  blind: [*Blind:* This creature can't see. Attacks against it have advantage. Its attacks have disadvantage.],
+  bloodied: [*Bloodied:* This creature is at half its max #HP or less.],
   charmed: [*Charmed:* This creature treats the charmer as an ally. The charmer has advantage on social interactions with it.],
   dazed: [*Dazed:* If this creature is a hero, it loses 1 action. If it is a monster, it has 1 fewer action on its next turn.],
-  dying: [*Dying:* This creature can't have more than 1 action per turn and can't concentrate. Whenever it attacks or casts a spell, it gains 1 Wound unless it succeeds on a DC 10 STR save. Whenever it takes damage, it gains 2 Wounds, or 3 on a critical hit.],
-  frightened: [*Frightened:* This creature has disadvantage on rolls while the source of its fear is nearby. Its speed is halved while it moves closer to that source.],
+  dying: [*Dying:* This creature can't have more than 1 action per turn and can't concentrate. Whenever it attacks or casts a spell, it gains 1 Wound unless it succeeds on a #dc(10) #STR save. Whenever it takes damage, it gains 2 Wounds, or 3 on a critical hit.],
+  frightened: [*Frightened:* This creature has disadvantage on rolls while the source of its fear is nearby. Its #speed is halved while it moves closer to that source.],
   grappled: [*Grappled:* This creature can't move. Attacks against it have advantage.],
   restrained: [*Restrained:* This creature can't move. Attacks against it have advantage.],
   hampered: [*Hampered:* This creature's actions or movement are reduced, for example by Dazed, Grappled, Prone, or Difficult Terrain.],
@@ -15,8 +17,9 @@
   poisoned: [*Poisoned:* This creature has disadvantage on rolls.],
   prone: [*Prone:* This creature's movement costs twice as much. Its attacks have disadvantage. Melee attacks against it have advantage. Ranged attacks against it have disadvantage. It may spend 3 spaces of movement to stand up.],
   riding: [*Riding:* This creature moves with its mount. Attacks that miss it hit its mount instead.],
-  slowed: [*Slowed:* This creature's speed is halved during its next turn.],
+  slowed: [*Slowed:* This creature's #speed is halved during its next turn.],
   taunted: [*Taunted:* This creature has disadvantage on attacks, except against its most recent taunter.],
   wounded: [*Wounded:* This creature has at least 1 Wound. A hero typically dies at 6 Wounds.],
+  silenced: [*Silenced:* This creature can't cast spells or use abilities that require speaking.],
   smoldering: [*Smoldering:* This condition has no effect on its own. Some spells and abilities have additional effects against Smoldering creatures.],
 )

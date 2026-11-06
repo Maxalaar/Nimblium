@@ -9,8 +9,8 @@
     blocks: (
       (
         kind: "active",
-        cost: ("1 Action",),
-        effect: [If you have no TotH charges, move up to your speed toward a #keyword_style[Marked] creature. If you end adjacent to them, make a melee attack against them.],
+        cost: (actions(1),),
+        effect: [If you have no #TotH charges, move up to your #speed toward a #kw_marked creature. If you end adjacent to them, make a melee attack against them.],
       ),
     ),
     reminder: (hunter_keywords.marked,),

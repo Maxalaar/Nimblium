@@ -10,8 +10,8 @@
     blocks: (
       (
         kind: "active",
-        cost: ("2 Actions",),
-        effect: [Attack ALL targets within your melee weapon’s reach.],
+        cost: (actions(2),),
+        effect: [Attack ALL targets within your melee weapon's reach.],
       ),
     ),
 )

@@ -1,14 +1,14 @@
 #import "../../../global.typ": *
 
 #let ability_data = (
-    name: "I’m Outta Here!",
+    name: "I'm Outta Here!",
     type: (
         "Ability",
         "Cheat",
         "Underhanded",
     ),
     blocks: (
-      (kind: "passive", effect: [When an ally within 4 spaces is crit, you may turn #keyword_style[Invisible] until the end of your next turn and then move up to half your speed.]),
+      (kind: "passive", effect: [When an ally within 4 spaces is crit, you may turn #kw_invisible until the end of your next turn and then move up to half your #speed.]),
     ),
     reminder: (conditions.invisible,),
 )

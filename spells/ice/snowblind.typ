@@ -8,13 +8,13 @@
         "Cantrip",
     ),
     cost: (
-        "1 Action",
+        actions(1),
     ),
     range: "1",
     damage: "1d6",
-    effect: [On hit: #keyword_style[Blinded] until the end of their next turn.],
+    effect: [On hit: #kw_blind until the end of their next turn.],
     high_Levels: "+3 damage every 5 levels.",
-    reminder: (conditions.blinded,)
+    reminder: (conditions.blind,)
 )
 
 #let snowblind = creat_spell(spell_data)

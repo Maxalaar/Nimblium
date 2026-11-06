@@ -7,7 +7,7 @@
         "Berserker",
     ),
     blocks: (
-      (kind: "passive", effect: [When you are attacked, you may expend X Fury Dice to reduce the damage taken by X $times$ (STR + DEX).]),
+      (kind: "passive", effect: [When you are attacked, you may expend X Fury Dice to reduce the damage taken by #times("X", [(#STR + #DEX)]).]),
     ),
 )
 

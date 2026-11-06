@@ -5,13 +5,13 @@
     type: (
         "Ability",
         "Hunter",
-        "Thrill of the hunt"
+        thrill_of_the_hunt
     ),
     blocks: (
       (
         kind: "active",
-        cost: ("1 Action", "1 TotH charge"),
-        effect: [If you have not moved this turn and a #keyword_style[Marked] creature is 4 or more spaces away, attack them for double damage.],
+        cost: (actions(1), toth_charges(1)),
+        effect: [If you have not moved this turn and a #kw_marked creature is 4 or more spaces away, attack them for double damage.],
       ),
     ),
     reminder: (hunter_keywords.marked,),

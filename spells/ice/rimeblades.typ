@@ -9,13 +9,13 @@
         "AoE",
     ),
     cost: (
-        "3 Action",
-        "4 Mana",
+        actions(3),
+        mana(4),
     ),
     concentration: "Up to 1 minute.",
     reach: "12",
     damage: "2d6",
-    effect: [Conjure razor-sharp icy spikes in 5 contiguous spaces within Reach; this area is #keyword_style[difficult terrain]. Creatures that enter these spaces or who are in the area when you conjure them, suffer damage for each space they touch.],
+    effect: [Conjure razor-sharp icy spikes in 5 contiguous spaces within Reach; this area is #kw_difficult_terrain. Creatures that enter these spaces or who are in the area when you conjure them, suffer damage for each space they touch.],
     upcast: "+1 space, +1 damage.",
     reminder: (keywords.difficult_terrain,),
 )

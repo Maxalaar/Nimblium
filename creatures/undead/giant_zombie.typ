@@ -11,7 +11,7 @@
   ),
   active: (
     [
-      *Decaying Swipe:*. 2 attaques. 1d4+10 damage. On damage: knockback Primary Die spaces.
+      *Decaying Swipe:*. 2 attaques. 1d4+10 damage. On damage: knockback #primary_die spaces.
     ],
   ),
   hit_points: 75,

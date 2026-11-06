@@ -10,7 +10,7 @@
     blocks: (
       (
         kind: "active",
-        cost: ("1 Action",),
+        cost: (actions(1),),
         effect: [When you crit an enemy with medium armor, until the start of your next turn, all melee attacks against that target ignore its armor.],
       ),
     ),

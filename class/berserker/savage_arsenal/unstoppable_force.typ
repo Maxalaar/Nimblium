@@ -8,7 +8,7 @@
         "Savage Arsenal",
     ),
     blocks: (
-      (kind: "passive", effect: [While #keyword_style[Dying] and #keyword_style[Raging], taking damage causes 1 Wound, and critical hits inflict 2 Wounds.]),
+      (kind: "passive", effect: [While #kw_dying and #kw_raging, taking damage causes 1 Wound, and critical hits inflict 2 Wounds.]),
     ),
     reminder: (conditions.dying, berserker_keywords.raging),
 )

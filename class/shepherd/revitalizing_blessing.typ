@@ -9,7 +9,7 @@
     blocks: (
       (
         kind: "passive",
-        limitation: "1/round",
+        limitation: per_round(1),
         effect: [Whenever you roll a 6 or higher on one or more healing dice, the target may recover 1 Wound.],
       ),
     ),

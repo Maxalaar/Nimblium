@@ -7,7 +7,7 @@
         "Hunter",
     ),
     blocks: (
-      (kind: "passive", effect: [You can Defend against a #keyword_style[Marked] creature for free.]),
+      (kind: "passive", effect: [You can Defend against a #kw_marked creature for free.]),
     ),
     reminder: (hunter_keywords.marked,),
 )

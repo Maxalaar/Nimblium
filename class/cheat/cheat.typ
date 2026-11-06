@@ -7,8 +7,8 @@
         "Cheat",
     ),
     blocks: (
-      (kind: "active", limitation: "1/round", effect: [You may Move or #keyword_style[Hide] for free.]),
-      (kind: "active", limitation: "1/day", effect: [You may change any skill check result to 10+INT.]),
+      (kind: "active", limitation: per_round(1), effect: [You may Move or #kw_hide for free.]),
+      (kind: "active", limitation: per_day(1), effect: [You may change any skill check result to 10+#INT.]),
       (kind: "passive", effect: [If you roll less than 10 on Initiative, you may change it to 10 instead.]),
       (kind: "narrative", effect: [You may gain advantage on skill checks while playing any games, competitions, or placing wagers.]),
     ),

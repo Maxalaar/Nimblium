@@ -9,10 +9,10 @@
     blocks: (
       (
         kind: "active",
-        cost: ("1 Action",),
-        limitation: "1/turn",
+        cost: (actions(1),),
+        limitation: per_turn(1),
         effect: [
-          Roll a Fury Die and you become #keyword_style[Raging].\
+          Roll a Fury Die and you become #kw_raging.\
           *Level 5:* Roll 2 Fury Dice instead.\
         ],
       ),

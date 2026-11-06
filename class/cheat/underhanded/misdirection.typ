@@ -8,7 +8,7 @@
         "Underhanded",
     ),
     blocks: (
-      (kind: "passive", effect: [Gain INT in DEF.]),
+      (kind: "passive", effect: [Gain #INT #defense.]),
       (kind: "passive", effect: [Whenever you Defend, you may halve the damage instead.]),
     ),
 )

@@ -8,7 +8,7 @@
         "Silent Blade",
     ),
     blocks: (
-      (kind: "narrative", effect: [Gain a climbing speed and advantage on Stealth checks.]),
+      (kind: "narrative", effect: [Gain a climbing #speed and advantage on Stealth checks.]),
     ),
 )
 

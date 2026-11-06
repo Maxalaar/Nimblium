@@ -9,9 +9,9 @@
     ),
     blocks: (
       (
-        kind: "passive",
-        limitation: "1/encounter",
-        effect: [Attacks you make this round don't miss, you crit on 1 less than normally needed, and you gain LVL temp HP.],
+        kind: "active",
+        limitation: per_encounter(1),
+        effect: [Attacks you make this round don't miss, you crit on 1 less than normally needed, and you gain #LVL temp #HP.],
       ),
     ),
 )

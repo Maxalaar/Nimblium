@@ -8,11 +8,11 @@
         "Cantrip",
     ),
     cost: (
-        "1 Action",
+        actions(1),
     ),
     range: "4",
-    effect: "Give an ally within Range an extra action. Spend 1 mana to cast this when it is not your turn.",
-    high_Levels: "+1 Range every 5 levels.",
+    effect: "Once per round, give an ally within Range an extra action. Spend 1 mana to cast this when it is not your turn.",
+    high_Levels: "+2 Range every 5 levels.",
 )
 
 #let hearts_fire = creat_spell(spell_data)

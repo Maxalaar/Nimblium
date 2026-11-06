@@ -9,8 +9,8 @@
     blocks: (
       (
         kind: "passive",
-        limitation: "1/turn",
-        effect: [When you hit a #keyword_style[Distracted] target with a melee attack, you may change the Primary Die roll to whatever you like. Changing it to the max value counts as a crit.],
+        limitation: per_turn(1),
+        effect: [When you hit a #kw_distracted target with a melee attack, you may change the #primary_die roll to whatever you like. Changing it to the max value counts as a crit.],
       ),
     ),
     reminder: (keywords.distracted,),

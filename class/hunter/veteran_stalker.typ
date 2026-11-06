@@ -7,7 +7,7 @@
         "Hunter",
     ),
     blocks: (
-      (kind: "passive", effect: [Gain a TotH charge whenever you are first #keyword_style[Bloodied] in an encounter and for every Wound you gain.]),
+      (kind: "passive", effect: [Gain a #TotH charge whenever you are first #kw_bloodied in an encounter and for every Wound you gain.]),
     ),
     reminder: (conditions.bloodied,),
 )

@@ -9,11 +9,11 @@
         "AoE",
     ),
     cost: (
-        "3 Action",
-        "9 Mana",
+        actions(3),
+        mana(9),
     ),
     reach: "12",
-    effect: [Choose any number of objects or willing creatures within Reach to encase in ice. They are #keyword_style[Incapacitated] and immune to damage and negative effects until the start of their next turn. All other creatures and objects within Reach take #keyword_style[d66] damage. Any surviving creature who took this damage must make a STR save or be #keyword_style[Incapacitated] for 1 round. Once you cast this spell, you must Safe Rest for 1 week before using it again.],
+    effect: [Choose any number of targets within Reach to encase in ice. They are immune to damage and negative effects until the start of their next turn. All other creatures and objects within Reach take #kw_d66 damage. Any surviving creature who took this damage must make a #STR save or be #kw_incapacitated for 1 round. Once you cast this spell, you must #safe_rest for 1 week before using it again.],
     reminder: (conditions.incapacitated, keywords.d66),
 )
 
