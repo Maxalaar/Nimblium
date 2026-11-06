@@ -10,10 +10,9 @@
       (
         kind: "active",
         cost: ("1 Action",),
-        limitation: ("1/turn"),
         effect: [
             Change one of your Sneak Attack dice to whatever you like.\
-            *Level 13:* You can Twist the Blade for free.
+            *Level 13:* Once per turn, you can Twist the Blade for free.
           ],
       ),
     ),

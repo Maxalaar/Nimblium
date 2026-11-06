@@ -8,7 +8,11 @@
         "Underhanded",
     ),
     blocks: (
-      (kind: "passive", effect: [When you crit an enemy with medium armor, until the start of your next turn, all melee attacks against that target ignore its armor.]),
+      (
+        kind: "active",
+        cost: ("1 Action",),
+        effect: [When you crit an enemy with medium armor, until the start of your next turn, all melee attacks against that target ignore its armor.],
+      ),
     ),
 )
 

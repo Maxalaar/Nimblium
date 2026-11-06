@@ -11,7 +11,7 @@
       (
         kind: "active",
         cost: ("1 Action", "1 TotH charge"),
-        effect: [Attack a target, this attack cannot miss. The target is #keyword_style[Taunted] by you until the end of their next turn.],
+        effect: [Attack a target. It is #keyword_style[Taunted] by you until the end of its next turn.],
       ),
     ),
     reminder: (conditions.taunted,),

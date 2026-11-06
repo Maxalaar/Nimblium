@@ -12,7 +12,9 @@
       • You hit a #keyword_style[Marked] creature in melee.\
       • You crit a #keyword_style[Marked] creature at range.\
       • A #keyword_style[Marked] creature dies.\
-      Unused charges are lost when combat ends.
+      Unused charges are lost when combat ends.\
+      Thrill of the Hunt abilities cannot miss.\
+      Abilities that spend charges cannot generate new ones.
     ],
     reminder: (hunter_keywords.marked,),
 )

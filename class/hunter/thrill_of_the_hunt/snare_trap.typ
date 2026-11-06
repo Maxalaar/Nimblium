@@ -10,8 +10,9 @@
     blocks: (
       (
         kind: "active",
-        cost: ("1 TotH charge",),
-        effect: [Target a creature that moves adjacent to you or an ally within 6 spaces. Move them back 1 space. They are #keyword_style[Restrained] until they can escape DC 10+WIL.],
+        cost: ("1 Action", "1 TotH charge"),
+        limitation: "1/encounter",
+        effect: [When a creature moves adjacent to you or to an ally within 6 spaces, move it back 1 space. It is #keyword_style[Restrained] until it escapes with a DC 10+WIL check.],
       ),
     ),
     reminder: (conditions.restrained,),

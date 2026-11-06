@@ -12,9 +12,10 @@
         kind: "active",
         cost: ("1 Wound",),
         limitation: "1/turn",
-        effect: [Gain 1 action.],
+        effect: [While #keyword_style[Dying], gain 1 action.],
       ),
     ),
+    reminder: (conditions.dying,),
 )
 
 #let deathless_rage = creat_ability(ability_data)

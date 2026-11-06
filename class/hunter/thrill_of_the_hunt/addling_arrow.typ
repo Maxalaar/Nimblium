@@ -11,7 +11,7 @@
       (
         kind: "active",
         cost: ("1 Action", "1 TotH charge"),
-        effect: [Attack with a ranged weapon. This attack cannot miss. On its next turn, the target must attack the closest creature to it, chosen at random.],
+        effect: [Attack with a ranged weapon. On its next turn, the target must attack the closest creature to it, chosen at random.],
       ),
     ),
 )

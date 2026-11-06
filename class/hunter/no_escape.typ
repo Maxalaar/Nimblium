@@ -8,7 +8,7 @@
     ),
     blocks: (
       (
-        kind: "passive",
+        kind: "active",
         limitation: "2/round",
         effect: [Whenever an ally makes an opportunity attack, you may also make a ranged opportunity attack against the same target.]
       ),
