@@ -10,7 +10,7 @@
       (
         kind: "passive",
         limitation: "2/round",
-        effect: [Whenever one allie make an opportunity attack, you may also make a ranged opportunity attack against the same target.]
+        effect: [Whenever an ally makes an opportunity attack, you may also make a ranged opportunity attack against the same target.]
       ),
     ),
 )

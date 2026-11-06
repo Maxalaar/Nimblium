@@ -8,7 +8,7 @@
         "Underhanded",
     ),
     blocks: (
-      (kind: "passive", effect: [When you crit an enemy with heavy armor. Until the start of your next turn, all melee attacks against that target ignore its armor.]),
+      (kind: "passive", effect: [When you crit an enemy with heavy armor, until the start of your next turn, all melee attacks against that target ignore its armor.]),
     ),
 )
 
