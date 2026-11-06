@@ -11,7 +11,7 @@
       (
         kind: "active",
         cost: ("1 Action",),
-        effect: [For a number of turns equal to the number of healing charges left, your Spirit Companion deals Die + WIL radiant damage to all enemies within 3 spaces, ignoring armor and cover. During this time, it cannot take any action other than moving. At the end, your Spirit Companion is sacrificed.],
+        effect: [At the end of each of your turns, your Spirit Companion loses 10 HP and deals Die+WIL radiant damage to all enemies within 3 spaces of it, ignoring armor and cover. It cannot take any action other than moving until it reaches 0 HP.],
       ),
     ),
 )

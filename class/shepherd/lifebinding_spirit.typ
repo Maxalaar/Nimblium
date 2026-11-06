@@ -12,7 +12,7 @@
         "1 Mana",
     ),
     effect: [
-        Summon your Spirit Companion. It lasts until you cast this spell again, you take a Safe Rest.
+        Summon your Spirit Companion. It lasts until you cast this spell again, you take a Safe Rest, or it reaches 0 HP.
       ],
     upcast: "Boost your Spirit Companion.",
 )

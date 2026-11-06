@@ -11,7 +11,7 @@
       (
         kind: "passive",
         limitation: "1/round",
-        effect: [On your melee attack, if your Spirit Companion is within 6 spaces of the target, it also make an attack against (even if not in range).]),
+        effect: [On your melee attack, if your Spirit Companion is within 6 spaces of the target, it also attacks the target, even if not in contact.]),
     ),
 )
 
