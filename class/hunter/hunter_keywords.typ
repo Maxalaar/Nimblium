@@ -1,3 +1,3 @@
 #let hunter_keywords = (
-  marked: [*Marked:* A creature can be marked using Hunter's Mark. Certain effects require it. A creature is marked only for the one who placed it.],
+  marked: [*Marked:* A creature is Marked when you target it with Hunter's Mark. It is Marked only for you.],
 )

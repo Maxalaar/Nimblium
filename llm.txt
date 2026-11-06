@@ -103,6 +103,35 @@ Voir `class/shepherd/lifebinding_spirit.typ` + `class/shepherd/spirit_companion.
 - Ne pas inventer de reminder pour un terme non défini dans ces fichiers (ex: "Defend" n'a pas
   de définition, donc pas de reminder pour lui).
 
+## Style de rédaction formel
+
+Les cartes, conditions et mots-clés visent un langage formel de jeu de cartes, sans ambiguïté.
+Appliqué à `conditions.typ`, `keywords.typ`, `berserker_keywords.typ` et `hunter_keywords.typ`.
+Les anciennes cartes passent à ce style progressivement ; toute nouvelle carte l'utilise d'office.
+
+- **Sujet d'une condition** : toujours "this creature", puis "it / its". Jamais "you".
+- **"You"** : uniquement le joueur de la carte (capacités, Hide, Cover, Full Cover, Distracted).
+- **Phrases** : complètes, avec un seul effet par phrase. Pas de fragment comme "Can't see".
+- **Déclencheur** : "When...", "Whenever...", "At the start of...".
+- **Choix** : "may" si l'effet est optionnel ; sinon il s'applique d'office.
+- **Durée** : formules fixes ("until the end of your next turn", "this round", "this encounter").
+- **Cible** : "a creature within X spaces".
+- **Coûts et limites** : sur les badges (`1 Action`, `1/round`), jamais dans le texte.
+- **Termes de jeu** : une seule orthographe, avec majuscule (Marked, Safe Rest, Difficult Terrain).
+- **Parenthèses** : à éviter dans les règles, préférer une phrase complète.
+
+Exemples :
+
+- Condition : `*Blinded:* This creature can't see. Attacks against it have advantage. Its attacks
+  have disadvantage.`
+- Condition avec déclencheur : `*Dying:* This creature can't have more than 1 action per turn and
+  can't concentrate. Whenever it attacks or casts a spell, it gains 1 Wound unless it succeeds on a
+  DC 10 STR save. Whenever it takes damage, it gains 2 Wounds, or 3 on a critical hit.`
+- Mot-clé lié au joueur : `*Marked:* A creature is Marked when you target it with Hunter's Mark. It
+  is Marked only for you.`
+- Capacité : `When a creature moves adjacent to you or to an ally within 6 spaces, move it back 1
+  space. It is Restrained until it escapes with a DC 10+WIL check.`
+
 ## Règle importante : pas de carte pour "tu débloques juste un sort"
 
 Ne JAMAIS créer de carte capacité/mécanique dont le seul contenu est "tu apprends/débloques tel(s)
