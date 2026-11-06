@@ -34,7 +34,8 @@ Règles du changelog déjà appliquées :
   créature a une condition ou ne l'a pas).
 - **Sorts défensifs** : 0 action, lançables uniquement pendant un Defend.
 - **Capacités** : les limites se réinitialisent à la FIN de ton tour.
-- **Sorts Fire et Ice** du dépôt : déjà alignés. Les autres écoles (Lightning, Wind, Radiant,
+- **Smoldering** : tout effet qui s'appuie sur une cible Smoldering met fin à la condition.
+- **Sorts Fire, Ice et Lightning** du dépôt : déjà alignés. Les autres écoles (Wind, Radiant,
   Necrotic) ont aussi des changements : relire le changelog avant de les créer.
 
 Règles maison, à ne pas "corriger" d'après le livre ou le changelog :
@@ -45,6 +46,10 @@ Règles maison, à ne pas "corriger" d'après le livre ou le changelog :
 - **"For free"** : exprimé par l'absence de badge de coût. À garder seulement quand la capacité
   annule le coût d'une autre action (Defend, Rage, Hunter's Mark, Hide...).
 - **Cover et Full Cover** : ne concernent que les attaques à distance ; "line of attack".
+- **Conditions sans effet propre** (Smoldering, Charged et toute condition du même type) : même
+  texte partout : "This condition has no effect on its own. Any effect that relies on it ends it.
+  It ends when combat ends." Une phrase peut suivre pour dire comment on l'obtient. Les cartes ne
+  répètent pas "ends the condition". Distracted et Marked ne suivent pas ce modèle.
 - **Spirit Companion** : réserve de PV (Tier × 10) au lieu de charges de soin ; agit au contact.
 - **Créatures** : les valeurs par défaut (speed 6, peut subir des dégâts, disparaît à 0 PV) ne sont
   pas écrites sur la carte.
@@ -125,7 +130,7 @@ Voir `class/shepherd/lifebinding_spirit.typ` + `class/shepherd/spirit_companion.
 
 ## Reminders / mots-clés
 
-- `conditions.typ` : dictionnaire des conditions (Bloodied, Blinded, Prone, Restrained,
+- `conditions.typ` : dictionnaire des conditions (Bloodied, Blind, Prone, Restrained,
   Invisible, Dying, Smoldering, etc.)
 - `keywords.typ` : mots-clés génériques (Distracted, Difficult Terrain, D66, Blindsight,
   Advantage, Disadvantage, Vulnerable).
@@ -181,7 +186,7 @@ Les anciennes cartes passent à ce style progressivement ; toute nouvelle carte 
 
 Exemples :
 
-- Condition : `*Blinded:* This creature can't see. Attacks against it have advantage. Its attacks
+- Condition : `*Blind:* This creature can't see. Attacks against it have advantage. Its attacks
   have disadvantage.`
 - Condition avec déclencheur : `*Dying:* This creature can't have more than 1 action per turn and
   can't concentrate. Whenever it attacks or casts a spell, it gains 1 Wound unless it succeeds on a
@@ -254,7 +259,7 @@ fichier avant de le modifier à nouveau (ne pas se fier à une version obsolète
 
 ## État des classes (voir aussi `git log` / le contenu réel de `class/` pour l'état exact)
 
-- **Berserker** : préexistant, pas touché en session.
+- **Berserker** : COMPLET et aligné sur les règles maison et le changelog.
 - **Cheat** (p.12-17) : COMPLET — niveaux de base 1-20, toutes les Underhanded Abilities, les
   deux sous-classes (Scoundrel, Silent Blade).
 - **Hunter** (p.24-29 base+TotH, sous-classes après p.29) : COMPLET — niveaux de base, toutes
@@ -262,5 +267,7 @@ fichier avant de le modifier à nouveau (ne pas se fier à une version obsolète
   `hunter_keywords.typ` pour "Marked" (remplace la prose "quarry" du PDF).
 - **Shepherd** (p.48-53) : COMPLET — niveaux de base, toutes les Sacred Graces, les deux
   sous-classes (Luminary of Mercy, Luminary of Malice).
-- **Mage, Commander, Oathsworn, Shadowmancer, Songweaver, Stormshifter, Zephyr, Extra
+- **Mage** (p.30-35) : EN COURS — capacités de base faites ; restent les Spellshaper et les deux
+  sous-classes (Invoker of Control, Invoker of Chaos).
+- **Commander, Oathsworn, Shadowmancer, Songweaver, Stormshifter, Zephyr, Extra
   Subclasses** : pas commencés.

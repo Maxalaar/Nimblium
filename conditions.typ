@@ -21,5 +21,6 @@
   taunted: [*Taunted:* This creature has disadvantage on attacks, except against its most recent taunter.],
   wounded: [*Wounded:* This creature has at least 1 Wound. A hero typically dies at 6 Wounds.],
   silenced: [*Silenced:* This creature can't cast spells or use abilities that require speaking.],
-  smoldering: [*Smoldering:* This condition has no effect on its own. Some spells and abilities have additional effects against Smoldering creatures.],
+  charged: [*Charged:* This condition has no effect on its own. Any effect that relies on it ends it. It ends when combat ends. A creature that takes lightning damage becomes Charged.],
+  smoldering: [*Smoldering:* This condition has no effect on its own. Any effect that relies on it ends it. It ends when combat ends.],
 )

@@ -13,7 +13,7 @@
     range: "8",
     damage: "1d10",
     effect: [On crit: #kw_smoldering.],
-    high_Levels: "+5 damage every 5 levels.",
+    high_Levels: [+5 damage every 5 levels.],
     reminder: (conditions.smoldering,)
 )
 

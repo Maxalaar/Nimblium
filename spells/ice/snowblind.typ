@@ -13,7 +13,7 @@
     range: "1",
     damage: "1d6",
     effect: [On hit: #kw_blind until the end of their next turn.],
-    high_Levels: "+3 damage every 5 levels.",
+    high_Levels: [+3 damage every 5 levels.],
     reminder: (conditions.blind,)
 )
 

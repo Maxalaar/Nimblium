@@ -3,6 +3,7 @@
 #let keywords = (
   difficult_terrain: [*Difficult Terrain:* Each space of Difficult Terrain costs 2 spaces of movement.],
   d66: [*D66:* Roll 2d6. The leftmost die is the tens digit, and the other die is the ones digit.],
+  d88: [*D88:* Roll 2d8. The leftmost die is the tens digit, and the other die is the ones digit.],
   distracted: [*Distracted:* A creature is Distracted if it is adjacent to or Taunted by one of your allies, if it can't see you, or if you have Hide from it.],
   blindsight: [*Blindsight X:* This creature can sense creatures and obstacles within X spaces, ignoring Blind, darkness, and invisibility.],
   advantage: [*Advantage:* Roll 1 additional die of the same type for each instance of advantage, then remove that many of the lowest results.],

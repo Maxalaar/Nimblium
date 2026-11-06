@@ -13,8 +13,9 @@
     ),
     range: "8",
     damage: "4d10",
-    effect: "Can only target a creature with the Smoldering status. Once damage is dealt, consumes the Smoldering status.",
-    upcast: "+10 damage.",
+    effect: [This spell can target only a #kw_smoldering creature.],
+    upcast: [+10 damage.],
+    reminder: (conditions.smoldering,),
 )
 
 #let ignite = creat_spell(spell_data)

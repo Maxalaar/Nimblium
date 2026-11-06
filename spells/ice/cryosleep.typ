@@ -16,7 +16,7 @@
     area: [#times(2, 2)],
     effect: [ Creatures in the area are #kw_dazed. On a failed #WIL save, they fall #kw_asleep instead.],
     reminder: (conditions.dazed, conditions.asleep),
-    upcast: "+1 area, +1 turn asleep.",
+    upcast: [+1 area, +1 turn asleep.],
 )
 
 #let cryosleep = creat_spell(spell_data)

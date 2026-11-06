@@ -15,8 +15,6 @@ CARD_DIRS = ["class", "spells", "creatures"]
 EXCLUDED_NAMES = {
     "mod.typ",
     "passive_abilities.typ",
-    "berserker_keywords.typ",
-    "hunter_keywords.typ"
 }
 
 WRAPPER_TEMPLATE = """\
@@ -29,7 +27,7 @@ WRAPPER_TEMPLATE = """\
 def find_card_files():
     for dir_name in CARD_DIRS:
         for path in sorted((ROOT / dir_name).rglob("*.typ")):
-            if path.name in EXCLUDED_NAMES or path.name.startswith("."):
+            if path.name in EXCLUDED_NAMES or path.name.endswith("_keywords.typ") or path.name.startswith("."):
                 continue
             yield path
 
