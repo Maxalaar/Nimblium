@@ -1,4 +1,5 @@
 #import "creat_frame.typ": creat_frame
+#import "badges.typ": dark_badge, tag_badge
 #import "../style.typ": reminder_color
 
 #let ability_text_size = 8pt
@@ -18,25 +19,7 @@
   passive: 1,
 )
 
-#let mode_badge(kind) = {
-  let color = mode_shades.at(kind, default: rgb("#4D4D4D"))
-  box(
-    fill: color,
-    radius: 2pt,
-    inset: (x: 3pt, y: 1.5pt),
-    baseline: 10%,
-  )[#text(size: 6pt, weight: "bold", fill: white)[#upper(kind)]]
-}
-
-#let tag_badge(label) = {
-  box(
-    fill: white,
-    stroke: 0.5pt + black,
-    radius: 2pt,
-    inset: (x: 3pt, y: 1.5pt),
-    baseline: 10%,
-  )[#text(size: 6pt, weight: "bold", fill: black)[#label]]
-}
+#let mode_badge(kind) = dark_badge(kind, color: mode_shades.at(kind, default: rgb("#4D4D4D")))
 
 #let ability_block(block) = {
   set text(size: ability_text_size)

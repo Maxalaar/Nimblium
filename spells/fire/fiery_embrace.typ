@@ -12,7 +12,7 @@
         actions(1),
         mana(5),
     ),
-    concentration: "Up to 1 minute.",
+    concentration: "1 min",
     reach: "8",
     effect: [While within Reach: 1 ally gains the effects of Enchant Weapon. Enemies gain #kw_smoldering, lose damage resistance, and their damage immunity is reduced to resistance.],
     upcast: [+1 ally and +2 Reach.],

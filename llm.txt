@@ -107,8 +107,18 @@ des tiers de sorts par niveau, avec le même style `*Level X:*` que `sneak_attac
 ### Spell (`creat_spell.typ`)
 
 Champs disponibles : `cost`, `concentration`, `range`, `reach`, `area`, `damage`, `effect`,
-`high_Levels`, `upcast`, `reminder`. `type` inclut école/tier, ex
-`("Spell","Fire","Cantrip")`, `("Spell","Radiant","Tier 1")`.
+`high_Levels`, `upcast`, `reminder`. `type` vaut toujours (type, école, palier, tags...), ex
+`("Spell","Fire","Cantrip")`, `("Spell","Lightning","Tier 3","AoE")`.
+
+Rendu en capsules (`badges.typ`, partagé avec les capacités), sans libellé `Cost:` ni `Effect:` :
+
+- Ligne 1 : le palier, en capsule sombre. Ligne 2 : le coût. Ligne 3 : dégâts, portée (`range`,
+  `reach`, `area`), tags, puis concentration.
+- Le sous-titre de la carte ne garde que le type et l'école.
+- `damage` ne contient que la valeur ("3d8+4") : une précision va dans `effect`.
+- `reach` : un nombre seul devient "Reach 4" ; "Line 12" ou "Cone 4" s'affichent tels quels.
+- `concentration` ne contient que la durée ("1 min").
+- `high_Levels` et `upcast` : capsule sombre, puis le texte à la ligne.
 
 ### Creature (`creat_creature.typ`)
 

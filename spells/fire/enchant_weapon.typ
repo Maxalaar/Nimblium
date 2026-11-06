@@ -11,7 +11,7 @@
         actions(1),
         mana(2),
     ),
-    concentration: "Up to 1 minute.",
+    concentration: "1 min",
     reach: "8",
     effect: [A weapon within Reach is enchanted with magical flame. It deals +#KEY damage and inflicts #kw_smoldering on crit.],
     upcast: [+#KEY damage.],
