@@ -1,0 +1,111 @@
+# Gestion du projet — Nimblium
+
+Comment on travaille : sources, organisation, vérifications, suivi.
+
+## Extraction du texte source
+
+`pdftotext -f <début> -l <fin> -layout nimble_documents/Heroes.pdf -`
+
+- Les numéros de page imprimés en pied de page sont décalés de -1 par rapport à la page PDF
+  demandée (ex: demander les pages PDF 14-17 donne des pieds de page 13-16).
+- Le layout est en deux colonnes sur beaucoup de pages : le texte peut s'entrelacer entre
+  colonnes dans la sortie de `pdftotext`. Si l'ordre semble suspect, réextraire une page seule.
+- Sommaire utile pour localiser les classes : Berserker p.6, Cheat p.12, Commander p.18,
+  Hunter p.24, Mage p.30, Oathsworn p.36, Shadowmancer p.42, Shepherd p.48, Songweaver p.54,
+  Stormshifter p.60, Zephyr p.66, Extra Subclasses p.73.
+
+## Organisation des fichiers par classe (`class/<nom_classe>/`)
+
+- Capacités de base de la classe : fichiers `.typ` à plat directement dans `class/<nom>/`.
+- Un pool de capacités à choisir (Underhanded Ability du Cheat, Thrill of the Hunt du Hunter,
+  Sacred Grace du Shepherd) va dans son propre sous-dossier `class/<nom>/<pool>/` avec son
+  propre `mod.typ`, importé via `#import "<pool>/mod.typ": *` depuis le mod.typ de la classe.
+- Les sous-classes vont dans `class/<nom>/subclasses/<sous_classe>/`, chacune avec son
+  `mod.typ` ; `class/<nom>/subclasses/mod.typ` agrège toutes les sous-classes ; le mod.typ de
+  la classe importe `subclasses/mod.typ`.
+- Chaque nouveau fichier doit être ajouté au `mod.typ` de son dossier (remonte en cascade
+  jusqu'à `class/mod.typ`) — nécessaire pour compiler/tester via `#nom_symbole`, même si
+  `tools/export_cards.py` découvre les fichiers indépendamment par parcours du système de fichiers.
+- Noms de fichiers en snake_case dérivés du nom de la capacité, ponctuation retirée (ex:
+  "How'd YOU get here?!" → `how_you_get_here.typ`).
+
+## Éléments qu'on ne transforme JAMAIS en carte
+
+- Augmentations de stats pures ("+1 DEX or WIL", "Key/Secondary Stat Increase").
+- "Epic Boon. Choose an Epic Boon..." (placeholder, renvoie à un autre livre).
+- "Subclass. Gain your X subclass feature." (placeholder de niveau, pas une capacité en soi).
+- Toute capacité qui ne fait que débloquer des sorts (voir règle ci-dessus).
+
+## Règle importante : pas de carte pour "tu débloques juste un sort"
+
+Ne JAMAIS créer de carte capacité/mécanique dont le seul contenu est "tu apprends/débloques tel(s)
+sort(s)/cantrip(s)". En vrai jeu, les cartes de sort correspondantes sont données directement
+au joueur — une carte capacité qui dit juste "tu connais maintenant ces sorts" est redondante et
+inutile. Exemples supprimés pour cette raison : `keeper_of_life_and_death.typ` ("You know
+Radiant and Necrotic cantrips") et `master_of_twilight.typ` ("Choose Necrotic/Radiant Utility
+Spells... know all at level 11"). Par contre, le pool de Mana a été gardé en carte Mechanic
+car il définit aussi la formule/règle de la ressource, pas seulement "tu obtiens des sorts".
+
+## Vérification après création/édition
+
+Compiler avec un fichier wrapper jetable (jamais commité) qui importe le mod.typ concerné et
+référence les nouveaux symboles :
+`typst compile --root <racine_repo> fichier.typ sortie.pdf`
+puis supprimer le fichier jetable derrière soi. Lancer aussi `python3 tools/check_terms.py`. Pour un contrôle visuel, exporter en PNG à
+300ppi avec une page 131mm×88mm marge 0 (correspond au wrapper réel d'`tools/export_cards.py`) et
+relire l'image.
+
+**Ne pas exporter de PNG systématiquement** — seulement si demandé, ou pour un contrôle de
+mise en page ponctuel quand la structure est vraiment nouvelle (nouveau champ, nouveau type de
+carte). Si l'utilisateur dit "je m'en charge" pour les exports, ne plus en faire jusqu'à
+nouvelle demande.
+
+## Suivi des révisions et notes de carte (`tools/review.py`)
+
+Chaque carte se termine par un bloc de commentaire Typst qui porte ses notes de gestion. Ce
+n'est pas du texte de carte : `check_terms.py` l'ignore.
+
+```
+/*
+review: style=2026-11-14 changelog=2026-10-02
+
+house-rule: The Spirit Companion has an HP pool of Tier × 10 instead of healing charges.
+
+interpretation: The changelog lists the four results without numbers. Results 1 to 4
+follow its order.
+*/
+```
+
+- `review:` : la carte a été réécrite selon `writing_rules.txt` de cette date ET alignée sur le
+  changelog officiel de cette date. L'ajouter ou le mettre à jour uniquement quand les deux
+  sont faits. `python3 tools/review.py` liste, par classe ou école, les cartes à jour et celles
+  à revoir (`-v` pour tout lister). Quand `writing_rules.txt` change de façon notable ou qu'un
+  nouveau changelog sort, mettre à jour `STYLE` / `CHANGELOG` en tête du script : toutes les
+  cartes plus anciennes repassent « à revoir ».
+- `house-rule:` : on n'est pas d'accord avec le jeu et on change volontairement la règle. Ne
+  jamais la « corriger » d'après le livre ou le changelog.
+- `interpretation:` : la source est floue ou incomplète, et on a fait un choix. À revoir si une
+  source plus claire sort.
+- `changelog:` : seulement quand la carte remplace ou retire un élément du livre (sort
+  remplacé, changement du changelog pas encore appliqué…). Inutile pour un simple changement
+  de valeur.
+- Une note par paragraphe, séparées par une ligne vide, en anglais comme les cartes.
+  `python3 tools/review.py --rules` les liste toutes, par balise.
+- Une règle qui concerne une famille entière va dans le `mod.typ` du dossier (ex :
+  `creatures/goblin/mod.typ`) ; une règle sur un mot-clé, dans `keywords.typ` ou
+  `conditions.typ`. Une règle qui touche tout le jeu va dans `README.txt`.
+
+## Rythme de collaboration
+
+L'utilisateur pilote le rythme explicitement : parfois "les deux suivantes", parfois "tout le
+reste d'un coup", parfois un seul élément nommé. Par défaut, suivre l'ordre des niveaux/pages
+du PDF, sauter les entrées qui ne deviennent pas des cartes (voir section ci-dessus). En cas
+d'ambiguïté sur "les deux suivantes" (ex: après plusieurs niveaux sans contenu carte),
+faire un choix raisonnable et avancer plutôt que de bloquer sur une question — l'utilisateur
+relit et corrige après coup plutôt que de valider en amont.
+
+**L'utilisateur édite fréquemment les fichiers juste après leur création** (reformulation,
+correction de kind/cost/limitation, nouveaux fichiers de mots-clés, simplification). Ces
+modifications arrivent en system-reminder ("modified by the user or a linter"). Ne jamais les
+annuler : elles deviennent la nouvelle vérité de base. Toujours relire le contenu actuel d'un
+fichier avant de le modifier à nouveau (ne pas se fier à une version obsolète en mémoire).

@@ -14,3 +14,10 @@
 )
 
 #let spirit_companion = creat_creature(creature_data)
+
+/*
+house-rule: The Spirit Companion departs from the book. It has an HP pool of Tier × 10
+instead of healing charges, each heal costs it 10 HP, and it acts on creatures in contact
+instead of within Reach 4. It is a creature like any other: it can take damage and
+disappears at 0 HP. Decided on 2026-11-06.
+*/

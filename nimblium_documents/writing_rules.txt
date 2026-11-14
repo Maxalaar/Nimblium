@@ -5,8 +5,8 @@ conditions, keywords). The goal is a formal card-game language with no ambiguity
 Magic: the same effect is always written the same way.
 
 Every new card follows these rules. Older cards are brought in line as they are reviewed.
-A reviewed card starts with `// review: style=<date> changelog=<date>`; `python3 check_review.py`
-lists the cards still to review.
+A reviewed card ends with a notes block holding `review: style=<date> changelog=<date>`;
+`python3 tools/review.py` lists the cards still to review (see `workflow.txt`).
 
 ## 1. Sentences
 
@@ -47,7 +47,7 @@ lists the cards still to review.
 
 A game term has a single spelling, capitalized (Marked, Safe Rest, Difficult Terrain). It is
 never typed by hand: call its function or constant from `terms.typ`, available everywhere
-through `global.typ`. Run `python3 check_terms.py` after every change: it reports hand-typed
+through `global.typ`. Run `python3 tools/check_terms.py` after every change: it reports hand-typed
 forms.
 
 | Type | Write | Result |
@@ -102,7 +102,7 @@ Typst syntax pitfalls:
 
 Creatures follow a house rule: they have actions like heroes (1 by default), and their
 abilities are blocks with capsules, like hero abilities. No "or" / "then" between attacks.
-See `creature_rules.md` for the full rules, the attack line format and examples.
+See `creature_rules.txt` for the full rules, the attack line format and examples.
 
 ## 10. Examples
 

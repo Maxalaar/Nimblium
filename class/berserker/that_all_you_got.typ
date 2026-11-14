@@ -1,4 +1,3 @@
-// review: style=2026-11-14 changelog=2026-10-02
 #import "../../global.typ": *
 
 #let ability_data = (
@@ -17,3 +16,10 @@
 )
 
 #let that_all_you_got = creat_ability(ability_data)
+
+/*
+review: style=2026-11-14 changelog=2026-10-02
+
+interpretation: Written as an active block with a Fury Dice cost, like Bloodlust. The book
+gives no action cost.
+*/

@@ -7,3 +7,8 @@
 #import "nilbog.typ": nilbog
 #import "krogg_goblin_king.typ": krogg_goblin_king
 #import "vermis_and_skittersnack.typ": vermis_and_skittersnack
+
+/*
+house-rule: Haha, Didn't Hurt!, the goblin family ability from the 2026-10-02 changelog, is
+left out on purpose. Don't add it back.
+*/

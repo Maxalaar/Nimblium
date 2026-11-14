@@ -13,7 +13,7 @@ VS Code extension) jump straight to the source .typ file on click.
 import subprocess
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 CARD_DIRS = ["class", "spells", "creatures"]
 EXCLUDED_NAMES = {
     "mod.typ",

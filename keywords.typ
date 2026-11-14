@@ -15,3 +15,8 @@
   cover: [*Cover:* An obstacle partially blocks a creature's line of attack to you, so its ranged attacks against you have disadvantage.],
   full_cover: [*Full Cover:* An obstacle completely blocks a creature's line of attack to you, so it cannot target you with ranged attacks.],
 )
+
+/*
+house-rule: Cover and Full Cover only affect ranged attacks, and are worded with line of
+attack.
+*/

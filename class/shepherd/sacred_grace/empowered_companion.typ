@@ -14,3 +14,8 @@
 )
 
 #let empowered_companion = creat_ability(ability_data)
+
+/*
+house-rule: The book raises the maximum die size to a d20. Here the die becomes a d20 at
+tier 5 or higher, to fit the tier-based die of the house-rule Spirit Companion.
+*/

@@ -1,4 +1,3 @@
-// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../../global.typ": *
 
 #let ability_data = (
@@ -25,3 +24,10 @@
 )
 
 #let low_blow = creat_ability(ability_data)
+
+/*
+review: style=2026-11-14 changelog=2026-10-02
+
+interpretation: The changelog lists the four results without numbers. Results 1 to 4 follow
+its order.
+*/

@@ -13,14 +13,14 @@ the prompt prefix/suffix, the negative prompt, the model and all settings
 Forge must be running with --api (launch it with lancer_forge.sh).
 
 Examples:
-    ./generate_image.py -s engraving -c goblin -n 3 --name bugbear "large bugbear with a cleaver"
-    ./generate_image.py -s engraving "goblin archer" --seed 200      # reproduce a seed
-    ./generate_image.py "a fire mage, ink line art"                  # no style preset
-    ./generate_image.py --models                                     # list checkpoints
+    ./tools/generate_image.py -s engraving -c goblin -n 3 --name bugbear "large bugbear with a cleaver"
+    ./tools/generate_image.py -s engraving "goblin archer" --seed 200      # reproduce a seed
+    ./tools/generate_image.py "a fire mage, ink line art"                  # no style preset
+    ./tools/generate_image.py --models                                     # list checkpoints
 
 ControlNet (keep the composition of an existing image or sketch):
-    ./generate_image.py -s engraving -n 4 --control art/tmp/goblin/rider_xxx.png "goblin riding a cyber wolf"
-    ./generate_image.py -s engraving --control my_sketch.png --control-type sketch "goblin riding a cyber wolf"
+    ./tools/generate_image.py -s engraving -n 4 --control art/tmp/goblin/rider_xxx.png "goblin riding a cyber wolf"
+    ./tools/generate_image.py -s engraving --control my_sketch.png --control-type sketch "goblin riding a cyber wolf"
 """
 
 import argparse
@@ -32,7 +32,7 @@ import urllib.request
 from datetime import datetime
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_OUT = ROOT / "art" / "tmp"
 URL = "http://127.0.0.1:7860"
 

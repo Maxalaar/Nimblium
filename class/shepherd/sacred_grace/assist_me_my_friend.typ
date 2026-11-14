@@ -16,3 +16,8 @@
 )
 
 #let assist_me_my_friend = creat_ability(ability_data)
+
+/*
+house-rule: Adapted to the house-rule Spirit Companion: it attacks the target itself from
+within 6 spaces, instead of adding its damage to your attack.
+*/

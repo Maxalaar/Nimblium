@@ -1,3 +1,4 @@
 *.pdf
 /nimble_documents/
 /art/tmp/
+__pycache__/

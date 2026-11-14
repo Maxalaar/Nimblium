@@ -1,4 +1,3 @@
-// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../../global.typ": *
 
 #let ability_data = (
@@ -19,3 +18,10 @@
 )
 
 #let supreme_control = creat_ability(ability_data)
+
+/*
+review: style=2026-11-14 changelog=2026-10-02
+
+interpretation: The book's Reaction has no trigger. Written as a 1-action block that lets
+you use Force of Will outside your turn.
+*/

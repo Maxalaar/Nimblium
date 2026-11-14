@@ -1,0 +1,46 @@
+# État du projet — Nimblium
+
+Où en est chaque classe, école de sorts et famille de créatures. Pour savoir quelles cartes
+sont à jour du style et du changelog : `python3 tools/review.py`. Pour les écarts volontaires
+au jeu : `python3 tools/review.py --rules`.
+
+Les changelogs annoncent de nouvelles sous-classes pour presque toutes les classes, mais n'en
+donnent que le nom : pas de texte disponible, donc pas de cartes.
+
+## Classes
+
+- **Berserker** (p.6-11) : COMPLET — niveaux de base, Savage Arsenal (Dismantle compris),
+  sous-classes Mountainheart et Red Mist. Au nouveau style et au changelog du 2 octobre 2026.
+  Nouvelles sous-classes annoncées : Path of Burning Rage, Path of Titan's Grip, Muscle Mage.
+- **Cheat** (p.12-17) : COMPLET — niveaux de base, Underhanded Abilities (Tangling Wire et
+  The Setup compris), sous-classes Scoundrel et Silent Blade. Au nouveau style et au changelog
+  du 2 octobre 2026. Nouvelles sous-classes annoncées : Tools of the Gambler, Tools of the
+  Serpent, Honorseeker.
+- **Hunter** (p.24-29) : COMPLET — niveaux de base, Thrill of the Hunt, sous-classes
+  Shadowpath et Wild Heart. Utilise `hunter_keywords.typ` pour Marked (remplace la prose
+  "quarry" du PDF). À REPASSER au nouveau style et au changelog du 2 octobre 2026.
+- **Mage** (p.30-35) : EN COURS — capacités de base, sous-classes Invoker of Control et
+  Invoker of Chaos (au nouveau style). `mage_keywords.typ` définit Demand Control et Invoke
+  Chaos. Pas de carte pour At Any Cost ni Tempest Mage (ils ne font que débloquer des sorts),
+  ni pour la Chaos Table (secrète, réservée au MJ, refaite dans le changelog sans que son
+  contenu soit publié). Restent : les Spellshaper, et la relecture des 4 capacités de base.
+  Nouvelles sous-classes annoncées : Invoker of Wards, Flame, Surges, Frost.
+- **Shepherd** (p.48-53) : COMPLET — niveaux de base, Sacred Graces, sous-classes Luminary of
+  Mercy et Luminary of Malice. À REPASSER au nouveau style et au changelog du 2 octobre 2026.
+  Attention : le changelog refait le compagnon (Lifebinding Spirit devient un cantrip de
+  niveau 1 avec Harm et Mend, Searing Light disparaît), ce qui entre en conflit avec la règle
+  maison du Spirit Companion. À trancher avec l'utilisateur avant de toucher à ces cartes.
+- **Commander, Oathsworn, Shadowmancer, Songweaver, Stormshifter, Zephyr, Extra
+  Subclasses** : pas commencés.
+
+## Sorts
+
+- **Fire, Ice, Lightning** : alignés sur les deux changelogs et réécrits selon
+  `writing_rules.txt`, mais sans marqueur `review:` (à relire pour le confirmer).
+- **Wind** : créés d'après le changelog du 2 octobre 2026, même remarque.
+- **Radiant, Necrotic, Utility** : pas encore créés. Lire les deux changelogs avant.
+
+## Créatures
+
+- **Goblins** : famille complète.
+- **Undead** : créés.

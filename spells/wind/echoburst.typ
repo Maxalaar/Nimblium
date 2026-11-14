@@ -19,3 +19,7 @@
 )
 
 #let echoburst = creat_spell(spell_data)
+
+/*
+changelog: Replaces Fly from the book, following the 2026-10-02 changelog.
+*/

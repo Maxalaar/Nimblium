@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Report game terms typed by hand instead of through terms.typ.
 
-Run from anywhere: python3 check_terms.py
+Run from anywhere: python3 tools/check_terms.py
 Exits with status 1 if a raw form is found.
 """
 
@@ -9,7 +9,7 @@ import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 TARGETS = ["class", "spells", "creatures", "keywords.typ", "conditions.typ"]
 # Definition files name their own terms in plain text, without keyword styling.
 DEFINITION_FILES = {"keywords.typ", "conditions.typ"}
@@ -77,8 +77,12 @@ def content_blocks(source):
         i += 1
 
 
+# Notes and review markers live in comments, not on the card.
+COMMENT = re.compile(r"/\*.*?\*/|(?<![:\w])//[^\n]*", re.S)
+
+
 def check_file(path):
-    source = path.read_text(encoding="utf-8")
+    source = COMMENT.sub("", path.read_text(encoding="utf-8"))
     problems = []
     rules = [
         rule for rule in TEXT_RULES
@@ -103,7 +107,7 @@ def main():
     files = []
     for target in TARGETS:
         path = ROOT / target
-        files.extend(sorted(path.rglob("*.typ")) if path.is_dir() else [path])
+        files.extend(sorted(p for p in path.rglob("*.typ") if not p.name.startswith(".")) if path.is_dir() else [path])
     total = 0
     for path in files:
         for problem in check_file(path):

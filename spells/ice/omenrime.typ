@@ -17,3 +17,7 @@
 )
 
 #let omenrime = creat_spell(spell_data)
+
+/*
+changelog: Replaces Cryosleep from the book, following the changelogs.
+*/

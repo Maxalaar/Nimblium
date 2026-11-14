@@ -1,6 +1,6 @@
 #import "../terms.typ": *
 
-// Blocks shared by several creatures (creature_rules.md).
+// Blocks shared by several creatures (creature_rules.txt).
 
 #let passive_abilities = (
   undying: (
@@ -9,7 +9,7 @@
     name: "Undying",
     effect: [When this creature would die, it resets to 1 #HP instead.],
   ),
-  // Minions have no HP and no level (creature_rules.md §5).
+  // Minions have no HP and no level (creature_rules.txt §5).
   minion: (
     kind: "passive",
     name: "Minion",

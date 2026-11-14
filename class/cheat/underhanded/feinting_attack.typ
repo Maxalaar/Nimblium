@@ -1,4 +1,3 @@
-// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../global.typ": *
 
 #let ability_data = (
@@ -17,3 +16,10 @@
 )
 
 #let feinting_attack = creat_ability(ability_data)
+
+/*
+review: style=2026-11-14 changelog=2026-10-02
+
+interpretation: The book doesn't say that the maximum counts as a crit. The card follows
+Vicious Opportunist on this point.
+*/

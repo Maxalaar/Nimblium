@@ -14,3 +14,8 @@
 )
 
 #let hasty_companion = creat_ability(ability_data)
+
+/*
+house-rule: +4 speed instead of the book's +4 Reach, because the house-rule Spirit Companion
+acts in contact.
+*/

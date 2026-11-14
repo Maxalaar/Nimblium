@@ -4,7 +4,7 @@
 #let block_spacing = 0.8em
 #let kind_order = (passive: 0, active: 1)
 
-// Creatures follow creature_rules.md: named blocks with capsules, like hero
+// Creatures follow creature_rules.txt: named blocks with capsules, like hero
 // abilities, passives first then actives.
 // Splitting is off by default: a creature is one card, and a text that is too
 // long overflows visibly. With `split: true`, a creature whose text doesn't

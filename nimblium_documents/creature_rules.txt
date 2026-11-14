@@ -66,10 +66,10 @@ second one the remaining blocks and the reminders. Use it only when the text can
   - `Range X,` only for ranged attacks; melee attacks have no range.
   - Damage always ends with the word "damage".
 - **Subject.** A creature is "this creature", then "it / its". Never "you": "you" is the player
-  who owns the card (writing_rules.md §2).
+  who owns the card (writing_rules.txt §2).
 - **No "or", no "then".** Two attacks the creature chooses between are two blocks. Two effects
   it chains are two blocks, each with a `1/turn` limit, on a creature with enough actions.
-- **No costs or limits in the text.** They go on capsules (writing_rules.md §4).
+- **No costs or limits in the text.** They go on capsules (writing_rules.txt §4).
 - **Default values are not written**: speed 6, 1 action, can take damage, disappears at 0 HP.
 
 ## 4. Stats

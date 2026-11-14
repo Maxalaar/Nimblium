@@ -1,7 +1,7 @@
 # Art
 
 Card illustrations for Nimblium, generated locally with Stable Diffusion
-(Forge) through [`generate_image.py`](../generate_image.py).
+(Forge) through [`tools/generate_image.py`](../tools/generate_image.py).
 
 ## Quick start
 
@@ -11,7 +11,7 @@ Card illustrations for Nimblium, generated locally with Stable Diffusion
    ```
 2. From the project root, describe **only the subject**; the style does the rest:
    ```bash
-   ./generate_image.py -s engraving -c goblin -n 3 --name bugbear \
+   ./tools/generate_image.py -s engraving -c goblin -n 3 --name bugbear \
        "large hulking bugbear with pointed ears, cybernetic armor plates, wielding a huge cleaver"
    ```
    This creates 3 variants in `art/tmp/goblin/`, named
@@ -53,7 +53,7 @@ art/
 ## Family icons
 
 Every card of a family (Goblin, later Hunter, Fire...) shows the same icon:
-big in the middle of its back, small in the bottom-left corner of its front.
+in the middle of its back.
 The icon is a filled black SVG in `art/icons/`, printed in gray (`#999999`)
 to save ink.
 
@@ -111,12 +111,12 @@ image, while the prompt and the style still decide the look.
 
 ```bash
 # Re-use the layout of a good image, get new variants in the same pose:
-./generate_image.py -s engraving -c goblin -n 4 --name goblin_wolfrider \
+./tools/generate_image.py -s engraving -c goblin -n 4 --name goblin_wolfrider \
     --control art/tmp/goblin/rider_20261114_000828_4239306543.png \
     "goblin riding a large cybernetic wolf, holding a spear"
 
 # Start from your own drawing (black lines on white, even a rough one):
-./generate_image.py -s engraving --control my_sketch.png --control-type sketch \
+./tools/generate_image.py -s engraving --control my_sketch.png --control-type sketch \
     "goblin riding a large cybernetic wolf"
 ```
 
@@ -148,7 +148,7 @@ Every image has a `.json` next to it with its `subject`, `style` and `seed`.
 Running the same command with that seed gives the exact same image:
 
 ```bash
-./generate_image.py -s engraving --seed 200 \
+./tools/generate_image.py -s engraving --seed 200 \
     "goblin with long pointed ears and a short cyberpunk cloak, holding a glowing curved blade"
 ```
 

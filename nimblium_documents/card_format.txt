@@ -1,0 +1,102 @@
+# Format des cartes — Nimblium
+
+Les types de cartes, leurs champs et leur rendu. Pour le texte lui-même, voir
+`writing_rules.txt` ; pour les créatures, `creature_rules.txt`.
+
+## Types de cartes (`card_structure/`)
+
+- `creat_ability.typ` → cartes de type **Ability**
+- `creat_spell.typ` → cartes de type **Spell**
+- `creat_creature.typ` → cartes de type **Creature**
+- `creat_mechanic.typ` → cartes de type **Mechanic**
+
+### Mise en page commune (`creat_frame.typ`)
+
+Tous les types passent par `creat_card(name, types, body, stats:, icon:)`, qui rend le recto
+et le dos côte à côte (5 mm d'écart). Design épuré, noir et blanc, peu d'encre :
+
+- Recto : cadre blanc à bordure noire, coins "HUD", nom en capitales espacées + types en petit
+  (sans filet), texte de règles aligné à gauche et centré verticalement (il rétrécit tout seul
+  jusqu'à 6pt s'il déborde), ligne de stats en bas (créatures et sorts) séparées par des
+  traits verticaux fins. Aucun trait horizontal.
+- Dos : nom + types centrés. Avec un champ `icon` dans les données de la carte, une grande
+  icône noire (game-icons.net, CC BY 3.0) s'affiche au-dessus du nom. `icon: "x.svg"` est
+  cherché dans `art/icons/` ; un chemin commençant par `/` part de la racine du projet.
+  Pour l'instant aucune carte n'a d'icône.
+- Capacités et sorts : capsules sombres (ACTIVE, PASSIVE, CANTRIP, UPCAST…) + capsules à
+  contour (coûts, limites), collées à gauche, texte juste en dessous.
+- Créatures : barres de section `── PASSIVE ──` (pas de capsules), affichées seulement si la
+  carte a plusieurs sections.
+
+### Ability (`creat_ability.typ`)
+
+`blocks` est une liste de `(kind, [cost], [limitation], effect)`.
+
+- `kind` : `"active"` (coûte une action/ressource, déclenché par choix du joueur),
+  `"passive"` (effet automatique/déclenché, pas de dépense d'action pour l'activer),
+  `"narrative"` (avantage sur jets de compétence / flavor / roleplay — ex: Forager, Leave No
+  Trace, Thieves' Cant, Keen Sight, Quick Read).
+- `cost` : tuple de tags affichés en badge, ex `(actions(1),)`, `(actions(2), toth_charges(1))`.
+- `tags` (optionnel) : capsules à contour après le coût, ex `("AoE",)` (Whirlwind).
+- `limitation` : tag affiché en badge, ex `per_turn(1)`, `per_encounter(1)`,
+  `per_safe_rest(WIL)`, `per_round(2)`.
+- Progression par niveau et clauses multiples : voir `writing_rules.txt` §8.
+- `type` : `("Ability", "<Classe>")` pour une capacité de base, avec un 3e élément pour un
+  sous-groupe (subclass ou pool de choix), ex `("Ability","Cheat","Underhanded")`,
+  `("Ability","Cheat","Scoundrel")`, `("Ability","Hunter",thrill_of_the_hunt)`,
+  `("Ability","Hunter","Shadowpath")`,
+  `("Ability","Shepherd","Sacred Grace")`.
+
+### Mechanic (`creat_mechanic.typ`)
+
+Utilisé pour centraliser une règle/ressource qui s'étale sur plusieurs niveaux ou toute la
+classe, plutôt que d'en faire une carte capacité par niveau. Champ `description` (pas
+`blocks`/`effect`). Précédents : `class/hunter/thrill_of_the_hunt_charge.typ` (règles de gain
+de charge TotH), `class/shepherd/shepherd_mana_pool.typ` (formule du pool de mana + déblocage
+des tiers de sorts par niveau, avec le même style `*Level X:*` que `sneak_attack.typ`).
+
+### Spell (`creat_spell.typ`)
+
+Champs disponibles : `cost`, `concentration`, `range`, `reach`, `area`, `damage`, `effect`,
+`high_Levels`, `upcast`, `flavor`, `reminder`. `type` vaut toujours (type, école, palier, tags...), ex
+`("Spell","Fire","Cantrip")`, `("Spell","Lightning","Tier 3","AoE")`.
+
+Rendu en capsules (`badges.typ`, partagé avec les capacités), sans libellé `Cost:` ni `Effect:` :
+
+- Une ligne de capsules : le palier (capsule sombre), le coût, les tags, puis concentration.
+- `damage`, `range`, `reach` et `area` vont dans la ligne de stats en bas de carte
+  (DMG / RANGE / REACH / AREA), comme les stats des créatures.
+- Le sous-titre de la carte ne garde que le type et l'école.
+- `damage` ne contient que la valeur ("3d8+4") : une précision va dans `effect`.
+- `reach` : un nombre ("4") ou une forme ("Line 12", "Cone 4"), affiché sous REACH.
+- `concentration` ne contient que la durée ("1 min").
+- `high_Levels` et `upcast` : capsule sombre, puis le texte à la ligne.
+- `flavor` : texte d'ambiance en italique, sous les règles et avant les rappels.
+
+### Creature (`creat_creature.typ`)
+
+Format (`creature_rules.txt`) : `blocks` comme les capacités de héros, avec en plus un `name`
+par bloc (`name`, `kind`, `cost`, `limitation`, `effect`), `actions` (stat ACT, affichée en
+premier et seulement si > 1), `reminder`, `hit_points`, `defense`, `speed`, `level`, `icon`.
+Les blocs partagés sont dans `creatures/passive_abilities.typ` : `passive_abilities.undying`,
+et `passive_abilities.minion`. Une créature = un fichier = une carte par défaut (un texte trop
+long déborde, pour qu'on le voie). L'option `split: true` autorise le découpage automatique
+en deux cartes "1/2" et "2/2" (voir `creature_rules.txt`) ; le PDF exporté montre alors les deux
+l'une sous l'autre. Pas de carte commune aux légendaires (essayée puis retirée : elle
+n'apportait rien) : Saves, Bloodied et Last Stand sont écrits en entier sur chaque légendaire. Toute autre clé est silencieusement
+ignorée.
+
+## Compagnons de classe : séparer le sort de la créature
+
+Quand une capacité de classe invoque un compagnon (ex: Lifebinding Spirit du Shepherd), séparer
+en deux cartes :
+- Le **sort** (`creat_spell`) dit juste "invoque ton Compagnon... dure jusqu'à X" et ne redit
+  pas les stats/attaques.
+- La **créature** (`creat_creature`) documente tout le détail (attaques, soin, portée, dé qui
+  scale, etc.) en sections `passive`/`active`.
+
+Voir `class/shepherd/lifebinding_spirit.typ` + `class/shepherd/spirit_companion.typ`.
+Même principe pour un sort qui accorde de nouvelles actions (transformation) : le sort décrit
+l'effet et dit "You gain the X abilities", une carte `creat_ability` séparée porte les actions
+(nom de chaque action dans le champ `name` du bloc). Voir `spells/fire/dragonform.typ` +
+`spells/fire/dragon_form.typ`. Les sorts n'ont pas de champ `blocks`.

@@ -17,3 +17,8 @@
 )
 
 #let vengeful_spirit = creat_ability(ability_data)
+
+/*
+house-rule: The vortex lasts until the Spirit Companion's HP pool runs out, 10 HP per turn,
+instead of 1 round per healing charge left.
+*/

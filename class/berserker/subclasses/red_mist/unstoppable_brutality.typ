@@ -1,4 +1,3 @@
-// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../../global.typ": *
 
 #let ability_data = (
@@ -19,3 +18,10 @@
 )
 
 #let unstoppable_brutality = creat_ability(ability_data)
+
+/*
+review: style=2026-11-14 changelog=2026-10-02
+
+interpretation: Written as an active block with a Wound cost, like Deathless Rage. The book
+gives no action cost.
+*/

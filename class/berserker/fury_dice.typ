@@ -1,4 +1,3 @@
-// review: style=2026-11-14 changelog=2026-10-02
 #import "../../global.typ": *
 
 #let mechanic_data = (
@@ -25,3 +24,7 @@
 )
 
 #let fury_dice = creat_mechanic(mechanic_data)
+
+/*
+review: style=2026-11-14 changelog=2026-10-02
+*/
