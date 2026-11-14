@@ -37,9 +37,8 @@ donnent que le nom : pas de texte disponible, donc pas de cartes.
 
 ## Sorts
 
-- **Fire, Ice, Lightning** : alignés sur les deux changelogs et réécrits selon
-  `writing_rules.txt`, mais sans marqueur `review:` (à relire pour le confirmer).
-- **Wind** : créés d'après le changelog du 2 octobre 2026, même remarque.
+- **Fire, Ice, Lightning, Wind** : au nouveau style et alignés sur les deux changelogs
+  (Echoburst remplace Fly, Omenrime remplace Cryosleep).
 - **Radiant, Necrotic, Utility** : pas encore créés. Lire les deux changelogs avant.
 
 ## Créatures

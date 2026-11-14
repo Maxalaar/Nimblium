@@ -13,7 +13,7 @@
         mana(8),
     ),
     range: "12",
-    area: "3x3",
+    area: [#times(3, 3)],
     damage: [#kw_d66],
     effect: [Each creature in the area takes this spell's damage. Each creature adjacent to the area takes half. The area permanently becomes #kw_difficult_terrain.],
     reminder: (keywords.difficult_terrain,),
@@ -21,3 +21,7 @@
 )
 
 #let glacier_strike = creat_spell(spell_data)
+
+/*
+review: style=2026-11-14 changelog=2026-10-02
+*/
