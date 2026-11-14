@@ -7,5 +7,6 @@
 #import "keywords.typ": keywords
 #import "class/berserker/berserker_keywords.typ": berserker_keywords
 #import "class/hunter/hunter_keywords.typ": hunter_keywords
+#import "class/mage/mage_keywords.typ": mage_keywords
 #import "style.typ": reminder_color, keyword_style
 #import "terms.typ": *
