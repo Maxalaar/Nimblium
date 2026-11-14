@@ -2,17 +2,10 @@
 
 #let creature_data = (
     name: "Skeleton",
-    type: (
-        "Creature",
-        "Undead",
-    ),
-    passive: (
+    type: ("Creature", "Undead"),
+    blocks: (
         passive_abilities.undying,
-    ),
-    active: (
-        [
-            *Grave Arrow:* 1d4+3 damage.
-        ],
+        (kind: "active", cost: (actions(1),), name: "Grave Arrow", effect: [1d4+3 damage.]),
     ),
     hit_points: 10,
     level: "1/3",

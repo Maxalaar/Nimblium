@@ -2,19 +2,11 @@
 
 #let creature_data = (
     name: "Goblin Minion",
-    type: (
-        "Creature",
-        "Goblin",
-        "Minion",
-    ),
-    active: (
-        [
-            *Stab:* 1d6 damage.
-        ],
+    type: ("Creature", "Goblin", "Minion"),
+    blocks: (
+        (kind: "active", cost: (actions(1),), name: "Stab", effect: [1d6 damage.]),
     ),
     level: "1/4",
 )
 
 #let goblin_minion = creat_creature(creature_data)
-
-#goblin_minion

@@ -36,8 +36,8 @@ Every new card follows these rules. Older cards are brought in line as they are 
   `per_round(1)` limit.
 - **"For free"**: expressed by the absence of a cost badge. Keep the words "for free" only when
   the ability waives the cost of another action (Defend, Rage, Hunter's Mark, Hide...).
-- **Default values**: don't write them (e.g. creatures: speed 6, can take damage, disappears at
-  0 HP).
+- **Default values**: don't write them (e.g. creatures: speed 6, 1 action, can take damage,
+  disappears at 0 HP).
 - **Obvious rulings**: don't write what any GM would decide anyway (e.g. "if several creatures
   are equally close, the GM chooses one"). They make the card heavier for nothing.
 
@@ -95,7 +95,13 @@ Typst syntax pitfalls:
   the levels in one sentence: "This spell's damage increases by 4 at levels 5, 10, 15 and 20."
   When the steps differ, use `*Level X:*` lines.
 
-## 9. Examples
+## 9. Creatures
+
+Creatures follow a house rule: they have actions like heroes (1 by default), and their
+abilities are blocks with capsules, like hero abilities. No "or" / "then" between attacks.
+See `creature_rules.md` for the full rules, the attack line format and examples.
+
+## 10. Examples
 
 - Condition: `*Blind:* This creature can't see. Attacks against it have advantage. Its
   attacks have disadvantage.`

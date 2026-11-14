@@ -49,7 +49,11 @@ d'écriture — Reaction, "for free", conditions sans effet propre — sont dans
 
 - **Cover et Full Cover** : ne concernent que les attaques à distance ; "line of attack".
 - **Spirit Companion** : réserve de PV (Tier × 10) au lieu de charges de soin ; agit au contact.
-- **Créatures** : les valeurs par défaut (speed 6, peut subir des dégâts, disparaît à 0 PV) ne sont
+- **Actions des créatures** : contrairement à Nimble (une chose par tour, "OR" / "Then"), les
+  créatures ont des actions comme les héros (1 par défaut, stat `ACT` si plus), et leurs
+  capacités sont des blocs à capsules comme les capacités de héros. Déplacement gratuit. Tout
+  est dans `creature_rules.md` : le lire avant d'écrire ou de convertir une créature.
+- **Créatures** : les valeurs par défaut (speed 6, 1 action, peut subir des dégâts, disparaît à 0 PV) ne sont
   pas écrites sur la carte.
 
 ## Extraction du texte source
@@ -135,9 +139,11 @@ Rendu en capsules (`badges.typ`, partagé avec les capacités), sans libellé `C
 
 ### Creature (`creat_creature.typ`)
 
-Champs lus : `passive` (tuple d'entrées avec label en gras), `active` (idem, coûts décrits en
-prose car pas de champ `cost` dédié), `ability` (idem), `reminder`, `hit_points`, `armor`,
-`speed`, `level`, `icon`. Toute autre clé est silencieusement ignorée.
+Format (`creature_rules.md`) : `blocks` comme les capacités de héros, avec en plus un `name`
+par bloc (`name`, `kind`, `cost`, `limitation`, `effect`), `actions` (stat ACT, affichée en
+premier et seulement si > 1), `reminder`, `hit_points`, `armor`, `speed`, `level`, `icon`.
+Les blocs partagés (Undying) sont dans `creatures/passive_abilities.typ`. Toute autre clé est
+silencieusement ignorée.
 
 ## Compagnons de classe : séparer le sort de la créature
 
@@ -151,7 +157,7 @@ en deux cartes :
 Voir `class/shepherd/lifebinding_spirit.typ` + `class/shepherd/spirit_companion.typ`.
 Même principe pour un sort qui accorde de nouvelles actions (transformation) : le sort décrit
 l'effet et dit "You gain the X abilities", une carte `creat_ability` séparée porte les actions
-(nom de l'action en gras au début de l'effet). Voir `spells/fire/dragonform.typ` +
+(nom de chaque action dans le champ `name` du bloc). Voir `spells/fire/dragonform.typ` +
 `spells/fire/dragon_form.typ`. Les sorts n'ont pas de champ `blocks`.
 
 ## Règles d'écriture

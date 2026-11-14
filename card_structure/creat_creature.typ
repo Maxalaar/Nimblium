@@ -1,28 +1,16 @@
-#import "creat_frame.typ": creat_card, reminders, stat_value, ink
+#import "creat_frame.typ": creat_card, reminders, stat_value
+#import "creat_ability.typ": ability_block
 
-#let entry_spacing = 0.3em
-#let section_spacing = 0.8em
+#let block_spacing = 0.8em
 
-// Section bar: ──── PASSIVE ────
-#let section_line(label) = grid(
-  columns: (1fr, auto, 1fr),
-  column-gutter: 4pt,
-  align: horizon,
-  line(length: 100%, stroke: 0.5pt + ink),
-  text(size: 6pt, weight: "bold", upper(label)),
-  line(length: 100%, stroke: 0.5pt + ink),
-)
-
-// Sections are labelled only when the creature has more than one of them.
+// Creatures follow creature_rules.md: named passive/active blocks with
+// capsules, like hero abilities, in the order they are written.
 #let creat_creature(creature) = {
-  let sections = ("passive", "active", "ability").filter(k => k in creature)
-  let blocks = sections.map(k => {
-    if sections.len() > 1 { section_line(k); v(entry_spacing) }
-    creature.at(k).join(v(entry_spacing))
-  })
+  let blocks = creature.at("blocks", default: ()).map(ability_block)
   if "reminder" in creature { blocks.push(reminders(creature.reminder)) }
 
   let stats = ()
+  if creature.at("actions", default: 1) != 1 { stats.push(("ACT", stat_value(creature.actions))) }
   if "hit_points" in creature { stats.push(("HP", stat_value(creature.hit_points))) }
   if "armor" in creature { stats.push(("ARM", stat_value(creature.armor))) }
   if "speed" in creature { stats.push(("SPD", stat_value(creature.speed))) }
@@ -31,7 +19,7 @@
   creat_card(
     creature.name,
     creature.at("type", default: ()),
-    blocks.join(v(section_spacing)),
+    blocks.join(v(block_spacing)),
     stats: stats,
     icon: creature.at("icon", default: none),
   )
