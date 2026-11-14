@@ -7,8 +7,15 @@
         "Mage",
     ),
     blocks: (
-      (kind: "narrative", effect: [Gain advantage on Arcana or Lore checks when you have access to a large amount of books and time to study them.]),
+      (
+        kind: "narrative",
+        effect: [You have advantage on Arcana and Lore checks when you have access to many books and the time to study them.],
+      ),
     ),
 )
 
 #let talented_researcher = creat_ability(ability_data)
+
+/*
+review: style=2026-11-14 changelog=2026-10-02
+*/

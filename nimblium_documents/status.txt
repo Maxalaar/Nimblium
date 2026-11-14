@@ -20,11 +20,12 @@ donnent que le nom : pas de texte disponible, donc pas de cartes.
   Shadowpath (Dread Hunter remplace Pack Hunter) et Wild Heart. Utilise `hunter_keywords.typ`
   pour Marked (remplace la prose "quarry" du PDF). Au nouveau style et au changelog du
   2 octobre 2026. Nouvelles sous-classes annoncées : Keeper of Traps, Keeper of the Pack.
-- **Mage** (p.30-35) : EN COURS — capacités de base, sous-classes Invoker of Control et
-  Invoker of Chaos (au nouveau style). `mage_keywords.typ` définit Demand Control et Invoke
+- **Mage** (p.30-35) : COMPLET — capacités de base, Spellshaper (avec une carte Mechanic pour
+  la limite d'1 Spellshaper par tour), sous-classes Invoker of Control et Invoker of Chaos. Au
+  nouveau style et au changelog du 2 octobre 2026. `mage_keywords.typ` définit Demand Control et Invoke
   Chaos. Pas de carte pour At Any Cost ni Tempest Mage (ils ne font que débloquer des sorts),
   ni pour la Chaos Table (secrète, réservée au MJ, refaite dans le changelog sans que son
-  contenu soit publié). Restent : les Spellshaper, et la relecture des 4 capacités de base.
+  contenu soit publié).
   Nouvelles sous-classes annoncées : Invoker of Wards, Flame, Surges, Frost.
 - **Shepherd** (p.48-53) : COMPLET — niveaux de base, Sacred Graces, sous-classes Luminary of
   Mercy et Luminary of Malice. Au nouveau style. Le compagnon reste en version maison : les
