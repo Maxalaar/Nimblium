@@ -3,6 +3,7 @@
 // `creat_card` returns both faces side by side: front on the left, back on
 // the right.
 #import "../style.typ": reminder_color
+#import "family_icons.typ": family_icons, icon_gray
 
 #let card_width = 63mm
 #let card_height = 88mm
@@ -81,10 +82,35 @@
 
 #let reminders(items) = text(size: reminder_size, fill: reminder_color, items.join(v(0.3em)))
 
+// ---------- icons ----------
+
+// A bare file name is looked up in art/icons/; a path starting with "/" is
+// taken from the project root.
+#let icons_dir = "/art/icons/"
+#let icon_path(icon) = if icon.starts-with("/") { icon } else { icons_dir + icon }
+
+// SVG icons are drawn in `icon_gray` (their black is recolored); other images
+// are shown as they are.
+#let icon_image(icon, width) = {
+  let path = icon_path(icon)
+  if path.ends-with(".svg") {
+    image(bytes(read(path).replace("#000", icon_gray)), format: "svg", width: width)
+  } else {
+    image(path, width: width)
+  }
+}
+
+// Icon of the most specific type of the card found in `family_icons`.
+#let family_icon(types) = {
+  let found = types.rev().filter(t => type(t) == str and t in family_icons)
+  if found.len() > 0 { family_icons.at(found.first()) } else { none }
+}
+
 // ---------- faces ----------
 
 // `stats` is a list of (label, value) shown in a row at the bottom.
-#let card_front(name, types, body, stats: ()) = card_frame({
+// `glyph`: family icon, shown small in the bottom-left corner.
+#let card_front(name, types, body, stats: (), glyph: none) = card_frame({
   corners()
   let cx = card_width / 2
   at(cx, 8.3mm, fit_text(upper(name), size: 11pt, tracking: 1.8pt, weight: "bold"))
@@ -109,19 +135,16 @@
       }
     }
   }
-})
 
-// A bare file name is looked up in art/icons/; a path starting with "/" is
-// taken from the project root.
-#let icons_dir = "/art/icons/"
-#let icon_path(icon) = if icon.starts-with("/") { icon } else { icons_dir + icon }
+  if glyph != none { at(7.3mm, card_height - 7.3mm, icon_image(glyph, 5mm)) }
+})
 
 // Without an icon, the name and types sit in the middle of the card.
 #let card_back(name, types, icon: none) = card_frame({
   corners(inset: 5mm, len: 4mm)
   let cx = card_width / 2
   let name_y = if icon == none { card_height / 2 - 2mm } else { 65mm }
-  if icon != none { at(cx, 34mm, image(icon_path(icon), width: 34mm)) }
+  if icon != none { at(cx, 34mm, icon_image(icon, 38mm)) }
   at(cx, name_y, fit_text(upper(name), size: 15pt, tracking: 3pt, weight: "bold",
                           max_width: card_width - 12mm))
   at(cx, name_y + 6.5mm, text(size: 6pt, tracking: 1.5pt, upper(types_text(types))))
@@ -129,11 +152,15 @@
 
 // Both faces of a card, front on the left and back on the right.
 // `part` ("1/2", "2/2") is added to the types of a card split in two.
+// The family icon comes from the types (see family_icons.typ); `icon`
+// replaces it on the back only.
 #let creat_card(name, types, body, stats: (), back_types: none, icon: none, part: none) = {
   let extra = if part == none { () } else { (part,) }
+  let glyph = family_icon(types)
   box(grid(columns: 2, column-gutter: card_gap,
-    card_front(name, types + extra, body, stats: stats),
-    card_back(name, (if back_types == none { types } else { back_types }) + extra, icon: icon)))
+    card_front(name, types + extra, body, stats: stats, glyph: glyph),
+    card_back(name, (if back_types == none { types } else { back_types }) + extra,
+              icon: if icon == none { glyph } else { icon })))
 }
 
 // Stat values may be numbers, strings or content.

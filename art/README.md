@@ -29,6 +29,7 @@ Card illustrations for Nimblium, generated locally with Stable Diffusion
 art/
 ├── README.md        this file (graphic charter + usage)
 ├── styles.json      style presets: the single source of truth for settings
+├── icons/           family icons (SVG) + CREDITS.md, see "Family icons"
 ├── creatures/       mirrors the project tree: creatures/goblin/bugbear.png
 ├── class/           ...                       class/mage/archmage.png
 ├── spells/          ...
@@ -48,6 +49,28 @@ art/
   world (implants, cables, tech armor, mechanical mounts).
 - **Format**: 832×1152 px (63×88 mm card ratio), full body, centered, white
   background.
+
+## Family icons
+
+Every card of a family (Goblin, later Hunter, Fire...) shows the same icon:
+big in the middle of its back, small in the bottom-left corner of its front.
+The icon is a filled black SVG in `art/icons/`, printed in gray (`#999999`)
+to save ink.
+
+To add a family:
+
+1. Pick an icon on [game-icons.net](https://game-icons.net) (simple shapes
+   read best at small size). The raw file is at
+   `https://raw.githubusercontent.com/game-icons/icons/master/<author>/<name>.svg`.
+2. Make it black on transparent: remove the background path
+   `<path d="M0 0h512v512H0z"/>` and set the remaining paths to `fill="#000"`.
+3. Save it as `art/icons/<family>.svg`, add a line to
+   [`icons/CREDITS.md`](icons/CREDITS.md) (CC BY 3.0 requires it).
+4. Map the card type to the file in
+   [`card_structure/family_icons.typ`](../card_structure/family_icons.typ).
+   The gray is set there too (`icon_gray`).
+
+A card's own `icon:` field replaces the family icon on its back.
 
 ## How a prompt is built
 
