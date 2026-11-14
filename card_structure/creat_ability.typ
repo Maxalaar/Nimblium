@@ -16,12 +16,10 @@
 
 #let mode_badge(kind) = dark_badge(kind, color: mode_shades.at(kind, default: rgb("#4D4D4D")))
 
-// Optional bold name (for actions granted by another card, e.g. a spell),
-// then the mode, cost and limitation capsules, then the effect below them.
+// Mode capsule, then cost and limitation capsules, then the effect below them.
 #let ability_block(block) = {
   let tags = block.at("cost", default: ())
   if "limitation" in block { tags += (block.limitation,) }
-  if "name" in block { [*#block.name*]; h(4pt) }
   ((mode_badge(block.kind),) + tags.map(tag_badge)).join(h(2pt))
   linebreak()
   block.effect

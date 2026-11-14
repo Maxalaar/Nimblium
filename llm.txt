@@ -149,6 +149,10 @@ en deux cartes :
   scale, etc.) en sections `passive`/`active`.
 
 Voir `class/shepherd/lifebinding_spirit.typ` + `class/shepherd/spirit_companion.typ`.
+Même principe pour un sort qui accorde de nouvelles actions (transformation) : le sort décrit
+l'effet et dit "You gain the X abilities", une carte `creat_ability` séparée porte les actions
+(nom de l'action en gras au début de l'effet). Voir `spells/fire/dragonform.typ` +
+`spells/fire/dragon_form.typ`. Les sorts n'ont pas de champ `blocks`.
 
 ## Règles d'écriture
 

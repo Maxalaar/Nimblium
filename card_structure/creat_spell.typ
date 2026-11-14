@@ -1,6 +1,5 @@
 #import "creat_frame.typ": creat_card, reminders, stat_value
 #import "badges.typ": dark_badge, tag_badge
-#import "creat_ability.typ": ability_block
 
 #let block_spacing = 0.8em
 
@@ -15,8 +14,6 @@
   let capsules = ((dark_badge(spell.type.at(2)),) + tags.map(tag_badge)).join(h(2pt))
 
   let blocks = ([#capsules\ #spell.at("effect", default: none)],)
-  // Actions the spell grants, rendered like ability blocks.
-  if "blocks" in spell { blocks += spell.blocks.map(ability_block) }
   if "high_Levels" in spell { blocks.push(labelled_section("High Levels", spell.high_Levels)) }
   if "upcast" in spell { blocks.push(labelled_section("Upcast", spell.upcast)) }
   if "flavor" in spell { blocks.push(emph(spell.flavor)) }
