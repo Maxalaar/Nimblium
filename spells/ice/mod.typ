@@ -2,7 +2,7 @@
 #import "snowblind.typ": snowblind
 #import "frost_shield.typ": frost_shield
 #import "shatter.typ": shatter
-#import "cryosleep.typ": cryosleep
+#import "omenrime.typ": omenrime
 #import "rimeblades.typ": rimeblades
 #import "arctic_blast.typ": arctic_blast
 #import "glacier_strike.typ": glacier_strike

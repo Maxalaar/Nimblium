@@ -17,10 +17,14 @@ qu'il soit exporté.
 ## Ordre de priorité des règles
 
 1. Les décisions de l'utilisateur (règles maison, voir plus bas).
-2. Le changelog de la réimpression :
-   https://nimblerpg.com/blogs/news/core-rules-reprint-full-changelog
-3. Les PDF de `nimble_documents/`, qui datent d'AVANT ce changelog et ne peuvent pas être mis à
-   jour. Toute règle tirée d'un PDF doit donc être confrontée au changelog.
+2. Les changelogs officiels, le plus récent d'abord. Leurs liens sont dans
+   `nimble_documents/weblinks.txt`, avec d'autres liens utiles (à consulter en complément des
+   PDF) :
+   - Core Rules, GMG & Heroes Full Changelog (2 octobre 2026) : le plus récent, il prime ;
+   - Core Rules Reprint Full Changelog : plus ancien.
+   Ces pages ne résument que les changements : une valeur absente se prend dans le PDF.
+3. Les PDF de `nimble_documents/`, qui datent d'AVANT ces changelogs et ne peuvent pas être mis
+   à jour. Toute règle tirée d'un PDF doit donc être confrontée aux changelogs.
 
 Règles du changelog déjà appliquées :
 
@@ -35,8 +39,10 @@ Règles du changelog déjà appliquées :
 - **Sorts défensifs** : 0 action, lançables uniquement pendant un Defend.
 - **Capacités** : les limites se réinitialisent à la FIN de ton tour.
 - **Smoldering** : tout effet qui s'appuie sur une cible Smoldering met fin à la condition.
-- **Sorts Fire, Ice et Lightning** du dépôt : déjà alignés. Les autres écoles (Wind, Radiant,
-  Necrotic) ont aussi des changements : relire le changelog avant de les créer.
+- **Sorts Wind** : créés d'après le changelog du 2 octobre 2026 (Fly remplacé par Echoburst).
+- **Sorts Fire, Ice et Lightning** : alignés sur les deux changelogs et réécrits selon
+  `writing_rules.md` (Cryosleep remplacé par Omenrime).
+- **Radiant, Necrotic, Utility** : pas encore créés. Lire les deux changelogs avant.
 
 Règles maison, à ne pas "corriger" d'après le livre ou le changelog (les règles maison
 d'écriture — Reaction, "for free", conditions sans effet propre — sont dans `writing_rules.md`) :

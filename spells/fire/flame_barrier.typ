@@ -12,7 +12,8 @@
         mana(3),
     ),
     reach: "1",
-    effect: [Once per round, you may cast this spell while Defending. Until the start of your next turn, whenever you are attacked in melee, each creature within Reach takes #KEY damage, ignoring armor, and becomes #kw_smoldering.],
+    damage: [10+#KEY],
+    effect: [Once per round, you may cast this spell while Defending. This round, whenever you are attacked, each creature within Reach takes this spell's damage and becomes #kw_smoldering.],
     upcast: [+#KEY damage or +1 Reach.],
     reminder: (conditions.smoldering,)
 )

@@ -100,7 +100,7 @@ Typst syntax pitfalls:
 - Condition: `*Blind:* This creature can't see. Attacks against it have advantage. Its
   attacks have disadvantage.`
 - Condition with a trigger: `*Dying:* This creature can't have more than 1 action per turn
-  and can't concentrate. Whenever it attacks or casts a spell, it gains 1 Wound unless it
+  and can't concentrate. Whenever it attacks, it gains 1 Wound unless it
   succeeds on a DC 10 STR save. Whenever it takes damage, it gains 2 Wounds, or 3 on a critical
   hit.`
 - Player-related keyword: `*Marked:* A creature is Marked when you target it with Hunter's

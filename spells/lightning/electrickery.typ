@@ -12,7 +12,7 @@
         mana(4),
     ),
     range: "8",
-    effect: [Once per round, when an ally within Range is attacked, you may cast this spell. Choose another creature within Range. It makes a #WIL save. If it fails, it swaps places with that ally and becomes the target of the attack.\
+    effect: [Once per round, when an ally within Range is attacked, you may cast this spell. That ally teleports to a space of your choice within Range. Choose another creature within Range. It makes a #WIL save. If it fails, it teleports into the ally's previous space and becomes the target of the attack.\
     While you are #kw_charged, this spell costs #actions(1) instead.],
     upcast: [+2 Range.],
     reminder: (conditions.charged,),

@@ -13,7 +13,7 @@
     ),
     concentration: "1 min",
     reach: "8",
-    effect: [A weapon within Reach deals +#KEY damage. When it crits, the target becomes #kw_smoldering.],
+    effect: [The first time each turn a weapon within Reach hits, it deals +#KEY damage. When it crits, the target becomes #kw_smoldering.],
     upcast: [+#KEY damage.],
     reminder: (conditions.smoldering,)
 )

@@ -24,7 +24,7 @@
             name: "Immolating Breath",
             kind: "active",
             cost: (actions(2),),
-            effect: [Each creature in a Cone 8 makes a #DEX save. If it fails, it takes #times(KEY, "d20") damage. If it succeeds, it takes half. A #kw_smoldering creature automatically fails.],
+            effect: [Each creature in a Cone 10 makes a #DEX save. If it fails, it takes #times(KEY, "d20") damage. If it succeeds, it takes half. A #kw_smoldering creature automatically fails.],
         ),
     ),
     reminder: (conditions.smoldering, conditions.dying)

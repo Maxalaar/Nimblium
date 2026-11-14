@@ -11,7 +11,7 @@
         actions(2),
         mana(1),
     ),
-    range: "8",
+    range: "10",
     damage: "4d10",
     effect: [Cast this spell only on a #kw_smoldering creature.],
     upcast: [+10 damage.],

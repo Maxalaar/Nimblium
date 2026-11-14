@@ -10,10 +10,10 @@
     cost: (
         actions(1),
     ),
-    range: "12",
-    damage: "2d8",
-    effect: [If this spell misses, you take 2d8 damage instead.],
-    high_Levels: [This spell's damage increases by 4 at levels 5, 10, 15 and 20.],
+    range: "8",
+    damage: "1d8+4",
+    effect: [If this spell misses, you take half its damage instead.],
+    high_Levels: [This spell's damage increases by 6 at levels 5, 10, 15 and 20.],
     reminder: (conditions.charged,),
 )
 

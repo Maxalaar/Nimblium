@@ -14,9 +14,10 @@
     ),
     reach: "Line 12",
     damage: "3d8+4",
-    effect: [This spell's damage ignores metal armor. Each creature that survives makes a #STR save. If it fails, it is #kw_dazed. If it fails by 5 or more, it is #kw_incapacitated until the end of its next turn instead. A creature wearing metal armor or holding a large metal weapon has disadvantage on this save.],
+    effect: [Each creature that survives makes a #STR save. If it fails, it is #kw_prone.\
+    A creature wearing metal armor or holding a large metal weapon takes +10 damage and has disadvantage on this save.],
     upcast: [+4 damage.],
-    reminder: (conditions.dazed, conditions.incapacitated),
+    reminder: (conditions.prone,),
 )
 
 #let stormlash = creat_spell(spell_data)
