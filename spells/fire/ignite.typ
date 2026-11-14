@@ -13,7 +13,7 @@
     ),
     range: "8",
     damage: "4d10",
-    effect: [This spell can target only a #kw_smoldering creature.],
+    effect: [Cast this spell only on a #kw_smoldering creature.],
     upcast: [+10 damage.],
     reminder: (conditions.smoldering,),
 )

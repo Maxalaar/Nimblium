@@ -13,7 +13,7 @@
     ),
     concentration: "1 min",
     reach: "8",
-    effect: [A weapon within Reach is enchanted with magical flame. It deals +#KEY damage and inflicts #kw_smoldering on crit.],
+    effect: [A weapon within Reach deals +#KEY damage. When it crits, the target becomes #kw_smoldering.],
     upcast: [+#KEY damage.],
     reminder: (conditions.smoldering,)
 )

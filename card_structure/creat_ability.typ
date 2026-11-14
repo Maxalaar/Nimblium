@@ -23,6 +23,8 @@
 
 #let ability_block(block) = {
   set text(size: ability_text_size)
+  // Optional name, for actions granted by another card (e.g. a spell).
+  if "name" in block { [*#block.name*]; linebreak() }
   mode_badge(block.kind)
   if "cost" in block {
     for c in block.cost {

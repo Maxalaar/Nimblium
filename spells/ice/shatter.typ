@@ -12,8 +12,9 @@
         mana(2),
     ),
     damage: "3d6",
-    effect: [If any die rolls the max against a #kw_hampered target, this counts as a crit. On crit: +20 damage.],
-    upcast: [Increase the result of ANY die by 1. +5 damage on crit.],
+    range: "12",
+    effect: [If any die shows its maximum against a #kw_hampered target, this spell crits. When this spell crits, it deals +20 damage.],
+    upcast: [Add 1 to the result of a die of your choice, up to its maximum. A crit deals +5 damage.],
     reminder: (conditions.hampered,),
 )
 

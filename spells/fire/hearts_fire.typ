@@ -11,8 +11,9 @@
         actions(1),
     ),
     range: "4",
-    effect: [Once per round, give an ally within Range an extra action. Spend 1 mana to cast this when it is not your turn.],
-    high_Levels: [+2 Range every 5 levels.],
+    effect: [Once per round, an ally within Range gains 1 action.\
+    You may cast this spell outside your turn by spending #mana(1).],
+    high_Levels: [This spell's Range increases by 2 at levels 5, 10, 15 and 20.],
 )
 
 #let hearts_fire = creat_spell(spell_data)

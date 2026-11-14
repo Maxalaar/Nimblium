@@ -10,7 +10,7 @@
     cost: (
         mana(1),
     ),
-    effect: [Once per round, you may cast this spell while Defending. Gain #times(2, KEY) temp #HP. The ice melts and these temp #HP are lost at the start of your next turn.],
+    effect: [Once per round, you may cast this spell while Defending. You gain #times(2, KEY) temp #HP. You lose them at the start of your next turn.],
     upcast: [+#times(2, KEY) temp #HP.],
 )
 

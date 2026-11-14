@@ -13,8 +13,11 @@
         mana(9),
     ),
     reach: "12",
-    effect: [Choose any number of targets within Reach to encase in ice. They are immune to damage and negative effects until the start of their next turn. All other creatures and objects within Reach take #kw_d66 damage. Any surviving creature who took this damage must make a #STR save or be #kw_incapacitated for 1 round. Once you cast this spell, you must #safe_rest for 1 week before using it again.],
-    reminder: (conditions.incapacitated, keywords.d66),
+    damage: [#kw_d66],
+    effect: [Choose any number of creatures and objects within Reach. Until the start of their next turn, they are immune to damage and negative effects.\
+    Each other creature and object within Reach takes this spell's damage. Each creature that survives makes a #STR save. If it fails, it is #kw_incapacitated until the end of its next turn.\
+    After you cast this spell, you must #safe_rest for 1 week before you can cast it again.],
+    reminder: (conditions.incapacitated,),
 )
 
 #let arctic_annihilation = creat_spell(spell_data)

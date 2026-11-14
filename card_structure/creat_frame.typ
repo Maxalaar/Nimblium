@@ -56,6 +56,22 @@
   if speed != none      { stats.push(("SPD", str(speed))) }
   if level != none      { stats.push(("LVL", str(level))) }
 
+  // Shrink the text when it overflows the text box: lay it out on a wider box,
+  // then scale it down, so lines reflow instead of only getting smaller.
+  let text_width = card_width - 6mm
+  let text_height = text_box_top - text_box_bottom - 3mm
+  let fit_text(body) = context {
+    let factor = 1.0
+    while factor > 0.6 {
+      let h = measure(box(width: text_width / factor, body)).height
+      if h * factor <= text_height { break }
+      factor -= 0.02
+    }
+    let inner = box(width: text_width / factor, align(horizon, body))
+    if factor < 1.0 { scale(factor * 100%, reflow: true, inner) } else { inner }
+  }
+  let fitted_text = fit_text(text_content)
+
   cetz.canvas({
     import cetz.draw: *
 
@@ -111,10 +127,7 @@
     content(
       (card_width / 2, text_box_center_y),
       anchor: "center",
-      box(
-        width: card_width - 6mm,
-        align(horizon, text_content)
-      )
+      fitted_text,
     )
 
     // Carrés de stats en bas

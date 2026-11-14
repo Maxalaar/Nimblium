@@ -12,8 +12,8 @@
     ),
     range: "12",
     damage: "1d6",
-    effect: [On hit: #kw_slowed.],
-    high_Levels: [+3 damage every 5 levels.],
+    effect: [If this spell hits, the target is #kw_slowed.],
+    high_Levels: [This spell's damage increases by 3 at levels 5, 10, 15 and 20.],
     reminder: (conditions.slowed,)
 )
 

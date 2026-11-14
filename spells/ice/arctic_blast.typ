@@ -14,7 +14,7 @@
     ),
     reach: "Cone 4",
     damage: "4d6+10",
-    effect: [This area is #kw_difficult_terrain until the end of your next turn. Surviving creatures that are already #kw_hampered are #kw_restrained until the end of their next turn.],
+    effect: [Each surviving creature that is #kw_hampered is #kw_restrained until the end of its next turn. Then the area becomes #kw_difficult_terrain until the end of your next turn.],
     reminder: (keywords.difficult_terrain, conditions.hampered, conditions.restrained),
     upcast: [+1 Reach.],
 )

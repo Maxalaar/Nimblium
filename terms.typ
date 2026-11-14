@@ -38,6 +38,7 @@
 #let dc(base, stat: none) = if stat == none { "DC " + str(base) } else { "DC " + str(base) + "+" + stat }
 
 // Keywords, styled. The matching definition still goes in the card's `reminder`.
+#let kw_advantage = keyword_style[Advantage]
 #let kw_asleep = keyword_style[Asleep]
 #let kw_blind = keyword_style[Blind]
 #let kw_blindsight = keyword_style[Blindsight]

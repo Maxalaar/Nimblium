@@ -1,6 +1,7 @@
 #import "creat_frame.typ": creat_frame
 #import "badges.typ": dark_badge, tag_badge
 #import "../style.typ": reminder_color
+#import "creat_ability.typ": ability_block
 
 #let section_spacing = 1em
 #let capsule_row_leading = 0.25em
@@ -41,6 +42,8 @@
   let data = (capsule_rows(spell),)
 
   if "effect" in spell { data += (gap, spell.effect) }
+  // Actions the spell grants, rendered like ability blocks.
+  if "blocks" in spell { for blk in spell.blocks { data += (gap, ability_block(blk)) } }
   if "high_Levels" in spell { data += (gap, labelled_section("High Levels", spell.high_Levels)) }
   if "upcast" in spell { data += (gap, labelled_section("Upcast", spell.upcast)) }
   if "flavor" in spell { data += (gap, emph(spell.flavor)) }

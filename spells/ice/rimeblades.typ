@@ -15,7 +15,7 @@
     concentration: "1 min",
     reach: "12",
     damage: "2d6",
-    effect: [Conjure razor-sharp icy spikes in 5 contiguous spaces within Reach; this area is #kw_difficult_terrain. Creatures that enter these spaces or who are in the area when you conjure them, suffer damage for each space they touch.],
+    effect: [Choose 5 contiguous spaces within Reach. They become #kw_difficult_terrain. Each creature in these spaces takes this spell's damage. Whenever a creature enters one of these spaces, it takes this spell's damage.],
     upcast: [+1 space, +1 damage.],
     reminder: (keywords.difficult_terrain,),
 )

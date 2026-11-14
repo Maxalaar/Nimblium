@@ -12,8 +12,8 @@
     ),
     range: "8",
     damage: "1d10",
-    effect: [On crit: #kw_smoldering.],
-    high_Levels: [+5 damage every 5 levels.],
+    effect: [If this spell crits, the target becomes #kw_smoldering.],
+    high_Levels: [This spell's damage increases by 5 at levels 5, 10, 15 and 20.],
     reminder: (conditions.smoldering,)
 )
 

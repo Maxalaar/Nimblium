@@ -9,12 +9,12 @@
         "AoE",
     ),
     cost: (
-        actions(1),
+        actions(2),
         mana(3),
     ),
     reach: "12",
     area: [#times(2, 2)],
-    effect: [ Creatures in the area are #kw_dazed. On a failed #WIL save, they fall #kw_asleep instead.],
+    effect: [Each creature in the area is #kw_dazed. It makes a #WIL save. If it fails, it is #kw_asleep instead.],
     reminder: (conditions.dazed, conditions.asleep),
     upcast: [+1 area, +1 turn asleep.],
 )

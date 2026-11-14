@@ -9,12 +9,13 @@
         "AoE",
     ),
     cost: (
-        actions(1),
+        actions(2),
         mana(5),
     ),
     concentration: "1 min",
     reach: "8",
-    effect: [While within Reach: 1 ally gains the effects of Enchant Weapon. Enemies gain #kw_smoldering, lose damage resistance, and their damage immunity is reduced to resistance.],
+    effect: [Choose 1 ally. While it is within Reach, it gains the effects of Enchant Weapon.\
+    While an enemy is within Reach, it is #kw_smoldering. It loses its damage resistances, and its damage immunities become resistances.],
     upcast: [+1 ally and +2 Reach.],
     reminder: (conditions.smoldering,)
 )

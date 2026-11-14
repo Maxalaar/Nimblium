@@ -15,9 +15,9 @@
     range: "12",
     area: "3x3",
     damage: [#kw_d66],
-    effect: [Inflict damage in the area. Creatures adjacent to that area take half. The entire area becomes #kw_difficult_terrain.],
-    reminder: (keywords.d66, keywords.difficult_terrain,),
-    upcast: [+1 Reach.],
+    effect: [Each creature in the area takes this spell's damage. Each creature adjacent to the area takes half. The area permanently becomes #kw_difficult_terrain.],
+    reminder: (keywords.difficult_terrain,),
+    upcast: [+1 area.],
 )
 
 #let glacier_strike = creat_spell(spell_data)
