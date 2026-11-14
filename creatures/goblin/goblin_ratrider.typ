@@ -8,12 +8,12 @@
     ),
     active: (
         [
-            *Charge:* If you move at least 4 spaces in straight line, attack with advantage once.
+            *Charge:* If you move at least 4 spaces in a straight line, attack with advantage once.
         ],
     ),
     ability: (
         [
-            *Bite & Stab:* 2 attaques. 1d6+2 damage. On crit: #kw_prone.
+            *Bite & Stab:* 2 attacks. 1d6+2 damage. On crit: #kw_prone.
         ],
     ),
     reminder: (conditions.prone,),

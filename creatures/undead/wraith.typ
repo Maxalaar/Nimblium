@@ -11,7 +11,7 @@
   ),
   active: (
     [
-      *Soul Rend:*. 2 attaques. Range 8. 1d4+10 damage. On damage: deal 1 Wound.
+      *Soul Rend:* 2 attacks. Range 8, 1d4+10 damage. On damage: deal 1 Wound.
     ],
   ),
   hit_points: 100,

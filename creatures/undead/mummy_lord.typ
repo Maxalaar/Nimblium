@@ -8,13 +8,13 @@
   ),
   passive: (
     passive_abilities.undying,
-    [*Cursed Gaze:*  When crit: #dc(20) #INT save, or suffer 1 Wound],
+    [*Cursed Gaze:* On crit: #dc(20) #INT save, or suffer 1 Wound.],
   ),
   active: (
     [
-      * Scarab Swarm:* Summon 10 scarab minions (d6) within 6 spaces.\
+      *Scarab Swarm:* Summon 10 scarab minions (d6) within 6 spaces.\
       then\
-      *Slam:* 2 attaques. 1d4+20. On damage: #kw_dazed.
+      *Slam:* 2 attacks. 1d4+20 damage. On damage: #kw_dazed.
     ],
   ),
   reminder: (conditions.dazed,),
