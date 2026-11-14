@@ -28,7 +28,7 @@ et le dos côte à côte (5 mm d'écart). Design épuré, noir et blanc, peu d'e
   `icon: "x.svg"` est cherché dans `art/icons/`, un chemin commençant par `/` part de la
   racine du projet. Les SVG sont passés en gris, les autres images (PNG) restent telles
   quelles. Rien n'est relié automatiquement par nom de fichier. Ajouter une famille :
-  `art/README.md`, section "Family icons".
+  `art.txt`, section "Family icons".
 - Capacités et sorts : capsules sombres (ACTIVE, PASSIVE, CANTRIP, UPCAST…) + capsules à
   contour (coûts, limites), collées à gauche, texte juste en dessous.
 - Créatures : barres de section `── PASSIVE ──` (pas de capsules), affichées seulement si la

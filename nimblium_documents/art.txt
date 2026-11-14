@@ -1,7 +1,7 @@
-# Art
+# Art — Nimblium
 
 Card illustrations for Nimblium, generated locally with Stable Diffusion
-(Forge) through [`tools/generate_image.py`](../tools/generate_image.py).
+(Forge) through `tools/generate_image.py`.
 
 ## Quick start
 
@@ -27,7 +27,6 @@ Card illustrations for Nimblium, generated locally with Stable Diffusion
 
 ```
 art/
-├── README.md        this file (graphic charter + usage)
 ├── styles.json      style presets: the single source of truth for settings
 ├── icons/           family icons (SVG) + CREDITS.md, see "Family icons"
 ├── creatures/       mirrors the project tree: creatures/goblin/bugbear.png
@@ -65,9 +64,9 @@ To add a family:
 2. Make it black on transparent: remove the background path
    `<path d="M0 0h512v512H0z"/>` and set the remaining paths to `fill="#000"`.
 3. Save it as `art/icons/<family>.svg`, add a line to
-   [`icons/CREDITS.md`](icons/CREDITS.md) (CC BY 3.0 requires it).
+   `art/icons/CREDITS.md` (CC BY 3.0 requires it).
 4. Map the card type to the file in
-   [`card_structure/family_icons.typ`](../card_structure/family_icons.typ).
+   `card_structure/family_icons.typ`.
    The gray is set there too (`icon_gray`).
 
 A card's own `icon:` field replaces the family icon on its back.
@@ -81,7 +80,7 @@ With `-s <style>`, the prompt sent to the model is:
 ```
 
 plus the style's negative prompt, model, steps, CFG, sampler and size, all
-read from [`styles.json`](styles.json). To change the look of every future
+read from `art/styles.json`. To change the look of every future
 image, edit `styles.json`, not the script.
 
 **Write the subject as what is seen** (creature, weapon, pose, cyberpunk

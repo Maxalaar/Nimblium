@@ -67,6 +67,10 @@ Rédaction des cartes :
 - `creature_rules.txt` : règles maison des créatures et format de leurs cartes.
 - `card_format.txt` : les types de cartes, leurs champs et leur mise en page.
 
+Art :
+- `art.txt` : charte graphique, icônes de famille au dos des cartes, génération des
+  illustrations avec `tools/generate_image.py`.
+
 Gestion du projet :
 - `workflow.txt` : sources, organisation des fichiers, vérifications, suivi des révisions,
   rythme de travail.
@@ -77,4 +81,4 @@ Outils (`tools/`) :
 - `check_terms.py` : signale les termes de jeu tapés à la main au lieu de `terms.typ`.
 - `review.py` : état des révisions par classe, et liste des notes de cartes (`--rules`).
 - `export_cards.py` : exporte chaque carte en PDF à côté de son `.typ`.
-- `generate_image.py` : génère les illustrations (voir `art/README.md`).
+- `generate_image.py` : génère les illustrations (voir `art.txt`).

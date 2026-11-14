@@ -8,7 +8,7 @@ any result can be reproduced or tweaked later.
 
 With --style, only describe the subject: the preset from art/styles.json adds
 the prompt prefix/suffix, the negative prompt, the model and all settings
-(see art/README.md). Any option given on the command line overrides the style.
+(see nimblium_documents/art.txt). Any option given on the command line overrides the style.
 
 Forge must be running with --api (launch it with lancer_forge.sh).
 
@@ -36,7 +36,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_OUT = ROOT / "art" / "tmp"
 URL = "http://127.0.0.1:7860"
 
-# Style presets of the graphic charter (see art/README.md).
+# Style presets of the graphic charter (see nimblium_documents/art.txt).
 STYLES_FILE = ROOT / "art" / "styles.json"
 STYLES = json.loads(STYLES_FILE.read_text()) if STYLES_FILE.exists() else {}
 
