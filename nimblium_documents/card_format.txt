@@ -19,10 +19,16 @@ et le dos côte à côte (5 mm d'écart). Design épuré, noir et blanc, peu d'e
   (sans filet), texte de règles aligné à gauche et centré verticalement (il rétrécit tout seul
   jusqu'à 6pt s'il déborde), ligne de stats en bas (créatures et sorts) séparées par des
   traits verticaux fins. Aucun trait horizontal.
-- Dos : nom + types centrés. Avec un champ `icon` dans les données de la carte, une grande
-  icône noire (game-icons.net, CC BY 3.0) s'affiche au-dessus du nom. `icon: "x.svg"` est
-  cherché dans `art/icons/` ; un chemin commençant par `/` part de la racine du projet.
-  Pour l'instant aucune carte n'a d'icône.
+- Dos : nom + types centrés, sous une grande icône de famille en gris `#999999`
+  (game-icons.net, CC BY 3.0). L'icône vient des types de la carte : `family_icons.typ`
+  associe un type à un fichier de `art/icons/` (aujourd'hui Goblin et Undead) ; si plusieurs
+  types correspondent, le plus précis (le dernier) gagne. Sans type reconnu, pas d'icône et
+  le nom est centré. Le recto n'a pas d'icône.
+- Un champ `icon` dans les données de la carte remplace l'icône de famille au dos :
+  `icon: "x.svg"` est cherché dans `art/icons/`, un chemin commençant par `/` part de la
+  racine du projet. Les SVG sont passés en gris, les autres images (PNG) restent telles
+  quelles. Rien n'est relié automatiquement par nom de fichier. Ajouter une famille :
+  `art/README.md`, section "Family icons".
 - Capacités et sorts : capsules sombres (ACTIVE, PASSIVE, CANTRIP, UPCAST…) + capsules à
   contour (coûts, limites), collées à gauche, texte juste en dessous.
 - Créatures : barres de section `── PASSIVE ──` (pas de capsules), affichées seulement si la

@@ -109,8 +109,7 @@
 // ---------- faces ----------
 
 // `stats` is a list of (label, value) shown in a row at the bottom.
-// `glyph`: family icon, shown small in the bottom-left corner.
-#let card_front(name, types, body, stats: (), glyph: none) = card_frame({
+#let card_front(name, types, body, stats: ()) = card_frame({
   corners()
   let cx = card_width / 2
   at(cx, 8.3mm, fit_text(upper(name), size: 11pt, tracking: 1.8pt, weight: "bold"))
@@ -135,8 +134,6 @@
       }
     }
   }
-
-  if glyph != none { at(7.3mm, card_height - 7.3mm, icon_image(glyph, 5mm)) }
 })
 
 // Without an icon, the name and types sit in the middle of the card.
@@ -156,11 +153,10 @@
 // replaces it on the back only.
 #let creat_card(name, types, body, stats: (), back_types: none, icon: none, part: none) = {
   let extra = if part == none { () } else { (part,) }
-  let glyph = family_icon(types)
   box(grid(columns: 2, column-gutter: card_gap,
-    card_front(name, types + extra, body, stats: stats, glyph: glyph),
+    card_front(name, types + extra, body, stats: stats),
     card_back(name, (if back_types == none { types } else { back_types }) + extra,
-              icon: if icon == none { glyph } else { icon })))
+              icon: if icon == none { family_icon(types) } else { icon })))
 }
 
 // Stat values may be numbers, strings or content.

@@ -7,3 +7,4 @@ Family icons come from [game-icons.net](https://game-icons.net), licensed under
 | File | Icon | Author |
 |---|---|---|
 | `goblin.svg` | [Goblin](https://game-icons.net/1x1/caro-asercion/goblin.html) | Caro Asercion |
+| `undead.svg` | [Harry Potter skull](https://game-icons.net/1x1/lorc/harry-potter-skull.html) | Lorc |
