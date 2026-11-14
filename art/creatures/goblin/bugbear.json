@@ -1,0 +1,20 @@
+{
+  "style": "engraving",
+  "subject": "large hulking bugbear with pointed ears, cybernetic armor plates, wielding a huge cleaver",
+  "prompt": "minimalist engraving, thin black outline only, light sparse hatching, no fill, lots of white paper, large hulking bugbear with pointed ears, cybernetic armor plates, wielding a huge cleaver, space fantasy, simplified shapes, minimalist, faceless, full body, white background",
+  "negative_prompt": "black fill, solid black, filled shapes, dark areas, shadows, shading, silhouette, dark hood interior, heavy ink, color, gray background, gradient, photo, realistic, detailed, text, watermark, frame",
+  "seed": 2664072746,
+  "steps": 6,
+  "cfg_scale": 2.0,
+  "width": 832,
+  "height": 1152,
+  "sampler_name": "DPM++ SDE",
+  "scheduler": "Karras",
+  "batch_size": 1,
+  "n_iter": 1,
+  "override_settings": {
+    "sd_model_checkpoint": "DreamShaperXL_Lightning"
+  },
+  "model": "DreamShaperXL_Lightning",
+  "infotext": "minimalist engraving, thin black outline only, light sparse hatching, no fill, lots of white paper, large hulking bugbear with pointed ears, cybernetic armor plates, wielding a huge cleaver, space fantasy, simplified shapes, minimalist, faceless, full body, white background\nNegative prompt: black fill, solid black, filled shapes, dark areas, shadows, shading, silhouette, dark hood interior, heavy ink, color, gray background, gradient, photo, realistic, detailed, text, watermark, frame\nSteps: 6, Sampler: DPM++ SDE, Schedule type: Karras, CFG scale: 2.0, Seed: 2664072746, Size: 832x1152, Model hash: fdbe56354b, Model: DreamShaperXL_Lightning, Version: f2.0.1v1.10.1-previous-669-gdfdcbab6, Diffusion in Low Bits: Automatic (fp16 LoRA)"
+}

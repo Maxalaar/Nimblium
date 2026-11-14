@@ -1,0 +1,140 @@
+# Art
+
+Card illustrations for Nimblium, generated locally with Stable Diffusion
+(Forge) through [`generate_image.py`](../generate_image.py).
+
+## Quick start
+
+1. Start Forge (it must run with `--api`):
+   ```bash
+   /media/SSD_1To/Image_Generation/lancer_forge.sh
+   ```
+2. From the project root, describe **only the subject**; the style does the rest:
+   ```bash
+   ./generate_image.py -s engraving -c goblin -n 3 --name bugbear \
+       "large hulking bugbear with pointed ears, cybernetic armor plates, wielding a huge cleaver"
+   ```
+   This creates 3 variants in `art/tmp/goblin/`, named
+   `bugbear_<date>_<seed>.png`, each with a `.json` holding its exact settings.
+3. Pick the one you like and copy it **with its `.json`** into the art tree,
+   named after its card:
+   ```bash
+   cp art/tmp/goblin/bugbear_20261113_234626_3445263335.png art/creatures/goblin/bugbear.png
+   cp art/tmp/goblin/bugbear_20261113_234626_3445263335.json art/creatures/goblin/bugbear.json
+   ```
+
+## Folder layout
+
+```
+art/
+├── README.md        this file (graphic charter + usage)
+├── styles.json      style presets: the single source of truth for settings
+├── creatures/       mirrors the project tree: creatures/goblin/bugbear.png
+├── class/           ...                       class/mage/archmage.png
+├── spells/          ...
+└── tmp/             scratch output, NOT versioned (.gitignore)
+```
+
+## Graphic charter
+
+- **Placement**: the illustration goes on the **back of the card**, with the
+  title banner (name + types). The front stays dedicated to the rules.
+- **Printing**: black and white, **as little ink as possible**. No solid black
+  areas, no gray backgrounds, lots of white.
+- **Rendering**: minimalist engraving, thin lines, light and sparse hatching.
+- **Abstraction**: simplified shapes, few details; faces don't need to be shown
+  (hood, shadow, mask).
+- **Setting**: *space fantasy*: fantasy weapons and creatures in a cyberpunk
+  world (implants, cables, tech armor, mechanical mounts).
+- **Format**: 832×1152 px (63×88 mm card ratio), full body, centered, white
+  background.
+
+## How a prompt is built
+
+With `-s <style>`, the prompt sent to the model is:
+
+```
+<style prefix>, <your subject>, <style suffix>
+```
+
+plus the style's negative prompt, model, steps, CFG, sampler and size, all
+read from [`styles.json`](styles.json). To change the look of every future
+image, edit `styles.json`, not the script.
+
+**Write the subject as what is seen** (creature, weapon, pose, cyberpunk
+details), never the style: the style words are already in the prefix/suffix.
+
+## Options
+
+| Option | Meaning |
+|---|---|
+| `-s, --style NAME` | Style preset from `styles.json` (e.g. `engraving`) |
+| `-c, --category NAME` | Subfolder of `art/tmp/` (e.g. `goblin`) |
+| `-n, --count N` | Number of variants (default 1) |
+| `--name NAME` | File name prefix, use the card name (e.g. `bugbear`) |
+| `--seed N` | Fixed seed to reproduce an image (default: random) |
+| `--negative TEXT` | Override the negative prompt |
+| `--steps`, `--cfg`, `--sampler`, `--scheduler`, `--model`, `-W`, `-H` | Override one setting of the style |
+| `-o, --out DIR` | Output folder (default `art/tmp/`) |
+| `--models` | List installed checkpoints |
+
+Any option given on the command line overrides the style.
+
+## ControlNet: keeping a composition
+
+Prompts alone struggle with scenes such as a rider on a mount (the two
+creatures blend together). ControlNet fixes the **composition** with a guide
+image, while the prompt and the style still decide the look.
+
+```bash
+# Re-use the layout of a good image, get new variants in the same pose:
+./generate_image.py -s engraving -c goblin -n 4 --name goblin_wolfrider \
+    --control art/tmp/goblin/rider_20261114_000828_4239306543.png \
+    "goblin riding a large cybernetic wolf, holding a spear"
+
+# Start from your own drawing (black lines on white, even a rough one):
+./generate_image.py -s engraving --control my_sketch.png --control-type sketch \
+    "goblin riding a large cybernetic wolf"
+```
+
+| Option | Meaning |
+|---|---|
+| `--control IMAGE` | Guide image: a generated image, a photo, a sketch... |
+| `--control-type` | What to keep from it (see below), default `scribble` |
+| `--control-weight` | How strictly to follow it (default `0.6`; lower = freer) |
+| `--control-end` | Stop guiding after this fraction of the steps (default `0.5`): the last steps are free to fix details |
+
+| `--control-type` | Keeps | Use it for |
+|---|---|---|
+| `lineart` | the outlines of the image | variants very close to the guide |
+| `canny` | hard edges, very strict | exact copy of the shapes |
+| `softedge` | soft contours | same composition, freer details |
+| `scribble` | only the big shapes | loose re-interpretation |
+| `depth` | volumes and placement | same scene, different details |
+| `pose` | a humanoid skeleton | same pose, any character |
+| `sketch` | your own drawing as is | black-on-white sketches |
+
+**Tip:** the defaults (`scribble`, weight `0.6`, end `0.5`) only impose the
+big shapes, so the prompt can still fix what was wrong in the guide (e.g. a
+wolf-headed rider becomes a goblin). Use `lineart`/`canny` with a high weight
+only when you want near-copies of the guide.
+
+## Reproducing an image
+
+Every image has a `.json` next to it with its `subject`, `style` and `seed`.
+Running the same command with that seed gives the exact same image:
+
+```bash
+./generate_image.py -s engraving --seed 200 \
+    "goblin with long pointed ears and a short cyberpunk cloak, holding a glowing curved blade"
+```
+
+Keep a seed and change a few words of the subject to get a close variant.
+
+## Notes
+
+- Defaults are tuned for **DreamShaper XL Lightning** (6 steps, CFG 2). At such
+  a low CFG the negative prompt has little effect, so keep "no ink" wording in
+  the positive prompt too.
+- If Forge stops by itself during a generation, it is usually **earlyoom**
+  killing it when RAM runs out; restart it and retry.

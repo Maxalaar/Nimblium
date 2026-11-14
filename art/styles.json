@@ -1,0 +1,15 @@
+{
+  "engraving": {
+    "description": "Main card-back style: minimalist engraving, thin lines, minimal ink.",
+    "prefix": "pen and ink drawing, minimalist engraving, thin black outline only, light sparse hatching, no fill, lots of white space",
+    "suffix": "space fantasy, simplified shapes, minimalist, full body, white background",
+    "negative": "black fill, solid black, filled shapes, dark areas, shadows, shading, silhouette, dark hood interior, heavy ink, color, gray background, gradient, vignette, beige, sepia, yellowed paper, parchment, paper texture, photo, realistic, 3d render, figurine, miniature, sculpture, painted, detailed, text, watermark, signature, frame",
+    "model": "DreamShaperXL_Lightning",
+    "steps": 6,
+    "cfg": 2.0,
+    "sampler": "DPM++ SDE",
+    "scheduler": "Karras",
+    "width": 832,
+    "height": 1152
+  }
+}
