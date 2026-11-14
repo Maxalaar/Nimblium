@@ -27,10 +27,10 @@ donnent que le nom : pas de texte disponible, donc pas de cartes.
   contenu soit publié). Restent : les Spellshaper, et la relecture des 4 capacités de base.
   Nouvelles sous-classes annoncées : Invoker of Wards, Flame, Surges, Frost.
 - **Shepherd** (p.48-53) : COMPLET — niveaux de base, Sacred Graces, sous-classes Luminary of
-  Mercy et Luminary of Malice. À REPASSER au nouveau style et au changelog du 2 octobre 2026.
-  Attention : le changelog refait le compagnon (Lifebinding Spirit devient un cantrip de
-  niveau 1 avec Harm et Mend, Searing Light disparaît), ce qui entre en conflit avec la règle
-  maison du Spirit Companion. À trancher avec l'utilisateur avant de toucher à ces cartes.
+  Mercy et Luminary of Malice. Au nouveau style. Le compagnon reste en version maison : les
+  changements du changelog du 2 octobre 2026 sur le compagnon ne sont pas appliqués, et on
+  équilibre le Shepherd nous-mêmes (note dans `class/shepherd/mod.typ`). Nouvelles
+  sous-classes annoncées : Luminary of Protection, Luminary of the Forge.
 - **Commander, Oathsworn, Shadowmancer, Songweaver, Stormshifter, Zephyr, Extra
   Subclasses** : pas commencés.
 

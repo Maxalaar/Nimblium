@@ -11,11 +11,18 @@
       (
         kind: "passive",
         limitation: per_round(1),
-        effect: [Your first melee attack against a #kw_bloodied creature is an automatic critical hit.],
+        effect: [When you make a melee attack against a #kw_bloodied creature, the attack is a crit.],
       ),
-      (kind: "passive", effect: [Your Spirit Companion deals additional damage equal to your #STR.]),
+      (kind: "passive", effect: [Your Spirit Companion's attacks deal #STR additional damage.]),
     ),
     reminder: (conditions.bloodied,),
 )
 
 #let deathbringers_touch = creat_ability(ability_data)
+
+/*
+review: style=2026-11-14 changelog=2026-10-02
+
+house-rule: The 2026-10-02 changelog version of this card is not applied. See the companion
+house rule in class/shepherd/mod.typ.
+*/
