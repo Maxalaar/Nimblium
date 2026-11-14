@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../../global.typ": *
 
 #let ability_data = (
@@ -8,7 +9,10 @@
         "Mountainheart",
     ),
     blocks: (
-      (kind: "passive", effect: [Whenever you expend Fury Dice to reduce incoming damage, add the value of the die to the amount reduced.]),
+      (
+        kind: "passive",
+        effect: [Whenever you spend Fury Dice to reduce damage, the damage is also reduced by the total value of those dice.],
+      ),
     ),
 )
 

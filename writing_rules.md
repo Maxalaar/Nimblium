@@ -5,6 +5,8 @@ conditions, keywords). The goal is a formal card-game language with no ambiguity
 Magic: the same effect is always written the same way.
 
 Every new card follows these rules. Older cards are brought in line as they are reviewed.
+A reviewed card starts with `// review: style=<date> changelog=<date>`; `python3 check_review.py`
+lists the cards still to review.
 
 ## 1. Sentences
 
@@ -69,7 +71,8 @@ Typst syntax pitfalls:
 ## 6. Keywords and reminders
 
 - Definitions: `conditions.typ` (conditions), `keywords.typ` (generic keywords), and the
-  class-specific `*_keywords.typ` files (`berserker_keywords.typ`, `hunter_keywords.typ`).
+  class-specific `*_keywords.typ` files (`berserker_keywords.typ`, `hunter_keywords.typ`,
+  `mage_keywords.typ`).
 - When the text uses a defined term, write its `#kw_...` and add its definition to the card's
   `reminder: (...)` tuple, so the reminder shows at the bottom of the card.
 - Don't invent a reminder for a term with no definition (e.g. "Defend").

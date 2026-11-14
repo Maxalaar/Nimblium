@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../global.typ": *
 
 #let ability_data = (
@@ -8,7 +9,10 @@
         "Savage Arsenal",
     ),
     blocks: (
-      (kind: "passive", effect: [After you deal damage from a critical hit, you may expend any number of Fury Dice. Add their values together, then double that total and deal the result as additional damage to the target.]),
+      (
+        kind: "passive",
+        effect: [Whenever you crit, you may double the damage of your Fury Dice. If you do, you don't roll any additional dice for the crit.],
+      ),
     ),
 )
 

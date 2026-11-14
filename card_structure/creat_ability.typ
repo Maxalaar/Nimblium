@@ -16,10 +16,10 @@
 
 #let mode_badge(kind) = dark_badge(kind, color: mode_shades.at(kind, default: rgb("#4D4D4D")))
 
-// Optional bold name (creature attacks, granted actions), then the mode, cost
-// and limitation capsules, then the effect below them.
+// Optional bold name (creature attacks, granted actions), then the mode, cost,
+// tag (AoE...) and limitation capsules, then the effect below them.
 #let ability_block(block) = {
-  let tags = block.at("cost", default: ())
+  let tags = block.at("cost", default: ()) + block.at("tags", default: ())
   if "limitation" in block { tags += (block.limitation,) }
   if "name" in block { strong(block.name); linebreak() }
   ((mode_badge(block.kind),) + tags.map(tag_badge)).join(h(2pt))

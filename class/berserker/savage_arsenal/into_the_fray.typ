@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../global.typ": *
 
 #let ability_data = (
@@ -11,7 +12,7 @@
       (
         kind: "active",
         cost: (actions(1),),
-        effect: [Leap up to #times(2, DEX) spaces toward an enemy. If you land adjacent to at least 2 enemies, make an attack against one of them.],
+        effect: [Leap up to #times(2, DEX) spaces toward an enemy. If you land within your weapon's Reach of at least 2 enemies, attack one of them for free.],
       ),
     ),
 )

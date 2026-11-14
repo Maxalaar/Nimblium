@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../../global.typ": *
 
 #let ability_data = (
@@ -11,7 +12,7 @@
       (
         kind: "passive",
         limitation: per_turn(1),
-        effect: [While #kw_raging, whenever you crit or kill an enemy, change 1 Fury Die to the maximum.],
+        effect: [While you are #kw_raging, whenever you crit or kill an enemy, gain 1 Fury Die or change 1 of your Fury Dice to its maximum.],
       ),
     ),
     reminder: (berserker_keywords.raging,),

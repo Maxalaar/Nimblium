@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../../global.typ": *
 
 #let ability_data = (
@@ -8,7 +9,10 @@
         "Mountainheart",
     ),
     blocks: (
-      (kind: "passive", effect: [Whenever you expend your Hit Dice to recover #HP, for every 10 #HP you would recover, you may heal 1 Wound instead.]),
+      (
+        kind: "passive",
+        effect: [Whenever you spend Hit Dice to recover #HP, you may recover 1 Wound instead of each 10 #HP you would recover.],
+      ),
     ),
 )
 

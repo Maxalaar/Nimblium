@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../global.typ": *
 
 #let ability_data = (
@@ -11,7 +12,7 @@
       (
         kind: "active",
         limitation: per_turn(1),
-        effect: [After you hit, you may treat your next attack this turn as if you rolled that same amount instead of rolling again.],
+        effect: [When you hit with an attack, your next attack this turn uses the same roll instead of rolling again.],
       ),
     ),
 )

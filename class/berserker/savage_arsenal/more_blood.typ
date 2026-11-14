@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../global.typ": *
 
 #let ability_data = (
@@ -9,6 +10,7 @@
     ),
     blocks: (
       (kind: "passive", effect: [Whenever an enemy crits you, gain 1 Fury Die.]),
+      (kind: "passive", effect: [Whenever you drop to 0 #HP, use Rage for free.]),
     ),
 )
 

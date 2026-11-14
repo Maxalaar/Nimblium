@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../global.typ": *
 
 #let ability_data = (
@@ -7,7 +8,7 @@
         "Berserker",
     ),
     blocks: (
-      (kind: "passive", effect: [If you are #kw_raging at the beginning of your turn, roll 1 Fury Die.]),
+      (kind: "passive", effect: [At the start of your turn, if you are #kw_raging, roll 1 Fury Die.]),
     ),
     reminder: (berserker_keywords.raging,),
 )

@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../global.typ": *
 
 #let ability_data = (
@@ -12,8 +13,9 @@
         cost: (actions(1),),
         limitation: per_turn(1),
         effect: [
-          Roll a Fury Die and you become #kw_raging.\
-          *Level 5:* Roll 2 Fury Dice instead.\
+          Roll 1 Fury Die. You become #kw_raging.\
+          \
+          *Level 5:* Roll 2 Fury Dice instead.
         ],
       ),
     ),

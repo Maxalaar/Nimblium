@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../global.typ": *
 
 #let ability_data = (
@@ -11,7 +12,8 @@
       (
         kind: "active",
         cost: (actions(2),),
-        effect: [Attack ALL targets within your melee weapon's reach.],
+        tags: ("AoE",),
+        effect: [Attack any number of creatures within your melee weapon's Reach.],
       ),
     ),
 )

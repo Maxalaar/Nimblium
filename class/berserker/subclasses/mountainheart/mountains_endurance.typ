@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../../global.typ": *
 
 #let ability_data = (
@@ -8,7 +9,10 @@
         "Mountainheart",
     ),
     blocks: (
-      (kind: "passive", effect: [While #kw_dying, if an attack against you would be a crit, the attack is rerolled instead, when-crit abilities, such as Titan's Fury, still trigger.]),
+      (
+        kind: "passive",
+        effect: [While you are #kw_dying, when an attack against you would be a crit, it is rerolled instead. Abilities that trigger on a crit, such as Titan's Fury, still trigger.],
+      ),
     ),
     reminder: (conditions.dying,),
 )

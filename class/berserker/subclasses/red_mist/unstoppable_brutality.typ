@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../../global.typ": *
 
 #let ability_data = (
@@ -8,7 +9,11 @@
         "Red Mist",
     ),
     blocks: (
-      (kind: "passive", effect: [While #kw_raging, you may gain 1 Wound to reroll any attack or save.]),
+      (
+        kind: "active",
+        cost: (wounds(1),),
+        effect: [Reroll an attack or a save you just made. The reroll ignores all disadvantage. You can use this ability only while you are #kw_raging.],
+      ),
     ),
     reminder: (berserker_keywords.raging,),
 )

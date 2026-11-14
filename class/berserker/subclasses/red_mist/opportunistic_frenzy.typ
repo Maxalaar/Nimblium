@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../../global.typ": *
 
 #let ability_data = (
@@ -8,11 +9,12 @@
         "Red Mist",
     ),
     blocks: (
+      (kind: "passive", effect: [While you are #kw_raging, your opportunity attacks don't have disadvantage.]),
       (
         kind: "active",
         cost: (actions(1),),
         limitation: per_round(1),
-        effect: [While #kw_raging, you can make opportunity attacks without disadvantage, including whenever an enemy enters your melee weapon's reach.],
+        effect: [While you are #kw_raging, when an enemy enters your melee weapon's Reach, make an opportunity attack against it.],
       ),
     ),
     reminder: (berserker_keywords.raging,),

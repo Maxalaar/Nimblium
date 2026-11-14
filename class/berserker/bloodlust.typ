@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../global.typ": *
 
 #let ability_data = (
@@ -7,7 +8,11 @@
         "Berserker",
     ),
     blocks: (
-      (kind: "active", cost: (fury_dice_cost("X"),), effect: [On your turn, move up to #DEX spaces per die spent.]),
+      (
+        kind: "active",
+        cost: (fury_dice_cost("X"),),
+        effect: [During your turn, move up to #DEX spaces for each Fury Die spent.],
+      ),
     ),
 )
 

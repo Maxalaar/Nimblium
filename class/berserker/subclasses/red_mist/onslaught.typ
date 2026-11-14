@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../../global.typ": *
 
 #let ability_data = (
@@ -8,8 +9,12 @@
         "Red Mist",
     ),
     blocks: (
-      (kind: "active", limitation: per_round(1), effect: [You may Move for free.]),
-      (kind: "passive", effect: [While #kw_raging, gain +2 #speed.]),
+      (
+        kind: "active",
+        limitation: per_round(1),
+        effect: [Move for free.],
+      ),
+      (kind: "passive", effect: [While you are #kw_raging, your #speed increases by 2.]),
     ),
     reminder: (berserker_keywords.raging,),
 )

@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../../global.typ": *
 
 #let ability_data = (
@@ -8,7 +9,7 @@
         "Mountainheart",
     ),
     blocks: (
-      (kind: "passive", effect: [After you miss an attack or are crit by an enemy, Rage for free.]),
+      (kind: "passive", effect: [Whenever you miss with an attack or an enemy crits you, use Rage for free.]),
     ),
 )
 

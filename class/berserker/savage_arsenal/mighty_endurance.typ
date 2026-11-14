@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../global.typ": *
 
 #let ability_data = (
@@ -8,7 +9,7 @@
         "Savage Arsenal",
     ),
     blocks: (
-      (kind: "passive", effect: [You can now survive an additional 4 Wounds before death.]),
+      (kind: "passive", effect: [You can survive 4 additional Wounds before you die.]),
     ),
 )
 

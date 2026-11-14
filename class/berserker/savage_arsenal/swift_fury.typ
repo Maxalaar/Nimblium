@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../global.typ": *
 
 #let ability_data = (
@@ -8,7 +9,10 @@
         "Savage Arsenal",
     ),
     blocks: (
-      (kind: "passive", effect: [Whenever you gain one or more Fury Dice, move up to #DEX spaces ignoring #kw_difficult_terrain.]),
+      (
+        kind: "passive",
+        effect: [Whenever you gain one or more Fury Dice, you may move up to #DEX spaces, ignoring #kw_difficult_terrain.],
+      ),
     ),
     reminder: (keywords.difficult_terrain,),
 )

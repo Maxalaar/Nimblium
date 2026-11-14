@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../../global.typ": *
 
 #let ability_data = (
@@ -11,7 +12,7 @@
       (
         kind: "passive",
         limitation: per_encounter(1),
-        effect: [While #kw_raging, if you would suffer your last Wound or other negative condition of your choice, you don't.],
+        effect: [While you are #kw_raging, when you would gain your last Wound or a negative condition, you may prevent it.],
       ),
     ),
     reminder: (berserker_keywords.raging,),

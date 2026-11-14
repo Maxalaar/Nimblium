@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../global.typ": *
 
 #let ability_data = (
@@ -7,7 +8,7 @@
         "Berserker",
     ),
     blocks: (
-      (kind: "passive", effect: [Dropping to 0 #HP does not cause your #kw_rage to end.]),
+      (kind: "passive", effect: [When you drop to 0 #HP, you remain #kw_raging.]),
     ),
     reminder: (berserker_keywords.raging,),
 )

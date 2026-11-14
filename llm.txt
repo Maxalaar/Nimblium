@@ -107,6 +107,7 @@ et le dos côte à côte (5 mm d'écart). Design épuré, noir et blanc, peu d'e
   `"narrative"` (avantage sur jets de compétence / flavor / roleplay — ex: Forager, Leave No
   Trace, Thieves' Cant, Keen Sight, Quick Read).
 - `cost` : tuple de tags affichés en badge, ex `(actions(1),)`, `(actions(2), toth_charges(1))`.
+- `tags` (optionnel) : capsules à contour après le coût, ex `("AoE",)` (Whirlwind).
 - `limitation` : tag affiché en badge, ex `per_turn(1)`, `per_encounter(1)`, `per_day(1)`,
   `per_safe_rest(WIL)`, `per_round(2)`.
 - Progression par niveau et clauses multiples : voir `writing_rules.md` §8.
@@ -170,6 +171,17 @@ Même principe pour un sort qui accorde de nouvelles actions (transformation) : 
 l'effet et dit "You gain the X abilities", une carte `creat_ability` séparée porte les actions
 (nom de chaque action dans le champ `name` du bloc). Voir `spells/fire/dragonform.typ` +
 `spells/fire/dragon_form.typ`. Les sorts n'ont pas de champ `blocks`.
+
+## Suivi des révisions (`check_review.py`)
+
+Chaque carte relue selon les règles actuelles commence par une ligne :
+`// review: style=2026-11-14 changelog=2026-10-02` (`style` = version de `writing_rules.md`,
+`changelog` = date du dernier changelog officiel appliqué). `python3 check_review.py` liste,
+par classe ou école, les cartes à jour et celles à revoir (`-v` pour tout lister). Quand une
+carte est réécrite au nouveau style ET alignée sur le changelog, ajouter ou mettre à jour cette
+ligne. Quand `writing_rules.md` change de façon notable ou qu'un nouveau changelog sort, mettre
+à jour `STYLE` / `CHANGELOG` en tête du script : toutes les cartes plus anciennes repassent
+« à revoir ».
 
 ## Règles d'écriture
 
@@ -240,7 +252,11 @@ fichier avant de le modifier à nouveau (ne pas se fier à une version obsolète
 
 ## État des classes (voir aussi `git log` / le contenu réel de `class/` pour l'état exact)
 
-- **Berserker** : COMPLET et aligné sur les règles maison et le changelog.
+- **Berserker** : COMPLET, réécrit au nouveau style et aligné sur le changelog du 2 octobre 2026
+  (Dismantle ajouté). Ses 3 nouvelles sous-classes (Path of Burning Rage, Path of Titan's Grip,
+  Muscle Mage) ne sont citées que par leur nom dans le changelog : pas de texte disponible.
+- **Cheat, Hunter, Shepherd** : complets mais à repasser au nouveau style et au changelog du
+  2 octobre (voir `python3 check_review.py`).
 - **Cheat** (p.12-17) : COMPLET — niveaux de base 1-20, toutes les Underhanded Abilities, les
   deux sous-classes (Scoundrel, Silent Blade).
 - **Hunter** (p.24-29 base+TotH, sous-classes après p.29) : COMPLET — niveaux de base, toutes
@@ -248,7 +264,12 @@ fichier avant de le modifier à nouveau (ne pas se fier à une version obsolète
   `hunter_keywords.typ` pour "Marked" (remplace la prose "quarry" du PDF).
 - **Shepherd** (p.48-53) : COMPLET — niveaux de base, toutes les Sacred Graces, les deux
   sous-classes (Luminary of Mercy, Luminary of Malice).
-- **Mage** (p.30-35) : EN COURS — capacités de base faites ; restent les Spellshaper et les deux
-  sous-classes (Invoker of Control, Invoker of Chaos).
+- **Mage** (p.30-35) : EN COURS — capacités de base et sous-classes Invoker of Control /
+  Invoker of Chaos faites (alignées sur le changelog du 2 octobre 2026). `mage_keywords.typ`
+  définit Demand Control et Invoke Chaos. Pas de carte pour At Any Cost ni Tempest Mage (ils ne
+  font que débloquer des sorts), ni pour la Chaos Table (secrète, réservée au MJ, et refaite
+  dans le changelog sans que son contenu soit publié). Restent les Spellshaper. Les 4 nouvelles
+  sous-classes du changelog (Wards, Flame, Surges, Frost) ne sont citées que par leur nom :
+  pas de texte disponible.
 - **Commander, Oathsworn, Shadowmancer, Songweaver, Stormshifter, Zephyr, Extra
   Subclasses** : pas commencés.

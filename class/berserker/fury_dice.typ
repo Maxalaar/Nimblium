@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../global.typ": *
 
 #let mechanic_data = (
@@ -9,16 +10,16 @@
     description:[
       \
       • When you roll a Fury Die, roll 1d4 and set it aside.\
-      • You can have a maximum of #KEY Fury Dice at once.\
-      • Fury Dice are lost when your #kw_raging ends.\
-      • If you gain a Fury Die while already at your max, roll as normal and choose which dice to keep.\
-      • On every #STR attack, you may add all your Fury Dice to the damage.\
+      • You can have up to #KEY Fury Dice at once.\
+      • You lose all your Fury Dice when you stop being #kw_raging.\
+      • If you gain a Fury Die while you already have the maximum, roll it and choose which dice to keep.\
+      • Whenever you make a #STR attack, you may add all your Fury Dice to its damage.\
       \
       *Level 6:* Your Fury Dice become 1d6.\
       *Level 9:* Your Fury Dice become 1d8.\
       *Level 13:* Your Fury Dice become 1d10.\
       *Level 17:* Your Fury Dice become 1d12.\
-      *Level 20:* Anytime you roll less than 6 on a Fury Die, change it to 6 instead.\
+      *Level 20:* Whenever you roll less than 5 on a Fury Die, it becomes a 5.\
     ],
     reminder: (berserker_keywords.raging,),
 )

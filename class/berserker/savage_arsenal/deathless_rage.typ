@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../global.typ": *
 
 #let ability_data = (
@@ -12,7 +13,7 @@
         kind: "active",
         cost: (wounds(1),),
         limitation: per_turn(1),
-        effect: [While #kw_dying, gain 1 action.],
+        effect: [Gain 1 action and 1 Fury Die. You can use this ability only while you are #kw_dying.],
       ),
     ),
     reminder: (conditions.dying,),

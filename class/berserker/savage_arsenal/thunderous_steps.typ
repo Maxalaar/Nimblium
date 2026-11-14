@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../global.typ": *
 
 #let ability_data = (
@@ -8,7 +9,10 @@
         "Savage Arsenal",
     ),
     blocks: (
-      (kind: "passive", effect: [After moving at least 4 spaces while #kw_raging, you may deal #STR Bludgeoning damage to all adjacent creatures.]),
+      (
+        kind: "passive",
+        effect: [Whenever you stop after moving at least 4 spaces while #kw_raging, you may deal #STR bludgeoning damage to each creature adjacent to you.],
+      ),
     ),
     reminder: (berserker_keywords.raging,),
 )

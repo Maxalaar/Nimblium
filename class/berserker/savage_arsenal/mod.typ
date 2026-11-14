@@ -10,3 +10,4 @@
 #import "unstoppable_force.typ": unstoppable_force
 #import "whirlwind.typ": whirlwind
 #import "youre_next.typ": youre_next
+#import "dismantle.typ": dismantle
