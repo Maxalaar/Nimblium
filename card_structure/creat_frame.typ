@@ -1,171 +1,127 @@
-#import "@preview/cetz:0.4.0"
+// Card layout shared by every card type: a clean front (name, types, rules
+// text, optional stat row) and a back (optional icon, name, types).
+// `creat_card` returns both faces side by side: front on the left, back on
+// the right.
+#import "../style.typ": reminder_color
 
-#let creat_frame(
-  name,
-  type: none,
-  data: (),
-  background_color: rgb("#cfcfca"),
-  border_color: black,
-  hit_points: none,
-  armor: none,
-  speed: none,
-  level: none,
-) = {
-  let card_width = 63mm
-  let card_height = 88mm
-  let vertical_margin = 1.5mm
-  let horizontal_margin = 1.5mm
-  let name_box_size = 8.5mm
-  let stat_box_size = 10mm
-  let stat_box_bottom = vertical_margin
-  let stat_box_top = stat_box_bottom + stat_box_size
+#let card_width = 63mm
+#let card_height = 88mm
+#let card_gap = 5mm              // space between the front and the back
+#let ink = black
+#let hair = 0.2pt
 
-  let name_box_top = card_height - vertical_margin
-  let name_box_bottom = name_box_top - name_box_size
-  let name_box_right = card_width - horizontal_margin
-  let name_box_center_x = (horizontal_margin + name_box_right) / 2
+#let text_size = 8pt
+#let min_text_size = 6pt
+#let reminder_size = 0.8125em   // relative to the rules text: 6.5pt at 8pt
+#let side_margin = 6mm           // left/right margin of the rules text
+#let header_bottom = 15.5mm      // rules text starts below this line
+#let stat_row_height = 15mm
 
-  // Si des stats sont présentes, la zone de texte remonte au-dessus des carrés
-  let has_stats = hit_points != none or armor != none or speed != none or level != none
-  let text_box_bottom = if has_stats { stat_box_top + vertical_margin } else { vertical_margin }
-  let text_box_top = name_box_bottom - vertical_margin
-  let text_box_center_y = (text_box_top + text_box_bottom) / 2
+// ---------- helpers ----------
 
-  let process_type(type) = {
-    let result = ()
-    for (i, element) in type.enumerate() {
-      if i > 0 { result = result + (", ",) }
-      result = result + (element,)
-    }
-    return result.join()
+// Place `body` centered on the point (x, y) of the card.
+#let at(x, y, body) = place(top + left, dx: x - card_width, dy: y - card_height,
+  box(width: 2 * card_width, height: 2 * card_height, align(center + horizon, body)))
+
+#let seg(a, b, stroke: hair + ink) = place(top + left, line(start: a, end: b, stroke: stroke))
+
+#let types_text(types) = types.join(" · ")
+
+// Text that shrinks (size and tracking together) until it fits `max_width`.
+#let fit_text(body, size: 11pt, tracking: 2pt, max_width: card_width - 18mm, ..args) = context {
+  let s = size
+  let t = tracking
+  while s > 6pt and measure(text(size: s, tracking: t, ..args, body)).width > max_width {
+    s -= 0.5pt
+    t = tracking * (s / size)
   }
+  text(size: s, tracking: t, ..args, body)
+}
 
-  let text_content = {
-    set text(size: 8pt)
+// Rules text that shrinks until it fits the given box.
+#let fit_body(body, width, height) = context {
+  let s = text_size
+  let laid(s) = {
+    set text(size: s)
     set par(leading: 0.4em)
-    for (i, element) in data.enumerate() {
-      if i > 0 { v(0.5em, weak: true) }
-      element
-    }
+    body
   }
-
-  // Préparer les stats à afficher (label + valeur)
-  let stats = ()
-  if hit_points != none { stats.push(("HP", str(hit_points))) }
-  if armor != none      { stats.push(("ARM", str(armor))) }
-  if speed != none      { stats.push(("SPD", str(speed))) }
-  if level != none      { stats.push(("LVL", str(level))) }
-
-  // Shrink the text when it overflows the text box: lay it out on a wider box,
-  // then scale it down, so lines reflow instead of only getting smaller.
-  let text_width = card_width - 6mm
-  let text_height = text_box_top - text_box_bottom - 3mm
-  let fit_text(body) = context {
-    let factor = 1.0
-    while factor > 0.6 {
-      let h = measure(box(width: text_width / factor, body)).height
-      if h * factor <= text_height { break }
-      factor -= 0.02
-    }
-    let inner = box(width: text_width / factor, align(horizon, body))
-    if factor < 1.0 { scale(factor * 100%, reflow: true, inner) } else { inner }
+  while s > min_text_size and measure(block(width: width, laid(s))).height > height {
+    s -= 0.25pt
   }
-  let fitted_text = fit_text(text_content)
+  laid(s)
+}
 
-  cetz.canvas({
-    import cetz.draw: *
+// Sci-fi HUD corner brackets.
+#let corners(inset: 4mm, len: 3mm) = {
+  let s = 0.5pt + ink
+  let (l, r, t, b) = (inset, card_width - inset, inset, card_height - inset)
+  seg((l, t), (l + len, t), stroke: s); seg((l, t), (l, t + len), stroke: s)
+  seg((r, t), (r - len, t), stroke: s); seg((r, t), (r, t + len), stroke: s)
+  seg((l, b), (l + len, b), stroke: s); seg((l, b), (l, b - len), stroke: s)
+  seg((r, b), (r - len, b), stroke: s); seg((r, b), (r, b - len), stroke: s)
+}
 
-    // Fond
-    rect(
-      name: "background",
-      (0, 0),
-      (card_width, card_height),
-      radius: (rest: 2.5mm),
-      fill: background_color,
-    )
+// White card with a rounded black border.
+#let card_frame(body) = box(width: card_width, height: card_height, clip: true, radius: 2.5mm, {
+  place(rect(width: card_width, height: card_height, radius: 2.5mm, fill: white))
+  body
+  place(rect(width: card_width, height: card_height, radius: 2.5mm, stroke: 1mm + ink))
+})
 
-    // Bordure
-    rect(
-      name: "border",
-      (0, 0),
-      (card_width, card_height),
-      radius: (rest: 2.5mm),
-      stroke: (thickness: 1mm, paint: border_color)
-    )
+#let reminders(items) = text(size: reminder_size, fill: reminder_color, items.join(v(0.3em)))
 
-    // Boîte nom + type
-    rect(
-      name: "name_box",
-      (horizontal_margin, name_box_bottom),
-      (name_box_right, name_box_top),
-      radius: (rest: 1mm),
-      fill: white,
-      stroke: (thickness: 0.5mm, paint: black)
-    )
-    content(
-      (name_box_center_x, name_box_top - 3mm),
-      anchor: "center",
-      text(size: 11pt, weight: "bold")[#name],
-    )
-    if type != none {
-      content(
-        (name_box_center_x, name_box_top - 6.5mm),
-        anchor: "center",
-        text(size: 7pt)[#process_type(type)],
-      )
-    }
+// ---------- faces ----------
 
-    // Zone de texte
-    rect(
-      name: "text_box",
-      (horizontal_margin, text_box_bottom),
-      (card_width - horizontal_margin, text_box_top),
-      radius: (rest: 1mm),
-      fill: white,
-      stroke: (thickness: 0.5mm, paint: black)
-    )
-    content(
-      (card_width / 2, text_box_center_y),
-      anchor: "center",
-      fitted_text,
-    )
+// `stats` is a list of (label, value) shown in a row at the bottom.
+#let card_front(name, types, body, stats: ()) = card_frame({
+  corners()
+  let cx = card_width / 2
+  at(cx, 8.3mm, fit_text(upper(name), size: 11pt, tracking: 1.8pt, weight: "bold"))
+  at(cx, 12.4mm, text(size: 4.5pt, tracking: 1.1pt, upper(types_text(types))))
 
-    // Carrés de stats en bas
-    if has_stats {
-      let n = stats.len()
-      let usable_width = card_width - 2 * horizontal_margin
-      let gap = 1.5mm
-      let box_w = (usable_width - gap * (n - 1)) / n
+  let bottom = if stats.len() > 0 { card_height - stat_row_height } else { card_height - 5mm }
+  let (w, h) = (card_width - 2 * side_margin, bottom - header_bottom - 3mm)
+  place(top + left, dx: side_margin, dy: header_bottom + 1.5mm,
+    box(width: w, height: h, align(left + horizon, fit_body(body, w, h))))
 
-      for (i, stat) in stats.enumerate() {
-        let (label, value) = stat
-        let x0 = horizontal_margin + (box_w + gap) * i
-        let x1 = x0 + box_w
-        let y0 = stat_box_bottom
-        let y1 = stat_box_top
-        let cx = (x0 + x1) / 2
-        let cy = (y0 + y1) / 2
-
-        rect(
-          (x0, y0),
-          (x1, y1),
-          radius: (rest: 1mm),
-          fill: white,
-          stroke: (thickness: 0.5mm, paint: black)
-        )
-        // Label (petite étiquette en haut du carré)
-        content(
-          (cx, y1 - 2mm),
-          anchor: "center",
-          text(size: 5pt, weight: "bold", fill: rgb("#555555"))[#label],
-        )
-        // Valeur (grande, centrée)
-        content(
-          (cx, cy - 0.5mm),
-          anchor: "center",
-          text(size: 9pt, weight: "bold")[#value],
-        )
+  if stats.len() > 0 {
+    let rule_in = 14mm
+    let span = card_width - 2 * rule_in
+    let n = stats.len()
+    for (i, (label, value)) in stats.enumerate() {
+      let x = rule_in + span * (i + 0.5) / n
+      at(x, bottom + 3.5mm, text(size: 5pt, weight: "bold", tracking: 1.2pt, upper(label)))
+      at(x, bottom + 7.8mm, text(size: 11pt, weight: "bold", value))
+      if i > 0 {
+        let xs = rule_in + span * i / n
+        seg((xs, bottom + 2mm), (xs, bottom + 10mm))
       }
     }
-  })
-}
+  }
+})
+
+// A bare file name is looked up in art/icons/; a path starting with "/" is
+// taken from the project root.
+#let icons_dir = "/art/icons/"
+#let icon_path(icon) = if icon.starts-with("/") { icon } else { icons_dir + icon }
+
+// Without an icon, the name and types sit in the middle of the card.
+#let card_back(name, types, icon: none) = card_frame({
+  corners(inset: 5mm, len: 4mm)
+  let cx = card_width / 2
+  let name_y = if icon == none { card_height / 2 - 2mm } else { 65mm }
+  if icon != none { at(cx, 34mm, image(icon_path(icon), width: 34mm)) }
+  at(cx, name_y, fit_text(upper(name), size: 15pt, tracking: 3pt, weight: "bold",
+                          max_width: card_width - 12mm))
+  at(cx, name_y + 6.5mm, text(size: 6pt, tracking: 1.5pt, upper(types_text(types))))
+})
+
+// Both faces of a card, front on the left and back on the right.
+#let creat_card(name, types, body, stats: (), back_types: none, icon: none) = box(
+  grid(columns: 2, column-gutter: card_gap,
+    card_front(name, types, body, stats: stats),
+    card_back(name, if back_types == none { types } else { back_types }, icon: icon)))
+
+// Stat values may be numbers, strings or content.
+#let stat_value(v) = if type(v) == int or type(v) == float { str(v) } else { v }

@@ -3,6 +3,9 @@
 file (e.g. class/cheat/underhanded/creative_accounting.typ ->
 class/cheat/underhanded/creative_accounting.pdf).
 
+Each PDF shows the front of the card on the left and its back on the right,
+with a small gap between them (see card_structure/creat_frame.typ).
+
 PDF output (instead of PNG) lets Typst-aware viewers (e.g. the Tinymist
 VS Code extension) jump straight to the source .typ file on click.
 """
@@ -19,7 +22,7 @@ EXCLUDED_NAMES = {
 
 WRAPPER_TEMPLATE = """\
 #import "{filename}": {symbol}
-#set page(width: 63mm, height: 88mm, margin: 0mm)
+#set page(width: 2 * 63mm + 5mm, height: 88mm, margin: 0mm)
 #{symbol}
 """
 

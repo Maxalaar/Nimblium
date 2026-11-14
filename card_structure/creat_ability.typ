@@ -1,12 +1,7 @@
-#import "creat_frame.typ": creat_frame
+#import "creat_frame.typ": creat_card, reminders
 #import "badges.typ": dark_badge, tag_badge
-#import "../style.typ": reminder_color
 
-#let ability_text_size = 8pt
-#let reminder_spacing = 1em
-#let reminder_item_spacing = 0.3em
-#let passive_spacing = 0.8em
-#let passive_item_spacing = 0.3em
+#let block_spacing = 0.8em
 
 #let mode_shades = (
   active: rgb("#2e2e2e"),
@@ -21,48 +16,27 @@
 
 #let mode_badge(kind) = dark_badge(kind, color: mode_shades.at(kind, default: rgb("#4D4D4D")))
 
+// Optional bold name (for actions granted by another card, e.g. a spell),
+// then the mode, cost and limitation capsules, then the effect below them.
 #let ability_block(block) = {
-  set text(size: ability_text_size)
-  // Optional name, for actions granted by another card (e.g. a spell).
-  if "name" in block { [*#block.name*]; linebreak() }
-  mode_badge(block.kind)
-  if "cost" in block {
-    for c in block.cost {
-      h(2pt)
-      tag_badge(c)
-    }
-  }
-  if "limitation" in block {
-    h(2pt)
-    tag_badge(block.limitation)
-  }
+  let tags = block.at("cost", default: ())
+  if "limitation" in block { tags += (block.limitation,) }
+  if "name" in block { [*#block.name*]; h(4pt) }
+  ((mode_badge(block.kind),) + tags.map(tag_badge)).join(h(2pt))
   linebreak()
   block.effect
 }
 
 #let creat_ability(ability) = {
-  let data = ()
+  let blocks = ability.blocks
+    .sorted(key: blk => mode_order.at(blk.kind, default: 99))
+    .map(ability_block)
+  if "reminder" in ability { blocks.push(reminders(ability.reminder)) }
 
-  let sorted_blocks = ability.blocks.sorted(key: blk => mode_order.at(blk.kind, default: 99))
-  for (i, blk) in sorted_blocks.enumerate() {
-    if i > 0 { data = data + (v(passive_item_spacing, weak: true),) }
-    data = data + (ability_block(blk),)
-  }
-
-  if "reminder" in ability {
-    let reminder_content = {
-      v(reminder_spacing, weak: true)
-      for (i, r) in ability.reminder.enumerate() {
-        if i > 0 { v(reminder_item_spacing, weak: true) }
-        text(size: 7pt, fill: reminder_color)[#r]
-      }
-    }
-    data = data + (reminder_content,)
-  }
-
-  creat_frame(
+  creat_card(
     ability.name,
-    type: if "type" in ability { ability.type } else { none },
-    data: data,
+    ability.at("type", default: ()),
+    blocks.join(v(block_spacing)),
+    icon: ability.at("icon", default: none),
   )
 }

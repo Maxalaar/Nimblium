@@ -1,65 +1,38 @@
-#import "creat_frame.typ": creat_frame
+#import "creat_frame.typ": creat_card, reminders, stat_value
 #import "badges.typ": dark_badge, tag_badge
-#import "../style.typ": reminder_color
 #import "creat_ability.typ": ability_block
 
-#let section_spacing = 1em
-#let capsule_row_leading = 0.25em
-#let capsule_spacing = 2pt
-#let reminder_item_spacing = 0.3em
-
-#let capsule_row(items) = items.map(tag_badge).join(h(capsule_spacing))
-
-// A bare number is labelled; shapes such as "Line 12" already name themselves.
-#let reach_label(reach) = if type(reach) == str and reach.first().match(regex("\d")) != none {
-  "Reach " + reach
-} else {
-  reach
-}
-
-// `spell.type` is (card type, school, tier, tags...).
-#let capsule_rows(spell) = {
-  let info = ()
-  if "damage" in spell { info.push([#spell.damage damage]) }
-  if "range" in spell { info.push([Range #spell.range]) }
-  if "reach" in spell { info.push(reach_label(spell.reach)) }
-  if "area" in spell { info.push([Area #spell.area]) }
-  info += spell.type.slice(3)
-  if "concentration" in spell { info.push([Concentration #spell.concentration]) }
-
-  let rows = (dark_badge(spell.type.at(2)),)
-  if "cost" in spell { rows.push(capsule_row(spell.cost)) }
-  if info.len() > 0 { rows.push(capsule_row(info)) }
-
-  set par(leading: capsule_row_leading)
-  rows.join(linebreak())
-}
+#let block_spacing = 0.8em
 
 #let labelled_section(label, body) = [#dark_badge(label)\ #body]
 
+// `spell.type` is (card type, school, tier, tags...).
+// The tier, costs, tags and concentration are capsules above the effect;
+// damage, range, reach and area go to the stat row at the bottom.
 #let creat_spell(spell) = {
-  let gap = v(section_spacing, weak: true)
-  let data = (capsule_rows(spell),)
+  let tags = spell.at("cost", default: ()) + spell.type.slice(3)
+  if "concentration" in spell { tags.push([Concentration #spell.concentration]) }
+  let capsules = ((dark_badge(spell.type.at(2)),) + tags.map(tag_badge)).join(h(2pt))
 
-  if "effect" in spell { data += (gap, spell.effect) }
+  let blocks = ([#capsules\ #spell.at("effect", default: none)],)
   // Actions the spell grants, rendered like ability blocks.
-  if "blocks" in spell { for blk in spell.blocks { data += (gap, ability_block(blk)) } }
-  if "high_Levels" in spell { data += (gap, labelled_section("High Levels", spell.high_Levels)) }
-  if "upcast" in spell { data += (gap, labelled_section("Upcast", spell.upcast)) }
-  if "flavor" in spell { data += (gap, emph(spell.flavor)) }
-  if "reminder" in spell {
-    let reminder_content = {
-      for (i, r) in spell.reminder.enumerate() {
-        if i > 0 { v(reminder_item_spacing, weak: true) }
-        text(size: 7pt, fill: reminder_color)[#r]
-      }
-    }
-    data += (gap, reminder_content)
-  }
+  if "blocks" in spell { blocks += spell.blocks.map(ability_block) }
+  if "high_Levels" in spell { blocks.push(labelled_section("High Levels", spell.high_Levels)) }
+  if "upcast" in spell { blocks.push(labelled_section("Upcast", spell.upcast)) }
+  if "flavor" in spell { blocks.push(emph(spell.flavor)) }
+  if "reminder" in spell { blocks.push(reminders(spell.reminder)) }
 
-  creat_frame(
+  let stats = ()
+  if "damage" in spell { stats.push(("DMG", stat_value(spell.damage))) }
+  if "range" in spell { stats.push(("Range", stat_value(spell.range))) }
+  if "reach" in spell { stats.push(("Reach", stat_value(spell.reach))) }
+  if "area" in spell { stats.push(("Area", stat_value(spell.area))) }
+
+  creat_card(
     spell.name,
-    type: spell.type.slice(0, 2),
-    data: data,
+    spell.type.slice(0, 2),
+    blocks.join(v(block_spacing)),
+    stats: stats,
+    icon: spell.at("icon", default: none),
   )
 }

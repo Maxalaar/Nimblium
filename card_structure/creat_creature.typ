@@ -1,70 +1,38 @@
-#import "creat_frame.typ": creat_frame
-#import "../style.typ": reminder_color
+#import "creat_frame.typ": creat_card, reminders, stat_value, ink
 
-#let reminder_spacing = 1em
-#let reminder_item_spacing = 0.3em
-#let passive_spacing = 0.8em
-#let passive_item_spacing = 0.3em
+#let entry_spacing = 0.3em
+#let section_spacing = 0.8em
 
-#let section_line(label) = {
-  grid(
-    columns: (1fr, auto, 1fr),
-    column-gutter: 4pt,
-    align: horizon,
-    line(length: 100%, stroke: (thickness: 0.5pt, paint: black)),
-    text(size: 6pt, weight: "bold", fill: black)[#label],
-    line(length: 100%, stroke: (thickness: 0.5pt, paint: black)),
-  )
-}
+// Section bar: ──── PASSIVE ────
+#let section_line(label) = grid(
+  columns: (1fr, auto, 1fr),
+  column-gutter: 4pt,
+  align: horizon,
+  line(length: 100%, stroke: 0.5pt + ink),
+  text(size: 6pt, weight: "bold", upper(label)),
+  line(length: 100%, stroke: 0.5pt + ink),
+)
 
+// Sections are labelled only when the creature has more than one of them.
 #let creat_creature(creature) = {
-  let data = ()
+  let sections = ("passive", "active", "ability").filter(k => k in creature)
+  let blocks = sections.map(k => {
+    if sections.len() > 1 { section_line(k); v(entry_spacing) }
+    creature.at(k).join(v(entry_spacing))
+  })
+  if "reminder" in creature { blocks.push(reminders(creature.reminder)) }
 
-  if "passive" in creature {
-    let passive_content = {
-      section_line("Passive")
-      v(passive_item_spacing, weak: true)
-      for (i, p) in creature.passive.enumerate() {
-        if i > 0 { v(passive_item_spacing, weak: true) }
-        p
-      }
-    }
-    data = data + (passive_content,)
-  }
+  let stats = ()
+  if "hit_points" in creature { stats.push(("HP", stat_value(creature.hit_points))) }
+  if "armor" in creature { stats.push(("ARM", stat_value(creature.armor))) }
+  if "speed" in creature { stats.push(("SPD", stat_value(creature.speed))) }
+  if "level" in creature { stats.push(("LVL", stat_value(creature.level))) }
 
-  if "active" in creature {
-    let ability_content = {
-      v(passive_spacing, weak: true)
-      if "passive" in creature {
-        section_line("Active")
-      }
-      v(passive_item_spacing, weak: true)
-      for (i, a) in creature.active.enumerate() {
-        if i > 0 { v(passive_item_spacing, weak: true) }
-        a
-      }
-    }
-    data = data + (ability_content,)
-  }
-
-  if "reminder" in creature {
-    let reminder_content = {
-      v(reminder_spacing, weak: true)
-      for (i, r) in creature.reminder.enumerate() {
-        if i > 0 { v(reminder_item_spacing, weak: true) }
-        text(size: 7pt, fill: reminder_color)[#r]
-      }
-    }
-    data = data + (reminder_content,)
-  }
-
-  creat_frame(
+  creat_card(
     creature.name,
-    type: if "type" in creature { creature.type } else { none },
-    data: data,
-    hit_points: if "hit_points" in creature { creature.hit_points } else { none },
-    armor: if "armor" in creature { creature.armor } else { none },
-    speed: if "speed" in creature { creature.speed } else { none },
-    level: if "level" in creature { creature.level } else { none },
+    creature.at("type", default: ()),
+    blocks.join(v(section_spacing)),
+    stats: stats,
+    icon: creature.at("icon", default: none),
   )
 }

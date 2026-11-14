@@ -12,7 +12,7 @@ Chaque carte (capacité, sort, créature, mécanique) est un fichier `.typ` indi
 en PDF/PNG via `export_cards.py` qui parcourt `class/`, `spells/`, `creatures/` et génère un
 PDF par fichier `.typ` trouvé (hors `mod.typ`, `passive_abilities.typ` et les fichiers
 `*_keywords.typ`). Pas besoin de maintenir de liste centrale : ajouter le fichier suffit pour
-qu'il soit exporté.
+qu'il soit exporté. Chaque PDF montre le recto à gauche et le dos à droite (page 131×88 mm).
 
 ## Ordre de priorité des règles
 
@@ -71,6 +71,24 @@ d'écriture — Reaction, "for free", conditions sans effet propre — sont dans
 - `creat_creature.typ` → cartes de type **Creature**
 - `creat_mechanic.typ` → cartes de type **Mechanic**
 
+### Mise en page commune (`creat_frame.typ`)
+
+Tous les types passent par `creat_card(name, types, body, stats:, icon:)`, qui rend le recto
+et le dos côte à côte (5 mm d'écart). Design épuré, noir et blanc, peu d'encre :
+
+- Recto : cadre blanc à bordure noire, coins "HUD", nom en capitales espacées + types en petit
+  (sans filet), texte de règles aligné à gauche et centré verticalement (il rétrécit tout seul
+  jusqu'à 6pt s'il déborde), ligne de stats en bas (créatures et sorts) séparées par des
+  traits verticaux fins. Aucun trait horizontal.
+- Dos : nom + types centrés. Avec un champ `icon` dans les données de la carte, une grande
+  icône noire (game-icons.net, CC BY 3.0) s'affiche au-dessus du nom. `icon: "x.svg"` est
+  cherché dans `art/icons/` ; un chemin commençant par `/` part de la racine du projet.
+  Pour l'instant aucune carte n'a d'icône.
+- Capacités et sorts : capsules sombres (ACTIVE, PASSIVE, CANTRIP, UPCAST…) + capsules à
+  contour (coûts, limites), collées à gauche, texte juste en dessous.
+- Créatures : barres de section `── PASSIVE ──` (pas de capsules), affichées seulement si la
+  carte a plusieurs sections.
+
 ### Ability (`creat_ability.typ`)
 
 `blocks` est une liste de `(kind, [cost], [limitation], effect)`.
@@ -105,11 +123,12 @@ Champs disponibles : `cost`, `concentration`, `range`, `reach`, `area`, `damage`
 
 Rendu en capsules (`badges.typ`, partagé avec les capacités), sans libellé `Cost:` ni `Effect:` :
 
-- Ligne 1 : le palier, en capsule sombre. Ligne 2 : le coût. Ligne 3 : dégâts, portée (`range`,
-  `reach`, `area`), tags, puis concentration.
+- Une ligne de capsules : le palier (capsule sombre), le coût, les tags, puis concentration.
+- `damage`, `range`, `reach` et `area` vont dans la ligne de stats en bas de carte
+  (DMG / RANGE / REACH / AREA), comme les stats des créatures.
 - Le sous-titre de la carte ne garde que le type et l'école.
 - `damage` ne contient que la valeur ("3d8+4") : une précision va dans `effect`.
-- `reach` : un nombre seul devient "Reach 4" ; "Line 12" ou "Cone 4" s'affichent tels quels.
+- `reach` : un nombre ("4") ou une forme ("Line 12", "Cone 4"), affiché sous REACH.
 - `concentration` ne contient que la durée ("1 min").
 - `high_Levels` et `upcast` : capsule sombre, puis le texte à la ligne.
 - `flavor` : texte d'ambiance en italique, sous les règles et avant les rappels.
@@ -117,9 +136,8 @@ Rendu en capsules (`badges.typ`, partagé avec les capacités), sans libellé `C
 ### Creature (`creat_creature.typ`)
 
 Champs lus : `passive` (tuple d'entrées avec label en gras), `active` (idem, coûts décrits en
-prose car pas de champ `cost` dédié), `hit_points`, `armor`, `speed`, `level`. **Attention** :
-seuls `passive` et `active` sont reconnus — une clé `ability` ou autre est silencieusement
-ignorée (piégé une fois sur `spirit_companion.typ`).
+prose car pas de champ `cost` dédié), `ability` (idem), `reminder`, `hit_points`, `armor`,
+`speed`, `level`, `icon`. Toute autre clé est silencieusement ignorée.
 
 ## Compagnons de classe : séparer le sort de la créature
 
@@ -176,7 +194,7 @@ Compiler avec un fichier wrapper jetable (jamais commité) qui importe le mod.ty
 référence les nouveaux symboles :
 `typst compile --root <racine_repo> fichier.typ sortie.pdf`
 puis supprimer le fichier jetable derrière soi. Pour un contrôle visuel, exporter en PNG à
-300ppi avec une page 63mm×88mm marge 0 (correspond au wrapper réel d'`export_cards.py`) et
+300ppi avec une page 131mm×88mm marge 0 (correspond au wrapper réel d'`export_cards.py`) et
 relire l'image.
 
 **Ne pas exporter de PNG systématiquement** — seulement si demandé, ou pour un contrôle de
