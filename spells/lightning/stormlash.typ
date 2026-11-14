@@ -14,7 +14,7 @@
     ),
     reach: "Line 12",
     damage: "3d8+4",
-    effect: [The damage ignores metal armor. Surviving creatures make a #STR save. On a failure, they are #kw_dazed. If they fail by 5 or more, they are #kw_incapacitated for 1 of their turns instead. Creatures with a large amount of metal, such as armor or a longsword, roll with disadvantage.],
+    effect: [This spell's damage ignores metal armor. Each creature that survives makes a #STR save. If it fails, it is #kw_dazed. If it fails by 5 or more, it is #kw_incapacitated until the end of its next turn instead. A creature wearing metal armor or holding a large metal weapon has disadvantage on this save.],
     upcast: [+4 damage.],
     reminder: (conditions.dazed, conditions.incapacitated),
 )

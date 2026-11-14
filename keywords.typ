@@ -9,6 +9,7 @@
   advantage: [*Advantage:* Roll 1 additional die of the same type for each instance of advantage, then remove that many of the lowest results.],
   disadvantage: [*Disadvantage:* Roll 1 additional die of the same type for each instance of disadvantage, then remove that many of the highest results.],
   vulnerable: [*Vulnerable:* This creature takes 10 additional damage from the listed damage type.],
+  knockback: [*Knockback X:* Push this creature X spaces away. If an obstacle stops it, it takes 1d6 damage per space it didn't move.],
   hide: [*Hide:* Spend 1 action and make a #dc(10) Stealth check to Hide from the creatures you have Cover from. Full Cover succeeds automatically. Your next attack has advantage, then you lose Hide.],
   cover: [*Cover:* An obstacle partially blocks a creature's line of attack to you, so its ranged attacks against you have disadvantage.],
   full_cover: [*Full Cover:* An obstacle completely blocks a creature's line of attack to you, so it cannot target you with ranged attacks.],

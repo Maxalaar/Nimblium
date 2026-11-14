@@ -1,0 +1,109 @@
+# Card Writing Rules — Nimblium
+
+These rules define how card text is written (abilities, spells, creatures, mechanics,
+conditions, keywords). The goal is a formal card-game language with no ambiguity, modeled on
+Magic: the same effect is always written the same way.
+
+Every new card follows these rules. Older cards are brought in line as they are reviewed.
+
+## 1. Sentences
+
+- One complete sentence per effect. No fragments such as "Can't see" or "On miss: ...".
+- No label followed by a colon inside rules text: write a sentence instead.
+- No parentheses: use a complete sentence instead.
+- No flavor text mixed into rules text. Flavor goes in the card's `flavor` field, rendered in
+  italics below the rules (spells only for now).
+
+## 2. Who is referred to
+
+- **"You"**: only the player who owns the card (abilities, spells, Hide, Cover, Full Cover,
+  Distracted).
+- **Conditions**: the subject is always "this creature", then "it / its". Never "you".
+- **Target**: "a creature within X spaces".
+
+## 3. Fixed wording
+
+- **Trigger**: "When...", "Whenever...", "At the start of...", "If...".
+- **Choice**: "may" if the effect is optional. Otherwise the effect always applies.
+- **Duration**: "until the end of your next turn", "this round", "this encounter".
+
+## 4. Costs and limits
+
+- Costs and limits go on badges (`1 Action`, `1/round`), never in the text.
+  Exception: spells have no limit field, so their limit is written in the text
+  ("Once per round, ...").
+- **No "Reaction"**: it is an action with a "When..." trigger, an `actions(1)` cost and a
+  `per_round(1)` limit.
+- **"For free"**: expressed by the absence of a cost badge. Keep the words "for free" only when
+  the ability waives the cost of another action (Defend, Rage, Hunter's Mark, Hide...).
+- **Default values**: don't write them (e.g. creatures: speed 6, can take damage, disappears at
+  0 HP).
+- **Obvious rulings**: don't write what any GM would decide anyway (e.g. "if several creatures
+  are equally close, the GM chooses one"). They make the card heavier for nothing.
+
+## 5. Game terms: always go through `terms.typ`
+
+A game term has a single spelling, capitalized (Marked, Safe Rest, Difficult Terrain). It is
+never typed by hand: call its function or constant from `terms.typ`, available everywhere
+through `global.typ`. Run `python3 check_terms.py` after every change: it reports hand-typed
+forms.
+
+| Type | Write | Result |
+|---|---|---|
+| Cost | `actions(2)`, `mana(3)`, `toth_charges(1)`, `wounds(1)`, `fury_dice_cost("X")` | `2 Actions` |
+| Limit | `per_turn(1)`, `per_round(1)`, `per_encounter(1)`, `per_day(1)`, `per_safe_rest(WIL)` | `WIL/Safe Rest` |
+| Acronym | `#STR #DEX #INT #WIL #KEY #LVL #HP #TotH` | `WIL` |
+| Term | `#safe_rest #defense #speed #primary_die #thrill_of_the_hunt` | `Safe Rest` |
+| Keyword | `#kw_marked`, `#kw_raging`, `#kw_difficult_terrain`... | styled word |
+| Formula | `#times(WIL, "d8")`, `#times(2, DEX)`, `#dc(10)`, `#dc(10, stat: WIL)` | `WIL×d8`, `DC 10+WIL` |
+
+Typst syntax pitfalls:
+
+- In data fields (`cost`, `limitation`, `type`), no `#`: `actions(1)`, `WIL`.
+  In text inside `[...]`, with `#`: `#WIL`, `#times(WIL, "d8")`.
+- Text that uses these terms must be inside `[...]`, not quotes.
+- `#STR-based` doesn't compile (the hyphen is part of the name in Typst): rephrase.
+- Acronyms are uppercase because `str` and `int` are Typst functions. Keywords have the `kw_`
+  prefix because `rage` and others are card names.
+
+## 6. Keywords and reminders
+
+- Definitions: `conditions.typ` (conditions), `keywords.typ` (generic keywords), and the
+  class-specific `*_keywords.typ` files (`berserker_keywords.typ`, `hunter_keywords.typ`).
+- When the text uses a defined term, write its `#kw_...` and add its definition to the card's
+  `reminder: (...)` tuple, so the reminder shows at the bottom of the card.
+- Don't invent a reminder for a term with no definition (e.g. "Defend").
+- A reminder may also explain a rule the card triggers without naming it. Don't repeat that
+  rule in the text: e.g. Zap says "you take 2d8 damage", and the Charged reminder says that
+  lightning damage makes you Charged.
+
+## 7. Conditions
+
+- Subject "this creature" (see §2), one sentence per effect.
+- **Conditions with no effect of their own** (Smoldering, Charged and any condition of the same
+  kind): always the same text: "This condition has no effect on its own. Any effect that relies
+  on it ends it. It ends when combat ends." One sentence may follow to say how it is gained.
+  Cards don't repeat "ends the condition". Distracted and Marked don't follow this template.
+
+## 8. Ability text structure
+
+- **Several distinct effects**: one block per effect on the same card, rather than a single
+  paragraph. See `explorer_of_the_wilds.typ`, `misdirection.typ`, `apex_predator.typ`.
+- **Level progression**: bold `*Level X:*` lines inside the same block, rather than several
+  cards. See `class/cheat/sneak_attack.typ`.
+- **List the levels**: never "every 5 levels". When the bonus is the same at each step, name
+  the levels in one sentence: "This spell's damage increases by 4 at levels 5, 10, 15 and 20."
+  When the steps differ, use `*Level X:*` lines.
+
+## 9. Examples
+
+- Condition: `*Blind:* This creature can't see. Attacks against it have advantage. Its
+  attacks have disadvantage.`
+- Condition with a trigger: `*Dying:* This creature can't have more than 1 action per turn
+  and can't concentrate. Whenever it attacks or casts a spell, it gains 1 Wound unless it
+  succeeds on a DC 10 STR save. Whenever it takes damage, it gains 2 Wounds, or 3 on a critical
+  hit.`
+- Player-related keyword: `*Marked:* A creature is Marked when you target it with Hunter's
+  Mark. It is Marked only for you.`
+- Ability: `When a creature moves adjacent to you or to an ally within 6 spaces, move it back
+  1 space. It is Restrained until it escapes with a DC 10+WIL check.`

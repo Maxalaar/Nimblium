@@ -13,7 +13,7 @@
     ),
     range: "12",
     damage: "3d8",
-    effect: [The bolt also strikes the next closest creature to your target, even if it is you or an ally.],
+    effect: [This spell also deals its damage to the creature closest to the target, even if it is you or an ally.],
     upcast: [+4 damage.],
 )
 

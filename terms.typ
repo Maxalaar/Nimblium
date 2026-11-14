@@ -54,6 +54,7 @@
 #let kw_hide = keyword_style[Hide]
 #let kw_incapacitated = keyword_style[Incapacitated]
 #let kw_invisible = keyword_style[Invisible]
+#let kw_knockback = keyword_style[Knockback]
 #let kw_marked = keyword_style[Marked]
 #let kw_prone = keyword_style[Prone]
 #let kw_rage = keyword_style[Rage]

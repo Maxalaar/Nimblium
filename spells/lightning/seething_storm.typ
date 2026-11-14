@@ -15,8 +15,10 @@
     concentration: "1 min",
     reach: "4",
     damage: [#kw_d88],
-    effect: [You become a cloud of tempestuous storm. You can fly, you may move for free once per round, and attacks against you have disadvantage. At the end of each of your turns, strike up to 4 creatures within Reach with a bolt that deals the damage. A creature can be struck only once per round. Each round, this spell gains +2 Reach and +2 bolts, and maintaining it costs 3 actions. Once you cast this spell, you must #safe_rest for 1 week before using it again.],
-    reminder: (keywords.d88,),
+    effect: [You can fly. Once per round, you may move for free. Attacks against you have disadvantage.\
+    At the end of each of your turns, this spell deals its damage to up to 4 different creatures within Reach. Then its Reach and its number of creatures each increase by 2.\
+    At the start of each of your turns, spend #actions(3) to maintain this spell, or it ends.\
+    After you cast this spell, you must #safe_rest for 1 week before you can cast it again.],
 )
 
 #let seething_storm = creat_spell(spell_data)

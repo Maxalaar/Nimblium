@@ -13,8 +13,8 @@
     ),
     reach: "2",
     damage: "2d8",
-    effect: [You may cast this spell only while you are #kw_charged. Other creatures within Reach take the damage.],
-    high_Levels: [+4 damage every 5 levels.],
+    effect: [Cast this spell only while you are #kw_charged. It deals its damage to each other creature within Reach.],
+    high_Levels: [This spell's damage increases by 4 at levels 5, 10, 15 and 20.],
     reminder: (conditions.charged,),
 )
 

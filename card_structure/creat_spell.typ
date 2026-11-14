@@ -43,6 +43,7 @@
   if "effect" in spell { data += (gap, spell.effect) }
   if "high_Levels" in spell { data += (gap, labelled_section("High Levels", spell.high_Levels)) }
   if "upcast" in spell { data += (gap, labelled_section("Upcast", spell.upcast)) }
+  if "flavor" in spell { data += (gap, emph(spell.flavor)) }
   if "reminder" in spell {
     let reminder_content = {
       for (i, r) in spell.reminder.enumerate() {

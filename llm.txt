@@ -38,18 +38,10 @@ Règles du changelog déjà appliquées :
 - **Sorts Fire, Ice et Lightning** du dépôt : déjà alignés. Les autres écoles (Wind, Radiant,
   Necrotic) ont aussi des changements : relire le changelog avant de les créer.
 
-Règles maison, à ne pas "corriger" d'après le livre ou le changelog :
+Règles maison, à ne pas "corriger" d'après le livre ou le changelog (les règles maison
+d'écriture — Reaction, "for free", conditions sans effet propre — sont dans `writing_rules.md`) :
 
-- **Le mot "Reaction" n'existe plus sur les cartes** : c'est une action avec un déclencheur
-  "When...", un coût `actions(1)` et une limite `per_round(1)` (dans le texte des sorts : "Once per
-  round, ..."). Les actions se rechargent à la fin de ton tour, comme dans le livre.
-- **"For free"** : exprimé par l'absence de badge de coût. À garder seulement quand la capacité
-  annule le coût d'une autre action (Defend, Rage, Hunter's Mark, Hide...).
 - **Cover et Full Cover** : ne concernent que les attaques à distance ; "line of attack".
-- **Conditions sans effet propre** (Smoldering, Charged et toute condition du même type) : même
-  texte partout : "This condition has no effect on its own. Any effect that relies on it ends it.
-  It ends when combat ends." Une phrase peut suivre pour dire comment on l'obtient. Les cartes ne
-  répètent pas "ends the condition". Distracted et Marked ne suivent pas ce modèle.
 - **Spirit Companion** : réserve de PV (Tier × 10) au lieu de charges de soin ; agit au contact.
 - **Créatures** : les valeurs par défaut (speed 6, peut subir des dégâts, disparaît à 0 PV) ne sont
   pas écrites sur la carte.
@@ -84,12 +76,7 @@ Règles maison, à ne pas "corriger" d'après le livre ou le changelog :
 - `cost` : tuple de tags affichés en badge, ex `(actions(1),)`, `(actions(2), toth_charges(1))`.
 - `limitation` : tag affiché en badge, ex `per_turn(1)`, `per_encounter(1)`, `per_day(1)`,
   `per_safe_rest(WIL)`, `per_round(2)`.
-- **Progression par niveau** : si une capacité évolue avec le niveau (ex: Sneak Attack, Twist
-  the Blade), intégrer les niveaux suivants comme lignes `*Level X:*` en gras DANS le même bloc
-  d'effet, plutôt que créer plusieurs cartes. Voir `class/cheat/sneak_attack.typ`.
-- **Clauses multiples** : si une capacité a plusieurs effets distincts, préférer plusieurs
-  blocks séparés (même carte) plutôt qu'un seul paragraphe. Voir `explorer_of_the_wilds.typ`,
-  `misdirection.typ`, `apex_predator.typ`, `unparalleled_survivalist.typ`.
+- Progression par niveau et clauses multiples : voir `writing_rules.md` §8.
 - `type` : `("Ability", "<Classe>")` pour une capacité de base, avec un 3e élément pour un
   sous-groupe (subclass ou pool de choix), ex `("Ability","Cheat","Underhanded")`,
   `("Ability","Cheat","Scoundrel")`, `("Ability","Hunter",thrill_of_the_hunt)`,
@@ -107,7 +94,7 @@ des tiers de sorts par niveau, avec le même style `*Level X:*` que `sneak_attac
 ### Spell (`creat_spell.typ`)
 
 Champs disponibles : `cost`, `concentration`, `range`, `reach`, `area`, `damage`, `effect`,
-`high_Levels`, `upcast`, `reminder`. `type` vaut toujours (type, école, palier, tags...), ex
+`high_Levels`, `upcast`, `flavor`, `reminder`. `type` vaut toujours (type, école, palier, tags...), ex
 `("Spell","Fire","Cantrip")`, `("Spell","Lightning","Tier 3","AoE")`.
 
 Rendu en capsules (`badges.typ`, partagé avec les capacités), sans libellé `Cost:` ni `Effect:` :
@@ -119,6 +106,7 @@ Rendu en capsules (`badges.typ`, partagé avec les capacités), sans libellé `C
 - `reach` : un nombre seul devient "Reach 4" ; "Line 12" ou "Cone 4" s'affichent tels quels.
 - `concentration` ne contient que la durée ("1 min").
 - `high_Levels` et `upcast` : capsule sombre, puis le texte à la ligne.
+- `flavor` : texte d'ambiance en italique, sous les règles et avant les rappels.
 
 ### Creature (`creat_creature.typ`)
 
@@ -138,73 +126,11 @@ en deux cartes :
 
 Voir `class/shepherd/lifebinding_spirit.typ` + `class/shepherd/spirit_companion.typ`.
 
-## Reminders / mots-clés
+## Règles d'écriture
 
-- `conditions.typ` : dictionnaire des conditions (Bloodied, Blind, Prone, Restrained,
-  Invisible, Dying, Smoldering, etc.)
-- `keywords.typ` : mots-clés génériques (Distracted, Difficult Terrain, D66, Blindsight,
-  Advantage, Disadvantage, Vulnerable).
-- Fichiers de mots-clés spécifiques à une classe : `class/berserker/berserker_keywords.typ`,
-  `class/hunter/hunter_keywords.typ` (définit "Marked", qui remplace la prose "quarry" du PDF
-  d'origine — vérifier son contenu actuel avant de le réutiliser).
-- Quand le texte d'une capacité référence un terme défini, utiliser sa fonction `#kw_...` de
-  `terms.typ` et ajouter l'entrée correspondante dans le tuple `reminder: (...)` de la carte pour
-  qu'un rappel s'affiche en bas de carte.
-- Ne pas inventer de reminder pour un terme non défini dans ces fichiers (ex: "Defend" n'a pas
-  de définition, donc pas de reminder pour lui).
-
-## Vocabulaire : toujours passer par `terms.typ`
-
-Les termes de jeu ne s'écrivent jamais à la main : on appelle leur fonction ou constante, définie
-dans `terms.typ` et disponible partout via `global.typ`. Lancer `python3 check_terms.py` après
-chaque modification : il signale les formes écrites à la main.
-
-| Type | À écrire | Résultat |
-|---|---|---|
-| Coût | `actions(2)`, `mana(3)`, `toth_charges(1)`, `wounds(1)`, `fury_dice_cost("X")` | `2 Actions` |
-| Limite | `per_turn(1)`, `per_round(1)`, `per_encounter(1)`, `per_day(1)`, `per_safe_rest(WIL)` | `WIL/Safe Rest` |
-| Acronyme | `#STR #DEX #INT #WIL #KEY #LVL #HP #TotH` | `WIL` |
-| Terme | `#safe_rest #defense #speed #primary_die #thrill_of_the_hunt` | `Safe Rest` |
-| Mot-clé | `#kw_marked`, `#kw_raging`, `#kw_difficult_terrain`... | mot stylé |
-| Formule | `#times(WIL, "d8")`, `#times(2, DEX)`, `#dc(10)`, `#dc(10, stat: WIL)` | `WIL×d8`, `DC 10+WIL` |
-
-Pièges de syntaxe Typst :
-
-- Dans les champs de données (`cost`, `limitation`, `type`), pas de `#` : `actions(1)`, `WIL`.
-  Dans le texte entre `[...]`, avec `#` : `#WIL`, `#times(WIL, "d8")`.
-- Un texte qui utilise ces termes doit être entre `[...]`, pas entre guillemets.
-- `#STR-based` ne compile pas (le tiret fait partie du nom en Typst) : reformuler.
-- Les acronymes sont en majuscules car `str` et `int` sont des fonctions Typst. Les mots-clés ont
-  le préfixe `kw_` car `rage` et d'autres sont des noms de cartes.
-
-## Style de rédaction formel
-
-Les cartes, conditions et mots-clés visent un langage formel de jeu de cartes, sans ambiguïté.
-Appliqué à `conditions.typ`, `keywords.typ`, `berserker_keywords.typ` et `hunter_keywords.typ`.
-Les anciennes cartes passent à ce style progressivement ; toute nouvelle carte l'utilise d'office.
-
-- **Sujet d'une condition** : toujours "this creature", puis "it / its". Jamais "you".
-- **"You"** : uniquement le joueur de la carte (capacités, Hide, Cover, Full Cover, Distracted).
-- **Phrases** : complètes, avec un seul effet par phrase. Pas de fragment comme "Can't see".
-- **Déclencheur** : "When...", "Whenever...", "At the start of...".
-- **Choix** : "may" si l'effet est optionnel ; sinon il s'applique d'office.
-- **Durée** : formules fixes ("until the end of your next turn", "this round", "this encounter").
-- **Cible** : "a creature within X spaces".
-- **Coûts et limites** : sur les badges (`1 Action`, `1/round`), jamais dans le texte.
-- **Termes de jeu** : une seule orthographe, avec majuscule (Marked, Safe Rest, Difficult Terrain).
-- **Parenthèses** : à éviter dans les règles, préférer une phrase complète.
-
-Exemples :
-
-- Condition : `*Blind:* This creature can't see. Attacks against it have advantage. Its attacks
-  have disadvantage.`
-- Condition avec déclencheur : `*Dying:* This creature can't have more than 1 action per turn and
-  can't concentrate. Whenever it attacks or casts a spell, it gains 1 Wound unless it succeeds on a
-  DC 10 STR save. Whenever it takes damage, it gains 2 Wounds, or 3 on a critical hit.`
-- Mot-clé lié au joueur : `*Marked:* A creature is Marked when you target it with Hunter's Mark. It
-  is Marked only for you.`
-- Capacité : `When a creature moves adjacent to you or to an ally within 6 spaces, move it back 1
-  space. It is Restrained until it escapes with a DC 10+WIL check.`
+Toutes les règles d'écriture des cartes (style formel, vocabulaire via `terms.typ`,
+mots-clés et rappels, conditions, coûts et limites) sont dans `writing_rules.md`. Le lire
+avant d'écrire ou de relire une carte.
 
 ## Règle importante : pas de carte pour "tu débloques juste un sort"
 

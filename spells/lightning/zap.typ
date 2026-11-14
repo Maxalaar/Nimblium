@@ -12,8 +12,8 @@
     ),
     range: "12",
     damage: "2d8",
-    effect: [On miss: The lightning fails to find ground and strikes you instead.],
-    high_Levels: [+4 damage every 5 levels, on hit only.],
+    effect: [If this spell misses, you take 2d8 damage instead.],
+    high_Levels: [This spell's damage increases by 4 at levels 5, 10, 15 and 20.],
     reminder: (conditions.charged,),
 )
 

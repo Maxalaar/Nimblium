@@ -13,7 +13,7 @@
     ),
     concentration: "1 min",
     reach: "4",
-    effect: [A creature within Reach becomes #kw_charged and gains +1 max action, +5 #defense, double #speed, and advantage on #DEX saves.],
+    effect: [A creature within Reach becomes #kw_charged. It gains +1 maximum action, +5 #defense, double #speed and advantage on #DEX saves.],
     upcast: [+4 Reach.],
     reminder: (conditions.charged,),
 )
