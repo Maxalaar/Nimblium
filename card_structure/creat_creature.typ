@@ -1,16 +1,16 @@
-#import "creat_frame.typ": creat_card, reminders, stat_value, body_area, body_height, text_size, min_text_size, card_gap
+#import "creat_frame.typ": creat_card, reminders, stat_value, body_area, body_height, text_size, min_text_size, card_gap, join_blocks, min_gap, max_gap
 #import "creat_ability.typ": ability_block
 
-#let block_spacing = 0.8em
 #let kind_order = (passive: 0, active: 1)
 
 // Creatures follow creature_rules.txt: named blocks with capsules, like hero
 // abilities, passives first then actives.
 // Splitting is off by default: a creature is one card, and a text that is too
 // long overflows visibly. With `split: true`, a creature whose text doesn't
-// fit on one card, even at the smallest text size, becomes two cards "1/2"
-// and "2/2": the first one gets the stats and as many blocks as fit at the
-// normal size, the second one the rest and the reminders.
+// fit on one card at the smallest text size (measured with the full gap
+// between blocks), becomes two cards "1/2" and "2/2": the first one gets the
+// stats and as many blocks as fit at the normal size with the tightest gap,
+// the second one the rest and the reminders.
 #let creat_creature(creature) = {
   let blocks = creature.at("blocks", default: ())
     .sorted(key: b => kind_order.at(b.kind, default: 99))
@@ -27,7 +27,7 @@
   let card(parts, stats: (), part: none) = creat_card(
     creature.name,
     creature.at("type", default: ()),
-    parts.join(v(block_spacing)),
+    join_blocks(parts),
     stats: stats,
     icon: creature.at("icon", default: none),
     part: part,
@@ -35,13 +35,13 @@
 
   context {
     let (width, height) = body_area(stats.len() > 0)
-    let fits(parts, size) = body_height(parts.join(v(block_spacing)), width, size) <= height
+    let fits(parts, size, gap) = body_height(join_blocks(parts), width, size, gap: gap) <= height
     let split = creature.at("split", default: false)
-    if not split or blocks.len() < 2 or fits(blocks + extra, min_text_size) {
+    if not split or blocks.len() < 2 or fits(blocks + extra, min_text_size, max_gap) {
       card(blocks + extra, stats: stats)
     } else {
       let n = 1
-      while n < blocks.len() - 1 and fits(blocks.slice(0, n + 1), text_size) { n += 1 }
+      while n < blocks.len() - 1 and fits(blocks.slice(0, n + 1), text_size, min_gap) { n += 1 }
       stack(spacing: card_gap,
         card(blocks.slice(0, n), stats: stats, part: "1/2"),
         card(blocks.slice(n) + extra, part: "2/2"))

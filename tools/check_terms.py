@@ -26,6 +26,7 @@ TEXT_RULES = [
     (r"\b[Pp]rimary [Dd]ie\b", "use #primary_die"),
     (r"\b[Dd]ifficult [Tt]errain\b(?!:)", "use #kw_difficult_terrain"),
     (r"\bThrill of the [Hh]unt\b", "use #thrill_of_the_hunt"),
+    (r"(?<![#\w])[Ii]nterpos(e|es|ed|ing)\b(?!:)", "use #kw_interpose"),
     (r"(?<![#\w])DC \d", "use #dc(10) or #dc(10, stat: INT)"),
     (r"#keyword_style\[", "use a #kw_ term"),
 ]

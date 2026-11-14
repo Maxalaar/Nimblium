@@ -1,7 +1,5 @@
-#import "creat_frame.typ": creat_card, reminders, stat_value
+#import "creat_frame.typ": creat_card, reminders, join_blocks, stat_value
 #import "badges.typ": dark_badge, tag_badge
-
-#let block_spacing = 0.8em
 
 #let labelled_section(label, body) = [#dark_badge(label)\ #body]
 
@@ -28,7 +26,7 @@
   creat_card(
     spell.name,
     spell.type.slice(0, 2),
-    blocks.join(v(block_spacing)),
+    join_blocks(blocks),
     stats: stats,
     icon: spell.at("icon", default: none),
   )

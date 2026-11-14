@@ -16,9 +16,9 @@ Tous les types passent par `creat_card(name, types, body, stats:, icon:)`, qui r
 et le dos côte à côte (5 mm d'écart). Design épuré, noir et blanc, peu d'encre :
 
 - Recto : cadre blanc à bordure noire, coins "HUD", nom en capitales espacées + types en petit
-  (sans filet), texte de règles aligné à gauche et centré verticalement (il rétrécit tout seul
-  jusqu'à 6pt s'il déborde), ligne de stats en bas (créatures et sorts) séparées par des
-  traits verticaux fins. Aucun trait horizontal.
+  (sans filet), texte de règles aligné à gauche et centré verticalement (s'il déborde, les écarts
+  entre blocs se resserrent d'abord, puis le texte rétrécit jusqu'à 6pt), ligne de stats en bas
+  (créatures et sorts) séparées par des traits verticaux fins. Aucun trait horizontal.
 - Dos : nom + types centrés, sous une grande icône de famille en gris `#999999`
   (game-icons.net, CC BY 3.0). L'icône vient des types de la carte : `family_icons.typ`
   associe un type à un fichier de `art/icons/` (aujourd'hui Goblin et Undead) ; si plusieurs

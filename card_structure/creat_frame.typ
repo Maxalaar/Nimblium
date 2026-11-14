@@ -45,22 +45,39 @@
   (card_width - 2 * side_margin, bottom - header_bottom - 3mm)
 }
 
-#let laid_body(body, size) = {
+// Gap between two blocks of rules text (abilities, sections, reminders).
+// A full card first tightens it down to `min_gap`, then shrinks the text.
+#let max_gap = 2em          // = the former 0.8em gap + 1.2em paragraph spacing
+#let min_gap = 1.2em
+#let gap_step = 0.2em
+
+// Rules text made of several blocks: the gap between them is set by
+// `laid_body`, so it can shrink on a full card.
+#let join_blocks(parts) = parts.map(p => block(p)).join()
+
+#let laid_body(body, size, gap: max_gap) = {
   set text(size: size)
   set par(leading: 0.4em)
+  set block(spacing: gap)
   body
 }
 
-// Height of the rules text at a given size. Call inside `context`.
-#let body_height(body, width, size) = measure(block(width: width, laid_body(body, size))).height
+// Height of the rules text at a given size and gap. Call inside `context`.
+#let body_height(body, width, size, gap: max_gap) = measure(
+  block(width: width, laid_body(body, size, gap: gap))).height
 
-// Rules text that shrinks until it fits the given box.
+// Rules text that fits the given box: the gap between blocks shrinks first,
+// down to `min_gap`, then the text size, down to `min_text_size`.
 #let fit_body(body, width, height) = context {
   let s = text_size
-  while s > min_text_size and body_height(body, width, s) > height {
+  let g = max_gap
+  while g > min_gap and body_height(body, width, s, gap: g) > height {
+    g -= gap_step
+  }
+  while s > min_text_size and body_height(body, width, s, gap: g) > height {
     s -= 0.25pt
   }
-  laid_body(body, s)
+  laid_body(body, s, gap: g)
 }
 
 // Sci-fi HUD corner brackets.

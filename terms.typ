@@ -57,6 +57,7 @@
 #let kw_hampered = keyword_style[Hampered]
 #let kw_hide = keyword_style[Hide]
 #let kw_incapacitated = keyword_style[Incapacitated]
+#let kw_interpose = keyword_style[Interpose]
 #let kw_invisible = keyword_style[Invisible]
 #let kw_invoke_chaos = keyword_style[Invoke Chaos]
 #let kw_knockback = keyword_style[Knockback]
