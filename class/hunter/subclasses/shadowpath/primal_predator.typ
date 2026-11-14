@@ -11,9 +11,13 @@
       (
         kind: "active",
         limitation: per_encounter(1),
-        effect: [Your weapon attacks ignore cover and #defense this turn.],
+        effect: [This turn, your weapon attacks ignore Cover and #defense.],
       ),
     ),
 )
 
 #let primal_predator = creat_ability(ability_data)
+
+/*
+review: style=2026-11-14 changelog=2026-10-02
+*/

@@ -7,8 +7,15 @@
         "Hunter",
     ),
     blocks: (
-      (kind: "passive", effect: [Whenever you attack with a Longbow, you may roll 2d4 instead of 1d8; or with a Crossbow, 2d8 instead of 4d4.]),
+      (
+        kind: "passive",
+        effect: [When you attack with a Longbow, you may roll 2d4 instead of 1d8. When you attack with a Crossbow, you may roll 2d8 instead of 4d4.],
+      ),
     ),
 )
 
 #let versatile_bowmaster = creat_ability(ability_data)
+
+/*
+review: style=2026-11-14 changelog=2026-10-02
+*/

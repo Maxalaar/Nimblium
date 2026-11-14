@@ -5,15 +5,20 @@
     type: (
         "Ability",
         "Hunter",
-        thrill_of_the_hunt
+        thrill_of_the_hunt,
     ),
     blocks: (
       (
         kind: "active",
-        cost: (actions(1), toth_charges(1)),
-        effect: [Attack with a ranged weapon at half the weapon's range and push your target by 4 spaces if Small, 2 if Medium, or 1 if Large.],
+        cost: (actions(1), toth_charges(1),),
+        effect: [Attack with a ranged weapon at half its range. The target suffers #kw_knockback 2.],
       ),
     ),
+    reminder: (keywords.knockback,),
 )
 
 #let heavy_shot = creat_ability(ability_data)
+
+/*
+review: style=2026-11-14 changelog=2026-10-02
+*/

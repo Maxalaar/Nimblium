@@ -7,8 +7,15 @@
         "Hunter",
     ),
     blocks: (
-      (kind: "narrative", effect: [You can discern the events of a past encounter by studying tracks and other subtle environmental clues, accurately determining the kind and amount of creatures, their direction, key actions, and passage of time.]),
+      (
+        kind: "narrative",
+        effect: [By studying tracks and other subtle clues, you can discern the events of a past encounter: the kind and number of creatures, their direction, their key actions and how much time has passed.],
+      ),
     ),
 )
 
 #let trackers_intuition = creat_ability(ability_data)
+
+/*
+review: style=2026-11-14 changelog=2026-10-02
+*/

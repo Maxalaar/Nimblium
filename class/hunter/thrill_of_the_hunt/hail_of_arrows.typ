@@ -5,15 +5,20 @@
     type: (
         "Ability",
         "Hunter",
-        thrill_of_the_hunt
+        thrill_of_the_hunt,
     ),
     blocks: (
       (
         kind: "active",
-        cost: (actions(2), toth_charges(1)),
-        effect: [Shoot all creatures within a #times(3, 3) area at half the weapon's range. Their #speed is halved until the end of their next turn.],
+        cost: (actions(2), toth_charges(1),),
+        effect: [At half your weapon's range, attack each creature in a #times(3, 3) area. Each of them becomes #kw_slowed.],
       ),
     ),
+    reminder: (conditions.slowed,),
 )
 
 #let hail_of_arrows = creat_ability(ability_data)
+
+/*
+review: style=2026-11-14 changelog=2026-10-02
+*/

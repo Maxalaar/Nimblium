@@ -7,8 +7,12 @@
         "Hunter",
     ),
     blocks: (
-      (kind: "narrative", effect: [Advantage on Perception checks.]),
+      (kind: "narrative", effect: [You have advantage on Perception checks.]),
     ),
 )
 
 #let keen_sight = creat_ability(ability_data)
+
+/*
+review: style=2026-11-14 changelog=2026-10-02
+*/
