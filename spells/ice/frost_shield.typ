@@ -11,7 +11,7 @@
         mana(1),
     ),
     effect: [Once per round, you may cast this spell while Defending. You gain #times(2, KEY) temp #HP. You lose them at the start of your next turn.],
-    upcast: [+5 temp #HP.],
+    upcast: [You gain 5 more temp #HP.],
 )
 
 #let frost_shield = creat_spell(spell_data)

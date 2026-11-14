@@ -14,7 +14,7 @@
     reach: "1",
     damage: [10+#KEY],
     effect: [Once per round, you may cast this spell while Defending. This round, whenever you are attacked, each creature within Reach takes this spell's damage and becomes #kw_smoldering.],
-    upcast: [+#KEY damage or +1 Reach.],
+    upcast: [Choose one: it deals #KEY more damage, or its Reach increases by 1.],
     reminder: (conditions.smoldering,)
 )
 

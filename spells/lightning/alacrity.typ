@@ -13,7 +13,7 @@
     range: "4",
     effect: [Once per round, you may cast this spell while Defending. After the damage is dealt, you become #kw_charged, then teleport anywhere within Range.\
     Once per turn, you may also cast this spell during your turn to teleport up to your #speed.],
-    upcast: [+4 Range.],
+    upcast: [Its Range increases by 4.],
     reminder: (conditions.charged,),
 )
 

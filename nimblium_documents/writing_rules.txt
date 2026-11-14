@@ -28,6 +28,10 @@ A reviewed card ends with a notes block holding `review: style=<date> changelog=
 - **Trigger**: "When...", "Whenever...", "At the start of...", "If...".
 - **Choice**: "may" if the effect is optional. Otherwise the effect always applies.
 - **Duration**: "until the end of your next turn", "this round", "this encounter".
+- **Upcast**: a full sentence about the spell, without "for each tier": the UPCAST capsule
+  already says it applies once per tier. "It deals 4 more damage.", "Its Reach increases by
+  1.", "Choose one: it deals #KEY more damage, or its Reach increases by 1." Never "+4
+  damage." alone.
 
 ## 4. Costs and limits
 

@@ -14,7 +14,7 @@
     range: "12",
     damage: "3d8",
     effect: [This spell also deals its damage to the creature closest to the target, even if it is you or an ally.],
-    upcast: [+4 damage.],
+    upcast: [It deals 4 more damage.],
 )
 
 #let arc_lightning = creat_spell(spell_data)

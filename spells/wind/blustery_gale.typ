@@ -14,7 +14,7 @@
     range: "12",
     damage: "3d4",
     effect: [This spell has #kw_advantage against flying, Small and Tiny targets. Whether it hits or misses, the target suffers #kw_knockback 2. If an obstacle stops it, it takes 5 damage per space instead of 1d6.],
-    upcast: [+1 #kw_knockback.],
+    upcast: [Its #kw_knockback increases by 1.],
     reminder: (keywords.advantage, keywords.knockback),
 )
 

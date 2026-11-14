@@ -14,7 +14,7 @@
     range: "10",
     damage: "4d10",
     effect: [Cast this spell only on a #kw_smoldering creature.],
-    upcast: [+10 damage.],
+    upcast: [It deals 10 more damage.],
     reminder: (conditions.smoldering,),
 )
 

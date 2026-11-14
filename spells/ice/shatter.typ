@@ -14,7 +14,7 @@
     damage: "3d6",
     range: "12",
     effect: [If any die shows its maximum against a #kw_hampered target, this spell crits. When this spell crits, it deals +20 damage.],
-    upcast: [Add 1 to the result of a die of your choice, up to its maximum. A crit deals +5 damage.],
+    upcast: [Add 1 to the result of a die of your choice, up to its maximum. A crit deals 5 more damage.],
     reminder: (conditions.hampered,),
 )
 

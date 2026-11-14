@@ -15,7 +15,7 @@
     range: "12",
     damage: [#kw_d88],
     effect: [Teleport to a space you can see within Range. If a willing creature is there, swap places with it. Each creature adjacent to you takes this spell's damage. Each survivor suffers #kw_knockback 3 and becomes #kw_prone and #kw_dazed.],
-    upcast: [+1 #kw_knockback.],
+    upcast: [Its #kw_knockback increases by 1.],
     reminder: (keywords.knockback, conditions.prone, conditions.dazed),
 )
 

@@ -16,7 +16,7 @@
     damage: "4d6+10",
     effect: [Each surviving creature that is #kw_hampered is #kw_restrained until the end of its next turn. Then the area becomes #kw_difficult_terrain until the end of your next turn.],
     reminder: (keywords.difficult_terrain, conditions.hampered, conditions.restrained),
-    upcast: [+1 Reach.],
+    upcast: [Its Reach increases by 1.],
 )
 
 #let arctic_blast = creat_spell(spell_data)

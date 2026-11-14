@@ -13,7 +13,7 @@
     ),
     reach: "6",
     effect: [Roll 1d6 and set it aside. Until the end of the encounter, when any die is rolled within Reach, you may replace it with this d6. The d6 counts as the original die. You can use it only once.],
-    upcast: [+1 Reach. Roll 1 more d6, then keep 1.],
+    upcast: [Its Reach increases by 1. Roll 1 more d6, then keep 1 of them.],
 )
 
 #let omenrime = creat_spell(spell_data)

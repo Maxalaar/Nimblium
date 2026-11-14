@@ -16,7 +16,7 @@
     reach: "1",
     damage: [#kw_d44],
     effect: [This spell has #kw_advantage. It also deals its damage to each enemy within Reach of the target.],
-    upcast: [+1 Reach.],
+    upcast: [Its Reach increases by 1.],
     reminder: (keywords.d44, keywords.advantage),
 )
 

@@ -14,7 +14,7 @@
     concentration: "1 min",
     reach: "8",
     effect: [Enchant the weapon of a creature within Reach. The first time each turn that weapon hits, it deals #KEY additional damage. When it crits, the target becomes #kw_smoldering.],
-    upcast: [+#KEY damage.],
+    upcast: [It deals #KEY more damage.],
     reminder: (conditions.smoldering,)
 )
 

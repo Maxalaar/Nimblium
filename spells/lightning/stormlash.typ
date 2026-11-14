@@ -16,7 +16,7 @@
     damage: "3d8+4",
     effect: [Each creature that survives makes a #STR save. If it fails, it falls #kw_prone.\
     A creature wearing metal armor or holding a large metal weapon takes +10 damage and has disadvantage on this save.],
-    upcast: [+4 damage.],
+    upcast: [It deals 4 more damage.],
     reminder: (conditions.prone,),
 )
 
