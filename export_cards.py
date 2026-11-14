@@ -22,7 +22,7 @@ EXCLUDED_NAMES = {
 
 WRAPPER_TEMPLATE = """\
 #import "{filename}": {symbol}
-#set page(width: 2 * 63mm + 5mm, height: 88mm, margin: 0mm)
+#set page(width: 2 * 63mm + 5mm, height: auto, margin: 0mm)
 #{symbol}
 """
 

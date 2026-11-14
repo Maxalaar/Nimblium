@@ -8,7 +8,7 @@
         "Luminary of Malice",
     ),
     blocks: (
-      (kind: "passive", effect: [When you use Searing Light to harm an enemy, a 2nd enemy within range takes the same amount of damage, ignoring armor.]),
+      (kind: "passive", effect: [When you use Searing Light to harm an enemy, a 2nd enemy within range takes the same amount of damage, ignoring #defense.]),
     ),
 )
 

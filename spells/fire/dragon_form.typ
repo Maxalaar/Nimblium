@@ -14,7 +14,7 @@
             kind: "active",
             cost: (actions(1),),
             name: "Tooth & Claw",
-            effect: [A creature within 2 spaces takes 1d20+#LVL damage, ignoring armor. It becomes #kw_smoldering.],
+            effect: [A creature within 2 spaces takes 1d20+#LVL damage, ignoring #defense. It becomes #kw_smoldering.],
         ),
         (
             kind: "active",

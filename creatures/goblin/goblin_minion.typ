@@ -4,9 +4,9 @@
     name: "Goblin Minion",
     type: ("Creature", "Goblin", "Minion"),
     blocks: (
+        passive_abilities.minion,
         (kind: "active", cost: (actions(1),), name: "Stab", effect: [1d6 damage.]),
     ),
-    level: "1/4",
 )
 
 #let goblin_minion = creat_creature(creature_data)

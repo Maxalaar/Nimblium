@@ -38,18 +38,28 @@
   text(size: s, tracking: t, ..args, body)
 }
 
+// Size of the rules text box, which depends on whether the card has a stat row.
+#let body_area(has_stats) = {
+  let bottom = if has_stats { card_height - stat_row_height } else { card_height - 5mm }
+  (card_width - 2 * side_margin, bottom - header_bottom - 3mm)
+}
+
+#let laid_body(body, size) = {
+  set text(size: size)
+  set par(leading: 0.4em)
+  body
+}
+
+// Height of the rules text at a given size. Call inside `context`.
+#let body_height(body, width, size) = measure(block(width: width, laid_body(body, size))).height
+
 // Rules text that shrinks until it fits the given box.
 #let fit_body(body, width, height) = context {
   let s = text_size
-  let laid(s) = {
-    set text(size: s)
-    set par(leading: 0.4em)
-    body
-  }
-  while s > min_text_size and measure(block(width: width, laid(s))).height > height {
+  while s > min_text_size and body_height(body, width, s) > height {
     s -= 0.25pt
   }
-  laid(s)
+  laid_body(body, s)
 }
 
 // Sci-fi HUD corner brackets.
@@ -81,7 +91,7 @@
   at(cx, 12.4mm, text(size: 4.5pt, tracking: 1.1pt, upper(types_text(types))))
 
   let bottom = if stats.len() > 0 { card_height - stat_row_height } else { card_height - 5mm }
-  let (w, h) = (card_width - 2 * side_margin, bottom - header_bottom - 3mm)
+  let (w, h) = body_area(stats.len() > 0)
   place(top + left, dx: side_margin, dy: header_bottom + 1.5mm,
     box(width: w, height: h, align(left + horizon, fit_body(body, w, h))))
 
@@ -118,10 +128,13 @@
 })
 
 // Both faces of a card, front on the left and back on the right.
-#let creat_card(name, types, body, stats: (), back_types: none, icon: none) = box(
-  grid(columns: 2, column-gutter: card_gap,
-    card_front(name, types, body, stats: stats),
-    card_back(name, if back_types == none { types } else { back_types }, icon: icon)))
+// `part` ("1/2", "2/2") is added to the types of a card split in two.
+#let creat_card(name, types, body, stats: (), back_types: none, icon: none, part: none) = {
+  let extra = if part == none { () } else { (part,) }
+  box(grid(columns: 2, column-gutter: card_gap,
+    card_front(name, types + extra, body, stats: stats),
+    card_back(name, (if back_types == none { types } else { back_types }) + extra, icon: icon)))
+}
 
 // Stat values may be numbers, strings or content.
 #let stat_value(v) = if type(v) == int or type(v) == float { str(v) } else { v }

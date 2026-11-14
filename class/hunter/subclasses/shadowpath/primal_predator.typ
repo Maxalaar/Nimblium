@@ -11,7 +11,7 @@
       (
         kind: "active",
         limitation: per_encounter(1),
-        effect: [Your weapon attacks ignore cover and armor this turn.],
+        effect: [Your weapon attacks ignore cover and #defense this turn.],
       ),
     ),
 )

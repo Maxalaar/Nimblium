@@ -29,9 +29,14 @@ qu'il soit exporté. Chaque PDF montre le recto à gauche et le dos à droite (p
 Règles du changelog déjà appliquées :
 
 - **Defense** : la stat de héros "Armor" s'appelle "Defense" ; Defend réduit les dégâts de la
-  Defense. "Armor" désigne l'équipement porté et l'armure des monstres. Garder donc "ignoring
-  armor", Sunder Armor et la case `ARM` des créatures.
-- **Armure des monstres** : Medium = -5 dégâts, Heavy = -10 dégâts. Les crits l'ignorent toujours.
+  Defense. "Armor" ne désigne plus que l'équipement porté.
+- **Defense des monstres** (règle maison, d'après le changelog du 2 octobre 2026) : l'armure des
+  monstres devient leur Defense, une valeur chiffrée qui réduit les dégâts reçus. Medium = DEF 10
+  (-10 dégâts), Heavy = DEF 20 (-20 dégâts). Champ `defense: 10` sur la carte, case `DEF`. Les
+  crits l'ignorent toujours. Les cartes de héros parlent aussi de Defense : "ignoring #defense"
+  (plus "ignoring armor"), et Sunder Armor Medium / Heavy réduisent la Defense de la cible de
+  10 / 20 au lieu de viser l'armure moyenne / lourde. "Armor" ne reste que pour l'équipement
+  porté ("metal armor" de Stormlash) et dans le nom des cartes Sunder Armor.
 - **Vulnerable** = +10 dégâts. **Resistant** = -10 dégâts.
 - **Hide** : Stealth DC 10 ; on ne reste plus caché après un kill que personne n'a vu.
 - **Conditions** : Blinded devient Blind ; Silenced est ajoutée ; elles ne se cumulent pas (une
@@ -141,8 +146,14 @@ Rendu en capsules (`badges.typ`, partagé avec les capacités), sans libellé `C
 
 Format (`creature_rules.md`) : `blocks` comme les capacités de héros, avec en plus un `name`
 par bloc (`name`, `kind`, `cost`, `limitation`, `effect`), `actions` (stat ACT, affichée en
-premier et seulement si > 1), `reminder`, `hit_points`, `armor`, `speed`, `level`, `icon`.
-Les blocs partagés (Undying) sont dans `creatures/passive_abilities.typ`. Toute autre clé est
+premier et seulement si > 1), `reminder`, `hit_points`, `defense`, `speed`, `level`, `icon`.
+Les blocs partagés sont dans `creatures/passive_abilities.typ` : `passive_abilities.undying`,
+et `passive_abilities.minion`. Une créature = un fichier = une carte par défaut (un texte trop
+long déborde, pour qu'on le voie). L'option `split: true` autorise le découpage automatique
+en deux cartes "1/2" et "2/2" (voir `creature_rules.md`) ; le PDF exporté montre alors les deux
+l'une sous l'autre. Pas de carte commune aux légendaires (essayée puis retirée : elle
+n'apportait rien) : Saves, Bloodied et Last Stand sont écrits en entier sur chaque légendaire. "Haha, Didn't Hurt!"
+(capacité des gobelins dans le changelog) a été volontairement retirée : ne pas la remettre. Toute autre clé est
 silencieusement ignorée.
 
 ## Compagnons de classe : séparer le sort de la créature

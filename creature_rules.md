@@ -19,8 +19,16 @@ Do not "fix" these rules from the Nimble books or changelog.
   any active ability it can pay for.
 - **Limits prevent abuse.** A creature with 2 actions must not be able to use its strongest
   attack twice: give that ability a `1/turn` limit.
-- **Legendary creatures** still take a turn after each hero's turn (Nimble rule). They have
-  their `ACT` actions on each of these turns. Limits such as `1/round` keep them in check.
+- **Legendary creatures** have "Legendary" in their types. They still take a turn after each
+  hero's turn (Nimble rule): this is a game rule and is not written on the card.
+  They have their `ACT` actions on each of these turns. Limits such as `1/round` keep them in
+  check.
+- **Saves, Bloodied, Last Stand.** A legendary creature's Nimble sections become passive
+  blocks, written in full on its own card (there is no shared Legendary card):
+  - **Saves**: "It has advantage on STR and DEX saves."
+  - **Bloodied**: "While Bloodied, its attacks deal 2d8+3 damage instead." (+ Bloodied reminder)
+  - **Last Stand**: "At 0 HP, it dies only after taking 20 more damage. Until then, its Defense
+    is 20."
 - **Summoned companions** controlled by a hero (Spirit Companion) have no actions of their
   own: a passive block says so, and their controller pays the costs on their capsules.
 - **Conditions apply as written.** Dazed takes 1 action away from the creature's next turn:
@@ -38,7 +46,14 @@ A creature's abilities are a list of blocks, exactly like a hero ability card:
 | `limitation` | `per_turn(1)`, `per_round(1)`, `per_encounter(1)`... |
 | `effect` | the text |
 
-Passive blocks come first, then active blocks, in the order the GM would read them.
+Passive blocks come first, then active blocks: the template sorts them that way.
+
+**Long creatures.** One file per creature, always, and one card by default: a text that is too
+long overflows visibly. To allow two cards, add `split: true` to the creature: if its text
+doesn't fit on one card even at the smallest text size, it is compiled into two cards numbered
+"1/2" and "2/2" in their types. The first one has the stats and as many blocks as fit, the
+second one the remaining blocks and the reminders. Use it only when the text can't be shortened
+(legendary creatures).
 
 ## 3. Text
 
@@ -61,9 +76,23 @@ Passive blocks come first, then active blocks, in the order the GM would read th
 
 The stat row at the bottom of the card shows, in this order and only when present:
 
-`ACT` (when more than 1) · `HP` · `ARM` (M or H) · `SPD` (when not 6) · `LVL`
+`ACT` (when more than 1) · `HP` · `DEF` · `SPD` (when not 6) · `LVL`
 
-## 5. Converting a Nimble stat block
+- `DEF` (field `defense`) is the damage the creature ignores from each attack: Nimble's Medium
+  armor is DEF 10, Heavy armor is DEF 20. No `DEF` means 0. Crits ignore it.
+- Minions have no `HP` and no `LVL`.
+
+## 5. Shared blocks
+
+`creatures/passive_abilities.typ` holds the blocks several creatures share. Use them instead of
+rewriting the text:
+
+| Block | Who | Effect |
+|---|---|---|
+| `passive_abilities.undying` | most Undead | `1/encounter`: when it would die, it resets to 1 HP |
+| `passive_abilities.minion` | every minion (type "Minion") | any damage kills it; its attacks can't crit and ignore advantage and disadvantage; several minions attacking the same creature count as a single attack |
+
+## 6. Converting a Nimble stat block
 
 | Nimble | Nimblium |
 |---|---|
@@ -71,19 +100,21 @@ The stat row at the bottom of the card shows, in this order and only when presen
 | `Swarm. ... Then: Slam (2×). 1d4+20.` | `ACT 2`, two active blocks, `1 Action` and `1/turn` each |
 | `Slam (2×). 1d4+8.` | one block named Slam: `2 attacks. 1d4+8 damage.` |
 | "The first time this dies, ..." | passive block with a `1/encounter` limit (Undying is shared: `passive_abilities.undying` in `creatures/passive_abilities.typ`) |
+| `Medium` / `Heavy` armor | `defense: 10` / `defense: 20` |
+| `Lvl 1/4` minion | no level, type "Minion", `passive_abilities.minion` |
 | Bloodied / Last Stand abilities | passive blocks whose text starts with "While Bloodied, ..." / "When this creature drops to 0 HP, ..." |
 
-## 6. Examples
+## 7. Examples
 
 **Goblin** — 1 action (not written): it stabs or shoots.
 
 ```typst
 blocks: (
-  (kind: "active", cost: (actions(1),), name: "Stab", effect: [1d6 damage.]),
-  (kind: "active", cost: (actions(1),), name: "Shoot", effect: [Range 8, 1d6 damage.]),
+  (kind: "active", cost: (actions(1),), name: "Stab", effect: [1d6+2 damage.]),
+  (kind: "active", cost: (actions(1),), name: "Shoot", effect: [Range 8, 1d6+2 damage.]),
 ),
 hit_points: 15,
-level: "1/3",
+level: "1/2",
 ```
 
 **Goblin Ratrider** — a passive and one attack.
@@ -103,7 +134,7 @@ level: "2",
 
 ```typst
 blocks: (
-  (kind: "passive", limitation: per_encounter(1), name: "Undying", effect: [When this creature would die, it resets to 1 #HP instead.]),
+  passive_abilities.undying,
   (kind: "passive", name: "Cursed Gaze", effect: [On crit: #dc(20) #INT save, or suffer 1 Wound.]),
   (kind: "active", cost: (actions(1),), limitation: per_turn(1), name: "Scarab Swarm", effect: [Summon 10 scarab minions (d6) within 6 spaces.]),
   (kind: "active", cost: (actions(1),), limitation: per_turn(1), name: "Slam", effect: [2 attacks. 1d4+20 damage. On damage: #kw_dazed.]),

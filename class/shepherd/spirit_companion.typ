@@ -7,7 +7,7 @@
         (kind: "passive", name: "Bound Spirit", effect: [This creature has no actions of its own. Its controller spends their own actions to use its abilities.]),
         (kind: "passive", name: "Spirit Bond", effect: [If this creature is more than 100 spaces from its controller, it disappears.]),
         (kind: "passive", name: "Ethereal Power", effect: [Its Die depends on the tier the summoning spell was cast at: 1d6 (tier 1), 1d8 (tier 2), 1d10 (tier 3), 1d12 (tier 4 or higher).]),
-        (kind: "active", cost: (actions(1),), name: "Ethereal Strike", effect: [It attacks a creature in contact, dealing its Die+#WIL radiant damage, ignoring armor.]),
+        (kind: "active", cost: (actions(1),), name: "Ethereal Strike", effect: [It attacks a creature in contact, dealing its Die+#WIL radiant damage, ignoring #defense.]),
         (kind: "active", cost: (actions(1), [10 #HP]), name: "Ethereal Mending", effect: [It heals another creature in contact for its Die+#WIL #HP.]),
     ),
     hit_points: "Tier × 10",

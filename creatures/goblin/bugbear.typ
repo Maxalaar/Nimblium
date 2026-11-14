@@ -8,7 +8,7 @@
         (kind: "active", cost: (actions(1),), name: "Javelin", effect: [Range 8, 1d6+2 damage.]),
     ),
     hit_points: 30,
-    armor: "M",
+    defense: 10,
     level: "2",
 )
 

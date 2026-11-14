@@ -11,7 +11,7 @@
       (
         kind: "active",
         cost: (actions(1),),
-        effect: [Requires Sunder Armor Medium. When you crit an enemy with heavy armor, until the start of your next turn, all melee attacks against that target ignore its armor.],
+        effect: [Requires Sunder Armor Medium. When you crit an enemy, its #defense is reduced by 20 against melee attacks until the start of your next turn.],
       ),
     ),
 )

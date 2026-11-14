@@ -2,3 +2,8 @@
 #import "goblin.typ": goblin
 #import "bugbear.typ": bugbear
 #import "goblin_ratrider.typ": goblin_ratrider
+#import "goblin_taskmaster.typ": goblin_taskmaster
+#import "bugbear_chieftain.typ": bugbear_chieftain
+#import "nilbog.typ": nilbog
+#import "krogg_goblin_king.typ": krogg_goblin_king
+#import "vermis_and_skittersnack.typ": vermis_and_skittersnack
