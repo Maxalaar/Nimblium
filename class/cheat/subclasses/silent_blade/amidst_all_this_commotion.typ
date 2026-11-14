@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../../global.typ": *
 
 #let ability_data = (
@@ -10,7 +11,7 @@
     blocks: (
       (
         kind: "passive",
-        effect: [If a creature dies while you Sneak Attack, you may turn #kw_invisible until you attack again or until the beginning of your next turn.],
+        effect: [When a creature dies from your Sneak Attack, you may become #kw_invisible until you attack again or until the start of your next turn.],
       ),
     ),
     reminder: (conditions.invisible,),

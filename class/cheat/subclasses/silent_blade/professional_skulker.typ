@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../../global.typ": *
 
 #let ability_data = (
@@ -8,7 +9,8 @@
         "Silent Blade",
     ),
     blocks: (
-      (kind: "narrative", effect: [Gain a climbing #speed and advantage on Stealth checks.]),
+      (kind: "passive", effect: [You gain a climbing #speed.]),
+      (kind: "narrative", effect: [You have advantage on Stealth checks. This ability replaces Leave No Trace.]),
     ),
 )
 

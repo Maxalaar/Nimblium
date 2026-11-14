@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../../global.typ": *
 
 #let ability_data = (
@@ -8,11 +9,7 @@
         "Silent Blade",
     ),
     blocks: (
-      (
-        kind: "passive",
-        limitation: per_encounter(2),
-        effect: [When you land a Sneak Attack, you may force the target to make a #STR save (#dc(10, stat: INT)). On a failure, instead of rolling your Sneak Attack dice, they deal the maximum amount of damage. If your target saves, regain 1 use.],
-      ),
+      (kind: "passive", effect: [Whenever you crit, deal #times(2, INT) additional damage.]),
     ),
 )
 

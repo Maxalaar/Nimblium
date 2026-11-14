@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../global.typ": *
 
 #let ability_data = (
@@ -10,10 +11,12 @@
       (
         kind: "active",
         cost: (actions(1),),
-        effect: [
-            Change one of your Sneak Attack dice to whatever you like.\
-            *Level 13:* Once per turn, you can Twist the Blade for free.
-          ],
+        effect: [Change one of your Sneak Attack dice to whatever you like.],
+      ),
+      (
+        kind: "active",
+        limitation: per_turn(1),
+        effect: [*Level 13:* Use Twist the Blade for free.],
       ),
     ),
 )

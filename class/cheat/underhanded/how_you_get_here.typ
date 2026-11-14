@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../global.typ": *
 
 #let ability_data = (
@@ -11,7 +12,7 @@
       (
         kind: "active",
         cost: (actions(2),),
-        effect: [Place yourself adjacent to a #kw_distracted target within Reach 4. Make a melee attack against them. If you crit, you may place yourself within Reach 4.],
+        effect: [Teleport up to 12 spaces to a space adjacent to a #kw_distracted creature, then make a melee attack against it. If you crit, you may teleport again, up to 12 spaces.],
       ),
     ),
     reminder: (keywords.distracted,),

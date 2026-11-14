@@ -8,3 +8,5 @@
 #import "sunder_armor_medium.typ": sunder_armor_medium
 #import "sunder_armor_heavy.typ": sunder_armor_heavy
 #import "trickshot.typ": trickshot
+#import "tangling_wire.typ": tangling_wire
+#import "the_setup.typ": the_setup

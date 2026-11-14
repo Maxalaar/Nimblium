@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../global.typ": *
 
 #let ability_data = (
@@ -11,7 +12,7 @@
         kind: "active",
         cost: (actions(1),),
         limitation: per_safe_rest(1),
-        effect: [After a #kw_distracted enemy attacks you, you may change the #primary_die roll to whatever you like. Changing the die to the minimum value counts as a miss.],
+        effect: [When a #kw_distracted enemy attacks you, change its #primary_die roll to whatever you like. Changing it to the minimum value counts as a miss.],
       ),
     ),
     reminder: (keywords.distracted,),

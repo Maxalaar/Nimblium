@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../../global.typ": *
 
 #let ability_data = (
@@ -10,10 +11,7 @@
     blocks: (
       (
         kind: "narrative",
-        effect: [
-            You may gain advantage on all Influence checks with NPCs you've just met for the first time. This lasts until you fail an Influence check with them or until you meet a 2nd time.\
-            You have disadvantage on Influence checks with them after you use this ability (until you get back on their good side).
-          ],
+        effect: [You may gain advantage on Influence checks with an NPC you have just met. This lasts until you fail an Influence check with them or meet them a second time. After that, you have disadvantage on Influence checks with them until you get back on their good side.],
       ),
     ),
 )

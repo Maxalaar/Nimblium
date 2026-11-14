@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../../global.typ": *
 
 #let ability_data = (
@@ -9,11 +10,18 @@
     ),
     blocks: (
       (
-        kind: "passive",
-        effect: [When you Sneak Attack, you may spend 2 extra actions to #kw_taunt your target until you drop to 0 #HP. Additionally, the target must succeed on a #STR save (#dc(10, stat: INT)) or be #kw_incapacitated on their next turn.],
+        kind: "active",
+        cost: (actions(1),),
+        effect: [
+          When you Sneak Attack a creature that isn't #kw_taunted by you, roll 1d4.\
+          *1:* It is #kw_taunted by you until the end of the encounter.\
+          *2:* It falls #kw_prone, then it is #kw_taunted by you until the end of the encounter.\
+          *3:* It becomes #kw_dazed, then it is #kw_taunted by you until the end of the encounter.\
+          *4:* It is #kw_incapacitated until the end of the next hero's turn.
+        ],
       ),
     ),
-    reminder: (conditions.taunted, conditions.incapacitated),
+    reminder: (conditions.taunted, conditions.prone, conditions.dazed, conditions.incapacitated,),
 )
 
 #let low_blow = creat_ability(ability_data)

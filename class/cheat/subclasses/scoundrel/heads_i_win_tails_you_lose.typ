@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../../global.typ": *
 
 #let ability_data = (
@@ -11,7 +12,7 @@
       (
         kind: "active",
         limitation: per_encounter(1),
-        effect: [Attacks you make this round don't miss, you crit on 1 less than normally needed, and you gain #LVL temp #HP.],
+        effect: [This round, your attacks don't miss and you crit on 1 less than normally needed. You gain #LVL temp #HP.],
       ),
     ),
 )

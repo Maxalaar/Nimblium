@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../../global.typ": *
 
 #let ability_data = (
@@ -8,7 +9,7 @@
         "Silent Blade",
     ),
     blocks: (
-      (kind: "passive", effect: [When you crit an enemy with fewer max #HP than you, it dies.]),
+      (kind: "passive", effect: [When you Sneak Attack an enemy with fewer max #HP than you, it dies.]),
     ),
 )
 

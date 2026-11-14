@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../global.typ": *
 
 #let ability_data = (
@@ -11,7 +12,7 @@
       (
         kind: "active",
         cost: (actions(1),),
-        effect: [Requires Sunder Armor Medium. When you crit an enemy, its #defense is reduced by 20 against melee attacks until the start of your next turn.],
+        effect: [When you crit an enemy, its #defense is reduced by 20 against melee attacks until the start of your next turn. You must have Sunder Armor Medium to choose this ability.],
       ),
     ),
 )

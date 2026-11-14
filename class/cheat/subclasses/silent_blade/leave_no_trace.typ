@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../../global.typ": *
 
 #let ability_data = (
@@ -8,7 +9,7 @@
         "Silent Blade",
     ),
     blocks: (
-      (kind: "narrative", effect: [Advantage on Stealth checks when you are at full health.]),
+      (kind: "narrative", effect: [You have advantage on Stealth checks while you are at full #HP.]),
     ),
 )
 

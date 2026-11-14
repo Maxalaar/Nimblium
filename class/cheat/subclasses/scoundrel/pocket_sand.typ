@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../../global.typ": *
 
 #let ability_data = (
@@ -11,7 +12,7 @@
       (
         kind: "passive",
         limitation: per_encounter(2),
-        effect: [When you Defend against a melee attack, #kw_blind the attacker until the start of their next turn and force them to reroll the attack.],
+        effect: [When you Defend against an adjacent creature, it becomes #kw_blind until the start of its next turn and must reroll the attack.],
       ),
     ),
     reminder: (conditions.blind,),

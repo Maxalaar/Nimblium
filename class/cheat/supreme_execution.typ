@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../global.typ": *
 
 #let ability_data = (
@@ -7,7 +8,10 @@
         "Cheat",
     ),
     blocks: (
-      (kind: "passive", effect: [When you attack with a blade, you do not require targets to be #kw_distracted to trigger Vicious Opportunist.]),
+      (
+        kind: "passive",
+        effect: [When you attack with a blade, you can use Vicious Opportunist even if the target isn't #kw_distracted.],
+      ),
     ),
     reminder: (keywords.distracted,),
 )

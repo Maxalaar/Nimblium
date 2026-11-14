@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../global.typ": *
 
 #let ability_data = (
@@ -7,8 +8,11 @@
         "Cheat",
     ),
     blocks: (
-      (kind: "narrative", limitation: per_encounter(1), effect: [Gain advantage on an Assess check.]),
-      (kind: "narrative", limitation: per_day(1), effect: [Gain advantage on an Examination check.]),
+      (
+        kind: "narrative",
+        limitation: per_encounter(1),
+        effect: [Gain advantage on an Assess check.],
+      ),
     ),
 )
 

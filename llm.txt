@@ -255,7 +255,12 @@ fichier avant de le modifier à nouveau (ne pas se fier à une version obsolète
 - **Berserker** : COMPLET, réécrit au nouveau style et aligné sur le changelog du 2 octobre 2026
   (Dismantle ajouté). Ses 3 nouvelles sous-classes (Path of Burning Rage, Path of Titan's Grip,
   Muscle Mage) ne sont citées que par leur nom dans le changelog : pas de texte disponible.
-- **Cheat, Hunter, Shepherd** : complets mais à repasser au nouveau style et au changelog du
+- **Cheat** : réécrit au nouveau style et aligné sur le changelog du 2 octobre 2026 (Tangling
+  Wire et The Setup ajoutés). Exception volontaire : Sunder Armor reste en deux cartes Medium /
+  Heavy qui réduisent la Defense (règle maison), au lieu de la capacité unique « +2 au Primary
+  Die » du changelog. Nouvelles sous-classes du changelog (Tools of the Gambler, Tools of the
+  Serpent, Honorseeker) : noms seulement, pas de texte.
+- **Hunter, Shepherd** : complets mais à repasser au nouveau style et au changelog du
   2 octobre (voir `python3 check_review.py`).
 - **Cheat** (p.12-17) : COMPLET — niveaux de base 1-20, toutes les Underhanded Abilities, les
   deux sous-classes (Scoundrel, Silent Blade).

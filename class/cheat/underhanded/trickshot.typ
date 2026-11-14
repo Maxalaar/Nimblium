@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../global.typ": *
 
 #let ability_data = (
@@ -8,7 +9,15 @@
         "Underhanded",
     ),
     blocks: (
-      (kind: "passive", effect: [When you throw a dagger, it returns to your hand at the end of your turn. On a hit, it ricochets to another creature within 2 spaces, dealing half as much damage to them.]),
+      (
+        kind: "passive",
+        effect: [You can use Vicious Opportunist on thrown weapon attacks. You can't use Twist the Blade on them.],
+      ),
+      (
+        kind: "active",
+        cost: (actions(1),),
+        effect: [When you throw a weapon, it also hits another creature within 2 spaces of the target, dealing half as much damage to it.],
+      ),
     ),
 )
 

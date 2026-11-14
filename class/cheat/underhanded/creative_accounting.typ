@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../global.typ": *
 
 #let ability_data = (
@@ -8,7 +9,10 @@
         "Underhanded",
     ),
     blocks: (
-      (kind: "active", effect: [Gain up to #INT actions immediately. The next time you would gain actions, reduce that amount by the number stolen. Cannot be used on consecutive turns.]),
+      (
+        kind: "active",
+        effect: [Gain up to #INT actions. The next time you would gain actions, you gain that many fewer. You can't use this ability on two turns in a row.],
+      ),
     ),
 )
 

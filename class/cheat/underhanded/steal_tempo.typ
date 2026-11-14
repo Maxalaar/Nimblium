@@ -1,3 +1,4 @@
+// review: style=2026-11-14 changelog=2026-10-02
 #import "../../../global.typ": *
 
 #let ability_data = (
@@ -8,8 +9,12 @@
         "Underhanded",
     ),
     blocks: (
-      (kind: "passive", effect: [When you critically hit a target for the second time in a turn, the target loses 1 action and you gain 1 action.]),
+      (
+        kind: "passive",
+        effect: [When a creature takes its second critical hit from you in a round, it becomes #kw_dazed and you give 1 action to an ally.],
+      ),
     ),
+    reminder: (conditions.dazed,),
 )
 
 #let steal_tempo = creat_ability(ability_data)
