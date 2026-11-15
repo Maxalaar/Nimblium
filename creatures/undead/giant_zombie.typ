@@ -5,8 +5,9 @@
     type: ("Creature", "Undead"),
     blocks: (
         passive_abilities.undying,
-        (kind: "active", cost: (actions(1),), name: "Decaying Swipe", effect: [2 attacks. 1d4+10 damage. On damage: knockback #primary_die spaces.]),
+        (kind: "active", cost: (actions(1),), name: "Decaying Swipe", attacks: 2, damage: "1d4+10", effect: [Whenever this attack deals damage, the target suffers #kw_knockback X, where X is this attack's #primary_die.]),
     ),
+    reminder: (keywords.knockback,),
     hit_points: 75,
     level: "8",
 )

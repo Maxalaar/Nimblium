@@ -5,7 +5,7 @@
     type: ("Creature", "Undead"),
     blocks: (
         passive_abilities.undying,
-        (kind: "active", cost: (actions(1),), name: "Soul Rend", effect: [2 attacks. Range 8, 1d4+10 damage. On damage: deal 1 Wound.]),
+        (kind: "active", cost: (actions(1),), name: "Soul Rend", attacks: 2, range: 8, damage: "1d4+10", effect: [Whenever this attack deals damage, the target gains 1 Wound.]),
     ),
     hit_points: 100,
     level: "10",

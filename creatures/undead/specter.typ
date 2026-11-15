@@ -5,7 +5,7 @@
     type: ("Creature", "Undead"),
     blocks: (
         passive_abilities.undying,
-        (kind: "active", cost: (actions(1),), name: "Deathly Touch", effect: [1d4 damage. On damage: set #HP to 0.]),
+        (kind: "active", cost: (actions(1),), name: "Deathly Touch", damage: "1d4", effect: [Whenever this attack deals damage, the target drops to 0 #HP.]),
     ),
     hit_points: 30,
     level: "3",

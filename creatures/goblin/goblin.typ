@@ -4,8 +4,8 @@
     name: "Goblin",
     type: ("Creature", "Goblin"),
     blocks: (
-        (kind: "active", cost: (actions(1),), name: "Stab", effect: [1d6+2 damage.]),
-        (kind: "active", cost: (actions(1),), name: "Shoot", effect: [Range 8, 1d6+2 damage.]),
+        (kind: "active", cost: (actions(1),), name: "Stab", damage: "1d6+2"),
+        (kind: "active", cost: (actions(1),), name: "Shoot", range: 8, damage: "1d6+2"),
     ),
     hit_points: 15,
     level: "1/2",

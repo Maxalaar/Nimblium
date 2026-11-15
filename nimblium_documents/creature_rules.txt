@@ -25,10 +25,11 @@ Do not "fix" these rules from the Nimble books or changelog.
   check.
 - **Saves, Bloodied, Last Stand.** A legendary creature's Nimble sections become passive
   blocks, written in full on its own card (there is no shared Legendary card):
-  - **Saves**: "It has advantage on STR and DEX saves."
-  - **Bloodied**: "While Bloodied, its attacks deal 2d8+3 damage instead." (+ Bloodied reminder)
-  - **Last Stand**: "At 0 HP, it dies only after taking 20 more damage. Until then, its Defense
-    is 20."
+  - **Saves**: "This creature has advantage on STR and DEX saves."
+  - **Bloodied**: "While this creature is Bloodied, its attacks deal 2d8+3 damage instead."
+    (+ Bloodied reminder)
+  - **Last Stand**: "When this creature drops to 0 HP, it dies only after taking 20 more
+    damage. Until then, its Defense is 20."
 - **Summoned companions** controlled by a hero (Spirit Companion) have no actions of their
   own: a passive block says so, and their controller pays the costs on their capsules.
 - **Conditions apply as written.** Dazed takes 1 action away from the creature's next turn:
@@ -44,7 +45,14 @@ A creature's abilities are a list of blocks, exactly like a hero ability card:
 | `kind` | `"passive"` (always on or triggered) or `"active"` (costs actions) |
 | `cost` | `(actions(1),)`: every active block has a cost, even when it is 1 action |
 | `limitation` | `per_turn(1)`, `per_round(1)`, `per_encounter(1)`... |
-| `effect` | the text |
+| `attacks` | number of attacks, when more than 1: `2` → capsule `2 attacks` |
+| `reach` | melee reach, when more than 1: `2` → capsule `Reach 2` |
+| `range` | ranged attacks only: `8` → capsule `Range 8` |
+| `damage` | the attack's damage: `"1d6+2"` → capsule `1d6+2 damage` (content such as `[Die+#WIL radiant]` also works) |
+| `effect` | the text, optional: a plain attack is fully described by its capsules |
+
+A block with a `damage` field is an attack. Its capsules come in this order: mode, cost,
+limit, attacks, reach or range, damage.
 
 Passive blocks come first, then active blocks: the template sorts them that way.
 
@@ -60,11 +68,19 @@ second one the remaining blocks and the reminders. Use it only when the text can
 - **Every block has a name**, in its `name` field: it is shown in bold above the capsules and
   lets the GM and the players refer to the ability. Hero ability blocks have no name; the
   field is the same, it is just left out.
-- **Attack effect.** Always in this order:
-  `[2 attacks.] [Range X,] XdY+Z damage. [On damage / On crit: effect.]`
-  - `2 attacks.` replaces Nimble's "(2×)".
-  - `Range X,` only for ranged attacks; melee attacks have no range.
-  - Damage always ends with the word "damage".
+- **Attacks go on capsules, not in the text.** The number of attacks, the reach or range and
+  the damage are the `attacks`, `reach`, `range` and `damage` fields (§2). A melee attack with
+  Reach 1 has neither reach nor range: it is the default. `attacks: 2` replaces Nimble's "(2×)".
+- **Attack riders** are full sentences with "this attack" as subject:
+  - On damage: "Whenever this attack deals damage, the target is Dazed."
+  - On crit: "Whenever this attack crits, the target is Prone."
+  - Movement before the attack: "It may move up to 6 spaces before this attack."
+  - Escape: "the target is Grappled until it escapes with a DC 10 check."
+- **Damage that is not an attack** (a charge through a line, a creature swung at another)
+  stays in the text: "Each creature in its path takes 2d6 damage."
+- **Summons**: "it summons a Goblin Minion adjacent to it". A minion's die size is its damage
+  die: Nimble's "10 scarab minions (d6)" becomes "It summons 10 scarab minions within 6
+  spaces. Each one deals 1d6 damage."
 - **Subject.** A creature is "this creature", then "it / its". Never "you": "you" is the player
   who owns the card (writing_rules.txt §2).
 - **No "or", no "then".** Two attacks the creature chooses between are two blocks. Two effects
@@ -98,11 +114,13 @@ rewriting the text:
 |---|---|
 | `Stab. 1d6. OR: Shoot. (Range 8) 1d6.` | two active blocks, `1 Action` each |
 | `Swarm. ... Then: Slam (2×). 1d4+20.` | `ACT 2`, two active blocks, `1 Action` and `1/turn` each |
-| `Slam (2×). 1d4+8.` | one block named Slam: `2 attacks. 1d4+8 damage.` |
+| `Slam (2×). 1d4+8.` | one block named Slam: `attacks: 2, damage: "1d4+8"` |
+| `Shoot. (Range 8) 1d6.` | `range: 8, damage: "1d6"` |
+| `On damage: Dazed.` / `On crit: Prone.` | "Whenever this attack deals damage, the target is Dazed." / "Whenever this attack crits, ..." |
 | "The first time this dies, ..." | passive block with a `1/encounter` limit (Undying is shared: `passive_abilities.undying` in `creatures/passive_abilities.typ`) |
 | `Medium` / `Heavy` armor | `defense: 10` / `defense: 20` |
 | `Lvl 1/4` minion | no level, type "Minion", `passive_abilities.minion` |
-| Bloodied / Last Stand abilities | passive blocks whose text starts with "While Bloodied, ..." / "When this creature drops to 0 HP, ..." |
+| Bloodied / Last Stand abilities | passive blocks whose text starts with "While this creature is Bloodied, ..." / "When this creature drops to 0 HP, ..." |
 
 ## 7. Examples
 
@@ -110,8 +128,8 @@ rewriting the text:
 
 ```typst
 blocks: (
-  (kind: "active", cost: (actions(1),), name: "Stab", effect: [1d6+2 damage.]),
-  (kind: "active", cost: (actions(1),), name: "Shoot", effect: [Range 8, 1d6+2 damage.]),
+  (kind: "active", cost: (actions(1),), name: "Stab", damage: "1d6+2"),
+  (kind: "active", cost: (actions(1),), name: "Shoot", range: 8, damage: "1d6+2"),
 ),
 hit_points: 15,
 level: "1/2",
@@ -122,7 +140,7 @@ level: "1/2",
 ```typst
 blocks: (
   (kind: "passive", name: "Charge", effect: [If this creature moves at least 4 spaces in a straight line, its next attack this turn has advantage.]),
-  (kind: "active", cost: (actions(1),), name: "Bite & Stab", effect: [2 attacks. 1d6+2 damage. On crit: #kw_prone.]),
+  (kind: "active", cost: (actions(1),), name: "Bite & Stab", attacks: 2, damage: "1d6+2", effect: [Whenever this attack crits, the target is #kw_prone.]),
 ),
 reminder: (conditions.prone,),
 hit_points: 30,
@@ -135,9 +153,9 @@ level: "2",
 ```typst
 blocks: (
   passive_abilities.undying,
-  (kind: "passive", name: "Cursed Gaze", effect: [On crit: #dc(20) #INT save, or suffer 1 Wound.]),
-  (kind: "active", cost: (actions(1),), limitation: per_turn(1), name: "Scarab Swarm", effect: [Summon 10 scarab minions (d6) within 6 spaces.]),
-  (kind: "active", cost: (actions(1),), limitation: per_turn(1), name: "Slam", effect: [2 attacks. 1d4+20 damage. On damage: #kw_dazed.]),
+  (kind: "passive", name: "Cursed Gaze", effect: [Whenever a creature crits this creature, that creature makes a #dc(20) #INT save. If it fails, it gains 1 Wound.]),
+  (kind: "active", cost: (actions(1),), limitation: per_turn(1), name: "Scarab Swarm", effect: [It summons 10 scarab minions within 6 spaces. Each one deals 1d6 damage.]),
+  (kind: "active", cost: (actions(1),), limitation: per_turn(1), name: "Slam", attacks: 2, damage: "1d4+20", effect: [Whenever this attack deals damage, the target is #kw_dazed.]),
 ),
 reminder: (conditions.dazed,),
 hit_points: 280,

@@ -4,7 +4,7 @@
     name: "Bugbear Chieftain",
     type: ("Creature", "Goblin"),
     blocks: (
-        (kind: "active", cost: (actions(1),), name: "Cleave", effect: [Reach 2, 2d6+10 damage. It may also deal this damage to a second creature within Reach.]),
+        (kind: "active", cost: (actions(1),), name: "Cleave", reach: 2, damage: "2d6+10", effect: [This attack may also deal its damage to a second creature within Reach.]),
     ),
     hit_points: 40,
     defense: 10,

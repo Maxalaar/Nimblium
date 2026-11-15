@@ -5,9 +5,9 @@
     type: ("Creature", "Undead"),
     blocks: (
         passive_abilities.undying,
-        (kind: "passive", name: "Cursed Gaze", effect: [On crit: #dc(20) #INT save, or suffer 1 Wound.]),
-        (kind: "active", cost: (actions(1),), limitation: per_turn(1), name: "Scarab Swarm", effect: [Summon 10 scarab minions (d6) within 6 spaces.]),
-        (kind: "active", cost: (actions(1),), limitation: per_turn(1), name: "Slam", effect: [2 attacks. 1d4+20 damage. On damage: #kw_dazed.]),
+        (kind: "passive", name: "Cursed Gaze", effect: [Whenever a creature crits this creature, that creature makes a #dc(20) #INT save. If it fails, it gains 1 Wound.]),
+        (kind: "active", cost: (actions(1),), limitation: per_turn(1), name: "Scarab Swarm", effect: [It summons 10 scarab minions within 6 spaces. Each one deals 1d6 damage.]),
+        (kind: "active", cost: (actions(1),), limitation: per_turn(1), name: "Slam", attacks: 2, damage: "1d4+20", effect: [Whenever this attack deals damage, the target is #kw_dazed.]),
     ),
     reminder: (conditions.dazed,),
     actions: 2,
@@ -16,3 +16,12 @@
 )
 
 #let mummy_lord = creat_creature(creature_data)
+
+/*
+interpretation: Nimble's "Cursed Gaze. When crit: ..." is read as "when a creature crits the
+Mummy Lord": Nimble writes "On crit" for a monster's own attacks, and the gaze curses the
+attacker.
+
+interpretation: "Scarab minions (d6)" gives the minions' die size, which is their damage die
+(e.g. the Goblin Minion's Stab is 1d6). Each scarab deals 1d6 damage.
+*/

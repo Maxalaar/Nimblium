@@ -5,7 +5,7 @@
     type: ("Creature", "Undead"),
     blocks: (
         passive_abilities.undying,
-        (kind: "active", cost: (actions(1),), name: "Crunch", effect: [1d4+4 damage. On damage: #kw_grappled.]),
+        (kind: "active", cost: (actions(1),), name: "Crunch", damage: "1d4+4", effect: [Whenever this attack deals damage, the target is #kw_grappled.]),
     ),
     reminder: (conditions.grappled,),
     hit_points: 15,

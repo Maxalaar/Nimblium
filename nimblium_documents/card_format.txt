@@ -82,7 +82,8 @@ Rendu en capsules (`badges.typ`, partagé avec les capacités), sans libellé `C
 ### Creature (`creat_creature.typ`)
 
 Format (`creature_rules.txt`) : `blocks` comme les capacités de héros, avec en plus un `name`
-par bloc (`name`, `kind`, `cost`, `limitation`, `effect`), `actions` (stat ACT, affichée en
+par bloc (`name`, `kind`, `cost`, `limitation`, `effect`) et, pour les attaques, `attacks`,
+`reach`, `range` et `damage`, affichés en capsules sur la ligne du coût ; `actions` (stat ACT, affichée en
 premier et seulement si > 1), `reminder`, `hit_points`, `defense`, `speed`, `level`, `icon`.
 Les blocs partagés sont dans `creatures/passive_abilities.typ` : `passive_abilities.undying`,
 et `passive_abilities.minion`. Une créature = un fichier = une carte par défaut (un texte trop

@@ -4,8 +4,8 @@
     name: "Bugbear",
     type: ("Creature", "Goblin"),
     blocks: (
-        (kind: "active", cost: (actions(1),), name: "Cleave", effect: [2d6+4 damage.]),
-        (kind: "active", cost: (actions(1),), name: "Javelin", effect: [Range 8, 1d6+2 damage.]),
+        (kind: "active", cost: (actions(1),), name: "Cleave", damage: "2d6+4"),
+        (kind: "active", cost: (actions(1),), name: "Javelin", range: 8, damage: "1d6+2"),
     ),
     hit_points: 30,
     defense: 10,

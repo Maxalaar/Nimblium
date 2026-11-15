@@ -16,14 +16,16 @@
 
 // Optional bold name (creature attacks, granted actions), then the mode, cost,
 // tag (AoE...) and limitation capsules, then the attack capsules (number of
-// attacks, range, damage), then the effect below them. The effect is optional:
-// a plain attack is fully described by its capsules.
+// attacks, reach or range, damage), then the effect below them. The effect is
+// optional: a plain attack is fully described by its capsules. `damage` may be
+// a string ("1d6+2") or content ([Die+#WIL radiant]).
 #let ability_block(block) = {
   let tags = block.at("cost", default: ()) + block.at("tags", default: ())
   if "limitation" in block { tags += (block.limitation,) }
   if "attacks" in block { tags.push(str(block.attacks) + " attacks") }
+  if "reach" in block { tags.push("Reach " + str(block.reach)) }
   if "range" in block { tags.push("Range " + str(block.range)) }
-  if "damage" in block { tags.push(block.damage + " damage") }
+  if "damage" in block { tags.push([#block.damage damage]) }
   if "name" in block { strong(block.name); linebreak() }
   ((mode_badge(block.kind),) + tags.map(tag_badge)).join(h(2pt))
   if "effect" in block { linebreak(); block.effect }

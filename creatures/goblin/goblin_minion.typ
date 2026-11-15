@@ -5,7 +5,7 @@
     type: ("Creature", "Goblin", "Minion"),
     blocks: (
         passive_abilities.minion,
-        (kind: "active", cost: (actions(1),), name: "Stab", effect: [1d6 damage.]),
+        (kind: "active", cost: (actions(1),), name: "Stab", damage: "1d6"),
     ),
 )
 

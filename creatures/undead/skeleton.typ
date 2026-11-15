@@ -5,7 +5,7 @@
     type: ("Creature", "Undead"),
     blocks: (
         passive_abilities.undying,
-        (kind: "active", cost: (actions(1),), name: "Grave Arrow", effect: [1d4+3 damage.]),
+        (kind: "active", cost: (actions(1),), name: "Grave Arrow", range: 8, damage: "1d4+3"),
     ),
     hit_points: 10,
     level: "1/3",

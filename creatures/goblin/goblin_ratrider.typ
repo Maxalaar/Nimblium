@@ -5,7 +5,7 @@
     type: ("Creature", "Goblin"),
     blocks: (
         (kind: "passive", name: "Charge", effect: [If this creature moves at least 4 spaces in a straight line, its next attack this turn has advantage.]),
-        (kind: "active", cost: (actions(1),), name: "Bite & Stab", effect: [2 attacks. 1d6+2 damage. On crit: #kw_prone.]),
+        (kind: "active", cost: (actions(1),), name: "Bite & Stab", attacks: 2, damage: "1d6+2", effect: [Whenever this attack crits, the target is #kw_prone.]),
     ),
     reminder: (conditions.prone,),
     hit_points: 30,
