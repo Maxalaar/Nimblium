@@ -2,6 +2,8 @@
 #import "creat_ability.typ": ability_block
 
 #let kind_order = (passive: 0, active: 1)
+// The size is written in full in the data and shown as one letter on the card.
+#let size_letters = (Tiny: "T", Small: "S", Large: "L", Huge: "H", Gargantuan: "G")
 
 // Creatures follow creature_rules.txt: named blocks with capsules, like hero
 // abilities, passives first then actives.
@@ -22,7 +24,7 @@
   if "hit_points" in creature { stats.push(("HP", stat_value(creature.hit_points))) }
   if "defense" in creature { stats.push(("DEF", stat_value(creature.defense))) }
   if "speed" in creature { stats.push(("SPD", stat_value(creature.speed))) }
-  if "size" in creature { stats.push(("SIZE", stat_value(creature.size))) }
+  if "size" in creature { stats.push(("SIZ", stat_value(size_letters.at(creature.size)))) }
   if "level" in creature { stats.push(("LVL", stat_value(creature.level))) }
 
   let card(parts, stats: (), part: none) = creat_card(

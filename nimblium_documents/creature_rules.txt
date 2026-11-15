@@ -92,13 +92,13 @@ second one the remaining blocks and the reminders. Use it only when the text can
 
 The stat row at the bottom of the card shows, in this order and only when present:
 
-`ACT` (when more than 1) · `HP` · `DEF` · `SPD` (when not 6) · `SIZE` (when not Medium) · `LVL`
+`ACT` (when more than 1) · `HP` · `DEF` · `SPD` (when not 6) · `SIZ` (when not Medium) · `LVL`
 
 - `DEF` (field `defense`) is the damage the creature ignores from each attack: Nimble's Medium
   armor is DEF 10, Heavy armor is DEF 20. No `DEF` means 0. Crits ignore it.
 - Minions have no `HP` and no `LVL`.
-- `SIZE` (field `size`: "Tiny", "Small", "Large", "Huge", "Gargantuan") comes from the
-  source stat block. Size governs forced movement and moving through other creatures' spaces
+- `SIZ` (field `size`: "Tiny", "Small", "Large", "Huge", "Gargantuan", written in full) comes
+  from the source stat block. The card shows one letter: T, S, L, H or G. Size governs forced movement and moving through other creatures' spaces
   (2026-10-02 changelog). Medium is the default and is not written.
 
 ## 5. Shared blocks
