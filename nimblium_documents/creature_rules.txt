@@ -106,6 +106,7 @@ rewriting the text:
 | Block | Who | Effect |
 |---|---|---|
 | `passive_abilities.undying` | most Undead | `1/encounter`: when it would die, it resets to 1 HP |
+| `passive_abilities.flying` | creatures that fly (Nimble's "Fly") | "This creature is Flying." Add `keywords.flying` to its reminders |
 | `passive_abilities.minion` | every minion (type "Minion") | any damage kills it; its attacks can't crit and ignore advantage and disadvantage; several minions attacking the same creature count as a single attack |
 
 ## 6. Converting a Nimble stat block

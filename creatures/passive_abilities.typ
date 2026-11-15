@@ -9,6 +9,12 @@
     name: "Undying",
     effect: [When this creature would die, it resets to 1 #HP instead.],
   ),
+  // Add keywords.flying to the creature's reminders.
+  flying: (
+    kind: "passive",
+    name: "Flight",
+    effect: [This creature is #kw_flying.],
+  ),
   // Minions have no HP and no level (creature_rules.txt §5).
   minion: (
     kind: "passive",

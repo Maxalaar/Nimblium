@@ -53,6 +53,7 @@
 #let kw_difficult_terrain = keyword_style[Difficult Terrain]
 #let kw_distracted = keyword_style[Distracted]
 #let kw_dying = keyword_style[Dying]
+#let kw_flying = keyword_style[Flying]
 #let kw_grappled = keyword_style[Grappled]
 #let kw_hampered = keyword_style[Hampered]
 #let kw_hide = keyword_style[Hide]
