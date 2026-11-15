@@ -43,5 +43,9 @@ donnent que le nom : pas de texte disponible, donc pas de cartes.
 
 ## Créatures
 
-- **Goblins** : famille complète.
-- **Undead** : créés.
+- **Goblins** (Goblins v1.1) : famille complète, au nouveau style. Les pièges et hasards du
+  livret sont écartés volontairement.
+- **Undead** (Game Master's Guide) : au nouveau style, valeurs du GMG.
+- Le changelog du 2 octobre 2026 recalcule tous les blocs de stats (PV, dégâts, armure) et
+  passe les PV des légendaires par héros, sans publier les nouvelles valeurs : on garde celles
+  des PDF.

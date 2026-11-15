@@ -75,7 +75,7 @@ second one the remaining blocks and the reminders. Use it only when the text can
   - On damage: "Whenever this attack deals damage, the target is Dazed."
   - On crit: "Whenever this attack crits, the target is Prone."
   - Movement before the attack: "It may move up to 6 spaces before this attack."
-  - Escape: "the target is Grappled until it escapes with a DC 10 check."
+  - Escape: "the target is Grappled until it escapes with a DC 10 STR or DEX save."
 - **Damage that is not an attack** (a charge through a line, a creature swung at another)
   stays in the text: "Each creature in its path takes 2d6 damage."
 - **Summons**: "it summons a Goblin Minion adjacent to it". A minion's die size is its damage
@@ -86,17 +86,20 @@ second one the remaining blocks and the reminders. Use it only when the text can
 - **No "or", no "then".** Two attacks the creature chooses between are two blocks. Two effects
   it chains are two blocks, each with a `1/turn` limit, on a creature with enough actions.
 - **No costs or limits in the text.** They go on capsules (writing_rules.txt §4).
-- **Default values are not written**: speed 6, 1 action, can take damage, disappears at 0 HP.
+- **Default values are not written**: speed 6, 1 action, Medium size, can take damage, disappears at 0 HP.
 
 ## 4. Stats
 
 The stat row at the bottom of the card shows, in this order and only when present:
 
-`ACT` (when more than 1) · `HP` · `DEF` · `SPD` (when not 6) · `LVL`
+`ACT` (when more than 1) · `HP` · `DEF` · `SPD` (when not 6) · `SIZE` (when not Medium) · `LVL`
 
 - `DEF` (field `defense`) is the damage the creature ignores from each attack: Nimble's Medium
   armor is DEF 10, Heavy armor is DEF 20. No `DEF` means 0. Crits ignore it.
 - Minions have no `HP` and no `LVL`.
+- `SIZE` (field `size`: "Tiny", "Small", "Large", "Huge", "Gargantuan") comes from the
+  source stat block. Size governs forced movement and moving through other creatures' spaces
+  (2026-10-02 changelog). Medium is the default and is not written.
 
 ## 5. Shared blocks
 

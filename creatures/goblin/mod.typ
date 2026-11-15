@@ -11,4 +11,7 @@
 /*
 house-rule: Haha, Didn't Hurt!, the goblin family ability from the 2026-10-02 changelog, is
 left out on purpose. Don't add it back.
+
+house-rule: The goblin hazards and traps of Goblins v1.1 (Tripping Hazard, Goblin
+Spikefield, Goblin Pit Trap, Ratapult) are left out on purpose.
 */

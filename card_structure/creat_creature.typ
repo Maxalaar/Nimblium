@@ -22,6 +22,7 @@
   if "hit_points" in creature { stats.push(("HP", stat_value(creature.hit_points))) }
   if "defense" in creature { stats.push(("DEF", stat_value(creature.defense))) }
   if "speed" in creature { stats.push(("SPD", stat_value(creature.speed))) }
+  if "size" in creature { stats.push(("SIZE", stat_value(creature.size))) }
   if "level" in creature { stats.push(("LVL", stat_value(creature.level))) }
 
   let card(parts, stats: (), part: none) = creat_card(

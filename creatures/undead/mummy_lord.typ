@@ -18,6 +18,8 @@
 #let mummy_lord = creat_creature(creature_data)
 
 /*
+review: style=2026-11-14 changelog=2026-10-02
+
 interpretation: Nimble's "Cursed Gaze. When crit: ..." is read as "when a creature crits the
 Mummy Lord": Nimble writes "On crit" for a monster's own attacks, and the gaze curses the
 attacker.
