@@ -7,3 +7,4 @@
 #import "arctic_blast.typ": arctic_blast
 #import "glacier_strike.typ": glacier_strike
 #import "arctic_annihilation.typ": arctic_annihilation
+#import "utility/mod.typ": *

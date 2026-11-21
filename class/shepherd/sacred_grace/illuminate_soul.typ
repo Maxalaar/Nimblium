@@ -12,7 +12,7 @@
         kind: "active",
         cost: (actions(1),),
         limitation: per_safe_rest(WIL),
-        effect: [Choose a creature within 6 spaces, then choose advantage or disadvantage. Until the start of your next turn, attacks against that creature have the chosen one.],
+        effect: [Choose a creature within 6 spaces, then choose #kw_advantage or #kw_disadvantage. Until the start of your next turn, attacks against that creature have the chosen one.],
       ),
     ),
 )

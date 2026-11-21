@@ -8,7 +8,7 @@
         "Invoker of Chaos",
     ),
     blocks: (
-      (kind: "passive", effect: [Whenever you #kw_invoke_chaos, roll with advantage.]),
+      (kind: "passive", effect: [Whenever you #kw_invoke_chaos, roll with #kw_advantage.]),
     ),
     reminder: (mage_keywords.invoke_chaos,),
 )

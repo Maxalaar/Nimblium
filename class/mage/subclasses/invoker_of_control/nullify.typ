@@ -11,7 +11,7 @@
       (
         kind: "active",
         limitation: per_encounter(1),
-        effect: [Your next action this turn ignores all disadvantage and other negative effects. Then #kw_demand_control.],
+        effect: [Your next action this turn ignores all #kw_disadvantage and other negative effects. Then #kw_demand_control.],
       ),
     ),
     reminder: (mage_keywords.demand_control,),

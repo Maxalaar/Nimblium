@@ -8,7 +8,7 @@
         "Silent Blade",
     ),
     blocks: (
-      (kind: "narrative", effect: [You have advantage on Stealth checks while you are at full #HP.]),
+      (kind: "narrative", effect: [You have #kw_advantage on Stealth checks while you are at full #HP.]),
     ),
 )
 

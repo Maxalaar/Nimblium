@@ -74,9 +74,11 @@ des tiers de sorts par niveau, avec le même style `*Level X:*` que `sneak_attac
 
 ### Spell (`creat_spell.typ`)
 
-Champs disponibles : `cost`, `concentration`, `range`, `reach`, `area`, `damage`, `effect`,
+Champs disponibles : `cost`, `casting_time` (temps d'incantation en minutes, stat CAST, ex `"1 min"`), `concentration`, `range`, `reach`, `area`, `damage`, `effect`,
 `high_Levels`, `upcast`, `flavor`, `reminder`. `type` vaut toujours (type, école, palier, tags...), ex
 `("Spell","Fire","Cantrip")`, `("Spell","Lightning","Tier 3","AoE")`.
+Les sorts utilitaires mettent `"Utility"` à la place du palier : `("Spell","Ice","Utility")`
+(dossier `utility/` de leur école, ex `spells/ice/utility/`, icône de leur école).
 
 Rendu (sans libellé `Cost:` ni `Effect:`) :
 

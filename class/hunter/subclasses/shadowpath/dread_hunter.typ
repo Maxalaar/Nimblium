@@ -10,7 +10,7 @@
     blocks: (
       (
         kind: "passive",
-        effect: [When you attack a #kw_marked creature, you get both Hunter's Mark options: advantage on the attack and #LVL additional damage.],
+        effect: [When you attack a #kw_marked creature, you have #kw_advantage on the attack and it deals #LVL additional damage.],
       ),
     ),
     reminder: (hunter_keywords.marked,),

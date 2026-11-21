@@ -7,7 +7,7 @@
 // The types below the name show the whole `type`: card type, school, tier
 // ("Tier 5" or "Cantrip") and tags such as AoE. The numbers go to the stat row
 // below the types, with short labels (4 letters, except REACH): action and mana costs,
-// concentration, then damage, range, reach and area.
+// casting time (CAST, for spells that take minutes), concentration, then damage, range, reach and area.
 // When the row needs two lines, the casting stats go on the first one and the
 // effect on the second. Any other cost stays a capsule above the effect.
 #let creat_spell(spell) = {
@@ -18,6 +18,7 @@
     else if type(c) == str and c.ends-with(" Mana") { stats.push(("Mana", c.split(" ").first())) }
     else { tags.push(c) }
   }
+  if "casting_time" in spell { stats.push(("Cast", stat_value(spell.casting_time))) }
   if "concentration" in spell { stats.push(("Conc", stat_value(spell.concentration))) }
   let cut = stats.len()
   if "damage" in spell { stats.push(("DMG", stat_value(spell.damage))) }

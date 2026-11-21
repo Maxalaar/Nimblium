@@ -8,7 +8,7 @@
         "Red Mist",
     ),
     blocks: (
-      (kind: "passive", effect: [While you are #kw_raging, your opportunity attacks don't have disadvantage.]),
+      (kind: "passive", effect: [While you are #kw_raging, your opportunity attacks don't have #kw_disadvantage.]),
       (
         kind: "active",
         cost: (actions(1),),

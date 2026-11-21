@@ -29,6 +29,7 @@ TEXT_RULES = [
     (r"(?<![#\w])[Ii]nterpos(e|es|ed|ing)\b(?!:)", "use #kw_interpose"),
     (r"(?<![#\w])[Ff]lying\b(?!:)", "use #kw_flying"),
     (r"(?<![#\w])(Full )?Cover\b(?!:)", "use #kw_cover or #kw_full_cover"),
+    (r"(?<![#\w.])([Dd]is)?[Aa]dvantage\b(?!:)", "use #kw_advantage or #kw_disadvantage"),
     (r"(?<![#\w])DC \d", "use #dc(10) or #dc(10, stat: INT)"),
     (r"#keyword_style\[", "use a #kw_ term"),
 ]
@@ -89,7 +90,7 @@ def check_file(path):
     problems = []
     rules = [
         rule for rule in TEXT_RULES
-        if not (path.name in DEFINITION_FILES and ("kw_difficult_terrain" in rule[1] or "kw_cover" in rule[1]))
+        if not (path.name in DEFINITION_FILES and ("kw_difficult_terrain" in rule[1] or "kw_cover" in rule[1] or "kw_advantage" in rule[1]))
     ]
     for block in content_blocks(source):
         block = FORMULA_CALL.sub("", block)

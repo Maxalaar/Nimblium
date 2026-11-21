@@ -10,7 +10,7 @@
     blocks: (
       (
         kind: "narrative",
-        effect: [You may gain advantage on Influence checks with an NPC you have just met. This lasts until you fail an Influence check with them or meet them a second time. After that, you have disadvantage on Influence checks with them until you get back on their good side.],
+        effect: [You may gain #kw_advantage on Influence checks with an NPC you have just met. This lasts until you fail an Influence check with them or meet them a second time. After that, you have #kw_disadvantage on Influence checks with them until you get back on their good side.],
       ),
     ),
 )

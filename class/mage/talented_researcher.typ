@@ -9,7 +9,7 @@
     blocks: (
       (
         kind: "narrative",
-        effect: [You have advantage on Arcana and Lore checks when you have access to many books and the time to study them.],
+        effect: [You have #kw_advantage on Arcana and Lore checks when you have access to many books and the time to study them.],
       ),
     ),
 )

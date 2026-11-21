@@ -8,7 +8,7 @@
         "Savage Arsenal",
     ),
     blocks: (
-      (kind: "passive", effect: [You have advantage on Initiative.]),
+      (kind: "passive", effect: [You have #kw_advantage on Initiative.]),
       (kind: "passive", effect: [During your first turn of each encounter, you may move up to #times(2, DEX) spaces.]),
     ),
 )

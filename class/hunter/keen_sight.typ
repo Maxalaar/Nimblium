@@ -7,7 +7,7 @@
         "Hunter",
     ),
     blocks: (
-      (kind: "narrative", effect: [You have advantage on Perception checks.]),
+      (kind: "narrative", effect: [You have #kw_advantage on Perception checks.]),
     ),
 )
 

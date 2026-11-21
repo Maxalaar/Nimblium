@@ -11,7 +11,7 @@
         kind: "active",
         cost: (actions(1),),
         limitation: per_safe_rest(WIL),
-        effect: [Choose one: heal a #kw_dying creature within 6 spaces for #times(WIL, "d8") #HP, or deal #times(WIL, "d8") radiant damage to an undead or #kw_bloodied enemy within 6 spaces.],
+        effect: [Heal a #kw_dying creature within 6 spaces for #times(WIL, "d8") #HP, or deal #times(WIL, "d8") radiant damage to an undead or #kw_bloodied enemy within 6 spaces.],
       ),
     ),
     reminder: (conditions.dying, conditions.bloodied,),

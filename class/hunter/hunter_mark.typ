@@ -15,7 +15,7 @@
       (kind: "passive", effect: [A #kw_marked creature can't be hidden from you.]),
       (
         kind: "passive",
-        effect: [Before each attack against a #kw_marked creature, choose one: you have advantage on the attack, or it deals #LVL additional damage.],
+        effect: [Before each attack against a #kw_marked creature, choose whether you have #kw_advantage on the attack or it deals #LVL additional damage.],
       ),
     ),
     reminder: (hunter_keywords.marked,),

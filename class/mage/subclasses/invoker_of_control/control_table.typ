@@ -8,7 +8,7 @@
         "Invoker of Control",
     ),
     description: [
-      *I Insist:* Cast a cantrip for free. It ignores all disadvantage and can't miss.
+      *I Insist:* Cast a cantrip for free. It ignores all #kw_disadvantage and can't miss.
 
       *Elemental Affliction:* A creature of your choice within 12 spaces becomes #kw_charged, #kw_smoldering or #kw_slowed.
 

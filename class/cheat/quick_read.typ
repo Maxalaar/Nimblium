@@ -10,7 +10,7 @@
       (
         kind: "narrative",
         limitation: per_encounter(1),
-        effect: [Gain advantage on an Assess check.],
+        effect: [Gain #kw_advantage on an Assess check.],
       ),
     ),
 )

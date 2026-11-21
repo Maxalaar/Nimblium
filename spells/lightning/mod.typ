@@ -7,3 +7,4 @@
 #import "electrocharge.typ": electrocharge
 #import "ride_the_lightning.typ": ride_the_lightning
 #import "seething_storm.typ": seething_storm
+#import "utility/mod.typ": *

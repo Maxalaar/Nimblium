@@ -9,7 +9,7 @@
     ),
     blocks: (
       (kind: "passive", effect: [While you are #kw_raging, you have #kw_blindsight 2.]),
-      (kind: "narrative", effect: [You have advantage on Perception checks to notice or track down blood.]),
+      (kind: "narrative", effect: [You have #kw_advantage on Perception checks to notice or track down blood.]),
     ),
     reminder: (berserker_keywords.raging, keywords.blindsight,),
 )

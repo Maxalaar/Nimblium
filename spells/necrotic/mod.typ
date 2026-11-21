@@ -7,3 +7,4 @@
 #import "gangrenous_burst.typ": gangrenous_burst
 #import "unspeakable_word.typ": unspeakable_word
 #import "creeping_death.typ": creeping_death
+#import "utility/mod.typ": *

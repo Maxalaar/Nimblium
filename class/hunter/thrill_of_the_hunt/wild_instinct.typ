@@ -11,7 +11,7 @@
       (
         kind: "active",
         limitation: per_round(1),
-        effect: [Assess for free, with advantage. You can use this ability only while you have no #TotH charges.],
+        effect: [Assess for free, with #kw_advantage. You can use this ability only while you have no #TotH charges.],
       ),
     ),
 )

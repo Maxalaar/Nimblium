@@ -9,7 +9,7 @@
     blocks: (
       (
         kind: "narrative",
-        effect: [By studying tracks and other subtle clues, you can discern the events of a past encounter: the kind and number of creatures, their direction, their key actions and how much time has passed.],
+        effect: [By studying tracks and other subtle clues, you can discern the events of a past encounter. You learn the kind and number of creatures, their direction, their key actions and how much time has passed.],
       ),
     ),
 )

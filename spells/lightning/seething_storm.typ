@@ -15,7 +15,7 @@
     concentration: "1 min",
     reach: "4",
     damage: [#kw_d88],
-    effect: [You can fly. Once per round, you may move for free. Attacks against you have disadvantage.
+    effect: [You can fly. Once per round, you may move for free. Attacks against you have #kw_disadvantage.
 
     At the end of each of your turns, this spell deals its damage to up to 4 different creatures within Reach. Then its Reach and its number of creatures each increase by 2.
 

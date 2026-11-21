@@ -11,7 +11,7 @@
       (
         kind: "active",
         cost: (wounds(1),),
-        effect: [Reroll an attack or a save you just made. The reroll ignores all disadvantage. You can use this ability only while you are #kw_raging.],
+        effect: [Reroll an attack or a save you just made. The reroll ignores all #kw_disadvantage. You can use this ability only while you are #kw_raging.],
       ),
     ),
     reminder: (berserker_keywords.raging,),

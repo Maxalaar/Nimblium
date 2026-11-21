@@ -10,7 +10,7 @@
     blocks: (
       (
         kind: "passive",
-        effect: [When your Spirit Companion rolls a 6 or higher on its Die while attacking, the next attack against the target has advantage.],
+        effect: [When your Spirit Companion rolls a 6 or higher on its Die while attacking, the next attack against the target has #kw_advantage.],
       ),
     ),
 )

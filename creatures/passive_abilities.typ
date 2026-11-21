@@ -19,6 +19,6 @@
   minion: (
     kind: "passive",
     name: "Minion",
-    effect: [Any damage kills this creature. Its attacks can't crit and ignore advantage and disadvantage. When several minions attack the same creature, their damage counts as a single attack.],
+    effect: [Any damage kills this creature. Its attacks can't crit and ignore #kw_advantage and #kw_disadvantage. When several minions attack the same creature, their damage counts as a single attack.],
   ),
 )
