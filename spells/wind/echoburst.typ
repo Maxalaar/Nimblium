@@ -14,7 +14,10 @@
     reach: "1",
     damage: [#kw_d44],
     effect: [Choose a space within Reach. The creature in that space takes this spell's damage, ignoring #defense. Any creature in that space at the start of your next turn takes this spell's damage again.],
-    upcast: [Choose one: it gains #kw_advantage, or its Reach increases by 1.],
+    upcast: (
+        [It gains #kw_advantage.],
+        [Its Reach increases by 1.],
+    ),
     reminder: (keywords.d44, keywords.advantage),
 )
 

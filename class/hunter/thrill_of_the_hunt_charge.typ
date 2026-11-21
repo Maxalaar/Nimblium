@@ -10,8 +10,8 @@
       #thrill_of_the_hunt abilities spend #TotH charges. Gain 1 #TotH charge whenever:\
       • you hit a #kw_marked creature with a melee attack;\
       • you crit a #kw_marked creature with a ranged attack;\
-      • a #kw_marked creature dies.\
-      \
+      • a #kw_marked creature dies.
+
       #thrill_of_the_hunt abilities can't miss. Abilities that spend charges can't generate new ones. Unused charges are lost when combat ends.
     ],
     reminder: (hunter_keywords.marked,),

@@ -10,8 +10,8 @@
       (
         kind: "passive",
         effect: [
-          When you roll Initiative, regain #WIL mana. This mana is lost at the end of combat if you haven't spent it.\
-          \
+          When you roll Initiative, regain #WIL mana. This mana is lost at the end of combat if you haven't spent it.
+
           *Level 10:* You regain #WIL+1d4 mana instead.\
           *Level 17:* You regain #WIL+2d4 mana instead.
         ],

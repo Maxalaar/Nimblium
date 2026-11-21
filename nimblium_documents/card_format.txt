@@ -18,16 +18,17 @@ et le dos côte à côte (5 mm d'écart). Design épuré, noir et blanc, peu d'e
 - Recto : cadre blanc à bordure noire, coins "HUD", nom en capitales espacées + types en petit
   (sans filet ; une liste trop longue passe à la ligne, seulement après un « · », et ce qui
   suit descend d'autant), puis la ligne de stats (créatures et sorts), à 1,5 mm fixe sous les types :
-  petite étiquette de 4 lettres au plus au-dessus de chaque valeur, traits verticaux fins entre
+  petite étiquette courte (4 lettres au plus, sauf `REACH`) au-dessus de chaque valeur, traits verticaux fins entre
   les cases. Elle reste sur une ligne tant que ses valeurs tiennent en 8pt minimum ; sinon elle
   passe sur deux lignes centrées chacune, séparées par un trait horizontal fin (60 % de la ligne
   la plus large). Le texte de règles, aligné à gauche, est centré verticalement dans la
   place qui reste sous la ligne de stats. S'il déborde, l'écart stats → texte, l'écart entre
   les deux lignes de stats et les écarts entre blocs se resserrent ensemble, puis le texte
-  rétrécit jusqu'à 6pt.
+  rétrécit jusqu'à 6pt. Les paragraphes d'un même bloc (les rappels en gris, les paragraphes d'un
+  effet) sont espacés de 60 % de l'écart entre blocs, donc se resserrent avec lui.
 - Dos : nom + types centrés, sous une grande icône de famille en gris `#999999`
   (game-icons.net CC BY 3.0, ou Bootstrap Icons MIT ; voir `art/icons/CREDITS.md`). L'icône vient des types de la carte : `family_icons.typ`
-  associe un type à un fichier de `art/icons/` (aujourd'hui Goblin, Undead, les écoles Fire, Ice, Lightning, Wind et les classes
+  associe un type à un fichier de `art/icons/` (aujourd'hui Goblin, Undead, les écoles Fire, Ice, Lightning, Wind, Radiant et les classes
   Berserker, Cheat, Hunter, Mage, Shepherd) ; si plusieurs
   types correspondent, le plus précis (le dernier) gagne. Sans type reconnu, pas d'icône et
   le nom est centré. La même icône apparaît en petit (6 mm) en bas au centre du recto,
@@ -82,13 +83,15 @@ Rendu (sans libellé `Cost:` ni `Effect:`) :
 - Le sous-titre montre tout le `type` : type, école, palier et tags, ex
   `SPELL · FIRE · TIER 5 · AOE` ou `SPELL · LIGHTNING · CANTRIP`.
 - Tout ce qui décrit le sort entier va dans la ligne de stats, dans cet ordre : `ACT` (coût en
-  actions), `MANA`, `CONC` (concentration), puis `DMG`, `RNGE` (range), `REAC` (reach), `AREA`. Si la ligne passe sur deux lignes, la coupure se fait
+  actions), `MANA`, `CONC` (concentration), puis `DMG`, `RNGE` (range), `REACH`, `AREA`. Si la ligne passe sur deux lignes, la coupure se fait
   entre le lancement (ACT, MANA, CONC) et l'effet (le reste).
 - Un autre coût reste en capsule (`badges.typ`) au-dessus de l'effet.
 - `damage` ne contient que la valeur ("3d8+4") : une précision va dans `effect`.
-- `reach` : un nombre ("4") ou une forme ("Line 12", "Cone 4"), affiché sous REAC.
+- `reach` : un nombre ("4") ou une forme ("Line 12", "Cone 4"), affiché sous REACH.
 - `concentration` ne contient que la durée ("1 min").
 - `high_Levels` et `upcast` : capsule sombre, puis le texte à la ligne.
+- `upcast` peut être une liste d'options (`upcast: ([...], [...])`) : une capsule UPCAST par
+  option, et le lanceur en choisit une pour chaque tier.
 - `flavor` : texte d'ambiance en italique, sous les règles et avant les rappels.
 
 ### Creature (`creat_creature.typ`)

@@ -12,8 +12,8 @@
         cost: (actions(1),),
         limitation: per_turn(1),
         effect: [
-          Roll 1 Fury Die. You become #kw_raging.\
-          \
+          Roll 1 Fury Die. You become #kw_raging.
+
           *Level 5:* Roll 2 Fury Dice instead.
         ],
       ),

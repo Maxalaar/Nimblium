@@ -12,6 +12,7 @@
   "Ice": "ice.svg",
   "Lightning": "lightning.svg",
   "Wind": "wind.svg",
+  "Radiant": "radiant.svg",
   "Berserker": "berserker.svg",
   "Cheat": "cheat.svg",
   "Hunter": "hunter.svg",

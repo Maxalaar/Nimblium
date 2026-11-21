@@ -7,8 +7,8 @@
         "Mage",
     ),
     description: [
-      Spellshaper abilities enhance the spells you cast. You can use only 1 Spellshaper ability per turn.\
-      \
+      Spellshaper abilities enhance the spells you cast. You can use only 1 Spellshaper ability per turn.
+
       *Level 4:* Choose 2 Spellshaper abilities.\
       *Level 9:* Choose 1 more Spellshaper ability.\
       *Level 13:* Choose 1 more Spellshaper ability.

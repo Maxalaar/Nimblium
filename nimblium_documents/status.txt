@@ -29,7 +29,8 @@ donnent que le nom : pas de texte disponible, donc pas de cartes.
   Nouvelles sous-classes annoncées : Invoker of Wards, Flame, Surges, Frost.
 - **Shepherd** (p.48-53) : COMPLET — niveaux de base, Sacred Graces, sous-classes Luminary of
   Mercy et Luminary of Malice. Au nouveau style. Le compagnon reste en version maison : les
-  changements du changelog du 2 octobre 2026 sur le compagnon ne sont pas appliqués, et on
+  changements du changelog du 2 octobre 2026 sur le compagnon ne sont pas appliqués, sauf
+  deux (soins limités à WIL/Safe Rest, Vengeful Spirit en une seule explosion), et on
   équilibre le Shepherd nous-mêmes (note dans `class/shepherd/mod.typ`). Nouvelles
   sous-classes annoncées : Luminary of Protection, Luminary of the Forge.
 - **Commander, Oathsworn, Shadowmancer, Songweaver, Stormshifter, Zephyr, Extra
@@ -39,7 +40,10 @@ donnent que le nom : pas de texte disponible, donc pas de cartes.
 
 - **Fire, Ice, Lightning, Wind** : au nouveau style et alignés sur les deux changelogs
   (Echoburst remplace Fly, Omenrime remplace Cryosleep).
-- **Radiant, Necrotic, Utility** : pas encore créés. Lire les deux changelogs avant.
+- **Radiant** : au nouveau style et aligné sur les deux changelogs (Celestial Legion, nouveau
+  sort du changelog au tier 7 ; Shield of Justice passe tier 4, Condemn tier 3). Lifebinding
+  Spirit, réservé au Shepherd, est dans `class/shepherd/`.
+- **Necrotic, Utility** : pas encore créés. Lire les deux changelogs avant.
 
 ## Créatures
 

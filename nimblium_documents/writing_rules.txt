@@ -30,8 +30,11 @@ A reviewed card ends with a notes block holding `review: style=<date> changelog=
 - **Duration**: "until the end of your next turn", "this round", "this encounter".
 - **Upcast**: a full sentence about the spell, without "for each tier": the UPCAST capsule
   already says it applies once per tier. "It deals 4 more damage.", "Its Reach increases by
-  1.", "Choose one: it deals #KEY more damage, or its Reach increases by 1." Never "+4
-  damage." alone.
+  1.". Never "+4 damage." alone.
+- **Upcast options**: when the caster chooses between several upcasts, write each option as
+  its own upcast (`upcast: ([...], [...])`), one sentence each, without "Choose one": several
+  UPCAST capsules mean "pick one of them for each tier". Effects that all apply together stay
+  in a single upcast ("Its Reach increases by 1, and ...").
 
 ## 4. Costs and limits
 
@@ -44,6 +47,13 @@ A reviewed card ends with a notes block holding `review: style=<date> changelog=
   the ability waives the cost of another action (Defend, Rage, Hunter's Mark, Hide...).
 - **Default values**: don't write them (e.g. creatures: speed 6, 1 action, can take damage,
   disappears at 0 HP).
+- **Say what happens, plainly**: describe the effect directly, in as few words as possible.
+  Don't invent a term or a keyword for something only one card does, and don't name roles
+  ("your ward") the text doesn't need. Model, Warding Bond: "Choose a willing creature within
+  Reach. It takes 2 less damage. Once per round, when it takes damage, you may take any amount
+  of that damage instead." (was: "Choose a willing creature within Reach as your ward. It
+  takes 2 less damage from all sources. Once per round, when your ward is attacked, you may
+  take some or all of the attack's damage instead.")
 - **Obvious rulings**: don't write what any GM would decide anyway (e.g. "if several creatures
   are equally close, the GM chooses one"). They make the card heavier for nothing.
 
@@ -101,6 +111,15 @@ Typst syntax pitfalls:
 - **List the levels**: never "every 5 levels". When the bonus is the same at each step, name
   the levels in one sentence: "This spell's damage increases by 4 at levels 5, 10, 15 and 20."
   When the steps differ, use `*Level X:*` lines.
+
+## 8b. Paragraphs
+
+- Separate the distinct effects of a long text with a blank line (a paragraph): the card
+  adds a small space between paragraphs, and it tightens on a full card. See
+  `celestial_legion.typ`, `heal.typ`.
+- Keep `\` (a plain line break, no space) only for lines that belong together: bullet lists
+  and `*Level X:*` lines.
+- Never write an empty `\` line to fake a space: use a blank line.
 
 ## 9. Creatures
 

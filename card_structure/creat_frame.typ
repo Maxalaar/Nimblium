@@ -82,9 +82,13 @@
 // `laid_body`, so it can shrink on a full card.
 #let join_blocks(parts) = parts.map(p => block(p)).join()
 
+// Paragraphs inside a block (the reminders, a long mechanic) are spaced by a
+// share of the block gap, so they tighten together with it on a full card.
+#let par_share = 0.6
+
 #let laid_body(body, size, gap: max_gap) = {
   set text(size: size)
-  set par(leading: 0.4em)
+  set par(leading: 0.4em, spacing: gap * par_share)
   set block(spacing: gap)
   body
 }
@@ -110,7 +114,8 @@
   place(rect(width: card_width, height: card_height, radius: 2.5mm, stroke: 1mm + ink))
 })
 
-#let reminders(items) = text(size: reminder_size, fill: reminder_color, items.join(v(0.3em)))
+// Reminders are paragraphs: their spacing follows the block gap (see laid_body).
+#let reminders(items) = text(size: reminder_size, fill: reminder_color, items.join(parbreak()))
 
 // ---------- icons ----------
 

@@ -11,8 +11,8 @@
         kind: "passive",
         limitation: per_turn(1),
         effect: [
-          When you crit, deal 1d6 additional damage.\
-          \
+          When you crit, deal 1d6 additional damage.
+
           *Level 3:* Your Sneak Attack becomes 1d8.\
           *Level 7:* Your Sneak Attack becomes 2d8.\
           *Level 9:* Your Sneak Attack becomes 2d10.\

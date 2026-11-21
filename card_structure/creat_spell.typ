@@ -6,7 +6,7 @@
 // `spell.type` is (card type, school, tier, tags...).
 // The types below the name show the whole `type`: card type, school, tier
 // ("Tier 5" or "Cantrip") and tags such as AoE. The numbers go to the stat row
-// below the types, with labels of 4 letters at most: action and mana costs,
+// below the types, with short labels (4 letters, except REACH): action and mana costs,
 // concentration, then damage, range, reach and area.
 // When the row needs two lines, the casting stats go on the first one and the
 // effect on the second. Any other cost stays a capsule above the effect.
@@ -22,12 +22,16 @@
   let cut = stats.len()
   if "damage" in spell { stats.push(("DMG", stat_value(spell.damage))) }
   if "range" in spell { stats.push(("RNGE", stat_value(spell.range))) }
-  if "reach" in spell { stats.push(("REAC", stat_value(spell.reach))) }
+  if "reach" in spell { stats.push(("REACH", stat_value(spell.reach))) }
   if "area" in spell { stats.push(("Area", stat_value(spell.area))) }
   let effect = spell.at("effect", default: none)
   let blocks = (if tags.len() > 0 { [#tags.map(tag_badge).join(h(2pt))\ #effect] } else { effect },)
   if "high_Levels" in spell { blocks.push(labelled_section("High Levels", spell.high_Levels)) }
-  if "upcast" in spell { blocks.push(labelled_section("Upcast", spell.upcast)) }
+  // Several upcasts are options: the caster picks one of them for each tier.
+  if "upcast" in spell {
+    let options = if type(spell.upcast) == array { spell.upcast } else { (spell.upcast,) }
+    for u in options { blocks.push(labelled_section("Upcast", u)) }
+  }
   if "flavor" in spell { blocks.push(emph(spell.flavor)) }
   if "reminder" in spell { blocks.push(reminders(spell.reminder)) }
 
