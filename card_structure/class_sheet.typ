@@ -1,7 +1,7 @@
 // Class sheet: one A4 page per class with what a player needs to build the hero
 // (stats, starting kit, resource) and the table of what each level gives, from 1 to 20.
 // It replaces cards that would only list choices by level (README.txt, global house rules).
-// Each class has its sheet in class/<class>/class_sheet.typ; tools/export_cards.py exports it
+// Each class has its sheet in class/<class>/<class>_class_sheet.typ; tools/export_cards.py exports it
 // next to its source. Rules already on a card are not repeated here: the sheet names the card.
 
 #import "creat_frame.typ": icon_image, ink, hair
@@ -31,7 +31,8 @@
 
 // name: class name. icon: file in art/icons/. intro: one sentence.
 // info: ((label, value), ...). resource: content or none.
-// levels: 20 entries of (tier, features), tier being none before spells.
+// levels: 20 entries of (tier, features), tier being none before spells (or always, for a
+// class without spells: the Tier column is then hidden).
 // boxes: ((title, content), ...) shown side by side under the table.
 #let class_sheet(name: "", icon: none, intro: none, info: (), resource: none, levels: (), boxes: ()) = {
   set page(paper: "a4", margin: (x: 14mm, y: 12mm))
@@ -57,19 +58,23 @@
 
   // Level table.
   v(6mm)
+  // The Tier column only shows for spellcasting classes.
+  let casts = levels.any(((tier, _)) => tier != none)
+  let headers = if casts { ("Lvl", "Tier", "You gain") } else { ("Lvl", "You gain") }
   table(
-    columns: (9mm, 11mm, 1fr),
-    align: (center + horizon, center + horizon, left + horizon),
+    columns: if casts { (9mm, 11mm, 1fr) } else { (9mm, 1fr) },
+    align: if casts { (center + horizon, center + horizon, left + horizon) } else { (center + horizon, left + horizon) },
     inset: (x: 2mm, y: 2.3mm),
     stroke: (x, y) => (bottom: if y == 0 { 0.6pt + ink } else { hair + luma(190) }),
     fill: (x, y) => if y > 0 and calc.even(y) { luma(246) },
-    table.header(..("Lvl", "Tier", "You gain").map(h => text(size: 6.5pt, tracking: 1.2pt, weight: "bold", upper(h)))),
+    table.header(..headers.map(h => text(size: 6.5pt, tracking: 1.2pt, weight: "bold", upper(h)))),
     // A tier that goes up is in bold; the others are gray.
     ..levels.enumerate().map(((i, (tier, features))) => {
       let previous = if i == 0 { none } else { levels.at(i - 1).at(0) }
+      let tier_cell = if tier == none { minor[—] } else if tier != previous { text(weight: "bold", str(tier)) } else { minor(str(tier)) }
       (
         text(weight: "bold", str(i + 1)),
-        if tier == none { minor[—] } else if tier != previous { text(weight: "bold", str(tier)) } else { minor(str(tier)) },
+        ..if casts { (tier_cell,) },
         if features == [] { minor[—] } else { features },
       )
     }).flatten(),

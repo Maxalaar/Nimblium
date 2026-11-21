@@ -21,5 +21,5 @@ ability per turn in total, not 1 per ability, so it lives on this card instead o
 badge on each ability.
 
 The levels at which you choose Spellshaper abilities (4, 9 and 13) are on the class sheet
-(class/mage/class_sheet.typ), not on this card (user ruling 2026-11-21).
+(class/mage/mage_class_sheet.typ), not on this card (user ruling 2026-11-21).
 */

@@ -91,7 +91,7 @@ REF_EXCEPTIONS = {
     ("class/shepherd/searing_light.typ", "Heal"),          # the verb, at the start of a sentence
     ("creatures/goblin/goblin_taskmaster.typ", "Goblin"),  # any goblin, not the Goblin card
     ("creatures/goblin/nilbog.typ", "Goblin"),
-    ("class/mage/class_sheet.typ", "Spellshaper"),           # the kind of ability; the card is cited once
+    ("class/mage/mage_class_sheet.typ", "Spellshaper"),           # the kind of ability; the card is cited once
 }
 
 
@@ -145,7 +145,7 @@ def check_file(path, names):
         if not (path.name in DEFINITION_FILES and ("kw_difficult_terrain" in rule[1] or "kw_cover" in rule[1] or "kw_advantage" in rule[1]))
     ]
     for block in content_blocks(source):
-        block = FORMULA_CALL.sub("", block)
+        block = CARD_REF.sub("", FORMULA_CALL.sub("", block))
         for pattern, advice in rules:
             for match in re.finditer(pattern, block):
                 problems.append(f'"{match.group(0)}": {advice}')
