@@ -22,3 +22,4 @@ gray by the card template).
 | `hunter.svg` | [High shot](https://game-icons.net/1x1/lorc/high-shot.html) | Lorc |
 | `mage.svg` | [Book storm](https://game-icons.net/1x1/lorc/book-storm.html), upside down | Lorc |
 | `shepherd.svg` | [Angel outfit](https://game-icons.net/1x1/lorc/angel-outfit.html) | Lorc |
+| `shadowmancer.svg` | [Death note](https://game-icons.net/1x1/lorc/death-note.html) | Lorc |

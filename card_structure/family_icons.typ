@@ -19,6 +19,7 @@
   "Hunter": "hunter.svg",
   "Mage": "mage.svg",
   "Shepherd": "shepherd.svg",
+  "Shadowmancer": "shadowmancer.svg",
 )
 
 // Family icons are black SVGs printed in this gray to save ink.

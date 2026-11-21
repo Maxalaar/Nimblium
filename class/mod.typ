@@ -3,3 +3,4 @@
 #import "berserker/mod.typ": *
 #import "shepherd/mod.typ": *
 #import "mage/mod.typ": *
+#import "shadowmancer/mod.typ": *

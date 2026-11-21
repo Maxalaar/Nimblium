@@ -1,0 +1,10 @@
+#import "abhorrent_speech.typ": abhorrent_speech
+#import "beguiling_influence.typ": beguiling_influence
+#import "blood_sight.typ": blood_sight
+#import "devoted_acolyte.typ": devoted_acolyte
+#import "eldritch_sense.typ": eldritch_sense
+#import "gaze_of_two_minds.typ": gaze_of_two_minds
+#import "knowledge_from_beyond.typ": knowledge_from_beyond
+#import "my_favored_pet.typ": my_favored_pet
+#import "voice_of_the_dark.typ": voice_of_the_dark
+#import "whispers_of_the_grave.typ": whispers_of_the_grave

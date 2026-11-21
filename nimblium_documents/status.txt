@@ -33,7 +33,15 @@ donnent que le nom : pas de texte disponible, donc pas de cartes.
   deux (soins limités à WIL/Safe Rest, Vengeful Spirit en une seule explosion), et on
   équilibre le Shepherd nous-mêmes (note dans `class/shepherd/mod.typ`). Nouvelles
   sous-classes annoncées : Luminary of Protection, Luminary of the Forge.
-- **Commander, Oathsworn, Shadowmancer, Songweaver, Stormshifter, Zephyr, Extra
+- **Shadowmancer** (p.42-47) : COMPLET — cantrips réservés (Shadow Blast, Summon Shadow,
+  Command Shadows), créatures Shadow et Greater Shadow, Pilfered Power et Invocations en cartes
+  Mechanic, Greedy Pact, Dire Shadows, Eldritch Usurper, Lesser et Greater Invocations
+  (Vengeful Blast retiré par le changelog), sous-classes Pact of the Red Dragon et Pact of the
+  Abyssal Depths. Au nouveau style et au changelog du 2 octobre 2026. Pas de carte pour Master
+  of Darkness ni Shadowmastery (ils ne font que débloquer des sorts). Le Reaver attend avec
+  les Extra Subclasses. Icône de classe : Death Note. Nouvelles sous-classes annoncées : Pact
+  of the Void, Pact of the Endless Swarm, Pact of the High Celestial.
+- **Commander, Oathsworn, Songweaver, Stormshifter, Zephyr, Extra
   Subclasses** : pas commencés.
 
 ## Sorts
@@ -45,7 +53,7 @@ donnent que le nom : pas de texte disponible, donc pas de cartes.
   Spirit, réservé au Shepherd, est dans `class/shepherd/`.
 - **Necrotic** : au nouveau style et aligné sur les deux changelogs (Vigor Mortis, nouveau au
   tier 4, remplace Greater Shadow, devenu une capacité du Shadowmancer). Les sorts réservés au
-  Shadowmancer (Shadow Blast, Summon Shadow) attendront la classe. Icône d'école : Skull Bolt.
+  Shadowmancer sont dans `class/shadowmancer/`. Icône d'école : Skull Bolt.
 - **Utility** : les 18 sorts du livre (3 par école) dans le dossier `utility/` de chaque école, alignés sur les
   changelogs (Ice Disk, Wintry Scrying, Wind Whisper, Spark Buddy). Temps d'incantation en stat CAST.
 

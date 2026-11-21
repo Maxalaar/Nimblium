@@ -1,0 +1,10 @@
+#import "armor_of_shadows.typ": armor_of_shadows
+#import "fiendish_boon.typ": fiendish_boon
+#import "hungering_shadows.typ": hungering_shadows
+#import "one_with_shadows.typ": one_with_shadows
+#import "repelling_blast.typ": repelling_blast
+#import "shadow_magus.typ": shadow_magus
+#import "shadow_spear.typ": shadow_spear
+#import "shadow_rush.typ": shadow_rush
+#import "shadow_warp.typ": shadow_warp
+#import "swarming_shadows.typ": swarming_shadows
