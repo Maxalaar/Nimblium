@@ -1,0 +1,9 @@
+#import "entice.typ": entice
+#import "withering_touch.typ": withering_touch
+#import "shadow_trap.typ": shadow_trap
+#import "dread_visage.typ": dread_visage
+#import "vampiric_greed.typ": vampiric_greed
+#import "vigor_mortis.typ": vigor_mortis
+#import "gangrenous_burst.typ": gangrenous_burst
+#import "unspeakable_word.typ": unspeakable_word
+#import "creeping_death.typ": creeping_death

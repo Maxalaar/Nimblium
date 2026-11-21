@@ -55,6 +55,7 @@
 #let kw_disadvantage = keyword_style[Disadvantage]
 #let kw_distracted = keyword_style[Distracted]
 #let kw_dying = keyword_style[Dying]
+#let kw_empowered = keyword_style[Empowered]
 #let kw_flying = keyword_style[Flying]
 #let kw_full_cover = keyword_style[Full Cover]
 #let kw_frightened = keyword_style[Frightened]
@@ -77,3 +78,4 @@
 #let kw_taunt = keyword_style[Taunt]
 #let kw_taunted = keyword_style[Taunted]
 #let kw_vulnerable = keyword_style[Vulnerable]
+#let kw_weakened = keyword_style[Weakened]

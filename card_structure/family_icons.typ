@@ -13,6 +13,7 @@
   "Lightning": "lightning.svg",
   "Wind": "wind.svg",
   "Radiant": "radiant.svg",
+  "Necrotic": "necrotic.svg",
   "Berserker": "berserker.svg",
   "Cheat": "cheat.svg",
   "Hunter": "hunter.svg",

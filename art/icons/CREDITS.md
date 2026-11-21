@@ -16,6 +16,7 @@ gray by the card template).
 | `lightning.svg` | [Power lightning](https://game-icons.net/1x1/lorc/power-lightning.html) | Lorc |
 | `wind.svg` | [Wind](https://icons.getbootstrap.com/icons/wind/) | The Bootstrap Authors |
 | `radiant.svg` | [Sun](https://game-icons.net/1x1/lorc/sun.html) | Lorc |
+| `necrotic.svg` | [Skull Bolt](https://game-icons.net/1x1/lorc/skull-bolt.html) | Lorc |
 | `berserker.svg` | [Crossed axes](https://game-icons.net/1x1/lorc/crossed-axes.html) | Lorc |
 | `cheat.svg` | [Hood](https://game-icons.net/1x1/lorc/hood.html) | Lorc |
 | `hunter.svg` | [High shot](https://game-icons.net/1x1/lorc/high-shot.html) | Lorc |

@@ -43,7 +43,10 @@ donnent que le nom : pas de texte disponible, donc pas de cartes.
 - **Radiant** : au nouveau style et aligné sur les deux changelogs (Celestial Legion, nouveau
   sort du changelog au tier 7 ; Shield of Justice passe tier 4, Condemn tier 3). Lifebinding
   Spirit, réservé au Shepherd, est dans `class/shepherd/`.
-- **Necrotic, Utility** : pas encore créés. Lire les deux changelogs avant.
+- **Necrotic** : au nouveau style et aligné sur les deux changelogs (Vigor Mortis, nouveau au
+  tier 4, remplace Greater Shadow, devenu une capacité du Shadowmancer). Les sorts réservés au
+  Shadowmancer (Shadow Blast, Summon Shadow) attendront la classe. Icône d'école : Skull Bolt.
+- **Utility** : pas encore créé. Lire les deux changelogs avant.
 
 ## Créatures
 

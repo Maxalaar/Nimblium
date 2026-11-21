@@ -28,7 +28,7 @@ et le dos côte à côte (5 mm d'écart). Design épuré, noir et blanc, peu d'e
   effet) sont espacés de 60 % de l'écart entre blocs, donc se resserrent avec lui.
 - Dos : nom + types centrés, sous une grande icône de famille en gris `#999999`
   (game-icons.net CC BY 3.0, ou Bootstrap Icons MIT ; voir `art/icons/CREDITS.md`). L'icône vient des types de la carte : `family_icons.typ`
-  associe un type à un fichier de `art/icons/` (aujourd'hui Goblin, Undead, les écoles Fire, Ice, Lightning, Wind, Radiant et les classes
+  associe un type à un fichier de `art/icons/` (aujourd'hui Goblin, Undead, les écoles Fire, Ice, Lightning, Wind, Radiant, Necrotic et les classes
   Berserker, Cheat, Hunter, Mage, Shepherd) ; si plusieurs
   types correspondent, le plus précis (le dernier) gagne. Sans type reconnu, pas d'icône et
   le nom est centré. La même icône apparaît en petit (6 mm) en bas au centre du recto,
