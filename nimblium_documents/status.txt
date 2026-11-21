@@ -34,8 +34,7 @@ donnent que le nom : pas de texte disponible, donc pas de cartes.
   équilibre le Shepherd nous-mêmes (note dans `class/shepherd/mod.typ`). Nouvelles
   sous-classes annoncées : Luminary of Protection, Luminary of the Forge.
 - **Shadowmancer** (p.42-47) : COMPLET — cantrips réservés (Shadow Blast, Summon Shadow,
-  Command Shadows), créatures Shadow et Greater Shadow, Pilfered Power et Invocations en cartes
-  Mechanic, Greedy Pact, Dire Shadows, Eldritch Usurper, Lesser et Greater Invocations
+  Command Shadows), créatures Shadow et Greater Shadow, Pilfered Power en carte Mechanic, Greedy Pact, Dire Shadows, Eldritch Usurper, Lesser et Greater Invocations
   (Vengeful Blast retiré par le changelog), sous-classes Pact of the Red Dragon et Pact of the
   Abyssal Depths. Au nouveau style et au changelog du 2 octobre 2026. Pas de carte pour Master
   of Darkness ni Shadowmastery (ils ne font que débloquer des sorts). Le Reaver attend avec

@@ -29,6 +29,15 @@ Comment on travaille : sources, organisation, vérifications, suivi.
 - Noms de fichiers en snake_case dérivés du nom de la capacité, ponctuation retirée (ex:
   "How'd YOU get here?!" → `how_you_get_here.typ`).
 
+## Fiche de classe (`class/<nom>/class_sheet.typ`)
+
+Une page A4 par classe, faite avec `card_structure/class_sheet.typ` : infos de départ (stats
+clés, dé de vie, PV, sauvegardes, armure, armes, équipement), tableau des niveaux 1 à 20 (ce
+qu'on gagne à chaque niveau, tier de sort max) et, en bas, les sous-classes par niveau et les
+listes d'options. Elle remplace les cartes qui ne feraient que lister des choix par niveau.
+Pas de redite : une règle déjà sur une carte n'est pas répétée, la fiche nomme la carte
+(`#card_ref`). Exemple : `class/mage/class_sheet.typ`.
+
 ## Éléments qu'on ne transforme JAMAIS en carte
 
 - Augmentations de stats pures ("+1 DEX or WIL", "Key/Secondary Stat Increase").

@@ -9,6 +9,9 @@ with a small gap between them (see card_structure/creat_frame.typ).
 PDF output (instead of PNG) lets Typst-aware viewers (e.g. the Tinymist
 VS Code extension) jump straight to the source .typ file on click.
 
+Class sheets (class/<class>/class_sheet.typ, one A4 page per class) are exported next
+to their source too.
+
 With --book, also export every card into one PDF, nimblium_cards.pdf at the
 root, one card per page. There, card names written with #card_ref link to
 their card (terms.typ).
@@ -35,7 +38,7 @@ WRAPPER_TEMPLATE = """\
 def find_card_files():
     for dir_name in CARD_DIRS:
         for path in sorted((ROOT / dir_name).rglob("*.typ")):
-            if path.name in EXCLUDED_NAMES or path.name.endswith("_keywords.typ") or path.name.startswith("."):
+            if path.name in EXCLUDED_NAMES or path.name == "class_sheet.typ" or path.name.endswith("_keywords.typ") or path.name.startswith("."):
                 continue
             yield path
 
@@ -96,6 +99,11 @@ def main():
         count += 1
 
     print(f"Exported {count} cards")
+
+    for sheet in sorted((ROOT / "class").rglob("class_sheet.typ")):
+        out_path = sheet.with_suffix(".pdf")
+        subprocess.run(["typst", "compile", "--root", str(ROOT), str(sheet), str(out_path)], check=True)
+        print(f"  {sheet.relative_to(ROOT)} -> {out_path.relative_to(ROOT)}")
 
     if "--book" in sys.argv[1:]:
         book = export_book(list(find_card_files()))

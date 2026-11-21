@@ -43,6 +43,13 @@ Elles touchent tout le jeu, donc elles vivent ici et pas dans une carte :
   (-10 dégâts), Heavy = DEF 20 (-20 dégâts). Champ `defense: 10` sur la carte, case `DEF`. Les
   crits l'ignorent toujours. Les cartes de héros disent "ignoring #defense" (plus "ignoring
   armor"). "Armor" ne reste que pour l'équipement porté ("metal armor" de Stormlash).
+- **Pas de changement de choix au repos** : chaque classe du livre a une capacité qui permet
+  de refaire ses choix de classe pendant un Safe Rest (Supplicate, Remember the Wild, Serve,
+  Be Wild, Focus, "you may choose different X options"...). Elle n'est pas utilisée : trop
+  forte, et elle ralentit le jeu. Les choix ne changent qu'en montant de niveau. Pas de carte.
+- **Pas de carte pour une simple liste de choix** : une carte qui ne fait que dire quoi
+  choisir à quel niveau (ex. « niveau 3 : 1 Lesser Invocation ») est remplacée par une
+  indication dans le tableau de la classe.
 - **Règles d'écriture maison** (Reaction, "for free", conditions sans effet propre, valeurs par
   défaut non écrites) : `writing_rules.txt`.
 
