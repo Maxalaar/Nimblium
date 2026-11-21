@@ -11,8 +11,8 @@ Do not "fix" these rules from the Nimble books or changelog.
 
 - **Each creature has 1 action per turn.** This is the default value: it is not written on the
   card (like speed 6).
-- **Stronger creatures have more actions.** Their number is written as the `ACT` stat at the
-  bottom of the card, only when it is more than 1.
+- **Stronger creatures have more actions.** Their number is written as the `ACT` stat in the
+  stat row below the name, only when it is more than 1.
 - **Moving is free.** A creature moves up to its speed on its turn without spending an action,
   as in Nimble. Only heroes spend actions to move.
 - **Each active ability costs actions**, shown on a capsule (`1 Action`). A creature can use
@@ -90,7 +90,7 @@ second one the remaining blocks and the reminders. Use it only when the text can
 
 ## 4. Stats
 
-The stat row at the bottom of the card shows, in this order and only when present:
+The stat row below the name and types shows, in this order and only when present:
 
 `ACT` (when more than 1) · `HP` · `DEF` · `SPD` (when not 6) · `SIZ` (when not Medium) · `LVL`
 

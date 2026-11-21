@@ -16,9 +16,14 @@ Tous les types passent par `creat_card(name, types, body, stats:, icon:)`, qui r
 et le dos côte à côte (5 mm d'écart). Design épuré, noir et blanc, peu d'encre :
 
 - Recto : cadre blanc à bordure noire, coins "HUD", nom en capitales espacées + types en petit
-  (sans filet), texte de règles aligné à gauche et centré verticalement (s'il déborde, les écarts
-  entre blocs se resserrent d'abord, puis le texte rétrécit jusqu'à 6pt), ligne de stats en bas
-  (créatures et sorts) séparées par des traits verticaux fins. Aucun trait horizontal.
+  (sans filet), puis la ligne de stats (créatures et sorts), à 1,5 mm fixe sous les types :
+  petite étiquette de 4 lettres au plus au-dessus de chaque valeur, traits verticaux fins entre
+  les cases. Elle reste sur une ligne tant que ses valeurs tiennent en 8pt minimum ; sinon elle
+  passe sur deux lignes centrées chacune, séparées par un trait horizontal fin (60 % de la ligne
+  la plus large). Le texte de règles, aligné à gauche, commence juste en dessous (en haut de
+  la zone, la place libre reste en bas). S'il déborde, l'écart stats → texte, l'écart entre
+  les deux lignes de stats et les écarts entre blocs se resserrent ensemble, puis le texte
+  rétrécit jusqu'à 6pt.
 - Dos : nom + types centrés, sous une grande icône de famille en gris `#999999`
   (game-icons.net, CC BY 3.0). L'icône vient des types de la carte : `family_icons.typ`
   associe un type à un fichier de `art/icons/` (aujourd'hui Goblin et Undead) ; si plusieurs
@@ -67,14 +72,16 @@ Champs disponibles : `cost`, `concentration`, `range`, `reach`, `area`, `damage`
 `high_Levels`, `upcast`, `flavor`, `reminder`. `type` vaut toujours (type, école, palier, tags...), ex
 `("Spell","Fire","Cantrip")`, `("Spell","Lightning","Tier 3","AoE")`.
 
-Rendu en capsules (`badges.typ`, partagé avec les capacités), sans libellé `Cost:` ni `Effect:` :
+Rendu (sans libellé `Cost:` ni `Effect:`) :
 
-- Une ligne de capsules : le palier (capsule sombre), le coût, les tags, puis concentration.
-- `damage`, `range`, `reach` et `area` vont dans la ligne de stats en bas de carte
-  (DMG / RANGE / REACH / AREA), comme les stats des créatures.
-- Le sous-titre de la carte ne garde que le type et l'école.
+- Le sous-titre montre le type, l'école et le palier : `SPELL · FIRE · TIER 5`, ou `CANTRIP`.
+- Tout ce qui décrit le sort entier va dans la ligne de stats, dans cet ordre : `ACT` (coût en
+  actions), `MANA`, `CONC` (concentration), puis `DMG`, `RNGE` (range), `REAC` (reach), `AREA`,
+  `TARG` (vaut `AoE` pour le tag AoE). Si la ligne passe sur deux lignes, la coupure se fait
+  entre le lancement (ACT, MANA, CONC) et l'effet (le reste).
+- Un autre coût ou un autre tag reste en capsule (`badges.typ`) au-dessus de l'effet.
 - `damage` ne contient que la valeur ("3d8+4") : une précision va dans `effect`.
-- `reach` : un nombre ("4") ou une forme ("Line 12", "Cone 4"), affiché sous REACH.
+- `reach` : un nombre ("4") ou une forme ("Line 12", "Cone 4"), affiché sous REAC.
 - `concentration` ne contient que la durée ("1 min").
 - `high_Levels` et `upcast` : capsule sombre, puis le texte à la ligne.
 - `flavor` : texte d'ambiance en italique, sous les règles et avant les rappels.

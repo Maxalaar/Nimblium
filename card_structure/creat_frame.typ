@@ -15,8 +15,9 @@
 #let min_text_size = 6pt
 #let reminder_size = 0.8125em   // relative to the rules text: 6.5pt at 8pt
 #let side_margin = 6mm           // left/right margin of the rules text
-#let header_bottom = 15.5mm      // rules text starts below this line
-#let stat_row_height = 15mm
+#let types_bottom = 13.2mm       // bottom of the types, below the name
+#let body_bottom = card_height - 6.5mm  // rules text ends above this line
+#let stat_height = 7mm           // one line of stats: labels and values
 
 // ---------- helpers ----------
 
@@ -39,11 +40,26 @@
   text(size: s, tracking: t, ..args, body)
 }
 
-// Size of the rules text box, which depends on whether the card has a stat row.
-#let body_area(has_stats) = {
-  let bottom = if has_stats { card_height - stat_row_height } else { card_height - 5mm }
-  (card_width - 2 * side_margin, bottom - header_bottom - 3mm)
+// Gaps of the header, (widest, tightest). A full card tightens them together
+// with the gaps between blocks of rules text, before shrinking the text.
+#let above_stats = (1.5mm, 1.5mm)  // types -> first line of stats (fixed)
+#let between_stats = (1.5mm, 1mm)  // between two lines of stats (a rule in the middle)
+#let below_stats = (4mm, 1.5mm)  // last line of stats -> rules text
+#let no_stats = (4mm, 2mm)       // types -> rules text, on a card without stats
+
+// A gap tightened by `f`, from 0 (widest) to 1 (tightest).
+#let tighten(gap, f) = gap.at(0) + (gap.at(1) - gap.at(0)) * f
+
+// Top of the line of stats `i`.
+#let stat_top(i, f) = types_bottom + tighten(above_stats, f) + i * (stat_height + tighten(between_stats, f))
+
+// Top of the rules text box, below the stats (0, 1 or 2 lines).
+#let body_top(lines, f) = if lines == 0 { types_bottom + tighten(no_stats, f) } else {
+  stat_top(lines - 1, f) + stat_height + tighten(below_stats, f)
 }
+
+// Size of the rules text box, with the header gaps at their tightest.
+#let body_area(lines) = (card_width - 2 * side_margin, body_bottom - body_top(lines, 1))
 
 // Gap between two blocks of rules text (abilities, sections, reminders).
 // A full card first tightens it down to `min_gap`, then shrinks the text.
@@ -65,20 +81,6 @@
 // Height of the rules text at a given size and gap. Call inside `context`.
 #let body_height(body, width, size, gap: max_gap) = measure(
   block(width: width, laid_body(body, size, gap: gap))).height
-
-// Rules text that fits the given box: the gap between blocks shrinks first,
-// down to `min_gap`, then the text size, down to `min_text_size`.
-#let fit_body(body, width, height) = context {
-  let s = text_size
-  let g = max_gap
-  while g > min_gap and body_height(body, width, s, gap: g) > height {
-    g -= gap_step
-  }
-  while s > min_text_size and body_height(body, width, s, gap: g) > height {
-    s -= 0.25pt
-  }
-  laid_body(body, s, gap: g)
-}
 
 // Sci-fi HUD corner brackets.
 #let corners(inset: 4mm, len: 3mm) = {
@@ -125,31 +127,75 @@
 
 // ---------- faces ----------
 
-// `stats` is a list of (label, value) shown in a row at the bottom.
-#let card_front(name, types, body, stats: ()) = card_frame({
+// A line of stats: a small label above each value, thin rules between them.
+#let stat_line(stats, size: 10pt, pad: 2.8mm) = grid(
+  columns: stats.len(),
+  align: center + horizon,
+  inset: (x: pad, y: 0pt),
+  stroke: (x, y) => if x > 0 { (left: hair + ink) },
+  ..stats.map(((label, value)) => stack(spacing: 1.6mm,
+    text(size: 5pt, weight: "bold", tracking: 1.2pt, upper(label)),
+    text(size: size, weight: "bold", value))))
+
+#let stat_max_width = card_width - 2 * side_margin
+#let stat_min_size = 8pt
+
+// Padding and value size that fit `stats` on one line, the values going no
+// lower than `min_size` (none if it still doesn't fit). Call inside `context`.
+#let stat_fit(stats, min_size: stat_min_size) = {
+  let (s, pad) = (10pt, 2.8mm)
+  let width(s, pad) = measure(stat_line(stats, size: s, pad: pad)).width
+  while pad > 1.2mm and width(s, pad) > stat_max_width { pad -= 0.2mm }
+  while s > min_size and width(s, pad) > stat_max_width { s -= 0.5pt }
+  if width(s, pad) > stat_max_width { none } else { (s, pad) }
+}
+
+// The stats as lines: one line if it fits, otherwise two, cut at `cut`
+// (the middle by default). Call inside `context`.
+#let stat_lines(stats, cut: none) = {
+  if stats.len() == 0 { return () }
+  if stat_fit(stats) != none { return (stats,) }
+  let k = if cut == none { calc.ceil(stats.len() / 2) } else { cut }
+  (stats.slice(0, k), stats.slice(k))
+}
+
+// `stats` is a list of (label, value) shown below the types, on two lines
+// cut at `stat_cut` when one is too narrow.
+#let card_front(name, types, body, stats: (), stat_cut: none) = card_frame({
   corners()
   let cx = card_width / 2
   at(cx, 8.3mm, fit_text(upper(name), size: 11pt, tracking: 1.8pt, weight: "bold"))
   at(cx, 12.4mm, text(size: 4.5pt, tracking: 1.1pt, upper(types_text(types))))
 
-  let bottom = if stats.len() > 0 { card_height - stat_row_height } else { card_height - 5mm }
-  let (w, h) = body_area(stats.len() > 0)
-  place(top + left, dx: side_margin, dy: header_bottom + 1.5mm,
-    box(width: w, height: h, align(left + horizon, fit_body(body, w, h))))
+  context {
+    let lines = stat_lines(stats, cut: stat_cut)
+    let n = lines.len()
 
-  if stats.len() > 0 {
-    let rule_in = 14mm
-    let span = card_width - 2 * rule_in
-    let n = stats.len()
-    for (i, (label, value)) in stats.enumerate() {
-      let x = rule_in + span * (i + 0.5) / n
-      at(x, bottom + 3.5mm, text(size: 5pt, weight: "bold", tracking: 1.2pt, upper(label)))
-      at(x, bottom + 7.8mm, text(size: 11pt, weight: "bold", value))
-      if i > 0 {
-        let xs = rule_in + span * i / n
-        seg((xs, bottom + 2mm), (xs, bottom + 10mm))
-      }
+    // Tighten the header and block gaps step by step, then shrink the text.
+    let w = card_width - 2 * side_margin
+    let steps = calc.round((max_gap - min_gap) / gap_step)
+    let fits(k, s) = body_height(body, w, s, gap: max_gap - k * gap_step) <= body_bottom - body_top(n, k / steps)
+    let k = 0
+    while k < steps and not fits(k, text_size) { k += 1 }
+    let s = text_size
+    while s > min_text_size and not fits(k, s) { s -= 0.25pt }
+    let f = k / steps
+
+    // Each line is centered on its own; both get the same value size.
+    let fitted = lines.map(l => stat_fit(l, min_size: 6pt))
+    let size = calc.min(..fitted.map(x => x.at(0)), 10pt)
+    let drawn = lines.zip(fitted).map(((l, x)) => stat_line(l, size: size, pad: x.at(1)))
+    for (i, line) in drawn.enumerate() { at(cx, stat_top(i, f) + stat_height / 2, line) }
+    if n == 2 {
+      let half = calc.max(..drawn.map(l => measure(l).width)) * 0.3  // rule: 60% of the wider line
+      let y = stat_top(1, f) - tighten(between_stats, f) / 2
+      seg((cx - half, y), (cx + half, y))
     }
+
+    let y0 = body_top(n, f)
+    place(top + left, dx: side_margin, dy: y0,
+      box(width: w, height: body_bottom - y0,
+        align(left + top, laid_body(body, s, gap: max_gap - k * gap_step))))
   }
 })
 
@@ -168,10 +214,10 @@
 // `part` ("1/2", "2/2") is added to the types of a card split in two.
 // The family icon comes from the types (see family_icons.typ); `icon`
 // replaces it on the back only.
-#let creat_card(name, types, body, stats: (), back_types: none, icon: none, part: none) = {
+#let creat_card(name, types, body, stats: (), stat_cut: none, back_types: none, icon: none, part: none) = {
   let extra = if part == none { () } else { (part,) }
   box(grid(columns: 2, column-gutter: card_gap,
-    card_front(name, types + extra, body, stats: stats),
+    card_front(name, types + extra, body, stats: stats, stat_cut: stat_cut),
     card_back(name, (if back_types == none { types } else { back_types }) + extra,
               icon: if icon == none { family_icon(types) } else { icon })))
 }
