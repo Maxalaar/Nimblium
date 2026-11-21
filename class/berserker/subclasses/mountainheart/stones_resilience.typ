@@ -10,7 +10,7 @@
     blocks: (
       (
         kind: "passive",
-        effect: [Whenever you spend Fury Dice to reduce damage, the damage is also reduced by the total value of those dice.],
+        effect: [Whenever you spend #card_ref("Fury Dice") to reduce damage, the damage is also reduced by the total value of those dice.],
       ),
     ),
 )

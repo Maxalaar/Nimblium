@@ -4,7 +4,7 @@
     name: "Shadow Rush",
     type: ("Ability", "Shadowmancer", "Greater Invocation"),
     blocks: (
-      (kind: "passive", effect: [When your Shadows attack, any of them may deal their maximum damage instead of rolling, then die.]),
+      (kind: "passive", effect: [When your #card_ref("Shadow", "Shadows") attack, any of them may deal their maximum damage instead of rolling, then die.]),
     ),
 )
 

@@ -10,11 +10,11 @@
     blocks: (
       (
         kind: "passive",
-        effect: [Whenever you cast Lifebinding Spirit, it counts as cast 1 tier higher, ignoring the usual spell tier restrictions.],
+        effect: [Whenever you cast #card_ref("Lifebinding Spirit"), it counts as cast 1 tier higher, ignoring the usual spell tier restrictions.],
       ),
       (
         kind: "passive",
-        effect: [If Lifebinding Spirit is cast at tier 5 or higher, your Spirit Companion's Die becomes 1d20.],
+        effect: [If #card_ref("Lifebinding Spirit") is cast at tier 5 or higher, your #card_ref("Spirit Companion")'s Die becomes 1d20.],
       ),
     ),
 )

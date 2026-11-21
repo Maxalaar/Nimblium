@@ -8,8 +8,8 @@
         "Sacred Grace",
     ),
     blocks: (
-      (kind: "passive", effect: [Your Spirit Companion's #speed increases by 4.]),
-      (kind: "passive", effect: [When you summon your Spirit Companion, it may use one of its abilities for free.]),
+      (kind: "passive", effect: [Your #card_ref("Spirit Companion")'s #speed increases by 4.]),
+      (kind: "passive", effect: [When you summon your #card_ref("Spirit Companion"), it may use one of its abilities for free.]),
     ),
 )
 

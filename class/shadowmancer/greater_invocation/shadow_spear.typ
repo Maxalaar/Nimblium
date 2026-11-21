@@ -4,7 +4,7 @@
     name: "Shadow Spear",
     type: ("Ability", "Shadowmancer", "Greater Invocation"),
     blocks: (
-      (kind: "passive", effect: [Shadow Blast's Range is doubled and it ignores #kw_cover. It has #kw_advantage against #kw_prone targets instead of #kw_disadvantage. It also crits on a 1.]),
+      (kind: "passive", effect: [#card_ref("Shadow Blast")'s Range is doubled and it ignores #kw_cover. It has #kw_advantage against #kw_prone targets instead of #kw_disadvantage. It also crits on a 1.]),
     ),
     reminder: (keywords.cover, keywords.advantage, keywords.disadvantage, conditions.prone),
 )

@@ -4,7 +4,7 @@
     name: "Repelling Blast",
     type: ("Ability", "Shadowmancer", "Greater Invocation"),
     blocks: (
-      (kind: "passive", effect: [When Shadow Blast hits, the target suffers #kw_knockback 2.]),
+      (kind: "passive", effect: [When #card_ref("Shadow Blast") hits, the target suffers #kw_knockback 2.]),
     ),
     reminder: (keywords.knockback,),
 )

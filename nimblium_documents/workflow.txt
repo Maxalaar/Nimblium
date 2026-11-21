@@ -60,6 +60,13 @@ mise en page ponctuel quand la structure est vraiment nouvelle (nouveau champ, n
 carte). Si l'utilisateur dit "je m'en charge" pour les exports, ne plus en faire jusqu'à
 nouvelle demande.
 
+## Export
+
+`python3 tools/export_cards.py` exporte chaque carte en PDF à côté de son `.typ`. Avec
+`--book`, il crée aussi `nimblium_cards.pdf` à la racine : toutes les cartes, une par page,
+où les noms écrits avec `#card_ref` sont des liens cliquables vers la carte citée (dans les
+PDF individuels, ils sont seulement en italique).
+
 ## Suivi des révisions et notes de carte (`tools/review.py`)
 
 Chaque carte se termine par un bloc de commentaire Typst qui porte ses notes de gestion. Ce

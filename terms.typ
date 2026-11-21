@@ -1,6 +1,6 @@
 // Single source for game vocabulary. Available on every card through global.typ.
 // Use these instead of typing the term by hand; tools/check_terms.py reports raw forms.
-#import "style.typ": keyword_style
+#import "style.typ": keyword_style, card_ref_style
 
 // Stats and acronyms
 #let STR = "STR"
@@ -79,3 +79,16 @@
 #let kw_taunted = keyword_style[Taunted]
 #let kw_vulnerable = keyword_style[Vulnerable]
 #let kw_weakened = keyword_style[Weakened]
+
+// Name of another card, in italics. In a document that also holds that card
+// (the book export, tools/export_cards.py --book), it links to it. Every card
+// carries a metadata marker with its name (creat_card in creat_frame.typ).
+// The second argument is the text shown, for plurals: #card_ref("Shadow", "Shadows").
+// tools/check_terms.py reports card names typed without it.
+#let card_ref(name, ..shown) = {
+  let body = card_ref_style(if shown.pos().len() > 0 { shown.pos().first() } else { name })
+  context {
+    let hits = query(metadata).filter(m => type(m.value) == dictionary and m.value.at("card", default: none) == name)
+    if hits.len() > 0 { link(hits.first().location(), body) } else { body }
+  }
+}

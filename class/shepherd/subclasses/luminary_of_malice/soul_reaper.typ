@@ -10,7 +10,7 @@
     blocks: (
       (
         kind: "passive",
-        effect: [When you use Searing Light to deal damage to an enemy, another enemy within 6 spaces of you takes the same damage, ignoring #defense.],
+        effect: [When you use #card_ref("Searing Light") to deal damage to an enemy, another enemy within 6 spaces of you takes the same damage, ignoring #defense.],
       ),
     ),
 )

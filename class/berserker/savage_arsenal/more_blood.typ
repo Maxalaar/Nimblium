@@ -9,7 +9,7 @@
     ),
     blocks: (
       (kind: "passive", effect: [Whenever an enemy crits you, gain 1 Fury Die.]),
-      (kind: "passive", effect: [Whenever you drop to 0 #HP, use Rage for free.]),
+      (kind: "passive", effect: [Whenever you drop to 0 #HP, use #card_ref("Rage") for free.]),
     ),
 )
 

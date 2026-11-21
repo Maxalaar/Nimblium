@@ -8,7 +8,7 @@
         "Silent Blade",
     ),
     blocks: (
-      (kind: "passive", effect: [When you Sneak Attack an enemy with fewer max #HP than you, it dies.]),
+      (kind: "passive", effect: [When you #card_ref("Sneak Attack") an enemy with fewer max #HP than you, it dies.]),
     ),
 )
 

@@ -10,7 +10,7 @@
       (
         kind: "active",
         cost: (actions(1),),
-        effect: [Change one of your Sneak Attack dice to whatever you like.],
+        effect: [Change one of your #card_ref("Sneak Attack") dice to whatever you like.],
       ),
       (
         kind: "active",

@@ -5,7 +5,7 @@
     type: ("Ability", "Shadowmancer", "Pact of the Abyssal Depths"),
     blocks: (
       (kind: "narrative", effect: [You can breathe underwater.]),
-      (kind: "passive", effect: [Your Shadows become creatures of nightfrost. Shadow Blast and your Shadows can deal cold or necrotic damage. When they roll the maximum on their damage, you gain #INT+#LVL temp #HP.]),
+      (kind: "passive", effect: [Your #card_ref("Shadow", "Shadows") become creatures of nightfrost. #card_ref("Shadow Blast") and your #card_ref("Shadow", "Shadows") can deal cold or necrotic damage. When they roll the maximum on their damage, you gain #INT+#LVL temp #HP.]),
     ),
 )
 

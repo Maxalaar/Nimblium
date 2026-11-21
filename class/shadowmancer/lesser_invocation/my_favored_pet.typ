@@ -4,7 +4,7 @@
     name: "My Favored Pet",
     type: ("Ability", "Shadowmancer", "Lesser Invocation"),
     blocks: (
-      (kind: "narrative", effect: [One of your Shadows grudgingly stays with you outside combat. It can do any menial task a below-average commoner could, very creepily.]),
+      (kind: "narrative", effect: [One of your #card_ref("Shadow", "Shadows") grudgingly stays with you outside combat. It can do any menial task a below-average commoner could, very creepily.]),
     ),
 )
 

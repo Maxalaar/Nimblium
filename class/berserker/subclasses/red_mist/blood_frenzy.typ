@@ -11,7 +11,7 @@
       (
         kind: "passive",
         limitation: per_turn(1),
-        effect: [While you are #kw_raging, whenever you crit or kill an enemy, gain 1 Fury Die or change 1 of your Fury Dice to its maximum.],
+        effect: [While you are #kw_raging, whenever you crit or kill an enemy, gain 1 Fury Die or change 1 of your #card_ref("Fury Dice") to its maximum.],
       ),
     ),
     reminder: (berserker_keywords.raging,),

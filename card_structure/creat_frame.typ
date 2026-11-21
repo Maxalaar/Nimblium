@@ -252,6 +252,8 @@
 #let creat_card(name, types, body, stats: (), stat_cut: none, back_types: none, icon: none, part: none) = {
   let extra = if part == none { () } else { (part,) }
   let family = family_icon(types)
+  // Marker found by #card_ref (terms.typ) to link to this card.
+  metadata((card: name))
   box(grid(columns: 2, column-gutter: card_gap,
     card_front(name, types + extra, body, stats: stats, stat_cut: stat_cut, icon: family),
     card_back(name, (if back_types == none { types } else { back_types }) + extra,

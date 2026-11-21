@@ -10,7 +10,7 @@
     blocks: (
       (
         kind: "passive",
-        effect: [When a creature dies from your Sneak Attack, you may become #kw_invisible until you attack again or until the start of your next turn.],
+        effect: [When a creature dies from your #card_ref("Sneak Attack"), you may become #kw_invisible until you attack again or until the start of your next turn.],
       ),
     ),
     reminder: (conditions.invisible,),

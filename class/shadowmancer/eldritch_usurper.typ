@@ -4,7 +4,7 @@
     name: "Eldritch Usurper",
     type: ("Ability", "Shadowmancer"),
     blocks: (
-      (kind: "passive", limitation: per_encounter(1), effect: [When you cast Summon Shadow, you may summon a Greater Shadow instead.]),
+      (kind: "passive", limitation: per_encounter(1), effect: [When you cast #card_ref("Summon Shadow"), you may summon a #card_ref("Greater Shadow") instead.]),
     ),
 )
 

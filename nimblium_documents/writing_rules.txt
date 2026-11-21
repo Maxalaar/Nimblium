@@ -14,6 +14,10 @@ A reviewed card ends with a notes block holding `review: style=<date> changelog=
 - No colon inside rules text, neither after a label nor in the middle of a sentence ("choose one:",
   "calming magic: you have ..."). Write separate, plain sentences instead.
 - No parentheses: use a complete sentence instead.
+- A card that names another card writes its name with `#card_ref("Name")`: it shows in
+  italics and links to that card in the book export. For a plural or another form, give the
+  text shown: `#card_ref("Shadow", "Shadows")`. `check_terms.py` reports card names typed
+  as plain text; a word that only looks like a card name goes in its `REF_EXCEPTIONS`.
 - No flavor text mixed into rules text. Flavor goes in the card's `flavor` field, rendered in
   italics below the rules (spells only for now).
 

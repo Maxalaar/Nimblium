@@ -4,7 +4,7 @@
     name: "One with Shadows",
     type: ("Ability", "Shadowmancer", "Greater Invocation"),
     blocks: (
-      (kind: "active", cost: (actions(1),), effect: [While you are in dim light or darkness, or adjacent to one of your Shadows, you become #kw_invisible until you move or attack. Summoning or commanding Shadows doesn't count as attacking.]),
+      (kind: "active", cost: (actions(1),), effect: [While you are in dim light or darkness, or adjacent to one of your #card_ref("Shadow", "Shadows"), you become #kw_invisible until you move or attack. Summoning or commanding #card_ref("Shadow", "Shadows") doesn't count as attacking.]),
     ),
     reminder: (conditions.invisible,),
 )

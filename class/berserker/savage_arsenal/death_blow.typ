@@ -10,7 +10,7 @@
     blocks: (
       (
         kind: "passive",
-        effect: [Whenever you crit, you may double the damage of your Fury Dice. If you do, you don't roll any additional dice for the crit.],
+        effect: [Whenever you crit, you may double the damage of your #card_ref("Fury Dice"). If you do, you don't roll any additional dice for the crit.],
       ),
     ),
 )

@@ -12,7 +12,7 @@
       (
         kind: "passive",
         limitation: per_round(1),
-        effect: [While you are #kw_dying, your Spirit Companion can use one of its abilities for free.],
+        effect: [While you are #kw_dying, your #card_ref("Spirit Companion") can use one of its abilities for free.],
       ),
     ),
     reminder: (conditions.dying,),

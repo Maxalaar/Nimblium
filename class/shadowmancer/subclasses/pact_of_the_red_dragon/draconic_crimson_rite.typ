@@ -4,7 +4,7 @@
     name: "Draconic Crimson Rite",
     type: ("Ability", "Shadowmancer", "Pact of the Red Dragon"),
     blocks: (
-      (kind: "passive", effect: [Your Shadows become shadows of flaming dragon wyrmlings. Shadow Blast and your Shadows can deal fire or necrotic damage. When they roll the maximum on their damage, the target becomes #kw_smoldering.]),
+      (kind: "passive", effect: [Your #card_ref("Shadow", "Shadows") become shadows of flaming dragon wyrmlings. #card_ref("Shadow Blast") and your #card_ref("Shadow", "Shadows") can deal fire or necrotic damage. When they roll the maximum on their damage, the target becomes #kw_smoldering.]),
     ),
     reminder: (conditions.smoldering,),
 )

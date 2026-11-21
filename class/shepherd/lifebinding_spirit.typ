@@ -12,7 +12,7 @@
         actions(1),
         mana(1),
     ),
-    effect: [Summon your Spirit Companion. It lasts until you cast this spell again. If it is more than 100 spaces from you, it disappears.],
+    effect: [Summon your #card_ref("Spirit Companion"). It lasts until you cast this spell again. If it is more than 100 spaces from you, it disappears.],
     upcast: [It has 10 #HP per tier. Its Die is 1d6 at tier 1, 1d8 at tier 2, 1d10 at tier 3 and 1d12 at tier 4 or higher.],
 )
 

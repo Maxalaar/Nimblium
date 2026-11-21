@@ -4,8 +4,8 @@
     name: "Shadowfrost",
     type: ("Ability", "Shadowmancer", "Pact of the Abyssal Depths"),
     blocks: (
-      (kind: "passive", effect: [Shadow Blast also makes its target #kw_slowed.]),
-      (kind: "passive", effect: [You may cast Omenrime or Rimeblades without Pilfered Power by spending 10 temp #HP.]),
+      (kind: "passive", effect: [#card_ref("Shadow Blast") also makes its target #kw_slowed.]),
+      (kind: "passive", effect: [You may cast #card_ref("Omenrime") or #card_ref("Rimeblades") without #card_ref("Pilfered Power") by spending 10 temp #HP.]),
     ),
     reminder: (conditions.slowed,),
 )

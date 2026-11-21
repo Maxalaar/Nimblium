@@ -4,8 +4,8 @@
     name: "Summon Shadow",
     type: ("Spell", "Necrotic", "Cantrip", "Shadowmancer"),
     cost: (actions(1),),
-    effect: [Summon 1 Shadow adjacent to you. You can have up to #INT Shadows.],
-    high_Levels: [At levels 5, 10, 15 and 20, you summon 1 more Shadow.],
+    effect: [Summon 1 #card_ref("Shadow") adjacent to you. You can have up to #INT #card_ref("Shadow", "Shadows").],
+    high_Levels: [At levels 5, 10, 15 and 20, you summon 1 more #card_ref("Shadow").],
 )
 
 #let summon_shadow = creat_spell(spell_data)

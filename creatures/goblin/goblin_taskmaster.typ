@@ -5,7 +5,7 @@
     type: ("Creature", "Goblin"),
     blocks: (
         (kind: "passive", name: "Meat Shield", effect: [When this creature would be hit by an attack, another Goblin may #kw_interpose for it for free.]),
-        (kind: "passive", name: "Get in Here!", effect: [At the end of each of its turns, it summons a Goblin Minion adjacent to it.]),
+        (kind: "passive", name: "Get in Here!", effect: [At the end of each of its turns, it summons a #card_ref("Goblin Minion") adjacent to it.]),
         (kind: "active", cost: (actions(1),), name: "Stab", damage: "1d6+2"),
         (kind: "active", cost: (actions(1),), name: "Shoot", range: 8, damage: "1d6+2"),
     ),

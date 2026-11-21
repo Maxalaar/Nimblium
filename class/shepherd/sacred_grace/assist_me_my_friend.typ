@@ -11,7 +11,7 @@
       (
         kind: "passive",
         limitation: per_round(1),
-        effect: [When you make a melee attack, if your Spirit Companion is within 6 spaces of the target, it also attacks that target for free, even if it isn't adjacent to it.],
+        effect: [When you make a melee attack, if your #card_ref("Spirit Companion") is within 6 spaces of the target, it also attacks that target for free, even if it isn't adjacent to it.],
       ),
     ),
 )

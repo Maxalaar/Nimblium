@@ -10,7 +10,7 @@
       (
         kind: "active",
         cost: (actions(1), toth_charges(1),),
-        effect: [Make a melee attack against a #kw_bloodied #kw_marked creature. The attack is a crit, and your Hunter's Mark damage is doubled. If the creature survives, it crits you back.],
+        effect: [Make a melee attack against a #kw_bloodied #kw_marked creature. The attack is a crit, and your #card_ref("Hunter's Mark") damage is doubled. If the creature survives, it crits you back.],
       ),
     ),
     reminder: (hunter_keywords.marked, conditions.bloodied,),

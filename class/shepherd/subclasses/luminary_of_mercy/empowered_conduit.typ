@@ -8,10 +8,10 @@
         "Luminary of Mercy",
     ),
     blocks: (
-      (kind: "passive", effect: [Conduit of Light can target 1 additional creature.]),
+      (kind: "passive", effect: [#card_ref("Conduit of Light") can target 1 additional creature.]),
       (
         kind: "passive",
-        effect: [When you roll Initiative, regain 1 use of Searing Light. This use is lost at the end of combat if you haven't spent it.],
+        effect: [When you roll Initiative, regain 1 use of #card_ref("Searing Light"). This use is lost at the end of combat if you haven't spent it.],
       ),
     ),
 )

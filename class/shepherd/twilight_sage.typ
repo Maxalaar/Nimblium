@@ -7,7 +7,7 @@
         "Shepherd",
     ),
     blocks: (
-      (kind: "passive", effect: [Your Spirit Companion rolls its Die twice and adds both results.]),
+      (kind: "passive", effect: [Your #card_ref("Spirit Companion") rolls its Die twice and adds both results.]),
     ),
 )
 

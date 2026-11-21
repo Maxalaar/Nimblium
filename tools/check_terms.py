@@ -81,13 +81,64 @@ def content_blocks(source):
         i += 1
 
 
+# Card names: every card file's main `name:`. A card name in another card's text must go
+# through #card_ref("Name") (terms.typ), which shows it in italics and links to that card.
+CARD_DIRS = ["class", "spells", "creatures"]
+CARD_NAME = re.compile(r'#let \w+_data = \(\s*name: "((?:[^"\\]|\\.)*)"')
+CARD_REF = re.compile(r'#card_ref\(\s*"((?:[^"\\]|\\.)*)"(?:\s*,\s*"(?:[^"\\]|\\.)*")?\s*\)')
+# Words that match a card name but don't refer to that card: (file, name).
+REF_EXCEPTIONS = {
+    ("class/shepherd/searing_light.typ", "Heal"),          # the verb, at the start of a sentence
+    ("creatures/goblin/goblin_taskmaster.typ", "Goblin"),  # any goblin, not the Goblin card
+    ("creatures/goblin/nilbog.typ", "Goblin"),
+}
+
+
+def card_names():
+    names = {}
+    for dir_name in CARD_DIRS:
+        for path in (ROOT / dir_name).rglob("*.typ"):
+            match = CARD_NAME.search(path.read_text(encoding="utf-8"))
+            if match:
+                names[match.group(1)] = path
+    return names
+
+
+def name_pattern(name):
+    # The name alone or in the plural, not inside a longer word or a string.
+    return re.compile(r'(?<![\w#"])' + re.escape(name) + r'(s?)(?![\w"])')
+
+
+def unmarked_card_names(path, source, names):
+    """Card names typed as plain text in the card's content blocks."""
+    rel = str(path.relative_to(ROOT))
+    own = CARD_NAME.search(source)
+    own = own.group(1) if own else None
+    problems = []
+    for block in content_blocks(source):
+        block = CARD_REF.sub("", block)
+        # Longest names first, so that "Searing Light" is not also read as "Light".
+        for name in sorted(names, key=len, reverse=True):
+            if name == own or (rel, name) in REF_EXCEPTIONS:
+                continue
+            pattern = name_pattern(name)
+            for match in pattern.finditer(block):
+                problems.append(f'"{match.group(0)}": use #card_ref("{name}")')
+            block = pattern.sub(lambda m: "\0" * len(m.group(0)), block)
+    for match in CARD_REF.finditer(source):
+        if match.group(1) not in names:
+            problems.append(f'#card_ref("{match.group(1)}"): no card has this name')
+    return problems
+
+
 # Notes and review markers live in comments, not on the card.
 COMMENT = re.compile(r"/\*.*?\*/|(?<![:\w])//[^\n]*", re.S)
 
 
-def check_file(path):
+def check_file(path, names):
     source = COMMENT.sub("", path.read_text(encoding="utf-8"))
     problems = []
+    problems.extend(unmarked_card_names(path, source, names))
     rules = [
         rule for rule in TEXT_RULES
         if not (path.name in DEFINITION_FILES and ("kw_difficult_terrain" in rule[1] or "kw_cover" in rule[1] or "kw_advantage" in rule[1]))
@@ -112,9 +163,10 @@ def main():
     for target in TARGETS:
         path = ROOT / target
         files.extend(sorted(p for p in path.rglob("*.typ") if not p.name.startswith(".")) if path.is_dir() else [path])
+    names = card_names()
     total = 0
     for path in files:
-        for problem in check_file(path):
+        for problem in check_file(path, names):
             print(f"{path.relative_to(ROOT)}: {problem}")
             total += 1
     print(f"{len(files)} files checked, {total} problem(s)")

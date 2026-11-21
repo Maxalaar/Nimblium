@@ -14,7 +14,7 @@
     ),
     concentration: "1 min",
     reach: "10",
-    effect: [Choose 1 ally. While it is within Reach, it gains the effects of Enchant Weapon.
+    effect: [Choose 1 ally. While it is within Reach, it gains the effects of #card_ref("Enchant Weapon").
 
     While an enemy is within Reach, it is #kw_smoldering. Effects that rely on Smoldering don't end it.],
     upcast: [Choose 1 more ally. Its Reach increases by 2.],

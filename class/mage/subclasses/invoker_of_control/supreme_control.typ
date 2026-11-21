@@ -8,11 +8,11 @@
         "Invoker of Control",
     ),
     blocks: (
-      (kind: "passive", effect: [Whenever you use Force of Will, you may resolve the chosen option twice.]),
+      (kind: "passive", effect: [Whenever you use #card_ref("Force of Will"), you may resolve the chosen option twice.]),
       (
         kind: "active",
         cost: (actions(1),),
-        effect: [You may use Force of Will outside your turn.],
+        effect: [You may use #card_ref("Force of Will") outside your turn.],
       ),
     ),
 )

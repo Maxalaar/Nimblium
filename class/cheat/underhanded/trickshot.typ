@@ -10,7 +10,7 @@
     blocks: (
       (
         kind: "passive",
-        effect: [You can use Vicious Opportunist on thrown weapon attacks. You can't use Twist the Blade on them.],
+        effect: [You can use #card_ref("Vicious Opportunist") on thrown weapon attacks. You can't use #card_ref("Twist the Blade") on them.],
       ),
       (
         kind: "active",

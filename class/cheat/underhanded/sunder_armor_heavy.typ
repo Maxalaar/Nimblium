@@ -11,7 +11,7 @@
       (
         kind: "active",
         cost: (actions(1),),
-        effect: [When you crit an enemy, its #defense is reduced by 20 against melee attacks until the start of your next turn. You must have Sunder Armor Medium to choose this ability.],
+        effect: [When you crit an enemy, its #defense is reduced by 20 against melee attacks until the start of your next turn. You must have #card_ref("Sunder Armor Medium") to choose this ability.],
       ),
     ),
 )

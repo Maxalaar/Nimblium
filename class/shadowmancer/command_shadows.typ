@@ -4,7 +4,7 @@
     name: "Command Shadows",
     type: ("Spell", "Necrotic", "Cantrip", "Shadowmancer"),
     cost: (actions(1),),
-    effect: [Cast this spell only once per round. All your Shadows move up to 6 spaces, then attack.],
+    effect: [Cast this spell only once per round. All your #card_ref("Shadow", "Shadows") move up to 6 spaces, then attack.],
 )
 
 #let command_shadows = creat_spell(spell_data)

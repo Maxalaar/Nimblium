@@ -4,7 +4,7 @@
     name: "Enveloped by the Master",
     type: ("Ability", "Shadowmancer", "Pact of the Red Dragon"),
     blocks: (
-      (kind: "passive", effect: [You may cast Dragonform by gaining 1d4 Wounds instead of using Pilfered Power.]),
+      (kind: "passive", effect: [You may cast #card_ref("Dragonform") by gaining 1d4 Wounds instead of using #card_ref("Pilfered Power").]),
     ),
 )
 

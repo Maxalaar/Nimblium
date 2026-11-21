@@ -12,7 +12,7 @@
         kind: "active",
         cost: (actions(1),),
         effect: [
-          When you Sneak Attack a creature that isn't #kw_taunted by you, roll 1d4.\
+          When you #card_ref("Sneak Attack") a creature that isn't #kw_taunted by you, roll 1d4.\
           *1:* It is #kw_taunted by you until the end of the encounter.\
           *2:* It falls #kw_prone, then it is #kw_taunted by you until the end of the encounter.\
           *3:* It becomes #kw_dazed, then it is #kw_taunted by you until the end of the encounter.\

@@ -13,7 +13,7 @@
         limitation: per_round(1),
         effect: [When you make a melee attack against a #kw_bloodied creature, the attack is a crit.],
       ),
-      (kind: "passive", effect: [Your Spirit Companion's attacks deal #STR additional damage.]),
+      (kind: "passive", effect: [Your #card_ref("Spirit Companion")'s attacks deal #STR additional damage.]),
     ),
     reminder: (conditions.bloodied,),
 )

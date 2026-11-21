@@ -9,7 +9,7 @@
     blocks: (
       (
         kind: "passive",
-        effect: [When you attack with a blade, you can use Vicious Opportunist even if the target isn't #kw_distracted.],
+        effect: [When you attack with a blade, you can use #card_ref("Vicious Opportunist") even if the target isn't #kw_distracted.],
       ),
     ),
     reminder: (keywords.distracted,),

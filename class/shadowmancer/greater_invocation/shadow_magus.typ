@@ -4,7 +4,7 @@
     name: "Shadow Magus",
     type: ("Ability", "Shadowmancer", "Greater Invocation"),
     blocks: (
-      (kind: "passive", effect: [Your Shadows' Reach increases by 4, and their attacks deal 1d10 damage instead of 1d12.]),
+      (kind: "passive", effect: [Your #card_ref("Shadow", "Shadows")' Reach increases by 4, and their attacks deal 1d10 damage instead of 1d12.]),
     ),
 )
 

@@ -4,7 +4,7 @@
     name: "Armor of Shadows",
     type: ("Ability", "Shadowmancer", "Greater Invocation"),
     blocks: (
-      (kind: "passive", effect: [You take less damage equal to the number of Shadows you have.]),
+      (kind: "passive", effect: [You take less damage equal to the number of #card_ref("Shadow", "Shadows") you have.]),
     ),
 )
 

@@ -14,7 +14,7 @@
         tags: ("AoE",),
         reach: 2,
         damage: [Die+#WIL radiant],
-        effect: [Your Spirit Companion sacrifices itself. It deals this damage to each enemy within Reach of it, ignoring #defense.],
+        effect: [Your #card_ref("Spirit Companion") sacrifices itself. It deals this damage to each enemy within Reach of it, ignoring #defense.],
       ),
     ),
 )

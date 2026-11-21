@@ -14,7 +14,7 @@
       ),
       (
         kind: "passive",
-        effect: [Your Spirit Companion may take a deathly form, such as a zombie dog or a devious imp. If it does, its damage becomes necrotic.],
+        effect: [Your #card_ref("Spirit Companion") may take a deathly form, such as a zombie dog or a devious imp. If it does, its damage becomes necrotic.],
       ),
     ),
 )

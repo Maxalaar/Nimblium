@@ -4,7 +4,7 @@
     name: "Cryomancer's Reprisal",
     type: ("Ability", "Shadowmancer", "Pact of the Abyssal Depths"),
     blocks: (
-      (kind: "passive", effect: [You may lose half your max #HP to cast any Ice spell without Pilfered Power. The next creature that hits you with a melee attack this encounter then takes cold damage equal to half the #HP you lost.]),
+      (kind: "passive", effect: [You may lose half your max #HP to cast any Ice spell without #card_ref("Pilfered Power"). The next creature that hits you with a melee attack this encounter then takes cold damage equal to half the #HP you lost.]),
     ),
 )
 

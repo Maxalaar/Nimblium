@@ -8,7 +8,7 @@
         "Mountainheart",
     ),
     blocks: (
-      (kind: "passive", effect: [Whenever you miss with an attack or an enemy crits you, use Rage for free.]),
+      (kind: "passive", effect: [Whenever you miss with an attack or an enemy crits you, use #card_ref("Rage") for free.]),
     ),
 )
 

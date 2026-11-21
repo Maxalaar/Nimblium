@@ -4,7 +4,7 @@
     name: "Hungering Shadows",
     type: ("Ability", "Shadowmancer", "Greater Invocation"),
     blocks: (
-      (kind: "passive", effect: [When one of your Shadows rolls the maximum on its damage, the next tiered spell you cast this encounter doesn't use Pilfered Power.]),
+      (kind: "passive", effect: [When one of your #card_ref("Shadow", "Shadows") rolls the maximum on its damage, the next tiered spell you cast this encounter doesn't use #card_ref("Pilfered Power").]),
     ),
 )
 

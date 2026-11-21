@@ -9,7 +9,7 @@
     ),
     blocks: (
       (kind: "passive", effect: [You gain a climbing #speed.]),
-      (kind: "narrative", effect: [You have #kw_advantage on Stealth checks. This ability replaces Leave No Trace.]),
+      (kind: "narrative", effect: [You have #kw_advantage on Stealth checks. This ability replaces #card_ref("Leave No Trace").]),
     ),
 )
 

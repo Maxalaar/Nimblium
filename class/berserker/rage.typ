@@ -14,7 +14,7 @@
         effect: [
           Roll 1 Fury Die. You become #kw_raging.
 
-          *Level 5:* Roll 2 Fury Dice instead.
+          *Level 5:* Roll 2 #card_ref("Fury Dice") instead.
         ],
       ),
     ),

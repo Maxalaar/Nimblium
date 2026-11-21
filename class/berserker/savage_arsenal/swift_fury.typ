@@ -10,7 +10,7 @@
     blocks: (
       (
         kind: "passive",
-        effect: [Whenever you gain one or more Fury Dice, you may move up to #DEX spaces, ignoring #kw_difficult_terrain.],
+        effect: [Whenever you gain one or more #card_ref("Fury Dice"), you may move up to #DEX spaces, ignoring #kw_difficult_terrain.],
       ),
     ),
     reminder: (keywords.difficult_terrain,),
