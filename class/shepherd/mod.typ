@@ -15,4 +15,7 @@ cards stay on this version: the companion changes of the 2026-10-02 changelog (L
 Spirit as a cantrip with Harm and Mend, Searing Light removed, and the Sacred Graces and
 subclass abilities rebuilt around Mend) are not applied. Keep reading future changelogs for
 ideas, but balance the Shepherd ourselves. Decided on 2026-11-15.
+Exceptions taken from that changelog on 2026-11-21: the companion's heals are limited to
+WIL/Safe Rest instead of costing HP (spirit_companion.typ), and Vengeful Spirit is the
+single burst, simpler to play (sacred_grace/vengeful_spirit.typ).
 */

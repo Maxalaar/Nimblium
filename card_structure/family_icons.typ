@@ -1,5 +1,6 @@
 // Family icon of each card type: every card whose types contain the key gets
-// that icon in the middle of its back. Files live in art/icons/ (see
+// that icon, large in the middle of its back and small at the bottom of its
+// front. Files live in art/icons/ (see
 // nimblium_documents/art.txt and art/icons/CREDITS.md).
 // When a card has several matching types, the most specific one (the last in
 // its type list) wins, so a pool such as Thrill of the Hunt can later get its
@@ -7,6 +8,15 @@
 #let family_icons = (
   "Goblin": "goblin.svg",
   "Undead": "undead.svg",
+  "Fire": "fire.svg",
+  "Ice": "ice.svg",
+  "Lightning": "lightning.svg",
+  "Wind": "wind.svg",
+  "Berserker": "berserker.svg",
+  "Cheat": "cheat.svg",
+  "Hunter": "hunter.svg",
+  "Mage": "mage.svg",
+  "Shepherd": "shepherd.svg",
 )
 
 // Family icons are black SVGs printed in this gray to save ink.

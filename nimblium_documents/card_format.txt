@@ -16,20 +16,25 @@ Tous les types passent par `creat_card(name, types, body, stats:, icon:)`, qui r
 et le dos côte à côte (5 mm d'écart). Design épuré, noir et blanc, peu d'encre :
 
 - Recto : cadre blanc à bordure noire, coins "HUD", nom en capitales espacées + types en petit
-  (sans filet), puis la ligne de stats (créatures et sorts), à 1,5 mm fixe sous les types :
+  (sans filet ; une liste trop longue passe à la ligne, seulement après un « · », et ce qui
+  suit descend d'autant), puis la ligne de stats (créatures et sorts), à 1,5 mm fixe sous les types :
   petite étiquette de 4 lettres au plus au-dessus de chaque valeur, traits verticaux fins entre
   les cases. Elle reste sur une ligne tant que ses valeurs tiennent en 8pt minimum ; sinon elle
   passe sur deux lignes centrées chacune, séparées par un trait horizontal fin (60 % de la ligne
-  la plus large). Le texte de règles, aligné à gauche, commence juste en dessous (en haut de
-  la zone, la place libre reste en bas). S'il déborde, l'écart stats → texte, l'écart entre
+  la plus large). Le texte de règles, aligné à gauche, est centré verticalement dans la
+  place qui reste sous la ligne de stats. S'il déborde, l'écart stats → texte, l'écart entre
   les deux lignes de stats et les écarts entre blocs se resserrent ensemble, puis le texte
   rétrécit jusqu'à 6pt.
 - Dos : nom + types centrés, sous une grande icône de famille en gris `#999999`
-  (game-icons.net, CC BY 3.0). L'icône vient des types de la carte : `family_icons.typ`
-  associe un type à un fichier de `art/icons/` (aujourd'hui Goblin et Undead) ; si plusieurs
+  (game-icons.net CC BY 3.0, ou Bootstrap Icons MIT ; voir `art/icons/CREDITS.md`). L'icône vient des types de la carte : `family_icons.typ`
+  associe un type à un fichier de `art/icons/` (aujourd'hui Goblin, Undead, les écoles Fire, Ice, Lightning, Wind et les classes
+  Berserker, Cheat, Hunter, Mage, Shepherd) ; si plusieurs
   types correspondent, le plus précis (le dernier) gagne. Sans type reconnu, pas d'icône et
-  le nom est centré. Le recto n'a pas d'icône.
-- Un champ `icon` dans les données de la carte remplace l'icône de famille au dos :
+  le nom est centré. La même icône apparaît en petit (6 mm) en bas au centre du recto,
+  à cheval sur la ligne des coins du bas, remontée de 1 mm pour l'œil ; le texte de
+  règles s'arrête alors au-dessus.
+- Un champ `icon` dans les données de la carte remplace l'icône de famille au dos (le recto
+  garde l'icône de famille) :
   `icon: "x.svg"` est cherché dans `art/icons/`, un chemin commençant par `/` part de la
   racine du projet. Les SVG sont passés en gris, les autres images (PNG) restent telles
   quelles. Rien n'est relié automatiquement par nom de fichier. Ajouter une famille :
@@ -74,12 +79,12 @@ Champs disponibles : `cost`, `concentration`, `range`, `reach`, `area`, `damage`
 
 Rendu (sans libellé `Cost:` ni `Effect:`) :
 
-- Le sous-titre montre le type, l'école et le palier : `SPELL · FIRE · TIER 5`, ou `CANTRIP`.
+- Le sous-titre montre tout le `type` : type, école, palier et tags, ex
+  `SPELL · FIRE · TIER 5 · AOE` ou `SPELL · LIGHTNING · CANTRIP`.
 - Tout ce qui décrit le sort entier va dans la ligne de stats, dans cet ordre : `ACT` (coût en
-  actions), `MANA`, `CONC` (concentration), puis `DMG`, `RNGE` (range), `REAC` (reach), `AREA`,
-  `TARG` (vaut `AoE` pour le tag AoE). Si la ligne passe sur deux lignes, la coupure se fait
+  actions), `MANA`, `CONC` (concentration), puis `DMG`, `RNGE` (range), `REAC` (reach), `AREA`. Si la ligne passe sur deux lignes, la coupure se fait
   entre le lancement (ACT, MANA, CONC) et l'effet (le reste).
-- Un autre coût ou un autre tag reste en capsule (`badges.typ`) au-dessus de l'effet.
+- Un autre coût reste en capsule (`badges.typ`) au-dessus de l'effet.
 - `damage` ne contient que la valeur ("3d8+4") : une précision va dans `effect`.
 - `reach` : un nombre ("4") ou une forme ("Line 12", "Cone 4"), affiché sous REAC.
 - `concentration` ne contient que la durée ("1 min").

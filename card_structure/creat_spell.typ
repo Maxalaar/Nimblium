@@ -4,12 +4,12 @@
 #let labelled_section(label, body) = [#dark_badge(label)\ #body]
 
 // `spell.type` is (card type, school, tier, tags...).
-// The tier ("Tier 5" or "Cantrip") joins the card type and school in the
-// types below the name. Everything else that describes the whole spell goes
-// to the stat row below the types, with labels of 4 letters at most: action
-// and mana costs, concentration, then damage, range, reach, area and AoE.
+// The types below the name show the whole `type`: card type, school, tier
+// ("Tier 5" or "Cantrip") and tags such as AoE. The numbers go to the stat row
+// below the types, with labels of 4 letters at most: action and mana costs,
+// concentration, then damage, range, reach and area.
 // When the row needs two lines, the casting stats go on the first one and the
-// effect on the second. Any other cost or tag stays a capsule above the effect.
+// effect on the second. Any other cost stays a capsule above the effect.
 #let creat_spell(spell) = {
   let stats = ()
   let tags = ()
@@ -24,9 +24,6 @@
   if "range" in spell { stats.push(("RNGE", stat_value(spell.range))) }
   if "reach" in spell { stats.push(("REAC", stat_value(spell.reach))) }
   if "area" in spell { stats.push(("Area", stat_value(spell.area))) }
-  for t in spell.type.slice(3) {
-    if t == "AoE" { stats.push(("Targ", t)) } else { tags.push(t) }
-  }
   let effect = spell.at("effect", default: none)
   let blocks = (if tags.len() > 0 { [#tags.map(tag_badge).join(h(2pt))\ #effect] } else { effect },)
   if "high_Levels" in spell { blocks.push(labelled_section("High Levels", spell.high_Levels)) }
@@ -36,7 +33,7 @@
 
   creat_card(
     spell.name,
-    spell.type.slice(0, 3),
+    spell.type,
     join_blocks(blocks),
     stats: stats,
     stat_cut: cut,

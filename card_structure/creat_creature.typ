@@ -1,4 +1,4 @@
-#import "creat_frame.typ": creat_card, stat_lines, reminders, stat_value, body_area, body_height, text_size, min_text_size, card_gap, join_blocks, min_gap, max_gap
+#import "creat_frame.typ": creat_card, family_icon, stat_lines, reminders, stat_value, body_area, body_height, text_size, min_text_size, card_gap, join_blocks, min_gap, max_gap
 #import "creat_ability.typ": ability_block
 
 #let kind_order = (passive: 0, active: 1)
@@ -37,7 +37,8 @@
   )
 
   context {
-    let (width, height) = body_area(stat_lines(stats).len())
+    let has_icon = family_icon(creature.at("type", default: ())) != none
+    let (width, height) = body_area(stat_lines(stats).len(), has_icon: has_icon)
     let fits(parts, size, gap) = body_height(join_blocks(parts), width, size, gap: gap) <= height
     let split = creature.at("split", default: false)
     if not split or blocks.len() < 2 or fits(blocks + extra, min_text_size, max_gap) {
