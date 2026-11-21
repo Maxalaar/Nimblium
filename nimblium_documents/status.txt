@@ -40,7 +40,14 @@ donnent que le nom : pas de texte disponible, donc pas de cartes.
   of Darkness ni Shadowmastery (ils ne font que débloquer des sorts). Le Reaver attend avec
   les Extra Subclasses. Icône de classe : Death Note. Nouvelles sous-classes annoncées : Pact
   of the Void, Pact of the Endless Swarm, Pact of the High Celestial.
-- **Commander, Oathsworn, Songweaver, Stormshifter, Zephyr, Extra
+- **Commander** (p.18-23) : COMPLET — Coordinated Strike!, Combat Dice (carte Mechanic), Field
+  Medic, Master Commander, Weapon Mastery, Unparalleled Tactics, Captain of Legions ; Commander's
+  Orders (Commanding Presence y passe, d'après le changelog), Combat Tactics, Weapon Masteries
+  (refaites), sous-classes Champion of the Bulwark et Champion of the Vanguard ; fiche de classe.
+  Au nouveau style et au changelog du 2 octobre 2026. Le Spellblade attend avec les Extra
+  Subclasses. Pas encore d'icône de classe. Nouvelles sous-classes annoncées : Champion of the
+  Arena, of the Phalanx, of the Siege-Breaker.
+- **Oathsworn, Songweaver, Stormshifter, Zephyr, Extra
   Subclasses** : pas commencés.
 
 ## Sorts

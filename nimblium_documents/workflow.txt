@@ -37,6 +37,8 @@ qu'on gagne à chaque niveau, tier de sort max) et, en bas, les sous-classes par
 listes d'options. Elle remplace les cartes qui ne feraient que lister des choix par niveau.
 Pas de redite : une règle déjà sur une carte n'est pas répétée, la fiche nomme la carte
 (`#card_ref`). Fiches faites : Berserker, Cheat, Hunter, Mage, Shadowmancer, Shepherd.
+Chaque nouvelle classe reçoit sa fiche en même temps que ses cartes : une classe n'est pas
+COMPLÈTE sans elle.
 
 ## Éléments qu'on ne transforme JAMAIS en carte
 

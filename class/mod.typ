@@ -4,3 +4,4 @@
 #import "shepherd/mod.typ": *
 #import "mage/mod.typ": *
 #import "shadowmancer/mod.typ": *
+#import "commander/mod.typ": *
