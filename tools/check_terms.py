@@ -30,6 +30,7 @@ TEXT_RULES = [
     (r"(?<![#\w])[Ff]lying\b(?!:)", "use #kw_flying"),
     (r"(?<![#\w])(Full )?Cover\b(?!:)", "use #kw_cover or #kw_full_cover"),
     (r"(?<![#\w.])([Dd]is)?[Aa]dvantage\b(?!:)", "use #kw_advantage or #kw_disadvantage"),
+    (r"(?<![#\w])[Aa]uras?\b(?!:)", "use #kw_aura"),
     (r"(?<![#\w])DC \d", "use #dc(10) or #dc(10, stat: INT)"),
     (r"#keyword_style\[", "use a #kw_ term"),
 ]
@@ -91,6 +92,7 @@ REF_EXCEPTIONS = {
     ("class/shepherd/searing_light.typ", "Heal"),          # the verb, at the start of a sentence
     ("creatures/goblin/goblin_taskmaster.typ", "Goblin"),  # any goblin, not the Goblin card
     ("creatures/goblin/nilbog.typ", "Goblin"),
+    ("class/oathsworn/oathsworn_class_sheet.typ", "Vengeance"),  # Oath of Vengeance, not the spell
     ("class/mage/mage_class_sheet.typ", "Spellshaper"),           # the kind of ability; the card is cited once
 }
 

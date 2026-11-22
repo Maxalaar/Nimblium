@@ -5,3 +5,4 @@
 #import "mage/mod.typ": *
 #import "shadowmancer/mod.typ": *
 #import "commander/mod.typ": *
+#import "oathsworn/mod.typ": *

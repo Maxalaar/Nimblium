@@ -6,7 +6,7 @@
 
 #class_sheet(
   name: "Commander",
-  icon: none, // commander.svg once chosen
+  icon: "commander.svg",
   intro: [Soldier… Warrior… Fearless Leader.],
   info: (
     ("Key stats", [#STR, #INT]),

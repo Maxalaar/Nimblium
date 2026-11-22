@@ -45,9 +45,15 @@ donnent que le nom : pas de texte disponible, donc pas de cartes.
   Orders (Commanding Presence y passe, d'après le changelog), Combat Tactics, Weapon Masteries
   (refaites), sous-classes Champion of the Bulwark et Champion of the Vanguard ; fiche de classe.
   Au nouveau style et au changelog du 2 octobre 2026. Le Spellblade attend avec les Extra
-  Subclasses. Pas encore d'icône de classe. Nouvelles sous-classes annoncées : Champion of the
+  Subclasses. Icône de classe : Trumpet Flag. Nouvelles sous-classes annoncées : Champion of the
   Arena, of the Phalanx, of the Siege-Breaker.
-- **Oathsworn, Songweaver, Stormshifter, Zephyr, Extra
+- **Oathsworn** (p.36-41) : COMPLET — Radiant Judgment, Lay on Hands, Oathsworn Mana Pool
+  (carte Mechanic, formule seule), Zealot, Paragon of Virtue, My Life for My Friends, Unending
+  Judgment, Glorious Paragon ; Sacred Decrees ; sous-classes Oath of Vengeance et Oath of
+  Refuge ; fiche de classe. Au nouveau style et au changelog du 2 octobre 2026. L'Oathbreaker
+  attend avec les Extra Subclasses. Icône de classe : Winged Shield. Nouvelles sous-classes
+  annoncées : Oath of Roaring Thunder, Oath of Valor.
+- **Songweaver, Stormshifter, Zephyr, Extra
   Subclasses** : pas commencés.
 
 ## Sorts

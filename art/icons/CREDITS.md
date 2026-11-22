@@ -23,3 +23,5 @@ gray by the card template).
 | `mage.svg` | [Book storm](https://game-icons.net/1x1/lorc/book-storm.html), upside down | Lorc |
 | `shepherd.svg` | [Angel outfit](https://game-icons.net/1x1/lorc/angel-outfit.html) | Lorc |
 | `shadowmancer.svg` | [Death note](https://game-icons.net/1x1/lorc/death-note.html) | Lorc |
+| `oathsworn.svg` | [Winged shield](https://game-icons.net/1x1/lorc/winged-shield.html) | Lorc |
+| `commander.svg` | [Trumpet flag](https://game-icons.net/1x1/delapouite/trumpet-flag.html) | Delapouite |

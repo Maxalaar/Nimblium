@@ -62,6 +62,7 @@
 #let kw_frightened = keyword_style[Frightened]
 #let kw_grappled = keyword_style[Grappled]
 #let kw_hampered = keyword_style[Hampered]
+#let kw_aura = keyword_style[Aura]
 #let kw_hide = keyword_style[Hide]
 #let kw_incapacitated = keyword_style[Incapacitated]
 #let kw_interpose = keyword_style[Interpose]

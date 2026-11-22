@@ -1,6 +1,7 @@
 #import "terms.typ": *
 
 #let keywords = (
+  aura: [*Aura:* Every space within its Reach of you, yours included. It moves with you.],
   difficult_terrain: [*Difficult Terrain:* Each space of Difficult Terrain costs 2 spaces of movement.],
   d44: [*D44:* Roll 2d4. The leftmost die is the tens digit, and the other die is the ones digit.],
   d66: [*D66:* Roll 2d6. The leftmost die is the tens digit, and the other die is the ones digit.],
