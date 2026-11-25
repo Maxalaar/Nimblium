@@ -40,6 +40,37 @@ Pas de redite : une règle déjà sur une carte n'est pas répétée, la fiche n
 Chaque nouvelle classe reçoit sa fiche en même temps que ses cartes : une classe n'est pas
 COMPLÈTE sans elle.
 
+## Pages de règles (`rules/<domaine>.typ`)
+
+Les règles du jeu hors cartes, faites avec `card_structure/rules_page.typ` : une feuille A4 par
+domaine, sur deux colonnes. Le recto suffit d'habitude ; quand le texte déborde, `#verso`
+ouvre le verso (recto-verso, jamais plus). Le recto porte ce qui sert à table, le verso ce
+qu'on consulte (repos, conditions...). Une section (`#section("Titre")[...]`) ne se coupe
+jamais entre deux colonnes.
+
+Domaines prévus :
+- **Adventure** (fait) : stats, compétences, tests, sauvegardes, avantage, taille, chute ;
+  au verso PV, PV temporaires, dés de vie, Field Rest, Safe Rest. Pas de logement ni de downtime.
+- **Combat** : tour, actions, attaques, Defense, vitesse et portée, mouvement forcé, Cover et
+  Hide, lutte, concentration, Dying et Wounds ; au verso les conditions (reprises de
+  `conditions.typ`) et les règles des créatures (`creature_rules.txt`).
+- **Magic** : une page.
+- **Level Up** : création du personnage (ascendance, historique, répartition des stats) et
+  montée de niveau, une page.
+- Pas de page d'équipement : il deviendra des cartes.
+
+Rédaction :
+- Même langage que les cartes (`writing_rules.txt`) : anglais, phrases complètes, pas de
+  deux-points ni de parenthèses, termes via `terms.typ`, `check_terms.py` passe dessus.
+- Une règle nommée s'écrit `#rule[Nom][Texte.]` (nom en gras suivi d'un point). Un mot-clé
+  déjà défini se reprend tel quel depuis `keywords.typ` ou `conditions.typ`
+  (`#keywords.advantage`) au lieu d'être réécrit.
+- Les tableaux (`#values`) sont des listes de référence : un fragment y est permis.
+- Pas de redite d'une carte : on la nomme avec `#card_ref`. Pas de règles optionnelles du
+  livre, sauf décision de l'utilisateur.
+- Bloc de notes en bas du fichier, comme une carte (`review:`, `house-rule:`...), avec les
+  pages sources.
+
 ## Éléments qu'on ne transforme JAMAIS en carte
 
 - Augmentations de stats pures ("+1 DEX or WIL", "Key/Secondary Stat Increase").

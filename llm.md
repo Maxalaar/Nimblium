@@ -11,7 +11,7 @@ Avant de toucher à une carte, lis dans `nimblium_documents/` :
 4. `status.txt` : où en est le projet.
 
 Selon la tâche : `card_format.txt` (champs des cartes), `creature_rules.txt` (créatures),
-`art.txt` (images et icônes).
+`art.txt` (images et icônes), section « Pages de règles » de `workflow.txt` (`rules/`).
 
 Après chaque modification de carte : `python3 tools/check_terms.py`, et
 `python3 tools/review.py` pour voir ce qui reste à revoir. Les écarts volontaires au jeu sont

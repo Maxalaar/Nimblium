@@ -33,7 +33,7 @@ CHANGELOG = "2026-10-02"
 NOTE_TAGS = ("house-rule", "interpretation", "changelog")
 
 ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_TARGETS = ["class", "spells", "creatures", "keywords.typ", "conditions.typ"]
+DEFAULT_TARGETS = ["class", "spells", "creatures", "rules", "keywords.typ", "conditions.typ"]
 NOT_CARDS = {"mod.typ", "passive_abilities.typ", "keywords.typ", "conditions.typ"}
 BLOCK_COMMENT = re.compile(r"/\*(.*?)\*/", re.S)
 REVIEW = re.compile(r"^review: style=(\S+) changelog=(\S+)\s*$", re.M)

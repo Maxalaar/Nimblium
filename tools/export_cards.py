@@ -9,8 +9,8 @@ with a small gap between them (see card_structure/creat_frame.typ).
 PDF output (instead of PNG) lets Typst-aware viewers (e.g. the Tinymist
 VS Code extension) jump straight to the source .typ file on click.
 
-Class sheets (class/<class>/<class>_class_sheet.typ, one A4 page per class) are exported next
-to their source too.
+Class sheets (class/<class>/<class>_class_sheet.typ, one A4 page per class) and rules pages
+(rules/<area>.typ, one A4 sheet per area of the game) are exported next to their source too.
 
 With --book, also export every card into one PDF, nimblium_cards.pdf at the
 root, one card per page. There, card names written with #card_ref link to
@@ -100,7 +100,8 @@ def main():
 
     print(f"Exported {count} cards")
 
-    for sheet in sorted((ROOT / "class").rglob("*_class_sheet.typ")):
+    sheets = sorted((ROOT / "class").rglob("*_class_sheet.typ")) + sorted((ROOT / "rules").glob("*.typ"))
+    for sheet in sheets:
         out_path = sheet.with_suffix(".pdf")
         subprocess.run(["typst", "compile", "--root", str(ROOT), str(sheet), str(out_path)], check=True)
         print(f"  {sheet.relative_to(ROOT)} -> {out_path.relative_to(ROOT)}")

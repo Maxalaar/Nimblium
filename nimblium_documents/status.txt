@@ -69,6 +69,11 @@ donnent que le nom : pas de texte disponible, donc pas de cartes.
 - **Utility** : les 18 sorts du livre (3 par école) dans le dossier `utility/` de chaque école, alignés sur les
   changelogs (Ice Disk, Wintry Scrying, Wind Whisper, Spark Buddy). Temps d'incantation en stat CAST.
 
+## Règles (`rules/`)
+
+- **Adventure** : FAIT, recto-verso, au changelog du 2 octobre 2026.
+- **Combat**, **Magic**, **Level Up** : pas commencés.
+
 ## Créatures
 
 - **Goblins** (Goblins v1.1) : famille complète, au nouveau style. Les pièges et hasards du

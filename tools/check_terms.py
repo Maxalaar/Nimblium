@@ -10,11 +10,13 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-TARGETS = ["class", "spells", "creatures", "keywords.typ", "conditions.typ"]
+TARGETS = ["class", "spells", "creatures", "rules", "keywords.typ", "conditions.typ"]
 # Definition files name their own terms in plain text, without keyword styling.
 DEFINITION_FILES = {"keywords.typ", "conditions.typ"}
 # Arguments of #times(...) and #dc(...) are code, not card text.
 FORMULA_CALL = re.compile(r"#(times|dc)\((?:[^()]|\([^()]*\))*\)")
+# Section titles of rules pages (card_structure/rules_page.typ) are headings, not rules text.
+SECTION_TITLE = re.compile(r'#section\("(?:[^"\\]|\\.)*"')
 
 # Forbidden in card text (content blocks and text fields).
 TEXT_RULES = [
@@ -147,7 +149,7 @@ def check_file(path, names):
         if not (path.name in DEFINITION_FILES and ("kw_difficult_terrain" in rule[1] or "kw_cover" in rule[1] or "kw_advantage" in rule[1]))
     ]
     for block in content_blocks(source):
-        block = CARD_REF.sub("", FORMULA_CALL.sub("", block))
+        block = CARD_REF.sub("", FORMULA_CALL.sub("", SECTION_TITLE.sub("", block)))
         for pattern, advice in rules:
             for match in re.finditer(pattern, block):
                 problems.append(f'"{match.group(0)}": {advice}')
