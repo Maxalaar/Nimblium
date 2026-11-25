@@ -103,7 +103,7 @@ The stat row below the name and types shows, in this order and only when present
 
 ## 5. Shared blocks
 
-`creatures/passive_abilities.typ` holds the blocks several creatures share. Use them instead of
+`game/creatures/passive_abilities.typ` holds the blocks several creatures share. Use them instead of
 rewriting the text:
 
 | Block | Who | Effect |
@@ -121,7 +121,7 @@ rewriting the text:
 | `Slam (2×). 1d4+8.` | one block named Slam: `attacks: 2, damage: "1d4+8"` |
 | `Shoot. (Range 8) 1d6.` | `range: 8, damage: "1d6"` |
 | `On damage: Dazed.` / `On crit: Prone.` | "Whenever this attack deals damage, the target is Dazed." / "Whenever this attack crits, ..." |
-| "The first time this dies, ..." | passive block with a `1/encounter` limit (Undying is shared: `passive_abilities.undying` in `creatures/passive_abilities.typ`) |
+| "The first time this dies, ..." | passive block with a `1/encounter` limit (Undying is shared: `passive_abilities.undying` in `game/creatures/passive_abilities.typ`) |
 | `Medium` / `Heavy` armor | `defense: 10` / `defense: 20` |
 | `Lvl 1/4` minion | no level, type "Minion", `passive_abilities.minion` |
 | Bloodied / Last Stand abilities | passive blocks whose text starts with "While this creature is Bloodied, ..." / "When this creature drops to 0 HP, ..." |

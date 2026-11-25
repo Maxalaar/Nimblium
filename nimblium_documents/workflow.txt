@@ -14,24 +14,24 @@ Comment on travaille : sources, organisation, vérifications, suivi.
   Hunter p.24, Mage p.30, Oathsworn p.36, Shadowmancer p.42, Shepherd p.48, Songweaver p.54,
   Stormshifter p.60, Zephyr p.66, Extra Subclasses p.73.
 
-## Organisation des fichiers par classe (`class/<nom_classe>/`)
+## Organisation des fichiers par classe (`game/class/<nom_classe>/`)
 
-- Capacités de base de la classe : fichiers `.typ` à plat directement dans `class/<nom>/`.
+- Capacités de base de la classe : fichiers `.typ` à plat directement dans `game/class/<nom>/`.
 - Un pool de capacités à choisir (Underhanded Ability du Cheat, Thrill of the Hunt du Hunter,
-  Sacred Grace du Shepherd) va dans son propre sous-dossier `class/<nom>/<pool>/` avec son
+  Sacred Grace du Shepherd) va dans son propre sous-dossier `game/class/<nom>/<pool>/` avec son
   propre `mod.typ`, importé via `#import "<pool>/mod.typ": *` depuis le mod.typ de la classe.
-- Les sous-classes vont dans `class/<nom>/subclasses/<sous_classe>/`, chacune avec son
-  `mod.typ` ; `class/<nom>/subclasses/mod.typ` agrège toutes les sous-classes ; le mod.typ de
+- Les sous-classes vont dans `game/class/<nom>/subclasses/<sous_classe>/`, chacune avec son
+  `mod.typ` ; `game/class/<nom>/subclasses/mod.typ` agrège toutes les sous-classes ; le mod.typ de
   la classe importe `subclasses/mod.typ`.
 - Chaque nouveau fichier doit être ajouté au `mod.typ` de son dossier (remonte en cascade
-  jusqu'à `class/mod.typ`) — nécessaire pour compiler/tester via `#nom_symbole`, même si
+  jusqu'à `game/class/mod.typ`) — nécessaire pour compiler/tester via `#nom_symbole`, même si
   `tools/export_cards.py` découvre les fichiers indépendamment par parcours du système de fichiers.
 - Noms de fichiers en snake_case dérivés du nom de la capacité, ponctuation retirée (ex:
   "How'd YOU get here?!" → `how_you_get_here.typ`).
 
-## Fiche de classe (`class/<nom>/<nom>_class_sheet.typ`)
+## Fiche de classe (`game/class/<nom>/<nom>_class_sheet.typ`)
 
-Une page A4 par classe, faite avec `card_structure/class_sheet.typ` : infos de départ (stats
+Une page A4 par classe, faite avec `templates/class_sheet.typ` : infos de départ (stats
 clés, dé de vie, PV, sauvegardes, armure, armes ; pas l'équipement de départ), tableau des niveaux 1 à 20 (ce
 qu'on gagne à chaque niveau, tier de sort max) et, en bas, les sous-classes par niveau et les
 listes d'options. Elle remplace les cartes qui ne feraient que lister des choix par niveau.
@@ -40,9 +40,9 @@ Pas de redite : une règle déjà sur une carte n'est pas répétée, la fiche n
 Chaque nouvelle classe reçoit sa fiche en même temps que ses cartes : une classe n'est pas
 COMPLÈTE sans elle.
 
-## Pages de règles (`rules/<domaine>.typ`)
+## Pages de règles (`game/rules/<domaine>.typ`)
 
-Les règles du jeu hors cartes, faites avec `card_structure/rules_page.typ` : une feuille A4 par
+Les règles du jeu hors cartes, faites avec `templates/rules_page.typ` : une feuille A4 par
 domaine, sur deux colonnes. Le recto suffit d'habitude ; quand le texte déborde, `#verso`
 ouvre le verso (recto-verso, jamais plus). Le recto porte ce qui sert à table, le verso ce
 qu'on consulte (repos, conditions...). Une section (`#section("Titre")[...]`) ne se coupe
@@ -53,7 +53,7 @@ Domaines prévus :
   au verso PV, PV temporaires, dés de vie, Field Rest, Safe Rest. Pas de logement ni de downtime.
 - **Combat** : tour, actions, attaques, Defense, vitesse et portée, mouvement forcé, Cover et
   Hide, lutte, concentration, Dying et Wounds ; au verso les conditions (reprises de
-  `conditions.typ`) et les règles des créatures (`creature_rules.txt`).
+  `game/conditions.typ`) et les règles des créatures (`creature_rules.txt`).
 - **Magic** : une page.
 - **Level Up** : création du personnage (ascendance, historique, répartition des stats) et
   montée de niveau, une page.
@@ -63,7 +63,7 @@ Rédaction :
 - Même langage que les cartes (`writing_rules.txt`) : anglais, phrases complètes, pas de
   deux-points ni de parenthèses, termes via `terms.typ`, `check_terms.py` passe dessus.
 - Une règle nommée s'écrit `#rule[Nom][Texte.]` (nom en gras suivi d'un point). Un mot-clé
-  déjà défini se reprend tel quel depuis `keywords.typ` ou `conditions.typ`
+  déjà défini se reprend tel quel depuis `game/keywords.typ` ou `game/conditions.typ`
   (`#keywords.advantage`) au lieu d'être réécrit.
 - Les tableaux (`#values`) sont des listes de référence : un fragment y est permis.
 - Pas de redite d'une carte : on la nomme avec `#card_ref`. Pas de règles optionnelles du
@@ -141,8 +141,8 @@ follow its order.
 - Une note par paragraphe, séparées par une ligne vide, en anglais comme les cartes.
   `python3 tools/review.py --rules` les liste toutes, par balise.
 - Une règle qui concerne une famille entière va dans le `mod.typ` du dossier (ex :
-  `creatures/goblin/mod.typ`) ; une règle sur un mot-clé, dans `keywords.typ` ou
-  `conditions.typ`. Une règle qui touche tout le jeu va dans `README.txt`.
+  `game/creatures/goblin/mod.typ`) ; une règle sur un mot-clé, dans `game/keywords.typ` ou
+  `game/conditions.typ`. Une règle qui touche tout le jeu va dans `README.txt`.
 
 ## Rythme de collaboration
 

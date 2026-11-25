@@ -3,7 +3,7 @@
 Les types de cartes, leurs champs et leur rendu. Pour le texte lui-même, voir
 `writing_rules.txt` ; pour les créatures, `creature_rules.txt`.
 
-## Types de cartes (`card_structure/`)
+## Types de cartes (`templates/`)
 
 - `creat_ability.typ` → cartes de type **Ability**
 - `creat_spell.typ` → cartes de type **Spell**
@@ -68,8 +68,8 @@ et le dos côte à côte (5 mm d'écart). Design épuré, noir et blanc, peu d'e
 
 Utilisé pour centraliser une règle/ressource qui s'étale sur plusieurs niveaux ou toute la
 classe, plutôt que d'en faire une carte capacité par niveau. Champ `description` (pas
-`blocks`/`effect`). Précédents : `class/hunter/thrill_of_the_hunt_charge.typ` (règles de gain
-de charge TotH), `class/shepherd/shepherd_mana_pool.typ` (formule du pool de mana + déblocage
+`blocks`/`effect`). Précédents : `game/class/hunter/thrill_of_the_hunt_charge.typ` (règles de gain
+de charge TotH), `game/class/shepherd/shepherd_mana_pool.typ` (formule du pool de mana + déblocage
 des tiers de sorts par niveau, avec le même style `*Level X:*` que `sneak_attack.typ`).
 
 ### Spell (`creat_spell.typ`)
@@ -78,7 +78,7 @@ Champs disponibles : `cost`, `casting_time` (temps d'incantation en minutes, sta
 `high_Levels`, `upcast`, `flavor`, `reminder`. `type` vaut toujours (type, école, palier, tags...), ex
 `("Spell","Fire","Cantrip")`, `("Spell","Lightning","Tier 3","AoE")`.
 Les sorts utilitaires mettent `"Utility"` à la place du palier : `("Spell","Ice","Utility")`
-(dossier `utility/` de leur école, ex `spells/ice/utility/`, icône de leur école).
+(dossier `utility/` de leur école, ex `game/spells/ice/utility/`, icône de leur école).
 
 Rendu (sans libellé `Cost:` ni `Effect:`) :
 
@@ -102,7 +102,7 @@ Format (`creature_rules.txt`) : `blocks` comme les capacités de héros, avec en
 par bloc (`name`, `kind`, `cost`, `limitation`, `effect`) et, pour les attaques, `attacks`,
 `reach`, `range` et `damage`, affichés en capsules sur la ligne du coût ; `actions` (stat ACT, affichée en
 premier et seulement si > 1), `reminder`, `hit_points`, `defense`, `speed`, `level`, `icon`.
-Les blocs partagés sont dans `creatures/passive_abilities.typ` : `passive_abilities.undying`,
+Les blocs partagés sont dans `game/creatures/passive_abilities.typ` : `passive_abilities.undying`,
 et `passive_abilities.minion`. Une créature = un fichier = une carte par défaut (un texte trop
 long déborde, pour qu'on le voie). L'option `split: true` autorise le découpage automatique
 en deux cartes "1/2" et "2/2" (voir `creature_rules.txt`) ; le PDF exporté montre alors les deux
@@ -119,8 +119,8 @@ en deux cartes :
 - La **créature** (`creat_creature`) documente tout le détail (attaques, soin, portée, dé qui
   scale, etc.) en sections `passive`/`active`.
 
-Voir `class/shepherd/lifebinding_spirit.typ` + `class/shepherd/spirit_companion.typ`.
+Voir `game/class/shepherd/lifebinding_spirit.typ` + `game/class/shepherd/spirit_companion.typ`.
 Même principe pour un sort qui accorde de nouvelles actions (transformation) : le sort décrit
 l'effet et dit "You gain the X abilities", une carte `creat_ability` séparée porte les actions
-(nom de chaque action dans le champ `name` du bloc). Voir `spells/fire/dragonform.typ` +
-`spells/fire/dragon_form.typ`. Les sorts n'ont pas de champ `blocks`.
+(nom de chaque action dans le champ `name` du bloc). Voir `game/spells/fire/dragonform.typ` +
+`game/spells/fire/dragon_form.typ`. Les sorts n'ont pas de champ `blocks`.

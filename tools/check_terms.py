@@ -10,12 +10,12 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-TARGETS = ["class", "spells", "creatures", "rules", "keywords.typ", "conditions.typ"]
+TARGETS = ["game"]
 # Definition files name their own terms in plain text, without keyword styling.
 DEFINITION_FILES = {"keywords.typ", "conditions.typ"}
 # Arguments of #times(...) and #dc(...) are code, not card text.
 FORMULA_CALL = re.compile(r"#(times|dc)\((?:[^()]|\([^()]*\))*\)")
-# Section titles of rules pages (card_structure/rules_page.typ) are headings, not rules text.
+# Section titles of rules pages (templates/rules_page.typ) are headings, not rules text.
 SECTION_TITLE = re.compile(r'#section\("(?:[^"\\]|\\.)*"')
 
 # Forbidden in card text (content blocks and text fields).
@@ -86,16 +86,16 @@ def content_blocks(source):
 
 # Card names: every card file's main `name:`. A card name in another card's text must go
 # through #card_ref("Name") (terms.typ), which shows it in italics and links to that card.
-CARD_DIRS = ["class", "spells", "creatures"]
+CARD_DIRS = ["game/class", "game/spells", "game/creatures"]
 CARD_NAME = re.compile(r'#let \w+_data = \(\s*name: "((?:[^"\\]|\\.)*)"')
 CARD_REF = re.compile(r'#card_ref\(\s*"((?:[^"\\]|\\.)*)"(?:\s*,\s*"(?:[^"\\]|\\.)*")?\s*\)')
 # Words that match a card name but don't refer to that card: (file, name).
 REF_EXCEPTIONS = {
-    ("class/shepherd/searing_light.typ", "Heal"),          # the verb, at the start of a sentence
-    ("creatures/goblin/goblin_taskmaster.typ", "Goblin"),  # any goblin, not the Goblin card
-    ("creatures/goblin/nilbog.typ", "Goblin"),
-    ("class/oathsworn/oathsworn_class_sheet.typ", "Vengeance"),  # Oath of Vengeance, not the spell
-    ("class/mage/mage_class_sheet.typ", "Spellshaper"),           # the kind of ability; the card is cited once
+    ("game/class/shepherd/searing_light.typ", "Heal"),          # the verb, at the start of a sentence
+    ("game/creatures/goblin/goblin_taskmaster.typ", "Goblin"),  # any goblin, not the Goblin card
+    ("game/creatures/goblin/nilbog.typ", "Goblin"),
+    ("game/class/oathsworn/oathsworn_class_sheet.typ", "Vengeance"),  # Oath of Vengeance, not the spell
+    ("game/class/mage/mage_class_sheet.typ", "Spellshaper"),           # the kind of ability; the card is cited once
 }
 
 

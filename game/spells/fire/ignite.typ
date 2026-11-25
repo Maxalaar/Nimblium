@@ -1,0 +1,25 @@
+#import "/global.typ": *
+
+#let spell_data = (
+    name: "Ignite",
+    type: (
+        "Spell",
+        "Fire",
+        "Tier 1",
+    ),
+    cost: (
+        actions(2),
+        mana(1),
+    ),
+    range: "10",
+    damage: "4d10",
+    effect: [Cast this spell only on a #kw_smoldering creature.],
+    upcast: [It deals 10 more damage.],
+    reminder: (conditions.smoldering,),
+)
+
+#let ignite = creat_spell(spell_data)
+
+/*
+review: style=2026-11-14 changelog=2026-10-02
+*/

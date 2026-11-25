@@ -67,13 +67,22 @@ Elles touchent tout le jeu, donc elles vivent ici et pas dans une carte :
 - **Smoldering** : tout effet qui s'appuie sur une cible Smoldering met fin à la condition.
 - **Sorts** : ils infligent le type de dégâts de leur école sauf mention contraire.
 
+## Arborescence
+
+- `game/` : le contenu du jeu. `class/`, `spells/`, `creatures/`, `rules/` (pages de règles),
+  `keywords.typ` et `conditions.typ`.
+- `templates/` : la mise en page (cadres et types de cartes, fiche de classe, page de règles).
+- `global.typ`, `terms.typ`, `style.typ` (racine) : ce que tous les fichiers importent.
+  Les imports vers la racine sont absolus : `#import "/global.typ": *`.
+- `tools/`, `art/`, `nimblium_documents/`, `nimble_documents/` : autour du jeu.
+
 ## Les fichiers de ce dossier
 
 Rédaction des cartes :
 - `writing_rules.txt` : comment on écrit le texte d'une carte (à lire avant toute carte).
 - `creature_rules.txt` : règles maison des créatures et format de leurs cartes.
 - `card_format.txt` : les types de cartes, leurs champs et leur mise en page.
-- Pages de règles (`rules/`, une feuille A4 par domaine) : section « Pages de règles » de
+- Pages de règles (`game/rules/`, une feuille A4 par domaine) : section « Pages de règles » de
   `workflow.txt`.
 
 Art :

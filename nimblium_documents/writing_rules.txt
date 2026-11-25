@@ -92,7 +92,7 @@ Typst syntax pitfalls:
 
 ## 6. Keywords and reminders
 
-- Definitions: `conditions.typ` (conditions), `keywords.typ` (generic keywords), and the
+- Definitions: `game/conditions.typ` (conditions), `game/keywords.typ` (generic keywords), and the
   class-specific `*_keywords.typ` files (`berserker_keywords.typ`, `hunter_keywords.typ`,
   `mage_keywords.typ`).
 - When the text uses a defined term, write its `#kw_...` and add its definition to the card's
@@ -115,7 +115,7 @@ Typst syntax pitfalls:
 - **Several distinct effects**: one block per effect on the same card, rather than a single
   paragraph. See `explorer_of_the_wilds.typ`, `misdirection.typ`, `apex_predator.typ`.
 - **Level progression**: bold `*Level X:*` lines inside the same block, rather than several
-  cards. See `class/cheat/sneak_attack.typ`.
+  cards. See `game/class/cheat/sneak_attack.typ`.
 - **List the levels**: never "every 5 levels". When the bonus is the same at each step, name
   the levels in one sentence: "This spell's damage increases by 4 at levels 5, 10, 15 and 20."
   When the steps differ, use `*Level X:*` lines.

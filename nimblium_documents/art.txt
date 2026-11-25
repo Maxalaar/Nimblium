@@ -71,7 +71,7 @@ To add a family:
 3. Save it as `art/icons/<family>.svg`, add a line to
    `art/icons/CREDITS.md` (CC BY 3.0 requires it).
 4. Map the card type to the file in
-   `card_structure/family_icons.typ`.
+   `templates/family_icons.typ`.
    The gray is set there too (`icon_gray`).
 
 A card's own `icon:` field replaces the family icon on its back; the front
