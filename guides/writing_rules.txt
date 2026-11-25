@@ -65,10 +65,10 @@ A reviewed card ends with a notes block holding `review: style=<date> changelog=
 - **Obvious rulings**: don't write what any GM would decide anyway (e.g. "if several creatures
   are equally close, the GM chooses one"). They make the card heavier for nothing.
 
-## 5. Game terms: always go through `terms.typ`
+## 5. Game terms: always go through `game/terms.typ`
 
 A game term has a single spelling, capitalized (Marked, Safe Rest, Difficult Terrain). It is
-never typed by hand: call its function or constant from `terms.typ`, available everywhere
+never typed by hand: call its function or constant from `game/terms.typ`, available everywhere
 through `global.typ`. Run `python3 tools/check_terms.py` after every change: it reports hand-typed
 forms.
 

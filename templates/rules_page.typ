@@ -5,7 +5,7 @@
 
 #import "creat_frame.typ": ink, hair
 #import "class_sheet.typ": sheet_tracking
-#import "/style.typ": reminder_color
+#import "/templates/style.typ": reminder_color
 
 // A section: its title in small capitals, then its text. It never splits across columns.
 #let section(title, body) = block(breakable: false, width: 100%, above: 6mm, below: 6mm, {

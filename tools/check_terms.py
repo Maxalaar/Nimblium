@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Report game terms typed by hand instead of through terms.typ.
+"""Report game terms typed by hand instead of through game/terms.typ.
 
 Run from anywhere: python3 tools/check_terms.py
 Exits with status 1 if a raw form is found.
@@ -13,6 +13,8 @@ ROOT = Path(__file__).resolve().parent.parent
 TARGETS = ["game"]
 # Definition files name their own terms in plain text, without keyword styling.
 DEFINITION_FILES = {"keywords.typ", "conditions.typ"}
+# The vocabulary itself (game/terms.typ) is not card text.
+NOT_CHECKED = {"terms.typ"}
 # Arguments of #times(...) and #dc(...) are code, not card text.
 FORMULA_CALL = re.compile(r"#(times|dc)\((?:[^()]|\([^()]*\))*\)")
 # Section titles of rules pages (templates/rules_page.typ) are headings, not rules text.
@@ -85,7 +87,7 @@ def content_blocks(source):
 
 
 # Card names: every card file's main `name:`. A card name in another card's text must go
-# through #card_ref("Name") (terms.typ), which shows it in italics and links to that card.
+# through #card_ref("Name") (game/terms.typ), which shows it in italics and links to that card.
 CARD_DIRS = ["game/class", "game/spells", "game/creatures"]
 CARD_NAME = re.compile(r'#let \w+_data = \(\s*name: "((?:[^"\\]|\\.)*)"')
 CARD_REF = re.compile(r'#card_ref\(\s*"((?:[^"\\]|\\.)*)"(?:\s*,\s*"(?:[^"\\]|\\.)*")?\s*\)')
@@ -167,7 +169,7 @@ def main():
     files = []
     for target in TARGETS:
         path = ROOT / target
-        files.extend(sorted(p for p in path.rglob("*.typ") if not p.name.startswith(".")) if path.is_dir() else [path])
+        files.extend(sorted(p for p in path.rglob("*.typ") if not p.name.startswith(".") and p.name not in NOT_CHECKED) if path.is_dir() else [path])
     names = card_names()
     total = 0
     for path in files:

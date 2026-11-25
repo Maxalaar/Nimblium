@@ -75,5 +75,5 @@ review: style=2026-11-14 changelog=2026-10-02
 
 Source: Heroes p.25-29 and the 2026-10-02 changelog (Dread Hunter replaces Pack Hunter at
 level 11). Remember the Wild (change your choices on a Safe Rest) is not used: global house
-rule in nimblium_documents/README.txt.
+rule in guides/README.txt.
 */

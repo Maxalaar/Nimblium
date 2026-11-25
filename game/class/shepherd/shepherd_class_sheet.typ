@@ -71,5 +71,5 @@ review: style=2026-11-14 changelog=2026-10-02
 Source: Heroes p.49-53. The Shepherd keeps the house-rule companion (game/class/shepherd/mod.typ):
 Lifebinding Spirit stays a tier 1 spell at level 2, Searing Light stays at level 1. Serve
 (change your choices on a Safe Rest) is not used: global house rule in
-nimblium_documents/README.txt.
+guides/README.txt.
 */

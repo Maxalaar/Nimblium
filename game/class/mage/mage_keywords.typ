@@ -1,4 +1,4 @@
-#import "/terms.typ": *
+#import "/game/terms.typ": *
 
 #let mage_keywords = (
   demand_control: [*Demand Control:* Choose 1 option from the #card_ref("Control Table") that you haven't chosen yet. All options become available again when you roll Initiative or once you have chosen each of them.],

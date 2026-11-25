@@ -4,8 +4,8 @@ Générateur de cartes Typst pour un jeu de rôle basé sur le système **Nimble
 (capacité, sort, créature, mécanique) est un fichier `.typ` individuel, exporté en PDF par
 `tools/export_cards.py` (recto à gauche, dos à droite).
 
-Les règles du jeu de base sont dans `nimble_documents/` (PDF, non versionnés). Ce dossier,
-`nimblium_documents/`, contient tout ce qui est propre à Nimblium : comment on rédige les
+Les règles du jeu de base sont dans `sources/` (PDF, non versionnés). Ce dossier,
+`guides/`, contient tout ce qui est propre à Nimblium : comment on rédige les
 cartes, comment on gère le projet, et où on en est.
 
 ## Philosophie
@@ -28,7 +28,7 @@ cartes, comment on gère le projet, et où on en est.
    - Core Rules, GMG & Heroes Full Changelog (2 octobre 2026) : le plus récent, il prime ;
    - Core Rules Reprint Full Changelog : plus ancien.
    Ces pages ne résument que les changements : une valeur absente se prend dans le PDF.
-3. Les PDF de `nimble_documents/`, qui datent d'AVANT ces changelogs et ne peuvent pas être mis
+3. Les PDF de `sources/`, qui datent d'AVANT ces changelogs et ne peuvent pas être mis
    à jour. Toute règle tirée d'un PDF doit donc être confrontée aux changelogs.
 
 ## Règles maison globales
@@ -70,11 +70,17 @@ Elles touchent tout le jeu, donc elles vivent ici et pas dans une carte :
 ## Arborescence
 
 - `game/` : le contenu du jeu. `class/`, `spells/`, `creatures/`, `rules/` (pages de règles),
-  `keywords.typ` et `conditions.typ`.
-- `templates/` : la mise en page (cadres et types de cartes, fiche de classe, page de règles).
-- `global.typ`, `terms.typ`, `style.typ` (racine) : ce que tous les fichiers importent.
-  Les imports vers la racine sont absolus : `#import "/global.typ": *`.
-- `tools/`, `art/`, `nimblium_documents/`, `nimble_documents/` : autour du jeu.
+  `keywords.typ`, `conditions.typ` et `terms.typ` (le vocabulaire).
+- `templates/` : la mise en page (cadres et types de cartes, fiche de classe, page de règles,
+  `style.typ`).
+- `global.typ` (racine) : le seul import des cartes. Il rassemble les gabarits, le
+  vocabulaire (`game/terms.typ`) et les définitions. Les imports sont absolus depuis la
+  racine : `#import "/global.typ": *`.
+- `CLAUDE.md` (racine) : point d'entrée, chargé automatiquement par Claude Code.
+- `guides/` (ce dossier) : comment on écrit, comment on travaille, où on en est.
+- `sources/` : les PDF officiels de Nimble (non versionnés).
+- `build/` : le livre exporté `nimblium_cards.pdf` (non versionné).
+- `tools/`, `art/` : scripts et images.
 
 ## Les fichiers de ce dossier
 
@@ -96,7 +102,7 @@ Gestion du projet :
 - `weblinks.txt` : liens utiles, dont les changelogs officiels.
 
 Outils (`tools/`) :
-- `check_terms.py` : signale les termes de jeu tapés à la main au lieu de `terms.typ`.
+- `check_terms.py` : signale les termes de jeu tapés à la main au lieu de `game/terms.typ`.
 - `review.py` : état des révisions par classe, et liste des notes de cartes (`--rules`).
 - `export_cards.py` : exporte chaque carte, fiche de classe et page de règles en PDF à côté
   de son `.typ`.

@@ -74,5 +74,5 @@ review: style=2026-11-14 changelog=2026-10-02
 Source: Heroes p.37-41 and the 2026-10-02 changelog (weapons: melee STR weapons; Zealot,
 Radiant Judgment, Explosive Judgment, Unstoppable Protector, Glorious Reprieve). Tiers: 1 at
 level 2, 2 at 4, 3 at 6, 4 at 8, 5 at 10, 6 at 13, 7 at 17. Serve Selflessly (change your
-choices on a Safe Rest) is not used: global house rule in nimblium_documents/README.txt.
+choices on a Safe Rest) is not used: global house rule in guides/README.txt.
 */

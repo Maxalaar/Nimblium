@@ -8,5 +8,5 @@
 #import "game/class/berserker/berserker_keywords.typ": berserker_keywords
 #import "game/class/hunter/hunter_keywords.typ": hunter_keywords
 #import "game/class/mage/mage_keywords.typ": mage_keywords
-#import "style.typ": reminder_color, keyword_style
-#import "terms.typ": *
+#import "templates/style.typ": reminder_color, keyword_style
+#import "game/terms.typ": *

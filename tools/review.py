@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Card review tool: which cards are up to date, and which depart from the game rules.
 
-Each card ends with a block comment holding its notes (see nimblium_documents/workflow.txt):
+Each card ends with a block comment holding its notes (see guides/workflow.txt):
 
     /*
     review: style=2026-11-14 changelog=2026-10-02
@@ -34,7 +34,7 @@ NOTE_TAGS = ("house-rule", "interpretation", "changelog")
 
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_TARGETS = ["game"]
-NOT_CARDS = {"mod.typ", "passive_abilities.typ", "keywords.typ", "conditions.typ"}
+NOT_CARDS = {"mod.typ", "passive_abilities.typ", "keywords.typ", "conditions.typ", "terms.typ"}
 BLOCK_COMMENT = re.compile(r"/\*(.*?)\*/", re.S)
 REVIEW = re.compile(r"^review: style=(\S+) changelog=(\S+)\s*$", re.M)
 NOTE_START = re.compile(r"^(" + "|".join(NOTE_TAGS) + r"):\s*(.*)$")

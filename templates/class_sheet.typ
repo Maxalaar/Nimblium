@@ -5,7 +5,7 @@
 // next to its source. Rules already on a card are not repeated here: the sheet names the card.
 
 #import "creat_frame.typ": icon_image, ink, hair
-#import "/style.typ": reminder_color
+#import "/templates/style.typ": reminder_color
 
 #let sheet_tracking = 2pt
 

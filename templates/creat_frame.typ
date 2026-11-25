@@ -2,7 +2,7 @@
 // text, optional stat row) and a back (optional icon, name, types).
 // `creat_card` returns both faces side by side: front on the left, back on
 // the right.
-#import "/style.typ": reminder_color
+#import "/templates/style.typ": reminder_color
 #import "family_icons.typ": family_icons, icon_gray
 
 #let card_width = 63mm
@@ -252,7 +252,7 @@
 #let creat_card(name, types, body, stats: (), stat_cut: none, back_types: none, icon: none, part: none) = {
   let extra = if part == none { () } else { (part,) }
   let family = family_icon(types)
-  // Marker found by #card_ref (terms.typ) to link to this card.
+  // Marker found by #card_ref (game/terms.typ) to link to this card.
   metadata((card: name))
   box(grid(columns: 2, column-gutter: card_gap,
     card_front(name, types + extra, body, stats: stats, stat_cut: stat_cut, icon: family),

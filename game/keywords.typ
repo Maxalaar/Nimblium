@@ -1,4 +1,4 @@
-#import "/terms.typ": *
+#import "/game/terms.typ": *
 
 #let keywords = (
   aura: [*Aura:* Every space within its Reach of you, yours included. It moves with you.],

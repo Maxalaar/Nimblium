@@ -1,4 +1,4 @@
-#import "/terms.typ": *
+#import "/game/terms.typ": *
 
 // Blocks shared by several creatures (creature_rules.txt).
 

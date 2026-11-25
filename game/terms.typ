@@ -1,6 +1,6 @@
 // Single source for game vocabulary. Available on every card through global.typ.
 // Use these instead of typing the term by hand; tools/check_terms.py reports raw forms.
-#import "style.typ": keyword_style, card_ref_style
+#import "/templates/style.typ": keyword_style, card_ref_style
 
 // Stats and acronyms
 #let STR = "STR"

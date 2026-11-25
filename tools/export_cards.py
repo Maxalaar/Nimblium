@@ -12,9 +12,9 @@ VS Code extension) jump straight to the source .typ file on click.
 Class sheets (game/class/<class>/<class>_class_sheet.typ, one A4 page per class) and rules pages
 (game/rules/<area>.typ, one A4 sheet per area of the game) are exported next to their source too.
 
-With --book, also export every card into one PDF, nimblium_cards.pdf at the
-root, one card per page. There, card names written with #card_ref link to
-their card (terms.typ).
+With --book, also export every card into one PDF, build/nimblium_cards.pdf, one
+card per page. There, card names written with #card_ref link to their card
+(game/terms.typ).
 """
 
 import subprocess
@@ -65,7 +65,7 @@ def export_card(path: Path) -> Path:
     return out_path
 
 
-BOOK_PATH = ROOT / "nimblium_cards.pdf"
+BOOK_PATH = ROOT / "build" / "nimblium_cards.pdf"
 
 
 def export_book(paths) -> Path:
@@ -78,6 +78,7 @@ def export_book(paths) -> Path:
         if i:
             lines.append("#pagebreak()")
         lines.append(f"#card_{i}")
+    BOOK_PATH.parent.mkdir(exist_ok=True)
     wrapper = ROOT / ".export_book.typ"
     wrapper.write_text("\n".join(lines) + "\n")
     try:

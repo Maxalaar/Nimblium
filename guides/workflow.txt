@@ -4,7 +4,7 @@ Comment on travaille : sources, organisation, vérifications, suivi.
 
 ## Extraction du texte source
 
-`pdftotext -f <début> -l <fin> -layout nimble_documents/Heroes.pdf -`
+`pdftotext -f <début> -l <fin> -layout sources/Heroes.pdf -`
 
 - Les numéros de page imprimés en pied de page sont décalés de -1 par rapport à la page PDF
   demandée (ex: demander les pages PDF 14-17 donne des pieds de page 13-16).
@@ -61,7 +61,7 @@ Domaines prévus :
 
 Rédaction :
 - Même langage que les cartes (`writing_rules.txt`) : anglais, phrases complètes, pas de
-  deux-points ni de parenthèses, termes via `terms.typ`, `check_terms.py` passe dessus.
+  deux-points ni de parenthèses, termes via `game/terms.typ`, `check_terms.py` passe dessus.
 - Une règle nommée s'écrit `#rule[Nom][Texte.]` (nom en gras suivi d'un point). Un mot-clé
   déjà défini se reprend tel quel depuis `game/keywords.typ` ou `game/conditions.typ`
   (`#keywords.advantage`) au lieu d'être réécrit.
@@ -105,7 +105,7 @@ nouvelle demande.
 ## Export
 
 `python3 tools/export_cards.py` exporte chaque carte en PDF à côté de son `.typ`. Avec
-`--book`, il crée aussi `nimblium_cards.pdf` à la racine : toutes les cartes, une par page,
+`--book`, il crée aussi `build/nimblium_cards.pdf` : toutes les cartes, une par page,
 où les noms écrits avec `#card_ref` sont des liens cliquables vers la carte citée (dans les
 PDF individuels, ils sont seulement en italique).
 

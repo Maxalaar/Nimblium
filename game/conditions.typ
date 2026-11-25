@@ -1,4 +1,4 @@
-#import "/terms.typ": *
+#import "/game/terms.typ": *
 
 #let conditions = (
   asleep: [*Asleep:* This creature is Incapacitated until two of its turns have passed or until it takes damage.],
