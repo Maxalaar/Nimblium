@@ -28,7 +28,7 @@
   #rule[5\. The rest of your sheet][Fill in these values.]
 
   #values(columns: (27mm, 1fr),
-    [Max #HP], [Your class sheet's starting #HP.],
+    [Max #HP], [10, plus #LVL times your Hit Die's value.],
     [Hit Dice], [#LVL dice, of the size your class sheet gives.],
     [#defense], [Your #DEX, plus your armor.],
     [Initiative], [Your #DEX.],
@@ -57,7 +57,7 @@
 #section("Leveling up")[
   When the GM says your hero has earned a level, you gain it during your next #safe_rest.
 
-  #rule[#HP][Your max #HP increases by the value of your Hit Die.]
+  #rule[#HP][Your max #HP increases by your Hit Die's value.]
 
   #values(columns: (1fr,) * 5, header: ("d4", "d6", "d8", "d10", "d12"),
     [+3], [+4], [+5], [+7], [+8],
@@ -85,8 +85,9 @@ increase, the sheet tracks Speed, Size and Defense instead of height and weight)
 
 house-rule: Class choices only change when you level up (guides/house_rules.txt).
 
-house-rule: The max HP increase is always the fixed value of the Hit Die (the book: roll the
-Hit Die with advantage, or take the fixed value). No random stats.
+house-rule: Max HP is 10 + LVL × the Hit Die's value (d4 3, d6 4, d8 5, d10 7, d12 8), with no
+roll and no starting HP per class (the book: the class's starting HP, then roll the Hit Die
+with advantage or take the fixed value at each level). Within 4 HP of the book above level 1.
 
 interpretation: Starting equipment and gold are left out (user ruling 2026-11-26). Inventory
 slot sizes will come with the equipment cards.

@@ -11,16 +11,14 @@
   intro: [I will protect my companions and vanquish evil at all costs.],
   info: (
     ("Key stats", [#STR, #WIL]),
-    ("Hit die", [1d10]),
-    ("Starting HP", [17]),
+    ("Hit die", [d10, +7 #HP per level]),
     ("Armor", [All armor]),
     ("Weapons", [Melee #STR weapons]),
-    ("Spell schools", [Radiant]),
   ),
   levels: (
     (n, [#card_ref("Radiant Judgment"). #card_ref("Lay on Hands").]),
     (1, [#card_ref("Oathsworn Mana Pool"). Radiant cantrips and tier 1 spells. #card_ref("Zealot"). #card_ref("Paragon of Virtue").]),
-    (1, [Subclass: Oath of Vengeance or Oath of Refuge. #jd("d8") Sacred Decrees: choose 1.]),
+    (1, [Choose a subclass, Oath of Vengeance or Oath of Refuge. #jd("d8") Choose 1 Sacred Decree.]),
     (2, [#card_ref("My Life, for My Friends"). #stat_up[+1 #STR or #WIL.]]),
     (2, [#jd("d10") Upgraded cantrips. #stat_up[+1 #DEX or #INT.]]),
     (3, [Choose 1 more Sacred Decree.]),

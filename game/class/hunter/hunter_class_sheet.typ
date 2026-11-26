@@ -10,15 +10,14 @@
   intro: [Respect the forest and her children, and she will bestow upon you many gifts.],
   info: (
     ("Key stats", [#DEX, #WIL]),
-    ("Hit die", [1d8]),
-    ("Starting HP", [13]),
+    ("Hit die", [d8, +5 #HP per level]),
     ("Armor", [Leather]),
     ("Weapons", [#DEX weapons]),
   ),
   levels: (
     (n, [#card_ref("Hunter's Mark"). #card_ref("Forager").]),
-    (n, [#card_ref("Thrill of the Hunt Charge"). #thrill_of_the_hunt: choose 2 abilities. #card_ref("Roll & Strike").]),
-    (n, [Subclass: Keeper of the Shadowpath or Keeper of the Wild Heart. #card_ref("Tracker's Intuition").]),
+    (n, [#card_ref("Thrill of the Hunt Charge"). Choose 2 #thrill_of_the_hunt abilities. #card_ref("Roll & Strike").]),
+    (n, [Choose a subclass, Keeper of the Shadowpath or Keeper of the Wild Heart. #card_ref("Tracker's Intuition").]),
     (n, [Choose 1 more #thrill_of_the_hunt ability. #card_ref("Explorer of the Wilds"). #stat_up[+1 #DEX or #WIL.]]),
     (n, [#card_ref("Hunter's Resolve"). #card_ref("Final Takedown"). #stat_up[+1 #STR or #INT.]]),
     (n, [#card_ref("Versatile Bowmaster"). Choose 1 more #thrill_of_the_hunt ability.]),

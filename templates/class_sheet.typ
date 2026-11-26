@@ -49,7 +49,8 @@
   v(5mm)
 
   // Information strip.
-  grid(columns: (1fr,) * 4, column-gutter: 4mm, row-gutter: 3.5mm,
+  // Information strip, on one line.
+  grid(columns: (auto,) * info.len(), column-gutter: 1fr,
     ..info.map(((l, v)) => info_cell(l, v)))
   if resource != none {
     v(3mm)
