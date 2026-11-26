@@ -6,7 +6,7 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [You are Medium.]),
       (kind: "narrative", name: "Appearance", effect: [A big, muscular humanoid with gray or green skin, tusks and a heavy jaw.]),
-      (kind: "active", limitation: per_safe_rest(1), effect: [When you would drop to 0 #HP, you drop to #times(4, KEY) #HP instead.]),
+      (kind: "active", limitation: per_encounter(1), effect: [When you would drop to 0 #HP, you drop to #times(3, KEY) #HP instead.]),
     ),
 )
 
@@ -17,6 +17,7 @@ review: style=2026-11-14 changelog=2026-10-02
 
 Source: Core Rules p.23-27 (Orc). Book: Relentless, when you would drop to 0 HP you may set your HP to LVL instead, 1/Safe Rest, +1 Might.
 
-house-rule: Relentless drops you to 4×KEY HP instead of LVL, 1/Rest; the +1 Might is dropped
+house-rule: Relentless drops you to 3×KEY HP instead of LVL, 1/encounter instead of 1/Safe
+Rest (user ruling 2026-11-27); the +1 Might is dropped
 (user ruling 2026-11-27).
 */

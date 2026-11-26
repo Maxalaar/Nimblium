@@ -6,7 +6,7 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [You are Small.]),
       (kind: "narrative", name: "Appearance", effect: [A small humanoid stoat, long and lean, with sleek fur and sharp teeth.]),
-      (kind: "active", limitation: (per_turn(1), per_safe_rest(KEY)), effect: [When you attack a creature larger than you, the attack deals 1d6 more damage for each size the creature is larger than you.]),
+      (kind: "active", limitation: per_encounter(1), effect: [When you attack a creature larger than you, the attack deals 1d6 more damage for each size the creature is larger than you.]),
     ),
 )
 
@@ -19,4 +19,7 @@ Source: Core Rules p.23-27 (Stoatling). Book: Small But Ferocious, a single-targ
 
 house-rule: An active ability, KEY times per Rest, once per turn, and larger creatures don't
 get the same bonus against you (user ruling 2026-11-27).
+
+house-rule: Uses: 1/encounter, as in the book, instead of KEY times per Rest and once per turn (user
+ruling 2026-11-27). Later notes that say "KEY times per Rest" describe the older version.
 */

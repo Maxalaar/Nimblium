@@ -36,8 +36,6 @@
   A spell with a range has #kw_disadvantage while an enemy is adjacent to you, like any
   ranged attack. A spell with a reach doesn't.
 
-  When a spell calls for a check, its DC is #dc(10, stat: KEY).
-
   #rule[Several targets][A spell that targets several creatures rolls its attack for each
   one, like separate attacks.]
 
@@ -94,7 +92,7 @@
   ends after 1 minute, or when you invoke chaos again.
 
   #values(columns: (7mm, 1fr), header: ("d20", "Effect"),
-    [1], [*Elemental Eruption.* Each creature within 6 spaces of you makes a #DEX check, and takes #times(INT, "d10") fire damage, or half on a success. You fail yours.],
+    [1], [*Elemental Eruption.* Each creature within 6 spaces of you makes a #DEX check against #dc(10, stat: INT), and takes #times(INT, "d10") fire damage, or half on a success. You fail yours.],
     [2], [*Backfire.* You gain 1 Wound. The spell you just cast also targets you, or an enemy if it helps its targets.],
     [3], [*Aww, Nuts!.* You become a Tiny squirrel until you take damage. You can't cast spells, and finding acorns is all you can think of.],
     [4], [*Summon Aetherlings.* At the end of each of your turns, #INT hostile aetherling minions (1d6 damage) appear adjacent to you and act right after you.],
@@ -134,4 +132,6 @@ the Combat page.
 
 interpretation: Wands are items (game/items/gear/wand.typ; spell scrolls merged into them), not rules
 on this page. Secret spells are left to the GM.
+
+house-rule: No default DC: each card states the DC of its checks (user ruling 2026-11-27).
 */

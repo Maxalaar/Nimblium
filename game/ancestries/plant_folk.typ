@@ -6,7 +6,7 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [When you choose this ancestry, choose Small or Medium. You can't change it later.]),
       (kind: "narrative", name: "Appearance", effect: [A humanoid plant or mushroom, with bark for skin and leaves, flowers or a cap for hair.]),
-      (kind: "active", limitation: (per_turn(1), per_safe_rest(KEY)), effect: [When an adjacent enemy hits you, it is #kw_dazed.]),
+      (kind: "active", limitation: per_encounter(1), effect: [When an adjacent enemy hits you, it is #kw_dazed.]),
     ),
     reminder: (conditions.dazed,),
 )
@@ -20,4 +20,7 @@ Source: Core Rules p.23-27 (Dryad). Book: Danger Pollen/Spores (Dryad/Shroomling
 
 house-rule: Dazes an adjacent enemy that hits you, once per turn, KEY times per Rest, instead
 of dazing adjacent enemies when you gain Wounds (balance pass, user ruling 2026-11-27).
+
+house-rule: Uses: 1/encounter, as in the book, instead of KEY times per Rest and once per turn (user
+ruling 2026-11-27). Later notes that say "KEY times per Rest" describe the older version.
 */

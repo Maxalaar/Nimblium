@@ -59,8 +59,6 @@
     [Extreme], [20+], [Disarm an ancient legendary trap.],
   )
 
-  The DC of an effect a hero creates is #dc(10, stat: KEY), unless the effect says otherwise.
-
   #rule[Half on a success][When an effect deals damage "or half on a success", a creature that
   succeeds on the check takes half the damage and no other effect.]
 ]
@@ -168,4 +166,6 @@ house-rule: Divisions round up (Nimble doesn't say; user ruling 2026-11-26).
 
 interpretation: Optional rules (gritty dying, abstracted distances, a week of rest per Wound)
 are left out.
+
+house-rule: No default DC: each card states the DC of its checks (user ruling 2026-11-27).
 */

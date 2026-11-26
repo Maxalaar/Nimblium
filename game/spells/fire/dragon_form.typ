@@ -20,7 +20,7 @@
             kind: "active",
             cost: (actions(2),),
             name: "Immolating Breath",
-            effect: [Each creature in a Cone 10 makes a #DEX check. If it fails, it takes #times(KEY, "d20") damage. If it succeeds, it takes half. A #kw_smoldering creature automatically fails.],
+            effect: [Each creature in a Cone 10 makes a #DEX check against #dc(10, stat: KEY). If it fails, it takes #times(KEY, "d20") damage. If it succeeds, it takes half. A #kw_smoldering creature automatically fails.],
         ),
     ),
     reminder: (conditions.smoldering,),

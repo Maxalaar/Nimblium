@@ -16,7 +16,7 @@
     damage: [#kw_d66],
     effect: [Choose any number of creatures and objects within Reach. Until the start of their next turn, they are immune to damage and negative effects.
 
-    Each other creature and object within Reach takes this spell's damage. Each creature that survives makes a #STR check. If it fails, it is #kw_incapacitated until the end of its next turn.
+    Each other creature and object within Reach takes this spell's damage. Each creature that survives makes a #STR check against #dc(10, stat: KEY). If it fails, it is #kw_incapacitated until the end of its next turn.
 
     After you cast this spell, you must #safe_rest for 1 week before you can cast it again.],
     reminder: (conditions.incapacitated,),

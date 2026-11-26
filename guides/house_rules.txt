@@ -207,9 +207,15 @@ to a card, add or complete a line here.
 - **Ancestries**: all 24 of the Core Rules, renamed "X-folk" (Bunbun is Rabbit-folk, Kobold is
   Lizard-folk, Celestial is Angel-folk...), with no Common/Exotic tiers and no language. Shape-folk
   (Changeling) is dropped. Balance pass (2026-11-27): one main trait per ancestry, passives use
-  fixed numbers (Turtle-folk +2 Defense, Rat-folk +2 Defense after moving, Dwarf-folk and
-  Construct-folk +2 Vitality, Giant-folk +1 STR and +1 Vitality), and only limited actives scale
-  with KEY: once per turn, KEY times per Rest, both shown as capsules (Orc-folk's Relentless is
-  1/Rest and drops you to 4×KEY HP). (`game/ancestries/`)
+  fixed numbers (Turtle-folk +2 Defense, Dwarf-folk +2 Vitality, Giant-folk +1 STR), and limited
+  actives work 1/encounter (Orc-folk's Relentless drops you to 3×KEY HP); KEY only scales
+  their effect (max +5). Bull-folk charges (1/encounter): after 4 spaces of movement, a melee hit
+  deals LVL+KEY more damage and gives Knockback 2. Identity pass (2026-11-27): a bonus belongs to one ancestry
+  only (Vitality to Dwarf-folk, Defense to Turtle-folk, Initiative to Human-folk, checks to
+  Small-folk and Human-folk, a free move to Rabbit-folk); Angel-folk heals, Fiend-folk
+  frightens, Goblin-folk swaps with an ally, Rat-folk moves through larger creatures,
+  Construct-folk ignores conditions. (`game/ancestries/`)
 - **Chaos Table** is public, on the Magic page (book: the GM's secret). The Control Table stays a
   card of the Invoker of Control. (`game/rules/magic.typ`)
+- **No default DC**: each card states the DC of the checks it calls for (usually DC 10+KEY); the
+  rules pages give no default. (`game/rules/adventure.typ`, `game/rules/magic.typ`)

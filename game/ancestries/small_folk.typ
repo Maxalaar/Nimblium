@@ -6,7 +6,7 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [You are Small.]),
       (kind: "narrative", name: "Appearance", effect: [Half the height of a human, with curly hair, a round face and big, hairy bare feet.]),
-      (kind: "active", limitation: (per_turn(1), per_safe_rest(KEY)), effect: [When you fail a check, you succeed instead.]),
+      (kind: "active", limitation: per_encounter(1), effect: [When you fail a check, you succeed instead.]),
     ),
 )
 
@@ -20,4 +20,6 @@ Source: Core Rules p.23-27 (Halfling). Book: Elusive, +1 Stealth, if you fail a 
 house-rule: There are no saves: a failed save becomes a failed check.
 
 house-rule: KEY times per Rest, once per turn. The +1 Stealth is dropped (user ruling 2026-11-27).
+
+house-rule: Uses: 1/encounter instead of the book's 1/Safe Rest (user ruling 2026-11-27).
 */
