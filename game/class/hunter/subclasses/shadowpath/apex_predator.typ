@@ -8,7 +8,6 @@
         "Shadowpath",
     ),
     blocks: (
-      (kind: "passive", effect: [You can use #card_ref("Primal Predator") twice per encounter.]),
       (kind: "passive", effect: [When you roll Initiative, gain 1 #TotH charge.]),
     ),
 )
@@ -17,4 +16,7 @@
 
 /*
 review: style=2026-11-14 changelog=2026-10-02
+
+interpretation: Its other half (Primal Predator twice per encounter) is a Levels line on
+Primal Predator.
 */

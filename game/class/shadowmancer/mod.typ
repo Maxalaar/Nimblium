@@ -4,9 +4,7 @@
 #import "shadow.typ": shadow
 #import "greater_shadow.typ": greater_shadow
 #import "pilfered_power.typ": pilfered_power
-#import "greedy_pact.typ": greedy_pact
 #import "dire_shadows.typ": dire_shadows
-#import "eldritch_usurper.typ": eldritch_usurper
 #import "lesser_invocation/mod.typ": *
 #import "greater_invocation/mod.typ": *
 #import "subclasses/mod.typ": *

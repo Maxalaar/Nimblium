@@ -25,7 +25,7 @@
     (3, [Choose 1 more Greater Invocation. #stat_up[+1 #STR or #WIL.]]),
     (4, []),
     (4, [Subclass feature. Choose 1 more Lesser Invocation.]),
-    (4, [#card_ref("Greedy Pact"). #stat_up[+1 #INT or #DEX.]]),
+    (4, [#stat_up[+1 #INT or #DEX.]]),
     (5, [#stat_up[+1 #STR or #WIL.]]),
     (5, [Choose 1 more Greater Invocation. All Necrotic Utility Spells.]),
     (5, [Subclass feature.]),
@@ -33,7 +33,7 @@
     (6, [#card_ref("Dire Shadows"). #stat_up[+1 #STR or #WIL.]]),
     (6, [Choose 1 more Greater Invocation.]),
     (7, [Epic Boon.]),
-    (7, [#card_ref("Eldritch Usurper") and the #card_ref("Greater Shadow"). #stat_up[+1 to any 2 stats.]]),
+    (7, [#stat_up[+1 to any 2 stats.]]),
   ),
   boxes: (
     ([Pact of the Red Dragon], by_level(

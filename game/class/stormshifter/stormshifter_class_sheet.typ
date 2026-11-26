@@ -32,7 +32,7 @@
     (8, [Choose 1 more Chimeric Boon. #stat_up[+1 #STR or #INT.]]),
     (9, []),
     (9, [Epic Boon.]),
-    (9, [#card_ref("Archdruid"). #stat_up[+1 to any 2 stats.]]),
+    (9, [#stat_up[+1 to any 2 stats.]]),
   ),
   boxes: (
     ([Circle of Sky & Storm], by_level(

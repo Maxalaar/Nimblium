@@ -1,7 +1,6 @@
 #import "beastshift.typ": beastshift
 #import "stormshifter_mana_pool.typ": stormshifter_mana_pool
 #import "stormborn.typ": stormborn
-#import "archdruid.typ": archdruid
 #import "direbeast_forms/mod.typ": *
 #import "chimeric_boons/mod.typ": *
 #import "subclasses/mod.typ": *

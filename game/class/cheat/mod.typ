@@ -6,5 +6,4 @@
 #import "twist_the_blade.typ": twist_the_blade
 #import "quick_read.typ": quick_read
 #import "thats_not_what_happened.typ": thats_not_what_happened
-#import "supreme_execution.typ": supreme_execution
 #import "cheat.typ": cheat

@@ -18,7 +18,7 @@
     (n, [#card_ref("Combat Dice"). Choose 1 Combat Tactic. #card_ref("Field Medic").]),
     (n, [Choose a subclass, Champion of the Bulwark or Champion of the Vanguard.]),
     (n, [Choose 2 Commander's Orders. #stat_up[+1 #STR or #INT.]]),
-    (n, [#card_ref("Master Commander"). #stat_up[+1 #DEX or #WIL.]]),
+    (n, [#stat_up[+1 #DEX or #WIL.]]),
     (n, [Choose 1 more Combat Tactic, or gain 1 more Combat Die. #card_ref("Weapon Mastery"). Choose 1 mastery.]),
     (n, [Subclass feature.]),
     (n, [Choose 1 more Combat Tactic, or gain 1 more Combat Die. #stat_up[+1 #STR or #INT.]]),
@@ -31,9 +31,9 @@
     (n, [Subclass feature.]),
     (n, [Choose 1 more Combat Tactic, or gain 1 more Combat Die. #stat_up[+1 #STR or #INT.]]),
     (n, [#stat_up[+1 #DEX or #WIL.]]),
-    (n, [#card_ref("Unparalleled Tactics").]),
+    (n, []),
     (n, [Epic Boon.]),
-    (n, [#card_ref("Captain of Legions"). #stat_up[+1 to any 2 stats.]]),
+    (n, [#stat_up[+1 to any 2 stats.]]),
   ),
   boxes: (
     ([Champion of the Bulwark], by_level(

@@ -10,7 +10,7 @@
       *Level 5:* You summon 2 #card_ref("Shadow", "Shadows").\
       *Level 10:* You summon 3 #card_ref("Shadow", "Shadows").\
       *Level 15:* You summon 4 #card_ref("Shadow", "Shadows").\
-      *Level 20:* You summon 5 #card_ref("Shadow", "Shadows").
+      *Level 20:* You summon 5 #card_ref("Shadow", "Shadows"). Once per encounter, you may summon a #card_ref("Greater Shadow") instead.
     ],
 )
 
@@ -21,5 +21,6 @@ review: style=2026-11-14 changelog=2026-10-02
 
 changelog: Shadowmancer only, split from Command Shadows. Summons 1 adjacent Shadow; High
 Levels +1 Shadow every 5 levels (was +1 Reach). Shadow Limit is INT (was INT or LVL,
-whichever is lower).
+whichever is lower). Eldritch Usurper (level 20: a Greater Shadow, 1/encounter; was: 2
+Shadows that die only to 12 or more damage) is a Levels line.
 */

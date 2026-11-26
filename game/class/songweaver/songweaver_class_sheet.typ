@@ -15,7 +15,7 @@
   levels: (
     (none, [Wind cantrips. #card_ref("Vicious Mockery"). #card_ref("Inspiration"), #card_ref("Songweaver's Inspiration").]),
     (1, [#card_ref("Songweaver Mana Pool"). Cantrips of a 2nd school of your choice. Tier 1 spells of the schools you know. #card_ref("Song of Rest").]),
-    (1, [Choose a subclass, Herald of Snark or Herald of Courage. #card_ref("Quick Wit"). 1 Utility Spell of each school you know.]),
+    (1, [Choose a subclass, Herald of Snark or Herald of Courage. 1 Utility Spell of each school you know.]),
     (2, [Choose 1 Lyrical Weaponry. #stat_up[+1 #WIL or #INT.]]),
     (2, [Choose 2 Friends. #stat_up[+1 #STR or #DEX.]]),
     (3, [1 more Utility Spell of each school you know.]),
@@ -32,7 +32,7 @@
     (8, [Choose 1 more Lyrical Weaponry. #stat_up[+1 #STR or #DEX.]]),
     (9, []),
     (9, [Epic Boon.]),
-    (9, [#card_ref("I'm So Famous!"). #stat_up[+1 to any 2 stats.]]),
+    (9, [#stat_up[+1 to any 2 stats.]]),
   ),
   boxes: (
     ([Herald of Snark], by_level(

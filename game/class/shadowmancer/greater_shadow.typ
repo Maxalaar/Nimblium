@@ -16,7 +16,7 @@
 /*
 review: style=2026-11-14 changelog=2026-10-02
 
-changelog: Greater Shadow is no longer a tier 4 spell. It is summoned by Eldritch Usurper
+changelog: Greater Shadow is no longer a tier 4 spell. It is summoned by Summon Shadow at level 20 (the old Eldritch Usurper)
 (level 20): a 5d12 minion that explodes into 5 Shadows when it dies.
 
 interpretation: The changelog does not say whether the 5 Shadows count toward your Shadow

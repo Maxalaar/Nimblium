@@ -39,7 +39,6 @@
       (3, [#card_ref("Force of Will"), #card_ref("Deny Fate"), #card_ref("Control Table").]),
       (7, [#card_ref("Nullify"). 1 Necrotic cantrip and 1 Necrotic tiered spell.]),
       (11, card_ref("Steel Will")),
-      (15, card_ref("Supreme Control")),
     )),
     ([Invoker of Chaos], by_level(
       (3, card_ref("Force of Chaos")),

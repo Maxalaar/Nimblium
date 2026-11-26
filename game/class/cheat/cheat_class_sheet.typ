@@ -33,7 +33,7 @@
     (n, [#stat_up[+1 #WIL or #STR.]]),
     (n, [Choose 1 more Underhanded Ability.]),
     (n, [Epic Boon.]),
-    (n, [#card_ref("Supreme Execution"). #stat_up[+1 to any 2 stats.]]),
+    (n, [#stat_up[+1 to any 2 stats.]]),
   ),
   boxes: (
     ([Tools of the Scoundrel], by_level(

@@ -34,14 +34,16 @@ text is available, so no cards.
   Protection, Luminary of the Forge.
 - **Shadowmancer** (p.42-47): COMPLETE — reserved cantrips (Shadow Blast, Summon Shadow,
   Command Shadows), Shadow and Greater Shadow creatures, Pilfered Power as a Mechanic card,
-  Greedy Pact, Dire Shadows, Eldritch Usurper, Lesser and Greater Invocations (Vengeful Blast
+  Dire Shadows (Greedy Pact and Eldritch Usurper are Levels lines of Pilfered Power and Summon
+  Shadow), Lesser and Greater Invocations (Vengeful Blast
   removed by the changelog), Pact of the Red Dragon and Pact of the Abyssal Depths subclasses.
   In the new style and up to the October 2, 2026 changelog. No card for Master of Darkness or
   Shadowmastery (they only unlock spells). The Reaver waits with the Extra Subclasses. Class
   icon: Death Note. Announced subclasses: Pact of the Void, Pact of the Endless Swarm, Pact
   of the High Celestial.
 - **Commander** (p.18-23): COMPLETE — Coordinated Strike!, Combat Dice (Mechanic card), Field
-  Medic, Master Commander, Weapon Mastery, Unparalleled Tactics, Captain of Legions;
+  Medic, Weapon Mastery (Master Commander, Unparalleled Tactics and Captain of Legions are
+  Levels lines of Coordinated Strike!);
   Commander's Orders (Commanding Presence moves there, from the changelog), Combat Tactics,
   Weapon Masteries (remade), Champion of the Bulwark and Champion of the Vanguard subclasses;
   class sheet. In the new style and up to the October 2, 2026 changelog. The Spellblade waits
@@ -54,7 +56,8 @@ text is available, so no cards.
   Oathbreaker waits with the Extra Subclasses. Class icon: Winged Shield. Announced
   subclasses: Oath of Roaring Thunder, Oath of Valor.
 - **Songweaver** (p.54-59): COMPLETE — Vicious Mockery (Songweaver-only cantrip),
-  Songweaver's Inspiration, Songweaver Mana Pool, Song of Rest, Quick Wit, I'm So Famous!;
+  Songweaver's Inspiration, Songweaver Mana Pool, Song of Rest (Quick Wit and I'm So Famous! are Levels lines of Inspiration and Songweaver's
+  Inspiration);
   Lyrical Weaponry; the 4 Friends (A "People" Person), creature cards that follow the
   Songweaver; Herald of Snark and Herald of Courage
   subclasses; class sheet. Up to the October 2, 2026 changelog. No card for Jack of All Trades
@@ -62,7 +65,7 @@ text is available, so no cards.
   Lyre. Announced subclasses: Herald of Singing Steel, Herald of Torment, Herald of Legends.
 - **Stormshifter** (p.60-65): COMPLETE — rebuilt by the October 2, 2026 changelog: Beastshift
   (free harmless forms, Direbeast forms DEX/encounter), Stormshifter Mana Pool, Stormborn,
-  Archdruid; the 3 Direbeast forms (Fearsome Beast, Beast of the Pack, Beast of Nightmares) as
+  Archdruid as a Levels line of Beastshift; the 3 Direbeast forms (Fearsome Beast, Beast of the Pack, Beast of Nightmares) as
   ability cards; 9 Chimeric Boons; Circle of Sky & Storm and Circle of Fang & Claw; class
   sheet. stormshifter_keywords.typ defines Direbeast Form. No card for Be Wild (house rule), nor for
   Master of Storms, Deepening Study and Stormcaller (they only unlock spells). Class icon: Wolf

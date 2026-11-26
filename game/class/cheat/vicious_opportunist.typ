@@ -13,6 +13,9 @@
         effect: [When you hit a #kw_distracted creature with a melee attack, you may change the #primary_die roll to whatever you like. Changing it to the maximum value counts as a crit.],
       ),
     ),
+    levels: [
+      *Level 20:* When you attack with a blade, the target doesn't need to be #kw_distracted.
+    ],
     reminder: (keywords.distracted,),
 )
 
@@ -20,4 +23,6 @@
 
 /*
 review: style=2026-11-14 changelog=2026-10-02
+
+interpretation: Supreme Execution (level 20) is its Levels line.
 */
