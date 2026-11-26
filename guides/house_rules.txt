@@ -20,10 +20,10 @@ to a card, add or complete a line here.
   `game/rules/combat.typ`, `game/actions/triggered_actions.typ`)
 - **No saves, one kind of check.** A check is 1d20 + the stat or skill it names, against the
   same DCs; there is no separate "skill check" and "stat check". An effect that the book
-  resolves with a save calls for a check by the affected creature (DC 10 + KEY for an effect
+  resolves with a save calls for a check by the affected creature, against the DC the card states (usually DC 10+KEY for an effect
   a hero creates). Cards that said "skill checks" now say "checks", including the *Cheat* card ("change the
   result of one of your checks to 10+INT"), which now also covers stat checks. Classes have no advantaged or disadvantaged saves, and the class sheets have no
-  Saves line. "Half on save" becomes "half on a success". (`game/rules/adventure.typ`)
+  Saves line. There is no "half on save" rule: each card says what a success does. (`game/rules/adventure.typ`)
 - **Opportunity Attacks.** Only heroes make them, unless a creature's card says otherwise.
   (`game/actions/triggered_actions.typ`)
 - **Hide with no roll.** 1 action with Cover is enough to hide (Nimble: Stealth DC 10, Full

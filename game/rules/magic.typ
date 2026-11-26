@@ -92,7 +92,7 @@
   ends after 1 minute, or when you invoke chaos again.
 
   #values(columns: (7mm, 1fr), header: ("d20", "Effect"),
-    [1], [*Elemental Eruption.* Each creature within 6 spaces of you makes a #DEX check against #dc(10, stat: INT), and takes #times(INT, "d10") fire damage, or half on a success. You fail yours.],
+    [1], [*Elemental Eruption.* Each creature within 6 spaces of you makes a #DEX check against #dc(10, stat: INT). If it fails, it takes #times(INT, "d10") fire damage. If it succeeds, it takes half. You fail yours.],
     [2], [*Backfire.* You gain 1 Wound. The spell you just cast also targets you, or an enemy if it helps its targets.],
     [3], [*Aww, Nuts!.* You become a Tiny squirrel until you take damage. You can't cast spells, and finding acorns is all you can think of.],
     [4], [*Summon Aetherlings.* At the end of each of your turns, #INT hostile aetherling minions (1d6 damage) appear adjacent to you and act right after you.],

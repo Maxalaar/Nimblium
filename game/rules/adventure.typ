@@ -58,9 +58,6 @@
     [Very difficult], [18], [Read the true intentions of a trained spy.],
     [Extreme], [20+], [Disarm an ancient legendary trap.],
   )
-
-  #rule[Half on a success][When an effect deals damage "or half on a success", a creature that
-  succeeds on the check takes half the damage and no other effect.]
 ]
 
 #section("Advantage & disadvantage")[
@@ -140,8 +137,8 @@ are left out on purpose. Speed, range, forced movement, Cover, Hide, grappling, 
 Wounds and conditions are on the Combat page.
 
 changelog: The max skill bonus is +10 (was +12). "You can choose to fail any save" is removed.
-Half on a success (the changelog's "half on save") and the definition of damage come from the
-2026-10-02 changelog.
+The definition of damage comes from the 2026-10-02 changelog. The changelog's "half on save" rule is
+left out: each card says what a success does (user ruling 2026-11-27).
 
 house-rule: There are no saves, and no separate skill and stat checks: there is one check,
 1d20 + the stat or skill named, against the same DCs. An effect that the book resolves with a

@@ -7,7 +7,7 @@
     charges: 1,
     slots: 1,
     blocks: (
-      (kind: "active", cost: (charge_cost(1),), effect: [When you would die while wearing it, you don't. You take the #card_ref("Phoenix Form") for 10 minutes, and each enemy within 6 spaces makes a #dc(10, stat: KEY) #DEX check. It takes #LVL d10 fire damage, or half on a success.]),
+      (kind: "active", cost: (charge_cost(1),), effect: [When you would die while wearing it, you don't. You take the #card_ref("Phoenix Form") for 10 minutes, and each enemy within 6 spaces makes a #DEX check against #dc(10, stat: KEY). If it fails, it takes #LVL d10 fire damage. If it succeeds, it takes half.]),
     ),
 )
 
