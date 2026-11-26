@@ -57,7 +57,7 @@
   target's condition.]
 
   #rule[Rushed attacks][Each attack after the first on the same turn has 1 more
-  #kw_disadvantage. For an ability that calls for a save, the target rolls with 1 more
+  #kw_disadvantage. For an ability that calls for a check, the target rolls with 1 more
   #kw_advantage instead.]
 
   #rule[#defense][A creature takes its #defense less damage from each attack. Critical hits
@@ -125,7 +125,7 @@
 
 #section("Concentration")[
   You can concentrate on only one thing at a time. When you take a critical hit while
-  concentrating, make a #dc(10) #STR save. On a failure, your concentration ends. It also
+  concentrating, make a #dc(10) #STR check. On a failure, your concentration ends. It also
   ends at 0 #HP. You can't start concentrating while #kw_dying or #kw_incapacitated.
 ]
 

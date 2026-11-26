@@ -45,8 +45,9 @@
   )
 ]
 
-#section("Skill checks")[
-  When you try to affect the world, the GM may ask for a skill check. Roll 1d20 and add your
+#section("Checks")[
+  When the outcome of something is uncertain, the GM or the effect asks for a check, with a
+  stat or a skill, such as a #DEX check or a Stealth check. Roll 1d20 and add that stat or
   skill. If the total equals or beats the DC, you succeed. A 1 on the die always fails, and a
   20 always succeeds.
 
@@ -57,26 +58,11 @@
     [Very difficult], [18], [Read the true intentions of a trained spy.],
     [Extreme], [20+], [Disarm an ancient legendary trap.],
   )
-]
-
-#section("Saves")[
-  When the world affects you, roll a save. Roll 1d20 and add the stat the effect names. A 1 on
-  the die always fails, and a 20 always succeeds.
-
-  #values(columns: (9mm, 1fr),
-    [*#STR*], [Forced movement, restraint, poison, extreme temperatures.],
-    [*#DEX*], [Diving away from an explosion, keeping your footing.],
-    [*#INT*], [Seeing through tricks and illusions.],
-    [*#WIL*], [Resisting charm and fear.],
-  )
-
-  Your class gives you 1 save with #kw_advantage, marked +, and 1 save with
-  #kw_disadvantage, marked −. Your 2 other saves are normal.
 
   The DC of an effect a hero creates is #dc(10, stat: KEY), unless the effect says otherwise.
 
-  #rule("Half on save")[A creature that succeeds on the save takes half the damage and no
-  other effect.]
+  #rule[Half on a success][When an effect deals damage "or half on a success", a creature that
+  succeeds on the check takes half the damage and no other effect.]
 ]
 
 #section("Advantage & disadvantage")[
@@ -157,7 +143,13 @@ are left out on purpose. Speed, range, forced movement, Cover, Hide, grappling, 
 Wounds and conditions are on the Combat page.
 
 changelog: The max skill bonus is +10 (was +12). "You can choose to fail any save" is removed.
-Half on save and the definition of damage come from the 2026-10-02 changelog.
+Half on a success (the changelog's "half on save") and the definition of damage come from the
+2026-10-02 changelog.
+
+house-rule: There are no saves, and no separate skill and stat checks: there is one check,
+1d20 + the stat or skill named, against the same DCs. An effect that the book resolves with a
+save calls for a check by the affected creature, and classes have no advantaged or
+disadvantaged saves.
 
 interpretation: Optional rules (gritty dying, abstracted distances, a week of rest per Wound)
 are left out.

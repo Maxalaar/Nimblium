@@ -36,7 +36,7 @@
   A spell with a range has #kw_disadvantage while an enemy is adjacent to you, like any
   ranged attack. A spell with a reach doesn't.
 
-  When a spell calls for a save, its DC is #dc(10, stat: KEY).
+  When a spell calls for a check, its DC is #dc(10, stat: KEY).
 
   #rule[Several targets][A spell that targets several creatures rolls its attack for each
   one, like separate attacks.]

@@ -15,10 +15,10 @@
       (
         kind: "active",
         limitation: per_safe_rest(1),
-        effect: [Change the result of one of your skill checks to 10+#INT.],
+        effect: [Change the result of one of your checks to 10+#INT.],
       ),
       (kind: "passive", effect: [When you roll less than 10 on Initiative, you may change the result to 10.]),
-      (kind: "narrative", effect: [You may gain #kw_advantage on skill checks while you play games, compete or place wagers.]),
+      (kind: "narrative", effect: [You may gain #kw_advantage on checks while you play games, compete or place wagers.]),
     ),
     reminder: (keywords.hide, keywords.cover,),
 )

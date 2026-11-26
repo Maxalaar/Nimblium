@@ -33,7 +33,7 @@ How we work: sources, organization, checks, tracking.
 ## Class sheet (`game/class/<name>/<name>_class_sheet.typ`)
 
 One A4 page per class, made with `templates/class_sheet.typ`: starting information (key stats,
-hit die, HP, saves, armor, weapons; not the starting equipment), the table of levels 1 to 20
+hit die, HP, armor, weapons; not the starting equipment), the table of levels 1 to 20
 (what you gain at each level, max spell tier) and, at the bottom, the subclasses by level and
 the lists of options. It replaces cards that would only list choices by level. No repetition:
 a rule already on a card is not repeated, the sheet names the card (`#card_ref`). Sheets
@@ -49,7 +49,7 @@ what is looked up (rests, conditions...). A section (`#section("Title")[...]`) n
 across two columns.
 
 Planned areas:
-- **Adventure** (done): stats, skills, checks, saves, advantage, size, falling; on the verso
+- **Adventure** (done): stats, skills, checks, advantage, size, falling; on the verso
   HP, temporary HP, Hit Dice, Field Rest, Safe Rest. No lodging and no downtime.
 - **Combat** (done): turn, pool of 3 actions, attacks, Defense, movement and reach, Cover,
   grapples in progress, forced movement, Concentration, Dying and Wounds; on the verso the
@@ -58,8 +58,7 @@ Planned areas:
   Actions, Grapple, Triggered Actions): the page refers to them without repeating them.
 - **Magic** (done): schools, casting, mana, upcasting, cantrips, how to read a spell card,
   utility spells. One page. Scrolls and wands will be equipment cards.
-- **Level Up** (done): making a hero (class, ancestry and background, stat arrays, saves,
-  skills, the rest of the sheet, languages) and leveling up. One page. Ancestries and
+- **Level Up** (done): making a hero (class, ancestry and background, stat arrays, skills, the rest of the sheet, languages) and leveling up. One page. Ancestries and
   backgrounds will be cards.
 - No equipment page: equipment will become cards.
 

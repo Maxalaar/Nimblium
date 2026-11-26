@@ -8,7 +8,7 @@
         "Shadowpath",
     ),
     blocks: (
-      (kind: "narrative", effect: [You have #kw_advantage on skill checks to track creatures.]),
+      (kind: "narrative", effect: [You have #kw_advantage on checks to track creatures.]),
     ),
 )
 

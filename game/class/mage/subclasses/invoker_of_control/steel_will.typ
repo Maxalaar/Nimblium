@@ -11,7 +11,7 @@
       (
         kind: "passive",
         limitation: per_safe_rest(1),
-        effect: [When you would fail a save, you may succeed instead.],
+        effect: [When you would fail a #STR, #DEX, #INT or #WIL check, you may succeed instead.],
       ),
       (kind: "passive", effect: [Whenever you roll a 1 on an #card_ref("Elemental Surge") die, you may reroll it once.]),
     ),

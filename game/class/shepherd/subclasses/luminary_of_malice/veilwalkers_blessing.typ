@@ -12,7 +12,7 @@
         kind: "active",
         cost: (actions(1),),
         limitation: per_safe_rest(1),
-        effect: [When you would drop to 0 #HP, drop to 1 #HP instead. An enemy within 6 spaces must make a #STR save. On a failure, it becomes #kw_bloodied, or drops to 0 #HP if it is already #kw_bloodied.],
+        effect: [When you would drop to 0 #HP, drop to 1 #HP instead. An enemy within 6 spaces must make a #STR check. On a failure, it becomes #kw_bloodied, or drops to 0 #HP if it is already #kw_bloodied.],
       ),
     ),
     reminder: (conditions.bloodied,),

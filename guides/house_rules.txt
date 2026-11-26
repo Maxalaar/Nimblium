@@ -17,6 +17,12 @@ to a card, add or complete a line here.
 - **No Reactions.** A reaction is an action with a "When..." trigger, a cost of 1 action and a
   limit of 1/round. It also works on your own turn. (`writing_rules.txt` §4,
   `game/rules/combat.typ`, `game/actions/triggered_actions.typ`)
+- **No saves, one kind of check.** A check is 1d20 + the stat or skill it names, against the
+  same DCs; there is no separate "skill check" and "stat check". An effect that the book
+  resolves with a save calls for a check by the affected creature (DC 10 + KEY for an effect
+  a hero creates). Cards that said "skill checks" now say "checks", including the *Cheat* card ("change the
+  result of one of your checks to 10+INT"), which now also covers stat checks. Classes have no advantaged or disadvantaged saves, and the class sheets have no
+  Saves line. "Half on save" becomes "half on a success". (`game/rules/adventure.typ`)
 - **Opportunity Attacks.** Only heroes make them, unless a creature's card says otherwise.
   (`game/actions/triggered_actions.typ`)
 - **Hide with no roll.** 1 action with Cover is enough to hide (Nimble: Stealth DC 10, Full

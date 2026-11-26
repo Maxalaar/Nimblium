@@ -11,7 +11,6 @@
     ("Key stats", [#INT, #WIL]),
     ("Hit die", [1d6]),
     ("Starting HP", [10]),
-    ("Saves", [#INT\+, #STR\−]),
     ("Armor", [Cloth]),
     ("Weapons", [Blades, staves, wands]),
     ("Spell schools", [Fire, Ice, Lightning]),

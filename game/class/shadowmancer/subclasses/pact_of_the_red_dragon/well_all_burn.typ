@@ -4,7 +4,7 @@
     name: "We'll ALL Burn!",
     type: ("Ability", "Shadowmancer", "Pact of the Red Dragon"),
     blocks: (
-      (kind: "passive", effect: [You may cast #card_ref("Pyroclasm") without #card_ref("Pilfered Power") if you include yourself in its damage. You have #kw_advantage on its save.]),
+      (kind: "passive", effect: [You may cast #card_ref("Pyroclasm") without #card_ref("Pilfered Power") if you include yourself in its damage. You have #kw_advantage on its check.]),
     ),
     reminder: (keywords.advantage,),
 )

@@ -5,7 +5,7 @@
     type: ("Ability", "Oathsworn", "Sacred Decree"),
     blocks: (
       (kind: "passive", limitation: per_round(1), effect: [When you are attacked while you already have Judgment Dice, an ally within your #kw_aura rolls 1 Judgment Die and adds it to the damage of its next attack.]),
-      (kind: "narrative", effect: [You have #kw_advantage on skill checks to see through illusions.]),
+      (kind: "narrative", effect: [You have #kw_advantage on checks to see through illusions.]),
     ),
     reminder: (keywords.aura, keywords.advantage,),
 )

@@ -14,7 +14,7 @@
     ),
     reach: "3",
     damage: "4d4+10",
-    effect: [This spell deals its damage to each enemy within Reach. Each enemy that survives makes a #STR save. If it fails, you may move it to any space within Reach or 1 space beyond it.],
+    effect: [This spell deals its damage to each enemy within Reach. Each enemy that survives makes a #STR check. If it fails, you may move it to any space within Reach or 1 space beyond it.],
     upcast: [Its Reach increases by 1.],
 )
 

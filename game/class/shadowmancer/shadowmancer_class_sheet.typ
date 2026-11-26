@@ -12,7 +12,6 @@
     ("Key stats", [#INT, #DEX]),
     ("Hit die", [1d8]),
     ("Starting HP", [13]),
-    ("Saves", [#INT\+, #WIL\−]),
     ("Armor", [Cloth]),
     ("Weapons", [Blades, wands]),
     ("Spell schools", [Necrotic]),

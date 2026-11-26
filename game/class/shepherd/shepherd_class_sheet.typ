@@ -12,7 +12,6 @@
     ("Key stats", [#WIL, #STR]),
     ("Hit die", [1d10]),
     ("Starting HP", [17]),
-    ("Saves", [#WIL\+, #DEX\−]),
     ("Armor", [Mail, shields]),
     ("Weapons", [#STR weapons, wands]),
     ("Spell schools", [Radiant, Necrotic]),

@@ -8,8 +8,8 @@
     damage: [#kw_d66],
     effect: [This spell has #kw_advantage, ignores #defense, and can't miss or crit.
 
-    The target makes an #INT save, with #kw_disadvantage if it is #kw_bloodied or #kw_frightened. If it fails, it is #kw_weakened 10 and you are #kw_empowered 10. If it succeeds, you are #kw_weakened 10 and it is #kw_empowered 10. Each lasts until that creature's next attack.],
-    upcast: [Its save DC increases by 1, and it deals 10 more damage.],
+    The target makes an #INT check, with #kw_disadvantage if it is #kw_bloodied or #kw_frightened. If it fails, it is #kw_weakened 10 and you are #kw_empowered 10. If it succeeds, you are #kw_weakened 10 and it is #kw_empowered 10. Each lasts until that creature's next attack.],
+    upcast: [Its DC increases by 1, and it deals 10 more damage.],
     reminder: (keywords.d66, keywords.advantage, keywords.disadvantage, conditions.bloodied, conditions.frightened, conditions.weakened, conditions.empowered),
 )
 

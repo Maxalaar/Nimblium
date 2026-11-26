@@ -4,7 +4,7 @@
     name: "Vigor Mortis",
     type: ("Spell", "Necrotic", "Tier 4"),
     cost: (actions(1), mana(4)),
-    effect: [Once per round, when an ally drops to 0 #HP, you may cast this spell on it. While it is #kw_dying, it keeps all its actions, doesn't make #STR saves when it attacks, and gains 1 fewer Wound from damage, to a minimum of 1.],
+    effect: [Once per round, when an ally drops to 0 #HP, you may cast this spell on it. While it is #kw_dying, it keeps all its actions, doesn't make #STR checks when it attacks, and gains 1 fewer Wound from damage, to a minimum of 1.],
     upcast: [It gains 10 more temp #HP.],
     reminder: (conditions.dying,),
 )

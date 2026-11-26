@@ -4,7 +4,7 @@
     name: "Vermis & Skittersnack",
     type: ("Creature", "Goblin", "Legendary"),
     blocks: (
-        (kind: "passive", name: "Saves", effect: [This creature has #kw_advantage on #STR and #DEX saves.]),
+        (kind: "passive", name: "Resilient", effect: [This creature has #kw_advantage on #STR and #DEX checks.]),
         (kind: "passive", name: "Mangy Rat", effect: [Whenever this creature is hit by an attack, it summons a Giant Flea. Giant Fleas are minions that deal 1 damage and act at the end of each round.]),
         (kind: "passive", name: "Bloodied", effect: [When this creature becomes #kw_bloodied, it summons 3 Giant Fleas per hero.]),
         (kind: "passive", name: "Last Stand", effect: [When this creature drops to 0 #HP, it dies only after taking 30 more damage. Until then, it has 2 actions per turn.]),

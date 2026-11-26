@@ -39,6 +39,7 @@ TEXT_RULES = [
     (r"(?<![#\w])[Aa]uras?\b(?!:)", "use #kw_aura"),
     (r"(?<![#\w])DC \d", "use #dc(10) or #dc(10, stat: INT)"),
     (r"#keyword_style\[", "use a #kw_ term"),
+    (r"\b[Ss]av(e|es|ed|ing)\b", "there are no saves: use a check (#STR check...)"),
 ]
 
 # Forbidden as plain strings in card data.

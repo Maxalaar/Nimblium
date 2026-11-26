@@ -13,7 +13,6 @@
     ("Key stats", [#STR, #WIL]),
     ("Hit die", [1d10]),
     ("Starting HP", [17]),
-    ("Saves", [#STR\+, #DEX\−]),
     ("Armor", [All armor]),
     ("Weapons", [Melee #STR weapons]),
     ("Spell schools", [Radiant]),

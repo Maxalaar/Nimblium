@@ -6,7 +6,7 @@
   bloodied: [*Bloodied:* This creature is at half its max #HP or less.],
   charmed: [*Charmed:* This creature treats the charmer as an ally. The charmer has advantage on social interactions with it.],
   dazed: [*Dazed:* If this creature is a hero, it loses 1 action. If it is a monster, it has 1 fewer action on its next turn.],
-  dying: [*Dying:* This creature can't have more than 1 action per turn and can't concentrate. Whenever it attacks, it gains 1 Wound unless it succeeds on a #dc(10) #STR save. Whenever it takes damage, it gains 2 Wounds, or 3 on a critical hit.],
+  dying: [*Dying:* This creature can't have more than 1 action per turn and can't concentrate. Whenever it attacks, it gains 1 Wound unless it succeeds on a #dc(10) #STR check. Whenever it takes damage, it gains 2 Wounds, or 3 on a critical hit.],
   frightened: [*Frightened:* This creature has disadvantage on rolls while the source of its fear is nearby. Its #speed is halved while it moves closer to that source.],
   grappled: [*Grappled:* This creature can't move. Attacks against it have advantage.],
   restrained: [*Restrained:* This creature can't move. Attacks against it have advantage.],

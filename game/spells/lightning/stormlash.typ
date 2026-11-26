@@ -14,9 +14,9 @@
     ),
     reach: "Line 12",
     damage: "3d8+4",
-    effect: [Each creature that survives makes a #STR save. If it fails, it falls #kw_prone.
+    effect: [Each creature that survives makes a #STR check. If it fails, it falls #kw_prone.
 
-    A creature wearing metal armor or holding a large metal weapon takes +10 damage and has #kw_disadvantage on this save.],
+    A creature wearing metal armor or holding a large metal weapon takes +10 damage and has #kw_disadvantage on this check.],
     upcast: [It deals 4 more damage.],
     reminder: (conditions.prone,),
 )

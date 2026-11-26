@@ -15,7 +15,7 @@
     reach: "12",
     area: [#times(5, 5)],
     damage: "20",
-    effect: [Each enemy in the area makes a #DEX save. It takes this spell's damage minus its save result. If it takes 10 or more damage, it is #kw_prone and #kw_dazed.],
+    effect: [Each enemy in the area makes a #DEX check. It takes this spell's damage minus its check result. If it takes 10 or more damage, it is #kw_prone and #kw_dazed.],
     upcast: [It deals 2 more damage.],
     reminder: (conditions.prone, conditions.dazed),
 )

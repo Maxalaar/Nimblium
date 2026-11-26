@@ -25,7 +25,8 @@ Do not "fix" these rules from the Nimble books or changelog.
   check.
 - **Saves, Bloodied, Last Stand.** A legendary creature's Nimble sections become passive
   blocks, written in full on its own card (there is no shared Legendary card):
-  - **Saves**: "This creature has advantage on STR and DEX saves."
+  - **Saves** become a block named "Resilient": "This creature has advantage on STR and DEX
+    checks." (There are no saves in Nimblium: see house_rules.txt.)
   - **Bloodied**: "While this creature is Bloodied, its attacks deal 2d8+3 damage instead."
     (+ Bloodied reminder)
   - **Last Stand**: "When this creature drops to 0 HP, it dies only after taking 20 more
@@ -160,7 +161,7 @@ level: "2",
 ```typst
 blocks: (
   passive_abilities.undying,
-  (kind: "passive", name: "Cursed Gaze", effect: [Whenever a creature crits this creature, that creature makes a #dc(20) #INT save. If it fails, it gains 1 Wound.]),
+  (kind: "passive", name: "Cursed Gaze", effect: [Whenever a creature crits this creature, that creature makes a #dc(20) #INT check. If it fails, it gains 1 Wound.]),
   (kind: "active", cost: (actions(1),), limitation: per_turn(1), name: "Scarab Swarm", effect: [It summons 10 scarab minions within 6 spaces. Each one deals 1d6 damage.]),
   (kind: "active", cost: (actions(1),), limitation: per_turn(1), name: "Slam", attacks: 2, damage: "1d4+20", effect: [Whenever this attack deals damage, the target is #kw_dazed.]),
 ),

@@ -22,13 +22,10 @@
     [Min-Max], [+3, +1, −1, −1],
   )
 
-  #rule[4\. Saves][Your class sheet gives your save with #kw_advantage and your save with
-  #kw_disadvantage.]
-
-  #rule[5\. Skills][Each skill starts at the value of its stat. Then add 4 skill points to any
+  #rule[4\. Skills][Each skill starts at the value of its stat. Then add 4 skill points to any
   skills you like. A skill can't go above +10.]
 
-  #rule[6\. The rest of your sheet][Fill in these values.]
+  #rule[5\. The rest of your sheet][Fill in these values.]
 
   #values(columns: (27mm, 1fr),
     [Max #HP], [Your class sheet's starting #HP.],
@@ -41,7 +38,7 @@
     [Inventory], [#STR + 10 slots.],
   )
 
-  #rule[7\. Languages][You speak Common, and 1 more language for each point of #INT.]
+  #rule[6\. Languages][You speak Common, and 1 more language for each point of #INT.]
 
   #values(columns: (25mm, 1fr), header: ("Language", "Spoken by"),
     [Common], [Most intelligent creatures.],

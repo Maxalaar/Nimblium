@@ -7,7 +7,7 @@
         "Hunter",
     ),
     blocks: (
-      (kind: "narrative", effect: [You have #kw_advantage on skill checks to find food and water in the wild.]),
+      (kind: "narrative", effect: [You have #kw_advantage on checks to find food and water in the wild.]),
     ),
 )
 

@@ -12,7 +12,6 @@
     ("Key stats", [#DEX, #INT]),
     ("Hit die", [1d6]),
     ("Starting HP", [10]),
-    ("Saves", [#DEX\+, #WIL\−]),
     ("Armor", [Leather]),
     ("Weapons", [#DEX weapons]),
   ),

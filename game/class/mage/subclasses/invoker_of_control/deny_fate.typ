@@ -8,7 +8,7 @@
         "Invoker of Control",
     ),
     blocks: (
-      (kind: "passive", effect: [Whenever you miss with a spell, or one or more creatures save against a spell you cast, you must #kw_demand_control.]),
+      (kind: "passive", effect: [Whenever you miss with a spell, or one or more creatures succeed on a check against a spell you cast, you must #kw_demand_control.]),
     ),
     reminder: (mage_keywords.demand_control,),
 )
