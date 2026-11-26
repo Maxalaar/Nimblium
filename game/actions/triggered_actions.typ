@@ -28,13 +28,6 @@
         limitation: per_round(1),
         effect: [When an adjacent creature willingly moves away from you, you may make a melee attack against it with #kw_disadvantage.],
       ),
-      (
-        kind: "active",
-        name: "Help",
-        cost: (actions(1),),
-        limitation: per_round(1),
-        effect: [When an ally makes a roll, they may reroll it if you can explain how you help. Only one hero can Help on each roll.],
-      ),
     ),
 )
 
@@ -45,9 +38,12 @@ review: style=2026-11-14 changelog=2026-10-02
 
 Source: Core Rules p.14 (Heroic Reactions), both changelogs (Defend uses Defense and crits
 ignore it, the pushed ally chooses where it moves, Opportunity Attacks against any creature,
-Help lets an ally reroll, decide after seeing the roll).
+decide after seeing the roll).
 
 house-rule: There are no Reactions: these are actions with a "When..." trigger, 1 action and
 1/round (writing_rules.txt §4). Only heroes make Opportunity Attacks, unless a creature's card
 says otherwise.
+
+house-rule: Help is removed. Combat rules stay objective: helping an ally is role-play,
+handled by the GM like any narrative action.
 */

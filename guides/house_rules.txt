@@ -21,6 +21,11 @@ to a card, add or complete a line here.
   (`game/actions/triggered_actions.typ`)
 - **Hide with no roll.** 1 action with Cover is enough to hide (Nimble: Stealth DC 10, Full
   Cover succeeds automatically). (`game/keywords.typ`, `game/actions/basic_actions.typ`)
+- **Combat rules are objective.** No combat rule depends on the GM's judgment of a
+  description. What is narrative (asking a question, helping an ally, a simple task) is
+  role-play, handled by the GM without a rule.
+- **No Help.** Removed from the triggered actions for that reason (Nimble: 1 action, an ally
+  rerolls if you explain how you help). (`game/actions/triggered_actions.typ`)
 - **No Assess.** Asking the GM a question is role-play. Its two combat effects (Create an
   Opening, Anticipate Danger) live on *Wild Instinct* and *Quick Read*; *Exploit Weakness*
   becomes an action of its own. (`game/actions/grapple.typ`)

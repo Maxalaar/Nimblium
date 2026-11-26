@@ -74,7 +74,7 @@ text is available, so no cards.
 - 3 cards every hero gets, type "Ability · Combat", Crossed Swords icon: *Basic Actions*
   (Move, Attack, Hide; Hide with no roll, house rule), *Grapple* (Grab, Escape: a STR or DEX
   check against 10 + the other creature's higher of the two, house rule; Assess removed from
-  the game), *Triggered Actions* (Defend, Interpose, Opportunity Attack, Help). Up to the
+  the game), *Triggered Actions* (Defend, Interpose, Opportunity Attack; Help removed, house rule). Up to the
   October 2, 2026 changelog. The Combat page doesn't repeat these actions, it refers to the
   cards.
 
