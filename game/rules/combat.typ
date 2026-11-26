@@ -52,13 +52,13 @@
   attack has no effect. Its maximum is a critical hit. Roll it again and add the result, as
   long as you roll the maximum.]
 
-  #rule[Areas][An attack on an area can't miss and can't crit. One roll applies to every
-  creature in it. Ignore the #kw_advantage or #kw_disadvantage that comes from one
-  target's condition.]
+  #rule[Areas][An attack on an area can't miss and can't crit. Roll its damage once and apply
+  it to every creature in the area. If it calls for a check, each creature rolls its own.
+  A condition that gives #kw_advantage or #kw_disadvantage against one creature, such as
+  #kw_prone, doesn't change the roll.]
 
   #rule[Rushed attacks][Each attack after the first on the same turn has 1 more
-  #kw_disadvantage. For an ability that calls for a check, the target rolls with 1 more
-  #kw_advantage instead.]
+  #kw_disadvantage.]
 
   #rule[#defense][A creature takes its #defense less damage from each attack. Critical hits
   ignore #defense.]
@@ -105,22 +105,16 @@
 ]
 
 #section("Grappling")[
-  The #card_ref("Grapple") card explains how to grab and how to escape. While a creature
-  grapples another, it moves at half #speed, or at full #speed if it is bigger. Attacks
-  against either of them have #kw_advantage. A critical hit against either of them ends the
-  grapple. It also ends when forced movement separates them, or when the grappler is
-  #kw_incapacitated.
+  The #card_ref("Grapple") card explains how to grab and how to escape.
+
+  #keywords.grappling
 
   #rule[#kw_restrained][Chains, ropes or roots work like Grappled, whatever the size. Picking
   the lock or cutting the rope ends it.]
 ]
 
-#section("Forced movement")[
+#section("Knockback")[
   #keywords.knockback
-
-  Small, Tiny and #kw_flying creatures are pushed twice as far, Large ones half as far. Huge and
-  Gargantuan creatures ignore forced movement. When a pushed creature hits another creature,
-  they share the damage.
 ]
 
 #section("Concentration")[

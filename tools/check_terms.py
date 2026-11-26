@@ -153,7 +153,7 @@ def check_file(path, names):
     problems.extend(unmarked_card_names(path, source, names))
     rules = [
         rule for rule in TEXT_RULES
-        if not (path.name in DEFINITION_FILES and ("kw_difficult_terrain" in rule[1] or "kw_cover" in rule[1] or "kw_advantage" in rule[1]))
+        if not (path.name in DEFINITION_FILES and ("kw_difficult_terrain" in rule[1] or "kw_cover" in rule[1] or "kw_advantage" in rule[1] or "kw_flying" in rule[1]))
     ]
     for block in content_blocks(source):
         block = CARD_REF.sub("", FORMULA_CALL.sub("", DEFINITION_REF.sub("", SECTION_TITLE.sub("", block))))

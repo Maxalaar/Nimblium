@@ -107,7 +107,7 @@ The stat row below the name and types shows, in this order and only when present
   saves convert to stats: each "+" is +3 and each "−" is −3 (STR+ → STR +3, STR++ → +6).
   Give a stat only when the source gives a save, or when the creature clearly needs one.
 - `SIZ` (field `size`: "Tiny", "Small", "Large", "Huge", "Gargantuan", written in full) comes
-  from the source stat block. The card shows one letter: T, S, L, H or G. Size governs forced movement and moving through other creatures' spaces
+  from the source stat block. The card shows one letter: T, S, L, H or G. Size governs Knockback and moving through other creatures' spaces
   (2026-10-02 changelog). Medium is the default and is not written.
 
 ## 5. Shared blocks

@@ -52,7 +52,7 @@ Planned areas:
 - **Adventure** (done): stats, skills, checks, advantage, size, falling; on the verso
   HP, temporary HP, Hit Dice, Field Rest, Safe Rest. No lodging and no downtime.
 - **Combat** (done): turn, pool of 3 actions, attacks, Defense, movement and reach, Cover,
-  grapples in progress, forced movement, Concentration, Dying and Wounds; on the verso the
+  grapples in progress, Knockback, Concentration, Dying and Wounds; on the verso the
   conditions (taken from `game/conditions.typ`) and the creature rules
   (`creature_rules.txt`). The actions themselves are on the cards of `game/actions/` (Basic
   Actions, Grapple, Triggered Actions): the page refers to them without repeating them.

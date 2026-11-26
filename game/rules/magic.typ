@@ -78,7 +78,8 @@
     [REACH], [How far around you it reaches, or the shape of its area, such as Cone 4 or
     Line 12.],
     [AREA], [The size of the area it affects.],
-    [AoE], [In its types, the spell affects an area, so it can't miss and can't crit.],
+    [AoE], [In its types, the spell affects an area. The Areas rule of the Combat page
+    applies.],
   )
 ]
 

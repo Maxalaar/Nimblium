@@ -42,6 +42,11 @@ to a card, add or complete a line here.
 - **Creature stats.** A creature's STR, DEX, INT and WIL are 0 unless its card shows them,
   and each of its skills equals its stat. Nimble's monster saves become stats: each "+" is +3,
   each "−" is −3. (`game/rules/combat.typ`, Creatures section; `creature_rules.txt` §4)
+- **Knockback is the only forced movement.** The size rule (Small, Tiny and Flying ×2, Large
+  half, Huge and Gargantuan not at all) is part of the Knockback keyword; other cards that move
+  a creature do exactly what they say. Rushed attacks only add disadvantage to attack rolls
+  (the book also gave the target advantage on its save). (`game/keywords.typ`,
+  `game/rules/combat.typ`)
 - **No card for simple tasks** (opening a door, dropping an item): the GM handles them.
   (`game/actions/basic_actions.typ`)
 - **Fixed HP when leveling up.** Max HP always increase by the fixed value of the Hit Die
