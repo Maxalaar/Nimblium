@@ -1,0 +1,70 @@
+# Règles maison — Nimblium
+
+Tous les endroits où Nimblium s'écarte volontairement de Nimble (livres et changelogs). Ce
+sont des décisions de l'utilisateur : ne jamais les « corriger » d'après le livre ou un
+changelog.
+
+Chaque ligne dit où la règle s'applique. Le détail est dans la note `house-rule:` du fichier
+cité ; `python3 tools/review.py --rules` les liste toutes. Quand on ajoute une note
+`house-rule:` à une carte, on ajoute ou on complète une ligne ici.
+
+## Tout le jeu
+
+- **Pas de changement de choix au repos.** Chaque classe du livre a une capacité qui permet
+  de refaire ses choix de classe pendant un Safe Rest (Supplicate, Remember the Wild, Serve,
+  Be Wild, Focus, "you may choose different X options"...). Elle n'est pas utilisée : trop
+  forte, et elle ralentit le jeu. Les choix ne changent qu'en montant de niveau. Pas de carte,
+  pas d'activité Retrain pendant le downtime.
+- **Pas de Reactions.** Une réaction est une action avec un déclencheur « When... », un coût
+  de 1 action et une limite de 1/round. Elle marche aussi pendant ton propre tour.
+  (`writing_rules.txt` §4, `game/rules/combat.typ`, `game/actions/triggered_actions.typ`)
+- **Attaques d'opportunité.** Seuls les héros en font, sauf si la carte d'une créature dit
+  le contraire. (`game/actions/triggered_actions.typ`)
+- **Hide sans jet.** 1 action avec un Cover suffit pour se cacher (Nimble : Stealth DC 10,
+  Full Cover réussit d'office). (`game/keywords.typ`, `game/actions/basic_actions.typ`)
+- **Pas d'Assess.** Poser une question au MJ, c'est du jeu de rôle. Ses deux effets de combat
+  (Create an Opening, Anticipate Danger) vivent sur *Wild Instinct* et *Quick Read* ;
+  *Exploit Weakness* devient une action à part. (`game/actions/maneuvers.typ`)
+- **Pas de carte pour les tâches simples** (ouvrir une porte, lâcher un objet) : le MJ gère.
+  (`game/actions/basic_actions.typ`)
+- **Cover et Full Cover** ne touchent que les attaques à distance, et parlent de « ligne
+  d'attaque ». (`game/keywords.typ`)
+
+## Créatures
+
+- **Actions des créatures.** Contrairement à Nimble (une chose par tour, "OR" / "Then"), les
+  créatures ont des actions comme les héros (1 par défaut, stat `ACT` si plus) et leurs
+  capacités sont des blocs à capsules. Déplacement gratuit. (`creature_rules.txt`)
+- **Defense des monstres** (d'après le changelog du 2 octobre 2026). L'armure des monstres
+  devient leur Defense, une valeur chiffrée qui réduit les dégâts reçus : Medium = DEF 10,
+  Heavy = DEF 20. Champ `defense: 10` sur la carte, case `DEF`. Les crits l'ignorent. Les
+  cartes de héros disent "ignoring #defense". "Armor" ne reste que pour l'équipement porté.
+- **Goblins.** Haha, Didn't Hurt! (capacité de famille du changelog) et les pièges et hasards
+  de Goblins v1.1 sont écartés. (`game/creatures/goblin/mod.typ`)
+
+## Classes
+
+- **Cheat.**
+  - *Sunder Armor (Medium)* et *(Heavy)* restent deux capacités qui baissent la Defense de
+    10 et 20, pour coller à la Defense des monstres (le changelog les fusionne).
+  - *Exploit Weakness* : 1 action, sans jet et sans limite (livre : test d'INT opposé).
+  - *Quick Read* : gratuit, 1/encounter, les Primary Dice d'une créature contre toi ont −1
+    ce round (livre : avantage sur Assess et sur un test d'Examination).
+- **Commander.**
+  - *Shield Expert* : le Defend gratuit est limité à 1/round (décision du 2026-11-21).
+  - *Survey the Battlefield* : 1 utilisation de plus de *Coordinated Strike!* par combat.
+- **Hunter.**
+  - *No Escape* : limite de 2/round, absente du livre.
+  - *Wild Instinct* : gratuit, 1/round, sans charges : +1 au prochain Primary Die contre une
+    créature, ou −1 aux Primary Dice contre toi, sans jet (livre : Assess avec avantage).
+- **Shepherd.** Le compagnon reste en version maison, très différente du jeu officiel : une
+  créature à part avec un pool de PV (Tier × 10), qui agit au contact. Les changements du
+  changelog du 2 octobre 2026 sur le compagnon ne sont pas appliqués, sauf deux : les soins
+  limités à WIL/Safe Rest, et *Vengeful Spirit* en une seule explosion. Les cartes adaptées
+  (*Lifebinding Spirit*, *Assist Me, My Friend*, *Empowered Companion*, *Hasty Companion*,
+  *Vengeful Spirit*...) le notent chacune. (`game/class/shepherd/mod.typ`)
+
+## Sorts
+
+- **Creeping Death** : la chaîne se répète au plus 4 fois, plus 1 par upcast (décision du
+  2026-11-21 ; le livre ne met pas de limite).

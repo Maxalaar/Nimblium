@@ -73,5 +73,5 @@ review: style=2026-11-14 changelog=2026-10-02
 
 Source: Heroes p.13-17 and the 2026-10-02 changelog (Tangling Wire and The Setup are new).
 Trade Secrets (change your choices on a Safe Rest) is not used: global house rule in
-guides/README.txt.
+guides/house_rules.txt.
 */

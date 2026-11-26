@@ -155,15 +155,14 @@
 /*
 review: style=2026-11-14 changelog=2026-10-02
 
-Source: Core Rules p.10-11 and p.13-15, glossary p.56, both changelogs (Help rerolls, Assess
-DC 10, grabbing, moving through spaces by size, forced movement by size, cones,
+Source: Core Rules p.10-11 and p.13-15, glossary p.56, both changelogs (Help rerolls, grabbing, moving through spaces by size, forced movement by size, cones,
 Concentration, Dying, Opportunity Attacks against any creature, limits reset at the end of
 your turn, multi-target attacks roll normally, Defend after seeing the roll), and
 guides/creature_rules.txt for the Creatures section. The actions themselves (Move, Attack,
-Hide, Assess, Grab, Escape, Defend, Interpose, Opportunity Attack, Help) are on the cards of
+Hide, Grab, Escape, Defend, Interpose, Opportunity Attack, Help) are on the cards of
 game/actions/.
 
-house-rule: Creatures have actions and move for free, monster Defense is a number (README.txt,
+house-rule: Creatures have actions and move for free, monster Defense is a number (house_rules.txt,
 creature_rules.txt).
 
 house-rule: There are no Reactions: triggered actions have a "When..." trigger and work on

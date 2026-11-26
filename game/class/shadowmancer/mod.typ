@@ -17,5 +17,5 @@ choices to gain is replaced by the class table, user ruling 2026-11-21):
 Lesser Invocation at levels 3, 8 and 11. Greater Invocation at levels 4, 6, 9, 14 and 18.
 
 house-rule: Supplicate (change your Shadowmancer choices on a Safe Rest) is not used. See
-the global house rule in guides/README.txt.
+the global house rule in guides/house_rules.txt.
 */

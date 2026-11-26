@@ -68,5 +68,5 @@ review: style=2026-11-14 changelog=2026-10-02
 Source: Heroes p.43-47 and the 2026-10-02 changelog (Eldritch Usurper summons a Greater
 Shadow, Vengeful Blast removed). The Tier column is the tier every spell is cast at
 (Pilfered Power). Supplicate (change your choices on a Safe Rest) is not used: global house
-rule in guides/README.txt.
+rule in guides/house_rules.txt.
 */

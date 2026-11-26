@@ -69,5 +69,5 @@ review: style=2026-11-14 changelog=2026-10-02
 
 Source: Heroes p.31-35 and the 2026-10-02 changelog (Mage: class table reworded, no rules
 change). Study! (change your choices on a Safe Rest) is not used: global house rule in
-guides/README.txt.
+guides/house_rules.txt.
 */

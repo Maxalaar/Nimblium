@@ -22,7 +22,7 @@ cartes, comment on gère le projet, et où on en est.
 
 ## Ordre de priorité des règles
 
-1. Les décisions de l'utilisateur : règles maison globales (plus bas) et notes `house-rule`
+1. Les décisions de l'utilisateur : règles maison (`house_rules.txt`) et notes `house-rule`
    dans les cartes. Ne pas les « corriger » d'après le livre ou le changelog.
 2. Les changelogs officiels, le plus récent d'abord. Leurs liens sont dans `weblinks.txt` :
    - Core Rules, GMG & Heroes Full Changelog (2 octobre 2026) : le plus récent, il prime ;
@@ -31,26 +31,17 @@ cartes, comment on gère le projet, et où on en est.
 3. Les PDF de `sources/`, qui datent d'AVANT ces changelogs et ne peuvent pas être mis
    à jour. Toute règle tirée d'un PDF doit donc être confrontée aux changelogs.
 
-## Règles maison globales
+## Règles maison
 
-Elles touchent tout le jeu, donc elles vivent ici et pas dans une carte :
+Toutes les règles maison (tout le jeu, créatures, classes, sorts) sont listées dans
+`house_rules.txt`. Elles priment sur le livre et les changelogs.
 
-- **Actions des créatures** : contrairement à Nimble (une chose par tour, "OR" / "Then"), les
-  créatures ont des actions comme les héros (1 par défaut, stat `ACT` si plus) et leurs
-  capacités sont des blocs à capsules. Déplacement gratuit. Détails : `creature_rules.txt`.
-- **Defense des monstres** (d'après le changelog du 2 octobre 2026) : l'armure des monstres
-  devient leur Defense, une valeur chiffrée qui réduit les dégâts reçus. Medium = DEF 10
-  (-10 dégâts), Heavy = DEF 20 (-20 dégâts). Champ `defense: 10` sur la carte, case `DEF`. Les
-  crits l'ignorent toujours. Les cartes de héros disent "ignoring #defense" (plus "ignoring
-  armor"). "Armor" ne reste que pour l'équipement porté ("metal armor" de Stormlash).
-- **Pas de changement de choix au repos** : chaque classe du livre a une capacité qui permet
-  de refaire ses choix de classe pendant un Safe Rest (Supplicate, Remember the Wild, Serve,
-  Be Wild, Focus, "you may choose different X options"...). Elle n'est pas utilisée : trop
-  forte, et elle ralentit le jeu. Les choix ne changent qu'en montant de niveau. Pas de carte.
+Conventions du projet, qui ne changent pas les règles du jeu :
+
 - **Pas de carte pour une simple liste de choix** : une carte qui ne fait que dire quoi
   choisir à quel niveau (ex. « niveau 3 : 1 Lesser Invocation ») est remplacée par une
   indication dans le tableau de la classe.
-- **Règles d'écriture maison** (Reaction, "for free", conditions sans effet propre, valeurs par
+- **Règles d'écriture** (Reaction, "for free", conditions sans effet propre, valeurs par
   défaut non écrites) : `writing_rules.txt`.
 
 ## Règles du changelog appliquées à tout le jeu
@@ -58,8 +49,8 @@ Elles touchent tout le jeu, donc elles vivent ici et pas dans une carte :
 - **Defense** : la stat de héros "Armor" s'appelle "Defense" ; Defend réduit les dégâts de la
   Defense. "Armor" ne désigne plus que l'équipement porté.
 - **Vulnerable** = +10 dégâts. **Resistant** = -10 dégâts.
-- **Hide** : on ne reste plus caché après un kill que personne n'a vu. Règle maison : se
-  cacher ne demande aucun jet, 1 action avec un Cover suffit (Nimble : Stealth DC 10).
+- **Hide** : on ne reste plus caché après un kill que personne n'a vu (et pas de jet : règle
+  maison).
 - **Conditions** : Blinded devient Blind ; Silenced est ajoutée ; elles ne se cumulent pas (une
   créature a une condition ou ne l'a pas).
 - **Sorts défensifs** : 0 action, lançables uniquement pendant un Defend.
@@ -85,6 +76,9 @@ Elles touchent tout le jeu, donc elles vivent ici et pas dans une carte :
 - `tools/`, `art/` : scripts et images.
 
 ## Les fichiers de ce dossier
+
+Règles maison :
+- `house_rules.txt` : la liste de toutes les règles maison.
 
 Rédaction des cartes :
 - `writing_rules.txt` : comment on écrit le texte d'une carte (à lire avant toute carte).

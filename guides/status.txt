@@ -72,7 +72,7 @@ donnent que le nom : pas de texte disponible, donc pas de cartes.
 ## Actions de base (`game/actions/`)
 
 - 3 cartes que chaque héros reçoit, type "Ability · Combat", icône Crossed Swords :
-  *Basic Actions* (Move, Attack, Hide ; Hide sans jet, règle maison), *Maneuvers* (Assess, Grab, Escape),
+  *Basic Actions* (Move, Attack, Hide ; Hide sans jet, règle maison), *Maneuvers* (Grab, Escape ; Assess retiré du jeu, règle maison),
   *Triggered Actions* (Defend, Interpose, Opportunity Attack, Help). Au changelog du
   2 octobre 2026. La page Combat ne répète pas ces actions, elle renvoie aux cartes.
 

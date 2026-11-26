@@ -71,5 +71,5 @@ Source: Heroes p.19-23 and the 2026-10-02 changelog: Fit for Any Battlefield (Co
 Combat Tactics) moved to level 2 and Commander's Orders to level 4; the Combat Dice upgrades
 come with Master Commander at levels 5, 9, 13 and 17. Master Commander (2), (3) and (4) keep
 the book's +1 use of Coordinated Strike per Safe Rest. Rigorous Training (change your choices
-on a Safe Rest) is not used: global house rule in guides/README.txt.
+on a Safe Rest) is not used: global house rule in guides/house_rules.txt.
 */

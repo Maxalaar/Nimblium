@@ -5,10 +5,11 @@ Parle en français à l'utilisateur ; le texte des cartes et leurs notes sont en
 
 Avant de toucher à une carte, lis dans `guides/` :
 
-1. `README.txt` : philosophie, ordre de priorité des règles, règles maison globales.
-2. `writing_rules.txt` : comment on écrit une carte.
-3. `workflow.txt` : organisation des fichiers, vérifications, bloc de notes en bas de carte.
-4. `status.txt` : où en est le projet.
+1. `README.txt` : philosophie, ordre de priorité des règles.
+2. `house_rules.txt` : toutes les règles maison (elles priment sur le livre).
+3. `writing_rules.txt` : comment on écrit une carte.
+4. `workflow.txt` : organisation des fichiers, vérifications, bloc de notes en bas de carte.
+5. `status.txt` : où en est le projet.
 
 Selon la tâche : `card_format.txt` (champs des cartes), `creature_rules.txt` (créatures),
 `art.txt` (images et icônes), section « Pages de règles » de `workflow.txt` (`game/rules/`).

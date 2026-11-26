@@ -135,6 +135,7 @@ follow its order.
   cartes plus anciennes repassent « à revoir ».
 - `house-rule:` : on n'est pas d'accord avec le jeu et on change volontairement la règle. Ne
   jamais la « corriger » d'après le livre ou le changelog.
+  Ajouter aussi une ligne dans `house_rules.txt`.
 - `interpretation:` : la source est floue ou incomplète, et on a fait un choix. À revoir si une
   source plus claire sort.
 - `changelog:` : seulement quand la carte remplace ou retire un élément du livre (sort
@@ -144,7 +145,7 @@ follow its order.
   `python3 tools/review.py --rules` les liste toutes, par balise.
 - Une règle qui concerne une famille entière va dans le `mod.typ` du dossier (ex :
   `game/creatures/goblin/mod.typ`) ; une règle sur un mot-clé, dans `game/keywords.typ` ou
-  `game/conditions.typ`. Une règle qui touche tout le jeu va dans `README.txt`.
+  `game/conditions.typ`. Une règle qui touche tout le jeu va dans `house_rules.txt`.
 
 ## Rythme de collaboration
 
