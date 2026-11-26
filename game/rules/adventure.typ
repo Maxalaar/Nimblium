@@ -131,7 +131,7 @@
   oasis or a sacred shrine. Camping in the wilderness or in a dungeon is not enough.
 
   After a #safe_rest, you recover all your #HP, all your Hit Dice, your mana, your class
-  resources and the charges of your consumables, and you heal 1 Wound. Abilities limited per #safe_rest can be used again.
+  resources and the charges of your items, and you heal 1 Wound. Abilities limited per #safe_rest can be used again.
 
   You level up during a #safe_rest, as the Level Up page explains. Your class choices only
   change when you level up.
@@ -144,8 +144,11 @@
 
   #rule[Level][You can use an item only if your level is at least the level shown on its card.]
 
-  #rule[Consumables][A consumable has charges (CHRG). Each use spends 1 charge, and they all
-  come back after a #safe_rest.]
+  #rule[Charges][An item may have charges (CHRG). Each use spends 1 charge, and they all
+  come back after a #safe_rest, unless its card says otherwise.]
+
+  #rule[Magic items][You can carry 2 magic items, 3 from level 5, 4 from level 10, and 5
+  from level 15. #card_ref("Wand", "Wands") don't count.]
 ]
 ]
 
@@ -169,7 +172,7 @@ interpretation: Inventory slots come from Core Rules p.29. The book's option to 
 bookkeeping is left to the GM. The slots are written on each item card, with no table: armor
 always takes 2 (house rule; book: 1 worn, 2 carried), and there is no money.
 
-house-rule: Consumables (potions, wands) have charges that all come back after a Safe Rest,
+house-rule: Items with charges (potions, wands) have charges that all come back after a Safe Rest,
 so players use them freely; slots limit how many they carry. Items may show a LVL: you can't
 use them below that level (a wand's LVL is twice its spell's tier, 1 for a cantrip). Thrown
 weapons come back when combat ends.

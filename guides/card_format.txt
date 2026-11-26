@@ -96,7 +96,7 @@ no cost. Fields:
   `armor_bonus` or `shield_bonus` (unnamed), then `armor_max_dex(n)` (Mail), `armor_no_dex`
   (Plate), `armor_heavy(n)`; the shield also has `weapon_properties.one_handed`.
 
-- Consumables (`game/items/consumables/`): `type: ("Item", "Consumable", <kind>)`, `charges`
+- Items with charges (`game/items/gear/`: Healing Potion, Wand): `type: ("Item", <kind>)`, `charges`
   (CHRG: all come back after a Safe Rest), `slots`; each use costs `charge_cost(1)` (a "1 Charge" capsule) Items
   may have a `level` (LVL, shown first: the level needed to use it). Stat order: LVL, DMG or
   DEF, REACH, RNGE, CHRG, SLOT.
@@ -104,6 +104,10 @@ no cost. Fields:
 - Gear (`game/items/gear/`): `type: ("Item", "Gear")`. The Torch, and three blank cards
   (Small, Bulky, Heavy Gear: 1, 2, 3 slots) whose lines the GM fills in, made with `blank()`
   (`game/terms.typ`), like the Wand.
+
+- Magic items (`game/items/magic/`): `type: ("Item", "Magic")`, `level` from the rarity (Uncommon 1, Rare 5, Very Rare 10, Legendary 15),
+  Sparkles icon (family "Magic"). A weapon enchantment (Slaying, Animosity...) takes 0 slots
+  and starts with "Put this card with one of your weapon cards."
 
 ### Mechanic (`creat_mechanic.typ`)
 

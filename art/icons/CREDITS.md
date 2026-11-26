@@ -50,3 +50,4 @@ gray by the card template).
 | `wand.svg` | [Crystal wand](https://game-icons.net/1x1/lorc/crystal-wand.html) | Lorc |
 | `torch.svg` | [Torch](https://game-icons.net/1x1/delapouite/torch.html) | Delapouite |
 | `gear.svg` | [Knapsack](https://game-icons.net/1x1/lorc/knapsack.html) | Lorc |
+| `magic.svg` | [Sparkles](https://game-icons.net/1x1/delapouite/sparkles.html) | Delapouite |

@@ -129,15 +129,12 @@
 ]
 
 #section("Hands")[
-  You have 2 hands. Each item card says how many hands it takes.
+  You have 2 hands. Each item card says how many hands it takes. Changing what you hold costs
+  1 action. Dropping an item costs none.
 ]
 
 #section("Weapons")[
   Each weapon card shows its damage, its Reach or Range, and its properties.
-
-  #rule[Draw and drop][Taking a weapon or shield in a free hand, or dropping an item you
-  hold, costs no action. Putting one away is the Equip action of the
-  #card_ref("Basic Actions") card.]
 
   #rule[Dual wielding][With a Light weapon in each hand, one attack with them per round has
   #kw_advantage. Roll the damage of both weapons and keep either result. With 2 #STR, one of
@@ -217,7 +214,7 @@ with your level (game/items/armor/).
 house-rule: No weapon proficiency: any hero can use any weapon, and class sheets list no
 weapons (book: a weapon without proficiency can't crit). Unarmed strikes can't crit unless an
 ability says so (book: unless proficient, and proficient heroes count their fists as dual
-wielded). Swapping is the Equip action of the Basic Actions card. Armor proficiency stays.
+wielded). Changing what you hold costs 1 action (Hands). Armor proficiency stays.
 
 interpretation: The book's Initiative bands ("a single digit", "2 digits") become 9 or less
 and 10 to 19.

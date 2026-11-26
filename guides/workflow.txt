@@ -58,7 +58,7 @@ Planned areas:
   (`creature_rules.txt`). The actions themselves are on the cards of `game/actions/` (Basic
   Actions, Grapple, Triggered Actions): the page refers to them without repeating them.
 - **Magic** (done): schools, casting, mana, upcasting, cantrips, how to read a spell card,
-  utility spells. One page. Scrolls and wands will be equipment cards.
+  utility spells. One page. Spell scrolls merge into the Wand card (game/items/gear/).
 - **Level Up** (done): making a hero (class, ancestry and background, stat arrays, skills, the rest of the sheet, languages) and leveling up. One page. Ancestries and
   backgrounds will be cards.
 - No equipment page: equipment will become cards.

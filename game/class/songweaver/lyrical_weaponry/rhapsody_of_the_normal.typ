@@ -4,7 +4,7 @@
     name: "Rhapsody of the Normal",
     type: ("Ability", "Songweaver", "Lyrical Weaponry"),
     blocks: (
-      (kind: "passive", cost: (inspiration_cost(1),), effect: [When #card_ref("Vicious Mockery") hits with a 4 or more on its #primary_die, you may make the target lose all its abilities until the end of its next turn. Until then, it can only make 1 attack that deals 1d4 damage, and move up to 6 spaces.]),
+      (kind: "active", cost: (inspiration_cost(1),), effect: [When #card_ref("Vicious Mockery") hits with a 4 or more on its #primary_die, you may make the target lose all its abilities until the end of its next turn. Until then, it can only make 1 attack that deals 1d4 damage, and move up to 6 spaces.]),
     ),
 )
 

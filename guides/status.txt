@@ -98,18 +98,23 @@ text is available, so no cards.
   cost; category as last type, damage type as a passive, one icon per kind of weapon), up to the October 2, 2026 changelog (Greatmaul 3d4, Greatsword 1d12, the old Spear
   becomes the Greatspear, a new Spear whose stats are a guess). Weapon rules (dual wielding, unarmed strikes, improvised weapons) are on the Combat page,
   inventory slots on the Adventure page. No weapon proficiency (class sheets list no weapons);
-  swapping is the Equip basic action. To do with the Zephyr: its unarmed strikes can crit.
+  changing what you hold costs 1 action (Combat page, Hands). To do with the Zephyr: its unarmed strikes can crit.
 - **Armor and shields**: DONE, 4 armors (Cloth, Leather, Mail, Plate) and 1 Shield, one card
   each whose bonus grows at levels 5, 10 and 15 (house rule: no money, no strict upgrades).
   Armor rules and the proficiency list on the Combat page, Defense on the Level Up page.
-- **Consumables**: Healing Potion DONE (1 charge, 2 slots, back after a Safe Rest, heals with the
-  drinker's Hit Die and STR, more at levels 5, 10 and 15). Rules (Level, Consumables) on the Adventure page, Items section.
+- **Charged items**: Healing Potion DONE (`game/items/gear/`) (1 charge, 2 slots, back after a Safe Rest, heals with the
+  drinker's Hit Die and STR, more at levels 5, 10 and 15). Rules (Level, Charges, Magic items) on the Adventure page, Items section.
 - **Wand**: DONE, one blank card the GM fills in (spell, LVL, charges; guidance on the card);
   spell scrolls merged into it.
 - **Gear** (`game/items/gear/`): DONE, Torch (torch or lantern, lights 6 spaces, 1 hand) and
   three blank cards the GM fills in for everyday items: Small Gear (1 slot), Bulky Gear (2),
   Heavy Gear (3).
-- To do: magic items.
+- **Magic items** (`game/items/magic/`): DONE, 14 cards (plus the Phoenix Form ability) from the Core Rules and the Game Master's
+  Guide examples that change combat or stats; purely narrative items (Mindlink Daggers,
+  Bloodstained Quill, Eyes of the Street, Key of Doors, Pocket Cauldron) are left to the GM on
+  a blank Gear card; Vindication folded into Weapon of Animosity, Harbinger & Sovereign into Many Hands. Rarity becomes LVL
+  (Uncommon 1, Rare 5, Very Rare 10, Legendary 15); you carry 2 to 5 by level (Adventure
+  page, Items); weapon enchantments are cards put with a weapon card (0 slots).
 
 ## Rules (`game/rules/`)
 

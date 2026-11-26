@@ -2,7 +2,7 @@
 
 #let item_data = (
     name: "Wand",
-    type: ("Item", "Consumable", "Wand"),
+    type: ("Item", "Wand"),
     family_icon: "wand.svg",
     level: blank(6mm),
     charges: blank(6mm),

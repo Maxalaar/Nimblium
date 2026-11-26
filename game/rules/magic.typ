@@ -99,6 +99,6 @@ only be cast while Defending, multi-target attacks roll normally and only area a
 miss or crit, Silenced). Concentration, casting over several turns and the area rules are on
 the Combat page.
 
-interpretation: Spell scrolls and wands are items: they will be equipment cards, not rules
+interpretation: Wands are items (game/items/gear/wand.typ; spell scrolls merged into them), not rules
 on this page. Secret spells are left to the GM.
 */

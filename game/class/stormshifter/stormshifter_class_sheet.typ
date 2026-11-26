@@ -13,7 +13,7 @@
     ("Armor", [Leather]),
   ),
   levels: (
-    (none, [Lightning and Wind cantrips. #card_ref("Beastshift"). #card_ref("Fearsome Beast").]),
+    (none, [Lightning and Wind cantrips. #card_ref("Beastshift"), #card_ref("Harmless Beast"). #card_ref("Fearsome Beast").]),
     (1, [#card_ref("Stormshifter Mana Pool"). Lightning and Wind tier 1 spells. #card_ref("Beast of the Pack").]),
     (1, [Choose a subclass, Circle of Sky & Storm or Circle of Fang & Claw.]),
     (2, [1 Utility Spell of each school you know. #stat_up[+1 #WIL or #DEX.]]),

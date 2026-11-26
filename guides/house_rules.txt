@@ -131,9 +131,9 @@ to a card, add or complete a line here.
 - **No weapon proficiency.** Any hero can use any weapon at full power, and class sheets list
   no weapons (book: a weapon without proficiency can't crit). Unarmed strikes can't crit
   unless an ability says so. Armor proficiency stays. (`game/rules/combat.typ`)
-- **Equip.** Putting away a weapon or shield costs 1 action; taking one in a free hand and
-  dropping an item are free (book: swap for free, 1/round). (`game/actions/basic_actions.typ`,
-  `game/rules/combat.typ`)
+- **Changing what you hold** costs 1 action; dropping an item is free (book: swap a weapon
+  you are proficient with for free, 1/round). Thrown weapons stay in hand while they have
+  charges. (`game/rules/combat.typ`, Hands)
 - **Hands.** A hero has 2 hands. Each item card says how many hands it takes (One-Handed,
   Two-Handed); a Two-Handed weapon takes both hands, even when you don't attack with it (book:
   it can be held in 1 hand). (`game/rules/combat.typ`, Hands)
@@ -146,8 +146,8 @@ to a card, add or complete a line here.
 - **Armor proficiency** includes every lighter armor: Cloth < Leather < Mail < Plate. Without
   proficiency, Defend costs 1 more action (book rule). The Berserker is proficient with Cloth
   (book: none). (`game/rules/combat.typ`)
-- **Consumables.** Potions and wands have charges (CHRG) that all come back after a Safe Rest
-  (book: bought one by one, used up). Slots limit how many you carry. Scrolls merge into
+- **Charges.** Potions and wands have charges (CHRG) that all come back after a Safe Rest
+  (book: bought one by one, used up); there is no Consumable item type. Slots limit how many you carry. Scrolls merge into
   wands. (`game/rules/adventure.typ`, Items)
 - **Item level.** An item may show a LVL: you can't use it below that level. A wand's LVL is
   twice its spell's tier (1 for a cantrip). (`game/rules/adventure.typ`, Items)
@@ -156,13 +156,21 @@ to a card, add or complete a line here.
   (`weapon_properties.typ`)
 - **Healing Potion**: one card, 1 charge, 2 slots; it heals with the drinker's Hit Die (rolled, not
   spent; d8 without one) and STR: 2 Hit Dice + STR, then 3 + 2×STR, 4 + 3×STR, 5 + 4×STR at
-  levels 5, 10, 15 (book: 2d4+4, 3d6+6, 4d8+8, three potions bought separately). (`game/items/consumables/healing_potion.typ`)
+  levels 5, 10, 15 (book: 2d4+4, 3d6+6, 4d8+8, three potions bought separately). (`game/items/gear/healing_potion.typ`)
 - **Wand**: one blank card the GM fills in (spell, level = 2 × tier or 1 for a cantrip,
   charges 3/2/1 by tier, 2 slots). Anyone can use it, with no proficiency or Arcana check; spell scrolls
-  are wands with 1 charge. (`game/items/consumables/wand.typ`)
+  are wands with 1 charge. (`game/items/gear/wand.typ`)
 - **Gear.** Everyday items have no card of their own: the GM writes them on a blank Small,
   Bulky or Heavy Gear card (1, 2, 3 slots). Torch and lantern are one Torch card that doesn't
   burn out. (`game/items/gear/`)
 - **No spellcasting focus.** Casting a spell needs a free hand (book: a free hand or a held
   focus, which is never defined). *Aura of Refuge* makes a held shield count as a free hand
   for casting (book: shields count as your focus). (`game/rules/magic.typ`)
+- **Magic items.** You carry at most 2 magic items, 3 from level 5, 4 from level 10, 5 from
+  level 15 (book: no limit); wands don't count. Rarity becomes LVL: Uncommon 1, Rare 5, Very
+  Rare 10, Legendary 15. Items whose power varies with rarity (Many Hands, Animosity,
+  Slaying) grow with your level instead. Weapon enchantments are cards put with a weapon card.
+  Saves become checks, reactions become "When..." actions, recharges become charges back after
+  a Safe Rest. No item is ever destroyed by its own use (Gem of Escape, Phoenix Helm): it
+  has a charge instead. Purely narrative magic items have no card: the GM writes them on a
+  blank Gear card. (`game/items/magic/`, `game/rules/adventure.typ`)

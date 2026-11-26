@@ -6,7 +6,7 @@
     blocks: (
       (kind: "passive", name: "Large Beast", effect: [You are Large. Your #defense increases by #WIL. You gain #WIL+#LVL temp #HP, which last until the form ends. You have #kw_advantage on #STR checks.]),
       (kind: "active", cost: (actions(1),), name: "Gore", damage: [1d8+#LVL], effect: [Whenever this attack hits, you gain #LVL temp #HP.]),
-      (kind: "passive", cost: (mana(1),), name: "Fearsome", effect: [When you Defend or #kw_interpose, you may make the attacker reroll its attack. You choose which result is kept.]),
+      (kind: "active", cost: (mana(1),), name: "Fearsome", effect: [When you Defend or #kw_interpose, you may make the attacker reroll its attack. You choose which result is kept.]),
     ),
     reminder: (keywords.interpose,),
 )

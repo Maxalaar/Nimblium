@@ -25,6 +25,7 @@
   "Songweaver": "songweaver.svg",
   "Stormshifter": "stormshifter.svg",
   "Combat": "combat.svg",
+  "Magic": "magic.svg",
   "Melee": "melee.svg",
   "Ranged": "ranged.svg",
 )
