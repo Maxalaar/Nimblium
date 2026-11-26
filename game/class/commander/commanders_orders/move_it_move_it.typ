@@ -4,7 +4,7 @@
     name: "Move it! Move it!",
     type: ("Ability", "Commander", "Commander's Order"),
     blocks: (
-      (kind: "passive", effect: [When you roll Initiative, you and an ally have #kw_advantage on that roll and +3 #speed for 1 round.]),
+      (kind: "passive", effect: [When you roll Initiative, you and an ally within 18 spaces have #kw_advantage on that roll and +3 #speed for 1 round.]),
     ),
     reminder: (keywords.advantage,),
 )

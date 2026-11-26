@@ -7,7 +7,7 @@
       (
         kind: "active",
         cost: (inspiration_cost(1),),
-        effect: [When an ally rolls a die, you may let it reroll that die and keep either result, or add 1 to the result.],
+        effect: [When an ally within 18 spaces rolls a die, you may let it reroll that die and keep either result, or add 1 to the result.],
       ),
     ),
 )

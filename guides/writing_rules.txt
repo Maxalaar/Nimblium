@@ -27,6 +27,8 @@ A reviewed card ends with a notes block holding `review: style=<date> changelog=
   Distracted).
 - **Conditions**: the subject is always "this creature", then "it / its". Never "you".
 - **Target**: "a creature within X spaces".
+- **Allies**: an effect on an ally always states its distance ("an ally within 18 spaces").
+  When the source gives none, or says "who can hear you", write 18 spaces.
 
 ## 3. Fixed wording
 

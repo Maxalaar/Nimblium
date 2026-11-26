@@ -4,7 +4,7 @@
     name: "Reposition!",
     type: ("Ability", "Commander", "Commander's Order"),
     blocks: (
-      (kind: "active", cost: (actions(1),), limitation: per_round(1), effect: [One ally moves up to its #speed, or two allies move up to half their #speed, for free. You can use this during an ally's turn.]),
+      (kind: "active", cost: (actions(1),), limitation: per_round(1), effect: [One ally within 18 spaces moves up to its #speed, or two allies within 18 spaces move up to half their #speed, for free. You can use this during an ally's turn.]),
     ),
 )
 

@@ -10,7 +10,7 @@
     blocks: (
       (
         kind: "passive",
-        effect: [When a creature takes its second critical hit from you in a round, it becomes #kw_dazed and you give 1 action to an ally.],
+        effect: [When a creature takes its second critical hit from you in a round, it becomes #kw_dazed and you give 1 action to an ally within 18 spaces.],
       ),
     ),
     reminder: (conditions.dazed,),

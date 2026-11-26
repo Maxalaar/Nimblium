@@ -48,8 +48,9 @@ to a card, add or complete a line here.
   (the book also gave the target advantage on its save). (`game/keywords.typ`,
   `game/rules/combat.typ`)
 - **No "who can hear you".** A range the book gives as "who can hear you" or "within
-  hearing" becomes a number of spaces (12 by default), so that no GM ruling is needed.
-  (`game/class/songweaver/`)
+  hearing" becomes a number of spaces (18 by default), so that no GM ruling is needed.
+- **Every effect on an ally states its distance.** When the book gives none, the card says
+  "within 18 spaces". There is no default distance rule: the card always says it.
 - **Round up.** When a rule divides a number, the result is rounded up.
   (`game/rules/adventure.typ`)
 - **No card for simple tasks** (opening a door, dropping an item): the GM handles them.

@@ -4,7 +4,7 @@
     name: "Celestial Legion",
     type: ("Spell", "Radiant", "Tier 7"),
     cost: (actions(1), mana(7)),
-    effect: [This spell has 3 charges this encounter. Once per turn, you or an ally may spend 1 charge when attacking or when attacked.
+    effect: [This spell has 3 charges this encounter. Once per turn, you or an ally within 18 spaces may spend 1 charge when attacking or when attacked.
 
     On an attack, it has #kw_advantage, ignores all #kw_disadvantage and deals 1d20 more damage.
 

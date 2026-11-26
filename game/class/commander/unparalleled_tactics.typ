@@ -4,7 +4,7 @@
     name: "Unparalleled Tactics",
     type: ("Ability", "Commander"),
     blocks: (
-      (kind: "passive", limitation: per_encounter(1), effect: [When you use #card_ref("Coordinated Strike!"), an ally who can hear you gains 1 action on its next turn.]),
+      (kind: "passive", limitation: per_encounter(1), effect: [When you use #card_ref("Coordinated Strike!"), an ally within 18 spaces gains 1 action on its next turn.]),
     ),
 )
 

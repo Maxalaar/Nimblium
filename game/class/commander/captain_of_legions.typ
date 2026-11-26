@@ -4,7 +4,7 @@
     name: "Captain of Legions",
     type: ("Ability", "Commander"),
     blocks: (
-      (kind: "passive", limitation: per_encounter(1), effect: [When you use #card_ref("Coordinated Strike!"), up to #INT allies who can hear you each gain 1 action on their next turn. This ability replaces #card_ref("Unparalleled Tactics").]),
+      (kind: "passive", limitation: per_encounter(1), effect: [When you use #card_ref("Coordinated Strike!"), up to #INT allies within 18 spaces each gain 1 action on their next turn. This ability replaces #card_ref("Unparalleled Tactics").]),
     ),
 )
 
