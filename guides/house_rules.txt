@@ -39,7 +39,10 @@ to a card, add or complete a line here.
   or DEX check against 10 + the higher of the other creature's two stats (changelog: Might or
   Finesse check, DC 10; book: the target makes a save). Creatures that grab simply say so
   ("the target is Grappled"). A single condition, Grappled, covers both sides: the grabbed
-  creature and the grappler (no separate Grappling condition). (`game/conditions.typ`)
+  creature and the grappler (no separate Grappling condition). The grapple ends on a critical
+  hit against the grappler only (book: against either creature), on a Knockback against
+  either, or if the grappler is Incapacitated. Grab needs a free hand, and that hand holds on
+  until the grapple ends. (`game/conditions.typ`, `game/actions/grapple.typ`)
 - **Creature stats.** A creature's STR, DEX, INT and WIL are 0 unless its card shows them,
   and each of its skills equals its stat. Nimble's monster saves become stats: each "+" is +3,
   each "−" is −3. (`game/rules/combat.typ`, Creatures section; `creature_rules.txt` §4)
@@ -131,3 +134,6 @@ to a card, add or complete a line here.
 - **Equip.** Putting away a weapon or shield costs 1 action; taking one in a free hand and
   dropping an item are free (book: swap for free, 1/round). (`game/actions/basic_actions.typ`,
   `game/rules/combat.typ`)
+- **Hands.** A hero has 2 hands, each holding 1 item (a one-handed weapon, a shield, a torch,
+  a spellcasting focus). A Two-Handed weapon can be held in 1 hand but needs both to attack
+  (book rule, written out). (`game/rules/combat.typ`, Hands)

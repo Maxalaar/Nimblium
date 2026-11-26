@@ -128,6 +128,12 @@
   Wounds are lasting injuries. A #safe_rest heals 1 of them. You die when you have 6 Wounds.
 ]
 
+#section("Hands")[
+  You have 2 hands. Each one holds 1 item, such as a one-handed weapon, a shield, a torch or
+  a spellcasting focus. A free hand holds nothing. You can hold a Two-Handed weapon in 1 hand,
+  but you need both to attack with it.
+]
+
 #section("Weapons")[
   Each weapon card shows its damage, its Reach or Range, and its properties.
 

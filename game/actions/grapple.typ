@@ -11,7 +11,7 @@
         kind: "active",
         name: "Grab",
         cost: (actions(1),),
-        effect: [With a free hand, choose a creature within your Reach. Make a #STR or #DEX check against #dc(10) plus its #STR or #DEX, whichever is higher. On a success, it is #kw_grappled if it is your size or smaller. If it is bigger, you are #kw_riding it, and its attacks against you have #kw_disadvantage.],
+        effect: [With a free hand, choose a creature within your Reach. Make a #STR or #DEX check against #dc(10) plus its #STR or #DEX, whichever is higher. On a success, that hand holds on until the grapple ends. It is #kw_grappled if it is your size or smaller. If it is bigger, you are #kw_riding it, and its attacks against you have #kw_disadvantage.],
       ),
       (
         kind: "active",
