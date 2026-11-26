@@ -67,7 +67,15 @@ text is available, so no cards.
   sheet. stormshifter_keywords.typ defines Direbeast Form. No card for Be Wild (house rule), nor for
   Master of Storms, Deepening Study and Stormcaller (they only unlock spells). Class icon: Wolf
   Howl. Announced subclasses: Circle of Cinder & Ash, Circle of Venom & Web.
-- **Zephyr, Extra Subclasses**: not started.
+- **Zephyr**: DONE, rebuilt by the 2026-10-02 changelog around Momentum: Martial Training
+  (unarmed crits, fists dual wielded), Iron Defense; two resources, each a Mechanic (how you gain
+  and lose it) with an Ability that spends it: Momentum (charges) spent by Kinetic Strikes, Piercing
+  Blows and Supernatural Speed; Burst of Speed (charges) spent by Maneuvers (Slipstream,
+  Galeforce Strike, Windstep); Infuse Strength, Swift Feet, Unyielding
+  Resolve, Windborne; 10 Martial Arts; Way of Pain and Way of Flame (Echoed Agony and Encompassing Flames are
+  Levels lines on Share My Pain, Exploding Soul and Chain Reaction); class sheet, High Kick
+  icon. Announced subclasses: Way of Iron, Way of Hurricanes.
+- **Extra Subclasses**: not started.
 
 ## Spells
 
@@ -98,7 +106,7 @@ text is available, so no cards.
   cost; category as last type, damage type as a passive, one icon per kind of weapon), up to the October 2, 2026 changelog (Greatmaul 3d4, Greatsword 1d12, the old Spear
   becomes the Greatspear, a new Spear whose stats are a guess). Weapon rules (dual wielding, unarmed strikes, improvised weapons) are on the Combat page,
   inventory slots on the Adventure page. No weapon proficiency (class sheets list no weapons);
-  changing what you hold costs 1 action (Combat page, Hands). To do with the Zephyr: its unarmed strikes can crit.
+  changing what you hold costs 1 action (Combat page, Hands). The Zephyr's unarmed strikes crit (Martial Training).
 - **Armor and shields**: DONE, 4 armors (Cloth, Leather, Mail, Plate) and 1 Shield, one card
   each whose bonus grows at levels 5, 10 and 15 (house rule: no money, no strict upgrades).
   Armor rules and the proficiency list on the Combat page, Defense on the Level Up page.

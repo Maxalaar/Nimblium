@@ -51,3 +51,4 @@ gray by the card template).
 | `torch.svg` | [Torch](https://game-icons.net/1x1/delapouite/torch.html) | Delapouite |
 | `gear.svg` | [Knapsack](https://game-icons.net/1x1/lorc/knapsack.html) | Lorc |
 | `magic.svg` | [Sparkles](https://game-icons.net/1x1/delapouite/sparkles.html) | Delapouite |
+| `zephyr.svg` | [High kick](https://game-icons.net/1x1/delapouite/high-kick.html) | Delapouite |

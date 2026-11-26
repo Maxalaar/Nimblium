@@ -12,7 +12,8 @@ to a card, add or complete a line here.
 - **No change of choices on a rest.** Every class in the book has an ability that lets you
   redo your class choices during a Safe Rest (Supplicate, Remember the Wild, Serve, Be Wild,
   Focus, Perform!, Jack of All Trades, Be Wild, "you may choose different X options"...). It is not used: too strong, and it slows
-  the game down. Choices only change when you level up. No card, and no Retrain activity
+  the game down. Choices never change, not even when you level up (changelog: you may change
+  them on a level up): a new level only adds new choices. No card, and no Retrain activity
   during downtime.
 - **No Reactions.** A reaction is an action with a "When..." trigger, a cost of 1 action and a
   limit of 1/round. It also works on your own turn. (`writing_rules.txt` §4,
@@ -174,3 +175,10 @@ to a card, add or complete a line here.
   a Safe Rest. No item is ever destroyed by its own use (Gem of Escape, Phoenix Helm): it
   has a charge instead. Purely narrative magic items have no card: the GM writes them on a
   blank Gear card. (`game/items/magic/`, `game/rules/adventure.typ`)
+- **Zephyr.** Martial Training (level 1) carries its unarmed proficiency: its unarmed strikes
+  can crit and its fists count as dual wielded. The Burst of Speed maneuvers cost their usual
+  action plus 1 Burst (book: free, 1/turn; the changelog removes the limit and gives Swift
+  Fists, which makes Galeforce Strike cost 0 actions in one case). Iron Defense adds STR to
+  Defense (Defense = DEX + armor). (`game/class/zephyr/`)
+- **Supernatural Speed** (Zephyr): spend X Mom charges when an attack hits you to take X less
+  damage (book: lower the attacker's Primary Die by 1 per Momentum). (`game/class/zephyr/supernatural_speed.typ`)

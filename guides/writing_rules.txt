@@ -119,6 +119,12 @@ Typst syntax pitfalls:
   An active block may cost no action ("When..." triggers that spend a charge).
 - **Avoid "X: Y" in card text**: write a full sentence ("The shield becomes fixed in place,
   and nothing can move it...").
+- **No card that only boosts another card**: when a class feature only improves another
+  card (Encompassing Flames, Echoed Agony), it becomes a `*Level X:*` line in that card's
+  Levels section, not a card of its own.
+- **Class sheet tables don't repeat Levels**: a card's Levels section already says what it
+  gains at each level, so the table never writes "X becomes d8", "X level 10" or "Upgraded
+  cantrips". The table only lists new cards and choices.
 - **Name a block only when it needs one**: a name tells apart effects a player looks up by
   name (Grab, Escape, a weapon property). Two blocks that do different things never share a
   name. A card's only rule needs no name (armor, shield).

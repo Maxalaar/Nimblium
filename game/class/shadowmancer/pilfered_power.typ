@@ -6,7 +6,7 @@
     description: [
       You cast tiered spells by stealing power from your Patron, without mana. You always cast them at the highest tier you can.
 
-      You can do this #DEX times per #safe_rest. Each time beyond that, your Patron deals you damage equal to half your max #HP.
+      You have #DEX Pilfered Power charges, which recharge on a #safe_rest. Each tiered spell you cast spends 1. With no charge left, you can still cast, but your Patron deals you damage equal to half your max #HP.
     ],
     levels: [
       *Level 2:* You cast spells at tier 1.\

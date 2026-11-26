@@ -8,3 +8,4 @@
 #import "oathsworn/mod.typ": *
 #import "songweaver/mod.typ": *
 #import "stormshifter/mod.typ": *
+#import "zephyr/mod.typ": *

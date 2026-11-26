@@ -1,0 +1,21 @@
+#import "/global.typ": *
+
+#let ability_data = (
+    name: "Pain Sharpens the Mind",
+    type: ("Ability", "Zephyr", "Way of Pain"),
+    blocks: (
+      (kind: "passive", effect: [While you are #kw_bloodied, your attacks and checks have #kw_advantage.]),
+    ),
+    reminder: (conditions.bloodied,),
+)
+
+#let pain_sharpens_the_mind = creat_ability(ability_data)
+
+/*
+review: style=2026-11-14 changelog=2026-10-02
+
+Source: Heroes p.71 and the 2026-10-02 changelog (level 11: "While you are Bloodied, gain
+advantage"; was: on your first attack each turn and on saves).
+
+interpretation: "Gain advantage" applies to your attacks and checks.
+*/

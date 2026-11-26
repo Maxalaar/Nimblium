@@ -133,8 +133,7 @@
   After a #safe_rest, you recover all your #HP, all your Hit Dice, your mana, your class
   resources and the charges of your items, and you heal 1 Wound. Abilities limited per #safe_rest can be used again.
 
-  You level up during a #safe_rest, as the Level Up page explains. Your class choices only
-  change when you level up.
+  You level up during a #safe_rest, as the Level Up page explains.
 ]
 
 #section("Items")[

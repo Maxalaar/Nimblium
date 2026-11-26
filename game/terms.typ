@@ -27,8 +27,10 @@
 #let fury_dice_cost(n) = str(n) + " Fury Dice"
 #let combat_dice_cost(n) = str(n) + " Combat " + if n == 1 { "Die" } else { "Dice" }
 #let searing_light_uses(n) = str(n) + " Searing Light use" + if n == 1 { "" } else { "s" }
-#let inspiration_cost(n) = str(n) + " Inspiration"
+#let inspiration_cost(n) = str(n) + " Inspiration charge" + if n == 1 { "" } else { "s" }
 #let charge_cost(n) = str(n) + " Charge" + if n == 1 { "" } else { "s" }
+#let momentum_cost(n) = (if type(n) == int { str(n) } else { n }) + " Mom charge" + if n == 1 { "" } else { "s" }
+#let burst_cost(n) = str(n) + " BoS charge" + if n == 1 { "" } else { "s" }
 #let direbeast_cost(n) = str(n) + " Direbeast charge" + if n == 1 { "" } else { "s" }
 
 // Limits, for the `limitation` field. `n` may be a number or a stat such as WIL.

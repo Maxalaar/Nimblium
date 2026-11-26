@@ -3,7 +3,6 @@
 
 #let stat_up(body) = minor[#body]
 #let n = none
-#let jd(size) = [Judgment Dice become #size.]
 
 #class_sheet(
   name: "Oathsworn",
@@ -17,24 +16,24 @@
   levels: (
     (n, [#card_ref("Radiant Judgment"). #card_ref("Lay on Hands").]),
     (1, [#card_ref("Oathsworn Mana Pool"). Radiant cantrips and tier 1 spells. #card_ref("Zealot"). #card_ref("Paragon of Virtue").]),
-    (1, [Choose a subclass, Oath of Vengeance or Oath of Refuge. #jd("d8") Choose 1 Sacred Decree.]),
+    (1, [Choose a subclass, Oath of Vengeance or Oath of Refuge. Choose 1 Sacred Decree.]),
     (2, [#card_ref("My Life, for My Friends"). #stat_up[+1 #STR or #WIL.]]),
-    (2, [#jd("d10") Upgraded cantrips. #stat_up[+1 #DEX or #INT.]]),
+    (2, [#stat_up[+1 #DEX or #INT.]]),
     (3, [Choose 1 more Sacred Decree.]),
     (3, [Subclass feature. 1 Radiant Utility Spell.]),
-    (4, [#jd("d12") #stat_up[+1 #STR or #WIL.]]),
+    (4, [#stat_up[+1 #STR or #WIL.]]),
     (4, [Choose 1 more Sacred Decree. #stat_up[+1 #DEX or #INT.]]),
-    (5, [#jd("d20") Upgraded cantrips.]),
+    (5, []),
     (5, [Subclass feature. 1 more Radiant Utility Spell.]),
     (5, [Choose 1 more Sacred Decree. #stat_up[+1 #STR or #WIL.]]),
     (6, [#stat_up[+1 #DEX or #INT.]]),
-    (6, [Choose 1 more Sacred Decree. Roll 1 more Judgment Die.]),
-    (6, [Subclass feature. Upgraded cantrips.]),
+    (6, [Choose 1 more Sacred Decree.]),
+    (6, [Subclass feature.]),
     (6, [Choose 1 more Sacred Decree. #stat_up[+1 #STR or #WIL.]]),
     (7, [#stat_up[+1 #DEX or #INT.]]),
     (7, [#card_ref("Unending Judgment").]),
     (7, [Epic Boon.]),
-    (7, [#card_ref("Glorious Paragon"). Upgraded cantrips. #stat_up[+1 to any 2 stats.]]),
+    (7, [#card_ref("Glorious Paragon"). #stat_up[+1 to any 2 stats.]]),
   ),
   boxes: (
     ([Oath of Vengeance], by_level(

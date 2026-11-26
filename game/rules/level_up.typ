@@ -69,7 +69,7 @@
   long as no skill becomes negative.]
 
   #rule[Class][Gain what your class sheet gives at your new level, and take the matching
-  cards. This is the only time your class choices can change.]
+  cards.]
 
   #rule[Stats][When a stat increases, update everything that uses it, such as your skills,
   #defense, Initiative, mana and languages.]
@@ -83,7 +83,7 @@ Source: Core Rules p.19-21 (Making a Hero, The Character Sheet, Leveling Up) and
 2026-10-02 changelog (max skill bonus +10, leveling up happens during a Safe Rest, fixed HP
 increase, the sheet tracks Speed, Size and Defense instead of height and weight).
 
-house-rule: Class choices only change when you level up (guides/house_rules.txt).
+house-rule: Class choices never change: leveling up only adds new ones (guides/house_rules.txt).
 
 house-rule: Max HP is 10 + LVL × the Hit Die's value (d4 3, d6 4, d8 5, d10 7, d12 8), with no
 roll and no starting HP per class (the book: the class's starting HP, then roll the Hit Die

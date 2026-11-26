@@ -24,6 +24,7 @@
   "Oathsworn": "oathsworn.svg",
   "Songweaver": "songweaver.svg",
   "Stormshifter": "stormshifter.svg",
+  "Zephyr": "zephyr.svg",
   "Combat": "combat.svg",
   "Magic": "magic.svg",
   "Melee": "melee.svg",
