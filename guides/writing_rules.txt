@@ -119,6 +119,10 @@ Typst syntax pitfalls:
   An active block may cost no action ("When..." triggers that spend a charge).
 - **Avoid "X: Y" in card text**: write a full sentence ("The shield becomes fixed in place,
   and nothing can move it...").
+- **What a subclass takes away**: a `kind: "lost"` block, always first on the card (dark Lost
+  capsule): "You lose X and Y. You can't use them anymore." Never "you can't cast" or "this
+  replaces" hidden in another block. See `dark_benediction.typ`, `arcane_command.typ`,
+  `hollow_one.typ`.
 - **No card that only boosts another card**: when a class feature improves another card, the
   improvement becomes a `*Level X:*` line in that card's Levels section. If the feature only
   did that, it has no card (Encompassing Flames, Master Commander); if it also does something

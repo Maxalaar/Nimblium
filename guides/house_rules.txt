@@ -198,3 +198,7 @@ to a card, add or complete a line here.
 - **Rest.** The book's Safe Rest is simply the Rest: a night of sleep, about 8 hours, when the GM
   says the heroes can rest, with no need for a safe place. Cards read it through `#safe_rest`
   and `per_safe_rest(n)` ("1/Rest"). Guides may still say Safe Rest: it is the same thing.
+- **Dying**: whenever a Dying creature would take damage, it gains 1 Wound instead, or 2 on a
+  critical hit; no STR check when it attacks (book: a STR check on each attack, and 2 Wounds per
+  hit, 3 on a crit). Death at 6 Wounds. Unstoppable Force, Enduring Rage and Unyielding Resolve
+  were adjusted. (`game/conditions.typ`)

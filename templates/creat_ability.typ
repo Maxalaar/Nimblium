@@ -2,13 +2,16 @@
 #import "badges.typ": dark_badge, tag_badge, levels_section
 
 #let mode_shades = (
+  lost: rgb("#000000"),
   active: rgb("#2e2e2e"),
   passive: rgb("#474747"),
   narrative: rgb("#868686"),
 )
 
 // Narrative first (always true), then passive (true in combat), then active (what you do).
+// What a subclass takes away comes first (kind "lost").
 #let mode_order = (
+  lost: -1,
   narrative: 0,
   passive: 1,
   active: 2,

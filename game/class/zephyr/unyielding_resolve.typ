@@ -9,7 +9,7 @@
     levels: [
       *Level 10:* 1 Wound.\
       *Level 13:* 2 Wounds.\
-      *Level 17:* 3 Wounds, and you have #kw_advantage on #STR checks while #kw_dying.
+      *Level 17:* 3 Wounds.
     ],
     reminder: (conditions.dying,),
 )
@@ -23,4 +23,6 @@ Source: Heroes p.68-69 and the 2026-10-02 changelog (levels 10, 13 and 17; was 4
 
 house-rule: There are no saves: advantage on STR saves while Dying becomes advantage on the
 STR checks of the Dying condition.
+
+house-rule: The Dying condition has no STR check anymore: the level 17 advantage is gone.
 */

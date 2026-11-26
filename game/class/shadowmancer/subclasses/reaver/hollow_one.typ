@@ -4,7 +4,7 @@
     name: "Hollow One",
     type: ("Ability", "Shadowmancer", "Reaver"),
     blocks: (
-      (kind: "passive", effect: [You can't cast #card_ref("Shadow Blast"), and you can't use #card_ref("Pilfered Power") to cast tiered spells.]),
+      (kind: "lost", effect: [You lose #card_ref("Shadow Blast"), and #card_ref("Pilfered Power") no longer casts your tiered spells. You can't use them anymore.]),
       (kind: "active", cost: (actions(1),), effect: [Summon your #card_ref("Bonescythe") in your hands.]),
       (kind: "passive", effect: [Invocations that affect #card_ref("Shadow Blast") affect your #card_ref("Bonescythe") instead.]),
     ),

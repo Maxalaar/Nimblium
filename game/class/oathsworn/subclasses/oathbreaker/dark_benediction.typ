@@ -4,7 +4,7 @@
     name: "Dark Benediction",
     type: ("Ability", "Oathsworn", "Oathbreaker"),
     blocks: (
-      (kind: "passive", effect: [You can't cast #card_ref("True Strike"), #card_ref("Heal") or #card_ref("Warding Bond").]),
+      (kind: "lost", effect: [You lose #card_ref("True Strike"), #card_ref("Heal") and #card_ref("Warding Bond"). You can't use them anymore.]),
       (kind: "passive", effect: [You can cast #card_ref("Entice"), #card_ref("Shadow Trap") and #card_ref("Dread Visage") as Oathsworn spells.]),
       (kind: "passive", effect: [When you choose a Utility Spell, it may be Radiant or Necrotic.]),
       (kind: "passive", effect: [You can target yourself with #card_ref("Entice").]),

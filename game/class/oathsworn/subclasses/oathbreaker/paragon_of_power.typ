@@ -4,7 +4,8 @@
     name: "Paragon of Power",
     type: ("Ability", "Oathsworn", "Oathbreaker"),
     blocks: (
-      (kind: "narrative", effect: [You have #kw_advantage on Might checks to intimidate someone. This ability replaces #card_ref("Paragon of Virtue").]),
+      (kind: "lost", effect: [You lose #card_ref("Paragon of Virtue"). You can't use it anymore.]),
+      (kind: "narrative", effect: [You have #kw_advantage on Might checks to intimidate someone.]),
     ),
     reminder: (keywords.advantage,),
 )

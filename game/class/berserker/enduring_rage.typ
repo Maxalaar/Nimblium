@@ -10,7 +10,7 @@
       (kind: "passive", effect: [At the start of your turn, if you are #kw_dying, you become #kw_raging.]),
       (
         kind: "passive",
-        effect: [While you are #kw_dying, you can have up to 2 actions per turn, and your attacks don't require a #STR check.],
+        effect: [While you are #kw_dying, you can have up to 2 actions per turn.],
       ),
     ),
     reminder: (conditions.dying, berserker_keywords.raging,),
@@ -20,4 +20,6 @@
 
 /*
 review: style=2026-11-14 changelog=2026-10-02
+
+house-rule: The Dying condition has no STR check on attacks anymore: that half of the card is gone.
 */
