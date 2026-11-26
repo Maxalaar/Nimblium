@@ -30,7 +30,7 @@
   #values(columns: (27mm, 1fr),
     [Max #HP], [10, plus #LVL times your Hit Die's value.],
     [Hit Dice], [#LVL dice, of the size your class sheet gives.],
-    [#defense], [Your #DEX, plus your armor.],
+    [#defense], [Your #DEX, plus your armor's and your shield's bonus.],
     [Initiative], [Your #DEX.],
     [Speed], [6.],
     [Size], [Your ancestry's size.],

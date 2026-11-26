@@ -10,6 +10,7 @@
     slots: 1,
     blocks: (
       weapon_damage("Piercing"),
+      weapon_properties.one_handed,
       weapon_properties.light,
       weapon_properties.thrown,
     ),

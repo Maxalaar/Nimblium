@@ -10,7 +10,7 @@
   info: (
     ("Key stats", [#WIL, #INT]),
     ("Hit die", [d8, +5 #HP per level]),
-    ("Armor", [Cloth, leather]),
+    ("Armor", [Leather]),
   ),
   levels: (
     (none, [Wind cantrips. #card_ref("Vicious Mockery"). #card_ref("Inspiration"), #card_ref("Songweaver's Inspiration").]),

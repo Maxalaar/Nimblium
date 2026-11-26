@@ -7,7 +7,8 @@
       You cast tiered spells by stealing power from your Patron, without mana. You always cast them at the highest tier you can.
 
       You can do this #DEX times per #safe_rest. Each time beyond that, your Patron deals you damage equal to half your max #HP.
-
+    ],
+    high_Levels: [
       *Level 2:* You cast spells at tier 1.\
       *Level 5:* You cast spells at tier 2.\
       *Level 7:* You cast spells at tier 3.\

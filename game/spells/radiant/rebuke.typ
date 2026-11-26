@@ -7,7 +7,12 @@
     reach: "4",
     damage: "1d8",
     effect: [This spell ignores #defense. It deals double damage to an undead or #kw_frightened target, or to a target behind #kw_cover.],
-    high_Levels: [This spell's damage increases by 3 at levels 5, 10, 15 and 20.],
+    high_Levels: [
+      *Level 5:* 1d8+3 damage.\
+      *Level 10:* 1d8+6 damage.\
+      *Level 15:* 1d8+9 damage.\
+      *Level 20:* 1d8+12 damage.
+    ],
     reminder: (conditions.frightened, keywords.cover),
 )
 

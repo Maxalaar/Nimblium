@@ -134,6 +134,15 @@ to a card, add or complete a line here.
 - **Equip.** Putting away a weapon or shield costs 1 action; taking one in a free hand and
   dropping an item are free (book: swap for free, 1/round). (`game/actions/basic_actions.typ`,
   `game/rules/combat.typ`)
-- **Hands.** A hero has 2 hands, each holding 1 item (a one-handed weapon, a shield, a torch,
-  a spellcasting focus). A Two-Handed weapon can be held in 1 hand but needs both to attack
-  (book rule, written out). (`game/rules/combat.typ`, Hands)
+- **Hands.** A hero has 2 hands. Each item card says how many hands it takes (One-Handed,
+  Two-Handed); a Two-Handed weapon takes both hands, even when you don't attack with it (book:
+  it can be held in 1 hand). (`game/rules/combat.typ`, Hands)
+- **Armor.** One card per category (Cloth, Leather, Mail, Plate) and one Shield, whose bonus
+  grows with your level: the book's 4 tiers (bought with gold) become levels 1, 5, 10 and 15.
+  Defense is DEX + armor + shield (Mail: DEX adds at most 2; Plate: DEX doesn't add). Mail
+  needs 2 STR and Plate 3 (Heavy: you can't wear it below); the other requirements are
+  dropped. Armor takes 2 slots, worn or not. You wear 1 armor at a time and only 1 shield adds to
+  Defense (written on the cards). (`game/items/armor/`)
+- **Armor proficiency** includes every lighter armor: Cloth < Leather < Mail < Plate. Without
+  proficiency, Defend costs 1 more action (book rule). The Berserker is proficient with Cloth
+  (book: none). (`game/rules/combat.typ`)

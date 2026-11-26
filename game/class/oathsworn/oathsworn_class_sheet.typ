@@ -12,7 +12,7 @@
   info: (
     ("Key stats", [#STR, #WIL]),
     ("Hit die", [d10, +7 #HP per level]),
-    ("Armor", [All armor]),
+    ("Armor", [Plate, shields]),
   ),
   levels: (
     (n, [#card_ref("Radiant Judgment"). #card_ref("Lay on Hands").]),

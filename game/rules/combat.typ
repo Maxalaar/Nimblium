@@ -129,9 +129,7 @@
 ]
 
 #section("Hands")[
-  You have 2 hands. Each one holds 1 item, such as a one-handed weapon, a shield, a torch or
-  a spellcasting focus. A free hand holds nothing. You can hold a Two-Handed weapon in 1 hand,
-  but you need both to attack with it.
+  You have 2 hands. Each item card says how many hands it takes.
 ]
 
 #section("Weapons")[
@@ -150,6 +148,21 @@
 
   #rule[Improvised weapons][A chair, a frying pan or a rock deals 1d4+#STR damage, or 1d6+#STR
   if it needs 2 hands. It breaks after 3 hits.]
+]
+
+#section("Armor and shields")[
+  Your #defense is your #DEX, plus the bonus of your armor and of your shield. Their bonus
+  grows with your level, as their cards show.
+
+  #rule[Proficiency][Your class sheet lists the armor you are proficient with. In other armor,
+  or with a shield you aren't proficient with, Defend costs 1 more action.]
+
+  #values(columns: (14mm, 1fr), header: ("Sheet", "Proficient with"),
+    [Cloth], [Cloth.],
+    [Leather], [Cloth, Leather.],
+    [Mail], [Cloth, Leather, Mail.],
+    [Plate], [Cloth, Leather, Mail, Plate.],
+  )
 ]
 
 #section("Creatures")[
@@ -195,6 +208,11 @@ after 3 hits (book: 1d4 or 1d6 as the GM sees fit, bigger dice if the GM allows;
 it breaks "after a few hits"). Customizing weapons is left to the GM.
 
 changelog: Unarmed strikes deal 1d4+STR.
+
+house-rule: Proficiency with an armor includes every lighter one (Cloth, Leather, Mail,
+Plate), so a class sheet names only its heaviest armor. Without proficiency, Defend costs 1
+more action (Core Rules p.33). Defense is DEX + armor + shield, and armor and shields grow
+with your level (game/items/armor/).
 
 house-rule: No weapon proficiency: any hero can use any weapon, and class sheets list no
 weapons (book: a weapon without proficiency can't crit). Unarmed strikes can't crit unless an

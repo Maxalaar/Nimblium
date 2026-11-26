@@ -12,11 +12,12 @@
       • You lose all your Fury Dice when you stop being #kw_raging.\
       • If you gain a Fury Die while you already have the maximum, roll it and choose which dice to keep.\
       • Whenever you make a #STR attack, you may add all your Fury Dice to its damage.
-
-      *Level 6:* Your Fury Dice become 1d6.\
-      *Level 9:* Your Fury Dice become 1d8.\
-      *Level 13:* Your Fury Dice become 1d10.\
-      *Level 17:* Your Fury Dice become 1d12.\
+    ],
+    high_Levels: [
+      *Level 6:* Fury Dice are 1d6.\
+      *Level 9:* Fury Dice are 1d8.\
+      *Level 13:* Fury Dice are 1d10.\
+      *Level 17:* Fury Dice are 1d12.\
       *Level 20:* Whenever you roll less than 5 on a Fury Die, it becomes a 5.
     ],
     reminder: (berserker_keywords.raging,),

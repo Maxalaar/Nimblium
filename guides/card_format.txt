@@ -83,11 +83,17 @@ no cost. Fields:
   weapon, even 1), `range` (RNGE: ranged weapons, and the range of a thrown weapon), `slots`
   (SLOT, always last: inventory slots, Adventure page).
 - `blocks`: the weapon's properties, as named ability blocks. The shared ones are in
-  `game/items/weapons/weapon_properties.typ`: `weapon_properties.two_handed`, `.light`,
+  `game/items/weapons/weapon_properties.typ`: `weapon_properties.one_handed`, `.two_handed`, `.light`,
   `.thrown`, `.vicious`, and the functions `weapon_two_handed_unless(n)`, `weapon_heavy(n)`
   (the book's "Req. n STR"), `weapon_stack(n)`, `weapon_load(n)` (an active block that costs
   n actions). The text is written in full on each card: no reminder.
 - A two-handed weapon takes 2 slots, everything else 1 (a stack of javelins is 1).
+- Armor and the shield (`game/items/armor/`): `type: ("Item", "Armor", "Cloth" | "Leather" |
+  "Mail" | "Plate")` or `("Item", "Shield")`, `defense` (DEF: the level 1 bonus, `[+6]`),
+  `slots` (2 for armor, 1 for the shield), `high_Levels: armor_levels((9, 12, 15))` (the
+  bonus at levels 5, 10, 15). Blocks from `game/items/armor/armor_properties.typ`:
+  `armor_bonus` or `shield_bonus` (unnamed), then `armor_max_dex(n)` (Mail), `armor_no_dex`
+  (Plate), `armor_heavy(n)`; the shield also has `weapon_properties.one_handed`.
 
 ### Mechanic (`creat_mechanic.typ`)
 

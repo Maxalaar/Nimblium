@@ -7,7 +7,12 @@
     range: "8",
     damage: [1d12+#DEX],
     effect: [Cast this spell only once per round.],
-    high_Levels: [At levels 5, 10, 15 and 20, it deals 1d12 more damage.],
+    high_Levels: [
+      *Level 5:* 2d12+#DEX damage.\
+      *Level 10:* 3d12+#DEX damage.\
+      *Level 15:* 4d12+#DEX damage.\
+      *Level 20:* 5d12+#DEX damage.
+    ],
 )
 
 #let shadow_blast = creat_spell(spell_data)

@@ -99,7 +99,10 @@ text is available, so no cards.
   becomes the Greatspear, a new Spear whose stats are a guess). Weapon rules (dual wielding, unarmed strikes, improvised weapons) are on the Combat page,
   inventory slots on the Adventure page. No weapon proficiency (class sheets list no weapons);
   swapping is the Equip basic action. To do with the Zephyr: its unarmed strikes can crit.
-- To do: armor, shields, adventuring gear (potions, torches...), magic items, wands and
+- **Armor and shields**: DONE, 4 armors (Cloth, Leather, Mail, Plate) and 1 Shield, one card
+  each whose bonus grows at levels 5, 10 and 15 (house rule: no money, no strict upgrades).
+  Armor rules and the proficiency list on the Combat page, Defense on the Level Up page.
+- To do: adventuring gear (potions, torches...), magic items, wands and
   spell scrolls.
 
 ## Rules (`game/rules/`)

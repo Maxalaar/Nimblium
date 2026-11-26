@@ -139,15 +139,8 @@
 
 #section("Inventory")[
   You can carry 10 + #STR slots of items, held, worn or in a pack. Each item card shows how
-  many slots it takes (SLOT).
-
-  #values(columns: (12mm, 1fr), header: ("Slots", "Items"),
-    [1], [A one-handed weapon, a shield, worn armor, a stack of javelins, 500 gp, 2 potions.],
-    [2], [A two-handed weapon, unworn armor, a bulky item.],
-  )
-
-  Small related items share 1 slot, such as camping supplies. Ammunition isn't counted: with
-  a quiver, you have arrows.
+  many slots it takes (SLOT). Small related items share 1 slot, such as camping supplies.
+  Ammunition isn't counted: with a quiver, you have arrows.
 ]
 ]
 
@@ -168,7 +161,8 @@ save calls for a check by the affected creature, and classes have no advantaged 
 disadvantaged saves.
 
 interpretation: Inventory slots come from Core Rules p.29. The book's option to skip the
-bookkeeping is left to the GM, and the slots are written on each item card.
+bookkeeping is left to the GM. The slots are written on each item card, with no table: armor
+always takes 2 (house rule; book: 1 worn, 2 carried), and there is no money.
 
 house-rule: Divisions round up (Nimble doesn't say; user ruling 2026-11-26).
 

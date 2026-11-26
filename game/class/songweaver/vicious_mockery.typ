@@ -7,7 +7,12 @@
     range: "12",
     damage: [1d6+#INT],
     effect: [This spell deals psychic damage, ignoring #defense. Whenever it deals damage, the target is #kw_taunted by you until the end of its next turn.],
-    high_Levels: [This spell's damage increases by 3 at levels 5, 10, 15 and 20.],
+    high_Levels: [
+      *Level 5:* 1d6+#INT+3 damage.\
+      *Level 10:* 1d6+#INT+6 damage.\
+      *Level 15:* 1d6+#INT+9 damage.\
+      *Level 20:* 1d6+#INT+12 damage.
+    ],
     reminder: (conditions.taunted,),
 )
 

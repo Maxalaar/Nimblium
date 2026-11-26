@@ -10,18 +10,17 @@
       (
         kind: "passive",
         limitation: per_turn(1),
-        effect: [
-          When you crit, deal 1d6 additional damage.
-
-          *Level 3:* Your Sneak Attack becomes 1d8.\
-          *Level 7:* Your Sneak Attack becomes 2d8.\
-          *Level 9:* Your Sneak Attack becomes 2d10.\
-          *Level 11:* Your Sneak Attack becomes 2d12.\
-          *Level 15:* Your Sneak Attack becomes 2d20.\
-          *Level 17:* Your Sneak Attack becomes 3d20.
-        ],
+        effect: [When you crit, deal 1d6 additional damage.],
       ),
     ),
+    high_Levels: [
+      *Level 3:* 1d8 additional damage.\
+      *Level 7:* 2d8 additional damage.\
+      *Level 9:* 2d10 additional damage.\
+      *Level 11:* 2d12 additional damage.\
+      *Level 15:* 2d20 additional damage.\
+      *Level 17:* 3d20 additional damage.
+    ],
 )
 
 #let sneak_attack = creat_ability(ability_data)

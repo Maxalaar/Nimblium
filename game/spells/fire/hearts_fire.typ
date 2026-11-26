@@ -14,7 +14,12 @@
     effect: [Once per round, an ally within Range gains 1 action.
 
     You may cast this spell outside your turn by spending #mana(1).],
-    high_Levels: [This spell's Range increases by 2 at levels 5, 10, 15 and 20.],
+    high_Levels: [
+      *Level 5:* Range 6.\
+      *Level 10:* Range 8.\
+      *Level 15:* Range 10.\
+      *Level 20:* Range 12.
+    ],
 )
 
 #let hearts_fire = creat_spell(spell_data)

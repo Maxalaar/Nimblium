@@ -9,7 +9,13 @@
     effect: [Cast this spell only once per round. It ignores #defense. The target moves toward you as many spaces as the #primary_die.
 
     In exchange, the target's next attack deals 1d12 more damage.],
-    high_Levels: [At levels 5, 10, 15 and 20, you may add 1d12 to this spell's damage. If you do, the target's next attack also deals 1d12 more damage.],
+    high_Levels: [
+      You may add these dice to this spell's damage. If you do, the target's next attack also deals as many more d12 of damage.\
+      *Level 5:* 1d12.\
+      *Level 10:* 2d12.\
+      *Level 15:* 3d12.\
+      *Level 20:* 4d12.
+    ],
 )
 
 #let entice = creat_spell(spell_data)

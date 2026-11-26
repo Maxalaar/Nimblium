@@ -9,6 +9,7 @@
     slots: 1,
     blocks: (
       weapon_damage("Slashing"),
+      weapon_properties.one_handed,
       weapon_properties.vicious,
     ),
 )

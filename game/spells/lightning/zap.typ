@@ -13,7 +13,12 @@
     range: "8",
     damage: "1d8+4",
     effect: [If this spell misses, you take half its damage instead.],
-    high_Levels: [This spell's damage increases by 6 at levels 5, 10, 15 and 20.],
+    high_Levels: [
+      *Level 5:* 1d8+10 damage.\
+      *Level 10:* 1d8+16 damage.\
+      *Level 15:* 1d8+22 damage.\
+      *Level 20:* 1d8+28 damage.
+    ],
     reminder: (conditions.charged,),
 )
 

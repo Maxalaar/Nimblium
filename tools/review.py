@@ -34,7 +34,7 @@ NOTE_TAGS = ("house-rule", "interpretation", "changelog")
 
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_TARGETS = ["game"]
-NOT_CARDS = {"mod.typ", "passive_abilities.typ", "weapon_properties.typ", "keywords.typ", "conditions.typ", "terms.typ"}
+NOT_CARDS = {"mod.typ", "passive_abilities.typ", "weapon_properties.typ", "armor_properties.typ", "keywords.typ", "conditions.typ", "terms.typ"}
 BLOCK_COMMENT = re.compile(r"/\*(.*?)\*/", re.S)
 REVIEW = re.compile(r"^review: style=(\S+) changelog=(\S+)\s*$", re.M)
 NOTE_START = re.compile(r"^(" + "|".join(NOTE_TAGS) + r"):\s*(.*)$")

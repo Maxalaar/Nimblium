@@ -3,6 +3,7 @@
 #import "templates/creat_spell.typ": creat_spell
 #import "templates/creat_mechanic.typ": creat_mechanic
 #import "templates/creat_item.typ": creat_item
+#import "game/items/armor/armor_properties.typ": armor_bonus, shield_bonus, armor_levels, armor_max_dex, armor_no_dex, armor_heavy
 #import "game/items/weapons/weapon_properties.typ": weapon_properties, weapon_damage, weapon_two_handed_unless, weapon_heavy, weapon_stack, weapon_load
 #import "game/creatures/passive_abilities.typ": passive_abilities
 #import "game/conditions.typ": conditions

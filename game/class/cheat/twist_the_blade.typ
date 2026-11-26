@@ -12,12 +12,8 @@
         cost: (actions(1),),
         effect: [Change one of your #card_ref("Sneak Attack") dice to whatever you like.],
       ),
-      (
-        kind: "active",
-        limitation: per_turn(1),
-        effect: [*Level 13:* Use Twist the Blade for free.],
-      ),
     ),
+    high_Levels: [*Level 13:* Once per turn, it costs no action.],
 )
 
 #let twist_the_blade = creat_ability(ability_data)

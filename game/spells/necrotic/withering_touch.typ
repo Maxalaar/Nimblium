@@ -7,7 +7,12 @@
     reach: "1",
     damage: "1d12",
     effect: [If this spell hits, the target counts as undead until the start of your next turn.],
-    high_Levels: [This spell's damage increases by 6 at levels 5, 10, 15 and 20.],
+    high_Levels: [
+      *Level 5:* 1d12+6 damage.\
+      *Level 10:* 1d12+12 damage.\
+      *Level 15:* 1d12+18 damage.\
+      *Level 20:* 1d12+24 damage.
+    ],
 )
 
 #let withering_touch = creat_spell(spell_data)

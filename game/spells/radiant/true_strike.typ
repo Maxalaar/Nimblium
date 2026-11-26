@@ -6,7 +6,12 @@
     cost: (actions(1),),
     reach: "4",
     effect: [Choose a creature within Reach. Its next attack this encounter has #kw_advantage and ignores all #kw_disadvantage. That attack's Reach or Range increases by 1.],
-    high_Levels: [This spell's Reach increases by 1 at levels 5, 10, 15 and 20.],
+    high_Levels: [
+      *Level 5:* Reach 5.\
+      *Level 10:* Reach 6.\
+      *Level 15:* Reach 7.\
+      *Level 20:* Reach 8.
+    ],
     reminder: (keywords.advantage, keywords.disadvantage),
 )
 

@@ -114,16 +114,24 @@ Typst syntax pitfalls:
 
 ## 8. Ability text structure
 
+- **Name a block only when it needs one**: a name tells apart effects a player looks up by
+  name (Grab, Escape, a weapon property). Two blocks that do different things never share a
+  name. A card's only rule needs no name (armor, shield).
 - **Several distinct effects**: one block per effect on the same card, rather than a single
   paragraph. A block is one effect a player would look for on its own; several sentences stay
   in one block only when they describe the same thing (Grab and Escape both about being hard
   to grapple). Exception: the first block of a form (Direbeast forms) describes what you
   become (size, Defense, temp HP...) and stays one block. See `explorer_of_the_wilds.typ`, `misdirection.typ`, `apex_predator.typ`.
-- **Level progression**: bold `*Level X:*` lines inside the same block, rather than several
-  cards. See `game/class/cheat/sneak_attack.typ`.
-- **List the levels**: never "every 5 levels". When the bonus is the same at each step, name
-  the levels in one sentence: "This spell's damage increases by 4 at levels 5, 10, 15 and 20."
-  When the steps differ, use `*Level X:*` lines.
+- **Level progression**: everything that changes with your level (cantrips, mana pools,
+  armor, class abilities) goes under a HIGH LEVELS capsule: the `high_Levels` field of a
+  spell, a mechanic, an item or an ability card (never inside a block). One `*Level X:*` line per step, joined
+  with `\`, each giving the **new value**, which replaces the one before: "*Level 5:* 1d10+5
+  damage." Never "increases by 5 at levels 5, 10, 15 and 20", never "every 5 levels": the
+  player reads their line without counting. The base value stays in the stat row or the
+  effect. A feature gained at a level is a line too: "*Level 13:* Once per turn, it costs
+  no action." **Order on a card**: narrative, passive and active blocks, then HIGH LEVELS, then
+  UPCAST if any, then the reminders. See `flame_dart.typ`, `sneak_attack.typ`, `mage_mana_pool.typ`,
+  `game/items/armor/`.
 
 ## 8b. Paragraphs
 

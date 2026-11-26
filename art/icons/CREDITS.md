@@ -41,3 +41,8 @@ gray by the card template).
 | `bow.svg` | [Pocket bow](https://game-icons.net/1x1/lorc/pocket-bow.html), mirrored | Lorc |
 | `crossbow.svg` | [Crossbow](https://game-icons.net/1x1/carl-olsen/crossbow.html) | Carl Olsen |
 | `sword.svg`, `rapier.svg`, `spear.svg` | drawn for Nimblium | project |
+| `cloth.svg` | [Robe](https://game-icons.net/1x1/lorc/robe.html) | Lorc |
+| `leather.svg` | [Leather armor](https://game-icons.net/1x1/delapouite/leather-armor.html) | Delapouite |
+| `mail.svg` | [Chain mail](https://game-icons.net/1x1/willdabeast/chain-mail.html) | Willdabeast |
+| `plate.svg` | [Chest armor](https://game-icons.net/1x1/delapouite/chest-armor.html) | Delapouite |
+| `shield.svg` | [Shield](https://game-icons.net/1x1/sbed/shield.html) | Sbed |

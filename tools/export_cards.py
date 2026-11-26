@@ -27,6 +27,7 @@ EXCLUDED_NAMES = {
     "mod.typ",
     "passive_abilities.typ",
     "weapon_properties.typ",
+    "armor_properties.typ",
 }
 
 WRAPPER_TEMPLATE = """\
