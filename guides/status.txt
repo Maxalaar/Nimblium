@@ -126,8 +126,8 @@ text is available, so no cards.
 - **Armor and shields**: DONE, 4 armors (Cloth, Leather, Mail, Plate) and 1 Shield, one card
   each whose bonus grows at levels 5, 10 and 15 (house rule: no money, no strict upgrades).
   Armor rules and the proficiency list on the Combat page, Defense on the Level Up page.
-- **Charged items**: Healing Potion DONE (`game/items/gear/`) (1 charge, 2 slots, back after a Safe Rest, heals with the
-  drinker's Hit Die and STR, more at levels 5, 10 and 15). Rules (Level, Charges, Magic items) on the Adventure page, Items section.
+- **Charged items**: Healing Potion DONE (`game/items/gear/`) (1 charge, 2 slots, back after a Safe Rest, heals 2 to 5 ×
+  (Vitality + STR) by level). Rules (Level, Charges, Magic items) on the Adventure page, Items section.
 - **Wand**: DONE, one blank card the GM fills in (spell, LVL, charges; guidance on the card);
   spell scrolls merged into it.
 - **Gear** (`game/items/gear/`): DONE, Torch (torch or lantern, lights 6 spaces, 1 hand) and

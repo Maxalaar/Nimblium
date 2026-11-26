@@ -12,10 +12,10 @@
   description: [A faithful guardian sworn to protect the weak. The Oathsworn stands between their allies and danger, takes the blows meant for others and answers with radiant judgment. You are the shield of the party, and the enemies who strike your friends will regret it.],
   info: (
     ("Key stats", [#STR, #WIL]),
-    ("Hit die", [d10]),
+    ("Vitality", [6 + #STR]),
     ("Armor", [Cloth, leather, mail, plate, shields]),
   ),
-  every_level: [+7 #HP, +1 Hit Die, +1 skill point.],
+  every_level: [+Vitality #HP, +1 skill point.],
   levels: (
     (n, [#card_ref("Radiant Judgment"). #card_ref("Lay on Hands").]),
     (1, [#card_ref("Oathsworn Mana Pool"). Radiant cantrips and tier 1 spells. #card_ref("Zealot"). #card_ref("Paragon of Virtue").]),

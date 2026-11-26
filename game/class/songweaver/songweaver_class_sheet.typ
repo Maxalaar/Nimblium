@@ -11,10 +11,10 @@
   description: [An inspiring bard with a sharp tongue and a crowd of friends. The Songweaver lifts the spirits of their allies, mocks their enemies into mistakes and always has a song for the moment. You shine on every roll at the table, turning near misses into triumphs.],
   info: (
     ("Key stats", [#WIL, #INT]),
-    ("Hit die", [d8]),
+    ("Vitality", [5 + #STR]),
     ("Armor", [Cloth, leather]),
   ),
-  every_level: [+5 #HP, +1 Hit Die, +1 skill point.],
+  every_level: [+Vitality #HP, +1 skill point.],
   levels: (
     (none, [Wind cantrips. #card_ref("Vicious Mockery"). #card_ref("Inspiration"), #card_ref("Songweaver's Inspiration").]),
     (1, [#card_ref("Songweaver Mana Pool"). Cantrips of a 2nd school of your choice. Tier 1 spells of the schools you know. #card_ref("Song of Rest").]),

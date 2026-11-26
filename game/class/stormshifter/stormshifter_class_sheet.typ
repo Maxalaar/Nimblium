@@ -11,10 +11,10 @@
   description: [A druid of beasts and storms. The Stormshifter shifts between fearsome animal forms and the raw power of lightning and wind. You adapt to every fight, tearing through enemies as a beast one moment and calling down the storm the next.],
   info: (
     ("Key stats", [#WIL, #DEX]),
-    ("Hit die", [d8]),
+    ("Vitality", [5 + #STR]),
     ("Armor", [Cloth, leather]),
   ),
-  every_level: [+5 #HP, +1 Hit Die, +1 skill point.],
+  every_level: [+Vitality #HP, +1 skill point.],
   levels: (
     (none, [Lightning and Wind cantrips. #card_ref("Beastshift"), #card_ref("Harmless Beast"). #card_ref("Fearsome Beast").]),
     (1, [#card_ref("Stormshifter Mana Pool"). Lightning and Wind tier 1 spells. #card_ref("Beast of the Pack").]),

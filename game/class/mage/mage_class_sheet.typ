@@ -11,10 +11,10 @@
   description: [A master of fire, ice and lightning who bends the elements to their will. The Mage stays back and shapes the fight with powerful spells, from a single deadly bolt to storms that sweep the battlefield. You are fragile, so every turn is a choice, and the right spell at the right moment can turn the whole battle.],
   info: (
     ("Key stats", [#INT, #WIL]),
-    ("Hit die", [d6]),
+    ("Vitality", [4 + #STR]),
     ("Armor", [Cloth]),
   ),
-  every_level: [+4 #HP, +1 Hit Die, +1 skill point.],
+  every_level: [+Vitality #HP, +1 skill point.],
   levels: (
     (none, [Fire, Ice and Lightning cantrips.]),
     (1, [#card_ref("Mage Mana Pool"). Fire, Ice and Lightning tier 1 spells. #card_ref("Talented Researcher").]),

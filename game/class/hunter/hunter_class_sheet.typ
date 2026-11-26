@@ -12,10 +12,10 @@
   description: [A patient tracker who chooses its prey and never lets it go. The Hunter marks a single target and hunts it down, from afar or up close, with traps and precise shots. You read the battlefield, pick the most dangerous enemy and wear it down until it falls.],
   info: (
     ("Key stats", [#DEX, #WIL]),
-    ("Hit die", [d8]),
+    ("Vitality", [5 + #STR]),
     ("Armor", [Cloth, leather]),
   ),
-  every_level: [+5 #HP, +1 Hit Die, +1 skill point.],
+  every_level: [+Vitality #HP, +1 skill point.],
   levels: (
     (n, [#card_ref("Hunter's Mark"). #card_ref("Forager").]),
     (n, [#card_ref("Thrill of the Hunt Charge"). Choose 2 #thrill_of_the_hunt abilities. #card_ref("Roll & Strike").]),

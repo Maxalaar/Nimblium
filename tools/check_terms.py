@@ -26,7 +26,7 @@ DEFINITION_REF = re.compile(r"#(keywords|conditions|passive_abilities)(\.\w+)+")
 TEXT_RULES = [
     (r"(?<![#\w])(STR|DEX|INT|WIL|KEY|LVL|HP|TotH)\b", "use #STR, #WIL, #HP..."),
     (r"\$times\$|×", "use #times(a, b)"),
-    (r"(?<![#\w])[Ss]afe [Rr]est\b", "use #safe_rest"),
+    (r"(?<![#\w])[Ss]afe [Rr]est\b", "use #safe_rest (it reads Rest)"),
     (r"(?<![#\w])speed\b|\bSPD\b", "use #speed"),
     (r"\bDEF\b", "use #defense"),
     (r"\b[Pp]rimary [Dd]ie\b", "use #primary_die"),

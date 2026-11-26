@@ -13,7 +13,7 @@
 #let TotH = "TotH"
 
 // Game terms
-#let safe_rest = "Safe Rest"
+#let safe_rest = "Rest"
 #let defense = "Defense"
 #let speed = "speed"
 #let primary_die = "Primary Die"
@@ -37,7 +37,7 @@
 #let per_turn(n) = str(n) + "/Turn"
 #let per_round(n) = str(n) + "/Round"
 #let per_encounter(n) = str(n) + "/Encounter"
-#let per_safe_rest(n) = str(n) + "/Safe rest"
+#let per_safe_rest(n) = str(n) + "/Rest"
 
 // Formulas
 #let times(a, b) = [#a×#b]

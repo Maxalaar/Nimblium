@@ -28,8 +28,8 @@
   #rule[5\. The rest of your sheet][Fill in these values.]
 
   #values(columns: (27mm, 1fr),
-    [Max #HP], [10, plus #LVL times the #HP of your class sheet's "All" row.],
-    [Hit Dice], [#LVL dice, of the size your class sheet gives.],
+    [Vitality], [Your class sheet's value plus your #STR, at least 1. Many heals count in Vitality.],
+    [Max #HP], [10, plus #LVL times your Vitality.],
     [#defense], [Your #DEX, plus your armor's and your shield's bonus.],
     [Initiative], [Your #DEX.],
     [Speed], [6.],
@@ -69,8 +69,9 @@ increase, the sheet tracks Speed, Size and Defense instead of height and weight)
 
 house-rule: Class choices never change: leveling up only adds new ones (guides/house_rules.txt).
 
-house-rule: Max HP is 10 + LVL × the HP per level of the class sheet's All row (d6 4,
-d8 5, d10 7, d12 8), with no
+house-rule: Vitality replaces the Hit Die: the class's value plus STR, at least 1 (base 4 or 5
+for most classes, 4 to 7 for the classes with STR as a Key Stat, 1 less than their old Hit Die
+to narrow the gap with casters). Max HP is 10 + LVL × Vitality, with no
 roll and no starting HP per class (the book: the class's starting HP, then roll the Hit Die
 with advantage or take the fixed value at each level). Within 4 HP of the book above level 1.
 

@@ -60,7 +60,7 @@ to a card, add or complete a line here.
   (`game/rules/adventure.typ`)
 - **No card for simple tasks** (opening a door, dropping an item): the GM handles them.
   (`game/actions/basic_actions.typ`)
-- **Max HP = 10 + LVL × the Hit Die's value** (d4 +3, d6 +4, d8 +5, d10 +7, d12 +8), with
+- **Max HP = 10 + LVL × Vitality** (class value + STR), with
   no roll and no starting HP per class. Class sheets show "d8, +5 HP per level" (book: a
   starting HP per class, then roll the Hit Die with advantage or take the fixed value).
   (`game/rules/level_up.typ`)
@@ -156,9 +156,9 @@ to a card, add or complete a line here.
 - **Thrown weapons** have charges (a stack of javelins is 4); each throw costs 1, and you can
   pick them up and regain them when combat ends (book: once thrown, you no longer have it). Javelins and Throwing Hammers take 2 slots.
   (`weapon_properties.typ`)
-- **Healing Potion**: one card, 1 charge, 2 slots; it heals with the drinker's Hit Die (rolled, not
-  spent; d8 without one) and STR: 2 Hit Dice + STR, then 3 + 2×STR, 4 + 3×STR, 5 + 4×STR at
-  levels 5, 10, 15 (book: 2d4+4, 3d6+6, 4d8+8, three potions bought separately). (`game/items/gear/healing_potion.typ`)
+- **Healing Potion**: one card, 1 charge, 2 slots; it heals 2, 3, 4 then 5 × Vitality at
+  levels 1, 5, 10, 15 (book: 2d4+4, 3d6+6, 4d8+8, three potions bought separately).
+  (`game/items/gear/healing_potion.typ`)
 - **Wand**: one blank card the GM fills in (spell, level = 2 × tier or 1 for a cantrip,
   charges 3/2/1 by tier, 2 slots). Anyone can use it, with no proficiency or Arcana check; spell scrolls
   are wands with 1 charge. (`game/items/gear/wand.typ`)
@@ -188,7 +188,13 @@ to a card, add or complete a line here.
   (`game/spells/radiant/redeem.typ`)
 - **Skill points**: 1 skill point at every level, level 1 included (20 in all), and points never
   move (book: 4 at creation, then 1 per level and you may move 1 point). What every level gives
-  (HP, Hit Die, skill point) is written on the class sheet. (`game/rules/level_up.typ`)
-- **Field Rest**: one kind only, 8 hours of rest with food and sleep, where Hit Dice are rolled
-  (book: Catch Breath, 10 minutes, and Make Camp, 8 hours with maximum dice).
-  (`game/rules/adventure.typ`)
+  (Vitality HP, skill point) is written on the class sheet. (`game/rules/level_up.typ`)
+- **No Hit Dice, no Field Rest.** Vitality (the class's value + STR, at least 1; the classes with
+  STR as a Key Stat have 1 less than their old Hit Die value) replaces the Hit Die, gives the
+  HP per level and counts heals. The Safe Rest is the only rest. Cards that spent Hit
+  Dice were rewritten (Healing Potion, I Can Do This ALL DAY!, Infuse Strength, Enduring Soul,
+  Field Medic, Song of Rest, Impressive Form, Fiendish Boon, Mountainous Tenacity, Warm
+  Pastries). (`game/rules/adventure.typ`, `game/rules/level_up.typ`)
+- **Rest.** The book's Safe Rest is simply the Rest: a night of sleep, about 8 hours, when the GM
+  says the heroes can rest, with no need for a safe place. Cards read it through `#safe_rest`
+  and `per_safe_rest(n)` ("1/Rest"). Guides may still say Safe Rest: it is the same thing.

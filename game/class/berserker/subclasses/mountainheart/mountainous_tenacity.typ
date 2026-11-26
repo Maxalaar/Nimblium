@@ -10,7 +10,7 @@
     blocks: (
       (
         kind: "passive",
-        effect: [Whenever you spend Hit Dice to recover #HP, you may recover 1 Wound instead of each 10 #HP you would recover.],
+        effect: [Whenever you regain #HP, you may recover 1 Wound instead of each 10 #HP you would regain.],
       ),
     ),
 )
@@ -19,4 +19,6 @@
 
 /*
 review: style=2026-11-14 changelog=2026-10-02
+
+house-rule: Any healing counts (book: when you spend Hit Dice); there are no Hit Dice.
 */

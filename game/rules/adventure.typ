@@ -109,23 +109,11 @@
   would gain more, you choose which amount to keep. They expire after a #safe_rest.]
 ]
 
-#section("Hit Dice")[
-  Hit Dice let you recover #HP while you adventure. You have #LVL Hit Dice at most, and their
-  size depends on your class. You spend them during a Field Rest, and you recover them all
-  during a #safe_rest.
-]
+#section("Rest")[
+  A #safe_rest is a night of sleep, about 8 hours, somewhere calm enough to sleep. The GM says
+  when the heroes can rest.
 
-#section("Field Rest")[
-  A Field Rest is 8 hours of rest, with food and sleep, while you adventure. Spend any number
-  of Hit Dice. For each one, roll it and add your #STR (or subtract it, if negative), then regain
-  that many #HP. A die never makes you lose #HP.
-]
-
-#section("Safe Rest")[
-  A #safe_rest happens in a safe place the GM chooses, such as a night at an inn, a secret
-  oasis or a sacred shrine. Camping in the wilderness or in a dungeon is not enough.
-
-  After a #safe_rest, you recover all your #HP, all your Hit Dice, your mana, your class
+  After a #safe_rest, you recover all your #HP, your mana, your class
   resources and the charges of your items, and you heal 1 Wound. Abilities limited per #safe_rest can be used again.
 
   You level up during a #safe_rest, as the Level Up page explains.
@@ -171,8 +159,10 @@ so players use them freely; slots limit how many they carry. Items may show a LV
 use them below that level (a wand's LVL is twice its spell's tier, 1 for a cantrip). Thrown
 weapons come back when combat ends.
 
-house-rule: A single Field Rest of 8 hours, where Hit Dice are rolled (book: Catch Breath, 10
-minutes, roll; Make Camp, 8 hours, each die gives its maximum).
+house-rule: No Hit Dice and no Field Rest: the Rest (the book's Safe Rest, no longer tied to a
+safe place) is the only rest (book: Hit Dice spent
+during Field Rests, Catch Breath and Make Camp). Healing during an adventure comes from
+potions and abilities, counted in Vitality (Level Up page).
 
 house-rule: Divisions round up (Nimble doesn't say; user ruling 2026-11-26).
 
