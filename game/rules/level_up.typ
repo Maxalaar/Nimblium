@@ -60,8 +60,7 @@
 #section("Leveling up")[
   When the GM says your hero has earned a level, you gain it during your next #safe_rest.
 
-  #rule[#HP][Roll your Hit Die with #kw_advantage and add the result to your max #HP. You
-  may add the fixed value of your die instead.]
+  #rule[#HP][Your max #HP increases by the value of your Hit Die.]
 
   #values(columns: (1fr,) * 5, header: ("d4", "d6", "d8", "d10", "d12"),
     [+3], [+4], [+5], [+7], [+8],
@@ -88,6 +87,9 @@ Source: Core Rules p.19-21 (Making a Hero, The Character Sheet, Leveling Up) and
 increase, the sheet tracks Speed, Size and Defense instead of height and weight).
 
 house-rule: Class choices only change when you level up (guides/house_rules.txt).
+
+house-rule: The max HP increase is always the fixed value of the Hit Die (the book: roll the
+Hit Die with advantage, or take the fixed value). No random stats.
 
 interpretation: Starting equipment and gold are left out (user ruling 2026-11-26). Inventory
 slot sizes will come with the equipment cards.

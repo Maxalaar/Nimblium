@@ -37,6 +37,9 @@ to a card, add or complete a line here.
   (STR, DEX, a skill...), the GM decides it. (`game/rules/combat.typ`, Creatures section)
 - **No card for simple tasks** (opening a door, dropping an item): the GM handles them.
   (`game/actions/basic_actions.typ`)
+- **Fixed HP when leveling up.** Max HP always increase by the fixed value of the Hit Die
+  (d4 +3, d6 +4, d8 +5, d10 +7, d12 +8), with no roll (book: roll the Hit Die with advantage,
+  or take the fixed value). (`game/rules/level_up.typ`)
 - **Cover and Full Cover** only affect ranged attacks, and are worded with "line of attack".
   (`game/keywords.typ`)
 
