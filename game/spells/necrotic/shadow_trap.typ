@@ -3,10 +3,10 @@
 #let spell_data = (
     name: "Shadow Trap",
     type: ("Spell", "Necrotic", "Tier 1"),
-    cost: (actions(1), mana(1)),
+    cost: (actions(1), mana(1), per_round(1)),
     reach: "8",
     damage: "2d12",
-    effect: [Once per round, when an enemy moves adjacent to an ally within Reach, you may cast this spell on that enemy. If it is Small or Tiny, it is also #kw_restrained until it escapes.],
+    effect: [When an enemy moves adjacent to an ally within Reach, you may cast this spell on that enemy. If it is Small or Tiny, it is also #kw_restrained until it escapes.],
     upcast: [It can restrain a creature 1 size larger, and a creature it restrains takes 1d12 damage when it escapes.],
     reminder: (conditions.restrained,),
 )

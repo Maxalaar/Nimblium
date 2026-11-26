@@ -19,7 +19,7 @@
   levels: (
     (n, [#card_ref("Sneak Attack"). #card_ref("Vicious Opportunist").]),
     (n, [#card_ref("Cheat").]),
-    (n, [Choose a subclass, Tools of the Scoundrel or Tools of the Silent Blade. #card_ref("Thieves' Cant").]),
+    (n, [Choose a subclass, Tools of the Scoundrel or Tools of the Silent Blade.]),
     (n, [Choose 1 Underhanded Ability. #stat_up[+1 #DEX or #INT.]]),
     (n, [#card_ref("Twist the Blade"). #card_ref("Quick Read"). #stat_up[+1 #WIL or #STR.]]),
     (n, [Choose 1 more Underhanded Ability. #card_ref("THAT'S Not What Happened!").]),

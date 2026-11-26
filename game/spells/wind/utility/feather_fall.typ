@@ -3,9 +3,9 @@
 #let spell_data = (
     name: "Feather Fall",
     type: ("Spell", "Wind", "Utility"),
-    cost: (actions(1),),
+    cost: (actions(1), per_round(1)),
     reach: "6",
-    effect: [Once per round, when a creature within Reach falls, you may cast this spell. It floats gently to the ground, unharmed.],
+    effect: [When a creature within Reach falls, you may cast this spell. It floats gently to the ground, unharmed.],
 )
 
 #let feather_fall = creat_spell(spell_data)

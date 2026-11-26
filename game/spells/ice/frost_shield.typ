@@ -9,8 +9,9 @@
     ),
     cost: (
         mana(1),
+        per_round(1),
     ),
-    effect: [Once per round, you may cast this spell while Defending. You gain #times(2, KEY) temp #HP. You lose them at the start of your next turn.],
+    effect: [You may cast this spell while Defending. You gain #times(2, KEY) temp #HP. You lose them at the start of your next turn.],
     upcast: [You gain 5 more temp #HP.],
 )
 

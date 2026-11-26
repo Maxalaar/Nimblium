@@ -62,7 +62,8 @@ front and the back side by side (5 mm apart). A clean design, black and white, l
 - `cost`: a tuple of tags shown as badges, e.g. `(actions(1),)`, `(actions(2), toth_charges(1))`.
 - `tags` (optional): outlined capsules after the cost, e.g. `("AoE",)` (Whirlwind).
 - `limitation`: a tag shown as a badge, e.g. `per_turn(1)`, `per_encounter(1)`,
-  `per_safe_rest(WIL)`, `per_round(2)`.
+  `per_safe_rest(WIL)`, `per_round(2)`, or a tuple of them for two capsules:
+  `(per_turn(1), per_safe_rest(KEY))`, shortest period first.
 - Blocks are sorted: narrative first, then passive, then active (creatures too).
 - Level progression and multiple clauses: see `writing_rules.txt` §8.
 - `type`: `("Ability", "<Class>")` for a base ability, with a 3rd item for a subgroup

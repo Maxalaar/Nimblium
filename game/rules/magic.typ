@@ -55,9 +55,9 @@
 
 #section("Upcasting")[
   When you cast a tiered spell, you may spend more mana than its tier, up to the highest
-  tier you have unlocked. For each extra mana, the spell gains its UPCAST effect once.
+  tier you have unlocked. For each extra mana, the spell gains its Upcast effect once.
 
-  When a spell has several UPCAST effects, choose one of them for each extra mana.
+  When a spell has several Upcast effects, choose one of them for each extra mana.
 ]
 
 #section("Cantrips")[
@@ -88,10 +88,43 @@
   rather than for fighting. Many take minutes to cast, as their CAST shows, and are cast
   outside combat.
 ]
+
+#section("Chaos Table")[
+  When an effect tells you to #kw_invoke_chaos, roll a d20 on this table. An effect that lasts
+  ends after 1 minute, or when you invoke chaos again.
+
+  #values(columns: (7mm, 1fr), header: ("d20", "Effect"),
+    [1], [*Elemental Eruption.* Each creature within 6 spaces of you makes a #DEX check, and takes #times(INT, "d10") fire damage, or half on a success. You fail yours.],
+    [2], [*Backfire.* You gain 1 Wound. The spell you just cast also targets you, or an enemy if it helps its targets.],
+    [3], [*Aww, Nuts!.* You become a Tiny squirrel until you take damage. You can't cast spells, and finding acorns is all you can think of.],
+    [4], [*Summon Aetherlings.* At the end of each of your turns, #INT hostile aetherling minions (1d6 damage) appear adjacent to you and act right after you.],
+    [5], [*Graviturgical Grace.* At the end of each of your turns, a random enemy moves to a space adjacent to you.],
+    [6], [*Liquefy Legs.* You are #kw_prone, you can't stand up, and your #speed is 0 out of water.],
+    [7], [*Elemental Entanglement.* At the start of each of your turns, an enemy chooses what you do with 1 of your actions.],
+    [8], [*Ethereal Cocoon.* Until the end of your next turn, you are #kw_prone, you can't move, and you take no damage. You spend all your actions casting cantrips at the nearest creature.],
+    [9], [*Manastorm.* The last spell you cast is cast again for free, at a random target.],
+    [10], [*Reality Warp.* Every space within 6 spaces of you is #kw_difficult_terrain.],
+    [11], [*Displacement.* Roll 1d4 and teleport. 1, where the GM chooses. 2, 6 spaces straight up, then you fall. 3, a space you choose within 6 spaces. 4, a space you choose within 12 spaces.],
+    [12], [*Chaos Step.* Swap places with a creature you can see.],
+    [13], [*Mindfire.* The least clever enemy within 16 spaces takes #times(INT, "d6") psychic damage, ignoring #defense, and becomes #kw_smoldering.],
+    [14], [*Emerge Beautiful.* You sprout butterfly wings and are #kw_flying.],
+    [15], [*Unbiggen.* Your size goes 1 step smaller. You have #kw_advantage on Stealth checks, and attacks against you have #kw_disadvantage.],
+    [16], [*Embiggen.* Your size goes 1 step bigger. You gain #times(INT, "d10") temp #HP and #kw_advantage on #STR checks.],
+    [17], [*Awakening.* A third eye opens on your forehead. Your attacks and Perception checks have #kw_advantage.],
+    [18], [*Diamond Skin.* Your #defense is multiplied by #INT, and Defend costs you no action.],
+    [19], [*Mighty Mana.* Your spells, the one you just cast included, gain 2 Upcast effects for free, even beyond your highest tier.],
+    [20], [*Elemental Overload.* Each enemy within 12 spaces takes #times(INT, "d8") lightning damage. At the end of each of your turns, you regain #INT mana, lost when combat ends.],
+  )
+]
 ]
 
 /*
 review: style=2026-11-14 changelog=2026-10-02
+
+house-rule: The Chaos Table (Game Master's Guide p.114) is public, on this page (book: the Chaos Table is secret, for the GM). The Chaos
+Table is converted: saves become checks, Armor becomes Defense, the Assess action becomes
+Perception, "pulled" becomes a move. The changelog reworked the Chaos Table without publishing
+it: this is the printed version.
 
 Source: Core Rules p.13 (Cast Spell), p.44-45 (Spells) and p.52 (Utility Spells), both
 changelogs (spells deal their school's damage type, defensive spells cost 0 actions and can

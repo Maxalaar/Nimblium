@@ -26,7 +26,11 @@
 // a string ("1d6+2") or content ([Die+#WIL radiant]).
 #let ability_block(block) = {
   let tags = block.at("cost", default: ()) + block.at("tags", default: ())
-  if "limitation" in block { tags += (block.limitation,) }
+  // One limitation, or several ("KEY/Rest" and "1/Turn").
+  if "limitation" in block {
+    let l = block.limitation
+    tags += if type(l) == array { l } else { (l,) }
+  }
   if "attacks" in block { tags.push(str(block.attacks) + " Attacks") }
   if "reach" in block { tags.push("Reach " + str(block.reach)) }
   if "range" in block { tags.push("Range " + str(block.range)) }

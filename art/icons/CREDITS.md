@@ -53,3 +53,4 @@ gray by the card template).
 | `magic.svg` | [Sparkles](https://game-icons.net/1x1/delapouite/sparkles.html) | Delapouite |
 | `zephyr.svg` | [High kick](https://game-icons.net/1x1/delapouite/high-kick.html) | Delapouite |
 | `padlock.svg` | [Padlock](https://game-icons.net/1x1/lorc/padlock.html) | Lorc |
+| `ancestry.svg` | [Family tree](https://game-icons.net/1x1/delapouite/family-tree.html) | Delapouite |

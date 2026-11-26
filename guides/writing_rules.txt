@@ -48,9 +48,15 @@ A reviewed card ends with a notes block holding `review: style=<date> changelog=
 
 ## 4. Costs and limits
 
-- Costs and limits go on badges (`1 Action`, `1/round`), never in the text.
-  Exception: spells have no limit field, so their limit is written in the text
-  ("Once per round, ...").
+- Costs and limits go on badges (`1 Action`, `1/Round`), never in the text: no "You can do
+  this only once per turn" or "Once per round, ..." when the limit covers the whole ability.
+  An ability with two limits shows both capsules, the shortest period first (turn, round,
+  encounter, Rest): `limitation: (per_turn(1), per_safe_rest(KEY))`. A spell puts its limit in `cost` (`cost: (mana(4), per_round(1))`), shown
+  as a capsule above the effect. The text keeps a limit only when it covers one part of the
+  effect (Warding Bond, Seething Storm, Alacrity's second use) or a Levels line.
+- **Wounds before death**: a change to the Wounds you can have is written "You can have 1 more
+  Wound before you die." or "You can have 2 fewer Wounds before you die.", never "You die at 7
+  Wounds".
 - **No "Reaction"**: it is an action with a "When..." trigger, an `actions(1)` cost and a
   `per_round(1)` limit.
 - **"For free"**: expressed by the absence of a cost badge. Keep the words "for free" only when

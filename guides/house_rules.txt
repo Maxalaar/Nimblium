@@ -202,3 +202,14 @@ to a card, add or complete a line here.
   critical hit; no STR check when it attacks (book: a STR check on each attack, and 2 Wounds per
   hit, 3 on a crit). Death at 6 Wounds. Unstoppable Force, Enduring Rage and Unyielding Resolve
   were adjusted. (`game/conditions.typ`)
+- **No languages** for now: the Languages rule, Thieves' Cant (Cheat) and Devoted Acolyte
+  (Shadowmancer) are removed, and ancestries give no language. (`game/rules/level_up.typ`)
+- **Ancestries**: all 24 of the Core Rules, renamed "X-folk" (Bunbun is Rabbit-folk, Kobold is
+  Lizard-folk, Celestial is Angel-folk...), with no Common/Exotic tiers and no language. Shape-folk
+  (Changeling) is dropped. Balance pass (2026-11-27): one main trait per ancestry, passives use
+  fixed numbers (Turtle-folk +2 Defense, Rat-folk +2 Defense after moving, Dwarf-folk and
+  Construct-folk +2 Vitality, Giant-folk +1 STR and +1 Vitality), and only limited actives scale
+  with KEY: once per turn, KEY times per Rest, both shown as capsules (Orc-folk's Relentless is
+  1/Rest and drops you to 4×KEY HP). (`game/ancestries/`)
+- **Chaos Table** is public, on the Magic page (book: the GM's secret). The Control Table stays a
+  card of the Invoker of Control. (`game/rules/magic.typ`)

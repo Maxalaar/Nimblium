@@ -3,8 +3,8 @@
 #let spell_data = (
     name: "Shield of Justice",
     type: ("Spell", "Radiant", "Tier 4"),
-    cost: (mana(4),),
-    effect: [Once per round, you may cast this spell while Defending. Each creature that attacks you this round is #kw_blind until the end of its next turn. You deal damage to it equal to the damage it deals you, ignoring #defense.],
+    cost: (mana(4), per_round(1)),
+    effect: [You may cast this spell while Defending. Each creature that attacks you this round is #kw_blind until the end of its next turn. You deal damage to it equal to the damage it deals you, ignoring #defense.],
     upcast: (
         [It deals 5 more damage.],
         [Your #defense increases by 5 this round.],

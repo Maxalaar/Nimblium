@@ -26,6 +26,7 @@
   "Stormshifter": "stormshifter.svg",
   "Zephyr": "zephyr.svg",
   "Combat": "combat.svg",
+  "Ancestry": "ancestry.svg",
   "Magic": "magic.svg",
   "Melee": "melee.svg",
   "Ranged": "ranged.svg",

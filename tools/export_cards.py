@@ -22,7 +22,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CARD_DIRS = ["game/class", "game/spells", "game/creatures", "game/actions", "game/items"]
+CARD_DIRS = ["game/class", "game/spells", "game/creatures", "game/actions", "game/items", "game/ancestries"]
 EXCLUDED_NAMES = {
     "mod.typ",
     "passive_abilities.typ",

@@ -8,7 +8,7 @@
         "Savage Arsenal",
     ),
     blocks: (
-      (kind: "passive", effect: [You can survive 4 additional Wounds before you die.]),
+      (kind: "passive", effect: [You can have 4 more Wounds before you die.]),
     ),
 )
 

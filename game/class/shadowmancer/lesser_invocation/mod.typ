@@ -1,7 +1,6 @@
 #import "abhorrent_speech.typ": abhorrent_speech
 #import "beguiling_influence.typ": beguiling_influence
 #import "blood_sight.typ": blood_sight
-#import "devoted_acolyte.typ": devoted_acolyte
 #import "eldritch_sense.typ": eldritch_sense
 #import "gaze_of_two_minds.typ": gaze_of_two_minds
 #import "knowledge_from_beyond.typ": knowledge_from_beyond

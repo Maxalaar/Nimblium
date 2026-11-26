@@ -19,7 +19,7 @@
     [*#STR*], [Physical power and endurance. Damage of #STR weapons, Wounds, #HP recovery,
     carrying, grappling.],
     [*#DEX*], [Agility and precision. Damage of #DEX weapons, Initiative, #defense, grappling.],
-    [*#INT*], [Knowledge and reasoning. Languages, spellcasting, wands, spell scrolls.],
+    [*#INT*], [Knowledge and reasoning. Spellcasting, wands.],
     [*#WIL*], [Personality, courage and wisdom. Spellcasting, dealings with nature and people.],
   )
 ]

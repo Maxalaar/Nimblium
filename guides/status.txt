@@ -145,7 +145,7 @@ text is available, so no cards.
 - **Adventure**: DONE, recto-verso, up to the October 2, 2026 changelog.
 - **Combat**: DONE, recto-verso (conditions and creatures on the verso), up to the October 2,
   2026 changelog.
-- **Magic**: DONE, one page, up to the October 2, 2026 changelog. Spell scrolls and wands
+- **Magic**: DONE, recto-verso (the Chaos Table on the verso, public), up to the October 2, 2026 changelog. Spell scrolls and wands
   are left for the equipment cards.
 - **Level Up**: DONE, one page (making a hero, leveling up), up to the October 2, 2026
   changelog. Ancestries and backgrounds are not listed: they should become cards (not
@@ -158,3 +158,14 @@ text is available, so no cards.
 - **Undead** (Game Master's Guide): in the new style, GMG values.
 - The October 2, 2026 changelog recalculates every stat block (HP, damage, armor) and makes
   legendary HP per hero, without publishing the new values: we keep the PDF values.
+
+## Ancestries (`game/ancestries/`)
+
+- DONE (second version, to review): 23 ancestries of the Core Rules (Changeling dropped), one card each, named
+  "X-folk" (Human-folk, Rabbit-folk, Lizard-folk...), with an Appearance block (narrative), a Size
+  block (passive; Small or Medium chosen once) and the trait. No Common/Exotic tiers, no
+  languages. Double names with the same stats are one card (Plant-folk, Bull-folk, Construct-folk,
+  Turtle-folk). Traits that used Hit Dice or saves were
+  rewritten (Dwarf, Oozeling, Halfling, Fiendkin, Celestial). Balance pass done 2026-11-27
+  (fixed passives, KEY only on limited actives); waiting for playtest.
+- To do: backgrounds.

@@ -59,7 +59,7 @@
     )),
     ([Invocations], [
       #text(size: 7.5pt, weight: "bold")[LESSER]\
-      #card_ref("Abhorrent Speech"), #card_ref("Beguiling Influence"), #card_ref("Blood Sight"), #card_ref("Devoted Acolyte"), #card_ref("Eldritch Sense"), #card_ref("Gaze of Two Minds"), #card_ref("Knowledge from Beyond"), #card_ref("My Favored Pet"), #card_ref("Voice of the Dark"), #card_ref("Whispers of the Grave").
+      #card_ref("Abhorrent Speech"), #card_ref("Beguiling Influence"), #card_ref("Blood Sight"), #card_ref("Eldritch Sense"), #card_ref("Gaze of Two Minds"), #card_ref("Knowledge from Beyond"), #card_ref("My Favored Pet"), #card_ref("Voice of the Dark"), #card_ref("Whispers of the Grave").
 
       #text(size: 7.5pt, weight: "bold")[GREATER]\
       #card_ref("Armor of Shadows"), #card_ref("Fiendish Boon"), #card_ref("Hungering Shadows"), #card_ref("One with Shadows"), #card_ref("Repelling Blast"), #card_ref("Shadow Magus"), #card_ref("Shadow Rush"), #card_ref("Shadow Spear"), #card_ref("Shadow Warp"), #card_ref("Swarming Shadows").

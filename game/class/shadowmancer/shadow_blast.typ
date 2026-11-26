@@ -3,10 +3,9 @@
 #let spell_data = (
     name: "Shadow Blast",
     type: ("Spell", "Necrotic", "Cantrip", "Shadowmancer"),
-    cost: (actions(1),),
+    cost: (actions(1), per_round(1)),
     range: "8",
     damage: "—",
-    effect: [Cast this spell only once per round.],
     levels: [
       *Level 1:* 1d12+#DEX damage.\
       *Level 5:* 2d12+#DEX damage.\

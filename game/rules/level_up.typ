@@ -37,21 +37,6 @@
     [Max Wounds], [6.],
     [Inventory], [#STR + 10 slots.],
   )
-
-  #rule[6\. Languages][You speak Common, and 1 more language for each point of #INT.]
-
-  #values(columns: (25mm, 1fr), header: ("Language", "Spoken by"),
-    [Common], [Most intelligent creatures.],
-    [Dwarvish], [Dwarves, gnomes and giants.],
-    [Elvish], [Elves, fey and sylvan creatures.],
-    [Goblin], [Goblins and orcs.],
-    [Infernal], [Fiends and cultists.],
-    [Thieves' Cant], [Scoundrels and rogues.],
-    [Celestial], [Celestials and priests.],
-    [Draconic], [Dragons, dragonborn and kobolds.],
-    [Primordial], [Elementals and ancient beings.],
-    [Deep Speak], [Underworld dwellers.],
-  )
 ]
 
 #section("Leveling up")[

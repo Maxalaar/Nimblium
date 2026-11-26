@@ -10,10 +10,11 @@
     ),
     cost: (
         mana(3),
+        per_round(1),
     ),
     reach: "1",
     damage: [10+#KEY],
-    effect: [Once per round, you may cast this spell while Defending. This round, whenever you are attacked, each creature within Reach takes this spell's damage and becomes #kw_smoldering.],
+    effect: [You may cast this spell while Defending. This round, whenever you are attacked, each creature within Reach takes this spell's damage and becomes #kw_smoldering.],
     upcast: (
         [It deals #KEY more damage.],
         [Its Reach increases by 1.],

@@ -3,10 +3,10 @@
 #let spell_data = (
     name: "Entice",
     type: ("Spell", "Necrotic", "Cantrip"),
-    cost: (actions(1),),
+    cost: (actions(1), per_round(1)),
     range: "12",
     damage: "1d12",
-    effect: [Cast this spell only once per round. It ignores #defense. The target moves toward you as many spaces as the #primary_die.
+    effect: [It ignores #defense. The target moves toward you as many spaces as the #primary_die.
 
     In exchange, the target's next attack deals 1d12 more damage.],
     levels: [

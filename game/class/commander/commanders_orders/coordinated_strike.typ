@@ -4,7 +4,7 @@
     name: "Coordinated Strike!",
     type: ("Ability", "Commander", "Commander's Order"),
     blocks: (
-      (kind: "active", limitation: per_encounter(1), effect: [You and an ally within 6 spaces each make a weapon attack or an unarmed attack, or cast a cantrip, for free. You can use it only once per round.]),
+      (kind: "active", limitation: (per_round(1), per_encounter(1)), effect: [You and an ally within 6 spaces each make a weapon attack or an unarmed attack, or cast a cantrip, for free.]),
     ),
     levels: [
       *Level 5:* You have #INT more uses per #safe_rest. Its attacks ignore all #kw_disadvantage.\
