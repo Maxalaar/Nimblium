@@ -36,8 +36,8 @@
   You have up to 3 actions. You spend them on your turn, or when a triggered action allows it.
   At the end of your turn, you get back up to 3 actions.
 
-  Every hero can take the actions of the #card_ref("Basic Actions"), #card_ref("Maneuvers")
-  and #card_ref("Triggered Actions") cards. Class and spell cards add more.
+  Every hero can take the actions of the #card_ref("Basic Actions"), #card_ref("Grapple") and
+  #card_ref("Triggered Actions") cards. Class and spell cards add more.
 
   #rule[Over several turns][An ability that costs more actions than you have can be paid
   over several turns. You must keep concentrating, and do nothing else that costs an action
@@ -103,7 +103,7 @@
 ]
 
 #section("Grappling")[
-  The #card_ref("Maneuvers") card explains how to grab and how to escape. While a creature
+  The #card_ref("Grapple") card explains how to grab and how to escape. While a creature
   grapples another, it moves at half #speed, or at full #speed if it is bigger. Attacks
   against either of them have #kw_advantage. A critical hit against either of them ends the
   grapple. It also ends when forced movement separates them, or when the grappler is
@@ -138,6 +138,9 @@
   #speed for free, without spending an action. Only heroes make opportunity attacks.
 
   A legendary creature takes a turn after each hero's turn, with all its actions each time.
+
+  When a rule needs a value its card doesn't give, such as a stat or a skill, the GM decides
+  it.
 
   #rule[Minions][#passive_abilities.minion.effect]
 ]

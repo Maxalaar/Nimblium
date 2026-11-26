@@ -24,7 +24,14 @@ cité ; `python3 tools/review.py --rules` les liste toutes. Quand on ajoute une 
   Full Cover réussit d'office). (`game/keywords.typ`, `game/actions/basic_actions.typ`)
 - **Pas d'Assess.** Poser une question au MJ, c'est du jeu de rôle. Ses deux effets de combat
   (Create an Opening, Anticipate Danger) vivent sur *Wild Instinct* et *Quick Read* ;
-  *Exploit Weakness* devient une action à part. (`game/actions/maneuvers.typ`)
+  *Exploit Weakness* devient une action à part. (`game/actions/grapple.typ`)
+- **Lutte.** Saisir (Grab) et se libérer (Escape) : celui qui agit fait un test de STR ou de
+  DEX contre 10 + la plus haute des deux stats de l'autre (changelog : test Might ou Finesse DC 10 ; livre : la cible fait un save). Les créatures
+  qui saisissent le disent simplement (« the target is Grappled »).
+  (`game/actions/grapple.typ`)
+- **Valeurs absentes des créatures.** Quand une règle demande une valeur que la carte d'une
+  créature ne donne pas (STR, DEX, une compétence...), le MJ la décide.
+  (`game/rules/combat.typ`, section Creatures)
 - **Pas de carte pour les tâches simples** (ouvrir une porte, lâcher un objet) : le MJ gère.
   (`game/actions/basic_actions.typ`)
 - **Cover et Full Cover** ne touchent que les attaques à distance, et parlent de « ligne

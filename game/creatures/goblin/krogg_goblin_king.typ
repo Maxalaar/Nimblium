@@ -7,7 +7,7 @@
         (kind: "passive", name: "Saves", effect: [This creature has #kw_advantage on #STR and #DEX saves.]),
         (kind: "passive", name: "Bloodied", effect: [While this creature is #kw_bloodied, its abilities deal 2d8+3 damage instead.]),
         (kind: "passive", name: "Last Stand", effect: [When this creature drops to 0 #HP, it dies only after taking 20 more damage. Until then, its #defense is 20.]),
-        (kind: "active", cost: (actions(1),), name: "Manglemaul", damage: "2d6+3", effect: [It may move up to 6 spaces before this attack. Whenever this attack deals damage, the target is #kw_grappled until it escapes with a #dc(10) #STR or #DEX save.]),
+        (kind: "active", cost: (actions(1),), name: "Manglemaul", damage: "2d6+3", effect: [It may move up to 6 spaces before this attack. Whenever this attack deals damage, the target is #kw_grappled.]),
         (kind: "active", cost: (actions(1),), name: "Crack Skulls", effect: [It may move up to 6 spaces before using this ability. It swings a creature it has #kw_grappled at another creature. Both take 2d6+3 damage, and the first one is no longer #kw_grappled.]),
     ),
     reminder: (conditions.bloodied, conditions.grappled),

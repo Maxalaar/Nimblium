@@ -8,9 +8,9 @@
         "Underhanded",
     ),
     blocks: (
-      (kind: "passive", effect: [Whenever you Grapple a creature, you may make it #kw_restrained instead.]),
+      (kind: "passive", effect: [Whenever a creature becomes #kw_grappled by you, you may make it #kw_restrained instead.]),
     ),
-    reminder: (conditions.restrained,),
+    reminder: (conditions.grappled, conditions.restrained),
 )
 
 #let tangling_wire = creat_ability(ability_data)
