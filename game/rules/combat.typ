@@ -52,7 +52,9 @@
   attack has no effect. Its maximum is a critical hit. Roll it again and add the result, as
   long as you roll the maximum.]
 
-  #rule[Areas][An attack on an area can't miss and can't crit.]
+  #rule[Areas][An attack on an area can't miss and can't crit. One roll applies to every
+  creature in it. Ignore the #kw_advantage or #kw_disadvantage that comes from one
+  target's condition.]
 
   #rule[Rushed attacks][Each attack after the first on the same turn has 1 more
   #kw_disadvantage. For an ability that calls for a save, the target rolls with 1 more

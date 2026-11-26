@@ -83,7 +83,9 @@ text is available, so no cards.
 - **Adventure**: DONE, recto-verso, up to the October 2, 2026 changelog.
 - **Combat**: DONE, recto-verso (conditions and creatures on the verso), up to the October 2,
   2026 changelog.
-- **Magic**, **Level Up**: not started.
+- **Magic**: DONE, one page, up to the October 2, 2026 changelog. Spell scrolls and wands
+  are left for the equipment cards.
+- **Level Up**: not started.
 
 ## Creatures
 
