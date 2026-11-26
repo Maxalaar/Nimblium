@@ -39,6 +39,8 @@
 
 // Formulas
 #let times(a, b) = [#a×#b]
+// A line to fill in by hand (the GM writes a wand's spell, level and charges).
+#let blank(width) = box(width: width, height: 0.9em, stroke: (bottom: 0.5pt + black))
 #let dc(base, stat: none) = if stat == none { "DC " + str(base) } else { "DC " + str(base) + "+" + stat }
 
 // Keywords, styled. The matching definition still goes in the card's `reminder`.

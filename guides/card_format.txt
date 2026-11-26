@@ -87,8 +87,8 @@ no cost. Fields:
   `.thrown`, `.vicious`, and the functions `weapon_two_handed_unless(n)`, `weapon_heavy(n)`
   (the book's "Req. n STR"), `weapon_load(n)` (an active block that costs
   n actions). The text is written in full on each card: no reminder.
-- A two-handed weapon takes 2 slots, everything else 1. Thrown weapons have `charges` (a
-  stack of 4 javelins: `charges: 4`), regained when combat ends (`weapon_properties.thrown`).
+- A two-handed weapon takes 2 slots, everything else 1, except Javelins and Throwing Hammers
+  (2). Thrown weapons have `charges` (a stack of 4 javelins: `charges: 4`), regained when combat ends (`weapon_properties.thrown`).
 - Armor and the shield (`game/items/armor/`): `type: ("Item", "Armor", "Cloth" | "Leather" |
   "Mail" | "Plate")` or `("Item", "Shield")`, `defense` (DEF: the level 1 bonus, `[+6]`),
   `slots` (2 for armor, 1 for the shield), `levels: armor_levels((6, 9, 12, 15))` (the

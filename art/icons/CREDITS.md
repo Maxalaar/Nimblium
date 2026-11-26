@@ -47,3 +47,4 @@ gray by the card template).
 | `plate.svg` | [Chest armor](https://game-icons.net/1x1/delapouite/chest-armor.html) | Delapouite |
 | `shield.svg` | [Shield](https://game-icons.net/1x1/sbed/shield.html) | Sbed |
 | `potion.svg` | [Health potion](https://game-icons.net/1x1/delapouite/health-potion.html) | Delapouite |
+| `wand.svg` | [Crystal wand](https://game-icons.net/1x1/lorc/crystal-wand.html) | Lorc |

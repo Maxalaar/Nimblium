@@ -152,7 +152,11 @@ to a card, add or complete a line here.
 - **Item level.** An item may show a LVL: you can't use it below that level. A wand's LVL is
   twice its spell's tier (1 for a cantrip). (`game/rules/adventure.typ`, Items)
 - **Thrown weapons** have charges (a stack of javelins is 4); each throw costs 1, and you can
-  pick them up and regain them when combat ends (book: once thrown, you no longer have it).
+  pick them up and regain them when combat ends (book: once thrown, you no longer have it). Javelins and Throwing Hammers take 2 slots.
   (`weapon_properties.typ`)
-- **Healing Potion**: one card, 2 charges, 2d4+4 HP, 3d6+6 at level 5, 4d8+8 at level 10
-  (book: three potions bought separately). (`game/items/consumables/healing_potion.typ`)
+- **Healing Potion**: one card, 1 charge, 2 slots; it heals with the drinker's Hit Die (rolled, not
+  spent; d8 without one) and STR: 2 Hit Dice + STR, then 3 + 2×STR, 4 + 3×STR, 5 + 4×STR at
+  levels 5, 10, 15 (book: 2d4+4, 3d6+6, 4d8+8, three potions bought separately). (`game/items/consumables/healing_potion.typ`)
+- **Wand**: one blank card the GM fills in (spell, level = 2 × tier or 1 for a cantrip,
+  charges 3/2/1 by tier, 2 slots). Anyone can use it, with no proficiency or Arcana check; spell scrolls
+  are wands with 1 charge. (`game/items/consumables/wand.typ`)

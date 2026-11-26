@@ -7,7 +7,7 @@
     damage: [1d8+#STR],
     range: 4,
     charges: 3,
-    slots: 1,
+    slots: 2,
     blocks: (
       weapon_damage("Bludgeoning"),
       weapon_properties.one_handed,

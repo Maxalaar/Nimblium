@@ -7,7 +7,7 @@
     damage: [1d6+#STR],
     range: 8,
     charges: 4,
-    slots: 1,
+    slots: 2,
     blocks: (
       weapon_damage("Piercing"),
       weapon_properties.one_handed,
