@@ -62,7 +62,6 @@
 #let kw_full_cover = keyword_style[Full Cover]
 #let kw_frightened = keyword_style[Frightened]
 #let kw_grappled = keyword_style[Grappled]
-#let kw_grappling = keyword_style[Grappling]
 #let kw_riding = keyword_style[Riding]
 #let kw_hampered = keyword_style[Hampered]
 #let kw_aura = keyword_style[Aura]

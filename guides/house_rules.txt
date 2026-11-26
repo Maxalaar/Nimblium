@@ -38,7 +38,8 @@ to a card, add or complete a line here.
 - **Grappling.** To grab (Grab) and to break free (Escape), the creature that acts makes a STR
   or DEX check against 10 + the higher of the other creature's two stats (changelog: Might or
   Finesse check, DC 10; book: the target makes a save). Creatures that grab simply say so
-  ("the target is Grappled"). (`game/actions/grapple.typ`)
+  ("the target is Grappled"). A single condition, Grappled, covers both sides: the grabbed
+  creature and the grappler (no separate Grappling condition). (`game/conditions.typ`)
 - **Creature stats.** A creature's STR, DEX, INT and WIL are 0 unless its card shows them,
   and each of its skills equals its stat. Nimble's monster saves become stats: each "+" is +3,
   each "−" is −3. (`game/rules/combat.typ`, Creatures section; `creature_rules.txt` §4)

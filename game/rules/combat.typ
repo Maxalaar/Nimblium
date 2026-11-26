@@ -105,8 +105,8 @@
 ]
 
 #section("Grappling")[
-  The #card_ref("Grapple") card explains how to grab and how to escape. While the grapple
-  lasts, the grabber is #kw_grappling and the other creature is #kw_grappled.
+  The #card_ref("Grapple") card explains how to grab and how to escape. The #kw_grappled
+  condition covers both creatures while the grapple lasts.
 
   #rule[#kw_restrained][Chains, ropes or roots work like Grappled, whatever the size. Picking
   the lock or cutting the rope ends it.]

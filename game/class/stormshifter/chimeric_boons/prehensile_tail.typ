@@ -6,7 +6,7 @@
     blocks: (
       (kind: "passive", effect: [Whenever you hit a creature with a melee attack, it is #kw_grappled by you. Only 1 creature at a time can be Grappled this way.]),
     ),
-    reminder: (conditions.grappled, conditions.grappling),
+    reminder: (conditions.grappled,),
 )
 
 #let prehensile_tail = creat_ability(ability_data)
