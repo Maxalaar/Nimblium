@@ -29,43 +29,67 @@
 // A stat increase or other minor line of the table, in gray.
 #let minor(body) = text(fill: reminder_color, body)
 
+// A five-pointed star, filled or outlined, drawn so both kinds have the same size.
+#let star(filled, size: 3.6mm) = {
+  let pts = range(10).map(i => {
+    let r = if calc.even(i) { size / 2 } else { size / 5 }
+    let a = -90deg + i * 36deg
+    (size / 2 + r * calc.cos(a), size / 2 + r * calc.sin(a))
+  })
+  box(width: size, height: size, baseline: 20%, place(polygon(
+    fill: if filled { ink } else { none },
+    stroke: 0.6pt + ink,
+    ..pts)))
+}
+
+// Difficulty: 1 to 3 stars and a word.
+#let difficulty_value(n) = box(inset: (top: 0.6mm), range(3).map(i => star(i < n)).join(h(0.8mm)))
+
+// A subclass that isn't open to everyone at level 3 (the GM unlocks it): a padlock before
+// its title.
+#let locked(title) = [#box(baseline: 12%, icon_image("padlock.svg", 2.8mm)) #h(1mm) #title]
+
 // name: class name. icon: file in art/icons/. intro: one sentence.
 // info: ((label, value), ...). resource: content or none.
 // levels: 20 entries of (tier, features), tier being none before spells (or always, for a
 // class without spells: the Tier column is then hidden).
 // boxes: ((title, content), ...) shown side by side under the table.
-#let class_sheet(name: "", icon: none, intro: none, info: (), resource: none, levels: (), boxes: ()) = {
+#let class_sheet(name: "", icon: none, intro: none, difficulty: none, description: none, info: (), resource: none, levels: (), boxes: ()) = {
   set page(paper: "a4", margin: (x: 14mm, y: 12mm))
   set text(size: 9.5pt)
   set par(leading: 0.45em)
 
-  // Header: icon, name, one sentence.
-  grid(columns: (auto, 1fr), column-gutter: 5mm, align: horizon,
-    if icon != none { icon_image(icon, 16mm) },
-    stack(spacing: 2.5mm,
-      text(size: 22pt, tracking: 5pt, upper(name)),
-      if intro != none { text(size: 9pt, style: "italic", fill: reminder_color, intro) }),
+  // Header: icon, name, and under the name how the class plays (gray italics), or its old
+  // one-sentence intro.
+  let new_layout = description != none or difficulty != none
+  grid(columns: (auto, 1fr), column-gutter: 6mm, align: horizon,
+    if icon != none { icon_image(icon, if new_layout { 24mm } else { 16mm }) },
+    stack(spacing: 3mm,
+      text(size: 24pt, tracking: 6pt, upper(name)),
+      if description != none {
+        par(justify: true, leading: 0.6em, text(size: 9.5pt, style: "italic", fill: reminder_color, description))
+      } else if intro != none { text(size: 9pt, style: "italic", fill: reminder_color, intro) }),
   )
   v(5mm)
 
-  // Information strip.
-  // Information strip, on one line.
-  grid(columns: (auto,) * info.len(), column-gutter: 1fr,
-    ..info.map(((l, v)) => info_cell(l, v)))
+  // Information strip, on one line: Difficulty first when the sheet gives it.
+  let facts = if difficulty != none { (("Difficulty", difficulty_value(difficulty)),) + info } else { info }
+  grid(columns: (auto,) * facts.len(), column-gutter: 1fr,
+    ..facts.map(((l, v)) => info_cell(l, v)))
   if resource != none {
     v(3mm)
     block(width: 100%, inset: (x: 3mm, y: 2.2mm), stroke: hair + ink, radius: 1.5mm, resource)
   }
 
   // Level table.
-  v(6mm)
+  v(if new_layout { 5mm } else { 6mm })
   // The Tier column only shows for spellcasting classes.
   let casts = levels.any(((tier, _)) => tier != none)
   let headers = if casts { ("Lvl", "Tier", "You gain") } else { ("Lvl", "You gain") }
   table(
     columns: if casts { (9mm, 11mm, 1fr) } else { (9mm, 1fr) },
     align: if casts { (center + horizon, center + horizon, left + horizon) } else { (center + horizon, left + horizon) },
-    inset: (x: 2mm, y: 2.3mm),
+    inset: (x: 2mm, y: if new_layout { 1.9mm } else { 2.3mm }),
     stroke: (x, y) => (bottom: if y == 0 { 0.6pt + ink } else { hair + luma(190) }),
     fill: (x, y) => if y > 0 and calc.even(y) { luma(246) },
     table.header(..headers.map(h => text(size: 6.5pt, tracking: 1.2pt, weight: "bold", upper(h)))),

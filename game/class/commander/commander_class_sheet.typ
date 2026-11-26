@@ -1,5 +1,5 @@
 #import "/global.typ": *
-#import "/templates/class_sheet.typ": class_sheet, minor, by_level
+#import "/templates/class_sheet.typ": class_sheet, minor, by_level, locked
 
 #let stat_up(body) = minor[#body]
 #let n = none
@@ -8,10 +8,12 @@
   name: "Commander",
   icon: "commander.svg",
   intro: [Soldier… Warrior… Fearless Leader.],
+  difficulty: 2,
+  description: [A battlefield leader who turns a group of heroes into an army. The Commander fights in the front line, but their real strength is in the orders they shout and the allies they push forward. You win by making everyone around you better, and you are at your best when the whole party fights as one.],
   info: (
     ("Key stats", [#STR, #INT]),
     ("Hit die", [d10, +7 #HP per level]),
-    ("Armor", [Mail, shields]),
+    ("Armor", [Cloth, leather, mail, shields]),
   ),
   levels: (
     (n, [#card_ref("Coordinated Strike!").]),
@@ -48,7 +50,7 @@
       (11, card_ref("Survey the Battlefield")),
       (15, card_ref("As One!")),
     )),
-    ([Spellblade], by_level(
+    (locked[Spellblade], by_level(
       (3, [#card_ref("Arcane Command"), #card_ref("Spellforge"), and the Arcane Order of each Commander's Order you know. A spell of tier 1 or lower and a Utility Spell.]),
       (7, [A spell of tier 2 or lower and a Utility Spell.]),
       (11, [A spell of tier 3 or lower and a Utility Spell.]),

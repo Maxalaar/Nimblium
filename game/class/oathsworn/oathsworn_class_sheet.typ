@@ -1,5 +1,5 @@
 #import "/global.typ": *
-#import "/templates/class_sheet.typ": class_sheet, minor, by_level
+#import "/templates/class_sheet.typ": class_sheet, minor, by_level, locked
 
 #let stat_up(body) = minor[#body]
 #let n = none
@@ -8,10 +8,12 @@
   name: "Oathsworn",
   icon: "oathsworn.svg",
   intro: [I will protect my companions and vanquish evil at all costs.],
+  difficulty: 2,
+  description: [A faithful guardian sworn to protect the weak. The Oathsworn stands between their allies and danger, takes the blows meant for others and answers with radiant judgment. You are the shield of the party, and the enemies who strike your friends will regret it.],
   info: (
     ("Key stats", [#STR, #WIL]),
     ("Hit die", [d10, +7 #HP per level]),
-    ("Armor", [Plate, shields]),
+    ("Armor", [Cloth, leather, mail, plate, shields]),
   ),
   levels: (
     (n, [#card_ref("Radiant Judgment"). #card_ref("Lay on Hands").]),
@@ -48,7 +50,7 @@
       (11, card_ref("Glorious Reprieve")),
       (15, card_ref("Divine Grace")),
     )),
-    ([Oathbreaker], by_level(
+    (locked[Oathbreaker], by_level(
       (3, [#card_ref("Dark Benediction"), #card_ref("Paragon of Power"), #card_ref("Aura of Suffering"), #card_ref("We All Suffer"), #card_ref("Bring Me Your Pain").]),
       (7, card_ref("Torment")),
       (11, card_ref("Exploit")),

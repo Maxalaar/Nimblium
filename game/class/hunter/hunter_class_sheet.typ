@@ -8,10 +8,12 @@
   name: "Hunter",
   icon: "hunter.svg",
   intro: [Respect the forest and her children, and she will bestow upon you many gifts.],
+  difficulty: 1,
+  description: [A patient tracker who chooses its prey and never lets it go. The Hunter marks a single target and hunts it down, from afar or up close, with traps and precise shots. You read the battlefield, pick the most dangerous enemy and wear it down until it falls.],
   info: (
     ("Key stats", [#DEX, #WIL]),
     ("Hit die", [d8, +5 #HP per level]),
-    ("Armor", [Leather]),
+    ("Armor", [Cloth, leather]),
   ),
   levels: (
     (n, [#card_ref("Hunter's Mark"). #card_ref("Forager").]),

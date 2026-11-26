@@ -8,10 +8,12 @@
   name: "Cheat",
   icon: "cheat.svg",
   intro: [Cloak and dagger… and dagger.],
+  difficulty: 1,
+  description: [A sneaky, dirty fighter who never plays fair. You wait for an opening, then strike where it hurts the most. You rely on cunning more than strength, picking your moment instead of trading blows, and a single well-placed strike can end a fight.],
   info: (
     ("Key stats", [#DEX, #INT]),
     ("Hit die", [d6, +4 #HP per level]),
-    ("Armor", [Leather]),
+    ("Armor", [Cloth, leather]),
   ),
   levels: (
     (n, [#card_ref("Sneak Attack"). #card_ref("Vicious Opportunist").]),

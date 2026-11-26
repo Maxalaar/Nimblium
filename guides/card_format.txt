@@ -177,3 +177,20 @@ Same principle for a spell that grants new actions (a transformation): the spell
 effect and says "You gain the X abilities", and a separate `creat_ability` card holds the
 actions (each action's name in the block's `name` field). See `game/spells/fire/dragonform.typ`
 + `game/spells/fire/dragon_form.typ`. Spells have no `blocks` field.
+
+## Class sheets (`templates/class_sheet.typ`)
+
+Header: the class icon and name, and under the name a gray italic paragraph (`description`)
+saying what the class feels like to play: its fantasy and its risks, not its mechanics or
+strategy tips, with no "X: Y" notation. Then one line: Difficulty, Key stats, Hit die, Armor
+(every armor and shield the class can wear, or None). Then the level table and the boxes; a
+subclass the GM unlocks (Oathbreaker, Spellblade, Reaver) has a padlock before its title
+(`locked[...]`).
+
+Difficulty (`difficulty`, 1 to 3 black stars) weighs: resources to track at the same time,
+choices each turn, actions taken outside your turn, how much positioning matters, and spells.
+1 star: the class plays as a routine (Berserker, Cheat, Hunter: the three beginner classes,
+up close, by finesse and at range). 2 stars: one resource or allies to manage (Commander,
+Oathsworn, Shepherd). 3 stars: several of these together (Mage,
+Shadowmancer, Songweaver, Stormshifter, Zephyr). Berserker and Hunter (book 2) and Zephyr
+(book 2, rebuilt around two resources) differ from the book's Class Complexity.

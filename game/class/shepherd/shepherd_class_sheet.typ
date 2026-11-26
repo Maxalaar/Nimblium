@@ -8,10 +8,12 @@
   name: "Shepherd",
   icon: "shepherd.svg",
   intro: [Let all who are afflicted come. I will mend thy bones and soothe thy wounds.],
+  difficulty: 2,
+  description: [A healer who walks between life and death, followed by a loyal spirit. The Shepherd keeps allies on their feet and strikes down what threatens them, with the spirit always at their side. You are the one who decides who lives and who falls.],
   info: (
     ("Key stats", [#WIL, #STR]),
     ("Hit die", [d10, +7 #HP per level]),
-    ("Armor", [Mail, shields]),
+    ("Armor", [Cloth, leather, mail, shields]),
   ),
   levels: (
     (n, [Radiant and Necrotic cantrips. #card_ref("Searing Light").]),

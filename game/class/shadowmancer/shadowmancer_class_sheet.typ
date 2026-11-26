@@ -1,5 +1,5 @@
 #import "/global.typ": *
-#import "/templates/class_sheet.typ": class_sheet, minor, by_level
+#import "/templates/class_sheet.typ": class_sheet, minor, by_level, locked
 
 #let stat_up(body) = minor[#body]
 #let n = none
@@ -8,6 +8,8 @@
   name: "Shadowmancer",
   icon: "shadowmancer.svg",
   intro: [Totally NOT evil. Why would you even say that?],
+  difficulty: 3,
+  description: [A spellcaster bound by a pact with a dark Patron. The Shadowmancer commands a horde of expendable shadows and steals power to cast forbidden spells. You overwhelm your enemies with numbers and dark magic, but every gift from your Patron has a price.],
   info: (
     ("Key stats", [#INT, #DEX]),
     ("Hit die", [d8, +5 #HP per level]),
@@ -48,7 +50,7 @@
       (11, card_ref("Glacial Resilience")),
       (15, card_ref("Cryomancer's Reprisal")),
     )),
-    ([Reaver], by_level(
+    (locked[Reaver], by_level(
       (3, [#card_ref("Hollow One"), #card_ref("Bonescythe"), #card_ref("Shadow Exploit").]),
       (7, [#card_ref("Grim Harrow"), #card_ref("Reap").]),
       (11, [#card_ref("My Blood, My Power"), #card_ref("Otherworldly Might").]),

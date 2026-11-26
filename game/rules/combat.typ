@@ -151,15 +151,8 @@
   Your #defense is your #DEX, plus the bonus of your armor and of your shield. Their bonus
   grows with your level, as their cards show.
 
-  #rule[Proficiency][Your class sheet lists the armor you are proficient with. In other armor,
-  or with a shield you aren't proficient with, Defend costs 1 more action.]
-
-  #values(columns: (14mm, 1fr), header: ("Sheet", "Proficient with"),
-    [Cloth], [Cloth.],
-    [Leather], [Cloth, Leather.],
-    [Mail], [Cloth, Leather, Mail.],
-    [Plate], [Cloth, Leather, Mail, Plate.],
-  )
+  #rule[Proficiency][You can wear only the armor, and hold only the shields, your class sheet
+  lists.]
 ]
 
 #section("Creatures")[
@@ -206,9 +199,9 @@ it breaks "after a few hits"). Customizing weapons is left to the GM.
 
 changelog: Unarmed strikes deal 1d4+STR.
 
-house-rule: Proficiency with an armor includes every lighter one (Cloth, Leather, Mail,
-Plate), so a class sheet names only its heaviest armor. Without proficiency, Defend costs 1
-more action (Core Rules p.33). Defense is DEX + armor + shield, and armor and shields grow
+house-rule: Class sheets list every armor the class is proficient with (Cloth, Leather, Mail,
+Plate, shields), and you can't wear the others (book: without proficiency, Defend costs 1 more
+action, Core Rules p.33). Defense is DEX + armor + shield, and armor and shields grow
 with your level (game/items/armor/).
 
 house-rule: No weapon proficiency: any hero can use any weapon, and class sheets list no

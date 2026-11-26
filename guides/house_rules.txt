@@ -144,9 +144,10 @@ to a card, add or complete a line here.
   needs 2 STR and Plate 3 (Heavy: you can't wear it below); the other requirements are
   dropped. Armor takes 2 slots, worn or not. You wear 1 armor at a time and only 1 shield adds to
   Defense (written on the cards). (`game/items/armor/`)
-- **Armor proficiency** includes every lighter armor: Cloth < Leather < Mail < Plate. Without
-  proficiency, Defend costs 1 more action (book rule). The Berserker is proficient with Cloth
-  (book: none). (`game/rules/combat.typ`)
+- **Armor proficiency**: class sheets list every armor the class is proficient with, lighter
+  ones included (book: the heaviest only), and you can't wear or hold the others (book: Defend
+  costs 1 more action without proficiency). The Berserker and the Zephyr wear none, as in the
+  book. (`game/rules/combat.typ`)
 - **Charges.** Potions and wands have charges (CHRG) that all come back after a Safe Rest
   (book: bought one by one, used up); there is no Consumable item type. Slots limit how many you carry. Scrolls merge into
   wands. (`game/rules/adventure.typ`, Items)

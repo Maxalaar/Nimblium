@@ -81,7 +81,17 @@ text is available, so no cards.
   Resolve, Windborne; 10 Martial Arts; Way of Pain and Way of Flame (Echoed Agony and Encompassing Flames are
   Levels lines on Share My Pain, Exploding Soul and Chain Reaction); class sheet, High Kick
   icon. Announced subclasses: Way of Iron, Way of Hurricanes.
-- **Extra Subclasses**: not started.
+- **Extra Subclasses**: done in their class as subclasses like the others: Oathbreaker
+  (Oathsworn), Spellblade (Commander), Reaver (Shadowmancer).
+- **Beastmaster (Hunter): SET ASIDE, needs a deep rework** (decided 2026-11-26). Not
+  implemented on purpose. The book's version (an abstract companion with no stats, Small,
+  Medium or Large, whose abilities replace 2 Thrill of the Hunt abilities) doesn't fit how
+  Nimblium wants companions: they must be creatures with HP and a position (like the Shepherd's
+  Spirit Companion and the Songweaver's Friends). A first creature version was tried and
+  dropped: Protect Me! making an attack miss outright made no sense, the Small Beast was much
+  weaker than the others, and the cards didn't fit. Goal for the rework: any hero, of any
+  class, could take a beast companion instead of their subclass, with its own progression
+  tree. To discuss before writing any card.
 
 ## Spells
 
