@@ -88,6 +88,10 @@
   )
 ]
 
+#section("Rounding")[
+  When a rule divides a number, round the result up.
+]
+
 #section("Falling")[
   A creature that falls takes 1d6 bludgeoning damage for every 2 spaces it falls.
 ]
@@ -150,6 +154,8 @@ house-rule: There are no saves, and no separate skill and stat checks: there is 
 1d20 + the stat or skill named, against the same DCs. An effect that the book resolves with a
 save calls for a check by the affected creature, and classes have no advantaged or
 disadvantaged saves.
+
+house-rule: Divisions round up (Nimble doesn't say; user ruling 2026-11-26).
 
 interpretation: Optional rules (gritty dying, abstracted distances, a week of rest per Wound)
 are left out.

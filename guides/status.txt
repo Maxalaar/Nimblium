@@ -53,7 +53,14 @@ text is available, so no cards.
   subclasses; class sheet. In the new style and up to the October 2, 2026 changelog. The
   Oathbreaker waits with the Extra Subclasses. Class icon: Winged Shield. Announced
   subclasses: Oath of Roaring Thunder, Oath of Valor.
-- **Songweaver, Stormshifter, Zephyr, Extra Subclasses**: not started.
+- **Songweaver** (p.54-59): COMPLETE — Vicious Mockery (Songweaver-only cantrip),
+  Songweaver's Inspiration, Songweaver Mana Pool, Song of Rest, Quick Wit, I'm So Famous!;
+  Lyrical Weaponry; the 4 Friends (A "People" Person), creature cards that follow the
+  Songweaver; Herald of Snark and Herald of Courage
+  subclasses; class sheet. Up to the October 2, 2026 changelog. No card for Jack of All Trades
+  and Perform! (house rule) nor for I Know Just the Song (only unlocks spells). Class icon:
+  Lyre. Announced subclasses: Herald of Singing Steel, Herald of Torment, Herald of Legends.
+- **Stormshifter, Zephyr, Extra Subclasses**: not started.
 
 ## Spells
 

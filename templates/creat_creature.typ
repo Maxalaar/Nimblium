@@ -30,9 +30,10 @@
   // STR, DEX, INT and WIL are 0 by default and only shown when they are not.
   // When the row needs two lines, they go on the second one.
   let cut = stats.len()
-  let signed(v) = if v > 0 { "+" + str(v) } else { "−" + str(-v) }
+  // A number is shown signed; a formula (content such as [#LVL/4+2]) is shown as is.
+  let signed(v) = if type(v) != int { v } else if v > 0 { "+" + str(v) } else { "−" + str(-v) }
   for (key, label) in (("str", "STR"), ("dex", "DEX"), ("int", "INT"), ("wil", "WIL")) {
-    if creature.at(key, default: 0) != 0 { stats.push((label, stat_value(signed(creature.at(key))))) }
+    if creature.at(key, default: 0) not in (0, none) { stats.push((label, stat_value(signed(creature.at(key))))) }
   }
   if cut == stats.len() or cut == 0 { cut = none }
 

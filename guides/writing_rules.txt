@@ -75,7 +75,7 @@ forms.
 | Type | Write | Result |
 |---|---|---|
 | Cost | `actions(2)`, `mana(3)`, `toth_charges(1)`, `wounds(1)`, `fury_dice_cost("X")` | `2 Actions` |
-| Limit | `per_turn(1)`, `per_round(1)`, `per_encounter(1)`, `per_day(1)`, `per_safe_rest(WIL)` | `WIL/Safe Rest` |
+| Limit | `per_turn(1)`, `per_round(1)`, `per_encounter(1)`, `per_safe_rest(WIL)` | `WIL/Safe Rest` |
 | Acronym | `#STR #DEX #INT #WIL #KEY #LVL #HP #TotH` | `WIL` |
 | Term | `#safe_rest #defense #speed #primary_die #thrill_of_the_hunt` | `Safe Rest` |
 | Keyword | `#kw_marked`, `#kw_raging`, `#kw_difficult_terrain`... | styled word |

@@ -6,3 +6,4 @@
 #import "shadowmancer/mod.typ": *
 #import "commander/mod.typ": *
 #import "oathsworn/mod.typ": *
+#import "songweaver/mod.typ": *

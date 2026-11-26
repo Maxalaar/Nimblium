@@ -27,12 +27,12 @@
 #let fury_dice_cost(n) = str(n) + " Fury Dice"
 #let combat_dice_cost(n) = str(n) + " Combat " + if n == 1 { "Die" } else { "Dice" }
 #let searing_light_uses(n) = str(n) + " Searing Light use" + if n == 1 { "" } else { "s" }
+#let inspiration_cost(n) = str(n) + " Inspiration"
 
 // Limits, for the `limitation` field. `n` may be a number or a stat such as WIL.
 #let per_turn(n) = str(n) + "/turn"
 #let per_round(n) = str(n) + "/round"
 #let per_encounter(n) = str(n) + "/encounter"
-#let per_day(n) = str(n) + "/day"
 #let per_safe_rest(n) = str(n) + "/" + safe_rest
 
 // Formulas

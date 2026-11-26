@@ -11,7 +11,7 @@ to a card, add or complete a line here.
 
 - **No change of choices on a rest.** Every class in the book has an ability that lets you
   redo your class choices during a Safe Rest (Supplicate, Remember the Wild, Serve, Be Wild,
-  Focus, "you may choose different X options"...). It is not used: too strong, and it slows
+  Focus, Perform!, Jack of All Trades, "you may choose different X options"...). It is not used: too strong, and it slows
   the game down. Choices only change when you level up. No card, and no Retrain activity
   during downtime.
 - **No Reactions.** A reaction is an action with a "When..." trigger, a cost of 1 action and a
@@ -47,6 +47,11 @@ to a card, add or complete a line here.
   a creature do exactly what they say. Rushed attacks only add disadvantage to attack rolls
   (the book also gave the target advantage on its save). (`game/keywords.typ`,
   `game/rules/combat.typ`)
+- **No "who can hear you".** A range the book gives as "who can hear you" or "within
+  hearing" becomes a number of spaces (12 by default), so that no GM ruling is needed.
+  (`game/class/songweaver/`)
+- **Round up.** When a rule divides a number, the result is rounded up.
+  (`game/rules/adventure.typ`)
 - **No card for simple tasks** (opening a door, dropping an item): the GM handles them.
   (`game/actions/basic_actions.typ`)
 - **Fixed HP when leveling up.** Max HP always increase by the fixed value of the Hit Die
@@ -83,6 +88,12 @@ to a card, add or complete a line here.
   - *Wild Instinct*: free, 1/round, with no charges: +1 to the next Primary Die against a
     creature, or −1 to the Primary Dice against you, with no roll (book: Assess with
     advantage).
+- **Songweaver.** The friends of A "People" Person are creatures that follow the Songweaver
+  instead of being summoned with a song. Stompy is a companion like the Shepherd's: 5×LVL HP,
+  a 1d6+LVL Slam, and a Stomp (LVL+10 to each creature in a 6-space line) once per Safe Rest,
+  with no Influence check. The others have LVL+5 HP and no attack: Gran Gran bakes pastries,
+  Mal is a flying spy (DEX +3, INT +2, +5 Stealth and Perception), and Linos is a Huge flying
+  mount with 5×LVL HP and speed 12. (`game/class/songweaver/friends/`)
 - **Shepherd.** The companion stays in its house version, very different from the official
   game: a separate creature with an HP pool (Tier × 10) that acts in contact. The October 2,
   2026 changelog changes to the companion are not applied, except two: heals limited to

@@ -22,6 +22,7 @@
   "Shadowmancer": "shadowmancer.svg",
   "Commander": "commander.svg",
   "Oathsworn": "oathsworn.svg",
+  "Songweaver": "songweaver.svg",
   "Combat": "combat.svg",
 )
 
