@@ -23,6 +23,7 @@
   "Commander": "commander.svg",
   "Oathsworn": "oathsworn.svg",
   "Songweaver": "songweaver.svg",
+  "Stormshifter": "stormshifter.svg",
   "Combat": "combat.svg",
 )
 

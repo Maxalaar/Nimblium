@@ -38,7 +38,7 @@ stats, hit die with its HP per level, armor, weapons; not the starting equipment
 the lists of options. It replaces cards that would only list choices by level. No repetition:
 a rule already on a card is not repeated, the sheet names the card (`#card_ref`). Sheets
 done: Berserker, Cheat, Commander, Hunter, Mage, Oathsworn, Shadowmancer, Shepherd,
-Songweaver. Every new
+Songweaver, Stormshifter. Every new
 class gets its sheet together with its cards: a class is not COMPLETE without it.
 
 ## Rules pages (`game/rules/<area>.typ`)

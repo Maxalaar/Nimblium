@@ -1,7 +1,7 @@
 #import "creat_frame.typ": creat_card, family_icon, stat_lines, reminders, stat_value, body_area, body_height, text_size, min_text_size, card_gap, join_blocks, min_gap, max_gap
 #import "creat_ability.typ": ability_block
 
-#let kind_order = (passive: 0, active: 1)
+#let kind_order = (narrative: 0, passive: 1, active: 2)
 // The size is written in full in the data and shown as one letter on the card.
 #let size_letters = (Tiny: "T", Small: "S", Large: "L", Huge: "H", Gargantuan: "G")
 

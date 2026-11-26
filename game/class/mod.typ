@@ -7,3 +7,4 @@
 #import "commander/mod.typ": *
 #import "oathsworn/mod.typ": *
 #import "songweaver/mod.typ": *
+#import "stormshifter/mod.typ": *

@@ -15,6 +15,12 @@
     name: "Flight",
     effect: [This creature is #kw_flying.],
   ),
+  // Add keywords.swarm to the creature's reminders.
+  swarm: (
+    kind: "passive",
+    name: "Swarm",
+    effect: [This creature is a #kw_swarm.],
+  ),
   // Minions have no HP and no level (creature_rules.txt §5).
   minion: (
     kind: "passive",

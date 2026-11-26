@@ -7,9 +7,11 @@
   narrative: rgb("#868686"),
 )
 
+// Narrative first (always true), then passive (true in combat), then active (what you do).
 #let mode_order = (
-  active: 0,
+  narrative: 0,
   passive: 1,
+  active: 2,
 )
 
 #let mode_badge(kind) = dark_badge(kind, color: mode_shades.at(kind, default: rgb("#4D4D4D")))

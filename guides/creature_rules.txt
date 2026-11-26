@@ -54,7 +54,8 @@ A creature's abilities are a list of blocks, exactly like a hero ability card:
 A block with a `damage` field is an attack. Its capsules come in this order: mode, cost,
 limit, attacks, reach or range, damage.
 
-Passive blocks come first, then active blocks: the template sorts them that way.
+Narrative blocks come first, then passive blocks, then active blocks: the template sorts
+them that way (what is always true, then what is true in combat, then what it does).
 
 **Long creatures.** One file per creature, always, and one card by default: a text that is too
 long overflows visibly. To allow two cards, add `split: true` to the creature: if its text
@@ -119,6 +120,7 @@ rewriting the text:
 |---|---|---|
 | `passive_abilities.undying` | most Undead | `1/encounter`: when it would die, it resets to 1 HP |
 | `passive_abilities.flying` | creatures that fly (Nimble's "Fly") | "This creature is Flying." Add `keywords.flying` to its reminders |
+| `passive_abilities.swarm` | swarming creatures (Nimble's "Swarm") | "This creature is a Swarm." Add `keywords.swarm` to its reminders |
 | `passive_abilities.minion` | every minion (type "Minion") | any damage kills it; its attacks can't crit and ignore advantage and disadvantage; several minions attacking the same creature count as a single attack |
 
 ## 6. Converting a Nimble stat block

@@ -27,3 +27,4 @@ gray by the card template).
 | `commander.svg` | [Trumpet flag](https://game-icons.net/1x1/delapouite/trumpet-flag.html) | Delapouite |
 | `combat.svg` | [Crossed swords](https://game-icons.net/1x1/lorc/crossed-swords.html) | Lorc |
 | `songweaver.svg` | [Lyre](https://game-icons.net/1x1/lorc/lyre.html) | Lorc |
+| `stormshifter.svg` | [Wolf howl](https://game-icons.net/1x1/lorc/wolf-howl.html) | Lorc |

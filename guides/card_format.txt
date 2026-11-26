@@ -30,7 +30,7 @@ front and the back side by side (5 mm apart). A clean design, black and white, l
   CC BY 3.0, or Bootstrap Icons MIT; see `art/icons/CREDITS.md`). The icon comes from the
   card's types: `family_icons.typ` maps a type to a file in `art/icons/` (today Goblin,
   Undead, the Fire, Ice, Lightning, Wind, Radiant and Necrotic schools, the Berserker, Cheat,
-  Commander, Hunter, Mage, Oathsworn, Shepherd, Shadowmancer and Songweaver classes, and Combat for the
+  Commander, Hunter, Mage, Oathsworn, Shepherd, Shadowmancer, Songweaver and Stormshifter classes, and Combat for the
   basic actions); if several types match, the most specific one (the last) wins. With no
   known type, there is no icon and the name is centered. The same icon appears in small (6 mm)
   at the bottom center of the front, straddling the line of the bottom corners, raised 1 mm
@@ -58,6 +58,7 @@ front and the back side by side (5 mm apart). A clean design, black and white, l
 - `tags` (optional): outlined capsules after the cost, e.g. `("AoE",)` (Whirlwind).
 - `limitation`: a tag shown as a badge, e.g. `per_turn(1)`, `per_encounter(1)`,
   `per_safe_rest(WIL)`, `per_round(2)`.
+- Blocks are sorted: narrative first, then passive, then active (creatures too).
 - Level progression and multiple clauses: see `writing_rules.txt` §8.
 - `type`: `("Ability", "<Class>")` for a base ability, with a 3rd item for a subgroup
   (subclass or pool of choices), e.g. `("Ability","Cheat","Underhanded")`,

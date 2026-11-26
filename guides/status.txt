@@ -60,7 +60,14 @@ text is available, so no cards.
   subclasses; class sheet. Up to the October 2, 2026 changelog. No card for Jack of All Trades
   and Perform! (house rule) nor for I Know Just the Song (only unlocks spells). Class icon:
   Lyre. Announced subclasses: Herald of Singing Steel, Herald of Torment, Herald of Legends.
-- **Stormshifter, Zephyr, Extra Subclasses**: not started.
+- **Stormshifter** (p.60-65): COMPLETE — rebuilt by the October 2, 2026 changelog: Beastshift
+  (free harmless forms, Direbeast forms DEX/encounter), Stormshifter Mana Pool, Stormborn,
+  Archdruid; the 3 Direbeast forms (Fearsome Beast, Beast of the Pack, Beast of Nightmares) as
+  ability cards; 9 Chimeric Boons; Circle of Sky & Storm and Circle of Fang & Claw; class
+  sheet. stormshifter_keywords.typ defines Direbeast Form. No card for Be Wild (house rule), nor for
+  Master of Storms, Deepening Study and Stormcaller (they only unlock spells). Class icon: Wolf
+  Howl. Announced subclasses: Circle of Cinder & Ash, Circle of Venom & Web.
+- **Zephyr, Extra Subclasses**: not started.
 
 ## Spells
 

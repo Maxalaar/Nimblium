@@ -115,7 +115,10 @@ Typst syntax pitfalls:
 ## 8. Ability text structure
 
 - **Several distinct effects**: one block per effect on the same card, rather than a single
-  paragraph. See `explorer_of_the_wilds.typ`, `misdirection.typ`, `apex_predator.typ`.
+  paragraph. A block is one effect a player would look for on its own; several sentences stay
+  in one block only when they describe the same thing (Grab and Escape both about being hard
+  to grapple). Exception: the first block of a form (Direbeast forms) describes what you
+  become (size, Defense, temp HP...) and stays one block. See `explorer_of_the_wilds.typ`, `misdirection.typ`, `apex_predator.typ`.
 - **Level progression**: bold `*Level X:*` lines inside the same block, rather than several
   cards. See `game/class/cheat/sneak_attack.typ`.
 - **List the levels**: never "every 5 levels". When the bonus is the same at each step, name

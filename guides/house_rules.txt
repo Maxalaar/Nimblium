@@ -11,7 +11,7 @@ to a card, add or complete a line here.
 
 - **No change of choices on a rest.** Every class in the book has an ability that lets you
   redo your class choices during a Safe Rest (Supplicate, Remember the Wild, Serve, Be Wild,
-  Focus, Perform!, Jack of All Trades, "you may choose different X options"...). It is not used: too strong, and it slows
+  Focus, Perform!, Jack of All Trades, Be Wild, "you may choose different X options"...). It is not used: too strong, and it slows
   the game down. Choices only change when you level up. No card, and no Retrain activity
   during downtime.
 - **No Reactions.** A reaction is an action with a "When..." trigger, a cost of 1 action and a
@@ -96,6 +96,11 @@ to a card, add or complete a line here.
   with no Influence check. The others have LVL+5 HP and no attack: Gran Gran bakes pastries,
   Mal is a flying spy (DEX +3, INT +2, +5 Stealth and Perception), and Linos is a Huge flying
   mount with 5×LVL HP and speed 12. (`game/class/songweaver/friends/`)
+- **Stormshifter.**
+  - *Beast of Nightmares* is a Swarm and can be targeted like any creature (book: it can't be
+    targeted until it becomes "conspicuous").
+  - *Attuned to Nature* adds LVL to a Naturecraft check (book: any check "related to nature
+    or weather").
 - **Shepherd.** The companion stays in its house version, very different from the official
   game: a separate creature with an HP pool (Tier × 10) that acts in contact. The October 2,
   2026 changelog changes to the companion are not applied, except two: heals limited to

@@ -28,6 +28,7 @@
 #let combat_dice_cost(n) = str(n) + " Combat " + if n == 1 { "Die" } else { "Dice" }
 #let searing_light_uses(n) = str(n) + " Searing Light use" + if n == 1 { "" } else { "s" }
 #let inspiration_cost(n) = str(n) + " Inspiration"
+#let direbeast_cost(n) = str(n) + " Direbeast charge" + if n == 1 { "" } else { "s" }
 
 // Limits, for the `limitation` field. `n` may be a number or a stat such as WIL.
 #let per_turn(n) = str(n) + "/turn"
@@ -80,7 +81,9 @@
 #let kw_slowed = keyword_style[Slowed]
 #let kw_smoldering = keyword_style[Smoldering]
 #let kw_taunt = keyword_style[Taunt]
+#let kw_swarm = keyword_style[Swarm]
 #let kw_taunted = keyword_style[Taunted]
+#let kw_direbeast_form = keyword_style[Direbeast Form]
 #let kw_vulnerable = keyword_style[Vulnerable]
 #let kw_weakened = keyword_style[Weakened]
 
