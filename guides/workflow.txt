@@ -1,120 +1,119 @@
-# Gestion du projet — Nimblium
+# Project management — Nimblium
 
-Comment on travaille : sources, organisation, vérifications, suivi.
+How we work: sources, organization, checks, tracking.
 
-## Extraction du texte source
+## Extracting the source text
 
-`pdftotext -f <début> -l <fin> -layout sources/Heroes.pdf -`
+`pdftotext -f <start> -l <end> -layout sources/Heroes.pdf -`
 
-- Les numéros de page imprimés en pied de page sont décalés de -1 par rapport à la page PDF
-  demandée (ex: demander les pages PDF 14-17 donne des pieds de page 13-16).
-- Le layout est en deux colonnes sur beaucoup de pages : le texte peut s'entrelacer entre
-  colonnes dans la sortie de `pdftotext`. Si l'ordre semble suspect, réextraire une page seule.
-- Sommaire utile pour localiser les classes : Berserker p.6, Cheat p.12, Commander p.18,
-  Hunter p.24, Mage p.30, Oathsworn p.36, Shadowmancer p.42, Shepherd p.48, Songweaver p.54,
+- The page numbers printed in the footer are offset by -1 from the PDF page requested (e.g.
+  asking for PDF pages 14-17 gives footers 13-16).
+- Many pages are laid out in two columns: the text can interleave between columns in the
+  `pdftotext` output. If the order looks wrong, extract a single page again.
+- Table of contents to find the classes: Berserker p.6, Cheat p.12, Commander p.18, Hunter
+  p.24, Mage p.30, Oathsworn p.36, Shadowmancer p.42, Shepherd p.48, Songweaver p.54,
   Stormshifter p.60, Zephyr p.66, Extra Subclasses p.73.
 
-## Organisation des fichiers par classe (`game/class/<nom_classe>/`)
+## File organization per class (`game/class/<class_name>/`)
 
-- Capacités de base de la classe : fichiers `.typ` à plat directement dans `game/class/<nom>/`.
-- Un pool de capacités à choisir (Underhanded Ability du Cheat, Thrill of the Hunt du Hunter,
-  Sacred Grace du Shepherd) va dans son propre sous-dossier `game/class/<nom>/<pool>/` avec son
-  propre `mod.typ`, importé via `#import "<pool>/mod.typ": *` depuis le mod.typ de la classe.
-- Les sous-classes vont dans `game/class/<nom>/subclasses/<sous_classe>/`, chacune avec son
-  `mod.typ` ; `game/class/<nom>/subclasses/mod.typ` agrège toutes les sous-classes ; le mod.typ de
-  la classe importe `subclasses/mod.typ`.
-- Chaque nouveau fichier doit être ajouté au `mod.typ` de son dossier (remonte en cascade
-  jusqu'à `game/class/mod.typ`) — nécessaire pour compiler/tester via `#nom_symbole`, même si
-  `tools/export_cards.py` découvre les fichiers indépendamment par parcours du système de fichiers.
-- Noms de fichiers en snake_case dérivés du nom de la capacité, ponctuation retirée (ex:
+- The class's base abilities: `.typ` files directly in `game/class/<name>/`.
+- A pool of abilities to choose from (the Cheat's Underhanded Abilities, the Hunter's Thrill
+  of the Hunt, the Shepherd's Sacred Graces) goes in its own subfolder
+  `game/class/<name>/<pool>/` with its own `mod.typ`, imported with
+  `#import "<pool>/mod.typ": *` from the class's mod.typ.
+- Subclasses go in `game/class/<name>/subclasses/<subclass>/`, each with its `mod.typ`;
+  `game/class/<name>/subclasses/mod.typ` gathers every subclass; the class's mod.typ imports
+  `subclasses/mod.typ`.
+- Every new file must be added to the `mod.typ` of its folder (which cascades up to
+  `game/class/mod.typ`). It is needed to compile and test through `#symbol_name`, even though
+  `tools/export_cards.py` finds the files on its own by walking the file system.
+- File names in snake_case, derived from the ability's name, punctuation removed (e.g.
   "How'd YOU get here?!" → `how_you_get_here.typ`).
 
-## Fiche de classe (`game/class/<nom>/<nom>_class_sheet.typ`)
+## Class sheet (`game/class/<name>/<name>_class_sheet.typ`)
 
-Une page A4 par classe, faite avec `templates/class_sheet.typ` : infos de départ (stats
-clés, dé de vie, PV, sauvegardes, armure, armes ; pas l'équipement de départ), tableau des niveaux 1 à 20 (ce
-qu'on gagne à chaque niveau, tier de sort max) et, en bas, les sous-classes par niveau et les
-listes d'options. Elle remplace les cartes qui ne feraient que lister des choix par niveau.
-Pas de redite : une règle déjà sur une carte n'est pas répétée, la fiche nomme la carte
-(`#card_ref`). Fiches faites : Berserker, Cheat, Commander, Hunter, Mage, Oathsworn, Shadowmancer, Shepherd.
-Chaque nouvelle classe reçoit sa fiche en même temps que ses cartes : une classe n'est pas
-COMPLÈTE sans elle.
+One A4 page per class, made with `templates/class_sheet.typ`: starting information (key stats,
+hit die, HP, saves, armor, weapons; not the starting equipment), the table of levels 1 to 20
+(what you gain at each level, max spell tier) and, at the bottom, the subclasses by level and
+the lists of options. It replaces cards that would only list choices by level. No repetition:
+a rule already on a card is not repeated, the sheet names the card (`#card_ref`). Sheets
+done: Berserker, Cheat, Commander, Hunter, Mage, Oathsworn, Shadowmancer, Shepherd. Every new
+class gets its sheet together with its cards: a class is not COMPLETE without it.
 
-## Pages de règles (`game/rules/<domaine>.typ`)
+## Rules pages (`game/rules/<area>.typ`)
 
-Les règles du jeu hors cartes, faites avec `templates/rules_page.typ` : une feuille A4 par
-domaine, sur deux colonnes. Le recto suffit d'habitude ; quand le texte déborde, `#verso`
-ouvre le verso (recto-verso, jamais plus). Le recto porte ce qui sert à table, le verso ce
-qu'on consulte (repos, conditions...). Une section (`#section("Titre")[...]`) ne se coupe
-jamais entre deux colonnes.
+The game rules that are not on cards, made with `templates/rules_page.typ`: one A4 sheet per
+area, in two columns. The recto is usually enough; when the text overflows, `#verso` opens
+the verso (recto-verso, never more). The recto holds what is used at the table, the verso
+what is looked up (rests, conditions...). A section (`#section("Title")[...]`) never splits
+across two columns.
 
-Domaines prévus :
-- **Adventure** (fait) : stats, compétences, tests, sauvegardes, avantage, taille, chute ;
-  au verso PV, PV temporaires, dés de vie, Field Rest, Safe Rest. Pas de logement ni de downtime.
-- **Combat** (fait) : tour, réserve de 3 actions, attaques, Defense, déplacement et portées,
-  Cover, lutte en cours, mouvement forcé, concentration, Dying et Wounds ; au verso les
-  conditions (reprises de `game/conditions.typ`) et les règles des créatures
-  (`creature_rules.txt`). Les actions elles-mêmes sont sur les cartes de `game/actions/`
-  (Basic Actions, Grapple, Triggered Actions) : la page y renvoie sans les répéter.
-- **Magic** : une page.
-- **Level Up** : création du personnage (ascendance, historique, répartition des stats) et
-  montée de niveau, une page.
-- Pas de page d'équipement : il deviendra des cartes.
+Planned areas:
+- **Adventure** (done): stats, skills, checks, saves, advantage, size, falling; on the verso
+  HP, temporary HP, Hit Dice, Field Rest, Safe Rest. No lodging and no downtime.
+- **Combat** (done): turn, pool of 3 actions, attacks, Defense, movement and reach, Cover,
+  grapples in progress, forced movement, Concentration, Dying and Wounds; on the verso the
+  conditions (taken from `game/conditions.typ`) and the creature rules
+  (`creature_rules.txt`). The actions themselves are on the cards of `game/actions/` (Basic
+  Actions, Grapple, Triggered Actions): the page refers to them without repeating them.
+- **Magic**: one page.
+- **Level Up**: character creation (ancestry, background, stat spread) and leveling up, one
+  page.
+- No equipment page: equipment will become cards.
 
-Rédaction :
-- Même langage que les cartes (`writing_rules.txt`) : anglais, phrases complètes, pas de
-  deux-points ni de parenthèses, termes via `game/terms.typ`, `check_terms.py` passe dessus.
-- Une règle nommée s'écrit `#rule[Nom][Texte.]` (nom en gras suivi d'un point). Un mot-clé
-  déjà défini se reprend tel quel depuis `game/keywords.typ` ou `game/conditions.typ`
-  (`#keywords.advantage`) au lieu d'être réécrit.
-- Les tableaux (`#values`) sont des listes de référence : un fragment y est permis.
-- Pas de redite d'une carte : on la nomme avec `#card_ref`. Pas de règles optionnelles du
-  livre, sauf décision de l'utilisateur.
-- Bloc de notes en bas du fichier, comme une carte (`review:`, `house-rule:`...), avec les
-  pages sources.
+Writing:
+- The same language as the cards (`writing_rules.txt`): English, complete sentences, no
+  colons or parentheses, terms through `game/terms.typ`, `check_terms.py` checks them.
+- A named rule is written `#rule[Name][Text.]` (the name in bold, followed by a period). A
+  keyword already defined is reused as is from `game/keywords.typ` or `game/conditions.typ`
+  (`#keywords.advantage`) instead of being rewritten.
+- Tables (`#values`) are reference lists: fragments are allowed in them.
+- No repetition of a card: name it with `#card_ref`. No optional rules from the book, unless
+  the user decides otherwise.
+- A notes block at the bottom of the file, as on a card (`review:`, `house-rule:`...), with
+  the source pages.
 
-## Éléments qu'on ne transforme JAMAIS en carte
+## Things that NEVER become a card
 
-- Augmentations de stats pures ("+1 DEX or WIL", "Key/Secondary Stat Increase").
-- "Epic Boon. Choose an Epic Boon..." (placeholder, renvoie à un autre livre).
-- "Subclass. Gain your X subclass feature." (placeholder de niveau, pas une capacité en soi).
-- Toute capacité qui ne fait que débloquer des sorts (voir règle ci-dessus).
+- Pure stat increases ("+1 DEX or WIL", "Key/Secondary Stat Increase").
+- "Epic Boon. Choose an Epic Boon..." (a placeholder that refers to another book).
+- "Subclass. Gain your X subclass feature." (a level placeholder, not an ability in itself).
+- Any ability that only unlocks spells (see the rule below).
 
-## Règle importante : pas de carte pour "tu débloques juste un sort"
+## Important rule: no card for "you just unlock a spell"
 
-Ne JAMAIS créer de carte capacité/mécanique dont le seul contenu est "tu apprends/débloques tel(s)
-sort(s)/cantrip(s)". En vrai jeu, les cartes de sort correspondantes sont données directement
-au joueur — une carte capacité qui dit juste "tu connais maintenant ces sorts" est redondante et
-inutile. Exemples supprimés pour cette raison : `keeper_of_life_and_death.typ` ("You know
-Radiant and Necrotic cantrips") et `master_of_twilight.typ` ("Choose Necrotic/Radiant Utility
-Spells... know all at level 11"). Par contre, le pool de Mana a été gardé en carte Mechanic
-car il définit aussi la formule/règle de la ressource, pas seulement "tu obtiens des sorts".
+NEVER create an ability or mechanic card whose only content is "you learn/unlock this or that
+spell/cantrip". In actual play, the matching spell cards are handed straight to the player: an
+ability card that only says "you now know these spells" is redundant and useless. Examples
+removed for this reason: `keeper_of_life_and_death.typ` ("You know Radiant and Necrotic
+cantrips") and `master_of_twilight.typ` ("Choose Necrotic/Radiant Utility Spells... know all
+at level 11"). The Mana pool, however, was kept as a Mechanic card because it also defines
+the resource's formula and rule, not only "you get spells".
 
-## Vérification après création/édition
+## Checks after creating or editing
 
-Compiler avec un fichier wrapper jetable (jamais commité) qui importe le mod.typ concerné et
-référence les nouveaux symboles :
-`typst compile --root <racine_repo> fichier.typ sortie.pdf`
-puis supprimer le fichier jetable derrière soi. Lancer aussi `python3 tools/check_terms.py`. Pour un contrôle visuel, exporter en PNG à
-300ppi avec une page 131mm×88mm marge 0 (correspond au wrapper réel d'`tools/export_cards.py`) et
-relire l'image.
+Compile with a throwaway wrapper file (never committed) that imports the relevant mod.typ and
+references the new symbols:
+`typst compile --root <repo_root> file.typ output.pdf`
+then delete the throwaway file. Also run `python3 tools/check_terms.py`. For a visual check,
+export to PNG at 300ppi with a 131mm×88mm page and 0 margin (matching the actual wrapper of
+`tools/export_cards.py`) and look at the image.
 
-**Ne pas exporter de PNG systématiquement** — seulement si demandé, ou pour un contrôle de
-mise en page ponctuel quand la structure est vraiment nouvelle (nouveau champ, nouveau type de
-carte). Si l'utilisateur dit "je m'en charge" pour les exports, ne plus en faire jusqu'à
-nouvelle demande.
+**Don't export PNGs every time**: only when asked, or for an occasional layout check when the
+structure is really new (a new field, a new card type). If the user says "I'll handle it" for
+the exports, don't make any more until asked again.
 
 ## Export
 
-`python3 tools/export_cards.py` exporte chaque carte en PDF à côté de son `.typ`. Avec
-`--book`, il crée aussi `build/nimblium_cards.pdf` : toutes les cartes, une par page,
-où les noms écrits avec `#card_ref` sont des liens cliquables vers la carte citée (dans les
-PDF individuels, ils sont seulement en italique).
+`python3 tools/export_cards.py` exports each card to PDF next to its `.typ`. With `--book`,
+it also creates `build/nimblium_cards.pdf`: every card, one per page, where the names written
+with `#card_ref` are clickable links to the card they name (in the individual PDFs, they are
+only in italics).
 
-## Suivi des révisions et notes de carte (`tools/review.py`)
+## Review tracking and card notes (`tools/review.py`)
 
-Chaque carte se termine par un bloc de commentaire Typst qui porte ses notes de gestion. Ce
-n'est pas du texte de carte : `check_terms.py` l'ignore.
+Each card ends with a Typst block comment that holds its management notes. It is not card
+text: `check_terms.py` ignores it.
 
 ```
 /*
@@ -127,37 +126,35 @@ follow its order.
 */
 ```
 
-- `review:` : la carte a été réécrite selon `writing_rules.txt` de cette date ET alignée sur le
-  changelog officiel de cette date. L'ajouter ou le mettre à jour uniquement quand les deux
-  sont faits. `python3 tools/review.py` liste, par classe ou école, les cartes à jour et celles
-  à revoir (`-v` pour tout lister). Quand `writing_rules.txt` change de façon notable ou qu'un
-  nouveau changelog sort, mettre à jour `STYLE` / `CHANGELOG` en tête du script : toutes les
-  cartes plus anciennes repassent « à revoir ».
-- `house-rule:` : on n'est pas d'accord avec le jeu et on change volontairement la règle. Ne
-  jamais la « corriger » d'après le livre ou le changelog.
-  Ajouter aussi une ligne dans `house_rules.txt`.
-- `interpretation:` : la source est floue ou incomplète, et on a fait un choix. À revoir si une
-  source plus claire sort.
-- `changelog:` : seulement quand la carte remplace ou retire un élément du livre (sort
-  remplacé, changement du changelog pas encore appliqué…). Inutile pour un simple changement
-  de valeur.
-- Une note par paragraphe, séparées par une ligne vide, en anglais comme les cartes.
-  `python3 tools/review.py --rules` les liste toutes, par balise.
-- Une règle qui concerne une famille entière va dans le `mod.typ` du dossier (ex :
-  `game/creatures/goblin/mod.typ`) ; une règle sur un mot-clé, dans `game/keywords.typ` ou
-  `game/conditions.typ`. Une règle qui touche tout le jeu va dans `house_rules.txt`.
+- `review:`: the card was rewritten following `writing_rules.txt` of that date AND aligned
+  with the official changelog of that date. Add or update it only when both are done.
+  `python3 tools/review.py` lists, by class or school, the cards that are up to date and the
+  ones to review (`-v` to list everything). When `writing_rules.txt` changes notably or a new
+  changelog comes out, update `STYLE` / `CHANGELOG` at the top of the script: every older
+  card goes back to "to review".
+- `house-rule:`: we disagree with the game and deliberately change the rule. Never "fix" it
+  from the book or the changelog. Also add a line to `house_rules.txt`.
+- `interpretation:`: the source is unclear or incomplete, and we made a choice. To revisit if
+  a clearer source comes out.
+- `changelog:`: only when the card replaces or removes something from the book (a replaced
+  spell, a changelog change not applied yet…). Not needed for a simple change of value.
+- One note per paragraph, separated by a blank line, in English like the cards.
+  `python3 tools/review.py --rules` lists them all, by tag.
+- A rule that concerns a whole family goes in the folder's `mod.typ` (e.g.
+  `game/creatures/goblin/mod.typ`); a rule about a keyword, in `game/keywords.typ` or
+  `game/conditions.typ`. A rule that affects the whole game goes in `house_rules.txt`.
 
-## Rythme de collaboration
+## Pace of collaboration
 
-L'utilisateur pilote le rythme explicitement : parfois "les deux suivantes", parfois "tout le
-reste d'un coup", parfois un seul élément nommé. Par défaut, suivre l'ordre des niveaux/pages
-du PDF, sauter les entrées qui ne deviennent pas des cartes (voir section ci-dessus). En cas
-d'ambiguïté sur "les deux suivantes" (ex: après plusieurs niveaux sans contenu carte),
-faire un choix raisonnable et avancer plutôt que de bloquer sur une question — l'utilisateur
-relit et corrige après coup plutôt que de valider en amont.
+The user sets the pace explicitly: sometimes "the next two", sometimes "all the rest at once",
+sometimes a single named item. By default, follow the order of the PDF's levels and pages,
+and skip the entries that don't become cards (see the section above). When "the next two" is
+ambiguous (e.g. after several levels with no card content), make a reasonable choice and move
+on rather than blocking on a question: the user reviews and corrects afterwards rather than
+approving beforehand.
 
-**L'utilisateur édite fréquemment les fichiers juste après leur création** (reformulation,
-correction de kind/cost/limitation, nouveaux fichiers de mots-clés, simplification). Ces
-modifications arrivent en system-reminder ("modified by the user or a linter"). Ne jamais les
-annuler : elles deviennent la nouvelle vérité de base. Toujours relire le contenu actuel d'un
-fichier avant de le modifier à nouveau (ne pas se fier à une version obsolète en mémoire).
+**The user often edits files right after they are created** (rewording, fixing
+kind/cost/limitation, new keyword files, simplification). These changes arrive as
+system-reminders ("modified by the user or a linter"). Never undo them: they become the new
+ground truth. Always read the current content of a file before editing it again (don't rely
+on an outdated version from memory).

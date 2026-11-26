@@ -1,105 +1,99 @@
-# Nimblium — philosophie du projet
+# Nimblium — project philosophy
 
-Générateur de cartes Typst pour un jeu de rôle basé sur le système **Nimble**. Chaque carte
-(capacité, sort, créature, mécanique) est un fichier `.typ` individuel, exporté en PDF par
-`tools/export_cards.py` (recto à gauche, dos à droite).
+A Typst card generator for a tabletop RPG based on the **Nimble** system. Each card
+(ability, spell, creature, mechanic) is its own `.typ` file, exported to PDF by
+`tools/export_cards.py` (front on the left, back on the right).
 
-Les règles du jeu de base sont dans `sources/` (PDF, non versionnés). Ce dossier,
-`guides/`, contient tout ce qui est propre à Nimblium : comment on rédige les
-cartes, comment on gère le projet, et où on en est.
+The base game rules are in `sources/` (PDFs, not versioned). This folder, `guides/`, holds
+everything specific to Nimblium: how cards are written, how the project is run, and where it
+stands.
 
-## Philosophie
+## Philosophy
 
-- **Un seul langage de carte pour tout le jeu.** Héros, sorts et créatures utilisent les mêmes
-  blocs, les mêmes capsules et la même formulation. Un même effet s'écrit toujours de la même
-  façon, comme dans Magic.
-- **La carte suffit.** Ce qui se joue doit être sur la carte (ou dans ses rappels), sans
-  renvoyer au livre. Ce qui ne se joue pas (simple déblocage de sort, augmentation de stat)
-  ne devient pas une carte.
-- **Les décisions sont tracées dans la carte.** Une carte qui s'écarte du jeu officiel le dit
-  dans son bloc de notes en bas de fichier (`house-rule`, `interpretation`, `changelog`), et
-  `python3 tools/review.py --rules` les liste toutes. Voir `workflow.txt`.
+- **One card language for the whole game.** Heroes, spells and creatures use the same blocks,
+  the same capsules and the same wording. The same effect is always written the same way, as
+  in Magic.
+- **The card is enough.** What is played must be on the card (or in its reminders), without
+  referring to the book. What isn't played (simply unlocking a spell, a stat increase) doesn't
+  become a card.
+- **Decisions are recorded in the card.** A card that departs from the official game says so
+  in its notes block at the bottom of the file (`house-rule`, `interpretation`, `changelog`),
+  and `python3 tools/review.py --rules` lists them all. See `workflow.txt`.
 
-## Ordre de priorité des règles
+## Order of priority of the rules
 
-1. Les décisions de l'utilisateur : règles maison (`house_rules.txt`) et notes `house-rule`
-   dans les cartes. Ne pas les « corriger » d'après le livre ou le changelog.
-2. Les changelogs officiels, le plus récent d'abord. Leurs liens sont dans `weblinks.txt` :
-   - Core Rules, GMG & Heroes Full Changelog (2 octobre 2026) : le plus récent, il prime ;
-   - Core Rules Reprint Full Changelog : plus ancien.
-   Ces pages ne résument que les changements : une valeur absente se prend dans le PDF.
-3. Les PDF de `sources/`, qui datent d'AVANT ces changelogs et ne peuvent pas être mis
-   à jour. Toute règle tirée d'un PDF doit donc être confrontée aux changelogs.
+1. The user's decisions: house rules (`house_rules.txt`) and `house-rule` notes in the cards.
+   Never "fix" them from the book or a changelog.
+2. The official changelogs, newest first. Their links are in `weblinks.txt`:
+   - Core Rules, GMG & Heroes Full Changelog (October 2, 2026): the newest, it wins;
+   - Core Rules Reprint Full Changelog: older.
+   These pages only summarize the changes: a value they don't give comes from the PDF.
+3. The PDFs in `sources/`, which date from BEFORE these changelogs and can't be updated. Any
+   rule taken from a PDF must therefore be checked against the changelogs.
 
-## Règles maison
+## House rules
 
-Toutes les règles maison (tout le jeu, créatures, classes, sorts) sont listées dans
-`house_rules.txt`. Elles priment sur le livre et les changelogs.
+Every house rule (whole game, creatures, classes, spells) is listed in `house_rules.txt`.
+They override the book and the changelogs.
 
-Conventions du projet, qui ne changent pas les règles du jeu :
+Project conventions, which don't change the game rules:
 
-- **Pas de carte pour une simple liste de choix** : une carte qui ne fait que dire quoi
-  choisir à quel niveau (ex. « niveau 3 : 1 Lesser Invocation ») est remplacée par une
-  indication dans le tableau de la classe.
-- **Règles d'écriture** (Reaction, "for free", conditions sans effet propre, valeurs par
-  défaut non écrites) : `writing_rules.txt`.
+- **No card for a mere list of choices**: a card that only says what to choose at which
+  level (e.g. "level 3: 1 Lesser Invocation") is replaced by a line in the class table.
+- **Writing rules** (Reaction, "for free", conditions with no effect of their own, default
+  values left unwritten): `writing_rules.txt`.
 
-## Règles du changelog appliquées à tout le jeu
+## Changelog rules applied to the whole game
 
-- **Defense** : la stat de héros "Armor" s'appelle "Defense" ; Defend réduit les dégâts de la
-  Defense. "Armor" ne désigne plus que l'équipement porté.
-- **Vulnerable** = +10 dégâts. **Resistant** = -10 dégâts.
-- **Hide** : on ne reste plus caché après un kill que personne n'a vu (et pas de jet : règle
-  maison).
-- **Conditions** : Blinded devient Blind ; Silenced est ajoutée ; elles ne se cumulent pas (une
-  créature a une condition ou ne l'a pas).
-- **Sorts défensifs** : 0 action, lançables uniquement pendant un Defend.
-- **Capacités** : les limites se réinitialisent à la FIN de ton tour ; 1/day n'existe plus
-  (1/Safe Rest ou sans limite).
-- **Smoldering** : tout effet qui s'appuie sur une cible Smoldering met fin à la condition.
-- **Sorts** : ils infligent le type de dégâts de leur école sauf mention contraire.
+- **Defense**: the hero stat "Armor" is called "Defense"; Defend reduces damage by the
+  Defense. "Armor" now only means worn equipment.
+- **Vulnerable** = +10 damage. **Resistant** = -10 damage.
+- **Hide**: you no longer stay hidden after a kill no one saw (and no roll: house rule).
+- **Conditions**: Blinded becomes Blind; Silenced is added; they don't stack (a creature has a
+  condition or doesn't).
+- **Defensive spells**: 0 actions, can only be cast while Defending.
+- **Abilities**: limits reset at the END of your turn; 1/day no longer exists (1/Safe Rest or
+  no limit).
+- **Smoldering**: any effect that relies on a Smoldering target ends the condition.
+- **Spells**: they deal their school's damage type unless they say otherwise.
 
-## Arborescence
+## Folder tree
 
-- `game/` : le contenu du jeu. `class/`, `spells/`, `creatures/`, `actions/` (actions de base),
-  `rules/` (pages de règles),
-  `keywords.typ`, `conditions.typ` et `terms.typ` (le vocabulaire).
-- `templates/` : la mise en page (cadres et types de cartes, fiche de classe, page de règles,
-  `style.typ`).
-- `global.typ` (racine) : le seul import des cartes. Il rassemble les gabarits, le
-  vocabulaire (`game/terms.typ`) et les définitions. Les imports sont absolus depuis la
-  racine : `#import "/global.typ": *`.
-- `CLAUDE.md` (racine) : point d'entrée, chargé automatiquement par Claude Code.
-- `guides/` (ce dossier) : comment on écrit, comment on travaille, où on en est.
-- `sources/` : les PDF officiels de Nimble (non versionnés).
-- `build/` : le livre exporté `nimblium_cards.pdf` (non versionné).
-- `tools/`, `art/` : scripts et images.
+- `game/`: the game content. `class/`, `spells/`, `creatures/`, `actions/` (basic actions),
+  `rules/` (rules pages), `keywords.typ`, `conditions.typ` and `terms.typ` (the vocabulary).
+- `templates/`: the layout (card frames and types, class sheet, rules page, `style.typ`).
+- `global.typ` (root): the only import of the cards. It gathers the templates, the
+  vocabulary (`game/terms.typ`) and the definitions. Imports are absolute from the root:
+  `#import "/global.typ": *`.
+- `CLAUDE.md` (root): entry point, loaded automatically by Claude Code.
+- `guides/` (this folder): how we write, how we work, where we stand.
+- `sources/`: the official Nimble PDFs (not versioned).
+- `build/`: the exported book `nimblium_cards.pdf` (not versioned).
+- `tools/`, `art/`: scripts and images.
 
-## Les fichiers de ce dossier
+## The files of this folder
 
-Règles maison :
-- `house_rules.txt` : la liste de toutes les règles maison.
+House rules:
+- `house_rules.txt`: the list of every house rule.
 
-Rédaction des cartes :
-- `writing_rules.txt` : comment on écrit le texte d'une carte (à lire avant toute carte).
-- `creature_rules.txt` : règles maison des créatures et format de leurs cartes.
-- `card_format.txt` : les types de cartes, leurs champs et leur mise en page.
-- Pages de règles (`game/rules/`, une feuille A4 par domaine) : section « Pages de règles » de
+Writing cards:
+- `writing_rules.txt`: how the text of a card is written (read it before any card).
+- `creature_rules.txt`: creature house rules and the format of their cards.
+- `card_format.txt`: the card types, their fields and their layout.
+- Rules pages (`game/rules/`, one A4 sheet per area): the "Rules pages" section of
   `workflow.txt`.
 
-Art :
-- `art.txt` : charte graphique, icônes de famille au dos des cartes, génération des
-  illustrations avec `tools/generate_image.py`.
+Art:
+- `art.txt`: graphic charter, family icons on the card backs, illustration generation with
+  `tools/generate_image.py`.
 
-Gestion du projet :
-- `workflow.txt` : sources, organisation des fichiers, vérifications, suivi des révisions,
-  rythme de travail.
-- `status.txt` : où en est chaque classe, école de sorts et famille de créatures.
-- `weblinks.txt` : liens utiles, dont les changelogs officiels.
+Project management:
+- `workflow.txt`: sources, file organization, checks, review tracking, pace of work.
+- `status.txt`: where each class, spell school and creature family stands.
+- `weblinks.txt`: useful links, the official changelogs included.
 
-Outils (`tools/`) :
-- `check_terms.py` : signale les termes de jeu tapés à la main au lieu de `game/terms.typ`.
-- `review.py` : état des révisions par classe, et liste des notes de cartes (`--rules`).
-- `export_cards.py` : exporte chaque carte, fiche de classe et page de règles en PDF à côté
-  de son `.typ`.
-- `generate_image.py` : génère les illustrations (voir `art.txt`).
+Tools (`tools/`):
+- `check_terms.py`: reports game terms typed by hand instead of through `game/terms.typ`.
+- `review.py`: review status by class, and the list of card notes (`--rules`).
+- `export_cards.py`: exports each card, class sheet and rules page to PDF next to its `.typ`.
+- `generate_image.py`: generates the illustrations (see `art.txt`).

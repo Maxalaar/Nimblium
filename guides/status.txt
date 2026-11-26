@@ -1,95 +1,94 @@
-# État du projet — Nimblium
+# Project status — Nimblium
 
-Où en est chaque classe, école de sorts et famille de créatures. Pour savoir quelles cartes
-sont à jour du style et du changelog : `python3 tools/review.py`. Pour les écarts volontaires
-au jeu : `python3 tools/review.py --rules`.
+Where each class, spell school and creature family stands. To see which cards are up to date
+with the style and the changelog: `python3 tools/review.py`. For deliberate departures from
+the game: `python3 tools/review.py --rules`.
 
-Les changelogs annoncent de nouvelles sous-classes pour presque toutes les classes, mais n'en
-donnent que le nom : pas de texte disponible, donc pas de cartes.
+The changelogs announce new subclasses for almost every class, but only give their names: no
+text is available, so no cards.
 
 ## Classes
 
-- **Berserker** (p.6-11) : COMPLET — niveaux de base, Savage Arsenal (Dismantle compris),
-  sous-classes Mountainheart et Red Mist. Au nouveau style et au changelog du 2 octobre 2026.
-  Nouvelles sous-classes annoncées : Path of Burning Rage, Path of Titan's Grip, Muscle Mage.
-- **Cheat** (p.12-17) : COMPLET — niveaux de base, Underhanded Abilities (Tangling Wire et
-  The Setup compris), sous-classes Scoundrel et Silent Blade. Au nouveau style et au changelog
-  du 2 octobre 2026. Nouvelles sous-classes annoncées : Tools of the Gambler, Tools of the
-  Serpent, Honorseeker.
-- **Hunter** (p.24-29) : COMPLET — niveaux de base, Thrill of the Hunt, sous-classes
-  Shadowpath (Dread Hunter remplace Pack Hunter) et Wild Heart. Utilise `hunter_keywords.typ`
-  pour Marked (remplace la prose "quarry" du PDF). Au nouveau style et au changelog du
-  2 octobre 2026. Nouvelles sous-classes annoncées : Keeper of Traps, Keeper of the Pack.
-- **Mage** (p.30-35) : COMPLET — capacités de base, Spellshaper (avec une carte Mechanic pour
-  la limite d'1 Spellshaper par tour), sous-classes Invoker of Control et Invoker of Chaos. Au
-  nouveau style et au changelog du 2 octobre 2026. `mage_keywords.typ` définit Demand Control et Invoke
-  Chaos. Pas de carte pour At Any Cost ni Tempest Mage (ils ne font que débloquer des sorts),
-  ni pour la Chaos Table (secrète, réservée au MJ, refaite dans le changelog sans que son
-  contenu soit publié).
-  Nouvelles sous-classes annoncées : Invoker of Wards, Flame, Surges, Frost.
-- **Shepherd** (p.48-53) : COMPLET — niveaux de base, Sacred Graces, sous-classes Luminary of
-  Mercy et Luminary of Malice. Au nouveau style. Le compagnon reste en version maison : les
-  changements du changelog du 2 octobre 2026 sur le compagnon ne sont pas appliqués, sauf
-  deux (soins limités à WIL/Safe Rest, Vengeful Spirit en une seule explosion), et on
-  équilibre le Shepherd nous-mêmes (note dans `game/class/shepherd/mod.typ`). Nouvelles
-  sous-classes annoncées : Luminary of Protection, Luminary of the Forge.
-- **Shadowmancer** (p.42-47) : COMPLET — cantrips réservés (Shadow Blast, Summon Shadow,
-  Command Shadows), créatures Shadow et Greater Shadow, Pilfered Power en carte Mechanic, Greedy Pact, Dire Shadows, Eldritch Usurper, Lesser et Greater Invocations
-  (Vengeful Blast retiré par le changelog), sous-classes Pact of the Red Dragon et Pact of the
-  Abyssal Depths. Au nouveau style et au changelog du 2 octobre 2026. Pas de carte pour Master
-  of Darkness ni Shadowmastery (ils ne font que débloquer des sorts). Le Reaver attend avec
-  les Extra Subclasses. Icône de classe : Death Note. Nouvelles sous-classes annoncées : Pact
-  of the Void, Pact of the Endless Swarm, Pact of the High Celestial.
-- **Commander** (p.18-23) : COMPLET — Coordinated Strike!, Combat Dice (carte Mechanic), Field
-  Medic, Master Commander, Weapon Mastery, Unparalleled Tactics, Captain of Legions ; Commander's
-  Orders (Commanding Presence y passe, d'après le changelog), Combat Tactics, Weapon Masteries
-  (refaites), sous-classes Champion of the Bulwark et Champion of the Vanguard ; fiche de classe.
-  Au nouveau style et au changelog du 2 octobre 2026. Le Spellblade attend avec les Extra
-  Subclasses. Icône de classe : Trumpet Flag. Nouvelles sous-classes annoncées : Champion of the
+- **Berserker** (p.6-11): COMPLETE — base levels, Savage Arsenal (Dismantle included),
+  Mountainheart and Red Mist subclasses. In the new style and up to the October 2, 2026
+  changelog. Announced subclasses: Path of Burning Rage, Path of Titan's Grip, Muscle Mage.
+- **Cheat** (p.12-17): COMPLETE — base levels, Underhanded Abilities (Tangling Wire and The
+  Setup included), Scoundrel and Silent Blade subclasses. In the new style and up to the
+  October 2, 2026 changelog. Announced subclasses: Tools of the Gambler, Tools of the Serpent,
+  Honorseeker.
+- **Hunter** (p.24-29): COMPLETE — base levels, Thrill of the Hunt, Shadowpath (Dread Hunter
+  replaces Pack Hunter) and Wild Heart subclasses. Uses `hunter_keywords.typ` for Marked
+  (replaces the PDF's "quarry" prose). In the new style and up to the October 2, 2026
+  changelog. Announced subclasses: Keeper of Traps, Keeper of the Pack.
+- **Mage** (p.30-35): COMPLETE — base abilities, Spellshaper (with a Mechanic card for the
+  limit of 1 Spellshaper per turn), Invoker of Control and Invoker of Chaos subclasses. In the
+  new style and up to the October 2, 2026 changelog. `mage_keywords.typ` defines Demand Control
+  and Invoke Chaos. No card for At Any Cost or Tempest Mage (they only unlock spells), nor for
+  the Chaos Table (secret, GM only, remade in the changelog without its content being
+  published). Announced subclasses: Invoker of Wards, Flame, Surges, Frost.
+- **Shepherd** (p.48-53): COMPLETE — base levels, Sacred Graces, Luminary of Mercy and
+  Luminary of Malice subclasses. In the new style. The companion stays in its house version:
+  the October 2, 2026 changelog changes to the companion are not applied, except two (heals
+  limited to WIL/Safe Rest, Vengeful Spirit as a single burst), and we balance the Shepherd
+  ourselves (note in `game/class/shepherd/mod.typ`). Announced subclasses: Luminary of
+  Protection, Luminary of the Forge.
+- **Shadowmancer** (p.42-47): COMPLETE — reserved cantrips (Shadow Blast, Summon Shadow,
+  Command Shadows), Shadow and Greater Shadow creatures, Pilfered Power as a Mechanic card,
+  Greedy Pact, Dire Shadows, Eldritch Usurper, Lesser and Greater Invocations (Vengeful Blast
+  removed by the changelog), Pact of the Red Dragon and Pact of the Abyssal Depths subclasses.
+  In the new style and up to the October 2, 2026 changelog. No card for Master of Darkness or
+  Shadowmastery (they only unlock spells). The Reaver waits with the Extra Subclasses. Class
+  icon: Death Note. Announced subclasses: Pact of the Void, Pact of the Endless Swarm, Pact
+  of the High Celestial.
+- **Commander** (p.18-23): COMPLETE — Coordinated Strike!, Combat Dice (Mechanic card), Field
+  Medic, Master Commander, Weapon Mastery, Unparalleled Tactics, Captain of Legions;
+  Commander's Orders (Commanding Presence moves there, from the changelog), Combat Tactics,
+  Weapon Masteries (remade), Champion of the Bulwark and Champion of the Vanguard subclasses;
+  class sheet. In the new style and up to the October 2, 2026 changelog. The Spellblade waits
+  with the Extra Subclasses. Class icon: Trumpet Flag. Announced subclasses: Champion of the
   Arena, of the Phalanx, of the Siege-Breaker.
-- **Oathsworn** (p.36-41) : COMPLET — Radiant Judgment, Lay on Hands, Oathsworn Mana Pool
-  (carte Mechanic, formule seule), Zealot, Paragon of Virtue, My Life for My Friends, Unending
-  Judgment, Glorious Paragon ; Sacred Decrees ; sous-classes Oath of Vengeance et Oath of
-  Refuge ; fiche de classe. Au nouveau style et au changelog du 2 octobre 2026. L'Oathbreaker
-  attend avec les Extra Subclasses. Icône de classe : Winged Shield. Nouvelles sous-classes
-  annoncées : Oath of Roaring Thunder, Oath of Valor.
-- **Songweaver, Stormshifter, Zephyr, Extra
-  Subclasses** : pas commencés.
+- **Oathsworn** (p.36-41): COMPLETE — Radiant Judgment, Lay on Hands, Oathsworn Mana Pool
+  (Mechanic card, formula only), Zealot, Paragon of Virtue, My Life for My Friends, Unending
+  Judgment, Glorious Paragon; Sacred Decrees; Oath of Vengeance and Oath of Refuge
+  subclasses; class sheet. In the new style and up to the October 2, 2026 changelog. The
+  Oathbreaker waits with the Extra Subclasses. Class icon: Winged Shield. Announced
+  subclasses: Oath of Roaring Thunder, Oath of Valor.
+- **Songweaver, Stormshifter, Zephyr, Extra Subclasses**: not started.
 
-## Sorts
+## Spells
 
-- **Fire, Ice, Lightning, Wind** : au nouveau style et alignés sur les deux changelogs
-  (Echoburst remplace Fly, Omenrime remplace Cryosleep).
-- **Radiant** : au nouveau style et aligné sur les deux changelogs (Celestial Legion, nouveau
-  sort du changelog au tier 7 ; Shield of Justice passe tier 4, Condemn tier 3). Lifebinding
-  Spirit, réservé au Shepherd, est dans `game/class/shepherd/`.
-- **Necrotic** : au nouveau style et aligné sur les deux changelogs (Vigor Mortis, nouveau au
-  tier 4, remplace Greater Shadow, devenu une capacité du Shadowmancer). Les sorts réservés au
-  Shadowmancer sont dans `game/class/shadowmancer/`. Icône d'école : Skull Bolt.
-- **Utility** : les 18 sorts du livre (3 par école) dans le dossier `utility/` de chaque école, alignés sur les
-  changelogs (Ice Disk, Wintry Scrying, Wind Whisper, Spark Buddy). Temps d'incantation en stat CAST.
+- **Fire, Ice, Lightning, Wind**: in the new style and aligned with both changelogs
+  (Echoburst replaces Fly, Omenrime replaces Cryosleep).
+- **Radiant**: in the new style and aligned with both changelogs (Celestial Legion, a new
+  changelog spell at tier 7; Shield of Justice moves to tier 4, Condemn to tier 3).
+  Lifebinding Spirit, reserved for the Shepherd, is in `game/class/shepherd/`.
+- **Necrotic**: in the new style and aligned with both changelogs (Vigor Mortis, new at tier
+  4, replaces Greater Shadow, which became a Shadowmancer ability). The spells reserved for
+  the Shadowmancer are in `game/class/shadowmancer/`. School icon: Skull Bolt.
+- **Utility**: the book's 18 spells (3 per school) in each school's `utility/` folder, aligned
+  with the changelogs (Ice Disk, Wintry Scrying, Wind Whisper, Spark Buddy). Casting time as
+  the CAST stat.
 
-## Actions de base (`game/actions/`)
+## Basic actions (`game/actions/`)
 
-- 3 cartes que chaque héros reçoit, type "Ability · Combat", icône Crossed Swords :
-  *Basic Actions* (Move, Attack, Hide ; Hide sans jet, règle maison), *Grapple* (Grab, Escape : test de STR ou DEX contre 10 + la meilleure des deux de l'autre,
-  règle maison ;
-  Assess retiré du jeu),
-  *Triggered Actions* (Defend, Interpose, Opportunity Attack, Help). Au changelog du
-  2 octobre 2026. La page Combat ne répète pas ces actions, elle renvoie aux cartes.
+- 3 cards every hero gets, type "Ability · Combat", Crossed Swords icon: *Basic Actions*
+  (Move, Attack, Hide; Hide with no roll, house rule), *Grapple* (Grab, Escape: a STR or DEX
+  check against 10 + the other creature's higher of the two, house rule; Assess removed from
+  the game), *Triggered Actions* (Defend, Interpose, Opportunity Attack, Help). Up to the
+  October 2, 2026 changelog. The Combat page doesn't repeat these actions, it refers to the
+  cards.
 
-## Règles (`game/rules/`)
+## Rules (`game/rules/`)
 
-- **Adventure** : FAIT, recto-verso, au changelog du 2 octobre 2026.
-- **Combat** : FAIT, recto-verso (conditions et créatures au verso), au changelog du 2 octobre
-  2026.
-- **Magic**, **Level Up** : pas commencés.
+- **Adventure**: DONE, recto-verso, up to the October 2, 2026 changelog.
+- **Combat**: DONE, recto-verso (conditions and creatures on the verso), up to the October 2,
+  2026 changelog.
+- **Magic**, **Level Up**: not started.
 
-## Créatures
+## Creatures
 
-- **Goblins** (Goblins v1.1) : famille complète, au nouveau style. Les pièges et hasards du
-  livret sont écartés volontairement.
-- **Undead** (Game Master's Guide) : au nouveau style, valeurs du GMG.
-- Le changelog du 2 octobre 2026 recalcule tous les blocs de stats (PV, dégâts, armure) et
-  passe les PV des légendaires par héros, sans publier les nouvelles valeurs : on garde celles
-  des PDF.
+- **Goblins** (Goblins v1.1): complete family, in the new style. The booklet's traps and
+  hazards are deliberately left out.
+- **Undead** (Game Master's Guide): in the new style, GMG values.
+- The October 2, 2026 changelog recalculates every stat block (HP, damage, armor) and makes
+  legendary HP per hero, without publishing the new values: we keep the PDF values.

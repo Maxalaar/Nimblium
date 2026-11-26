@@ -1,126 +1,129 @@
-# Format des cartes — Nimblium
+# Card format — Nimblium
 
-Les types de cartes, leurs champs et leur rendu. Pour le texte lui-même, voir
-`writing_rules.txt` ; pour les créatures, `creature_rules.txt`.
+The card types, their fields and how they are rendered. For the text itself, see
+`writing_rules.txt`; for creatures, `creature_rules.txt`.
 
-## Types de cartes (`templates/`)
+## Card types (`templates/`)
 
-- `creat_ability.typ` → cartes de type **Ability**
-- `creat_spell.typ` → cartes de type **Spell**
-- `creat_creature.typ` → cartes de type **Creature**
-- `creat_mechanic.typ` → cartes de type **Mechanic**
+- `creat_ability.typ` → **Ability** cards
+- `creat_spell.typ` → **Spell** cards
+- `creat_creature.typ` → **Creature** cards
+- `creat_mechanic.typ` → **Mechanic** cards
 
-### Mise en page commune (`creat_frame.typ`)
+### Shared layout (`creat_frame.typ`)
 
-Tous les types passent par `creat_card(name, types, body, stats:, icon:)`, qui rend le recto
-et le dos côte à côte (5 mm d'écart). Design épuré, noir et blanc, peu d'encre :
+Every type goes through `creat_card(name, types, body, stats:, icon:)`, which renders the
+front and the back side by side (5 mm apart). A clean design, black and white, little ink:
 
-- Recto : cadre blanc à bordure noire, coins "HUD", nom en capitales espacées + types en petit
-  (sans filet ; une liste trop longue passe à la ligne, seulement après un « · », et ce qui
-  suit descend d'autant), puis la ligne de stats (créatures et sorts), à 1,5 mm fixe sous les types :
-  petite étiquette courte (4 lettres au plus, sauf `REACH`) au-dessus de chaque valeur, traits verticaux fins entre
-  les cases. Elle reste sur une ligne tant que ses valeurs tiennent en 8pt minimum ; sinon elle
-  passe sur deux lignes centrées chacune, séparées par un trait horizontal fin (60 % de la ligne
-  la plus large). Le texte de règles, aligné à gauche, est centré verticalement dans la
-  place qui reste sous la ligne de stats. S'il déborde, l'écart stats → texte, l'écart entre
-  les deux lignes de stats et les écarts entre blocs se resserrent ensemble, puis le texte
-  rétrécit jusqu'à 6pt. Les paragraphes d'un même bloc (les rappels en gris, les paragraphes d'un
-  effet) sont espacés de 60 % de l'écart entre blocs, donc se resserrent avec lui.
-- Dos : nom + types centrés, sous une grande icône de famille en gris `#999999`
-  (game-icons.net CC BY 3.0, ou Bootstrap Icons MIT ; voir `art/icons/CREDITS.md`). L'icône vient des types de la carte : `family_icons.typ`
-  associe un type à un fichier de `art/icons/` (aujourd'hui Goblin, Undead, les écoles Fire, Ice, Lightning, Wind, Radiant, Necrotic et les classes
-  Berserker, Cheat, Hunter, Mage, Shepherd, Shadowmancer) ; si plusieurs
-  types correspondent, le plus précis (le dernier) gagne. Sans type reconnu, pas d'icône et
-  le nom est centré. La même icône apparaît en petit (6 mm) en bas au centre du recto,
-  à cheval sur la ligne des coins du bas, remontée de 1 mm pour l'œil ; le texte de
-  règles s'arrête alors au-dessus.
-- Un champ `icon` dans les données de la carte remplace l'icône de famille au dos (le recto
-  garde l'icône de famille) :
-  `icon: "x.svg"` est cherché dans `art/icons/`, un chemin commençant par `/` part de la
-  racine du projet. Les SVG sont passés en gris, les autres images (PNG) restent telles
-  quelles. Rien n'est relié automatiquement par nom de fichier. Ajouter une famille :
-  `art.txt`, section "Family icons".
-- Capacités et sorts : capsules sombres (ACTIVE, PASSIVE, CANTRIP, UPCAST…) + capsules à
-  contour (coûts, limites), collées à gauche, texte juste en dessous.
-- Créatures : barres de section `── PASSIVE ──` (pas de capsules), affichées seulement si la
-  carte a plusieurs sections.
+- Front: white frame with a black border, "HUD" corners, the name in spaced capitals + the
+  types in small print (no rule; a list that is too long wraps, only after a "·", and what
+  follows moves down accordingly), then the stat row (creatures and spells), a fixed 1.5 mm
+  under the types: a small short label (4 letters at most, except `REACH`) above each value,
+  thin vertical lines between the boxes. It stays on one line as long as its values fit at
+  8pt minimum; otherwise it goes on two lines, each centered, separated by a thin horizontal
+  line (60 % of the widest line). The rules text, left-aligned, is centered vertically in the
+  space left under the stat row. If it overflows, the stats → text gap, the gap between the
+  two stat lines and the gaps between blocks tighten together, then the text shrinks down to
+  6pt. The paragraphs of one block (the gray reminders, the paragraphs of an effect) are
+  spaced at 60 % of the gap between blocks, so they tighten with it.
+- Back: name + types centered, under a large family icon in gray `#999999` (game-icons.net
+  CC BY 3.0, or Bootstrap Icons MIT; see `art/icons/CREDITS.md`). The icon comes from the
+  card's types: `family_icons.typ` maps a type to a file in `art/icons/` (today Goblin,
+  Undead, the Fire, Ice, Lightning, Wind, Radiant and Necrotic schools, the Berserker, Cheat,
+  Commander, Hunter, Mage, Oathsworn, Shepherd and Shadowmancer classes, and Combat for the
+  basic actions); if several types match, the most specific one (the last) wins. With no
+  known type, there is no icon and the name is centered. The same icon appears in small (6 mm)
+  at the bottom center of the front, straddling the line of the bottom corners, raised 1 mm
+  for the eye; the rules text then stops above it.
+- An `icon` field in the card data replaces the family icon on the back (the front keeps the
+  family icon): `icon: "x.svg"` is looked up in `art/icons/`, a path starting with `/` starts
+  from the project root. SVGs are turned gray, other images (PNG) stay as they are. Nothing is
+  linked automatically by file name. To add a family: `art.txt`, "Family icons" section.
+- Abilities and spells: dark capsules (ACTIVE, PASSIVE, CANTRIP, UPCAST…) + outlined capsules
+  (costs, limits), aligned left, with the text right below.
+- Creatures: section bars `── PASSIVE ──` (no capsules), shown only if the card has several
+  sections.
 
 ### Ability (`creat_ability.typ`)
 
-`blocks` est une liste de `(kind, [cost], [limitation], effect)`.
+`blocks` is a list of `(kind, [cost], [limitation], effect)`.
 
-- `kind` : `"active"` (coûte une action/ressource, déclenché par choix du joueur),
-  `"passive"` (effet automatique/déclenché, pas de dépense d'action pour l'activer),
-  `"narrative"` (avantage sur jets de compétence / flavor / roleplay — ex: Forager, Leave No
-  Trace, Thieves' Cant, Keen Sight, Quick Read).
-- `cost` : tuple de tags affichés en badge, ex `(actions(1),)`, `(actions(2), toth_charges(1))`.
-- `tags` (optionnel) : capsules à contour après le coût, ex `("AoE",)` (Whirlwind).
-- `limitation` : tag affiché en badge, ex `per_turn(1)`, `per_encounter(1)`,
+- `kind`: `"active"` (costs an action or a resource, triggered by the player's choice),
+  `"passive"` (automatic or triggered effect, no action spent to activate it), `"narrative"`
+  (advantage on skill checks / flavor / role-play — e.g. Forager, Leave No Trace, Thieves'
+  Cant, Keen Sight).
+- `name` (optional): a bold name above the capsules, for a card that gathers several named
+  actions (the basic action cards, Dragon Form).
+- `cost`: a tuple of tags shown as badges, e.g. `(actions(1),)`, `(actions(2), toth_charges(1))`.
+- `tags` (optional): outlined capsules after the cost, e.g. `("AoE",)` (Whirlwind).
+- `limitation`: a tag shown as a badge, e.g. `per_turn(1)`, `per_encounter(1)`,
   `per_safe_rest(WIL)`, `per_round(2)`.
-- Progression par niveau et clauses multiples : voir `writing_rules.txt` §8.
-- `type` : `("Ability", "<Classe>")` pour une capacité de base, avec un 3e élément pour un
-  sous-groupe (subclass ou pool de choix), ex `("Ability","Cheat","Underhanded")`,
+- Level progression and multiple clauses: see `writing_rules.txt` §8.
+- `type`: `("Ability", "<Class>")` for a base ability, with a 3rd item for a subgroup
+  (subclass or pool of choices), e.g. `("Ability","Cheat","Underhanded")`,
   `("Ability","Cheat","Scoundrel")`, `("Ability","Hunter",thrill_of_the_hunt)`,
-  `("Ability","Hunter","Shadowpath")`,
-  `("Ability","Shepherd","Sacred Grace")`.
+  `("Ability","Hunter","Shadowpath")`, `("Ability","Shepherd","Sacred Grace")`. The basic
+  actions every hero has are `("Ability","Combat")` (`game/actions/`).
 
 ### Mechanic (`creat_mechanic.typ`)
 
-Utilisé pour centraliser une règle/ressource qui s'étale sur plusieurs niveaux ou toute la
-classe, plutôt que d'en faire une carte capacité par niveau. Champ `description` (pas
-`blocks`/`effect`). Précédents : `game/class/hunter/thrill_of_the_hunt_charge.typ` (règles de gain
-de charge TotH), `game/class/shepherd/shepherd_mana_pool.typ` (formule du pool de mana + déblocage
-des tiers de sorts par niveau, avec le même style `*Level X:*` que `sneak_attack.typ`).
+Used to gather in one place a rule or a resource that spans several levels or the whole
+class, rather than making one ability card per level. A `description` field (not
+`blocks`/`effect`). Precedents: `game/class/hunter/thrill_of_the_hunt_charge.typ` (rules for
+gaining TotH charges), `game/class/shepherd/shepherd_mana_pool.typ` (mana pool formula +
+spell tiers unlocked by level, with the same `*Level X:*` style as `sneak_attack.typ`).
 
 ### Spell (`creat_spell.typ`)
 
-Champs disponibles : `cost`, `casting_time` (temps d'incantation en minutes, stat CAST, ex `"1 min"`), `concentration`, `range`, `reach`, `area`, `damage`, `effect`,
-`high_Levels`, `upcast`, `flavor`, `reminder`. `type` vaut toujours (type, école, palier, tags...), ex
-`("Spell","Fire","Cantrip")`, `("Spell","Lightning","Tier 3","AoE")`.
-Les sorts utilitaires mettent `"Utility"` à la place du palier : `("Spell","Ice","Utility")`
-(dossier `utility/` de leur école, ex `game/spells/ice/utility/`, icône de leur école).
+Available fields: `cost`, `casting_time` (casting time in minutes, CAST stat, e.g.
+`"1 min"`), `concentration`, `range`, `reach`, `area`, `damage`, `effect`, `high_Levels`,
+`upcast`, `flavor`, `reminder`. `type` is always (type, school, tier, tags...), e.g.
+`("Spell","Fire","Cantrip")`, `("Spell","Lightning","Tier 3","AoE")`. Utility spells put
+`"Utility"` in place of the tier: `("Spell","Ice","Utility")` (in their school's `utility/`
+folder, e.g. `game/spells/ice/utility/`, with their school's icon).
 
-Rendu (sans libellé `Cost:` ni `Effect:`) :
+Rendering (no `Cost:` or `Effect:` label):
 
-- Le sous-titre montre tout le `type` : type, école, palier et tags, ex
-  `SPELL · FIRE · TIER 5 · AOE` ou `SPELL · LIGHTNING · CANTRIP`.
-- Tout ce qui décrit le sort entier va dans la ligne de stats, dans cet ordre : `ACT` (coût en
-  actions), `MANA`, `CONC` (concentration), puis `DMG`, `RNGE` (range), `REACH`, `AREA`. Si la ligne passe sur deux lignes, la coupure se fait
-  entre le lancement (ACT, MANA, CONC) et l'effet (le reste).
-- Un autre coût reste en capsule (`badges.typ`) au-dessus de l'effet.
-- `damage` ne contient que la valeur ("3d8+4") : une précision va dans `effect`.
-- `reach` : un nombre ("4") ou une forme ("Line 12", "Cone 4"), affiché sous REACH.
-- `concentration` ne contient que la durée ("1 min").
-- `high_Levels` et `upcast` : capsule sombre, puis le texte à la ligne.
-- `upcast` peut être une liste d'options (`upcast: ([...], [...])`) : une capsule UPCAST par
-  option, et le lanceur en choisit une pour chaque tier.
-- `flavor` : texte d'ambiance en italique, sous les règles et avant les rappels.
+- The subtitle shows the whole `type`: type, school, tier and tags, e.g.
+  `SPELL · FIRE · TIER 5 · AOE` or `SPELL · LIGHTNING · CANTRIP`.
+- Everything that describes the whole spell goes in the stat row, in this order: `ACT`
+  (cost in actions), `MANA`, `CONC` (concentration), then `DMG`, `RNGE` (range), `REACH`,
+  `AREA`. If the row goes on two lines, the break falls between casting (ACT, MANA, CONC) and
+  the effect (the rest).
+- Any other cost stays as a capsule (`badges.typ`) above the effect.
+- `damage` only holds the value ("3d8+4"): any detail goes in `effect`.
+- `reach`: a number ("4") or a shape ("Line 12", "Cone 4"), shown under REACH.
+- `concentration` only holds the duration ("1 min").
+- `high_Levels` and `upcast`: a dark capsule, then the text on the next line.
+- `upcast` can be a list of options (`upcast: ([...], [...])`): one UPCAST capsule per
+  option, and the caster picks one for each tier.
+- `flavor`: flavor text in italics, under the rules and before the reminders.
 
 ### Creature (`creat_creature.typ`)
 
-Format (`creature_rules.txt`) : `blocks` comme les capacités de héros, avec en plus un `name`
-par bloc (`name`, `kind`, `cost`, `limitation`, `effect`) et, pour les attaques, `attacks`,
-`reach`, `range` et `damage`, affichés en capsules sur la ligne du coût ; `actions` (stat ACT, affichée en
-premier et seulement si > 1), `reminder`, `hit_points`, `defense`, `speed`, `level`, `icon`.
-Les blocs partagés sont dans `game/creatures/passive_abilities.typ` : `passive_abilities.undying`,
-et `passive_abilities.minion`. Une créature = un fichier = une carte par défaut (un texte trop
-long déborde, pour qu'on le voie). L'option `split: true` autorise le découpage automatique
-en deux cartes "1/2" et "2/2" (voir `creature_rules.txt`) ; le PDF exporté montre alors les deux
-l'une sous l'autre. Pas de carte commune aux légendaires (essayée puis retirée : elle
-n'apportait rien) : Saves, Bloodied et Last Stand sont écrits en entier sur chaque légendaire. Toute autre clé est silencieusement
-ignorée.
+Format (`creature_rules.txt`): `blocks` like hero abilities, plus a `name` per block (`name`,
+`kind`, `cost`, `limitation`, `effect`) and, for attacks, `attacks`, `reach`, `range` and
+`damage`, shown as capsules on the cost line; `actions` (ACT stat, shown first and only if
+> 1), `reminder`, `hit_points`, `defense`, `speed`, `level`, `icon`. The shared blocks are in
+`game/creatures/passive_abilities.typ`: `passive_abilities.undying` and
+`passive_abilities.minion`. One creature = one file = one card by default (a text that is too
+long overflows, so that it shows). The `split: true` option allows the automatic split into
+two cards "1/2" and "2/2" (see `creature_rules.txt`); the exported PDF then shows both, one
+under the other. No card shared by legendary creatures (tried, then removed: it added
+nothing): Saves, Bloodied and Last Stand are written in full on each legendary creature. Any
+other key is silently ignored.
 
-## Compagnons de classe : séparer le sort de la créature
+## Class companions: separate the spell from the creature
 
-Quand une capacité de classe invoque un compagnon (ex: Lifebinding Spirit du Shepherd), séparer
-en deux cartes :
-- Le **sort** (`creat_spell`) dit juste "invoque ton Compagnon... dure jusqu'à X" et ne redit
-  pas les stats/attaques.
-- La **créature** (`creat_creature`) documente tout le détail (attaques, soin, portée, dé qui
-  scale, etc.) en sections `passive`/`active`.
+When a class ability summons a companion (e.g. the Shepherd's Lifebinding Spirit), split it
+into two cards:
+- The **spell** (`creat_spell`) only says "summon your Companion... lasts until X" and doesn't
+  repeat the stats or attacks.
+- The **creature** (`creat_creature`) documents every detail (attacks, heal, reach, scaling
+  die, etc.) in `passive`/`active` sections.
 
-Voir `game/class/shepherd/lifebinding_spirit.typ` + `game/class/shepherd/spirit_companion.typ`.
-Même principe pour un sort qui accorde de nouvelles actions (transformation) : le sort décrit
-l'effet et dit "You gain the X abilities", une carte `creat_ability` séparée porte les actions
-(nom de chaque action dans le champ `name` du bloc). Voir `game/spells/fire/dragonform.typ` +
-`game/spells/fire/dragon_form.typ`. Les sorts n'ont pas de champ `blocks`.
+See `game/class/shepherd/lifebinding_spirit.typ` + `game/class/shepherd/spirit_companion.typ`.
+Same principle for a spell that grants new actions (a transformation): the spell describes the
+effect and says "You gain the X abilities", and a separate `creat_ability` card holds the
+actions (each action's name in the block's `name` field). See `game/spells/fire/dragonform.typ`
++ `game/spells/fire/dragon_form.typ`. Spells have no `blocks` field.
