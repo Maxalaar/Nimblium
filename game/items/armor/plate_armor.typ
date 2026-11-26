@@ -4,14 +4,14 @@
     name: "Plate Armor",
     type: ("Item", "Armor", "Plate"),
     family_icon: "plate.svg",
-    defense: [+10],
+    defense: "—",
     slots: 2,
     blocks: (
       armor_bonus,
       armor_no_dex,
       armor_heavy(3),
     ),
-    high_Levels: armor_levels((14, 18, 22)),
+    levels: armor_levels((10, 14, 18, 22)),
 )
 
 #let plate_armor = creat_item(item_data)

@@ -6,11 +6,12 @@
     family_icon: "throwing_hammer.svg",
     damage: [1d8+#STR],
     range: 4,
+    charges: 3,
     slots: 1,
     blocks: (
       weapon_damage("Bludgeoning"),
       weapon_properties.one_handed,
-      weapon_stack(3),
+      weapon_properties.thrown,
     ),
 )
 

@@ -9,7 +9,7 @@
       (kind: "passive", effect: [You have #kw_advantage on #STR checks to keep your concentration.]),
       (kind: "narrative", effect: [You have #kw_advantage on Naturecraft checks.]),
     ),
-    high_Levels: [*Level 13:* When a #kw_direbeast_form ends, you may cast a cantrip for free.],
+    levels: [*Level 13:* When a #kw_direbeast_form ends, you may cast a cantrip for free.],
     reminder: (stormshifter_keywords.direbeast_form, conditions.charged, keywords.advantage),
 )
 

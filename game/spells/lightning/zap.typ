@@ -11,9 +11,10 @@
         actions(1),
     ),
     range: "8",
-    damage: "1d8+4",
+    damage: "—",
     effect: [If this spell misses, you take half its damage instead.],
-    high_Levels: [
+    levels: [
+      *Level 1:* 1d8+4 damage.\
       *Level 5:* 1d8+10 damage.\
       *Level 10:* 1d8+16 damage.\
       *Level 15:* 1d8+22 damage.\

@@ -130,17 +130,22 @@
   A #safe_rest happens in a safe place the GM chooses, such as a night at an inn, a secret
   oasis or a sacred shrine. Camping in the wilderness or in a dungeon is not enough.
 
-  After a #safe_rest, you recover all your #HP, all your Hit Dice, your mana and your class
-  resources, and you heal 1 Wound. Abilities limited per #safe_rest can be used again.
+  After a #safe_rest, you recover all your #HP, all your Hit Dice, your mana, your class
+  resources and the charges of your consumables, and you heal 1 Wound. Abilities limited per #safe_rest can be used again.
 
   You level up during a #safe_rest, as the Level Up page explains. Your class choices only
   change when you level up.
 ]
 
-#section("Inventory")[
+#section("Items")[
   You can carry 10 + #STR slots of items, held, worn or in a pack. Each item card shows how
   many slots it takes (SLOT). Small related items share 1 slot, such as camping supplies.
   Ammunition isn't counted: with a quiver, you have arrows.
+
+  #rule[Level][You can use an item only if your level is at least the level shown on its card.]
+
+  #rule[Consumables][A consumable has charges (CHRG). Each use spends 1 charge, and they all
+  come back after a #safe_rest.]
 ]
 ]
 
@@ -163,6 +168,11 @@ disadvantaged saves.
 interpretation: Inventory slots come from Core Rules p.29. The book's option to skip the
 bookkeeping is left to the GM. The slots are written on each item card, with no table: armor
 always takes 2 (house rule; book: 1 worn, 2 carried), and there is no money.
+
+house-rule: Consumables (potions, wands) have charges that all come back after a Safe Rest,
+so players use them freely; slots limit how many they carry. Items may show a LVL: you can't
+use them below that level (a wand's LVL is twice its spell's tier, 1 for a cantrip). Thrown
+weapons come back when combat ends.
 
 house-rule: Divisions round up (Nimble doesn't say; user ruling 2026-11-26).
 

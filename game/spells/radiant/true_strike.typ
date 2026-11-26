@@ -4,9 +4,10 @@
     name: "True Strike",
     type: ("Spell", "Radiant", "Cantrip"),
     cost: (actions(1),),
-    reach: "4",
+    reach: "—",
     effect: [Choose a creature within Reach. Its next attack this encounter has #kw_advantage and ignores all #kw_disadvantage. That attack's Reach or Range increases by 1.],
-    high_Levels: [
+    levels: [
+      *Level 1:* Reach 4.\
       *Level 5:* Reach 5.\
       *Level 10:* Reach 6.\
       *Level 15:* Reach 7.\

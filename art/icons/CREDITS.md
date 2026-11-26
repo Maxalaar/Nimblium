@@ -46,3 +46,4 @@ gray by the card template).
 | `mail.svg` | [Chain mail](https://game-icons.net/1x1/willdabeast/chain-mail.html) | Willdabeast |
 | `plate.svg` | [Chest armor](https://game-icons.net/1x1/delapouite/chest-armor.html) | Delapouite |
 | `shield.svg` | [Shield](https://game-icons.net/1x1/sbed/shield.html) | Sbed |
+| `potion.svg` | [Health potion](https://game-icons.net/1x1/delapouite/health-potion.html) | Delapouite |

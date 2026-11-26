@@ -11,10 +11,13 @@
         kind: "active",
         cost: (actions(1),),
         limitation: per_turn(1),
-        effect: [Roll 1 Fury Die. You become #kw_raging.],
+        effect: [Roll the number of #card_ref("Fury Dice") shown in Levels. You become #kw_raging.],
       ),
     ),
-    high_Levels: [*Level 5:* Roll 2 #card_ref("Fury Dice").],
+    levels: [
+      *Level 1:* Roll 1 Fury Die.\
+      *Level 5:* Roll 2 #card_ref("Fury Dice").
+    ],
     reminder: (berserker_keywords.raging,),
 )
 

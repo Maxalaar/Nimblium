@@ -7,6 +7,7 @@
     damage: [1d4+#DEX],
     reach: 1,
     range: 4,
+    charges: 1,
     slots: 1,
     blocks: (
       weapon_damage("Piercing"),

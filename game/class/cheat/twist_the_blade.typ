@@ -13,7 +13,7 @@
         effect: [Change one of your #card_ref("Sneak Attack") dice to whatever you like.],
       ),
     ),
-    high_Levels: [*Level 13:* Once per turn, it costs no action.],
+    levels: [*Level 13:* Once per turn, it costs no action.],
 )
 
 #let twist_the_blade = creat_ability(ability_data)

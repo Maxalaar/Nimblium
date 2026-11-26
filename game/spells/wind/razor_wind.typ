@@ -11,9 +11,10 @@
         actions(1),
     ),
     range: "12",
-    damage: "2d4",
+    damage: "—",
     effect: [Choose whether this spell has #kw_advantage or also deals its damage to 1 creature adjacent to the target.],
-    high_Levels: [
+    levels: [
+      *Level 1:* 2d4 damage.\
       *Level 5:* 2d4+3 damage.\
       *Level 10:* 2d4+6 damage.\
       *Level 15:* 2d4+9 damage.\

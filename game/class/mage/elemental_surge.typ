@@ -9,10 +9,11 @@
     blocks: (
       (
         kind: "passive",
-        effect: [When you roll Initiative, regain #WIL mana. This mana is lost at the end of combat if you haven't spent it.],
+        effect: [When you roll Initiative, regain the mana shown in Levels. This mana is lost at the end of combat if you haven't spent it.],
       ),
     ),
-    high_Levels: [
+    levels: [
+      *Level 1:* Regain #WIL mana.\
       *Level 10:* Regain #WIL+1d4 mana.\
       *Level 17:* Regain #WIL+2d4 mana.
     ],

@@ -4,12 +4,12 @@
     name: "Leather Armor",
     type: ("Item", "Armor", "Leather"),
     family_icon: "leather.svg",
-    defense: [+3],
+    defense: "—",
     slots: 2,
     blocks: (
       armor_bonus,
     ),
-    high_Levels: armor_levels((4, 5, 6)),
+    levels: armor_levels((3, 4, 5, 6)),
 )
 
 #let leather_armor = creat_item(item_data)

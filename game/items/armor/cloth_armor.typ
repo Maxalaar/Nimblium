@@ -4,12 +4,12 @@
     name: "Cloth Armor",
     type: ("Item", "Armor", "Cloth"),
     family_icon: "cloth.svg",
-    defense: [+2],
+    defense: "—",
     slots: 2,
     blocks: (
       armor_bonus,
     ),
-    high_Levels: armor_levels((3, 4, 5)),
+    levels: armor_levels((2, 3, 4, 5)),
 )
 
 #let cloth_armor = creat_item(item_data)

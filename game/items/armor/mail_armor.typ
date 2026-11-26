@@ -4,14 +4,14 @@
     name: "Mail Armor",
     type: ("Item", "Armor", "Mail"),
     family_icon: "mail.svg",
-    defense: [+6],
+    defense: "—",
     slots: 2,
     blocks: (
       armor_bonus,
       armor_max_dex(2),
       armor_heavy(2),
     ),
-    high_Levels: armor_levels((9, 12, 15)),
+    levels: armor_levels((6, 9, 12, 15)),
 )
 
 #let mail_armor = creat_item(item_data)

@@ -11,9 +11,10 @@
         actions(1),
     ),
     range: "12",
-    damage: "1d6",
+    damage: "—",
     effect: [If this spell hits, the target is #kw_slowed.],
-    high_Levels: [
+    levels: [
+      *Level 1:* 1d6 damage.\
       *Level 5:* 1d6+3 damage.\
       *Level 10:* 1d6+6 damage.\
       *Level 15:* 1d6+9 damage.\

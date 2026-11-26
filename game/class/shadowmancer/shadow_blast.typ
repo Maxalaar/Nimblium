@@ -5,9 +5,10 @@
     type: ("Spell", "Necrotic", "Cantrip", "Shadowmancer"),
     cost: (actions(1),),
     range: "8",
-    damage: [1d12+#DEX],
+    damage: "—",
     effect: [Cast this spell only once per round.],
-    high_Levels: [
+    levels: [
+      *Level 1:* 1d12+#DEX damage.\
       *Level 5:* 2d12+#DEX damage.\
       *Level 10:* 3d12+#DEX damage.\
       *Level 15:* 4d12+#DEX damage.\

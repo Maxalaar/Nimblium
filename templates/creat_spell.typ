@@ -1,5 +1,5 @@
 #import "creat_frame.typ": creat_card, reminders, join_blocks, stat_value
-#import "badges.typ": dark_badge, tag_badge, high_levels
+#import "badges.typ": dark_badge, tag_badge, levels_section
 
 #let labelled_section(label, body) = [#dark_badge(label)\ #body]
 
@@ -27,7 +27,7 @@
   if "area" in spell { stats.push(("Area", stat_value(spell.area))) }
   let effect = spell.at("effect", default: none)
   let blocks = (if tags.len() > 0 { [#tags.map(tag_badge).join(h(2pt))\ #effect] } else { effect },)
-  if "high_Levels" in spell { blocks.push(high_levels(spell.high_Levels)) }
+  if "levels" in spell { blocks.push(levels_section(spell.levels)) }
   // Several upcasts are options: the caster picks one of them for each tier.
   if "upcast" in spell {
     let options = if type(spell.upcast) == array { spell.upcast } else { (spell.upcast,) }

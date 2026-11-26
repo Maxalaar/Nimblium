@@ -123,15 +123,16 @@ Typst syntax pitfalls:
   to grapple). Exception: the first block of a form (Direbeast forms) describes what you
   become (size, Defense, temp HP...) and stays one block. See `explorer_of_the_wilds.typ`, `misdirection.typ`, `apex_predator.typ`.
 - **Level progression**: everything that changes with your level (cantrips, mana pools,
-  armor, class abilities) goes under a High levels capsule: the `high_Levels` field of a
-  spell, a mechanic, an item or an ability card (never inside a block). One `*Level X:*` line per step, joined
-  with `\`, each giving the **new value**, which replaces the one before: "*Level 5:* 1d10+5
-  damage." Never "increases by 5 at levels 5, 10, 15 and 20", never "every 5 levels": the
-  player reads their line without counting. The base value stays in the stat row or the
-  effect. A feature gained at a level is a line too: "*Level 13:* Once per turn, it costs
-  no action." **Order on a card**: narrative, passive and active blocks, then High levels, then
-  Upcast if any, then the reminders. See `flame_dart.typ`, `sneak_attack.typ`, `mage_mana_pool.typ`,
-  `game/items/armor/`.
+  armor, potions, class abilities) goes in the Levels section: the `levels` field of a
+  spell, a mechanic, an item or an ability card (never inside a block). One `*Level X:*`
+  line per step, joined with `\`, starting at level 1 when the value exists from the start;
+  each line gives the value **from that level on**, which replaces the one before: "*Level
+  5:* 1d10+5 damage." Never "increases by", never "every 5 levels". A stat that changes
+  shows a dash (`damage: "—"`) and the text says "shown in Levels" where it reads the value:
+  "regain the #HP shown in Levels" (no parentheses). A feature gained at a level is a line too: "*Level 13:* Once per turn, it
+  costs no action." **Order on a card**: narrative, passive and active blocks, then Levels,
+  then Upcast if any, then the reminders. See `flame_dart.typ`, `sneak_attack.typ`,
+  `mage_mana_pool.typ`, `healing_potion.typ`, `game/items/armor/`.
 
 ## 8b. Paragraphs
 

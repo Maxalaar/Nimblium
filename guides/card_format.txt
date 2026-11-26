@@ -40,7 +40,7 @@ front and the back side by side (5 mm apart). A clean design, black and white, l
   family icon): `icon: "x.svg"` is looked up in `art/icons/`, a path starting with `/` starts
   from the project root. SVGs are turned gray, other images (PNG) stay as they are. Nothing is
   linked automatically by file name. To add a family: `art.txt`, "Family icons" section.
-- Abilities and spells: dark capsules (Active, Passive, High levels, Upcast…, a capital on the first word only) + outlined capsules
+- Abilities and spells: dark capsules (Active, Passive, Levels, Upcast…, a capital on the first word only) + outlined capsules
   (costs, limits), aligned left, with the text right below.
 - Creatures: section bars `── PASSIVE ──` (no capsules), shown only if the card has several
   sections.
@@ -85,15 +85,21 @@ no cost. Fields:
 - `blocks`: the weapon's properties, as named ability blocks. The shared ones are in
   `game/items/weapons/weapon_properties.typ`: `weapon_properties.one_handed`, `.two_handed`, `.light`,
   `.thrown`, `.vicious`, and the functions `weapon_two_handed_unless(n)`, `weapon_heavy(n)`
-  (the book's "Req. n STR"), `weapon_stack(n)`, `weapon_load(n)` (an active block that costs
+  (the book's "Req. n STR"), `weapon_load(n)` (an active block that costs
   n actions). The text is written in full on each card: no reminder.
-- A two-handed weapon takes 2 slots, everything else 1 (a stack of javelins is 1).
+- A two-handed weapon takes 2 slots, everything else 1. Thrown weapons have `charges` (a
+  stack of 4 javelins: `charges: 4`), regained when combat ends (`weapon_properties.thrown`).
 - Armor and the shield (`game/items/armor/`): `type: ("Item", "Armor", "Cloth" | "Leather" |
   "Mail" | "Plate")` or `("Item", "Shield")`, `defense` (DEF: the level 1 bonus, `[+6]`),
-  `slots` (2 for armor, 1 for the shield), `high_Levels: armor_levels((9, 12, 15))` (the
-  bonus at levels 5, 10, 15). Blocks from `game/items/armor/armor_properties.typ`:
+  `slots` (2 for armor, 1 for the shield), `levels: armor_levels((6, 9, 12, 15))` (the
+  bonus at levels 1, 5, 10, 15), `defense: "—"`. Blocks from `game/items/armor/armor_properties.typ`:
   `armor_bonus` or `shield_bonus` (unnamed), then `armor_max_dex(n)` (Mail), `armor_no_dex`
   (Plate), `armor_heavy(n)`; the shield also has `weapon_properties.one_handed`.
+
+- Consumables (`game/items/consumables/`): `type: ("Item", "Consumable", <kind>)`, `charges`
+  (CHRG: all come back after a Safe Rest), `slots`; each use costs `charge_cost(1)` (a "1 Charge" capsule) Items
+  may have a `level` (LVL, shown first: the level needed to use it). Stat order: LVL, DMG or
+  DEF, REACH, RNGE, CHRG, SLOT.
 
 ### Mechanic (`creat_mechanic.typ`)
 
@@ -106,7 +112,7 @@ spell tiers unlocked by level, with the same `*Level X:*` style as `sneak_attack
 ### Spell (`creat_spell.typ`)
 
 Available fields: `cost`, `casting_time` (casting time in minutes, CAST stat, e.g.
-`"1 min"`), `concentration`, `range`, `reach`, `area`, `damage`, `effect`, `high_Levels`,
+`"1 min"`), `concentration`, `range`, `reach`, `area`, `damage`, `effect`, `levels`,
 `upcast`, `flavor`, `reminder`. `type` is always (type, school, tier, tags...), e.g.
 `("Spell","Fire","Cantrip")`, `("Spell","Lightning","Tier 3","AoE")`. Utility spells put
 `"Utility"` in place of the tier: `("Spell","Ice","Utility")` (in their school's `utility/`
@@ -124,7 +130,7 @@ Rendering (no `Cost:` or `Effect:` label):
 - `damage` only holds the value ("3d8+4"): any detail goes in `effect`.
 - `reach`: a number ("4") or a shape ("Line 12", "Cone 4"), shown under REACH.
 - `concentration` only holds the duration ("1 min").
-- `high_Levels` and `upcast`: a dark capsule, then the text on the next line.
+- `levels` and `upcast`: a dark capsule, then the text on the next line.
 - `upcast` can be a list of options (`upcast: ([...], [...])`): one Upcast capsule per
   option, and the caster picks one for each tier.
 - `flavor`: flavor text in italics, under the rules and before the reminders.

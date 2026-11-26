@@ -5,9 +5,10 @@
     type: ("Spell", "Wind", "Cantrip", "Songweaver"),
     cost: (actions(1),),
     range: "12",
-    damage: [1d6+#INT],
+    damage: "—",
     effect: [This spell deals psychic damage, ignoring #defense. Whenever it deals damage, the target is #kw_taunted by you until the end of its next turn.],
-    high_Levels: [
+    levels: [
+      *Level 1:* 1d6+#INT damage.\
       *Level 5:* 1d6+#INT+3 damage.\
       *Level 10:* 1d6+#INT+6 damage.\
       *Level 15:* 1d6+#INT+9 damage.\

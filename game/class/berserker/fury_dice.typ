@@ -7,13 +7,14 @@
         "Berserker",
     ),
     description:[
-      • When you roll a Fury Die, roll 1d4 and set it aside.\
+      • When you roll a Fury Die, roll the die shown in Levels and set it aside.\
       • You can have up to #KEY Fury Dice at once.\
       • You lose all your Fury Dice when you stop being #kw_raging.\
       • If you gain a Fury Die while you already have the maximum, roll it and choose which dice to keep.\
       • Whenever you make a #STR attack, you may add all your Fury Dice to its damage.
     ],
-    high_Levels: [
+    levels: [
+      *Level 1:* Fury Dice are 1d4.\
       *Level 6:* Fury Dice are 1d6.\
       *Level 9:* Fury Dice are 1d8.\
       *Level 13:* Fury Dice are 1d10.\

@@ -1,5 +1,5 @@
 #import "creat_frame.typ": creat_card, reminders, join_blocks
-#import "badges.typ": dark_badge, tag_badge, high_levels
+#import "badges.typ": dark_badge, tag_badge, levels_section
 
 #let mode_shades = (
   active: rgb("#2e2e2e"),
@@ -37,8 +37,8 @@
   let blocks = ability.blocks
     .sorted(key: blk => mode_order.at(blk.kind, default: 99))
     .map(ability_block)
-  // HIGH LEVELS comes after every block (narrative, passive, active).
-  if "high_Levels" in ability { blocks.push(high_levels(ability.high_Levels)) }
+  // Levels comes after every block (narrative, passive, active).
+  if "levels" in ability { blocks.push(levels_section(ability.levels)) }
   if "reminder" in ability { blocks.push(reminders(ability.reminder)) }
 
   creat_card(

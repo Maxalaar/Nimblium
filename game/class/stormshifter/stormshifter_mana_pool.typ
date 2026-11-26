@@ -6,7 +6,7 @@
     description: [
       Your mana pool's maximum is #times(WIL, 3)+#LVL. It recharges on a #safe_rest.
     ],
-    high_Levels: [
+    levels: [
       *Level 2:* You can cast spells up to tier 1.\
       *Level 4:* You can cast spells up to tier 2.\
       *Level 6:* You can cast spells up to tier 3.\

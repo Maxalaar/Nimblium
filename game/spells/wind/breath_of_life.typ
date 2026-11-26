@@ -10,9 +10,10 @@
     cost: (
         actions(1),
     ),
-    range: "6",
-    effect: [A #kw_dying creature within Range regains 1d4 #HP. If it regains 4 or more, it also gains 1 action.],
-    high_Levels: [
+    range: "—",
+    effect: [A #kw_dying creature within Range regains the #HP shown in Levels. If it regains 4 or more, it also gains 1 action.],
+    levels: [
+      *Level 1:* Range 6, and it regains 1d4 #HP.\
       *Level 5:* Range 8, and it regains 1d4+2 #HP.\
       *Level 10:* Range 10, and it regains 1d4+4 #HP.\
       *Level 15:* Range 12, and it regains 1d4+6 #HP.\

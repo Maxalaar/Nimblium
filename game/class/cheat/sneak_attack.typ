@@ -10,10 +10,11 @@
       (
         kind: "passive",
         limitation: per_turn(1),
-        effect: [When you crit, deal 1d6 additional damage.],
+        effect: [When you crit, deal the additional damage shown in Levels.],
       ),
     ),
-    high_Levels: [
+    levels: [
+      *Level 1:* 1d6 additional damage.\
       *Level 3:* 1d8 additional damage.\
       *Level 7:* 2d8 additional damage.\
       *Level 9:* 2d10 additional damage.\

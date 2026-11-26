@@ -61,7 +61,7 @@
 ]
 
 #section("Cantrips")[
-  Cantrips grow stronger as you level up. Their HIGH LEVELS effect says how, and at which
+  Cantrips grow stronger as you level up. Their Levels section says how, and at which
   levels.
 ]
 

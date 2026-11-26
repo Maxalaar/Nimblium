@@ -146,3 +146,13 @@ to a card, add or complete a line here.
 - **Armor proficiency** includes every lighter armor: Cloth < Leather < Mail < Plate. Without
   proficiency, Defend costs 1 more action (book rule). The Berserker is proficient with Cloth
   (book: none). (`game/rules/combat.typ`)
+- **Consumables.** Potions and wands have charges (CHRG) that all come back after a Safe Rest
+  (book: bought one by one, used up). Slots limit how many you carry. Scrolls merge into
+  wands. (`game/rules/adventure.typ`, Items)
+- **Item level.** An item may show a LVL: you can't use it below that level. A wand's LVL is
+  twice its spell's tier (1 for a cantrip). (`game/rules/adventure.typ`, Items)
+- **Thrown weapons** have charges (a stack of javelins is 4); each throw costs 1, and you can
+  pick them up and regain them when combat ends (book: once thrown, you no longer have it).
+  (`weapon_properties.typ`)
+- **Healing Potion**: one card, 2 charges, 2d4+4 HP, 3d6+6 at level 5, 4d8+8 at level 10
+  (book: three potions bought separately). (`game/items/consumables/healing_potion.typ`)

@@ -10,11 +10,12 @@
     cost: (
         actions(1),
     ),
-    range: "4",
+    range: "—",
     effect: [Once per round, an ally within Range gains 1 action.
 
     You may cast this spell outside your turn by spending #mana(1).],
-    high_Levels: [
+    levels: [
+      *Level 1:* Range 4.\
       *Level 5:* Range 6.\
       *Level 10:* Range 8.\
       *Level 15:* Range 10.\

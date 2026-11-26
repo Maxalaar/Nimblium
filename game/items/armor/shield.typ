@@ -4,13 +4,13 @@
     name: "Shield",
     type: ("Item", "Shield"),
     family_icon: "shield.svg",
-    defense: [+2],
+    defense: "—",
     slots: 1,
     blocks: (
       shield_bonus,
       weapon_properties.one_handed,
     ),
-    high_Levels: armor_levels((4, 6, 8)),
+    levels: armor_levels((2, 4, 6, 8)),
 )
 
 #let shield = creat_item(item_data)

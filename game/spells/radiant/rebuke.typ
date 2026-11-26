@@ -5,9 +5,10 @@
     type: ("Spell", "Radiant", "Cantrip"),
     cost: (actions(1),),
     reach: "4",
-    damage: "1d8",
+    damage: "—",
     effect: [This spell ignores #defense. It deals double damage to an undead or #kw_frightened target, or to a target behind #kw_cover.],
-    high_Levels: [
+    levels: [
+      *Level 1:* 1d8 damage.\
       *Level 5:* 1d8+3 damage.\
       *Level 10:* 1d8+6 damage.\
       *Level 15:* 1d8+9 damage.\

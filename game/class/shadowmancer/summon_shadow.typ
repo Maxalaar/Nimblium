@@ -4,8 +4,9 @@
     name: "Summon Shadow",
     type: ("Spell", "Necrotic", "Cantrip", "Shadowmancer"),
     cost: (actions(1),),
-    effect: [Summon 1 #card_ref("Shadow") adjacent to you. You can have up to #INT #card_ref("Shadow", "Shadows").],
-    high_Levels: [
+    effect: [Summon the number of #card_ref("Shadow", "Shadows") shown in Levels, adjacent to you. You can have up to #INT #card_ref("Shadow", "Shadows").],
+    levels: [
+      *Level 1:* You summon 1 #card_ref("Shadow").\
       *Level 5:* You summon 2 #card_ref("Shadow", "Shadows").\
       *Level 10:* You summon 3 #card_ref("Shadow", "Shadows").\
       *Level 15:* You summon 4 #card_ref("Shadow", "Shadows").\

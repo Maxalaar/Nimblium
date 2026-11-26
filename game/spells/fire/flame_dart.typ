@@ -11,9 +11,10 @@
         actions(1),
     ),
     range: "10",
-    damage: "1d10",
+    damage: "—",
     effect: [If this spell crits, the target becomes #kw_smoldering.],
-    high_Levels: [
+    levels: [
+      *Level 1:* 1d10 damage.\
       *Level 5:* 1d10+5 damage.\
       *Level 10:* 1d10+10 damage.\
       *Level 15:* 1d10+15 damage.\

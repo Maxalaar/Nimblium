@@ -6,11 +6,12 @@
     family_icon: "javelin.svg",
     damage: [1d6+#STR],
     range: 8,
+    charges: 4,
     slots: 1,
     blocks: (
       weapon_damage("Piercing"),
       weapon_properties.one_handed,
-      weapon_stack(4),
+      weapon_properties.thrown,
     ),
 )
 

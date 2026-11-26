@@ -28,6 +28,7 @@
 #let combat_dice_cost(n) = str(n) + " Combat " + if n == 1 { "Die" } else { "Dice" }
 #let searing_light_uses(n) = str(n) + " Searing Light use" + if n == 1 { "" } else { "s" }
 #let inspiration_cost(n) = str(n) + " Inspiration"
+#let charge_cost(n) = str(n) + " Charge" + if n == 1 { "" } else { "s" }
 #let direbeast_cost(n) = str(n) + " Direbeast charge" + if n == 1 { "" } else { "s" }
 
 // Limits, for the `limitation` field. `n` may be a number or a stat such as WIL.
