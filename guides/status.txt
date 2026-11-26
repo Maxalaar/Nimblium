@@ -53,7 +53,8 @@ text is available, so no cards.
   (Mechanic card, formula only), Zealot, Paragon of Virtue, My Life for My Friends, Unending
   Judgment, Glorious Paragon; Sacred Decrees; Oath of Vengeance and Oath of Refuge
   subclasses; class sheet. In the new style and up to the October 2, 2026 changelog. The
-  Oathbreaker waits with the Extra Subclasses. Class icon: Winged Shield. Announced
+  Oathbreaker (the book's Extra Subclass, a subclass like the others; Blood Magic from
+  the changelog on Dark Benediction). Class icon: Winged Shield. Announced
   subclasses: Oath of Roaring Thunder, Oath of Valor.
 - **Songweaver** (p.54-59): COMPLETE — Vicious Mockery (Songweaver-only cantrip),
   Songweaver's Inspiration, Songweaver Mana Pool, Song of Rest (Quick Wit and I'm So Famous! are Levels lines of Inspiration and Songweaver's

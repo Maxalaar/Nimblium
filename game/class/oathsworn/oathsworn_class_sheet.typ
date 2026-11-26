@@ -16,7 +16,7 @@
   levels: (
     (n, [#card_ref("Radiant Judgment"). #card_ref("Lay on Hands").]),
     (1, [#card_ref("Oathsworn Mana Pool"). Radiant cantrips and tier 1 spells. #card_ref("Zealot"). #card_ref("Paragon of Virtue").]),
-    (1, [Choose a subclass, Oath of Vengeance or Oath of Refuge. Choose 1 Sacred Decree.]),
+    (1, [Choose a subclass, Oath of Vengeance, Oath of Refuge or Oathbreaker. Choose 1 Sacred Decree.]),
     (2, [#card_ref("My Life, for My Friends"). #stat_up[+1 #STR or #WIL.]]),
     (2, [#stat_up[+1 #DEX or #INT.]]),
     (3, [Choose 1 more Sacred Decree.]),
@@ -47,6 +47,12 @@
       (7, card_ref("Face Me, Foul Creature!")),
       (11, card_ref("Glorious Reprieve")),
       (15, card_ref("Divine Grace")),
+    )),
+    ([Oathbreaker], by_level(
+      (3, [#card_ref("Dark Benediction"), #card_ref("Paragon of Power"), #card_ref("Aura of Suffering"), #card_ref("We All Suffer"), #card_ref("Bring Me Your Pain").]),
+      (7, card_ref("Torment")),
+      (11, card_ref("Exploit")),
+      (15, card_ref("Bloody Terror")),
     )),
     ([Sacred Decrees], [
       #card_ref("Blinding Aura")\
