@@ -105,6 +105,7 @@ REF_EXCEPTIONS = {
     ("game/rules/level_up.typ", "Thieves' Cant"),               # the language, not the Cheat ability
     ("game/items/weapons/weapon_properties.typ", "Light"),      # the weapon property, not the spell
     ("game/rules/combat.typ", "Light"),
+    ("game/class/shadowmancer/subclasses/reaver/shadow_exploit.typ", "Sacrifice"),  # the verb, not the spell
     ("game/rules/combat.typ", "Crossbow"),                      # weapon categories, not the cards
     ("game/rules/combat.typ", "Sling"),
     ("game/rules/combat.typ", "Staff"),

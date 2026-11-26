@@ -4,7 +4,7 @@
     name: "Swarming Shadows",
     type: ("Ability", "Shadowmancer", "Greater Invocation"),
     blocks: (
-      (kind: "passive", effect: [When one of your #card_ref("Shadow", "Shadows") rolls the maximum on its damage, summon 1 #card_ref("Shadow") adjacent to the target. It ignores your #card_ref("Shadow") limit.]),
+      (kind: "passive", effect: [When one of your #card_ref("Shadow", "Shadows") rolls the maximum on its damage, summon 1 #card_ref("Shadow") adjacent to the target. It doesn't count toward your #card_ref("Shadow", "Shadows") limit.]),
     ),
 )
 

@@ -16,7 +16,7 @@
   levels: (
     (n, [#card_ref("Shadow Blast"), #card_ref("Summon Shadow"), #card_ref("Command Shadows") and the #card_ref("Shadow").]),
     (1, [#card_ref("Pilfered Power"). Necrotic cantrips and tier 1 spells.]),
-    (1, [Choose a subclass, Pact of the Red Dragon or Pact of the Abyssal Depths. Choose 1 Lesser Invocation.]),
+    (1, [Choose a subclass, Pact of the Red Dragon, Pact of the Abyssal Depths or Reaver. Choose 1 Lesser Invocation.]),
     (1, [Choose 1 Greater Invocation. #stat_up[+1 #INT or #DEX.]]),
     (2, [#stat_up[+1 #STR or #WIL.]]),
     (2, [Choose 1 more Greater Invocation. 1 Necrotic Utility Spell.]),
@@ -47,6 +47,12 @@
       (7, [#card_ref("Shadowfrost"). 1 Ice Utility Spell.]),
       (11, card_ref("Glacial Resilience")),
       (15, card_ref("Cryomancer's Reprisal")),
+    )),
+    ([Reaver], by_level(
+      (3, [#card_ref("Hollow One"), #card_ref("Bonescythe"), #card_ref("Shadow Exploit").]),
+      (7, [#card_ref("Grim Harrow"), #card_ref("Reap").]),
+      (11, [#card_ref("My Blood, My Power"), #card_ref("Otherworldly Might").]),
+      (15, card_ref("Sovereign One")),
     )),
     ([Invocations], [
       #text(size: 7.5pt, weight: "bold")[LESSER]\

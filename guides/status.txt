@@ -38,7 +38,7 @@ text is available, so no cards.
   Shadow), Lesser and Greater Invocations (Vengeful Blast
   removed by the changelog), Pact of the Red Dragon and Pact of the Abyssal Depths subclasses.
   In the new style and up to the October 2, 2026 changelog. No card for Master of Darkness or
-  Shadowmastery (they only unlock spells). The Reaver waits with the Extra Subclasses. Class
+  Shadowmastery (they only unlock spells). Also the Reaver (the book's Extra Subclass, with the changelog's fixes). Class
   icon: Death Note. Announced subclasses: Pact of the Void, Pact of the Endless Swarm, Pact
   of the High Celestial.
 - **Commander** (p.18-23): COMPLETE — Coordinated Strike!, Combat Dice (Mechanic card), Field

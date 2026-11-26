@@ -6,7 +6,7 @@
     blocks: (
         passive_abilities.minion,
         (kind: "passive", name: "Faithless", effect: [This creature abandons its summoner as soon as combat ends.]),
-        (kind: "passive", name: "Burst of Shadows", effect: [When this creature dies, it explodes into 5 #card_ref("Shadow", "Shadows"). Place them anywhere within 8 spaces of it. They ignore your #card_ref("Shadow") limit.]),
+        (kind: "passive", name: "Burst of Shadows", effect: [When this creature dies, it explodes into 5 #card_ref("Shadow", "Shadows"). Place them anywhere within 8 spaces of it. They don't count toward your #card_ref("Shadow", "Shadows") limit.]),
         (kind: "active", cost: (actions(1),), name: "Shadow Claw", damage: "5d12 necrotic"),
     ),
 )
