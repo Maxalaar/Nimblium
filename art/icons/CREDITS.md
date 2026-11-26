@@ -48,3 +48,5 @@ gray by the card template).
 | `shield.svg` | [Shield](https://game-icons.net/1x1/sbed/shield.html) | Sbed |
 | `potion.svg` | [Health potion](https://game-icons.net/1x1/delapouite/health-potion.html) | Delapouite |
 | `wand.svg` | [Crystal wand](https://game-icons.net/1x1/lorc/crystal-wand.html) | Lorc |
+| `torch.svg` | [Torch](https://game-icons.net/1x1/delapouite/torch.html) | Delapouite |
+| `gear.svg` | [Knapsack](https://game-icons.net/1x1/lorc/knapsack.html) | Lorc |

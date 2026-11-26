@@ -106,7 +106,10 @@ text is available, so no cards.
   drinker's Hit Die and STR, more at levels 5, 10 and 15). Rules (Level, Consumables) on the Adventure page, Items section.
 - **Wand**: DONE, one blank card the GM fills in (spell, LVL, charges; guidance on the card);
   spell scrolls merged into it.
-- To do: torch and lantern, spellcasting focus, magic items, other adventuring gear.
+- **Gear** (`game/items/gear/`): DONE, Torch (torch or lantern, lights 6 spaces, 1 hand) and
+  three blank cards the GM fills in for everyday items: Small Gear (1 slot), Bulky Gear (2),
+  Heavy Gear (3).
+- To do: magic items.
 
 ## Rules (`game/rules/`)
 

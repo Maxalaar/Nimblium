@@ -30,8 +30,8 @@
 ]
 
 #section("Casting a spell")[
-  Casting a spell costs the actions its card shows. You need a free hand or a spellcasting
-  focus, and you must be able to speak. A #kw_silenced creature can't cast spells.
+  Casting a spell costs the actions its card shows. You need a free hand, and you must be able to
+  speak. A #kw_silenced creature can't cast spells.
 
   A spell with a range has #kw_disadvantage while an enemy is adjacent to you, like any
   ranged attack. A spell with a reach doesn't.

@@ -101,6 +101,10 @@ no cost. Fields:
   may have a `level` (LVL, shown first: the level needed to use it). Stat order: LVL, DMG or
   DEF, REACH, RNGE, CHRG, SLOT.
 
+- Gear (`game/items/gear/`): `type: ("Item", "Gear")`. The Torch, and three blank cards
+  (Small, Bulky, Heavy Gear: 1, 2, 3 slots) whose lines the GM fills in, made with `blank()`
+  (`game/terms.typ`), like the Wand.
+
 ### Mechanic (`creat_mechanic.typ`)
 
 Used to gather in one place a rule or a resource that spans several levels or the whole

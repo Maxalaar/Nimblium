@@ -160,3 +160,9 @@ to a card, add or complete a line here.
 - **Wand**: one blank card the GM fills in (spell, level = 2 × tier or 1 for a cantrip,
   charges 3/2/1 by tier, 2 slots). Anyone can use it, with no proficiency or Arcana check; spell scrolls
   are wands with 1 charge. (`game/items/consumables/wand.typ`)
+- **Gear.** Everyday items have no card of their own: the GM writes them on a blank Small,
+  Bulky or Heavy Gear card (1, 2, 3 slots). Torch and lantern are one Torch card that doesn't
+  burn out. (`game/items/gear/`)
+- **No spellcasting focus.** Casting a spell needs a free hand (book: a free hand or a held
+  focus, which is never defined). *Aura of Refuge* makes a held shield count as a free hand
+  for casting (book: shields count as your focus). (`game/rules/magic.typ`)
