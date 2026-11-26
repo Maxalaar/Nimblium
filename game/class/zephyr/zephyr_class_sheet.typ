@@ -12,9 +12,10 @@
   description: [A martial artist who has turned swiftness into a weapon. The Zephyr never stays still, darting across the battlefield with bare hands and supernatural agility. The faster you move, the harder you hit, and a turn spent standing still wastes your power.],
   info: (
     ("Key stats", [#DEX, #STR]),
-    ("Hit die", [d8, +5 #HP per level]),
+    ("Hit die", [d8]),
     ("Armor", [None]),
   ),
+  every_level: [+5 #HP, +1 Hit Die, +1 skill point.],
   levels: (
     (n, [#card_ref("Martial Training"), #card_ref("Iron Defense"), #card_ref("Momentum"), #card_ref("Kinetic Strikes").]),
     (n, [#card_ref("Burst of Speed"), #card_ref("Maneuvers"). #card_ref("Piercing Blows").]),

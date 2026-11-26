@@ -12,9 +12,10 @@
   description: [A healer who walks between life and death, followed by a loyal spirit. The Shepherd keeps allies on their feet and strikes down what threatens them, with the spirit always at their side. You are the one who decides who lives and who falls.],
   info: (
     ("Key stats", [#WIL, #STR]),
-    ("Hit die", [d10, +7 #HP per level]),
+    ("Hit die", [d10]),
     ("Armor", [Cloth, leather, mail, shields]),
   ),
+  every_level: [+7 #HP, +1 Hit Die, +1 skill point.],
   levels: (
     (n, [Radiant and Necrotic cantrips. #card_ref("Searing Light").]),
     (1, [#card_ref("Shepherd Mana Pool"). Radiant and Necrotic tier 1 spells. #card_ref("Lifebinding Spirit") and its #card_ref("Spirit Companion").]),

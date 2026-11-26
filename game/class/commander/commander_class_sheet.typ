@@ -12,9 +12,10 @@
   description: [A battlefield leader who turns a group of heroes into an army. The Commander fights in the front line, but their real strength is in the orders they shout and the allies they push forward. You win by making everyone around you better, and you are at your best when the whole party fights as one.],
   info: (
     ("Key stats", [#STR, #INT]),
-    ("Hit die", [d10, +7 #HP per level]),
+    ("Hit die", [d10]),
     ("Armor", [Cloth, leather, mail, shields]),
   ),
+  every_level: [+7 #HP, +1 Hit Die, +1 skill point.],
   levels: (
     (n, [#card_ref("Coordinated Strike!").]),
     (n, [#card_ref("Combat Dice"). Choose 1 Combat Tactic. #card_ref("Field Medic").]),

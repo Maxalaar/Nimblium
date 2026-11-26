@@ -116,14 +116,9 @@
 ]
 
 #section("Field Rest")[
-  Heroes take Field Rests while they adventure, to recover #HP.
-
-  #rule("Catch Breath")[Rest for at least 10 minutes. Spend any number of Hit Dice, one at a
-  time. Roll each one and add your #STR, then regain that many #HP. A negative #STR is
-  subtracted.]
-
-  #rule("Make Camp")[Rest for at least 8 hours, with food and sleep. Each Hit Die you spend
-  gives its maximum value instead of a roll, plus your #STR as usual.]
+  A Field Rest is 8 hours of rest, with food and sleep, while you adventure. Spend any number
+  of Hit Dice. For each one, roll it and add your #STR (or subtract it, if negative), then regain
+  that many #HP. A die never makes you lose #HP.
 ]
 
 #section("Safe Rest")[
@@ -175,6 +170,9 @@ house-rule: Items with charges (potions, wands) have charges that all come back 
 so players use them freely; slots limit how many they carry. Items may show a LVL: you can't
 use them below that level (a wand's LVL is twice its spell's tier, 1 for a cantrip). Thrown
 weapons come back when combat ends.
+
+house-rule: A single Field Rest of 8 hours, where Hit Dice are rolled (book: Catch Breath, 10
+minutes, roll; Make Camp, 8 hours, each die gives its maximum).
 
 house-rule: Divisions round up (Nimble doesn't say; user ruling 2026-11-26).
 

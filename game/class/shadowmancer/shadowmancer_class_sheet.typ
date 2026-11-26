@@ -12,9 +12,10 @@
   description: [A spellcaster bound by a pact with a dark Patron. The Shadowmancer commands a horde of expendable shadows and steals power to cast forbidden spells. You overwhelm your enemies with numbers and dark magic, but every gift from your Patron has a price.],
   info: (
     ("Key stats", [#INT, #DEX]),
-    ("Hit die", [d8, +5 #HP per level]),
+    ("Hit die", [d8]),
     ("Armor", [Cloth]),
   ),
+  every_level: [+5 #HP, +1 Hit Die, +1 skill point.],
   levels: (
     (n, [#card_ref("Shadow Blast"), #card_ref("Summon Shadow"), #card_ref("Command Shadows") and the #card_ref("Shadow").]),
     (1, [#card_ref("Pilfered Power"). Necrotic cantrips and tier 1 spells.]),

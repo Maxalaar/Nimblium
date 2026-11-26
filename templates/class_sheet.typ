@@ -54,7 +54,7 @@
 // levels: 20 entries of (tier, features), tier being none before spells (or always, for a
 // class without spells: the Tier column is then hidden).
 // boxes: ((title, content), ...) shown side by side under the table.
-#let class_sheet(name: "", icon: none, intro: none, difficulty: none, description: none, info: (), resource: none, levels: (), boxes: ()) = {
+#let class_sheet(name: "", icon: none, intro: none, difficulty: none, description: none, info: (), every_level: none, resource: none, levels: (), boxes: ()) = {
   set page(paper: "a4", margin: (x: 14mm, y: 12mm))
   set text(size: 9.5pt)
   set par(leading: 0.45em)
@@ -64,13 +64,13 @@
   let new_layout = description != none or difficulty != none
   grid(columns: (auto, 1fr), column-gutter: 6mm, align: horizon,
     if icon != none { icon_image(icon, if new_layout { 24mm } else { 16mm }) },
-    stack(spacing: 3mm,
+    stack(spacing: 1.8mm,
       text(size: 24pt, tracking: 6pt, upper(name)),
       if description != none {
         par(justify: true, leading: 0.6em, text(size: 9.5pt, style: "italic", fill: reminder_color, description))
       } else if intro != none { text(size: 9pt, style: "italic", fill: reminder_color, intro) }),
   )
-  v(5mm)
+  v(2.5mm)
 
   // Information strip, on one line: Difficulty first when the sheet gives it.
   let facts = if difficulty != none { (("Difficulty", difficulty_value(difficulty)),) + info } else { info }
@@ -81,8 +81,9 @@
     block(width: 100%, inset: (x: 3mm, y: 2.2mm), stroke: hair + ink, radius: 1.5mm, resource)
   }
 
-  // Level table.
-  v(if new_layout { 5mm } else { 6mm })
+  // Level table, with what every level gives as its first row.
+  v(if new_layout { 2.5mm } else { 6mm })
+
   // The Tier column only shows for spellcasting classes.
   let casts = levels.any(((tier, _)) => tier != none)
   let headers = if casts { ("Lvl", "Tier", "You gain") } else { ("Lvl", "You gain") }
@@ -93,6 +94,8 @@
     stroke: (x, y) => (bottom: if y == 0 { 0.6pt + ink } else { hair + luma(190) }),
     fill: (x, y) => if y > 0 and calc.even(y) { luma(246) },
     table.header(..headers.map(h => text(size: 6.5pt, tracking: 1.2pt, weight: "bold", upper(h)))),
+    // What every level gives, as a first row.
+    ..if every_level != none { (text(weight: "bold")[All], ..if casts { (minor[—],) }, every_level) },
     // A tier that goes up is in bold; the others are gray.
     ..levels.enumerate().map(((i, (tier, features))) => {
       let previous = if i == 0 { none } else { levels.at(i - 1).at(0) }

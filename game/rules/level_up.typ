@@ -22,13 +22,13 @@
     [Min-Max], [+3, +1, −1, −1],
   )
 
-  #rule[4\. Skills][Each skill starts at the value of its stat. Then add 4 skill points to any
-  skills you like. A skill can't go above +10.]
+  #rule[4\. Skills][Each skill starts at the value of its stat. Add your level 1 skill point to
+  any skill. A skill can't go above +10.]
 
   #rule[5\. The rest of your sheet][Fill in these values.]
 
   #values(columns: (27mm, 1fr),
-    [Max #HP], [10, plus #LVL times your Hit Die's value.],
+    [Max #HP], [10, plus #LVL times the #HP of your class sheet's "All" row.],
     [Hit Dice], [#LVL dice, of the size your class sheet gives.],
     [#defense], [Your #DEX, plus your armor's and your shield's bonus.],
     [Initiative], [Your #DEX.],
@@ -55,24 +55,8 @@
 ]
 
 #section("Leveling up")[
-  When the GM says your hero has earned a level, you gain it during your next #safe_rest.
-
-  #rule[#HP][Your max #HP increases by your Hit Die's value.]
-
-  #values(columns: (1fr,) * 5, header: ("d4", "d6", "d8", "d10", "d12"),
-    [+3], [+4], [+5], [+7], [+8],
-  )
-
-  #rule[Hit Dice][Your maximum number of Hit Dice increases by 1.]
-
-  #rule[Skills][Gain 1 skill point. You may also move 1 point from one skill to another, as
-  long as no skill becomes negative.]
-
-  #rule[Class][Gain what your class sheet gives at your new level, and take the matching
-  cards.]
-
-  #rule[Stats][When a stat increases, update everything that uses it, such as your skills,
-  #defense, Initiative, mana and languages.]
+  When the GM says your hero has earned a level, you gain it during your next #safe_rest. Your
+  class sheet says what you gain: its "All" row, and the row of your new level.
 ]
 ]
 
@@ -85,12 +69,16 @@ increase, the sheet tracks Speed, Size and Defense instead of height and weight)
 
 house-rule: Class choices never change: leveling up only adds new ones (guides/house_rules.txt).
 
-house-rule: Max HP is 10 + LVL × the Hit Die's value (d4 3, d6 4, d8 5, d10 7, d12 8), with no
+house-rule: Max HP is 10 + LVL × the HP per level of the class sheet's All row (d6 4,
+d8 5, d10 7, d12 8), with no
 roll and no starting HP per class (the book: the class's starting HP, then roll the Hit Die
 with advantage or take the fixed value at each level). Within 4 HP of the book above level 1.
 
-interpretation: Starting equipment and gold are left out (user ruling 2026-11-26). Inventory
-slot sizes will come with the equipment cards.
+house-rule: 1 skill point at every level, level 1 included, and points never move (book: 4
+points at creation, 1 per level, and you may move 1 point). The Stats rule (update what uses a
+stat) is left out: it goes without saying.
+
+interpretation: Starting equipment and gold are left out (user ruling 2026-11-26).
 
 interpretation: Ancestries and backgrounds are not listed here: their traits are played like
 abilities, so they will become cards. Adventuring motivation is role-play, left to the

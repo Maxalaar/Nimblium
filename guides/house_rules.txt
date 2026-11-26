@@ -186,3 +186,9 @@ to a card, add or complete a line here.
 - **Redeem** (Radiant, Tier 9): cast during a Safe Rest, once per level, with no diamond and no
   "only once per creature" limit (book: 24 hours, a 10,000 gp diamond, within 1 mile; written 2 km).
   (`game/spells/radiant/redeem.typ`)
+- **Skill points**: 1 skill point at every level, level 1 included (20 in all), and points never
+  move (book: 4 at creation, then 1 per level and you may move 1 point). What every level gives
+  (HP, Hit Die, skill point) is written on the class sheet. (`game/rules/level_up.typ`)
+- **Field Rest**: one kind only, 8 hours of rest with food and sleep, where Hit Dice are rolled
+  (book: Catch Breath, 10 minutes, and Make Camp, 8 hours with maximum dice).
+  (`game/rules/adventure.typ`)

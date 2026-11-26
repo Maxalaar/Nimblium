@@ -12,9 +12,10 @@
   description: [Fury made flesh. The Berserker charges into the thick of the fight and stays there, trading blows up close while others keep their distance. The longer the battle rages, the more dangerous you become. It is a reckless way to fight, taking risks and pain to deal huge damage and trusting your toughness to carry you through.],
   info: (
     ("Key stats", [#STR, #DEX]),
-    ("Hit die", [d12, +8 #HP per level]),
+    ("Hit die", [d12]),
     ("Armor", [None]),
   ),
+  every_level: [+8 #HP, +1 Hit Die, +1 skill point.],
   levels: (
     (n, [#card_ref("Rage"), #card_ref("Fury Dice"), #card_ref("That all you got?!").]),
     (n, [#card_ref("Intensifying Fury"). #card_ref("One with the Ancients").]),
