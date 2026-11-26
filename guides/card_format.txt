@@ -9,6 +9,7 @@ The card types, their fields and how they are rendered. For the text itself, see
 - `creat_spell.typ` → **Spell** cards
 - `creat_creature.typ` → **Creature** cards
 - `creat_mechanic.typ` → **Mechanic** cards
+- `creat_item.typ` → **Item** cards (weapons; armor, shields and gear to come)
 
 ### Shared layout (`creat_frame.typ`)
 
@@ -65,6 +66,28 @@ front and the back side by side (5 mm apart). A clean design, black and white, l
   `("Ability","Cheat","Scoundrel")`, `("Ability","Hunter",thrill_of_the_hunt)`,
   `("Ability","Hunter","Shadowpath")`, `("Ability","Shepherd","Sacred Grace")`. The basic
   actions every hero has are `("Ability","Combat")` (`game/actions/`).
+
+### Item (`creat_item.typ`)
+
+Weapons today (`game/items/weapons/melee/`, `game/items/weapons/ranged/`), one card per item,
+no cost. Fields:
+
+- `type`: `("Item", "Weapon", "Melee" | "Ranged", <category>)`, e.g.
+  `("Item","Weapon","Melee","Blade")`. The category is what class sheets name for
+  proficiency: Blade (daggers, sickle, swords, rapier, glaive), Axe, Hammer (mace, hammers),
+  Staff, Polearm (spears), Bow, Crossbow, Sling, Thrown (javelins, throwing hammers).
+- `family_icon`: the icon of its kind, on both faces (`dagger.svg`, `sword.svg`,
+  `throwing_axe.svg`, `bow.svg`...), since a category such as Blade holds several kinds.
+- The damage type is the first block: `weapon_damage("Piercing")`.
+- Stat row, in this order: `damage` (DMG, e.g. `[1d8+#STR]`), `reach` (REACH, every melee
+  weapon, even 1), `range` (RNGE: ranged weapons, and the range of a thrown weapon), `slots`
+  (SLOT, always last: inventory slots, Adventure page).
+- `blocks`: the weapon's properties, as named ability blocks. The shared ones are in
+  `game/items/weapons/weapon_properties.typ`: `weapon_properties.two_handed`, `.light`,
+  `.thrown`, `.vicious`, and the functions `weapon_two_handed_unless(n)`, `weapon_heavy(n)`
+  (the book's "Req. n STR"), `weapon_stack(n)`, `weapon_load(n)` (an active block that costs
+  n actions). The text is written in full on each card: no reminder.
+- A two-handed weapon takes 2 slots, everything else 1 (a stack of javelins is 1).
 
 ### Mechanic (`creat_mechanic.typ`)
 

@@ -28,3 +28,16 @@ gray by the card template).
 | `combat.svg` | [Crossed swords](https://game-icons.net/1x1/lorc/crossed-swords.html) | Lorc |
 | `songweaver.svg` | [Lyre](https://game-icons.net/1x1/lorc/lyre.html) | Lorc |
 | `stormshifter.svg` | [Wolf howl](https://game-icons.net/1x1/lorc/wolf-howl.html) | Lorc |
+| `dagger.svg` | [Plain dagger](https://game-icons.net/1x1/lorc/plain-dagger.html) | Lorc |
+| `sickle.svg` | [Scythe](https://game-icons.net/1x1/lorc/scythe.html) | Lorc |
+| `mace.svg` | [Flanged mace](https://game-icons.net/1x1/delapouite/flanged-mace.html) | Delapouite |
+| `axe.svg` | [Battle axe](https://game-icons.net/1x1/lorc/battle-axe.html) | Lorc |
+| `throwing_axe.svg` | [Axe swing](https://game-icons.net/1x1/lorc/axe-swing.html) | Lorc |
+| `staff.svg` | [Bo](https://game-icons.net/1x1/delapouite/bo.html) | Delapouite |
+| `hammer.svg` | [Flat hammer](https://game-icons.net/1x1/lorc/flat-hammer.html) | Lorc |
+| `sling.svg` | [Sling](https://game-icons.net/1x1/delapouite/sling.html) | Delapouite |
+| `javelin.svg` | [Thrown spear](https://game-icons.net/1x1/lorc/thrown-spear.html) | Lorc |
+| `throwing_hammer.svg` | [Hammer drop](https://game-icons.net/1x1/lorc/hammer-drop.html) | Lorc |
+| `bow.svg` | [Pocket bow](https://game-icons.net/1x1/lorc/pocket-bow.html), mirrored | Lorc |
+| `crossbow.svg` | [Crossbow](https://game-icons.net/1x1/carl-olsen/crossbow.html) | Carl Olsen |
+| `sword.svg`, `rapier.svg`, `spear.svg` | drawn for Nimblium | project |

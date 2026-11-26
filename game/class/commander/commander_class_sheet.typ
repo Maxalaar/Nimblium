@@ -12,7 +12,7 @@
     ("Key stats", [#STR, #INT]),
     ("Hit die", [d10, +7 #HP per level]),
     ("Armor", [Mail, shields]),
-    ("Weapons", [All martial weapons]),
+    ("Weapons", [All weapons]),
   ),
   levels: (
     (n, [#card_ref("Coordinated Strike!").]),

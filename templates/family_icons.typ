@@ -25,6 +25,8 @@
   "Songweaver": "songweaver.svg",
   "Stormshifter": "stormshifter.svg",
   "Combat": "combat.svg",
+  "Melee": "melee.svg",
+  "Ranged": "ranged.svg",
 )
 
 // Family icons are black SVGs printed in this gray to save ink.

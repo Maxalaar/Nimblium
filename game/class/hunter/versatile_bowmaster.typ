@@ -9,7 +9,7 @@
     blocks: (
       (
         kind: "passive",
-        effect: [When you attack with a Longbow, you may roll 2d4 instead of 1d8. When you attack with a Crossbow, you may roll 2d8 instead of 4d4.],
+        effect: [When you attack with a #card_ref("Longbow"), you may roll 2d4 instead of 1d8. When you attack with a #card_ref("Crossbow"), you may roll 2d8 instead of 4d4.],
       ),
     ),
 )

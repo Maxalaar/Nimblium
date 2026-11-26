@@ -1,0 +1,24 @@
+#import "/global.typ": *
+
+#let item_data = (
+    name: "Dagger",
+    type: ("Item", "Weapon", "Melee", "Blade"),
+    family_icon: "dagger.svg",
+    damage: [1d4+#DEX],
+    reach: 1,
+    range: 4,
+    slots: 1,
+    blocks: (
+      weapon_damage("Piercing"),
+      weapon_properties.light,
+      weapon_properties.thrown,
+    ),
+)
+
+#let dagger = creat_item(item_data)
+
+/*
+review: style=2026-11-14 changelog=2026-10-02
+
+Source: Core Rules p.34-35 (Weapon Properties, Melee Weapons).
+*/

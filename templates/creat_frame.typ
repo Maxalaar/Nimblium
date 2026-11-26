@@ -248,10 +248,11 @@
 // `part` ("1/2", "2/2") is added to the types of a card split in two.
 // The family icon comes from the types (see family_icons.typ): large in the
 // middle of the back, small at the bottom of the front. `icon` (a card's own
-// illustration) replaces it on the back only.
-#let creat_card(name, types, body, stats: (), stat_cut: none, back_types: none, icon: none, part: none) = {
+// illustration) replaces it on the back only. `family` replaces the family icon on both
+// faces (item cards: each kind of weapon has its own icon).
+#let creat_card(name, types, body, stats: (), stat_cut: none, back_types: none, icon: none, family: none, part: none) = {
   let extra = if part == none { () } else { (part,) }
-  let family = family_icon(types)
+  let family = if family == none { family_icon(types) } else { family }
   // Marker found by #card_ref (game/terms.typ) to link to this card.
   metadata((card: name))
   box(grid(columns: 2, column-gutter: card_gap,

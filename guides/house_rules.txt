@@ -113,3 +113,15 @@ to a card, add or complete a line here.
 
 - **Creeping Death**: the chain repeats at most 4 times, plus 1 per upcast (decided on
   2026-11-21; the book sets no limit).
+
+## Items
+
+- **Improvised weapons** deal 1d4+STR with 1 hand and 1d6+STR with 2, and break after 3 hits
+  (book: the GM picks the die; changelog: they break "after a few hits"). Customizing
+  weapons is left to the GM. (`game/rules/combat.typ`)
+- **Spear.** The 2026-10-02 changelog adds a Spear without its stats: 1d8+STR, Reach 2,
+  two-handed or one-handed with 2 STR, a guess between the Longsword and the Greatspear.
+  (`game/items/weapons/melee/spear.typ`)
+- **Weapon requirements.** The book's "Req. n STR" on a weapon becomes Heavy: you can't
+  attack with it below n STR (the book gives no penalty). (`weapon_properties.typ`)
+- **No prices on items**: the cards show no cost. (`game/items/`)

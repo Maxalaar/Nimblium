@@ -128,6 +128,29 @@
   Wounds are lasting injuries. A #safe_rest heals 1 of them. You die when you have 6 Wounds.
 ]
 
+#section("Weapons")[
+  Each weapon card shows its damage, its Reach or Range, and its properties.
+
+  #rule[Proficiency][Your class sheet lists the weapons you are proficient with: by stat
+  (#STR or #DEX weapons, as their damage shows), by group (Melee, Ranged) or by category
+  (Blade, Axe, Hammer, Staff, Polearm, Bow, Crossbow, Sling, Thrown), the last of a weapon's
+  types. You can attack with any other weapon, but it can't crit.]
+
+  #rule[Swapping][Once per round, you may put away a weapon or shield you are proficient with
+  and take another one, for no action.]
+
+  #rule[Dual wielding][With a Light weapon in each hand, one attack with them per round has
+  #kw_advantage. Roll the damage of both weapons and keep either result. With 2 #STR, one of
+  them doesn't need to be Light. With 3 #STR, neither does.]
+
+  #rule[Unarmed strike][An attack with your fists or feet deals 1d4+#STR damage, with Reach 1.
+  It can't crit unless you are proficient with unarmed strikes. If you are, your fists count
+  as dual wielded.]
+
+  #rule[Improvised weapons][A chair, a frying pan or a rock deals 1d4+#STR damage, or 1d6+#STR
+  if it needs 2 hands. It breaks after 3 hits.]
+]
+
 #section("Creatures")[
   Each creature has 1 action per turn, or the number its card shows as ACT. It moves up to its
   #speed for free, without spending an action. Only heroes make opportunity attacks.
@@ -165,6 +188,13 @@ creature_rules.txt).
 
 house-rule: There are no Reactions: triggered actions have a "When..." trigger and work on
 your own turn too (writing_rules.txt §4).
+
+house-rule: An improvised weapon deals 1d4+STR with 1 hand and 1d6+STR with 2, and breaks
+after 3 hits (book: 1d4 or 1d6 as the GM sees fit, bigger dice if the GM allows; changelog:
+it breaks "after a few hits"). Customizing weapons is left to the GM.
+
+changelog: Unarmed strikes deal 1d4+STR and can't crit without proficiency; only proficient
+heroes count their fists as dual wielded.
 
 interpretation: The book's Initiative bands ("a single digit", "2 digits") become 9 or less
 and 10 to 19.
