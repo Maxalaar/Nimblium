@@ -46,8 +46,10 @@ text is available, so no cards.
   Levels lines of Coordinated Strike!);
   Commander's Orders (Commanding Presence moves there, from the changelog), Combat Tactics,
   Weapon Masteries (remade), Champion of the Bulwark and Champion of the Vanguard subclasses;
-  class sheet. In the new style and up to the October 2, 2026 changelog. The Spellblade waits
-  with the Extra Subclasses. Class icon: Trumpet Flag. Announced subclasses: Champion of the
+  class sheet. In the new style and up to the October 2, 2026 changelog. Also the
+  Spellblade (the book's Extra Subclass: Arcane Command, Spellforge, 6 Arcane Orders, one per
+  Commander's Order; Deep
+  Knowledge on the class sheet). Class icon: Trumpet Flag. Announced subclasses: Champion of the
   Arena, of the Phalanx, of the Siege-Breaker.
 - **Oathsworn** (p.36-41): COMPLETE — Radiant Judgment, Lay on Hands, Oathsworn Mana Pool
   (Mechanic card, formula only), Zealot, Paragon of Virtue, My Life for My Friends, Unending
