@@ -69,10 +69,19 @@ donnent que le nom : pas de texte disponible, donc pas de cartes.
 - **Utility** : les 18 sorts du livre (3 par école) dans le dossier `utility/` de chaque école, alignés sur les
   changelogs (Ice Disk, Wintry Scrying, Wind Whisper, Spark Buddy). Temps d'incantation en stat CAST.
 
+## Actions de base (`game/actions/`)
+
+- 3 cartes que chaque héros reçoit, type "Ability · Combat", icône Crossed Swords :
+  *Basic Actions* (Move, Attack, Hide ; Hide sans jet, règle maison), *Maneuvers* (Assess, Grab, Escape),
+  *Triggered Actions* (Defend, Interpose, Opportunity Attack, Help). Au changelog du
+  2 octobre 2026. La page Combat ne répète pas ces actions, elle renvoie aux cartes.
+
 ## Règles (`game/rules/`)
 
 - **Adventure** : FAIT, recto-verso, au changelog du 2 octobre 2026.
-- **Combat**, **Magic**, **Level Up** : pas commencés.
+- **Combat** : FAIT, recto-verso (conditions et créatures au verso), au changelog du 2 octobre
+  2026.
+- **Magic**, **Level Up** : pas commencés.
 
 ## Créatures
 

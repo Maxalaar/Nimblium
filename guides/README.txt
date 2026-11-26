@@ -58,7 +58,8 @@ Elles touchent tout le jeu, donc elles vivent ici et pas dans une carte :
 - **Defense** : la stat de héros "Armor" s'appelle "Defense" ; Defend réduit les dégâts de la
   Defense. "Armor" ne désigne plus que l'équipement porté.
 - **Vulnerable** = +10 dégâts. **Resistant** = -10 dégâts.
-- **Hide** : Stealth DC 10 ; on ne reste plus caché après un kill que personne n'a vu.
+- **Hide** : on ne reste plus caché après un kill que personne n'a vu. Règle maison : se
+  cacher ne demande aucun jet, 1 action avec un Cover suffit (Nimble : Stealth DC 10).
 - **Conditions** : Blinded devient Blind ; Silenced est ajoutée ; elles ne se cumulent pas (une
   créature a une condition ou ne l'a pas).
 - **Sorts défensifs** : 0 action, lançables uniquement pendant un Defend.
@@ -69,7 +70,8 @@ Elles touchent tout le jeu, donc elles vivent ici et pas dans une carte :
 
 ## Arborescence
 
-- `game/` : le contenu du jeu. `class/`, `spells/`, `creatures/`, `rules/` (pages de règles),
+- `game/` : le contenu du jeu. `class/`, `spells/`, `creatures/`, `actions/` (actions de base),
+  `rules/` (pages de règles),
   `keywords.typ`, `conditions.typ` et `terms.typ` (le vocabulaire).
 - `templates/` : la mise en page (cadres et types de cartes, fiche de classe, page de règles,
   `style.typ`).

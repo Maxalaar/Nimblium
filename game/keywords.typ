@@ -12,7 +12,7 @@
   disadvantage: [*Disadvantage:* Roll 1 additional die of the same type for each instance of disadvantage, then remove that many of the highest results.],
   vulnerable: [*Vulnerable:* This creature takes 10 additional damage from the listed damage type.],
   knockback: [*Knockback X:* Push this creature X spaces away. If an obstacle stops it, it takes 1d6 damage per space it didn't move.],
-  hide: [*Hide:* Spend 1 action and make a #dc(10) Stealth check to Hide from the creatures you have Cover from. Full Cover succeeds automatically. Your next attack has advantage, then you lose Hide.],
+  hide: [*Hide:* Spend 1 action to Hide from the creatures you have Cover from. Your next attack has advantage, then you lose Hide.],
   cover: [*Cover:* An obstacle partially blocks a creature's line of attack to you, so its ranged attacks against you have disadvantage.],
   flying: [*Flying:* This creature can move through the air at its normal #speed. Forced movement moves it twice as far.],
   interpose: [*Interpose:* When a creature within 2 spaces of you would be hit by an attack, you may spend 1 action to become the new target of that attack. You move into its space, and it moves to an adjacent space of its choice. You can do this once per round.],
@@ -22,4 +22,7 @@
 /*
 house-rule: Cover and Full Cover only affect ranged attacks, and are worded with line of
 attack.
+
+house-rule: Hiding needs no roll: 1 action with Cover is enough (Nimble asks for a DC 10
+Stealth check, and Full Cover succeeds automatically). Stealth still matters outside combat.
 */

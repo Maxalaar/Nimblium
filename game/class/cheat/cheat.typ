@@ -20,7 +20,7 @@
       (kind: "passive", effect: [When you roll less than 10 on Initiative, you may change the result to 10.]),
       (kind: "narrative", effect: [You may gain #kw_advantage on skill checks while you play games, compete or place wagers.]),
     ),
-    reminder: (keywords.hide, keywords.cover, keywords.full_cover,),
+    reminder: (keywords.hide, keywords.cover,),
 )
 
 #let cheat = creat_ability(ability_data)

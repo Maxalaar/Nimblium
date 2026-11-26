@@ -25,3 +25,4 @@ gray by the card template).
 | `shadowmancer.svg` | [Death note](https://game-icons.net/1x1/lorc/death-note.html) | Lorc |
 | `oathsworn.svg` | [Winged shield](https://game-icons.net/1x1/lorc/winged-shield.html) | Lorc |
 | `commander.svg` | [Trumpet flag](https://game-icons.net/1x1/delapouite/trumpet-flag.html) | Delapouite |
+| `combat.svg` | [Crossed swords](https://game-icons.net/1x1/lorc/crossed-swords.html) | Lorc |

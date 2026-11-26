@@ -19,6 +19,8 @@ NOT_CHECKED = {"terms.typ"}
 FORMULA_CALL = re.compile(r"#(times|dc)\((?:[^()]|\([^()]*\))*\)")
 # Section titles of rules pages (templates/rules_page.typ) are headings, not rules text.
 SECTION_TITLE = re.compile(r'#section\("(?:[^"\\]|\\.)*"')
+# A definition reused by name (#keywords.interpose, #conditions.dying...) is code, not text.
+DEFINITION_REF = re.compile(r"#(keywords|conditions|passive_abilities)(\.\w+)+")
 
 # Forbidden in card text (content blocks and text fields).
 TEXT_RULES = [
@@ -88,7 +90,7 @@ def content_blocks(source):
 
 # Card names: every card file's main `name:`. A card name in another card's text must go
 # through #card_ref("Name") (game/terms.typ), which shows it in italics and links to that card.
-CARD_DIRS = ["game/class", "game/spells", "game/creatures"]
+CARD_DIRS = ["game/class", "game/spells", "game/creatures", "game/actions"]
 CARD_NAME = re.compile(r'#let \w+_data = \(\s*name: "((?:[^"\\]|\\.)*)"')
 CARD_REF = re.compile(r'#card_ref\(\s*"((?:[^"\\]|\\.)*)"(?:\s*,\s*"(?:[^"\\]|\\.)*")?\s*\)')
 # Words that match a card name but don't refer to that card: (file, name).
@@ -151,7 +153,7 @@ def check_file(path, names):
         if not (path.name in DEFINITION_FILES and ("kw_difficult_terrain" in rule[1] or "kw_cover" in rule[1] or "kw_advantage" in rule[1]))
     ]
     for block in content_blocks(source):
-        block = CARD_REF.sub("", FORMULA_CALL.sub("", SECTION_TITLE.sub("", block)))
+        block = CARD_REF.sub("", FORMULA_CALL.sub("", DEFINITION_REF.sub("", SECTION_TITLE.sub("", block))))
         for pattern, advice in rules:
             for match in re.finditer(pattern, block):
                 problems.append(f'"{match.group(0)}": {advice}')

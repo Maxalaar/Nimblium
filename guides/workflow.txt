@@ -51,9 +51,11 @@ jamais entre deux colonnes.
 Domaines prévus :
 - **Adventure** (fait) : stats, compétences, tests, sauvegardes, avantage, taille, chute ;
   au verso PV, PV temporaires, dés de vie, Field Rest, Safe Rest. Pas de logement ni de downtime.
-- **Combat** : tour, actions, attaques, Defense, vitesse et portée, mouvement forcé, Cover et
-  Hide, lutte, concentration, Dying et Wounds ; au verso les conditions (reprises de
-  `game/conditions.typ`) et les règles des créatures (`creature_rules.txt`).
+- **Combat** (fait) : tour, réserve de 3 actions, attaques, Defense, déplacement et portées,
+  Cover, lutte en cours, mouvement forcé, concentration, Dying et Wounds ; au verso les
+  conditions (reprises de `game/conditions.typ`) et les règles des créatures
+  (`creature_rules.txt`). Les actions elles-mêmes sont sur les cartes de `game/actions/`
+  (Basic Actions, Maneuvers, Triggered Actions) : la page y renvoie sans les répéter.
 - **Magic** : une page.
 - **Level Up** : création du personnage (ascendance, historique, répartition des stats) et
   montée de niveau, une page.
