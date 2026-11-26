@@ -117,9 +117,9 @@
 ]
 
 #section("Concentration")[
-  You can concentrate on only one thing at a time. When you take a critical hit while
-  concentrating, make a #dc(10) #STR check. On a failure, your concentration ends. It also
-  ends at 0 #HP. You can't start concentrating while #kw_dying or #kw_incapacitated.
+  You can concentrate on only 1 spell or ability at a time. When you take a critical hit
+  while concentrating, make a #dc(10) #STR check. On a failure, your concentration ends. You
+  can't concentrate while #kw_dying or #kw_incapacitated.
 ]
 
 #section("Dying and Wounds")[

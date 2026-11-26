@@ -40,7 +40,7 @@ front and the back side by side (5 mm apart). A clean design, black and white, l
   family icon): `icon: "x.svg"` is looked up in `art/icons/`, a path starting with `/` starts
   from the project root. SVGs are turned gray, other images (PNG) stay as they are. Nothing is
   linked automatically by file name. To add a family: `art.txt`, "Family icons" section.
-- Abilities and spells: dark capsules (ACTIVE, PASSIVE, CANTRIP, UPCAST…) + outlined capsules
+- Abilities and spells: dark capsules (Active, Passive, High levels, Upcast…, a capital on the first word only) + outlined capsules
   (costs, limits), aligned left, with the text right below.
 - Creatures: section bars `── PASSIVE ──` (no capsules), shown only if the card has several
   sections.
@@ -125,7 +125,7 @@ Rendering (no `Cost:` or `Effect:` label):
 - `reach`: a number ("4") or a shape ("Line 12", "Cone 4"), shown under REACH.
 - `concentration` only holds the duration ("1 min").
 - `high_Levels` and `upcast`: a dark capsule, then the text on the next line.
-- `upcast` can be a list of options (`upcast: ([...], [...])`): one UPCAST capsule per
+- `upcast` can be a list of options (`upcast: ([...], [...])`): one Upcast capsule per
   option, and the caster picks one for each tier.
 - `flavor`: flavor text in italics, under the rules and before the reminders.
 
