@@ -58,8 +58,9 @@ Planned areas:
   Actions, Grapple, Triggered Actions): the page refers to them without repeating them.
 - **Magic** (done): schools, casting, mana, upcasting, cantrips, how to read a spell card,
   utility spells. One page. Scrolls and wands will be equipment cards.
-- **Level Up**: character creation (ancestry, background, stat spread) and leveling up, one
-  page.
+- **Level Up** (done): making a hero (class, ancestry and background, stat arrays, saves,
+  skills, the rest of the sheet, languages) and leveling up. One page. Ancestries and
+  backgrounds will be cards.
 - No equipment page: equipment will become cards.
 
 Writing:

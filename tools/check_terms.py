@@ -100,6 +100,8 @@ REF_EXCEPTIONS = {
     ("game/creatures/goblin/nilbog.typ", "Goblin"),
     ("game/class/oathsworn/oathsworn_class_sheet.typ", "Vengeance"),  # Oath of Vengeance, not the spell
     ("game/class/mage/mage_class_sheet.typ", "Spellshaper"),           # the kind of ability; the card is cited once
+    ("game/rules/level_up.typ", "Goblin"),                       # the language and the people, not the card
+    ("game/rules/level_up.typ", "Thieves' Cant"),               # the language, not the Cheat ability
 }
 
 

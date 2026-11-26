@@ -85,7 +85,9 @@ text is available, so no cards.
   2026 changelog.
 - **Magic**: DONE, one page, up to the October 2, 2026 changelog. Spell scrolls and wands
   are left for the equipment cards.
-- **Level Up**: not started.
+- **Level Up**: DONE, one page (making a hero, leveling up), up to the October 2, 2026
+  changelog. Ancestries and backgrounds are not listed: they should become cards (not
+  started).
 
 ## Creatures
 
