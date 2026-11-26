@@ -104,13 +104,15 @@ Rendering (no `Cost:` or `Effect:` label):
 Format (`creature_rules.txt`): `blocks` like hero abilities, plus a `name` per block (`name`,
 `kind`, `cost`, `limitation`, `effect`) and, for attacks, `attacks`, `reach`, `range` and
 `damage`, shown as capsules on the cost line; `actions` (ACT stat, shown first and only if
-> 1), `reminder`, `hit_points`, `defense`, `speed`, `level`, `icon`. The shared blocks are in
+> 1), `reminder`, `hit_points`, `defense`, `speed`, `level`, `str`, `dex`, `int`, `wil` (shown
+only when not 0), `icon`. The shared blocks are in
 `game/creatures/passive_abilities.typ`: `passive_abilities.undying` and
 `passive_abilities.minion`. One creature = one file = one card by default (a text that is too
 long overflows, so that it shows). The `split: true` option allows the automatic split into
 two cards "1/2" and "2/2" (see `creature_rules.txt`); the exported PDF then shows both, one
 under the other. No card shared by legendary creatures (tried, then removed: it added
-nothing): Resilient (the book's saves), Bloodied and Last Stand are written in full on each legendary creature. Any
+nothing): Bloodied and Last Stand are written in full on each legendary creature, and its
+saves become stats. Any
 other key is silently ignored.
 
 ## Class companions: separate the spell from the creature

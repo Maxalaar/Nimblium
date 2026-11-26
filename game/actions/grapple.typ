@@ -33,8 +33,8 @@ its rider with disadvantage). What happens during a grapple (speed, advantage, c
 Combat rules page: it applies to creatures too.
 
 house-rule: Grab and Escape are both a STR or DEX check by the creature that acts, against
-DC 10 plus the higher of the other creature's STR and DEX. A creature's STR and DEX, when its
-card doesn't give them, are decided by the GM (Combat rules page, Creatures).
+DC 10 plus the higher of the other creature's STR and DEX. A creature's STR and DEX are 0
+unless its card shows them (Combat rules page, Creatures).
 The changelog makes grabbing a DC 10 Might or Finesse check, and the book has the target save.
 
 house-rule: Assess is removed from the game: asking the GM is plain role-play, and its two

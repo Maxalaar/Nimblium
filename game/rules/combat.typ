@@ -141,8 +141,8 @@
 
   A legendary creature takes a turn after each hero's turn, with all its actions each time.
 
-  When a rule needs a value its card doesn't give, such as a stat or a skill, the GM decides
-  it.
+  A creature's #STR, #DEX, #INT and #WIL are 0, unless its card shows them. Each of its
+  skills equals its stat.
 
   #rule[Minions][#passive_abilities.minion.effect]
 ]

@@ -5,6 +5,7 @@
 // The size is written in full in the data and shown as one letter on the card.
 #let size_letters = (Tiny: "T", Small: "S", Large: "L", Huge: "H", Gargantuan: "G")
 
+// Stat row: ACT (when not 1), HP, DEF, SPD, SIZ, LVL, then STR, DEX, INT, WIL when not 0.
 // Creatures follow creature_rules.txt: named blocks with capsules, like hero
 // abilities, passives first then actives.
 // Splitting is off by default: a creature is one card, and a text that is too
@@ -26,19 +27,28 @@
   if "speed" in creature { stats.push(("SPD", stat_value(creature.speed))) }
   if "size" in creature { stats.push(("SIZ", stat_value(size_letters.at(creature.size)))) }
   if "level" in creature { stats.push(("LVL", stat_value(creature.level))) }
+  // STR, DEX, INT and WIL are 0 by default and only shown when they are not.
+  // When the row needs two lines, they go on the second one.
+  let cut = stats.len()
+  let signed(v) = if v > 0 { "+" + str(v) } else { "−" + str(-v) }
+  for (key, label) in (("str", "STR"), ("dex", "DEX"), ("int", "INT"), ("wil", "WIL")) {
+    if creature.at(key, default: 0) != 0 { stats.push((label, stat_value(signed(creature.at(key))))) }
+  }
+  if cut == stats.len() or cut == 0 { cut = none }
 
   let card(parts, stats: (), part: none) = creat_card(
     creature.name,
     creature.at("type", default: ()),
     join_blocks(parts),
     stats: stats,
+    stat_cut: cut,
     icon: creature.at("icon", default: none),
     part: part,
   )
 
   context {
     let has_icon = family_icon(creature.at("type", default: ())) != none
-    let (width, height) = body_area(stat_lines(stats).len(), has_icon: has_icon)
+    let (width, height) = body_area(stat_lines(stats, cut: cut).len(), has_icon: has_icon)
     let fits(parts, size, gap) = body_height(join_blocks(parts), width, size, gap: gap) <= height
     let split = creature.at("split", default: false)
     if not split or blocks.len() < 2 or fits(blocks + extra, min_text_size, max_gap) {
