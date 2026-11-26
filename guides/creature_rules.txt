@@ -45,10 +45,10 @@ A creature's abilities are a list of blocks, exactly like a hero ability card:
 | `kind` | `"passive"` (always on or triggered) or `"active"` (costs actions) |
 | `cost` | `(actions(1),)`: every active block has a cost, even when it is 1 action |
 | `limitation` | `per_turn(1)`, `per_round(1)`, `per_encounter(1)`... |
-| `attacks` | number of attacks, when more than 1: `2` → capsule `2 attacks` |
+| `attacks` | number of attacks, when more than 1: `2` → capsule `2 Attacks` |
 | `reach` | melee reach, when more than 1: `2` → capsule `Reach 2` |
 | `range` | ranged attacks only: `8` → capsule `Range 8` |
-| `damage` | the attack's damage: `"1d6+2"` → capsule `1d6+2 damage` (content such as `[Die+#WIL radiant]` also works) |
+| `damage` | the attack's damage: `"1d6+2"` → capsule `1d6+2 Damage` (content such as `[Die+#WIL radiant]` also works) |
 | `effect` | the text, optional: a plain attack is fully described by its capsules |
 
 A block with a `damage` field is an attack. Its capsules come in this order: mode, cost,

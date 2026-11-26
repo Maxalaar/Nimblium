@@ -4,7 +4,8 @@
     name: "Unstoppable Protector",
     type: ("Ability", "Oathsworn", "Sacred Decree"),
     blocks: (
-      (kind: "passive", effect: [Your #speed increases by 2. Nothing can stop you from using #kw_interpose for an ally within your #kw_aura. When you #kw_interpose for an NPC who isn't fighting, you may #kw_interpose again this round.]),
+      (kind: "passive", effect: [Your #speed increases by 2.]),
+      (kind: "passive", effect: [Nothing can stop you from using #kw_interpose for an ally within your #kw_aura. When you #kw_interpose for an NPC who isn't fighting, you may #kw_interpose again this round.]),
     ),
     reminder: (keywords.aura, keywords.interpose,),
 )

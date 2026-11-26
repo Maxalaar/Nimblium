@@ -4,7 +4,8 @@
     name: "Survey the Battlefield",
     type: ("Ability", "Commander", "Champion of the Vanguard"),
     blocks: (
-      (kind: "passive", effect: [You can use #card_ref("Coordinated Strike!") 1 more time per encounter. You gain 1 more #card_ref("Combat Dice", "Combat Die") when you roll Initiative.]),
+      (kind: "passive", effect: [You can use #card_ref("Coordinated Strike!") 1 more time per encounter.]),
+      (kind: "passive", effect: [You gain 1 more #card_ref("Combat Dice", "Combat Die") when you roll Initiative.]),
     ),
 )
 

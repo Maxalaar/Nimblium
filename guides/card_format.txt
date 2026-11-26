@@ -40,8 +40,12 @@ front and the back side by side (5 mm apart). A clean design, black and white, l
   family icon): `icon: "x.svg"` is looked up in `art/icons/`, a path starting with `/` starts
   from the project root. SVGs are turned gray, other images (PNG) stay as they are. Nothing is
   linked automatically by file name. To add a family: `art.txt`, "Family icons" section.
-- Abilities and spells: dark capsules (Active, Passive, Levels, Upcast…, a capital on the first word only) + outlined capsules
-  (costs, limits), aligned left, with the text right below.
+- Abilities and spells: dark capsules (Active, Passive, Levels, Upcast…) + outlined capsules
+  (costs, limits), aligned left, with the text right below. Every capsule label has a capital
+  on its first word only, after the number if there is one: "1 Action", "2 Mana", "1/Round",
+  "1/Safe rest", "1 TotH charge", "2 Attacks", "1d6+2 Damage", "Reach 2". Names keep their
+  own capitals ("1 Fury Dice", "1 Searing Light use") and acronyms stay as they are (TotH,
+  BoS, AoE).
 - Creatures: section bars `── PASSIVE ──` (no capsules), shown only if the card has several
   sections.
 

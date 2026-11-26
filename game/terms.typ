@@ -34,10 +34,10 @@
 #let direbeast_cost(n) = str(n) + " Direbeast charge" + if n == 1 { "" } else { "s" }
 
 // Limits, for the `limitation` field. `n` may be a number or a stat such as WIL.
-#let per_turn(n) = str(n) + "/turn"
-#let per_round(n) = str(n) + "/round"
-#let per_encounter(n) = str(n) + "/encounter"
-#let per_safe_rest(n) = str(n) + "/" + safe_rest
+#let per_turn(n) = str(n) + "/Turn"
+#let per_round(n) = str(n) + "/Round"
+#let per_encounter(n) = str(n) + "/Encounter"
+#let per_safe_rest(n) = str(n) + "/Safe rest"
 
 // Formulas
 #let times(a, b) = [#a×#b]

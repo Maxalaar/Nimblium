@@ -10,7 +10,7 @@
     blocks: (
       (
         kind: "active",
-        cost: ([#times(2, "spell mana")],),
+        cost: ([#times(2, "Spell mana")],),
         effect: [When you cast a tiered spell that targets a single creature, cast a copy of it on a second target for free.],
       ),
     ),

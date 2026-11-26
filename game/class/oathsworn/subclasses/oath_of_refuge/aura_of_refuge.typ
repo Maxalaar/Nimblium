@@ -4,8 +4,10 @@
     name: "Aura of Refuge",
     type: ("Ability", "Oathsworn", "Oath of Refuge"),
     blocks: (
-      (kind: "passive", effect: [Your shields gain +#WIL #defense. A shield you hold counts as a free hand when you cast a spell.]),
-      (kind: "passive", effect: [You have an #kw_aura with a Reach of 4. You can #kw_interpose for an ally anywhere within your #kw_aura.]),
+      (kind: "passive", effect: [Your shields gain +#WIL #defense.]),
+      (kind: "passive", effect: [A shield you hold counts as a free hand when you cast a spell.]),
+      (kind: "passive", effect: [You have an #kw_aura with a Reach of 4.]),
+      (kind: "passive", effect: [You can #kw_interpose for an ally anywhere within your #kw_aura.]),
     ),
     reminder: (keywords.aura, keywords.interpose,),
 )

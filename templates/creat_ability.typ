@@ -24,10 +24,10 @@
 #let ability_block(block) = {
   let tags = block.at("cost", default: ()) + block.at("tags", default: ())
   if "limitation" in block { tags += (block.limitation,) }
-  if "attacks" in block { tags.push(str(block.attacks) + " attacks") }
+  if "attacks" in block { tags.push(str(block.attacks) + " Attacks") }
   if "reach" in block { tags.push("Reach " + str(block.reach)) }
   if "range" in block { tags.push("Range " + str(block.range)) }
-  if "damage" in block { tags.push([#block.damage damage]) }
+  if "damage" in block { tags.push([#block.damage Damage]) }
   if "name" in block { strong(block.name); linebreak() }
   ((mode_badge(block.kind),) + tags.map(tag_badge)).join(h(2pt))
   if "effect" in block { linebreak(); block.effect }

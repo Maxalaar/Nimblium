@@ -4,7 +4,8 @@
     name: "Dire Shadows",
     type: ("Ability", "Shadowmancer"),
     blocks: (
-      (kind: "passive", effect: [Attacks against your #card_ref("Shadow", "Shadows") have #kw_disadvantage. Your #card_ref("Shadow", "Shadows") take no damage when they succeed on a check.]),
+      (kind: "passive", effect: [Attacks against your #card_ref("Shadow", "Shadows") have #kw_disadvantage.]),
+      (kind: "passive", effect: [Your #card_ref("Shadow", "Shadows") take no damage when they succeed on a check.]),
     ),
     reminder: (keywords.disadvantage,),
 )

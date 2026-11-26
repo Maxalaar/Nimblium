@@ -4,7 +4,8 @@
     name: "Shield Wall",
     type: ("Ability", "Commander", "Champion of the Bulwark"),
     blocks: (
-      (kind: "passive", effect: [Your shield gains +2 #defense. Allies within 2 spaces of you can use your shield's #defense when they Defend.]),
+      (kind: "passive", effect: [Your shield gains +2 #defense.]),
+      (kind: "passive", effect: [Allies within 2 spaces of you can use your shield's #defense when they Defend.]),
     ),
 )
 
