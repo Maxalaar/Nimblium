@@ -9,6 +9,7 @@
   dying: [*Dying:* This creature can't have more than 1 action per turn and can't concentrate. Whenever it attacks, it gains 1 Wound unless it succeeds on a #dc(10) #STR check. Whenever it takes damage, it gains 2 Wounds, or 3 on a critical hit.],
   frightened: [*Frightened:* This creature has disadvantage on rolls while the source of its fear is nearby. Its #speed is halved while it moves closer to that source.],
   grappled: [*Grappled:* This creature can't move. Attacks against it have advantage.],
+  grappling: [*Grappling:* This creature holds another one Grappled. It moves at half its #speed, unless it is bigger. Attacks against it have advantage. The grapple ends on a critical hit against either of them, on a Knockback, or if this creature is Incapacitated.],
   restrained: [*Restrained:* This creature can't move. Attacks against it have advantage.],
   hampered: [*Hampered:* This creature's actions or movement are reduced, for example by Dazed, Grappled, Prone, or Difficult Terrain.],
   incapacitated: [*Incapacitated:* This creature can't do anything. Attacks against it have advantage. Melee attacks that hit it are critical hits.],

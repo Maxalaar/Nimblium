@@ -20,7 +20,7 @@
         effect: [Make a #STR or #DEX check against #dc(10) plus the #STR or #DEX of the creature grappling you, whichever is higher. On a success, you are no longer #kw_grappled.],
       ),
     ),
-    reminder: (keywords.grappling, conditions.grappled, conditions.riding),
+    reminder: (conditions.grappling, conditions.grappled, conditions.riding),
 )
 
 #let grapple = creat_ability(ability_data)
@@ -30,7 +30,7 @@ review: style=2026-11-14 changelog=2026-10-02
 
 Source: Core Rules p.10 (Grappling) and the 2026-10-02 changelog (a bigger creature attacks
 its rider with disadvantage). What happens during a grapple (speed, advantage, crit) is the
-Grappling keyword (game/keywords.typ), in the reminders here and on the Combat page.
+Grappling condition (game/conditions.typ), in the reminders here and on the Combat page.
 
 house-rule: Grab and Escape are both a STR or DEX check by the creature that acts, against
 DC 10 plus the higher of the other creature's STR and DEX. A creature's STR and DEX are 0
