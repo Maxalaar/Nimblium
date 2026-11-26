@@ -125,3 +125,9 @@ to a card, add or complete a line here.
 - **Weapon requirements.** The book's "Req. n STR" on a weapon becomes Heavy: you can't
   attack with it below n STR (the book gives no penalty). (`weapon_properties.typ`)
 - **No prices on items**: the cards show no cost. (`game/items/`)
+- **No weapon proficiency.** Any hero can use any weapon at full power, and class sheets list
+  no weapons (book: a weapon without proficiency can't crit). Unarmed strikes can't crit
+  unless an ability says so. Armor proficiency stays. (`game/rules/combat.typ`)
+- **Equip.** Putting away a weapon or shield costs 1 action; taking one in a free hand and
+  dropping an item are free (book: swap for free, 1/round). (`game/actions/basic_actions.typ`,
+  `game/rules/combat.typ`)

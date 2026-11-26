@@ -96,9 +96,9 @@ text is available, so no cards.
 
 - **Weapons**: DONE, 16 melee and 7 ranged, one card each (DMG, REACH or RNGE, SLOT; no
   cost; category as last type, damage type as a passive, one icon per kind of weapon), up to the October 2, 2026 changelog (Greatmaul 3d4, Greatsword 1d12, the old Spear
-  becomes the Greatspear, a new Spear whose stats are a guess). Weapon rules (proficiency,
-  swapping, dual wielding, unarmed strikes, improvised weapons) are on the Combat page,
-  inventory slots on the Adventure page.
+  becomes the Greatspear, a new Spear whose stats are a guess). Weapon rules (dual wielding, unarmed strikes, improvised weapons) are on the Combat page,
+  inventory slots on the Adventure page. No weapon proficiency (class sheets list no weapons);
+  swapping is the Equip basic action. To do with the Zephyr: its unarmed strikes can crit.
 - To do: armor, shields, adventuring gear (potions, torches...), magic items, wands and
   spell scrolls.
 

@@ -11,7 +11,6 @@
     ("Key stats", [#INT, #WIL]),
     ("Hit die", [d6, +4 #HP per level]),
     ("Armor", [Cloth]),
-    ("Weapons", [Blades, staves, wands]),
   ),
   levels: (
     (none, [Fire, Ice and Lightning cantrips.]),

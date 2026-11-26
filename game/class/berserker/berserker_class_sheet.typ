@@ -12,7 +12,6 @@
     ("Key stats", [#STR, #DEX]),
     ("Hit die", [d12, +8 #HP per level]),
     ("Armor", [None]),
-    ("Weapons", [All #STR weapons]),
   ),
   levels: (
     (n, [#card_ref("Rage"), #card_ref("Fury Dice"), #card_ref("That all you got?!").]),

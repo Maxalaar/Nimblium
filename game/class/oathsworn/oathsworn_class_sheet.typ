@@ -13,7 +13,6 @@
     ("Key stats", [#STR, #WIL]),
     ("Hit die", [d10, +7 #HP per level]),
     ("Armor", [All armor]),
-    ("Weapons", [Melee #STR weapons]),
   ),
   levels: (
     (n, [#card_ref("Radiant Judgment"). #card_ref("Lay on Hands").]),

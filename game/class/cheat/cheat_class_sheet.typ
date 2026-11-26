@@ -12,7 +12,6 @@
     ("Key stats", [#DEX, #INT]),
     ("Hit die", [d6, +4 #HP per level]),
     ("Armor", [Leather]),
-    ("Weapons", [#DEX weapons]),
   ),
   levels: (
     (n, [#card_ref("Sneak Attack"). #card_ref("Vicious Opportunist").]),

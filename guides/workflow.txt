@@ -33,7 +33,7 @@ How we work: sources, organization, checks, tracking.
 ## Class sheet (`game/class/<name>/<name>_class_sheet.typ`)
 
 One A4 page per class, made with `templates/class_sheet.typ`: starting information on one line (key
-stats, hit die with its HP per level, armor, weapons; not the starting equipment), the table of levels 1 to 20
+stats, hit die with its HP per level, armor; not the weapons (no weapon proficiency) nor the starting equipment), the table of levels 1 to 20
 (what you gain at each level, max spell tier) and, at the bottom, the subclasses by level and
 the lists of options. It replaces cards that would only list choices by level. No repetition:
 a rule already on a card is not repeated, the sheet names the card (`#card_ref`). Sheets

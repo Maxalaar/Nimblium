@@ -12,7 +12,6 @@
     ("Key stats", [#DEX, #WIL]),
     ("Hit die", [d8, +5 #HP per level]),
     ("Armor", [Leather]),
-    ("Weapons", [#DEX weapons]),
   ),
   levels: (
     (n, [#card_ref("Hunter's Mark"). #card_ref("Forager").]),

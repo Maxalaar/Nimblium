@@ -73,8 +73,8 @@ Weapons today (`game/items/weapons/melee/`, `game/items/weapons/ranged/`), one c
 no cost. Fields:
 
 - `type`: `("Item", "Weapon", "Melee" | "Ranged", <category>)`, e.g.
-  `("Item","Weapon","Melee","Blade")`. The category is what class sheets name for
-  proficiency: Blade (daggers, sickle, swords, rapier, glaive), Axe, Hammer (mace, hammers),
+  `("Item","Weapon","Melee","Blade")`. The category describes the weapon (there is no
+  weapon proficiency; abilities may name it): Blade (daggers, sickle, swords, rapier, glaive), Axe, Hammer (mace, hammers),
   Staff, Polearm (spears), Bow, Crossbow, Sling, Thrown (javelins, throwing hammers).
 - `family_icon`: the icon of its kind, on both faces (`dagger.svg`, `sword.svg`,
   `throwing_axe.svg`, `bow.svg`...), since a category such as Blade holds several kinds.

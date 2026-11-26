@@ -12,7 +12,6 @@
     ("Key stats", [#INT, #DEX]),
     ("Hit die", [d8, +5 #HP per level]),
     ("Armor", [Cloth]),
-    ("Weapons", [Blades, wands]),
   ),
   levels: (
     (n, [#card_ref("Shadow Blast"), #card_ref("Summon Shadow"), #card_ref("Command Shadows") and the #card_ref("Shadow").]),

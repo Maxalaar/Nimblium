@@ -11,7 +11,6 @@
     ("Key stats", [#WIL, #DEX]),
     ("Hit die", [d8, +5 #HP per level]),
     ("Armor", [Cloth, leather]),
-    ("Weapons", [Staves, wands]),
   ),
   levels: (
     (none, [Lightning and Wind cantrips. #card_ref("Beastshift"). #card_ref("Fearsome Beast").]),

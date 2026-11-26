@@ -12,7 +12,6 @@
     ("Key stats", [#WIL, #STR]),
     ("Hit die", [d10, +7 #HP per level]),
     ("Armor", [Mail, shields]),
-    ("Weapons", [#STR weapons, wands]),
   ),
   levels: (
     (n, [Radiant and Necrotic cantrips. #card_ref("Searing Light").]),

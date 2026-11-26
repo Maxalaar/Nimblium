@@ -3,8 +3,8 @@
 
 // Item cards (weapons today; armor, shields and gear later).
 // `item.type` is ("Item", family, group, category), e.g.
-// ("Item", "Weapon", "Melee", "Blade"). The category is what class sheets name for
-// proficiency. `item.family_icon` is the icon of its kind (dagger, sword, bow...), on both
+// ("Item", "Weapon", "Melee", "Blade"). The category describes the weapon; abilities may
+// name it. `item.family_icon` is the icon of its kind (dagger, sword, bow...), on both
 // faces.
 // The stat row shows what describes the whole item: damage, reach, range,
 // then the inventory slots it takes, always last.
