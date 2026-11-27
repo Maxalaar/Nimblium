@@ -3,7 +3,7 @@
 
 #rules_page(
   name: "Combat",
-  intro: [How a fight runs, turn after turn, and what heroes and creatures can do in it.],
+  intro: [Turns, attacks, movement and conditions.],
 )[
 
 #section("Starting combat")[

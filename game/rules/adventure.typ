@@ -1,9 +1,9 @@
 #import "/global.typ": *
-#import "/templates/rules_page.typ": rules_page, section, rule, example, values, verso
+#import "/templates/rules_page.typ": rules_page, section, rule, example, values
 
 #rules_page(
   name: "Adventure",
-  intro: [How to make a hero, what heroes do outside a fight, how they recover and how they grow.],
+  intro: [Making a hero, checks, rest and growth.],
 )[
 
 #section("Rounding")[
@@ -84,8 +84,6 @@
     [Gargantuan], [A castle keep], [#times(4, 4) or more],
   )
 ]
-
-#verso
 
 #section("Hit points")[
   Your #HP measure how much damage you can endure. Damage reduces them, but never below 0.

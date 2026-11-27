@@ -3,7 +3,7 @@
 
 #rules_page(
   name: "Magic",
-  intro: [How heroes cast spells, pay for them with mana and make them stronger.],
+  intro: [Spells, mana, upcasting and chaos.],
 )[
 
 #section("Spells")[

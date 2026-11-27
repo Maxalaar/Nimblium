@@ -50,8 +50,8 @@ what is looked up (rests, conditions...). A section (`#section("Title")[...]`) n
 across two columns.
 
 Planned areas:
-- **Adventure** (done, recto-verso): rounding, stats, skills, checks, advantage, size; on the
-  verso HP, temporary HP, Rest (no Hit Dice, no Field Rest), items, making a hero (class,
+- **Adventure** (done, recto-verso, the text flows with no forced verso): rounding, stats, skills, checks, advantage, size,
+  HP, temporary HP, Rest (no Hit Dice, no Field Rest), items, making a hero (class,
   ancestry and background, stat arrays, skills, the rest of the sheet) and leveling up. No
   lodging and no downtime. Ancestries are cards; backgrounds will be cards.
 - **Combat** (done): turn, pool of 3 actions, attacks, Defense, movement and reach, Cover,
