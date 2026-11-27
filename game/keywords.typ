@@ -11,7 +11,7 @@
   advantage: [*Advantage:* Roll 1 additional die of the same type for each instance of advantage, then remove that many of the lowest results.],
   disadvantage: [*Disadvantage:* Roll 1 additional die of the same type for each instance of disadvantage, then remove that many of the highest results.],
   vulnerable: [*Vulnerable:* This creature takes 10 additional damage from the listed damage type.],
-  knockback: [*Knockback X:* Push this creature X spaces away. If an obstacle stops it, it takes 1d6 damage per space it didn't move, shared with the creature it hits. Small, Tiny and Flying creatures are pushed twice as far, Large ones half as far, and Huge and Gargantuan ones not at all.],
+  knockback: [*Knockback X:* Push this creature X spaces away. If an obstacle stops it, it and the creature it hits each take damage equal to the pusher's #LVL+1 per space it didn't move. Small, Tiny and Flying creatures are pushed twice as far, Large ones half as far, and Huge and Gargantuan ones not at all.],
   hide: [*Hide:* Spend 1 action to Hide from the creatures you have Cover from. Your next attack has advantage, then you lose Hide.],
   cover: [*Cover:* An obstacle partially blocks a creature's line of attack to you, so its ranged attacks against you have disadvantage.],
   swarm: [*Swarm:* This creature can move into and stay in the space of other creatures. It can attack the creatures in its space.],
@@ -21,6 +21,9 @@
 )
 
 /*
+house-rule: Knockback damage is the pusher's LVL+1 per space it didn't move,
+taken by both creatures (book: 1d6 per space, shared), so it keeps pace with HP.
+
 house-rule: Cover and Full Cover only affect ranged attacks, and are worded with line of
 attack.
 

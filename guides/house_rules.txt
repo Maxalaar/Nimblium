@@ -49,7 +49,9 @@ to a card, add or complete a line here.
   each "−" is −3. (`game/rules/combat.typ`, Creatures section; `creature_rules.txt` §4)
 - **Knockback is the only forced movement.** The size rule (Small, Tiny and Flying ×2, Large
   half, Huge and Gargantuan not at all) is part of the Knockback keyword; other cards that move
-  a creature do exactly what they say. Rushed attacks only add disadvantage to attack rolls
+  a creature do exactly what they say. A creature stopped by an obstacle and the creature it
+  hits each take the pusher's LVL+1 per space not moved (book: 1d6 per space,
+  shared), so the damage keeps pace with HP. Rushed attacks only add disadvantage to attack rolls
   (the book also gave the target advantage on its save). (`game/keywords.typ`,
   `game/rules/combat.typ`)
 - **No "who can hear you".** A range the book gives as "who can hear you" or "within
