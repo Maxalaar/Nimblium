@@ -6,7 +6,7 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [When you choose this ancestry, choose Small or Medium. You can't change it later.]),
       (kind: "narrative", name: "Appearance", effect: [A humanoid plant or mushroom, with bark for skin and leaves, flowers or a cap for hair.]),
-      (kind: "active", limitation: per_encounter(1), effect: [When an adjacent enemy hits you, it is #kw_dazed.]),
+      (kind: "active", name: "Spores", limitation: per_encounter(2), effect: [When an adjacent enemy hits you, it is #kw_dazed.]),
     ),
     reminder: (conditions.dazed,),
 )
@@ -23,4 +23,6 @@ of dazing adjacent enemies when you gain Wounds (balance pass, user ruling 2026-
 
 house-rule: Uses: 1/encounter, as in the book, instead of KEY times per Rest and once per turn (user
 ruling 2026-11-27). Later notes that say "KEY times per Rest" describe the older version.
+
+house-rule: 2/encounter: a small reactive effect (user ruling 2026-11-27).
 */

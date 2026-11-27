@@ -6,7 +6,7 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [You are Medium.]),
       (kind: "narrative", name: "Appearance", effect: [A big, muscular humanoid with gray or green skin, tusks and a heavy jaw.]),
-      (kind: "active", limitation: per_encounter(1), effect: [When you would drop to 0 #HP, you drop to #times(3, KEY) #HP instead.]),
+      (kind: "active", name: "Relentless", limitation: per_encounter(1), effect: [When you would drop to 0 #HP, you drop to #times(3, KEY) #HP instead.]),
     ),
 )
 

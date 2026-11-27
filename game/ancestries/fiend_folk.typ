@@ -6,7 +6,7 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [You are Medium.]),
       (kind: "narrative", name: "Appearance", effect: [A humanoid bearing the marks of a fiend, such as horns, a pointed tail, ember eyes or reddish skin.]),
-      (kind: "active", limitation: per_encounter(1), effect: [When you hit a creature, it is #kw_frightened of you until the end of its next turn.]),
+      (kind: "active", name: "Infernal Dread", limitation: per_encounter(1), effect: [When you hit a creature, it is #kw_frightened of you until the end of its next turn.]),
     ),
     reminder: (conditions.frightened,),
 )

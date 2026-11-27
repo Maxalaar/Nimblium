@@ -54,6 +54,10 @@ A reviewed card ends with a notes block holding `review: style=<date> changelog=
   encounter, Rest): `limitation: (per_turn(1), per_safe_rest(KEY))`. A spell puts its limit in `cost` (`cost: (mana(4), per_round(1))`), shown
   as a capsule above the effect. The text keeps a limit only when it covers one part of the
   effect (Warding Bond, Seething Storm, Alacrity's second use) or a Levels line.
+- **One passive block per trait**: the passives of one trait go in a single block, one sentence
+  each (Stout: "Your Vitality increases by 2. You can have 1 more Wound before you die. Your
+  speed decreases by 1."). A choice (Size) and an active stay separate blocks.
+  On an ancestry card, every block has a name.
 - **DC always written**: there is no default DC. Every check an effect calls for states its DC
   on the card: "makes a #DEX check against #dc(10, stat: KEY)". Only checks with their own
   thresholds (On 9 or less...) or compared to something else don't need one.

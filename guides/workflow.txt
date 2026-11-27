@@ -50,8 +50,10 @@ what is looked up (rests, conditions...). A section (`#section("Title")[...]`) n
 across two columns.
 
 Planned areas:
-- **Adventure** (done): stats, skills, checks, advantage, size, falling; on the verso
-  HP, temporary HP, Safe Rest (no Hit Dice, no Field Rest). No lodging and no downtime.
+- **Adventure** (done, recto-verso): rounding, stats, skills, checks, advantage, size; on the
+  verso HP, temporary HP, Rest (no Hit Dice, no Field Rest), items, making a hero (class,
+  ancestry and background, stat arrays, skills, the rest of the sheet) and leveling up. No
+  lodging and no downtime. Ancestries are cards; backgrounds will be cards.
 - **Combat** (done): turn, pool of 3 actions, attacks, Defense, movement and reach, Cover,
   grapples in progress, Knockback, Concentration, Dying and Wounds; on the verso the
   conditions (taken from `game/conditions.typ`) and the creature rules
@@ -59,8 +61,6 @@ Planned areas:
   Actions, Grapple, Triggered Actions): the page refers to them without repeating them.
 - **Magic** (done): schools, casting, mana, upcasting, cantrips, how to read a spell card,
   utility spells. One page. Spell scrolls merge into the Wand card (game/items/gear/).
-- **Level Up** (done): making a hero (class, ancestry and background, stat arrays, skills, the rest of the sheet) and leveling up. One page. Ancestries and
-  backgrounds will be cards.
 - No equipment page: equipment will become cards.
 
 Writing:

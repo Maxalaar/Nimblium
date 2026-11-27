@@ -6,7 +6,7 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [You are Medium.]),
       (kind: "narrative", name: "Appearance", effect: [A tall, radiant humanoid with luminous eyes, and sometimes feathered wings or a faint halo.]),
-      (kind: "active", cost: (actions(1),), limitation: per_encounter(1), effect: [You or an adjacent creature regains #LVL+#KEY #HP.]),
+      (kind: "active", name: "Healing Light", cost: (actions(1),), limitation: per_encounter(1), effect: [You or an adjacent creature regains #LVL+#KEY #HP.]),
     ),
 )
 

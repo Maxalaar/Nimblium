@@ -6,7 +6,7 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [You are Small.]),
       (kind: "narrative", name: "Appearance", effect: [Tiny next to a human, with a big nose, bright eyes and wild hair.]),
-      (kind: "active", limitation: per_encounter(1), effect: [When an ally within 6 spaces rolls a die, you may let it reroll that die.]),
+      (kind: "active", name: "Optimist", limitation: per_encounter(2), effect: [When an ally within 6 spaces rolls a die, you may let it reroll that die.]),
     ),
 )
 
@@ -23,4 +23,6 @@ house-rule: No −1 speed: Gnome-folk is the ancestry that helps allies (identit
 
 house-rule: Uses: 1/encounter, as in the book, instead of KEY times per Rest and once per turn (user
 ruling 2026-11-27). Later notes that say "KEY times per Rest" describe the older version.
+
+house-rule: 2/encounter: a small reactive effect (user ruling 2026-11-27).
 */

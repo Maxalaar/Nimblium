@@ -6,7 +6,7 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [You are Medium.]),
       (kind: "narrative", name: "Appearance", effect: [A humanoid beast with a powerful build, most often a horned bull, sometimes a boar or a bear.]),
-      (kind: "active", limitation: per_encounter(1), effect: [When you hit a creature with a melee attack after moving at least 4 spaces this turn, it takes #LVL+#KEY more damage and you give it #kw_knockback 2.]),
+      (kind: "active", name: "Charge", limitation: per_encounter(1), effect: [When you hit a creature with a melee attack after moving at least 4 spaces this turn, it takes #LVL+#KEY more damage and you give it #kw_knockback 2.]),
     ),
     reminder: (keywords.knockback,),
 )

@@ -6,8 +6,8 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [You are Medium.]),
       (kind: "narrative", name: "Appearance", effect: [A humanoid from another plane, with a slightly blurred outline, as if not quite here.]),
-      (kind: "active", effect: [When you Defend, you may gain 1 Wound to ignore every effect of that attack.]),
-      (kind: "passive", effect: [You can have 2 fewer Wounds before you die.]),
+      (kind: "active", name: "Planeshift", effect: [When you Defend, you may gain 1 Wound to ignore every effect of that attack.]),
+      (kind: "passive", name: "Thin Anchor", effect: [You can have 2 fewer Wounds before you die.]),
     ),
 )
 

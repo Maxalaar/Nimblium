@@ -6,7 +6,7 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [You are Medium.]),
       (kind: "narrative", name: "Appearance", effect: [An ordinary human, of any height, build or skin color.]),
-      (kind: "passive", effect: [You have +1 to all your skills and to Initiative.]),
+      (kind: "passive", name: "Versatile", effect: [You have +1 to all your skills and to Initiative.]),
     ),
 )
 

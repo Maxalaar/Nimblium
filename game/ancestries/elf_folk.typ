@@ -6,8 +6,8 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [You are Medium.]),
       (kind: "narrative", name: "Appearance", effect: [Tall and slender, with pointed ears, sharp features and light, quick movements.]),
-      (kind: "passive", effect: [Your #speed increases by 1.]),
-      (kind: "active", limitation: per_encounter(1), effect: [When you attack, the attack has #kw_advantage.]),
+      (kind: "passive", name: "Light Step", effect: [Your #speed increases by 1.]),
+      (kind: "active", name: "Elven Precision", limitation: per_encounter(1), effect: [When you attack, the attack has #kw_advantage.]),
     ),
     reminder: (keywords.advantage,),
 )

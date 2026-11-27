@@ -6,7 +6,7 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [You are Small.]),
       (kind: "narrative", name: "Appearance", effect: [A small humanoid rat with whiskers, a long bare tail and quick, nimble hands.]),
-      (kind: "passive", effect: [You can move through the spaces of creatures larger than you.]),
+      (kind: "passive", name: "Scurry", effect: [You can move through the spaces of creatures larger than you.]),
     ),
 )
 

@@ -6,8 +6,7 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [When you choose this ancestry, choose Small or Medium. You can't change it later.]),
       (kind: "narrative", name: "Appearance", effect: [A humanoid bird with feathers, a beak and wings, whose bones are light and hollow.]),
-      (kind: "passive", effect: [You are #kw_flying while you wear Cloth armor, Leather armor or no armor.]),
-      (kind: "passive", effect: [Your Vitality decreases by 2.]),
+      (kind: "passive", name: "Wings", effect: [You are #kw_flying while you wear Cloth armor, Leather armor or no armor. Your Vitality decreases by 2.]),
     ),
     reminder: (keywords.flying,),
 )

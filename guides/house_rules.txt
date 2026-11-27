@@ -63,7 +63,7 @@ to a card, add or complete a line here.
 - **Max HP = 10 + LVL × Vitality** (class value + STR), with
   no roll and no starting HP per class. Class sheets show "d8, +5 HP per level" (book: a
   starting HP per class, then roll the Hit Die with advantage or take the fixed value).
-  (`game/rules/level_up.typ`)
+  (`game/rules/adventure.typ`)
 - **Cover and Full Cover** only affect ranged attacks, and are worded with "line of attack".
   (`game/keywords.typ`)
 
@@ -188,7 +188,7 @@ to a card, add or complete a line here.
   (`game/spells/radiant/redeem.typ`)
 - **Skill points**: 1 skill point at every level, level 1 included (20 in all), and points never
   move (book: 4 at creation, then 1 per level and you may move 1 point). What every level gives
-  (Vitality HP, skill point) is written on the class sheet. (`game/rules/level_up.typ`)
+  (Vitality HP, skill point) is written on the class sheet. (`game/rules/adventure.typ`)
 - **No Hit Dice, no Field Rest.** Vitality (the class's value + STR, at least 1; the classes with
   STR as a Key Stat have 1 less than their old Hit Die value) replaces the Hit Die, gives the
   HP per level and counts heals. The Safe Rest is the only rest. Cards that spent Hit
@@ -203,19 +203,23 @@ to a card, add or complete a line here.
   hit, 3 on a crit). Death at 6 Wounds. Unstoppable Force, Enduring Rage and Unyielding Resolve
   were adjusted. (`game/conditions.typ`)
 - **No languages** for now: the Languages rule, Thieves' Cant (Cheat) and Devoted Acolyte
-  (Shadowmancer) are removed, and ancestries give no language. (`game/rules/level_up.typ`)
+  (Shadowmancer) are removed, and ancestries give no language. (`game/rules/adventure.typ`)
 - **Ancestries**: all 24 of the Core Rules, renamed "X-folk" (Bunbun is Rabbit-folk, Kobold is
   Lizard-folk, Celestial is Angel-folk...), with no Common/Exotic tiers and no language. Shape-folk
   (Changeling) is dropped. Balance pass (2026-11-27): one main trait per ancestry, passives use
-  fixed numbers (Turtle-folk +2 Defense, Dwarf-folk +2 Vitality, Giant-folk +1 STR), and limited
-  actives work 1/encounter (Orc-folk's Relentless drops you to 3×KEY HP); KEY only scales
+  fixed numbers (Dwarf-folk +2 Vitality, Giant-folk +1 STR; Turtle-folk +KEY Defense), and
+  limited actives work 1/encounter for big effects, 2/encounter for small reactive ones (Orc-folk's Relentless drops you to 3×KEY HP); KEY only scales
   their effect (max +5). Bull-folk charges (1/encounter): after 4 spaces of movement, a melee hit
   deals LVL+KEY more damage and gives Knockback 2. Identity pass (2026-11-27): a bonus belongs to one ancestry
   only (Vitality to Dwarf-folk, Defense to Turtle-folk, Initiative to Human-folk, checks to
   Small-folk and Human-folk, a free move to Rabbit-folk); Angel-folk heals, Fiend-folk
   frightens, Goblin-folk swaps with an ally, Rat-folk moves through larger creatures,
-  Construct-folk ignores conditions. (`game/ancestries/`)
+  Construct-folk overdrives (1 Wound for 2 actions), Lizard-folk heals itself (LVL+KEY HP,
+  2/encounter). Every block of an ancestry card has a name. (`game/ancestries/`)
 - **Chaos Table** is public, on the Magic page (book: the GM's secret). The Control Table stays a
   card of the Invoker of Control. (`game/rules/magic.typ`)
 - **No default DC**: each card states the DC of the checks it calls for (usually DC 10+KEY); the
   rules pages give no default. (`game/rules/adventure.typ`, `game/rules/magic.typ`)
+- **Success at a cost**: when a check fails, the GM chooses: a failure, or a success at a cost.
+  (`game/rules/adventure.typ`)
+- **No falling rule**: the GM decides what a fall does. (`game/rules/adventure.typ`)

@@ -6,9 +6,7 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [You are Medium.]),
       (kind: "narrative", name: "Appearance", effect: [Short and broad, with thick bones, a heavy beard or braids, and a body built like stone.]),
-      (kind: "passive", effect: [Your Vitality increases by 2.]),
-      (kind: "passive", effect: [You can have 1 more Wound before you die.]),
-      (kind: "passive", effect: [Your #speed decreases by 1.]),
+      (kind: "passive", name: "Stout", effect: [Your Vitality increases by 2. You can have 1 more Wound before you die. Your #speed decreases by 1.]),
     ),
 )
 

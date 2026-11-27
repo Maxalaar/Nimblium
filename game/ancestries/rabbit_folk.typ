@@ -6,7 +6,7 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [You are Small.]),
       (kind: "narrative", name: "Appearance", effect: [A small humanoid rabbit, with long ears, soft fur and powerful hind legs.]),
-      (kind: "active", limitation: per_encounter(1), effect: [Move up to your #speed for free.]),
+      (kind: "active", name: "Bound", limitation: per_encounter(2), effect: [Move up to your #speed for free.]),
     ),
 )
 
@@ -22,4 +22,6 @@ your turn (book: after Defending or before Interposing; user ruling 2026-11-27).
 
 house-rule: Uses: 1/encounter, as in the book, instead of KEY times per Rest and once per turn (user
 ruling 2026-11-27). Later notes that say "KEY times per Rest" describe the older version.
+
+house-rule: 2/encounter: a small reactive effect (user ruling 2026-11-27).
 */

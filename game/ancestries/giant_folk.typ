@@ -6,8 +6,7 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [You are Large.]),
       (kind: "narrative", name: "Appearance", effect: [A huge humanoid, twice as tall as a human, with a body as broad as a boulder.]),
-      (kind: "passive", effect: [Your #STR increases by 1.]),
-      (kind: "passive", effect: [Ranged attacks against you have #kw_advantage.]),
+      (kind: "passive", name: "Giant Strength", effect: [Your #STR increases by 1. Ranged attacks against you have #kw_advantage.]),
     ),
     reminder: (keywords.advantage,),
 )

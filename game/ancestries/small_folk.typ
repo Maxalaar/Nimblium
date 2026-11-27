@@ -6,7 +6,7 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [You are Small.]),
       (kind: "narrative", name: "Appearance", effect: [Half the height of a human, with curly hair, a round face and big, hairy bare feet.]),
-      (kind: "active", limitation: per_encounter(1), effect: [When you fail a check, you succeed instead.]),
+      (kind: "active", name: "Lucky", limitation: per_encounter(1), effect: [When you fail a check, you succeed instead.]),
     ),
 )
 
