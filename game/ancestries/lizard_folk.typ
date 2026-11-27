@@ -6,7 +6,7 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [You are Small.]),
       (kind: "narrative", name: "Appearance", effect: [A small humanoid lizard with scales, a long snout and a thin tail that grows back when lost.]),
-      (kind: "active", name: "Regrowth", cost: (actions(1),), limitation: per_encounter(2), effect: [You regain #LVL+#KEY #HP.]),
+      (kind: "active", name: "Regrowth", cost: (actions(1),), limitation: per_safe_rest(2), effect: [You regain #times(2, "(" + LVL + "+" + KEY + ")") #HP.]),
     ),
 )
 
@@ -24,4 +24,5 @@ house-rule: Uses: 1/encounter, as in the book, instead of KEY times per Rest and
 ruling 2026-11-27). Later notes that say "KEY times per Rest" describe the older version.
 
 house-rule: Regrowth heals you LVL+KEY HP for 1 action, 2/encounter, instead of adding to other heals (user ruling 2026-11-27).
+house-rule: Regrowth is 2/Rest and heals 2×(LVL+KEY) HP, instead of LVL+KEY HP 2/encounter (user ruling 2026-11-27: a per-encounter heal can be abused with many short fights).
 */

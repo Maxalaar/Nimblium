@@ -195,6 +195,11 @@ to a card, add or complete a line here.
   Dice were rewritten (Healing Potion, I Can Do This ALL DAY!, Infuse Strength, Enduring Soul,
   Field Medic, Song of Rest, Impressive Form, Fiendish Boon, Mountainous Tenacity, Warm
   Pastries). (`game/rules/adventure.typ`, `game/rules/level_up.typ`)
+- **No healing farmed from short fights** (user ruling 2026-11-27): anything that restores HP
+  outside a cost is limited per Rest, never per encounter. Song of Rest is 2/Rest (book: Hit Dice
+  bonus), Hold the Line 1/Rest (book: 1/encounter), and the ancestries' heals too (see Ancestries).
+  Temporary HP are lost when combat ends (before: they lasted until a Rest), so a lucky roll on
+  Enduring Soul can't be carried to the next fight. (`game/rules/adventure.typ`)
 - **Rest.** The book's Safe Rest is simply the Rest: a night of sleep, about 8 hours, when the GM
   says the heroes can rest, with no need for a safe place. Cards read it through `#safe_rest`
   and `per_safe_rest(n)` ("1/Rest"). Guides may still say Safe Rest: it is the same thing.
@@ -208,14 +213,16 @@ to a card, add or complete a line here.
   Lizard-folk, Celestial is Angel-folk...), with no Common/Exotic tiers and no language. Shape-folk
   (Changeling) is dropped. Balance pass (2026-11-27): one main trait per ancestry, passives use
   fixed numbers (Dwarf-folk +2 Vitality, Giant-folk +1 STR; Turtle-folk +KEY Defense), and
-  limited actives work 1/encounter for big effects, 2/encounter for small reactive ones (Orc-folk's Relentless drops you to 3×KEY HP); KEY only scales
+  limited actives work 1/encounter for big effects, 2/encounter for small reactive ones; anything that
+  restores HP is per Rest, so short fights can't be farmed (Angel-folk's Healing Light and Lizard-folk's
+  Regrowth 2/Rest; Orc-folk's Relentless 1/Rest, drops you to 3×KEY HP); KEY only scales
   their effect (max +5). Bull-folk charges (1/encounter): after 4 spaces of movement, a melee hit
   deals LVL+KEY more damage and gives Knockback 2. Identity pass (2026-11-27): a bonus belongs to one ancestry
   only (Vitality to Dwarf-folk, Defense to Turtle-folk, Initiative to Human-folk, checks to
   Small-folk and Human-folk, a free move to Rabbit-folk); Angel-folk heals, Fiend-folk
   frightens, Goblin-folk swaps with an ally, Rat-folk moves through larger creatures,
-  Construct-folk overdrives (1 Wound for 2 actions), Lizard-folk heals itself (LVL+KEY HP,
-  2/encounter). Every block of an ancestry card has a name. (`game/ancestries/`)
+  Construct-folk overdrives (1 Wound for 2 actions), Lizard-folk heals itself (2×(LVL+KEY) HP,
+  2/Rest). Every block of an ancestry card has a name. (`game/ancestries/`)
 - **Chaos Table** is public, on the Magic page (book: the GM's secret). The Control Table stays a
   card of the Invoker of Control. (`game/rules/magic.typ`)
 - **No default DC**: each card states the DC of the checks it calls for (usually DC 10+KEY); the

@@ -6,7 +6,7 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [You are Medium.]),
       (kind: "narrative", name: "Appearance", effect: [A tall, radiant humanoid with luminous eyes, and sometimes feathered wings or a faint halo.]),
-      (kind: "active", name: "Healing Light", cost: (actions(1),), limitation: per_encounter(1), effect: [You or an adjacent creature regains #LVL+#KEY #HP.]),
+      (kind: "active", name: "Healing Light", cost: (actions(1),), limitation: per_safe_rest(2), effect: [You or an adjacent creature regains #LVL+#KEY #HP.]),
     ),
 )
 
@@ -27,4 +27,5 @@ house-rule: Instead of help on checks (Small-folk's and Human-folk's), the angel
 
 house-rule: Uses: 1/encounter, as in the book, instead of KEY times per Rest and once per turn (user
 ruling 2026-11-27). Later notes that say "KEY times per Rest" describe the older version.
+house-rule: Healing Light is 2/Rest instead of 1/encounter (user ruling 2026-11-27: a per-encounter heal can be abused with many short fights).
 */

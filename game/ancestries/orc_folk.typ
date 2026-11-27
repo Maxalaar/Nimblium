@@ -6,7 +6,7 @@
     blocks: (
       (kind: "passive", name: "Size", effect: [You are Medium.]),
       (kind: "narrative", name: "Appearance", effect: [A big, muscular humanoid with gray or green skin, tusks and a heavy jaw.]),
-      (kind: "active", name: "Relentless", limitation: per_encounter(1), effect: [When you would drop to 0 #HP, you drop to #times(3, KEY) #HP instead.]),
+      (kind: "active", name: "Relentless", limitation: per_safe_rest(1), effect: [When you would drop to 0 #HP, you drop to #times(3, KEY) #HP instead.]),
     ),
 )
 
@@ -20,4 +20,5 @@ Source: Core Rules p.23-27 (Orc). Book: Relentless, when you would drop to 0 HP 
 house-rule: Relentless drops you to 3×KEY HP instead of LVL, 1/encounter instead of 1/Safe
 Rest (user ruling 2026-11-27); the +1 Might is dropped
 (user ruling 2026-11-27).
+house-rule: Relentless is 1/Rest, as in the book, instead of 1/encounter; it still drops you to 3×KEY HP (user ruling 2026-11-27: a per-encounter heal can be abused with many short fights).
 */

@@ -93,7 +93,7 @@
   damage.
 
   #rule[Temporary #HP][Temporary #HP are lost before your #HP. They don't add up. When you
-  would gain more, you choose which amount to keep. They expire after a #safe_rest.]
+  would gain more, you choose which amount to keep. They are lost when combat ends.]
 ]
 
 #section("Rest")[

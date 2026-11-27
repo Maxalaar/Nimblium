@@ -4,7 +4,7 @@
     name: "Song of Rest",
     type: ("Ability", "Songweaver"),
     blocks: (
-      (kind: "passive", effect: [When combat ends, each ally that took part in it regains #WIL + #LVL #HP.]),
+      (kind: "passive", limitation: per_safe_rest(2), effect: [When combat ends, you may have each ally that took part in it regain #WIL + #LVL #HP.]),
     ),
 )
 
@@ -18,4 +18,6 @@ that spends Hit Dice).
 
 house-rule: Each ally that fought regains WIL + LVL HP when combat ends (book: +1 HP for each Hit
 Die spent during a rest); there are no Hit Dice or Field Rests.
+house-rule: 2/Rest, chosen when combat ends (user ruling 2026-11-27: with no limit, many short fights
+would heal the party for free).
 */
