@@ -69,7 +69,8 @@ Project conventions, which don't change the game rules:
 - `guides/` (this folder): how we write, how we work, where we stand.
 - `sources/`: the official Nimble PDFs (not versioned).
 - `build/`: every exported PDF (not versioned): `build/game/` mirrors `game/` (each card, class
-  sheet, rules page and the hero sheet), plus the book `nimblium_cards.pdf`.
+  sheet, rules page and the hero sheet), plus the Codex `nimblium_codex.pdf` (the whole game in
+  one PDF, rebuilt at every export).
 - `tools/`, `art/`: scripts and images.
 
 ## The files of this folder

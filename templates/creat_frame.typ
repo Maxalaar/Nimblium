@@ -9,6 +9,7 @@
 #let card_width = 63mm
 #let card_height = 88mm
 #let card_gap = 5mm              // space between the front and the back
+#let front_gap = 2.5mm           // space between two fronts side by side (the Codex)
 #let ink = black
 #let hair = 0.2pt
 
@@ -259,10 +260,15 @@
   let family = if family == none { family_icon(types) } else { family }
   // Marker found by #card_ref (game/terms.typ) to link to this card.
   metadata((card: name))
-  box(grid(columns: 2, column-gutter: card_gap,
+  // The Codex shows the fronts only (typst compile --input faces=front), side by side.
+  if sys.inputs.at("faces", default: "both") == "front" {
+    box(card_front(name, types + extra, body, stats: stats, stat_cut: stat_cut, icon: family))
+    h(front_gap, weak: true)
+  } else { box(grid(columns: 2, column-gutter: card_gap,
     card_front(name, types + extra, body, stats: stats, stat_cut: stat_cut, icon: family),
     card_back(name, (if back_types == none { types } else { back_types }) + extra,
               icon: if icon == none { family } else { icon })))
+  }
 }
 
 // Stat values may be numbers, strings or content.

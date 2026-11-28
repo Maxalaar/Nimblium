@@ -139,12 +139,20 @@ the exports, don't make any more until asked again.
 
 `python3 tools/export_cards.py` exports each card to PDF under `build/`, in the same tree as its
 `.typ` (`game/class/mage/archmage.typ` -> `build/game/class/mage/archmage.pdf`; sources and PDFs
-never mix). Run it (with
-`--book`) after every change to a card, class sheet or rules page: the user reads the PDFs,
-not the sources. With `--book`,
-it also creates `build/nimblium_cards.pdf`: every card, one per page, where the names written
-with `#card_ref` are clickable links to the card they name (in the individual PDFs, they are
-only in italics).
+never mix). Run it after every change to a card, class sheet or rules page: the user reads the
+PDFs, not the sources.
+
+Every export also rebuilds the Codex, `build/nimblium_codex.pdf` (user ruling 2026-11-28): the
+whole game in one PDF, to read or to share, not to print (`templates/codex.typ`; the export
+writes the document that lists every part). A cover, an introduction, the contents, then the
+rules pages, the hero sheet, the ancestries and backgrounds, the actions, each class (its class
+sheet, then its cards: Features, each pool, each subclass), the spells by school, the items, the
+creatures and the Glossary. Cards show their front only, 9 per A4 page, and each family starts a
+new page with its name in the running header. Names written with `#card_ref` are clickable links
+to their card (in the individual PDFs, they are only in italics). The contents and the PDF
+bookmarks come from entries the Codex announces (`codex_mark`) and each page places at its top
+(`codex_entries`, in `templates/codex_marks.typ`). A new folder of cards (a pool, a school, a
+family) appears on its own; a new kind of document needs a line in `export_codex`.
 
 The export also covers the class sheets, the rules pages and the hero sheet (fillable, through
 `tools/fillable_pdf.py`).
