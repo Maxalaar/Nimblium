@@ -85,17 +85,28 @@
   // features.
   v(if new_layout { 2.5mm } else { 6mm })
 
+  // What every level gives, the same for every class: a small table on a light gray background
+  // above the level table, one row for level 1 and one for the others.
+  {
+    let head(body) = text(size: 6pt, tracking: 1.2pt, fill: reminder_color, upper(body))
+    let step(body) = text(size: 6.5pt, tracking: 1.2pt, weight: "bold", fill: reminder_color, upper(body))
+    block(width: 100%, fill: luma(244), radius: 2mm, inset: (x: 3mm, y: 1.4mm), table(
+      columns: (auto, 1fr, 1fr, 1fr, 1fr), align: (left + horizon,) + (center + horizon,) * 4,
+      stroke: none, inset: (x: 1.5mm, y: 0.8mm),
+      [], head[HP], head[Stat points], head[Skill points], head[Magic items],
+      step[Level 1], [10 + Vitality], [5], [10], [2],
+      step[Levels 2–20], [+Vitality], [+1], [+2], [+1 at levels 5, 10, 15],
+    ))
+    v(2mm)
+  }
+
   // The Tier column only shows for spellcasting classes.
   let casts = levels.any(((tier, _)) => tier != none)
-  let gains = ("HP", "Stat", "Skill")
-  let headers = ("Lvl",) + if casts { ("Tier",) } else { () } + gains + ("You gain",)
-  let gain_cells(level) = if level == 1 {
-    ([10+Vitality], [5], [10])
-  } else { (minor[+Vitality], minor[+1], minor[+2]) }
+  let headers = ("Lvl",) + if casts { ("Tier",) } else { () } + ("You gain",)
   table(
-    columns: (9mm,) + if casts { (11mm,) } else { () } + (20mm, 10mm, 10mm, 1fr),
+    columns: (9mm,) + if casts { (11mm,) } else { () } + (1fr,),
     align: (center + horizon,) * (headers.len() - 1) + (left + horizon,),
-    inset: (x: 2mm, y: if new_layout { 1.9mm } else { 2.3mm }),
+    inset: (x: 2mm, y: if new_layout { 1.7mm } else { 2.3mm }),
     stroke: (x, y) => (bottom: if y == 0 { 0.6pt + ink } else { hair + luma(190) }),
     fill: (x, y) => if y > 0 and calc.even(y) { luma(246) },
     table.header(..headers.map(h => text(size: 6.5pt, tracking: 1.2pt, weight: "bold", upper(h)))),
@@ -106,7 +117,6 @@
       (
         text(weight: "bold", str(i + 1)),
         ..if casts { (tier_cell,) },
-        ..gain_cells(i + 1),
         if features == [] { minor[—] } else { features },
       )
     }).flatten(),

@@ -13,56 +13,59 @@
 #section("Stats")[
   Each hero has 4 stats. Their class makes 2 of them Key Stats.
 
+  #values(columns: (9mm, 1fr),
+    [*#STR*], [Strength and toughness. A strong hero hits hard, carries a heavy load and
+    endures many wounds.],
+    [*#DEX*], [Agility and reflexes. An agile hero dodges blows, acts early in a fight and
+    strikes with precision.],
+    [*#INT*], [Knowledge and reasoning. A clever hero understands magic, history and
+    mechanisms, and solves problems.],
+    [*#WIL*], [Willpower, intuition and presence. A strong-willed hero reads people, sways
+    them and senses what others miss.],
+  )
+
   #rule[#KEY][When a rule says #KEY, use one of your Key Stats.]
 
   #rule("Stat dice")[A stat written before a die is the number of dice you roll. With 2 #WIL,
   #WIL d8 means 2d8.]
 
-  #values(columns: (9mm, 1fr),
-    [*#STR*], [Physical power. #STR weapons, Vitality, carrying, grappling.],
-    [*#DEX*], [Agility. #DEX weapons, Initiative, #defense, grappling.],
-    [*#INT*], [Knowledge and reasoning. Spellcasting, wands.],
-    [*#WIL*], [Personality and wisdom. Spellcasting, nature, people.],
-  )
 ]
 
 #section("Skills")[
   Each skill uses one stat. A check with a skill adds the stat and the skill.
 
   #values(columns: (21mm, 9mm, 1fr),
-    [Arcana], [#INT], [Magic, spells, magical items. Aberrations, Elementals, Oozes.],
-    [Examination], [#INT], [Clues, injuries, traps, mechanisms. Constructs.],
-    [Finesse], [#DEX], [Locks, traps, vehicles, sleight of hand.],
-    [Influence], [#WIL], [Persuading, deceiving, performing.],
-    [Insight], [#WIL], [Motives, lies, hunches, or having thought ahead (rope bought in town).],
-    [Lore], [#INT], [History, kingdoms, religions. Celestials, Dragons, Fey, Fiends, Giants,
-    Humanoids, Undead.],
-    [Might], [#STR], [Lifting, breaking, climbing, swimming.],
-    [Naturecraft], [#WIL], [Survival, navigation, tracking, animals. Beasts, Monstrosities,
-    Plants.],
-    [Perception], [#WIL], [Hidden things, being followed or watched.],
-    [Stealth], [#DEX], [Hiding, sneaking, slipping past guards.],
+    [Arcana], [#INT], [Knowing magic: spells, magical items and magical creatures.],
+    [Examination], [#INT], [Studying something closely: clues, wounds, traps, mechanisms.],
+    [Finesse], [#DEX], [Delicate work with your hands: locks, traps, sleight of hand,
+    steering a vehicle.],
+    [Influence], [#WIL], [Getting what you want from people: persuading, deceiving,
+    performing.],
+    [Insight], [#WIL], [Reading people and situations, guessing motives and lies, having
+    thought ahead.],
+    [Lore], [#INT], [Knowing the world: history, kingdoms, religions and the creatures of
+    legend.],
+    [Might], [#STR], [Raw physical effort: lifting, breaking, climbing, swimming.],
+    [Naturecraft], [#WIL], [Living in the wild: surviving, finding your way, tracking,
+    handling animals.],
+    [Perception], [#WIL], [Noticing things: what is hidden, who follows you, what is
+    wrong.],
+    [Stealth], [#DEX], [Not being noticed: hiding, sneaking, slipping past guards.],
   )
-]
-
-#section("Stat and skill points")[
-  Your stats and skills start at 0. At level 1, you have 5 stat points and 10 skill points. At
-  every level after that, you gain 1 stat point and 2 skill points. Raising a stat or a skill
-  by 1 costs as many points as its new value. Unspent points are kept.
 ]
 
 #section("Checks")[
   When the outcome of something is uncertain, the GM or the effect asks for a check, with a
   stat or a skill, such as a #DEX check or a Stealth check. Roll 1d20 and add that stat, or the
-  skill and its stat. If the total equals or beats the DC, you succeed. A 1 on the die always fails, and a
+  skill and its stat. If the total is higher than the DC, you succeed. A 1 on the die always fails, and a
   20 always succeeds. When you fail, the GM chooses whether you fail or succeed at a cost.
 
-  #values(columns: (auto, auto, 1fr), header: ("Task", "DC", "Example"),
-    [Easy], [8], [Spot an Ogre behind a bush.],
-    [Medium], [12], [Find a hidden door behind a bookcase.],
-    [Challenging], [15], [Calm a trapped Owlbear.],
-    [Very difficult], [18], [Read a trained spy's intentions.],
-    [Extreme], [20+], [Disarm a legendary trap.],
+  #values(columns: (1fr, auto), header: ("Task", "DC"),
+    [Easy], [8],
+    [Medium], [12],
+    [Challenging], [15],
+    [Very difficult], [18],
+    [Extreme], [20+],
   )
 ]
 
@@ -70,12 +73,7 @@
   In a favorable situation, the GM may give you #kw_advantage. In a grim one, or for a long
   shot, you may have #kw_disadvantage.
 
-  #keywords.advantage
-
-  #keywords.disadvantage
-
-  #rule[Both][Each #kw_advantage cancels one #kw_disadvantage before you roll. When removed
-  dice tie, remove them from left to right.]
+  #rule[Both][Each #kw_advantage cancels one #kw_disadvantage before you roll.]
 ]
 
 #section("Size")[
@@ -118,9 +116,6 @@
 
   #rule[Charges][An item may have charges (CHRG). Each use spends 1 charge, and they all
   come back after a #safe_rest, unless its card says otherwise.]
-
-  #rule[Magic items][You can carry 2 magic items, 3 from level 5, 4 from level 10, and 5
-  from level 15. #card_ref("Wand", "Wands") don't count.]
 ]
 
 #section("Making a hero")[
@@ -130,7 +125,8 @@
   #rule[2\. Ancestry and background][Choose 1 ancestry and 1 background. Your ancestry gives
   your size and a trait. Your background gives another trait.]
 
-  #rule[3\. Stats and skills][Spend your 5 stat points and 10 skill points.]
+  #rule[3\. Stats and skills][Your stats and skills start at 0. Spend your 5 stat points and 10
+  skill points, as Leveling up explains.]
 
   #rule[4\. The rest of your sheet][Fill in these values.]
 
@@ -149,6 +145,9 @@
 #section("Leveling up")[
   When the GM says your hero has earned a level, you gain it during your next #safe_rest. Your
   class sheet says what you gain, in the row of your new level.
+
+  #rule[Stat and skill points][Raising a stat or a skill by 1 costs as many points as its new
+  value. Unspent points are kept.]
 ]
 ]
 
@@ -187,6 +186,17 @@ house-rule: Divisions round up (Nimble doesn't say; user ruling 2026-11-26).
 interpretation: Optional rules (gritty dying, abstracted distances, a week of rest per Wound)
 are left out.
 
+house-rule: A check succeeds when its total is higher than the DC, not equal to it (user ruling
+2026-11-28): against DC 10 with no bonus, you need 11 or more, a 50% chance.
+
+house-rule: Stat and skill points are explained in Leveling up, and Making a hero sends there
+(user ruling 2026-11-28).
+
+interpretation: The stat and skill tables describe what each one represents, in plain words,
+rather than listing what uses it; the DC table has no examples (user ruling 2026-11-28). The
+creature types each Knowledge skill covers (Arcana: Aberrations, Elementals, Oozes...) are
+left out.
+
 house-rule: No default DC: each card states the DC of its checks (user ruling 2026-11-27).
 house-rule: A failed check is a failure or a success at a cost, as the GM chooses (user ruling
 2026-11-27).
@@ -212,8 +222,9 @@ have no maximum (book: stats from an array, at most +5; skills start at their st
 changelog; was +12). Raising one by 1 costs its new value in points, so a high value grows
 slowly. A hero has 5 stat points and 10 skill points at level 1 (5 buys +2, +1, +1, +0, the book's
 Balanced array; no +3 or +2/+2 at the start), then gains 1 stat point and 2 skill points at
-every level. Every row of the class sheets' level table shows the HP, stat points and skill points of that
-level (no "All" row), so leveling up needs only the class sheet. A check
+every level. A box above the class sheets' level table gives the HP, stat points, skill points and magic
+items of level 1 and of the next levels, so leveling up needs only the class sheet. The number
+of magic items you carry is only there, not on this page (user ruling 2026-11-28). A check
 with a skill adds the stat and the skill. This replaces the arrays, the class stat increases
 (+1 Key Stat at levels 4, 8, 12, 16, +1 Secondary Stat at 5, 9, 13, 17, +1 to any 2 at 20) and
 the Secondary Stats. Points never move, and unspent points are kept (book: 4 skill points at

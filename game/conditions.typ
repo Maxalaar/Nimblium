@@ -8,7 +8,7 @@
   dazed: [*Dazed:* If this creature is a hero, it loses 1 action. If it is a monster, it has 1 fewer action on its next turn.],
   dying: [*Dying:* This creature can't have more than 1 action per turn and can't concentrate. Whenever it would take damage, it gains 1 Wound instead, or 2 on a critical hit.],
   frightened: [*Frightened:* This creature has disadvantage on rolls while the source of its fear is nearby. Its #speed is halved while it moves closer to that source.],
-  grappled: [*Grappled:* This creature can't move. Attacks against it have advantage. The creature grappling it moves at half its #speed, unless it is bigger, and attacks against it have advantage too. The grapple ends on a critical hit against the grappler, on a Knockback against either of them, or if the grappler is Incapacitated.],
+  grappled: [*Grappled:* This creature can't move. Attacks against it have advantage. The grapple ends when the creature grappling it lets go, moves away, or is Incapacitated.],
   restrained: [*Restrained:* This creature can't move. Attacks against it have advantage.],
   hampered: [*Hampered:* This creature's actions or movement are reduced, for example by Dazed, Grappled, Prone, or Difficult Terrain.],
   incapacitated: [*Incapacitated:* This creature can't do anything. Attacks against it have advantage. Melee attacks that hit it are critical hits.],

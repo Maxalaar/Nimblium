@@ -64,11 +64,16 @@ Planned areas:
   lodging and no downtime. Ancestries and backgrounds are cards.
 - **Combat** (done): turn, pool of 3 actions, attacks, Defense, movement and reach, Cover,
   Dying and Wounds (grappling, Knockback and Concentration are on their cards and keywords); on the verso the
-  conditions (taken from `game/conditions.typ`) and the creature rules
+  creature rules
   (`creature_rules.txt`). The actions themselves are on the cards of `game/actions/` (Basic
   Actions, Grapple, Triggered Actions): the page refers to them without repeating them.
 - **Magic** (done): schools, casting, mana, upcasting, cantrips, how to read a spell card,
   utility spells. One page. Spell scrolls merge into the Wand card (game/items/gear/).
+- **Glossary** (done, one side): every condition, then the keywords common to every class,
+  then each class's own keywords, all sorted by name and read from their definition files
+  (`game/conditions.typ`, `game/keywords.typ`, `game/class/<class>/<class>_keywords.typ`).
+  The other pages don't repeat these definitions. A new class keyword file needs a line in its
+  Class keywords list.
 - No equipment page: equipment will become cards.
 
 Writing:

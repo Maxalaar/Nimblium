@@ -11,16 +11,16 @@
         kind: "active",
         name: "Grab",
         cost: (actions(1),),
-        effect: [With a free hand, choose a creature within your Reach. Make a #STR or #DEX check against #dc(10) plus its #STR or #DEX, whichever is higher. On a success, that hand holds on until the grapple ends. It is #kw_grappled if it is your size or smaller. If it is bigger, you are #kw_riding it, and its attacks against you have #kw_disadvantage.],
+        effect: [With a free hand, choose a creature within your Reach, your size or smaller. Make a check adding your #STR and #DEX, against #dc(10) plus the target's #STR and #DEX. On a success, it is #kw_grappled.],
       ),
       (
         kind: "active",
         name: "Escape",
         cost: (actions(1),),
-        effect: [Make a #STR or #DEX check against #dc(10) plus the #STR or #DEX of the creature grappling you, whichever is higher. On a success, you are no longer #kw_grappled.],
+        effect: [Make a check adding your #STR and #DEX, against #dc(10) plus the #STR and #DEX of the creature grappling you. On a success, you are no longer #kw_grappled.],
       ),
     ),
-    reminder: (conditions.grappled, conditions.riding),
+    reminder: (conditions.grappled,),
 )
 
 #let grapple = creat_ability(ability_data)
@@ -33,8 +33,11 @@ its rider with disadvantage). What happens during a grapple (speed, advantage, c
 Grappled condition (game/conditions.typ), which covers both creatures: it is in
 the reminders here and on the Combat page.
 
-house-rule: Grab and Escape are both a STR or DEX check by the creature that acts, against
-DC 10 plus the higher of the other creature's STR and DEX. A creature's STR and DEX are 0
+house-rule: Grappling simplified (user ruling 2026-11-28). Grab and Escape are both a check by
+the creature that acts, adding its STR and DEX, against DC 10 plus the other creature's STR and
+DEX. Only a creature your size or smaller can be grabbed (book: grabbing a bigger creature makes
+you ride it; Riding stays for the cards that give it). Grappled only concerns the grabbed
+creature: the grappler has no penalty. A creature's STR and DEX are 0
 unless its card shows them (Combat rules page, Creatures).
 The changelog makes grabbing a DC 10 Might or Finesse check, and the book has the target save.
 

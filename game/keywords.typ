@@ -8,8 +8,8 @@
   d88: [*D88:* Roll 2d8. The leftmost die is the tens digit, and the other die is the ones digit.],
   distracted: [*Distracted:* A creature is Distracted if it is adjacent to or Taunted by one of your allies, if it can't see you, or if you have Hide from it.],
   blindsight: [*Blindsight X:* This creature can sense creatures and obstacles within X spaces, ignoring Blind, darkness, and invisibility.],
-  advantage: [*Advantage:* Roll 1 additional die of the same type for each instance of advantage, then remove that many of the lowest results.],
-  disadvantage: [*Disadvantage:* Roll 1 additional die of the same type for each instance of disadvantage, then remove that many of the highest results.],
+  advantage: [*Advantage:* Roll 1 additional die of the same type for each instance of advantage, then remove that many dice of your choice.],
+  disadvantage: [*Disadvantage:* Roll 1 additional die of the same type for each instance of disadvantage, then remove that many of the highest results. When they tie, remove them from left to right.],
   vulnerable: [*Vulnerable:* This creature takes 10 additional damage from the listed damage type.],
   knockback: [*Knockback X:* Push this creature X spaces away. If an obstacle stops it, it and the creature it hits each take damage equal to the pusher's #LVL+1 per space it didn't move. Small, Tiny and Flying creatures are pushed twice as far, Large ones half as far, and Huge and Gargantuan ones not at all.],
   hide: [*Hide:* Spend 1 action to Hide from the creatures you have Cover from. Your next attack has advantage, then you lose Hide.],
@@ -30,4 +30,8 @@ attack.
 
 house-rule: Hiding needs no roll: 1 action with Cover is enough (Nimble asks for a DC 10
 Stealth check, and Full Cover succeeds automatically). Stealth still matters outside combat.
+
+house-rule: With Advantage, you remove the dice of your choice, so a die at its maximum can
+become your Primary Die and crit (user ruling 2026-11-28; book: remove the lowest). Disadvantage
+still removes the highest, left to right when they tie.
 */

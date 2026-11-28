@@ -21,12 +21,19 @@ to a card, add or complete a line here.
 - **No Reactions.** A reaction is an action with a "When..." trigger, a cost of 1 action and a
   limit of 1/round. It also works on your own turn. (`writing_rules.txt` §4,
   `game/rules/combat.typ`, `game/actions/triggered_actions.typ`)
-- **No saves, one kind of check.** A check is 1d20 + the stat or skill it names, against the
+- **A check beats the DC.** A check succeeds when its total is higher than the DC, not equal
+  to it (user ruling 2026-11-28; book: equal or higher): against DC 10 with no bonus, it is
+  50%. (`game/rules/adventure.typ`)
+- **No saves, one kind of check.** A check is 1d20 + the stat it names (plus the skill, if it names one), against the
   same DCs; there is no separate "skill check" and "stat check". An effect that the book
   resolves with a save calls for a check by the affected creature, against the DC the card states (usually DC 10+KEY for an effect
   a hero creates). Cards that said "skill checks" now say "checks", including the *Cheat* card ("change the
   result of one of your checks to 10+INT"), which now also covers stat checks. Classes have no advantaged or disadvantaged saves, and the class sheets have no
   Saves line. There is no "half on save" rule: each card says what a success does. (`game/rules/adventure.typ`)
+- **Advantage: remove the dice of your choice** (user ruling 2026-11-28). With advantage, you
+  roll the extra dice and remove that many dice of your choice, so a die at its maximum can
+  become your Primary Die (book: remove the lowest). Disadvantage still removes the highest,
+  left to right when they tie. (`game/keywords.typ`)
 - **Opportunity Attacks.** Only heroes make them, unless a creature's card says otherwise.
   (`game/actions/triggered_actions.typ`)
 - **Hide with no roll.** 1 action with Cover is enough to hide (Nimble: Stealth DC 10, Full
@@ -39,14 +46,15 @@ to a card, add or complete a line here.
 - **No Assess.** Asking the GM a question is role-play. Its two combat effects (Create an
   Opening, Anticipate Danger) live on *Wild Instinct* and *Quick Read*; *Exploit Weakness*
   becomes an action of its own. (`game/actions/grapple.typ`)
-- **Grappling.** To grab (Grab) and to break free (Escape), the creature that acts makes a STR
-  or DEX check against 10 + the higher of the other creature's two stats (changelog: Might or
-  Finesse check, DC 10; book: the target makes a save). Creatures that grab simply say so
-  ("the target is Grappled"). A single condition, Grappled, covers both sides: the grabbed
-  creature and the grappler (no separate Grappling condition). The grapple ends on a critical
-  hit against the grappler only (book: against either creature), on a Knockback against
-  either, or if the grappler is Incapacitated. Grab needs a free hand, and that hand holds on
-  until the grapple ends. (`game/conditions.typ`, `game/actions/grapple.typ`)
+- **Grappling** (simplified, user ruling 2026-11-28). To grab (Grab, 1 action, a free hand, a
+  creature within your Reach, your size or smaller) and to break free (Escape, 1 action), the
+  creature that acts makes a check adding its STR and DEX, against DC 10 plus the other
+  creature's STR and DEX (changelog: Might or Finesse check, DC 10; book: the target makes a
+  save). Grappled only concerns the grabbed creature: it can't move and attacks against it have
+  advantage. The grapple ends when the grappler lets go, moves away or is Incapacitated (book:
+  the grappler moves at half speed and is attacked with advantage; it ends on a crit or a
+  Knockback; grabbing a bigger creature makes you ride it). Creatures that grab simply say so
+  ("the target is Grappled"). (`game/conditions.typ`, `game/actions/grapple.typ`)
 - **Creature stats.** A creature's STR, DEX, INT and WIL are 0 unless its card shows them,
   and so are its skills (a check adds the stat and the skill, as for heroes). Nimble's monster saves become stats: each "+" is +3,
   each "−" is −3. (`game/rules/combat.typ`, Creatures section; `creature_rules.txt` §4)
@@ -129,9 +137,8 @@ to a card, add or complete a line here.
 
 ## Items
 
-- **Improvised weapons** deal 1d4+STR with 1 hand and 1d6+STR with 2, and break after 3 hits
-  (book: the GM picks the die; changelog: they break "after a few hits"). Customizing
-  weapons is left to the GM. (`game/rules/combat.typ`)
+- **No improvised weapon rule** (user ruling 2026-11-28): the GM decides what a chair or a rock
+  does (book: the GM picks the die). Customizing weapons is left to the GM too.
 - **Spear.** The 2026-10-02 changelog adds a Spear without its stats: 1d8+STR, Reach 2,
   two-handed or one-handed with 2 STR, a guess between the Longsword and the Greatspear.
   (`game/items/weapons/melee/spear.typ`)
@@ -139,8 +146,11 @@ to a card, add or complete a line here.
   attack with it below n STR (the book gives no penalty). (`weapon_properties.typ`)
 - **No prices on items**: the cards show no cost. (`game/items/`)
 - **No weapon proficiency.** Any hero can use any weapon at full power, and class sheets list
-  no weapons (book: a weapon without proficiency can't crit). Unarmed strikes can't crit
-  unless an ability says so. Armor proficiency stays. (`game/rules/combat.typ`)
+  no weapons (book: a weapon without proficiency can't crit). Unarmed strikes can crit like
+  any attack (user ruling 2026-11-28). Armor proficiency stays. (`game/rules/combat.typ`)
+- **Dual wielding**: with a Light weapon in each hand, your first attack each round has
+  advantage (book: one attack per round has advantage, roll both weapons' damage and keep
+  either, and 2 or 3 STR lift the Light requirement). (`game/rules/combat.typ`, Weapons)
 - **Changing what you hold** costs 1 action; dropping an item is free (book: swap a weapon
   you are proficient with for free, 1/round). Thrown weapons stay in hand while they have
   charges. (`game/rules/combat.typ`, Hands)
@@ -178,15 +188,16 @@ to a card, add or complete a line here.
   focus, which is never defined). *Aura of Refuge* makes a held shield count as a free hand
   for casting (book: shields count as your focus). (`game/rules/magic.typ`)
 - **Magic items.** You carry at most 2 magic items, 3 from level 5, 4 from level 10, 5 from
-  level 15 (book: no limit); wands don't count. Rarity becomes LVL: Uncommon 1, Rare 5, Very
+  level 15 (book: no limit), as the box at the top of each class sheet says; wands are not
+  magic items. Rarity becomes LVL: Uncommon 1, Rare 5, Very
   Rare 10, Legendary 15. Items whose power varies with rarity (Many Hands, Animosity,
   Slaying) grow with your level instead. Weapon enchantments are cards put with a weapon card.
   Saves become checks, reactions become "When..." actions, recharges become charges back after
   a Safe Rest. No item is ever destroyed by its own use (Gem of Escape, Phoenix Helm): it
   has a charge instead. Purely narrative magic items have no card: the GM writes them on a
   blank Gear card. (`game/items/magic/`, `game/rules/adventure.typ`)
-- **Zephyr.** Martial Training (level 1) carries its unarmed proficiency: its unarmed strikes
-  can crit and its fists count as dual wielded. The Burst of Speed maneuvers cost their usual
+- **Zephyr.** Martial Training (level 1) carries its unarmed proficiency: its fists count as
+  dual wielded (every hero's unarmed strikes can crit). The Burst of Speed maneuvers cost their usual
   action plus 1 Burst (book: free, 1/turn; the changelog removes the limit and gives Swift
   Fists, which makes Galeforce Strike cost 0 actions in one case). Iron Defense adds STR to
   Defense (Defense = DEX + armor). (`game/class/zephyr/`)
@@ -200,9 +211,9 @@ to a card, add or complete a line here.
   many points as its new value, so high values grow slowly. A hero has 5 stat points and
   10 skill points at level 1, then gains 1 stat point and 2 skill points at every level. Unspent points are kept, and points never move. A check with a skill adds the stat
   and the skill (book: the skill already includes its stat). No stat arrays, no Secondary
-  Stats, no stat increases at set levels on the class sheets (every row of their level
-  table shows that level's HP, stat points and skill points: 10+Vitality, 5 and 10 at level 1,
-  then +Vitality, +1 and +2; no "All" row). Key Stats stay: they say which stat is KEY.
+  Stats, no stat increases at set levels on the class sheets (a box above their level
+  table gives what every level brings: 10+Vitality HP, 5 stat points, 10 skill points and 2
+  magic items at level 1, then +Vitality HP, +1, +2, and +1 magic item at levels 5, 10, 15). Key Stats stay: they say which stat is KEY.
   (`game/rules/adventure.typ`, `game/hero_sheet.typ`)
 - **No Hit Dice, no Field Rest.** Vitality (the class's value + STR; the classes with
   STR as a Key Stat have 1 less than their old Hit Die value) replaces the Hit Die, gives the

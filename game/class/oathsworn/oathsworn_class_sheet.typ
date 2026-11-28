@@ -78,7 +78,8 @@ Radiant Judgment, Explosive Judgment, Unstoppable Protector, Glorious Reprieve).
 level 2, 2 at 4, 3 at 6, 4 at 8, 5 at 10, 6 at 13, 7 at 17. Serve Selflessly (change your
 choices on a Safe Rest) is not used: global house rule in guides/house_rules.txt.
 
-house-rule: No stat increases at set levels: every row of the level table shows the HP, stat
-points and skill points that level gives (5 stat and 10 skill points at level 1, then +1 and +2),
-with no "All" row (user ruling 2026-11-28).
+house-rule: No stat increases at set levels. A box above the level table gives what every level
+brings, the same for every class: HP, stat points, skill points and magic items (level 1: 10 +
+Vitality HP, 5, 10 and 2; levels 2-20: +Vitality HP, +1, +2, and +1 magic item at levels 5, 10
+and 15). User ruling 2026-11-28.
 */

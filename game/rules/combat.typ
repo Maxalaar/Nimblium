@@ -3,7 +3,7 @@
 
 #rules_page(
   name: "Combat",
-  intro: [Turns, attacks, movement and conditions.],
+  intro: [Turns, actions, attacks, movement and creatures.],
 )[
 
 #section("Initiative and turns")[
@@ -30,15 +30,16 @@
   #card_ref("Grapple") and #card_ref("Triggered Actions") cards, and of their class and spell
   cards.]
 
+  #rule[Triggered actions][An action that starts with "When..." is used when its trigger
+  happens, even outside your turn. You may decide after seeing the roll.]
+
   #rule[Over several turns][An ability that costs more actions than you have can be paid
   over several turns. You must keep your #kw_concentration, and do nothing else that costs an action
   in the meantime.]
 ]
 
 #section("Movement")[
-  Your #speed is 6 unless something says otherwise.
-
-  #keywords.difficult_terrain Climbing counts as #kw_difficult_terrain.
+  Your #speed is 6. Your cards may change it.
 
   #rule[Other creatures][You may move through an ally's space. You may move through an enemy's space only if its
   size is at least 2 steps bigger or smaller than yours. You can't end your move in an
@@ -68,6 +69,19 @@
   Vulnerable to, and 10 less damage from a type it is Resistant to.]
 ]
 
+#section("Weapons")[
+  Each weapon card shows its damage, its Reach or Range, and its properties.
+
+  #rule[Hands][You have 2 hands. Each item card says how many hands it takes. Changing what you
+  hold costs 1 action. Dropping an item costs none.]
+
+  #rule[Dual wielding][With a Light weapon in each hand, your first attack each round has
+  #kw_advantage.]
+
+  #rule[Unarmed strike][An attack with your fists or feet deals 1d4+#STR damage, with Reach 1.]
+
+]
+
 #section("Reach, range and areas")[
   Each attack or ability says how far it reaches, or the shape of its area.
 
@@ -84,17 +98,9 @@
   #rule[Areas][A space at least half covered by an area is part of it.]
 ]
 
-#section("Triggered actions")[
-  An action that starts with "When..." is used when its trigger happens, even outside your
-  turn. You may decide after seeing the roll.
-]
-
 #section("Cover and hiding")[
-  Obstacles between you and a ranged attacker protect you, and let you hide.
-
-  #keywords.cover
-
-  #keywords.full_cover
+  Obstacles between you and a ranged attacker give you #kw_cover or #kw_full_cover, and let
+  you hide.
 
   #rule[Hiding][Most creatures won't hunt a hidden hero while other dangers remain.]
 ]
@@ -104,25 +110,6 @@
 
   #rule[Wounds][Wounds are lasting injuries. A #safe_rest heals 1 of them. You die when you
   have 6 Wounds.]
-]
-
-#section("Hands")[
-  You have 2 hands. Each item card says how many hands it takes. Changing what you hold costs
-  1 action. Dropping an item costs none.
-]
-
-#section("Weapons")[
-  Each weapon card shows its damage, its Reach or Range, and its properties.
-
-  #rule[Dual wielding][With a Light weapon in each hand, one attack with them per round has
-  #kw_advantage. Roll the damage of both weapons and keep either result. With 2 #STR, one of
-  them doesn't need to be Light. With 3 #STR, neither does.]
-
-  #rule[Unarmed strike][An attack with your fists or feet deals 1d4+#STR damage, with Reach 1.
-  It can't crit.]
-
-  #rule[Improvised weapons][A chair, a frying pan or a rock deals 1d4+#STR damage, or 1d6+#STR
-  if it needs 2 hands. It breaks after 3 hits.]
 ]
 
 #section("Armor and shields")[
@@ -141,21 +128,12 @@
   shows them.]
 
   #rule[Minions][#passive_abilities.minion.effect]
+
+  #rule[Building an encounter][Add up the heroes' levels, then the creatures' levels. When the
+  two totals are equal, the fight is balanced. Fewer creature levels make it easier, more make
+  it harder.]
 ]
 
-#section("Building an encounter")[
-  Add up the heroes' levels, then the creatures' levels. When the two totals are equal, the
-  fight is balanced. Fewer creature levels make it easier, more make it harder.
-]
-
-#section("Conditions")[
-  A creature has a condition or doesn't. Conditions don't stack.
-
-  #set text(size: 8.5pt)
-  #for c in conditions.values() [#c
-
-  ]
-]
 ]
 
 /*
@@ -186,6 +164,13 @@ house-rule: No maximum of 3 actions (user ruling 2026-11-28). Effects that give 
 you above 3; at the end of your turn, whatever you have left is lost and you get exactly 3
 (book: you have up to 3 actions, and get back up to 3 at the end of your turn).
 
+house-rule: Dual wielding is only Advantage on your first attack each round, with a Light
+weapon in each hand (user ruling 2026-11-28; book: one attack per round has Advantage, roll
+both weapons' damage and keep either, and 2 or 3 STR lift the Light requirement).
+
+interpretation: Conditions and keyword definitions are on the Glossary page (user ruling
+2026-11-28): no Conditions list here, and no Difficult Terrain, Cover or Full Cover definition.
+
 interpretation: Layout (user ruling 2026-11-28): each section opens with an untitled paragraph,
 then every other paragraph starts with its name in bold and a period; keyword and condition
 definitions keep their colon. Surprise is left out (the GM decides), and Turns and rounds is
@@ -197,9 +182,8 @@ creature_rules.txt).
 house-rule: There are no Reactions: triggered actions have a "When..." trigger and work on
 your own turn too (writing_rules.txt §4).
 
-house-rule: An improvised weapon deals 1d4+STR with 1 hand and 1d6+STR with 2, and breaks
-after 3 hits (book: 1d4 or 1d6 as the GM sees fit, bigger dice if the GM allows; changelog:
-it breaks "after a few hits"). Customizing weapons is left to the GM.
+house-rule: No improvised weapon rule (user ruling 2026-11-28): the GM decides what a chair or a
+rock does.
 
 changelog: Unarmed strikes deal 1d4+STR.
 
@@ -209,9 +193,9 @@ action, Core Rules p.33). Defense is DEX + armor + shield, and armor and shields
 with your level (game/items/armor/).
 
 house-rule: No weapon proficiency: any hero can use any weapon, and class sheets list no
-weapons (book: a weapon without proficiency can't crit). Unarmed strikes can't crit unless an
-ability says so (book: unless proficient, and proficient heroes count their fists as dual
-wielded). Changing what you hold costs 1 action (Hands). Armor proficiency stays.
+weapons (book: a weapon without proficiency can't crit). Unarmed strikes can crit like any attack
+(user ruling 2026-11-28; book: only when proficient, and proficient heroes count their fists as
+dual wielded). Climbing has no rule: the GM decides (book: it counts as Difficult Terrain). Changing what you hold costs 1 action (Hands). Armor proficiency stays.
 
 interpretation: The book's Initiative bands ("a single digit", "2 digits") become 9 or less
 and 10 to 19.

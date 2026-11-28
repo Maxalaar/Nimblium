@@ -75,7 +75,7 @@ text is available, so no cards.
   Master of Storms, Deepening Study and Stormcaller (they only unlock spells). Class icon: Wolf
   Howl. Announced subclasses: Circle of Cinder & Ash, Circle of Venom & Web.
 - **Zephyr**: DONE, rebuilt by the 2026-10-02 changelog around Momentum: Martial Training
-  (unarmed crits, fists dual wielded), Iron Defense; two resources, each a Mechanic (how you gain
+  (fists dual wielded), Iron Defense; two resources, each a Mechanic (how you gain
   and lose it) with an Ability that spends it: Momentum (charges) spent by Kinetic Strikes, Piercing
   Blows and Supernatural Speed; Burst of Speed (charges) spent by Maneuvers (Slipstream,
   Galeforce Strike, Windstep); Infuse Strength, Swift Feet, Unyielding
@@ -112,7 +112,7 @@ text is available, so no cards.
 
 - **Weapons**: DONE, 16 melee and 7 ranged, one card each (DMG, REACH or RNGE, SLOT; no
   cost; category as last type, damage type as a passive, one icon per kind of weapon), up to the October 2, 2026 changelog (Greatmaul 3d4, Greatsword 1d12, the old Spear
-  becomes the Greatspear, a new Spear whose stats are a guess). Weapon rules (dual wielding, unarmed strikes, improvised weapons) are on the Combat page,
+  becomes the Greatspear, a new Spear whose stats are a guess). Weapon rules (dual wielding, unarmed strikes) are on the Combat page,
   inventory slots on the Adventure page. No weapon proficiency (class sheets list no weapons);
   changing what you hold costs 1 action (Combat page, Hands). The Zephyr's unarmed strikes crit (Martial Training).
 - **Armor and shields**: DONE, 4 armors (Cloth, Leather, Mail, Plate) and 1 Shield, one card

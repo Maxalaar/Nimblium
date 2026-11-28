@@ -77,8 +77,8 @@ second one the remaining blocks and the reminders. Use it only when the text can
   - On damage: "Whenever this attack deals damage, the target is Dazed."
   - On crit: "Whenever this attack crits, the target is Prone."
   - Movement before the attack: "It may move up to 6 spaces before this attack."
-  - Grab: "the target is Grappled." The escape follows the Grapple card (a STR or DEX check
-    against DC 10 plus the higher of the creature's STR and DEX).
+  - Grab: "the target is Grappled." The escape follows the Grapple card (a check adding STR
+    and DEX, against DC 10 plus the creature's STR and DEX).
 - **Damage that is not an attack** (a charge through a line, a creature swung at another)
   stays in the text: "Each creature in its path takes 2d6 damage."
 - **Summons**: "it summons a Goblin Minion adjacent to it". A minion's die size is its damage
