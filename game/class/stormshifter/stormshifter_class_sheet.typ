@@ -31,7 +31,7 @@
     (8, []),
     (8, [Choose 1 more Chimeric Boon.]),
     (9, []),
-    (9, [Epic Boon.]),
+    (9, []),
     (9, []),
   ),
   boxes: (

@@ -249,4 +249,6 @@ to a card, add or complete a line here.
   rules pages give no default. (`game/rules/adventure.typ`, `game/rules/magic.typ`)
 - **Success at a cost**: when a check fails, the GM chooses: a failure, or a success at a cost.
   (`game/rules/adventure.typ`)
+- **No Boons** (2026-11-28): the book's Minor, Major and Epic Boons are not used, and the
+  level 19 Epic Boon is removed from every class sheet: that level gives nothing. (`guides/todo.txt`)
 - **No falling rule**: the GM decides what a fall does. (`game/rules/adventure.typ`)

@@ -10,7 +10,7 @@ Before touching a card, read in `guides/`:
 2. `house_rules.txt`: every house rule (they override the book).
 3. `writing_rules.txt`: how a card is written.
 4. `workflow.txt`: file organization, checks, notes block at the bottom of a card.
-5. `status.txt`: where the project stands.
+5. `status.txt`: where the project stands; `todo.txt`: what is left to do or set aside.
 
 Depending on the task: `card_format.txt` (card fields), `creature_rules.txt` (creatures),
 `art.txt` (images and icons), the "Rules pages" section of `workflow.txt` (`game/rules/`).

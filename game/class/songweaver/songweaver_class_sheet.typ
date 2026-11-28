@@ -31,7 +31,7 @@
     (8, []),
     (8, [Choose 1 more Lyrical Weaponry.]),
     (9, []),
-    (9, [Epic Boon.]),
+    (9, []),
     (9, []),
   ),
   boxes: (

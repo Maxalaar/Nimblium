@@ -33,7 +33,7 @@
     (n, [Choose 1 more Savage Arsenal ability.]),
     (n, []),
     (n, [#card_ref("Deep Rage").]),
-    (n, [Epic Boon.]),
+    (n, []),
     (n, []),
   ),
   boxes: (

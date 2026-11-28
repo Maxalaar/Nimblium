@@ -33,7 +33,7 @@
     (6, []),
     (6, [#card_ref("Dire Shadows").]),
     (6, [Choose 1 more Greater Invocation.]),
-    (7, [Epic Boon.]),
+    (7, []),
     (7, []),
   ),
   boxes: (

@@ -33,7 +33,7 @@
     (n, []),
     (n, [#card_ref("Peerless Hunter").]),
     (n, [#card_ref("Wild Endurance").]),
-    (n, [Epic Boon.]),
+    (n, []),
     (n, [#card_ref("Nemesis").]),
   ),
   boxes: (

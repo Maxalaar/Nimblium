@@ -33,7 +33,7 @@
     (8, []),
     (8, [#card_ref("Revitalizing Blessing").]),
     (9, []),
-    (9, [Epic Boon.]),
+    (9, []),
     (9, [#card_ref("Twilight Sage").]),
   ),
   boxes: (

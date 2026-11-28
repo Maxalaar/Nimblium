@@ -78,7 +78,7 @@ Writing:
 ## Things that NEVER become a card
 
 - Pure stat increases ("+1 DEX or WIL", "Key/Secondary Stat Increase").
-- "Epic Boon. Choose an Epic Boon..." (a placeholder that refers to another book).
+- "Epic Boon. Choose an Epic Boon...": Boons are removed from the game for now (`todo.txt`), so this level line is left empty.
 - "Subclass. Gain your X subclass feature." (a level placeholder, not an ability in itself).
 - Any ability that only unlocks spells (see the rule below).
 

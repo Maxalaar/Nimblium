@@ -1,6 +1,7 @@
 # Project status — Nimblium
 
-Where each class, spell school and creature family stands. To see which cards are up to date
+Where each class, spell school and creature family stands. What is left to do or set
+aside is in `todo.txt`. To see which cards are up to date
 with the style and the changelog: `python3 tools/review.py`. For deliberate departures from
 the game: `python3 tools/review.py --rules`.
 
@@ -83,15 +84,6 @@ text is available, so no cards.
   icon. Announced subclasses: Way of Iron, Way of Hurricanes.
 - **Extra Subclasses**: done in their class as subclasses like the others: Oathbreaker
   (Oathsworn), Spellblade (Commander), Reaver (Shadowmancer).
-- **Beastmaster (Hunter): SET ASIDE, needs a deep rework** (decided 2026-11-26). Not
-  implemented on purpose. The book's version (an abstract companion with no stats, Small,
-  Medium or Large, whose abilities replace 2 Thrill of the Hunt abilities) doesn't fit how
-  Nimblium wants companions: they must be creatures with HP and a position (like the Shepherd's
-  Spirit Companion and the Songweaver's Friends). A first creature version was tried and
-  dropped: Protect Me! making an attack miss outright made no sense, the Small Beast was much
-  weaker than the others, and the cards didn't fit. Goal for the rework: any hero, of any
-  class, could take a beast companion instead of their subclass, with its own progression
-  tree. To discuss before writing any card.
 
 ## Spells
 

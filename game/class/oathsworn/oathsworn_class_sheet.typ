@@ -33,7 +33,7 @@
     (6, [Choose 1 more Sacred Decree.]),
     (7, []),
     (7, [#card_ref("Unending Judgment").]),
-    (7, [Epic Boon.]),
+    (7, []),
     (7, [#card_ref("Glorious Paragon").]),
   ),
   boxes: (

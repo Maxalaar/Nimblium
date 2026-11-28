@@ -33,7 +33,7 @@
     (n, []),
     (n, []),
     (n, [Choose 1 more Martial Arts ability.]),
-    (n, [Epic Boon.]),
+    (n, []),
     (n, [#card_ref("Windborne").]),
   ),
   boxes: (

@@ -90,6 +90,7 @@ Art:
 Project management:
 - `workflow.txt`: sources, file organization, checks, review tracking, pace of work.
 - `status.txt`: where each class, spell school and creature family stands.
+- `todo.txt`: what still has to be made, and the features set aside to be redone later.
 - `weblinks.txt`: useful links, the official changelogs included.
 
 Tools (`tools/`):

@@ -33,7 +33,7 @@
     (n, [Choose 1 more Combat Tactic, or gain 1 more Combat Die.]),
     (n, []),
     (n, []),
-    (n, [Epic Boon.]),
+    (n, []),
     (n, []),
   ),
   boxes: (

@@ -33,7 +33,7 @@
     (n, [Choose 1 more Underhanded Ability.]),
     (n, []),
     (n, [Choose 1 more Underhanded Ability.]),
-    (n, [Epic Boon.]),
+    (n, []),
     (n, []),
   ),
   boxes: (
