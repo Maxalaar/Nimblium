@@ -6,7 +6,7 @@ invisible <form-field> metadata, in its top left and bottom right corners, with 
 compiles the page, reads those markers with `typst query`, and adds one AcroForm field per marker
 to the PDF (text fields and check boxes).
 
-Usage: python3 tools/fillable_pdf.py [game/hero_sheet.typ]   ->  game/hero_sheet.pdf
+Usage: python3 tools/fillable_pdf.py [game/hero_sheet.typ]   ->  build/game/hero_sheet.pdf
 Needs pypdf (pip install pypdf).
 """
 
@@ -138,7 +138,9 @@ def make_fillable(source: Path, output: Path):
 def main():
     sources = [Path(a).resolve() for a in sys.argv[1:]] or [ROOT / "game" / "hero_sheet.typ"]
     for source in sources:
-        make_fillable(source, source.with_suffix(".pdf"))
+        output = ROOT / "build" / source.relative_to(ROOT).with_suffix(".pdf")
+        output.parent.mkdir(parents=True, exist_ok=True)
+        make_fillable(source, output)
 
 
 if __name__ == "__main__":

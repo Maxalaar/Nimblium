@@ -137,7 +137,9 @@ the exports, don't make any more until asked again.
 
 ## Export
 
-`python3 tools/export_cards.py` exports each card to PDF next to its `.typ`. Run it (with
+`python3 tools/export_cards.py` exports each card to PDF under `build/`, in the same tree as its
+`.typ` (`game/class/mage/archmage.typ` -> `build/game/class/mage/archmage.pdf`; sources and PDFs
+never mix). Run it (with
 `--book`) after every change to a card, class sheet or rules page: the user reads the PDFs,
 not the sources. With `--book`,
 it also creates `build/nimblium_cards.pdf`: every card, one per page, where the names written

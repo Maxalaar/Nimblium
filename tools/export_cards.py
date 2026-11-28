@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Export every card as an individual PDF, right next to its source .typ
+"""Export every card as an individual PDF into build/, in the same tree as its source .typ
 file (e.g. game/class/cheat/underhanded/creative_accounting.typ ->
-game/class/cheat/underhanded/creative_accounting.pdf).
+build/game/class/cheat/underhanded/creative_accounting.pdf). Sources and PDFs never mix.
 
 Each PDF shows the front of the card on the left and its back on the right,
 with a small gap between them (see templates/creat_frame.typ).
@@ -10,7 +10,7 @@ PDF output (instead of PNG) lets Typst-aware viewers (e.g. the Tinymist
 VS Code extension) jump straight to the source .typ file on click.
 
 Class sheets (game/class/<class>/<class>_class_sheet.typ, one A4 page per class) and rules pages
-(game/rules/<area>.typ, one A4 sheet per area of the game) are exported next to their source too.
+(game/rules/<area>.typ, one A4 sheet per area of the game) are exported into build/ the same way.
 
 The hero sheet (game/hero_sheet.typ) is exported too, as a fillable PDF (tools/fillable_pdf.py).
 
@@ -33,6 +33,14 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+BUILD = ROOT / "build"
+
+
+def output_pdf(source: Path) -> Path:
+    """Where the PDF of a source goes: the same path under build/ (game/x.typ -> build/game/x.pdf)."""
+    out = BUILD / source.relative_to(ROOT).with_suffix(".pdf")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    return out
 VERSIONS_PATH = ROOT / "versions.json"
 TODAY = datetime.date.today().isoformat()
 # The printed date itself is left out of the text that is compared.
@@ -107,7 +115,7 @@ def find_card_files():
 
 def export_card(path: Path) -> Path:
     symbol = path.stem
-    out_path = path.with_suffix(".pdf")
+    out_path = output_pdf(path)
 
     wrapper = path.with_name(f".export_{symbol}.typ")
     wrapper.write_text(WRAPPER_TEMPLATE.format(filename=path.name, symbol=symbol))
@@ -128,7 +136,7 @@ def export_card(path: Path) -> Path:
 
 
 def compile_page(source: Path) -> Path:
-    out_path = source.with_suffix(".pdf")
+    out_path = output_pdf(source)
     subprocess.run(["typst", "compile", "--root", str(ROOT), str(source), str(out_path)], check=True)
     return out_path
 
@@ -175,7 +183,7 @@ def main():
     count = 0
     for path in find_card_files():
         key = document_name(path, "card")
-        out_path = path.with_suffix(".pdf")
+        out_path = output_pdf(path)
         new = versioned(key, lambda p=path: export_card(p), out_path, versions, seen)
         report(path, out_path, key, new)
         count += 1
@@ -187,7 +195,7 @@ def main():
     pages += [(page, "Rules: " + document_name(page, "rules_page"))
               for page in sorted((ROOT / "game" / "rules").glob("*.typ"))]
     for page, key in pages:
-        out_path = page.with_suffix(".pdf")
+        out_path = output_pdf(page)
         new = versioned(key, lambda p=page: compile_page(p), out_path, versions, seen)
         report(page, out_path, key, new)
 
@@ -195,7 +203,7 @@ def main():
     sys.path.insert(0, str(ROOT / "tools"))
     from fillable_pdf import make_fillable
     hero = ROOT / "game" / "hero_sheet.typ"
-    out_path = hero.with_suffix(".pdf")
+    out_path = output_pdf(hero)
     new = versioned("Hero sheet", lambda: make_fillable(hero, out_path), out_path, versions, seen)
     report(hero, out_path, "Hero sheet", new)
 

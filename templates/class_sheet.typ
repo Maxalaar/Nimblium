@@ -2,7 +2,7 @@
 // (stats, starting kit, resource) and the table of what each level gives, from 1 to 20.
 // It replaces cards that would only list choices by level (README.txt, global house rules).
 // Each class has its sheet in game/class/<class>/<class>_class_sheet.typ; tools/export_cards.py exports it
-// next to its source. Rules already on a card are not repeated here: the sheet names the card.
+// to build/game/class/<class>/. Rules already on a card are not repeated here: the sheet names the card.
 
 #import "creat_frame.typ": icon_image, ink, hair
 #import "/templates/style.typ": reminder_color

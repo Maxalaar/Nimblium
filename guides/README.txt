@@ -68,7 +68,8 @@ Project conventions, which don't change the game rules:
 - `CLAUDE.md` (root): entry point, loaded automatically by Claude Code.
 - `guides/` (this folder): how we write, how we work, where we stand.
 - `sources/`: the official Nimble PDFs (not versioned).
-- `build/`: the exported book `nimblium_cards.pdf` (not versioned).
+- `build/`: every exported PDF (not versioned): `build/game/` mirrors `game/` (each card, class
+  sheet, rules page and the hero sheet), plus the book `nimblium_cards.pdf`.
 - `tools/`, `art/`: scripts and images.
 
 ## The files of this folder
@@ -96,5 +97,6 @@ Project management:
 Tools (`tools/`):
 - `check_terms.py`: reports game terms typed by hand instead of through `game/terms.typ`.
 - `review.py`: review status by class, and the list of card notes (`--rules`).
-- `export_cards.py`: exports each card, class sheet and rules page to PDF next to its `.typ`.
+- `export_cards.py`: exports each card, class sheet, rules page and the hero sheet to PDF, under
+  `build/` in the same tree as its `.typ` (`game/x.typ` -> `build/game/x.pdf`).
 - `generate_image.py`: generates the illustrations (see `art.txt`).

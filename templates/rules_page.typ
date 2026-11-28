@@ -1,6 +1,6 @@
 // Rules page: one A4 sheet per area of the game (Adventure, Combat, Magic),
 // printed recto, or recto-verso when the text needs it (#verso in the body).
-// Each page lives in game/rules/<area>.typ; tools/export_cards.py exports it next to its source.
+// Each page lives in game/rules/<area>.typ; tools/export_cards.py exports it to build/game/rules/.
 // Rules already on a card are not repeated here: the page names the card (#card_ref).
 
 #import "class_sheet.typ": sheet_tracking
