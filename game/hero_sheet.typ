@@ -21,9 +21,9 @@ weight are left out (role-play). Vitality has its own box, and each level has a 
 chosen, since choices never change (guides/house_rules.txt).
 
 house-rule: Stat and skill points (user ruling 2026-11-28): stats and skills start at 0, and
-each skill row has two boxes, the skill's own value and the total rolled (stat + skill). The
-points left to spend and the points already spent, for stats and for skills, sit above the skill
-tables, lined up with those two columns.
+each skill row has two boxes, the skill's own value and the total rolled (stat + skill), in two
+boxes that look the same. The stat and skill points not spent yet sit above the skill tables ("Points to
+spend"); the points already spent are not tracked (user ruling 2026-11-28).
 
 interpretation: Abilities, spells and items are cards. The sheet lists the items carried (with
 their slots) and the armor and shield worn, but not abilities or spells. Combat values (HP,

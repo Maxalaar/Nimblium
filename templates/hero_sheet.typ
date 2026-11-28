@@ -83,51 +83,54 @@
       align(center + horizon, text(fill: dark, weight: "bold", size: name_size, tracking: 1.3pt, upper(name)))))
   })
 
-// Widths of the skill table's two value columns: the skill, then the total rolled (stat + skill).
-#let skill_col = 8.5mm
-#let total_col = 10mm
+// The skill table's two value columns: the skill's own value, then the total rolled with it
+// (the stat plus the skill). Both boxes look the same. The header and every row share these
+// widths, so the labels sit exactly over their boxes.
+#let skill_col = 9mm
+#let total_col = 9mm
+#let value_gap = 1.8mm
+#let strip_inset = (left: 3.5mm, right: 2mm)
 
-#let total_stroke = 0.8pt + luma(80)
+// A small white box to fill in: a skill, a total, the points to spend. They all look the same.
+#let small_box(name) = entry(name, height: 4.6mm, align: "center", size: 9.5, fill: white, stroke: 0.4pt + line_color)
 
-// A row laid out like a stat and its skill table, so that its two values line up with the
-// Skill and Total columns: first (under the stat box), name (on the left of the skill table),
-// then the two values.
-#let value_cols(first, name, a, b) = grid(columns: (17mm, 1fr), column-gutter: 1.8mm, align: horizon, first,
-  grid(columns: (1fr, skill_col, total_col), align: (left + horizon, center + horizon, center + horizon),
-    inset: (x, y) => if x == 0 { (left: 3.5mm) } else if x == 2 { (right: 1.8mm) } else { 0mm },
-    name, a, b))
+// The skill table grid of one stat: a name, then its two values.
+#let skill_grid(..args) = grid(
+  columns: (1fr, skill_col, total_col), column-gutter: (0mm, value_gap),
+  align: (left + horizon, center + horizon, center + horizon), ..args)
 
 // A stat and the skills that use it: the skills are the rows of a small table next to the
-// stat's box, in alternating grays. Each row holds the skill's value, then the total rolled with
-// it (the stat plus the skill), in a heavier box.
+// stat's box, in alternating grays.
 #let stat_row(stat, skills, row: 5.6mm) = {
   let id = lower(stat)
   let height = calc.max(16mm, skills.len() * row)
+  let cell(body) = box(width: 100%, height: height / skills.len(), inset: strip_inset, align(horizon, body))
   grid(columns: (17mm, 1fr), column-gutter: 1.8mm,
     banded(stat, "stat_" + id, height: height, name_size: 9pt, value_size: 14,
       corner: [#text(size: 5pt, tracking: 0.6pt, fill: reminder_color)[KEY] #h(0.3mm) #tick("key_" + id, size: 2.6mm)]),
-    block(width: 100%, height: height, radius: 1.5mm, clip: true, grid(
-      columns: (1fr, skill_col, total_col), rows: (height / skills.len(),) * skills.len(),
-      align: (left + horizon, center + horizon, center + horizon),
-      fill: (x, y) => if calc.even(y) { skill_strip } else { skill_strip_alt },
-      inset: (x, y) => if x == 0 { (left: 3.5mm) } else if x == 2 { (right: 1.8mm) } else { 0mm },
-      ..skills.map(s => (text(size: 8.5pt, s),
-        entry("skill_" + lower(s), width: 7mm, height: 4.4mm, align: "center", size: 9, fill: white, stroke: 0.4pt + line_color),
-        entry("total_" + lower(s), width: 8.2mm, height: 4.8mm, align: "center", size: 10, fill: white, stroke: total_stroke))).flatten())),
+    block(width: 100%, height: height, radius: 1.5mm, clip: true, stack(
+      ..skills.enumerate().map(((i, s)) => block(width: 100%, height: height / skills.len(),
+        fill: if calc.even(i) { skill_strip } else { skill_strip_alt }, inset: strip_inset,
+        skill_grid(rows: height / skills.len(),
+          text(size: 8.5pt, s),
+          small_box("skill_" + lower(s)),
+          small_box("total_" + lower(s))))))),
   )
 }
 
-// The stat and skill points: those left to spend and those already spent, in two columns that
-// line up with the Skill and Total columns of the skill tables below.
-#let points_table() = {
-  let pt(id) = entry(id, width: 7mm, height: 4.4mm, align: "center", size: 9, fill: white, stroke: 0.4pt + line_color)
-  stack(spacing: 1mm,
-    value_cols([], [], label[Left], label[Spent]),
-    block(width: 100%, radius: 1.5mm, clip: true, grid(columns: 1, rows: 5.6mm,
-      fill: (x, y) => if calc.even(y) { skill_strip } else { skill_strip_alt },
-      ..(("Stat points", "stat_points"), ("Skill points", "skill_points")).map(((name, id)) =>
-        value_cols([], text(size: 8.5pt, name), pt(id + "_left"), pt(id + "_spent"))))))
-}
+// The labels over the two value columns of the skill tables.
+#let skill_header = grid(columns: (17mm, 1fr), column-gutter: 1.8mm, [],
+  block(width: 100%, inset: strip_inset, skill_grid([], label[Skill], label[Total])))
+
+// The stat and skill points not spent yet, kept from one level to the next.
+#let points_row = stack(spacing: 1mm,
+  label[Points to spend],
+  grid(columns: (1fr, 1fr), column-gutter: 3mm,
+    ..(("Stat points", "stat_points"), ("Skill points", "skill_points")).map(((name, id)) =>
+      block(width: 100%, height: 7.5mm, fill: skill_strip, radius: 1.5mm, inset: (x: 3mm),
+        grid(columns: (1fr, total_col), align: (left + horizon, center + horizon), rows: 7.5mm,
+          text(size: 8.5pt, name),
+          small_box(id))))))
 
 // A table to fill in (Equipment, Levels): labels in its header, zebra rows, a light line between
 // columns. cells: for each row, its cells (content, or a field name as a string).
@@ -181,7 +184,7 @@
     // Left column.
     stack(spacing: 6mm,
       panel("Narrative", {
-        stack(points_table(), v(3.5mm), value_cols([], [], label[Skill], label[Total]), v(1mm),
+        stack(points_row, v(2.2mm), skill_header, v(1.2mm),
           stack(spacing: 1.8mm, ..stats.map(((stat, skills)) => stat_row(stat, skills))))
       }),
       panel("Equipment", {
@@ -190,7 +193,7 @@
           stack(spacing: 1mm, label[Magic items], current_max("magic_items")),
           labeled("Armor", "armor", height: 5.5mm), labeled("Shield", "shield", height: 5.5mm))
         v(1mm)
-        sheet_table(columns: (12mm, 1fr), header: ("Slots", "Item"), row_height: 5.72mm,
+        sheet_table(columns: (12mm, 1fr), header: ("Slots", "Item"), row_height: 6.102mm,
           rows: range(1, equipment + 1).map(i => ("item_" + str(i) + "_slots", "item_" + str(i))))
       }),
     ),
