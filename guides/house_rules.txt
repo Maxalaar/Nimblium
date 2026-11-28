@@ -45,7 +45,7 @@ to a card, add or complete a line here.
   either, or if the grappler is Incapacitated. Grab needs a free hand, and that hand holds on
   until the grapple ends. (`game/conditions.typ`, `game/actions/grapple.typ`)
 - **Creature stats.** A creature's STR, DEX, INT and WIL are 0 unless its card shows them,
-  and each of its skills equals its stat. Nimble's monster saves become stats: each "+" is +3,
+  and so are its skills (a check adds the stat and the skill, as for heroes). Nimble's monster saves become stats: each "+" is +3,
   each "−" is −3. (`game/rules/combat.typ`, Creatures section; `creature_rules.txt` §4)
 - **Knockback is the only forced movement.** The size rule (Small, Tiny and Flying ×2, Large
   half, Huge and Gargantuan not at all) is part of the Knockback keyword; other cards that move
@@ -188,10 +188,16 @@ to a card, add or complete a line here.
 - **Redeem** (Radiant, Tier 9): cast during a Safe Rest, once per level, with no diamond and no
   "only once per creature" limit (book: 24 hours, a 10,000 gp diamond, within 1 mile; written 2 km).
   (`game/spells/radiant/redeem.typ`)
-- **Skill points**: 1 skill point at every level, level 1 included (20 in all), and points never
-  move (book: 4 at creation, then 1 per level and you may move 1 point). What every level gives
-  (Vitality HP, skill point) is written on the class sheet. (`game/rules/adventure.typ`)
-- **No Hit Dice, no Field Rest.** Vitality (the class's value + STR, at least 1; the classes with
+- **Stat and skill points** (user ruling 2026-11-28). Stats and skills start at 0 and have no
+  maximum (book: stats at most +5, skills at most +10). Raising a stat or a skill by 1 costs as
+  many points as its new value, so high values grow slowly. A hero has 5 stat points and
+  10 skill points at level 1, then gains 1 stat point and 2 skill points at every level. Unspent points are kept, and points never move. A check with a skill adds the stat
+  and the skill (book: the skill already includes its stat). No stat arrays, no Secondary
+  Stats, no stat increases at set levels on the class sheets (every row of their level
+  table shows that level's HP, stat points and skill points: 10+Vitality, 5 and 10 at level 1,
+  then +Vitality, +1 and +2; no "All" row). Key Stats stay: they say which stat is KEY.
+  (`game/rules/adventure.typ`, `game/hero_sheet.typ`)
+- **No Hit Dice, no Field Rest.** Vitality (the class's value + STR; the classes with
   STR as a Key Stat have 1 less than their old Hit Die value) replaces the Hit Die, gives the
   HP per level and counts heals. The Safe Rest is the only rest. Cards that spent Hit
   Dice were rewritten (Healing Potion, I Can Do This ALL DAY!, Infuse Strength, Enduring Soul,
@@ -218,7 +224,7 @@ to a card, add or complete a line here.
   limited actives work 1/encounter for big effects, 2/encounter for small reactive ones; anything that
   restores HP is per Rest, so short fights can't be farmed (Angel-folk's Healing Light and Lizard-folk's
   Regrowth 2/Rest; Orc-folk's Relentless 1/Rest, drops you to 3×KEY HP); KEY only scales
-  their effect (max +5). Bull-folk charges (1/encounter): after 4 spaces of movement, a melee hit
+  their effect. Bull-folk charges (1/encounter): after 4 spaces of movement, a melee hit
   deals LVL+KEY more damage and gives Knockback 2. Identity pass (2026-11-27): a bonus belongs to one ancestry
   only (Vitality to Dwarf-folk, Defense to Turtle-folk, Initiative to Human-folk, checks to
   Small-folk and Human-folk, a free move to Rabbit-folk); Angel-folk heals, Fiend-folk

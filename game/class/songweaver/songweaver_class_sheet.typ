@@ -1,8 +1,6 @@
 #import "/global.typ": *
 #import "/templates/class_sheet.typ": class_sheet, minor, by_level
 
-#let stat_up(body) = minor[#body]
-
 #class_sheet(
   name: "Songweaver",
   icon: "songweaver.svg",
@@ -14,28 +12,27 @@
     ("Vitality", [5 + #STR]),
     ("Armor", [Cloth, leather]),
   ),
-  every_level: [+Vitality #HP, +1 skill point.],
   levels: (
     (none, [Wind cantrips. #card_ref("Vicious Mockery"). #card_ref("Inspiration"), #card_ref("Songweaver's Inspiration").]),
     (1, [#card_ref("Songweaver Mana Pool"). Cantrips of a 2nd school of your choice. Tier 1 spells of the schools you know. #card_ref("Song of Rest").]),
     (1, [Choose a subclass, Herald of Snark or Herald of Courage. 1 Utility Spell of each school you know.]),
-    (2, [Choose 1 Lyrical Weaponry. #stat_up[+1 #WIL or #INT.]]),
-    (2, [Choose 2 Friends. #stat_up[+1 #STR or #DEX.]]),
+    (2, [Choose 1 Lyrical Weaponry.]),
+    (2, [Choose 2 Friends.]),
     (3, [1 more Utility Spell of each school you know.]),
     (3, [Subclass feature.]),
-    (4, [#stat_up[+1 #WIL or #INT.]]),
-    (4, [Choose 1 more Lyrical Weaponry. #stat_up[+1 #STR or #DEX.]]),
+    (4, []),
+    (4, [Choose 1 more Lyrical Weaponry.]),
     (5, []),
     (5, [Subclass feature.]),
-    (6, [#stat_up[+1 #WIL or #INT.]]),
-    (6, [Choose 1 more Lyrical Weaponry. #stat_up[+1 #STR or #DEX.]]),
+    (6, []),
+    (6, [Choose 1 more Lyrical Weaponry.]),
     (7, [Every Utility Spell of the schools you know.]),
     (7, [Subclass feature.]),
-    (8, [#stat_up[+1 #WIL or #INT.]]),
-    (8, [Choose 1 more Lyrical Weaponry. #stat_up[+1 #STR or #DEX.]]),
+    (8, []),
+    (8, [Choose 1 more Lyrical Weaponry.]),
     (9, []),
     (9, [Epic Boon.]),
-    (9, [#stat_up[+1 to any 2 stats.]]),
+    (9, []),
   ),
   boxes: (
     ([Herald of Snark], by_level(
@@ -69,4 +66,8 @@ Jack of All Trades and Perform! (change your choices on a Safe Rest) are not use
 rule in guides/house_rules.txt. A "People" Person becomes Friends: 2 creatures of your choice that
 follow you (house rule). I Know Just the Song only gives spells: no card, the table says
 what to take.
+
+house-rule: No stat increases at set levels: every row of the level table shows the HP, stat
+points and skill points that level gives (5 stat and 10 skill points at level 1, then +1 and +2),
+with no "All" row (user ruling 2026-11-28).
 */

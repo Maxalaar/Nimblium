@@ -1,7 +1,6 @@
 #import "/global.typ": *
 #import "/templates/class_sheet.typ": class_sheet, minor, by_level
 
-#let stat_up(body) = minor[#body]
 #let n = none
 
 #class_sheet(
@@ -15,28 +14,27 @@
     ("Vitality", [7 + #STR]),
     ("Armor", [None]),
   ),
-  every_level: [+Vitality #HP, +1 skill point.],
   levels: (
     (n, [#card_ref("Rage"), #card_ref("Fury Dice"), #card_ref("That all you got?!").]),
     (n, [#card_ref("Intensifying Fury"). #card_ref("One with the Ancients").]),
     (n, [Choose a subclass, Path of the Mountainheart or Path of the Red Mist. #card_ref("Bloodlust").]),
-    (n, [#card_ref("Enduring Rage"). Choose 1 Savage Arsenal ability. #stat_up[+1 #STR or #DEX.]]),
-    (n, [#stat_up[+1 #INT or #WIL.]]),
+    (n, [#card_ref("Enduring Rage"). Choose 1 Savage Arsenal ability.]),
+    (n, []),
     (n, [Choose 1 more Savage Arsenal ability.]),
     (n, [Subclass feature.]),
-    (n, [Choose 1 more Savage Arsenal ability. #stat_up[+1 #STR or #DEX.]]),
-    (n, [#stat_up[+1 #INT or #WIL.]]),
+    (n, [Choose 1 more Savage Arsenal ability.]),
+    (n, []),
     (n, [Choose 1 more Savage Arsenal ability.]),
     (n, [Subclass feature.]),
-    (n, [Choose 1 more Savage Arsenal ability. #stat_up[+1 #STR or #DEX.]]),
-    (n, [#stat_up[+1 #INT or #WIL.]]),
+    (n, [Choose 1 more Savage Arsenal ability.]),
+    (n, []),
     (n, [Choose 1 more Savage Arsenal ability.]),
     (n, [Subclass feature.]),
-    (n, [Choose 1 more Savage Arsenal ability. #stat_up[+1 #STR or #DEX.]]),
-    (n, [#stat_up[+1 #INT or #WIL.]]),
+    (n, [Choose 1 more Savage Arsenal ability.]),
+    (n, []),
     (n, [#card_ref("Deep Rage").]),
     (n, [Epic Boon.]),
-    (n, [#stat_up[+1 to any 2 stats.]]),
+    (n, []),
   ),
   boxes: (
     ([Path of the Mountainheart], by_level(
@@ -75,4 +73,8 @@ review: style=2026-11-14 changelog=2026-10-02
 Source: Heroes p.7-11 and the 2026-10-02 changelog (Boundless Rage, Dismantle). Wrath & Ruin
 (change your choices on a Safe Rest) is not used: global house rule in
 guides/house_rules.txt.
+
+house-rule: No stat increases at set levels: every row of the level table shows the HP, stat
+points and skill points that level gives (5 stat and 10 skill points at level 1, then +1 and +2),
+with no "All" row (user ruling 2026-11-28).
 */

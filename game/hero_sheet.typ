@@ -18,7 +18,12 @@ form fields.
 
 house-rule: No Hit Dice and no saves, so the sheet has neither (Adventure page). Height and
 weight are left out (role-play). Vitality has its own box, and each level has a row for what was
-chosen and where its skill point went, since choices never change (guides/house_rules.txt).
+chosen, since choices never change (guides/house_rules.txt).
+
+house-rule: Stat and skill points (user ruling 2026-11-28): stats and skills start at 0, and
+each skill row has two boxes, the skill's own value and the total rolled (stat + skill). The
+points left to spend and the points already spent, for stats and for skills, sit above the skill
+tables, lined up with those two columns.
 
 interpretation: Abilities, spells and items are cards. The sheet lists the items carried (with
 their slots) and the armor and shield worn, but not abilities or spells. Combat values (HP,

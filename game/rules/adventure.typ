@@ -11,8 +11,7 @@
 ]
 
 #section("Stats")[
-  Each hero has 4 stats. Their class makes 2 of them Key Stats, and the other 2 are Secondary
-  Stats. A stat can't go above +5.
+  Each hero has 4 stats. Their class makes 2 of them Key Stats.
 
   #rule[#KEY][When a rule says #KEY, use one of your Key Stats.]
 
@@ -28,8 +27,7 @@
 ]
 
 #section("Skills")[
-  Each skill uses one stat. Its bonus is that stat plus the skill points you put in it, and it
-  can't go above +10.
+  Each skill uses one stat. A check with a skill adds the stat and the skill.
 
   #values(columns: (21mm, 9mm, 1fr),
     [Arcana], [#INT], [Magic, spells, magical items. Aberrations, Elementals, Oozes.],
@@ -47,10 +45,16 @@
   )
 ]
 
+#section("Stat and skill points")[
+  Your stats and skills start at 0. At level 1, you have 5 stat points and 10 skill points. At
+  every level after that, you gain 1 stat point and 2 skill points. Raising a stat or a skill
+  by 1 costs as many points as its new value. Unspent points are kept.
+]
+
 #section("Checks")[
   When the outcome of something is uncertain, the GM or the effect asks for a check, with a
-  stat or a skill, such as a #DEX check or a Stealth check. Roll 1d20 and add that stat or
-  skill. If the total equals or beats the DC, you succeed. A 1 on the die always fails, and a
+  stat or a skill, such as a #DEX check or a Stealth check. Roll 1d20 and add that stat, or the
+  skill and its stat. If the total equals or beats the DC, you succeed. A 1 on the die always fails, and a
   20 always succeeds. When you fail, the GM chooses whether you fail or succeed at a cost.
 
   #values(columns: (auto, auto, 1fr), header: ("Task", "DC", "Example"),
@@ -125,22 +129,12 @@
   #rule[2\. Ancestry and background][Choose 1 ancestry and 1 background. Your ancestry gives
   your size and a trait. Your background gives another trait.]
 
-  #rule[3\. Stats][Choose one of these arrays and spread its values over your 4 stats. Put the
-  highest values in your Key Stats.]
+  #rule[3\. Stats and skills][Spend your 5 stat points and 10 skill points.]
 
-  #values(columns: (1fr, auto), header: ("Array", "Values"),
-    [Standard], [+2, +2, +0, −1],
-    [Balanced], [+2, +1, +1, +0],
-    [Min-Max], [+3, +1, −1, −1],
-  )
-
-  #rule[4\. Skills][Each skill starts at the value of its stat. Add your level 1 skill point to
-  any skill. A skill can't go above +10.]
-
-  #rule[5\. The rest of your sheet][Fill in these values.]
+  #rule[4\. The rest of your sheet][Fill in these values.]
 
   #values(columns: (27mm, 1fr),
-    [Vitality], [Your class sheet's value plus your #STR, at least 1. Many heals count in Vitality.],
+    [Vitality], [Your class sheet's value plus your #STR. Many heals count in Vitality.],
     [Max #HP], [10, plus #LVL times your Vitality.],
     [#defense], [Your #DEX, plus your armor's and your shield's bonus.],
     [Initiative], [Your #DEX.],
@@ -153,7 +147,7 @@
 
 #section("Leveling up")[
   When the GM says your hero has earned a level, you gain it during your next #safe_rest. Your
-  class sheet says what you gain, in its "All" row and in the row of your new level.
+  class sheet says what you gain, in the row of your new level.
 ]
 ]
 
@@ -164,7 +158,7 @@ Source: Core Rules p.7-9 and p.17, glossary p.56, and both changelogs. Lodging a
 are left out on purpose. Speed, range, forced movement, Cover, Hide, grappling, Concentration, Dying,
 Wounds and conditions are on the Combat page.
 
-changelog: The max skill bonus is +10 (was +12). "You can choose to fail any save" is removed.
+changelog: "You can choose to fail any save" is removed.
 The definition of damage comes from the 2026-10-02 changelog. The changelog's "half on save" rule is
 left out: each card says what a success does (user ruling 2026-11-27).
 
@@ -206,14 +200,23 @@ increase, the sheet tracks Speed, Size and Defense instead of height and weight)
 
 house-rule: Class choices never change: leveling up only adds new ones (guides/house_rules.txt).
 
-house-rule: Vitality replaces the Hit Die: the class's value plus STR, at least 1 (base 4 or 5
+house-rule: Vitality replaces the Hit Die: the class's value plus STR (base 4 or 5
 for most classes, 4 to 7 for the classes with STR as a Key Stat, 1 less than their old Hit Die
 to narrow the gap with casters). Max HP is 10 + LVL × Vitality, with no
 roll and no starting HP per class (the book: the class's starting HP, then roll the Hit Die
 with advantage or take the fixed value at each level). Within 4 HP of the book above level 1.
 
-house-rule: 1 skill point at every level, level 1 included, and points never move (book: 4
-points at creation, 1 per level, and you may move 1 point). The Stats rule (update what uses a
+house-rule: Stat and skill points (user ruling 2026-11-28). Stats and skills start at 0 and
+have no maximum (book: stats from an array, at most +5; skills start at their stat, at most +10,
+changelog; was +12). Raising one by 1 costs its new value in points, so a high value grows
+slowly. A hero has 5 stat points and 10 skill points at level 1 (5 buys +2, +1, +1, +0, the book's
+Balanced array; no +3 or +2/+2 at the start), then gains 1 stat point and 2 skill points at
+every level. Every row of the class sheets' level table shows the HP, stat points and skill points of that
+level (no "All" row), so leveling up needs only the class sheet. A check
+with a skill adds the stat and the skill. This replaces the arrays, the class stat increases
+(+1 Key Stat at levels 4, 8, 12, 16, +1 Secondary Stat at 5, 9, 13, 17, +1 to any 2 at 20) and
+the Secondary Stats. Points never move, and unspent points are kept (book: 4 skill points at
+creation, 1 per level, and you may move 1 point). The Stats rule (update what uses a
 stat) is left out: it goes without saying.
 
 interpretation: Starting equipment and gold are left out (user ruling 2026-11-26).

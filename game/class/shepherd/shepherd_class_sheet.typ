@@ -1,7 +1,6 @@
 #import "/global.typ": *
 #import "/templates/class_sheet.typ": class_sheet, minor, by_level
 
-#let stat_up(body) = minor[#body]
 #let n = none
 
 #class_sheet(
@@ -15,28 +14,27 @@
     ("Vitality", [6 + #STR]),
     ("Armor", [Cloth, leather, mail, shields]),
   ),
-  every_level: [+Vitality #HP, +1 skill point.],
   levels: (
     (n, [Radiant and Necrotic cantrips. #card_ref("Searing Light").]),
     (1, [#card_ref("Shepherd Mana Pool"). Radiant and Necrotic tier 1 spells. #card_ref("Lifebinding Spirit") and its #card_ref("Spirit Companion").]),
     (1, [Choose a subclass, Luminary of Mercy or Luminary of Malice. 1 Necrotic and 1 Radiant Utility Spell.]),
-    (2, [#stat_up[+1 #WIL or #STR.]]),
-    (2, [Choose 2 Sacred Graces. #stat_up[+1 #INT or #DEX.]]),
+    (2, []),
+    (2, [Choose 2 Sacred Graces.]),
     (3, [1 more Necrotic and 1 more Radiant Utility Spell.]),
     (3, [Subclass feature.]),
-    (4, [#stat_up[+1 #WIL or #STR.]]),
-    (4, [Choose 1 more Sacred Grace. #stat_up[+1 #INT or #DEX.]]),
+    (4, []),
+    (4, [Choose 1 more Sacred Grace.]),
     (5, []),
     (5, [Subclass feature. All Necrotic and Radiant Utility Spells.]),
-    (6, [#stat_up[+1 #WIL or #STR.]]),
-    (6, [Choose 1 more Sacred Grace. #stat_up[+1 #INT or #DEX.]]),
+    (6, []),
+    (6, [Choose 1 more Sacred Grace.]),
     (7, []),
     (7, [Subclass feature.]),
-    (8, [#stat_up[+1 #WIL or #STR.]]),
-    (8, [#card_ref("Revitalizing Blessing"). #stat_up[+1 #INT or #DEX.]]),
+    (8, []),
+    (8, [#card_ref("Revitalizing Blessing").]),
     (9, []),
     (9, [Epic Boon.]),
-    (9, [#card_ref("Twilight Sage"). #stat_up[+1 to any 2 stats.]]),
+    (9, [#card_ref("Twilight Sage").]),
   ),
   boxes: (
     ([Luminary of Mercy], by_level(
@@ -71,4 +69,8 @@ Source: Heroes p.49-53. The Shepherd keeps the house-rule companion (game/class/
 Lifebinding Spirit stays a tier 1 spell at level 2, Searing Light stays at level 1. Serve
 (change your choices on a Safe Rest) is not used: global house rule in
 guides/house_rules.txt.
+
+house-rule: No stat increases at set levels: every row of the level table shows the HP, stat
+points and skill points that level gives (5 stat and 10 skill points at level 1, then +1 and +2),
+with no "All" row (user ruling 2026-11-28).
 */

@@ -1,7 +1,6 @@
 #import "/global.typ": *
 #import "/templates/class_sheet.typ": class_sheet, minor, by_level
 
-#let stat_up(body) = minor[#body]
 #let n = none
 
 #class_sheet(
@@ -15,28 +14,27 @@
     ("Vitality", [4 + #STR]),
     ("Armor", [Cloth, leather]),
   ),
-  every_level: [+Vitality #HP, +1 skill point.],
   levels: (
     (n, [#card_ref("Sneak Attack"). #card_ref("Vicious Opportunist").]),
     (n, [#card_ref("Cheat").]),
     (n, [Choose a subclass, Tools of the Scoundrel or Tools of the Silent Blade.]),
-    (n, [Choose 1 Underhanded Ability. #stat_up[+1 #DEX or #INT.]]),
-    (n, [#card_ref("Twist the Blade"). #card_ref("Quick Read"). #stat_up[+1 #WIL or #STR.]]),
+    (n, [Choose 1 Underhanded Ability.]),
+    (n, [#card_ref("Twist the Blade"). #card_ref("Quick Read").]),
     (n, [Choose 1 more Underhanded Ability. #card_ref("THAT'S Not What Happened!").]),
     (n, [Subclass feature.]),
-    (n, [Choose 1 more Underhanded Ability. #stat_up[+1 #DEX or #INT.]]),
-    (n, [#stat_up[+1 #WIL or #STR.]]),
+    (n, [Choose 1 more Underhanded Ability.]),
+    (n, []),
     (n, [Choose 1 more Underhanded Ability.]),
     (n, [Subclass feature.]),
-    (n, [Choose 1 more Underhanded Ability. #stat_up[+1 #DEX or #INT.]]),
-    (n, [#stat_up[+1 #WIL or #STR.]]),
+    (n, [Choose 1 more Underhanded Ability.]),
+    (n, []),
     (n, [Choose 1 more Underhanded Ability.]),
     (n, [Subclass feature.]),
-    (n, [Choose 1 more Underhanded Ability. #stat_up[+1 #DEX or #INT.]]),
-    (n, [#stat_up[+1 #WIL or #STR.]]),
+    (n, [Choose 1 more Underhanded Ability.]),
+    (n, []),
     (n, [Choose 1 more Underhanded Ability.]),
     (n, [Epic Boon.]),
-    (n, [#stat_up[+1 to any 2 stats.]]),
+    (n, []),
   ),
   boxes: (
     ([Tools of the Scoundrel], by_level(
@@ -74,4 +72,8 @@ review: style=2026-11-14 changelog=2026-10-02
 Source: Heroes p.13-17 and the 2026-10-02 changelog (Tangling Wire and The Setup are new).
 Trade Secrets (change your choices on a Safe Rest) is not used: global house rule in
 guides/house_rules.txt.
+
+house-rule: No stat increases at set levels: every row of the level table shows the HP, stat
+points and skill points that level gives (5 stat and 10 skill points at level 1, then +1 and +2),
+with no "All" row (user ruling 2026-11-28).
 */

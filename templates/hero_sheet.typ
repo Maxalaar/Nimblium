@@ -83,8 +83,23 @@
       align(center + horizon, text(fill: dark, weight: "bold", size: name_size, tracking: 1.3pt, upper(name)))))
   })
 
+// Widths of the skill table's two value columns: the skill, then the total rolled (stat + skill).
+#let skill_col = 8.5mm
+#let total_col = 10mm
+
+#let total_stroke = 0.8pt + luma(80)
+
+// A row laid out like a stat and its skill table, so that its two values line up with the
+// Skill and Total columns: first (under the stat box), name (on the left of the skill table),
+// then the two values.
+#let value_cols(first, name, a, b) = grid(columns: (17mm, 1fr), column-gutter: 1.8mm, align: horizon, first,
+  grid(columns: (1fr, skill_col, total_col), align: (left + horizon, center + horizon, center + horizon),
+    inset: (x, y) => if x == 0 { (left: 3.5mm) } else if x == 2 { (right: 1.8mm) } else { 0mm },
+    name, a, b))
+
 // A stat and the skills that use it: the skills are the rows of a small table next to the
-// stat's box, in alternating grays.
+// stat's box, in alternating grays. Each row holds the skill's value, then the total rolled with
+// it (the stat plus the skill), in a heavier box.
 #let stat_row(stat, skills, row: 5.6mm) = {
   let id = lower(stat)
   let height = calc.max(16mm, skills.len() * row)
@@ -92,12 +107,26 @@
     banded(stat, "stat_" + id, height: height, name_size: 9pt, value_size: 14,
       corner: [#text(size: 5pt, tracking: 0.6pt, fill: reminder_color)[KEY] #h(0.3mm) #tick("key_" + id, size: 2.6mm)]),
     block(width: 100%, height: height, radius: 1.5mm, clip: true, grid(
-      columns: (1fr, 11mm), rows: (height / skills.len(),) * skills.len(), align: horizon,
+      columns: (1fr, skill_col, total_col), rows: (height / skills.len(),) * skills.len(),
+      align: (left + horizon, center + horizon, center + horizon),
       fill: (x, y) => if calc.even(y) { skill_strip } else { skill_strip_alt },
-      inset: (x, y) => if x == 0 { (left: 3.5mm) } else { (right: 2.5mm) },
+      inset: (x, y) => if x == 0 { (left: 3.5mm) } else if x == 2 { (right: 1.8mm) } else { 0mm },
       ..skills.map(s => (text(size: 8.5pt, s),
-        entry("skill_" + lower(s), height: 4.4mm, align: "center", size: 9, fill: white, stroke: 0.4pt + line_color))).flatten())),
+        entry("skill_" + lower(s), width: 7mm, height: 4.4mm, align: "center", size: 9, fill: white, stroke: 0.4pt + line_color),
+        entry("total_" + lower(s), width: 8.2mm, height: 4.8mm, align: "center", size: 10, fill: white, stroke: total_stroke))).flatten())),
   )
+}
+
+// The stat and skill points: those left to spend and those already spent, in two columns that
+// line up with the Skill and Total columns of the skill tables below.
+#let points_table() = {
+  let pt(id) = entry(id, width: 7mm, height: 4.4mm, align: "center", size: 9, fill: white, stroke: 0.4pt + line_color)
+  stack(spacing: 1mm,
+    value_cols([], [], label[Left], label[Spent]),
+    block(width: 100%, radius: 1.5mm, clip: true, grid(columns: 1, rows: 5.6mm,
+      fill: (x, y) => if calc.even(y) { skill_strip } else { skill_strip_alt },
+      ..(("Stat points", "stat_points"), ("Skill points", "skill_points")).map(((name, id)) =>
+        value_cols([], text(size: 8.5pt, name), pt(id + "_left"), pt(id + "_spent"))))))
 }
 
 // A table to fill in (Equipment, Levels): labels in its header, zebra rows, a light line between
@@ -121,7 +150,7 @@
 
 // stats: ((stat, (skill, ...)), ...). equipment: number of lines of the equipment list.
 // What each value is worth is on the Adventure page, not on the sheet.
-#let hero_sheet(stats: (), equipment: 17) = {
+#let hero_sheet(stats: (), equipment: 14) = {
   set page(paper: "a4", margin: (x: 12mm, y: 10mm))
   set text(size: 9pt)
   set par(leading: 0.45em)
@@ -152,7 +181,8 @@
     // Left column.
     stack(spacing: 6mm,
       panel("Narrative", {
-        stack(spacing: 1.8mm, ..stats.map(((stat, skills)) => stat_row(stat, skills)))
+        stack(points_table(), v(3.5mm), value_cols([], [], label[Skill], label[Total]), v(1mm),
+          stack(spacing: 1.8mm, ..stats.map(((stat, skills)) => stat_row(stat, skills))))
       }),
       panel("Equipment", {
         grid(columns: (1fr, 1fr), column-gutter: 4mm, row-gutter: 2.5mm,
@@ -160,7 +190,7 @@
           stack(spacing: 1mm, label[Magic items], current_max("magic_items")),
           labeled("Armor", "armor", height: 5.5mm), labeled("Shield", "shield", height: 5.5mm))
         v(1mm)
-        sheet_table(columns: (12mm, 1fr), header: ("Slots", "Item"), row_height: 5.89mm,
+        sheet_table(columns: (12mm, 1fr), header: ("Slots", "Item"), row_height: 5.72mm,
           rows: range(1, equipment + 1).map(i => ("item_" + str(i) + "_slots", "item_" + str(i))))
       }),
     ),
@@ -203,10 +233,10 @@
         )
       }),
       panel("Levels", {
-        sheet_table(columns: (8mm, 24mm, 1fr), header: ("Lvl", "Skill point", "Gained and chosen"), row_height: 7.4mm,
-          aligns: (center + horizon, left + horizon, left + horizon),
+        sheet_table(columns: (8mm, 1fr), header: ("Lvl", "Gained and chosen"), row_height: 7.4mm,
+          aligns: (center + horizon, left + horizon),
           rows: range(1, 21).map(l => (text(weight: "bold", size: 8.5pt, fill: dark, str(l)),
-            "level_" + str(l) + "_skill", "level_" + str(l))))
+            "level_" + str(l))))
       }),
     ),
   )

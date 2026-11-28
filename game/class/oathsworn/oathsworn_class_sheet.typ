@@ -1,7 +1,6 @@
 #import "/global.typ": *
 #import "/templates/class_sheet.typ": class_sheet, minor, by_level, locked
 
-#let stat_up(body) = minor[#body]
 #let n = none
 
 #class_sheet(
@@ -15,28 +14,27 @@
     ("Vitality", [6 + #STR]),
     ("Armor", [Cloth, leather, mail, plate, shields]),
   ),
-  every_level: [+Vitality #HP, +1 skill point.],
   levels: (
     (n, [#card_ref("Radiant Judgment"). #card_ref("Lay on Hands").]),
     (1, [#card_ref("Oathsworn Mana Pool"). Radiant cantrips and tier 1 spells. #card_ref("Zealot"). #card_ref("Paragon of Virtue").]),
     (1, [Choose a subclass, Oath of Vengeance, Oath of Refuge or Oathbreaker. Choose 1 Sacred Decree.]),
-    (2, [#card_ref("My Life, for My Friends"). #stat_up[+1 #STR or #WIL.]]),
-    (2, [#stat_up[+1 #DEX or #INT.]]),
+    (2, [#card_ref("My Life, for My Friends").]),
+    (2, []),
     (3, [Choose 1 more Sacred Decree.]),
     (3, [Subclass feature. 1 Radiant Utility Spell.]),
-    (4, [#stat_up[+1 #STR or #WIL.]]),
-    (4, [Choose 1 more Sacred Decree. #stat_up[+1 #DEX or #INT.]]),
+    (4, []),
+    (4, [Choose 1 more Sacred Decree.]),
     (5, []),
     (5, [Subclass feature. 1 more Radiant Utility Spell.]),
-    (5, [Choose 1 more Sacred Decree. #stat_up[+1 #STR or #WIL.]]),
-    (6, [#stat_up[+1 #DEX or #INT.]]),
+    (5, [Choose 1 more Sacred Decree.]),
+    (6, []),
     (6, [Choose 1 more Sacred Decree.]),
     (6, [Subclass feature.]),
-    (6, [Choose 1 more Sacred Decree. #stat_up[+1 #STR or #WIL.]]),
-    (7, [#stat_up[+1 #DEX or #INT.]]),
+    (6, [Choose 1 more Sacred Decree.]),
+    (7, []),
     (7, [#card_ref("Unending Judgment").]),
     (7, [Epic Boon.]),
-    (7, [#card_ref("Glorious Paragon"). #stat_up[+1 to any 2 stats.]]),
+    (7, [#card_ref("Glorious Paragon").]),
   ),
   boxes: (
     ([Oath of Vengeance], by_level(
@@ -79,4 +77,8 @@ Source: Heroes p.37-41 and the 2026-10-02 changelog (weapons: melee STR weapons;
 Radiant Judgment, Explosive Judgment, Unstoppable Protector, Glorious Reprieve). Tiers: 1 at
 level 2, 2 at 4, 3 at 6, 4 at 8, 5 at 10, 6 at 13, 7 at 17. Serve Selflessly (change your
 choices on a Safe Rest) is not used: global house rule in guides/house_rules.txt.
+
+house-rule: No stat increases at set levels: every row of the level table shows the HP, stat
+points and skill points that level gives (5 stat and 10 skill points at level 1, then +1 and +2),
+with no "All" row (user ruling 2026-11-28).
 */

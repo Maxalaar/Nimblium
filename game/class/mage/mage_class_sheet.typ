@@ -1,8 +1,6 @@
 #import "/global.typ": *
 #import "/templates/class_sheet.typ": class_sheet, minor, by_level
 
-#let stat_up(body) = minor[#body]
-
 #class_sheet(
   name: "Mage",
   icon: "mage.svg",
@@ -14,28 +12,27 @@
     ("Vitality", [4 + #STR]),
     ("Armor", [Cloth]),
   ),
-  every_level: [+Vitality #HP, +1 skill point.],
   levels: (
     (none, [Fire, Ice and Lightning cantrips.]),
     (1, [#card_ref("Mage Mana Pool"). Fire, Ice and Lightning tier 1 spells. #card_ref("Talented Researcher").]),
     (1, [Choose a subclass, Invoker of Control or Invoker of Chaos. Utility Spells of 1 school you know.]),
-    (2, [#card_ref("Spellshaper"). Choose 2 Spellshaper abilities. #stat_up[+1 #INT or #WIL.]]),
-    (2, [#card_ref("Elemental Surge"). #stat_up[+1 #STR or #DEX.]]),
+    (2, [#card_ref("Spellshaper"). Choose 2 Spellshaper abilities.]),
+    (2, [#card_ref("Elemental Surge").]),
     (3, [Utility Spells of a 2nd school you know.]),
     (3, [Subclass feature.]),
-    (4, [#stat_up[+1 #INT or #WIL.]]),
-    (4, [Choose 1 more Spellshaper ability. #stat_up[+1 #STR or #DEX.]]),
+    (4, []),
+    (4, [Choose 1 more Spellshaper ability.]),
     (5, []),
     (5, [Subclass feature.]),
-    (6, [#stat_up[+1 #INT or #WIL.]]),
-    (6, [Choose 1 more Spellshaper ability. #stat_up[+1 #STR or #DEX.]]),
+    (6, []),
+    (6, [Choose 1 more Spellshaper ability.]),
     (7, [Utility Spells of a 3rd school you know.]),
     (7, [Subclass feature.]),
-    (8, [#stat_up[+1 #INT or #WIL.]]),
-    (8, [#stat_up[+1 #STR or #DEX.]]),
+    (8, []),
+    (8, []),
     (9, []),
     (9, [Epic Boon.]),
-    (9, [#card_ref("Archmage"). #stat_up[+1 to any 2 stats.]]),
+    (9, [#card_ref("Archmage").]),
   ),
   boxes: (
     ([Invoker of Control], by_level(
@@ -68,4 +65,8 @@ review: style=2026-11-14 changelog=2026-10-02
 Source: Heroes p.31-35 and the 2026-10-02 changelog (Mage: class table reworded, no rules
 change). Study! (change your choices on a Safe Rest) is not used: global house rule in
 guides/house_rules.txt.
+
+house-rule: No stat increases at set levels: every row of the level table shows the HP, stat
+points and skill points that level gives (5 stat and 10 skill points at level 1, then +1 and +2),
+with no "All" row (user ruling 2026-11-28).
 */

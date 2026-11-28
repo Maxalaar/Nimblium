@@ -88,9 +88,9 @@ second one the remaining blocks and the reminders. Use it only when the text can
 - **No "or", no "then".** Two attacks the creature chooses between are two blocks. Two effects
   it chains are two blocks, each with a `1/turn` limit, on a creature with enough actions.
 - **No costs or limits in the text.** They go on capsules (writing_rules.txt §4).
-- **STR, DEX, INT and WIL are 0 by default**, and each skill equals its stat (Combat rules
-  page, Creatures). A creature with a notable skill gets a narrative block: "This creature has
-  +5 Perception."
+- **STR, DEX, INT, WIL and skills are 0 by default** (Combat rules page, Creatures). A
+  check adds the stat and the skill. A creature with a notable skill gets a narrative block:
+  "This creature has +5 Perception."
 - **Default values are not written**: speed 6, 1 action, Medium size, can take damage, disappears at 0 HP.
 
 ## 4. Stats

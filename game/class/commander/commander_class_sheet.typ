@@ -1,7 +1,6 @@
 #import "/global.typ": *
 #import "/templates/class_sheet.typ": class_sheet, minor, by_level, locked
 
-#let stat_up(body) = minor[#body]
 #let n = none
 
 #class_sheet(
@@ -15,28 +14,27 @@
     ("Vitality", [6 + #STR]),
     ("Armor", [Cloth, leather, mail, shields]),
   ),
-  every_level: [+Vitality #HP, +1 skill point.],
   levels: (
     (n, [#card_ref("Coordinated Strike!").]),
     (n, [#card_ref("Combat Dice"). Choose 1 Combat Tactic. #card_ref("Field Medic").]),
     (n, [Choose a subclass, Champion of the Bulwark, Champion of the Vanguard or Spellblade.]),
-    (n, [Choose 2 Commander's Orders. #stat_up[+1 #STR or #INT.]]),
-    (n, [#stat_up[+1 #DEX or #WIL.]]),
+    (n, [Choose 2 Commander's Orders.]),
+    (n, []),
     (n, [Choose 1 more Combat Tactic, or gain 1 more Combat Die. #card_ref("Weapon Mastery"). Choose 1 mastery.]),
     (n, [Subclass feature.]),
-    (n, [Choose 1 more Combat Tactic, or gain 1 more Combat Die. #stat_up[+1 #STR or #INT.]]),
-    (n, [#stat_up[+1 #DEX or #WIL.]]),
+    (n, [Choose 1 more Combat Tactic, or gain 1 more Combat Die.]),
+    (n, []),
     (n, [Choose 1 more Combat Tactic, or gain 1 more Combat Die. Choose 1 more mastery.]),
     (n, [Subclass feature.]),
-    (n, [Choose 1 more Combat Tactic, or gain 1 more Combat Die. #stat_up[+1 #STR or #INT.]]),
-    (n, [#stat_up[+1 #DEX or #WIL.]]),
+    (n, [Choose 1 more Combat Tactic, or gain 1 more Combat Die.]),
+    (n, []),
     (n, [All 3 masteries.]),
     (n, [Subclass feature.]),
-    (n, [Choose 1 more Combat Tactic, or gain 1 more Combat Die. #stat_up[+1 #STR or #INT.]]),
-    (n, [#stat_up[+1 #DEX or #WIL.]]),
+    (n, [Choose 1 more Combat Tactic, or gain 1 more Combat Die.]),
+    (n, []),
     (n, []),
     (n, [Epic Boon.]),
-    (n, [#stat_up[+1 to any 2 stats.]]),
+    (n, []),
   ),
   boxes: (
     ([Champion of the Bulwark], by_level(
@@ -81,4 +79,8 @@ Combat Tactics) moved to level 2 and Commander's Orders to level 4; the Combat D
 come with Master Commander at levels 5, 9, 13 and 17. Master Commander (2), (3) and (4) keep
 the book's +1 use of Coordinated Strike per Safe Rest. Rigorous Training (change your choices
 on a Safe Rest) is not used: global house rule in guides/house_rules.txt.
+
+house-rule: No stat increases at set levels: every row of the level table shows the HP, stat
+points and skill points that level gives (5 stat and 10 skill points at level 1, then +1 and +2),
+with no "All" row (user ruling 2026-11-28).
 */

@@ -1,8 +1,6 @@
 #import "/global.typ": *
 #import "/templates/class_sheet.typ": class_sheet, minor, by_level
 
-#let stat_up(body) = minor[#body]
-
 #class_sheet(
   name: "Stormshifter",
   icon: "stormshifter.svg",
@@ -14,28 +12,27 @@
     ("Vitality", [5 + #STR]),
     ("Armor", [Cloth, leather]),
   ),
-  every_level: [+Vitality #HP, +1 skill point.],
   levels: (
     (none, [Lightning and Wind cantrips. #card_ref("Beastshift"), #card_ref("Harmless Beast"). #card_ref("Fearsome Beast").]),
     (1, [#card_ref("Stormshifter Mana Pool"). Lightning and Wind tier 1 spells. #card_ref("Beast of the Pack").]),
     (1, [Choose a subclass, Circle of Sky & Storm or Circle of Fang & Claw.]),
-    (2, [1 Utility Spell of each school you know. #stat_up[+1 #WIL or #DEX.]]),
-    (2, [#card_ref("Beast of Nightmares"). #stat_up[+1 #STR or #INT.]]),
+    (2, [1 Utility Spell of each school you know.]),
+    (2, [#card_ref("Beast of Nightmares").]),
     (3, [Choose 2 Chimeric Boons.]),
     (3, [Subclass feature. 1 more Utility Spell of each school you know.]),
-    (4, [#card_ref("Stormborn"). #stat_up[+1 #WIL or #DEX.]]),
-    (4, [Choose 1 more Chimeric Boon. #stat_up[+1 #STR or #INT.]]),
+    (4, [#card_ref("Stormborn").]),
+    (4, [Choose 1 more Chimeric Boon.]),
     (5, []),
     (5, [Subclass feature.]),
-    (6, [Choose 1 more Chimeric Boon. #stat_up[+1 #WIL or #DEX.]]),
-    (6, [#stat_up[+1 #STR or #INT.]]),
+    (6, [Choose 1 more Chimeric Boon.]),
+    (6, []),
     (7, []),
     (7, [Subclass feature.]),
-    (8, [#stat_up[+1 #WIL or #DEX.]]),
-    (8, [Choose 1 more Chimeric Boon. #stat_up[+1 #STR or #INT.]]),
+    (8, []),
+    (8, [Choose 1 more Chimeric Boon.]),
     (9, []),
     (9, [Epic Boon.]),
-    (9, [#stat_up[+1 to any 2 stats.]]),
+    (9, []),
   ),
   boxes: (
     ([Circle of Sky & Storm], by_level(
@@ -64,4 +61,8 @@ Pack at level 2, Direbeast forms DEX times per encounter, Expert Shifter removed
 rebuilt). Be Wild (change your choices on a Safe Rest) is not used: global house rule in
 guides/house_rules.txt. Master of Storms, Deepening Study and Stormcaller only give spells: no
 card, the table says what to take.
+
+house-rule: No stat increases at set levels: every row of the level table shows the HP, stat
+points and skill points that level gives (5 stat and 10 skill points at level 1, then +1 and +2),
+with no "All" row (user ruling 2026-11-28).
 */

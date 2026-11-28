@@ -1,7 +1,6 @@
 #import "/global.typ": *
 #import "/templates/class_sheet.typ": class_sheet, minor, by_level, locked
 
-#let stat_up(body) = minor[#body]
 #let n = none
 
 #class_sheet(
@@ -15,28 +14,27 @@
     ("Vitality", [5 + #STR]),
     ("Armor", [Cloth]),
   ),
-  every_level: [+Vitality #HP, +1 skill point.],
   levels: (
     (n, [#card_ref("Shadow Blast"), #card_ref("Summon Shadow"), #card_ref("Command Shadows") and the #card_ref("Shadow").]),
     (1, [#card_ref("Pilfered Power"). Necrotic cantrips and tier 1 spells.]),
     (1, [Choose a subclass, Pact of the Red Dragon, Pact of the Abyssal Depths or Reaver. Choose 1 Lesser Invocation.]),
-    (1, [Choose 1 Greater Invocation. #stat_up[+1 #INT or #DEX.]]),
-    (2, [#stat_up[+1 #STR or #WIL.]]),
+    (1, [Choose 1 Greater Invocation.]),
+    (2, []),
     (2, [Choose 1 more Greater Invocation. 1 Necrotic Utility Spell.]),
     (3, [Subclass feature.]),
-    (3, [Choose 1 more Lesser Invocation. 1 more Necrotic Utility Spell. #stat_up[+1 #INT or #DEX.]]),
-    (3, [Choose 1 more Greater Invocation. #stat_up[+1 #STR or #WIL.]]),
+    (3, [Choose 1 more Lesser Invocation. 1 more Necrotic Utility Spell.]),
+    (3, [Choose 1 more Greater Invocation.]),
     (4, []),
     (4, [Subclass feature. Choose 1 more Lesser Invocation.]),
-    (4, [#stat_up[+1 #INT or #DEX.]]),
-    (5, [#stat_up[+1 #STR or #WIL.]]),
+    (4, []),
+    (5, []),
     (5, [Choose 1 more Greater Invocation. All Necrotic Utility Spells.]),
     (5, [Subclass feature.]),
-    (6, [#stat_up[+1 #INT or #DEX.]]),
-    (6, [#card_ref("Dire Shadows"). #stat_up[+1 #STR or #WIL.]]),
+    (6, []),
+    (6, [#card_ref("Dire Shadows").]),
     (6, [Choose 1 more Greater Invocation.]),
     (7, [Epic Boon.]),
-    (7, [#stat_up[+1 to any 2 stats.]]),
+    (7, []),
   ),
   boxes: (
     ([Pact of the Red Dragon], by_level(
@@ -74,4 +72,8 @@ Source: Heroes p.43-47 and the 2026-10-02 changelog (Eldritch Usurper summons a 
 Shadow, Vengeful Blast removed). The Tier column is the tier every spell is cast at
 (Pilfered Power). Supplicate (change your choices on a Safe Rest) is not used: global house
 rule in guides/house_rules.txt.
+
+house-rule: No stat increases at set levels: every row of the level table shows the HP, stat
+points and skill points that level gives (5 stat and 10 skill points at level 1, then +1 and +2),
+with no "All" row (user ruling 2026-11-28).
 */
