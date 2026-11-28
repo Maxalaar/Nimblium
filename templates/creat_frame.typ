@@ -4,6 +4,7 @@
 // the right.
 #import "/templates/style.typ": reminder_color
 #import "family_icons.typ": family_icons, icon_gray
+#import "version.typ": version_stamp
 
 #let card_width = 63mm
 #let card_height = 88mm
@@ -180,6 +181,9 @@
 // bottom center, below the rules text.
 #let card_front(name, types, body, stats: (), stat_cut: none, icon: none) = card_frame({
   corners()
+  // Version date, at the bottom left, under the corner bracket.
+  // A small gap separates the top of its digits from the bracket's bottom line, 4mm above the edge.
+  place(top + left, dx: 4mm, dy: card_height - 4mm + 0.45mm, version_stamp(name, size: 5.5pt))
   let cx = card_width / 2
   if icon != none { at(cx, front_icon_y, icon_image(icon, front_icon_size)) }
   let body_bottom = body_end(icon != none)

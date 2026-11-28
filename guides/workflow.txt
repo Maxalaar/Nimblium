@@ -144,6 +144,19 @@ it also creates `build/nimblium_cards.pdf`: every card, one per page, where the 
 with `#card_ref` are clickable links to the card they name (in the individual PDFs, they are
 only in italics).
 
+The export also covers the class sheets, the rules pages and the hero sheet (fillable, through
+`tools/fillable_pdf.py`).
+
+Version dates (user ruling 2026-11-28): every document prints at its bottom left the day its
+text last changed, year-month-day (`templates/version.typ`), so that of two printed copies of the
+same card the later date is the one to keep. The export always recompiles everything (the look
+may have changed), then reads each document's text back from its PDF and compares it with the
+one stored in `versions.json` (the same words, in any order): only when it differs does the date
+become today's. A change of keyword shows on every card that reminds it; a note, a comment, a
+renamed file or a new layout changes no date. Never edit `versions.json` by hand, and commit it
+with the cards. Keys: the card's name, "Class sheet: <class>", "Rules: <page>", "Hero sheet"; a
+renamed card starts with a new date, and the keys of documents that are gone are removed.
+
 ## Review tracking and card notes (`tools/review.py`)
 
 Each card ends with a Typst block comment that holds its management notes. It is not card

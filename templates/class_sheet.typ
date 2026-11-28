@@ -7,6 +7,7 @@
 #import "creat_frame.typ": icon_image, ink, hair
 #import "/templates/style.typ": reminder_color
 #import "/templates/table.typ": game_table
+#import "/templates/version.typ": version_stamp
 
 #let sheet_tracking = 2pt
 
@@ -56,7 +57,8 @@
 // class without spells: the Tier column is then hidden).
 // boxes: ((title, content), ...) shown side by side under the table.
 #let class_sheet(name: "", icon: none, intro: none, difficulty: none, description: none, info: (), resource: none, levels: (), boxes: ()) = {
-  set page(paper: "a4", margin: (x: 14mm, y: 12mm))
+  set page(paper: "a4", margin: (x: 14mm, y: 12mm),
+    footer: align(left, version_stamp("Class sheet: " + name, size: 6pt)))
   set text(size: 9.5pt)
   set par(leading: 0.45em)
 

@@ -12,16 +12,76 @@ VS Code extension) jump straight to the source .typ file on click.
 Class sheets (game/class/<class>/<class>_class_sheet.typ, one A4 page per class) and rules pages
 (game/rules/<area>.typ, one A4 sheet per area of the game) are exported next to their source too.
 
+The hero sheet (game/hero_sheet.typ) is exported too, as a fillable PDF (tools/fillable_pdf.py).
+
 With --book, also export every card into one PDF, build/nimblium_cards.pdf, one
 card per page. There, card names written with #card_ref link to their card
 (game/terms.typ).
+
+Version dates: every document prints, at its bottom left, the day its text last changed
+(templates/version.typ). After compiling a document, its text is read back from the PDF and
+compared with the one stored in versions.json (the same words, in any order): if it changed, or the document is new, its date
+becomes today's and it is compiled again with that date. Everything is always recompiled (a
+template may have changed the look); only the date waits for a change of text.
 """
 
+import datetime
+import json
+import re
 import subprocess
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+VERSIONS_PATH = ROOT / "versions.json"
+TODAY = datetime.date.today().isoformat()
+# The printed date itself is left out of the text that is compared.
+DATE = re.compile(r"\b\d{4}-\d{2}-\d{2}\b")
+
+
+def load_versions():
+    if VERSIONS_PATH.exists():
+        return json.loads(VERSIONS_PATH.read_text(encoding="utf-8"))
+    return {}
+
+
+def save_versions(versions):
+    VERSIONS_PATH.write_text(json.dumps(dict(sorted(versions.items())), indent=1, ensure_ascii=False) + "\n",
+                             encoding="utf-8")
+
+
+def pdf_text(pdf: Path) -> str:
+    """The text printed in a PDF, without its version date, whitespace collapsed."""
+    raw = subprocess.run(["pdftotext", str(pdf), "-"], check=True, capture_output=True, text=True).stdout
+    return " ".join(DATE.sub("", raw).split())
+
+
+def versioned(key, build, pdf: Path, versions, seen):
+    """Build a document, then give it today's date if its text changed, and build it again."""
+    seen.add(key)
+    build()
+    text = pdf_text(pdf)
+    entry = versions.get(key)
+    # The words are compared in any order: pdftotext may read a page's blocks in another order
+    # when only the layout moves.
+    if entry is None or sorted(entry["text"].split()) != sorted(text.split()):
+        versions[key] = {"date": TODAY, "text": text}
+        save_versions(versions)
+        build()
+        return True
+    return False
+
+
+def document_name(path: Path, call: str) -> str:
+    """The `name:` given to a document: the card data's, or a template call's."""
+    source = path.read_text(encoding="utf-8")
+    pattern = r'_data = \(\s*name: "((?:[^"\\]|\\.)*)"' if call == "card" else call + r'\(\s*name: "((?:[^"\\]|\\.)*)"'
+    match = re.search(pattern, source)
+    if not match:
+        sys.exit(f"{path.relative_to(ROOT)}: no name found for its version date")
+    return json.loads('"' + match.group(1) + '"')
+
+
 CARD_DIRS = ["game/class", "game/spells", "game/creatures", "game/actions", "game/items", "game/ancestries", "game/backgrounds"]
 EXCLUDED_NAMES = {
     "mod.typ",
@@ -67,6 +127,12 @@ def export_card(path: Path) -> Path:
     return out_path
 
 
+def compile_page(source: Path) -> Path:
+    out_path = source.with_suffix(".pdf")
+    subprocess.run(["typst", "compile", "--root", str(ROOT), str(source), str(out_path)], check=True)
+    return out_path
+
+
 BOOK_PATH = ROOT / "build" / "nimblium_cards.pdf"
 
 
@@ -95,19 +161,52 @@ def main():
     for leftover in ROOT.rglob(".export_*.typ"):
         leftover.unlink()
 
+    if not VERSIONS_PATH.exists():
+        save_versions({})
+    versions = load_versions()
+    seen = set()
+    changed = []
+
+    def report(path, out_path, key, new):
+        print(f"  {path.relative_to(ROOT)} -> {out_path.relative_to(ROOT)}" + (f"  [new date {TODAY}]" if new else ""))
+        if new:
+            changed.append(key)
+
     count = 0
     for path in find_card_files():
-        out_path = export_card(path)
-        print(f"  {path.relative_to(ROOT)} -> {out_path.relative_to(ROOT)}")
+        key = document_name(path, "card")
+        out_path = path.with_suffix(".pdf")
+        new = versioned(key, lambda p=path: export_card(p), out_path, versions, seen)
+        report(path, out_path, key, new)
         count += 1
 
     print(f"Exported {count} cards")
 
-    sheets = sorted((ROOT / "game" / "class").rglob("*_class_sheet.typ")) + sorted((ROOT / "game" / "rules").glob("*.typ"))
-    for sheet in sheets:
-        out_path = sheet.with_suffix(".pdf")
-        subprocess.run(["typst", "compile", "--root", str(ROOT), str(sheet), str(out_path)], check=True)
-        print(f"  {sheet.relative_to(ROOT)} -> {out_path.relative_to(ROOT)}")
+    pages = [(sheet, "Class sheet: " + document_name(sheet, "class_sheet"))
+             for sheet in sorted((ROOT / "game" / "class").rglob("*_class_sheet.typ"))]
+    pages += [(page, "Rules: " + document_name(page, "rules_page"))
+              for page in sorted((ROOT / "game" / "rules").glob("*.typ"))]
+    for page, key in pages:
+        out_path = page.with_suffix(".pdf")
+        new = versioned(key, lambda p=page: compile_page(p), out_path, versions, seen)
+        report(page, out_path, key, new)
+
+    # The hero sheet is a fillable PDF.
+    sys.path.insert(0, str(ROOT / "tools"))
+    from fillable_pdf import make_fillable
+    hero = ROOT / "game" / "hero_sheet.typ"
+    out_path = hero.with_suffix(".pdf")
+    new = versioned("Hero sheet", lambda: make_fillable(hero, out_path), out_path, versions, seen)
+    report(hero, out_path, "Hero sheet", new)
+
+    # Documents that no longer exist (a card renamed or removed) leave the registry.
+    gone = sorted(set(versions) - seen)
+    for key in gone:
+        del versions[key]
+    save_versions(versions)
+    if gone:
+        print(f"Removed from versions.json: {', '.join(gone)}")
+    print(f"New date {TODAY}: {len(changed)} document(s)" + (f" ({', '.join(changed)})" if 0 < len(changed) <= 20 else ""))
 
     if "--book" in sys.argv[1:]:
         book = export_book(list(find_card_files()))

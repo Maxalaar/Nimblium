@@ -6,6 +6,7 @@
 #import "class_sheet.typ": sheet_tracking
 #import "/templates/style.typ": reminder_color
 #import "/templates/table.typ": game_table
+#import "/templates/version.typ": version_stamp
 
 // Title of a section: centered small capitals in a gray band across the column, as the tabs of
 // the hero sheet. Title of a subsection: the same, slightly smaller, in a lighter band.
@@ -53,7 +54,8 @@
 // reminder: the keyword and condition definitions the page uses, shown once at its end (no line above),
 // in the order given (by name), in gray like a card's reminders.
 #let rules_page(name: "", intro: none, reminder: (), body) = {
-  set page(paper: "a4", margin: (x: 14mm, y: 12mm), columns: 2)
+  set page(paper: "a4", margin: (x: 14mm, y: 12mm), columns: 2,
+    footer: align(left, version_stamp("Rules: " + name, size: 6pt)))
   set columns(gutter: 7mm)
   set text(size: 9.5pt)
   set par(leading: 0.45em, spacing: 0.9em, justify: false)
