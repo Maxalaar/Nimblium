@@ -3,7 +3,7 @@
 #let item_data = (
     name: "Healing Potion",
     type: ("Item", "Potion"),
-    family_icon: "potion.svg",
+    family_icon: "items/gear/potion.svg",
     charges: 1,
     slots: 2,
     blocks: (

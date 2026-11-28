@@ -3,7 +3,7 @@
 #let item_data = (
     name: "Pole Hammer",
     type: ("Item", "Weapon", "Melee", "Hammer"),
-    family_icon: "hammer.svg",
+    family_icon: "items/weapons/hammer.svg",
     damage: [1d10+#STR],
     reach: 2,
     slots: 2,

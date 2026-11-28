@@ -3,7 +3,7 @@
 #let item_data = (
     name: "Bulky Gear",
     type: ("Item", "Gear"),
-    family_icon: "gear.svg",
+    family_icon: "items/gear/gear.svg",
     slots: 2,
     blocks: (
       (kind: "narrative", effect: [#blank(40mm)\ #blank(40mm)]),

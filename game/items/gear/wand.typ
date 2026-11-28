@@ -3,7 +3,7 @@
 #let item_data = (
     name: "Wand",
     type: ("Item", "Wand"),
-    family_icon: "wand.svg",
+    family_icon: "items/gear/wand.svg",
     level: blank(6mm),
     charges: blank(6mm),
     slots: 2,

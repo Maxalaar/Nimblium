@@ -3,7 +3,7 @@
 #let item_data = (
     name: "Javelins",
     type: ("Item", "Weapon", "Ranged", "Thrown"),
-    family_icon: "javelin.svg",
+    family_icon: "items/weapons/javelin.svg",
     damage: [1d6+#STR],
     range: 8,
     charges: 4,

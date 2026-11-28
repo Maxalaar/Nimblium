@@ -3,7 +3,7 @@
 
 #class_sheet(
   name: "Mage",
-  icon: "mage.svg",
+  icon: "class/mage.svg",
   intro: [Elemental power flows through all things. Find it, study it and harness it.],
   difficulty: 3,
   description: [A master of fire, ice and lightning who bends the elements to their will. The Mage stays back and shapes the fight with powerful spells, from a single deadly bolt to storms that sweep the battlefield. You are fragile, so every turn is a choice, and the right spell at the right moment can turn the whole battle.],

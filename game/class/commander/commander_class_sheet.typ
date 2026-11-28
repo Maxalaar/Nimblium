@@ -5,7 +5,7 @@
 
 #class_sheet(
   name: "Commander",
-  icon: "commander.svg",
+  icon: "class/commander.svg",
   intro: [Soldier… Warrior… Fearless Leader.],
   difficulty: 2,
   description: [A battlefield leader who turns a group of heroes into an army. The Commander fights in the front line, but their real strength is in the orders they shout and the allies they push forward. You win by making everyone around you better, and you are at your best when the whole party fights as one.],

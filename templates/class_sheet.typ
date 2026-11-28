@@ -48,7 +48,7 @@
 
 // A subclass that isn't open to everyone at level 3 (the GM unlocks it): a padlock before
 // its title.
-#let locked(title) = [#box(baseline: 12%, icon_image("padlock.svg", 2.8mm)) #h(1mm) #title]
+#let locked(title) = [#box(baseline: 12%, icon_image("sheets/padlock.svg", 2.8mm)) #h(1mm) #title]
 
 // name: class name. icon: file in art/icons/. intro: one sentence.
 // info: ((label, value), ...). resource: content or none.

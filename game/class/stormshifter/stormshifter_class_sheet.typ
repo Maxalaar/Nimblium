@@ -3,7 +3,7 @@
 
 #class_sheet(
   name: "Stormshifter",
-  icon: "stormshifter.svg",
+  icon: "class/stormshifter.svg",
   intro: [Do not provoke the forest or its inhabitants.],
   difficulty: 3,
   description: [A druid of beasts and storms. The Stormshifter shifts between fearsome animal forms and the raw power of lightning and wind. You adapt to every fight, tearing through enemies as a beast one moment and calling down the storm the next.],

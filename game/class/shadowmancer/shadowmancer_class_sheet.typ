@@ -5,7 +5,7 @@
 
 #class_sheet(
   name: "Shadowmancer",
-  icon: "shadowmancer.svg",
+  icon: "class/shadowmancer.svg",
   intro: [Totally NOT evil. Why would you even say that?],
   difficulty: 3,
   description: [A spellcaster bound by a pact with a dark Patron. The Shadowmancer commands a horde of expendable shadows and steals power to cast forbidden spells. You overwhelm your enemies with numbers and dark magic, but every gift from your Patron has a price.],

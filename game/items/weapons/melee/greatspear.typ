@@ -3,7 +3,7 @@
 #let item_data = (
     name: "Greatspear",
     type: ("Item", "Weapon", "Melee", "Polearm"),
-    family_icon: "spear.svg",
+    family_icon: "items/weapons/spear.svg",
     damage: [1d10+#STR],
     reach: 2,
     slots: 2,

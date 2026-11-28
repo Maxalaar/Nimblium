@@ -5,7 +5,7 @@
 
 #class_sheet(
   name: "Cheat",
-  icon: "cheat.svg",
+  icon: "class/cheat.svg",
   intro: [Cloak and dagger… and dagger.],
   difficulty: 1,
   description: [A sneaky, dirty fighter who never plays fair. You wait for an opening, then strike where it hurts the most. You rely on cunning more than strength, picking your moment instead of trading blows, and a single well-placed strike can end a fight.],

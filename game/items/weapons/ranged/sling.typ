@@ -3,7 +3,7 @@
 #let item_data = (
     name: "Sling",
     type: ("Item", "Weapon", "Ranged", "Sling"),
-    family_icon: "sling.svg",
+    family_icon: "items/weapons/sling.svg",
     damage: [1d4+#DEX],
     range: 12,
     slots: 2,

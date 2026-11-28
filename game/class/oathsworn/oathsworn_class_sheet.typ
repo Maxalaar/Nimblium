@@ -5,7 +5,7 @@
 
 #class_sheet(
   name: "Oathsworn",
-  icon: "oathsworn.svg",
+  icon: "class/oathsworn.svg",
   intro: [I will protect my companions and vanquish evil at all costs.],
   difficulty: 2,
   description: [A faithful guardian sworn to protect the weak. The Oathsworn stands between their allies and danger, takes the blows meant for others and answers with radiant judgment. You are the shield of the party, and the enemies who strike your friends will regret it.],

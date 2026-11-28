@@ -5,7 +5,7 @@
 
 #class_sheet(
   name: "Hunter",
-  icon: "hunter.svg",
+  icon: "class/hunter.svg",
   intro: [Respect the forest and her children, and she will bestow upon you many gifts.],
   difficulty: 1,
   description: [A patient tracker who chooses its prey and never lets it go. The Hunter marks a single target and hunts it down, from afar or up close, with traps and precise shots. You read the battlefield, pick the most dangerous enemy and wear it down until it falls.],

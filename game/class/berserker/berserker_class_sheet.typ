@@ -5,7 +5,7 @@
 
 #class_sheet(
   name: "Berserker",
-  icon: "berserker.svg",
+  icon: "class/berserker.svg",
   intro: [Wrath and ruin. The Berserker is destruction.],
   difficulty: 1,
   description: [Fury made flesh. The Berserker charges into the thick of the fight and stays there, trading blows up close while others keep their distance. The longer the battle rages, the more dangerous you become. It is a reckless way to fight, taking risks and pain to deal huge damage and trusting your toughness to carry you through.],

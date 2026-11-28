@@ -3,7 +3,7 @@
 
 #class_sheet(
   name: "Songweaver",
-  icon: "songweaver.svg",
+  icon: "class/songweaver.svg",
   intro: [Just TRY and resist my charm… wait, NO, don't!],
   difficulty: 3,
   description: [An inspiring bard with a sharp tongue and a crowd of friends. The Songweaver lifts the spirits of their allies, mocks their enemies into mistakes and always has a song for the moment. You shine on every roll at the table, turning near misses into triumphs.],

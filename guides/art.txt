@@ -28,7 +28,9 @@ Card illustrations for Nimblium, generated locally with Stable Diffusion
 ```
 art/
 ├── styles.json      style presets: the single source of truth for settings
-├── icons/           family icons (SVG) + CREDITS.md, see "Family icons"
+├── icons/           family icons (SVG) + CREDITS.md, see "Family icons";
+│                    sorted like game/: class/, spells/, creatures/, items/weapons/,
+│                    items/armor/, items/gear/, actions/, ancestries/, backgrounds/, sheets/
 ├── creatures/       mirrors the project tree: creatures/goblin/bugbear.png
 ├── class/           ...                       class/mage/archmage.png
 ├── spells/          ...
@@ -68,7 +70,9 @@ To add a family:
    Avoid sites whose license forbids redistributing the file (e.g. Flaticon).
 2. Make it black on transparent: remove the background path
    `<path d="M0 0h512v512H0z"/>` and set the remaining paths to `fill="#000"`.
-3. Save it as `art/icons/<family>.svg`, add a line to
+3. Save it as `art/icons/<category>/<family>.svg`, in the folder of its kind of card (the
+   same names as in `game/`: `class/`, `spells/`, `creatures/`, `items/weapons/`...; icons
+   of the sheets go in `sheets/`), and refer to it with that path (`"class/mage.svg"`). Add a line to
    `art/icons/CREDITS.md` (CC BY 3.0 requires it).
 4. Map the card type to the file in
    `templates/family_icons.typ`.

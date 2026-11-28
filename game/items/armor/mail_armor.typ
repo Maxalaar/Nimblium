@@ -3,7 +3,7 @@
 #let item_data = (
     name: "Mail Armor",
     type: ("Item", "Armor", "Mail"),
-    family_icon: "mail.svg",
+    family_icon: "items/armor/mail.svg",
     defense: "—",
     slots: 2,
     blocks: (

@@ -3,7 +3,7 @@
 #let item_data = (
     name: "Handheld Ballista",
     type: ("Item", "Weapon", "Ranged", "Crossbow"),
-    family_icon: "crossbow.svg",
+    family_icon: "items/weapons/crossbow.svg",
     damage: [1d20+#DEX],
     range: 8,
     slots: 2,

@@ -3,7 +3,7 @@
 #let item_data = (
     name: "Shortbow",
     type: ("Item", "Weapon", "Ranged", "Bow"),
-    family_icon: "bow.svg",
+    family_icon: "items/weapons/bow.svg",
     damage: [1d6+#DEX],
     range: 12,
     slots: 2,

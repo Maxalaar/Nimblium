@@ -37,7 +37,7 @@ front and the back side by side (5 mm apart). A clean design, black and white, l
   at the bottom center of the front, straddling the line of the bottom corners, raised 1 mm
   for the eye; the rules text then stops above it.
 - An `icon` field in the card data replaces the family icon on the back (the front keeps the
-  family icon): `icon: "x.svg"` is looked up in `art/icons/`, a path starting with `/` starts
+  family icon): `icon: "class/x.svg"` is looked up in `art/icons/` (by category folder), a path starting with `/` starts
   from the project root. SVGs are turned gray, other images (PNG) stay as they are. Nothing is
   linked automatically by file name. To add a family: `art.txt`, "Family icons" section.
 - Abilities and spells: dark capsules (Active, Passive, Levels, Upcast…) + outlined capsules
@@ -85,8 +85,8 @@ no cost. Fields:
   `("Item","Weapon","Melee","Blade")`. The category describes the weapon (there is no
   weapon proficiency; abilities may name it): Blade (daggers, sickle, swords, rapier, glaive), Axe, Hammer (mace, hammers),
   Staff, Polearm (spears), Bow, Crossbow, Sling, Thrown (javelins, throwing hammers).
-- `family_icon`: the icon of its kind, on both faces (`dagger.svg`, `sword.svg`,
-  `throwing_axe.svg`, `bow.svg`...), since a category such as Blade holds several kinds.
+- `family_icon`: the icon of its kind, on both faces (`items/weapons/dagger.svg`,
+  `items/weapons/sword.svg`, `items/weapons/bow.svg`...), since a category such as Blade holds several kinds.
 - The damage type is the first block: `weapon_damage("Piercing")`.
 - Stat row, in this order: `damage` (DMG, e.g. `[1d8+#STR]`), `reach` (REACH, every melee
   weapon, even 1), `range` (RNGE: ranged weapons, and the range of a thrown weapon), `slots`

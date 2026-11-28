@@ -5,7 +5,7 @@
 
 #class_sheet(
   name: "Zephyr",
-  icon: "zephyr.svg",
+  icon: "class/zephyr.svg",
   intro: [Speed is both their weapon and their shield.],
   difficulty: 3,
   description: [A martial artist who has turned swiftness into a weapon. The Zephyr never stays still, darting across the battlefield with bare hands and supernatural agility. The faster you move, the harder you hit, and a turn spent standing still wastes your power.],
