@@ -163,9 +163,9 @@ only when not 0), `icon`. The shared blocks are in
 `passive_abilities.minion`. One creature = one file = one card by default (a text that is too
 long overflows, so that it shows). The `split: true` option allows the automatic split into
 two cards "1/2" and "2/2" (see `creature_rules.txt`); the exported PDF then shows both, one
-under the other. No card shared by legendary creatures (tried, then removed: it added
-nothing): Bloodied and Last Stand are written in full on each legendary creature, and its
-saves become stats. Any
+under the other. No shared card for bosses (tried, then removed: it added nothing):
+Bloodied and Last Stand are written in full on each boss, and its saves become stats. There are
+no legendary creatures (`creature_rules.txt`). Any
 other key is silently ignored.
 
 ## Class companions: separate the spell from the creature

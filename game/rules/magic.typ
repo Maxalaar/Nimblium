@@ -11,7 +11,7 @@
   any spell of a school you know, up to the highest tier you have unlocked. Your class sheet
   says which schools and tiers you get, and you hold a card for each of your spells.
 
-  A spell deals damage of its school's type, unless it says otherwise.
+  #rule[Damage type][A spell deals damage of its school's type, unless it says otherwise.]
 
   #values(columns: (17mm, 1fr), header: ("School", "Strengths"),
     [Fire], [High, steady damage at medium range. Some spells make creatures
@@ -33,8 +33,8 @@
   Casting a spell costs the actions its card shows. You need a free hand, and you must be able to
   speak. A #kw_silenced creature can't cast spells.
 
-  A spell with a range has #kw_disadvantage while an enemy is adjacent to you, like any
-  ranged attack. A spell with a reach doesn't.
+  #rule[Range and reach][A spell with a range has #kw_disadvantage while an enemy is adjacent
+  to you, like any ranged attack. A spell with a reach doesn't.]
 
   #rule[Several targets][A spell that targets several creatures rolls its attack for each
   one, like separate attacks.]
@@ -46,16 +46,18 @@
 #section("Mana")[
   Tiered spells cost mana. A spell's mana cost equals its tier. Cantrips cost no mana.
 
-  Your class card says how much mana you have and how you recover it, such as the
+  #rule[Mana pool][Your class card says how much mana you have and how you recover it, such
+  as the
   #card_ref("Mage Mana Pool"), #card_ref("Oathsworn Mana Pool") or
-  #card_ref("Shepherd Mana Pool").
+  #card_ref("Shepherd Mana Pool").]
 ]
 
 #section("Upcasting")[
   When you cast a tiered spell, you may spend more mana than its tier, up to the highest
   tier you have unlocked. For each extra mana, the spell gains its Upcast effect once.
 
-  When a spell has several Upcast effects, choose one of them for each extra mana.
+  #rule[Several Upcast effects][When a spell has several Upcast effects, choose one of them for
+  each extra mana.]
 ]
 
 #section("Cantrips")[
@@ -68,8 +70,8 @@
     [ACT], [The actions it costs to cast. A spell with no ACT is cast without an action, as
     its text says.],
     [MANA], [The mana it costs.],
-    [CONC], [It needs concentration, for up to this long. The Combat page explains
-    concentration.],
+    [CONC], [It needs #kw_concentration, for up to this long. The card reminds how
+    Concentration works.],
     [CAST], [Its casting time, in minutes, for a spell cast outside combat.],
     [DMG], [The damage it deals.],
     [RNGE], [How far away its target can be.],

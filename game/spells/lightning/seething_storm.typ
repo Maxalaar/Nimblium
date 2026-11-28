@@ -22,6 +22,7 @@
     At the start of each of your turns, spend #actions(3) to maintain this spell, or it ends.
 
     After you cast this spell, you must #safe_rest for 1 week before you can cast it again.],
+    reminder: (keywords.concentration,),
 )
 
 #let seething_storm = creat_spell(spell_data)

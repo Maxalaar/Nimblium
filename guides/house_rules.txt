@@ -15,6 +15,9 @@ to a card, add or complete a line here.
   the game down. Choices never change, not even when you level up (changelog: you may change
   them on a level up): a new level only adds new choices. No card, and no Retrain activity
   during downtime.
+- **No maximum of 3 actions.** Effects that give actions can take you above 3. At the end of
+  your turn, the actions you have left are lost and you get exactly 3 (book: up to 3 actions,
+  and you get back up to 3). (`game/rules/combat.typ`, Actions)
 - **No Reactions.** A reaction is an action with a "When..." trigger, a cost of 1 action and a
   limit of 1/round. It also works on your own turn. (`writing_rules.txt` §4,
   `game/rules/combat.typ`, `game/actions/triggered_actions.typ`)
@@ -52,8 +55,7 @@ to a card, add or complete a line here.
   a creature do exactly what they say. A creature stopped by an obstacle and the creature it
   hits each take the pusher's LVL+1 per space not moved (book: 1d6 per space,
   shared), so the damage keeps pace with HP. Rushed attacks only add disadvantage to attack rolls
-  (the book also gave the target advantage on its save). (`game/keywords.typ`,
-  `game/rules/combat.typ`)
+  (the book also gave the target advantage on its save). (`game/keywords.typ`)
 - **No "who can hear you".** A range the book gives as "who can hear you" or "within
   hearing" becomes a number of spaces (18 by default), so that no GM ruling is needed.
 - **Every effect on an ally states its distance.** When the book gives none, the card says
@@ -78,6 +80,11 @@ to a card, add or complete a line here.
   Defense, a number that reduces the damage they take: Medium = DEF 10, Heavy = DEF 20.
   `defense: 10` field on the card, `DEF` box. Crits ignore it. Hero cards say "ignoring
   #defense". "Armor" only remains for worn equipment.
+- **No legendary creatures** (user ruling 2026-11-28). A boss is a creature like the others,
+  with a name, often more actions (ACT) and a higher level, and it acts on the creatures' turn
+  (book: a legendary monster takes a turn after each hero's turn). Krogg and Vermis &
+  Skittersnack have ACT 3 (a cautious start) and 3 times their book level, so a boss alone is
+  worth the levels of 3 heroes. (`game/rules/combat.typ`, `creature_rules.txt` §1)
 - **Goblins.** Haha, Didn't Hurt! (the changelog's family ability) and the traps and hazards
   of Goblins v1.1 are left out. (`game/creatures/goblin/mod.typ`)
 

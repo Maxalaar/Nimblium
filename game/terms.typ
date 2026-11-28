@@ -52,6 +52,7 @@
 #let kw_blindsight = keyword_style[Blindsight]
 #let kw_bloodied = keyword_style[Bloodied]
 #let kw_charged = keyword_style[Charged]
+#let kw_concentration = keyword_style[Concentration]
 #let kw_cover = keyword_style[Cover]
 #let kw_d44 = keyword_style[D44]
 #let kw_d66 = keyword_style[D66]

@@ -74,8 +74,8 @@
 
   #keywords.disadvantage
 
-  Each #kw_advantage cancels one #kw_disadvantage before you roll. When removed dice tie, remove them
-  from left to right.
+  #rule[Both][Each #kw_advantage cancels one #kw_disadvantage before you roll. When removed
+  dice tie, remove them from left to right.]
 ]
 
 #section("Size")[
@@ -93,8 +93,8 @@
   Your #HP measure how much damage you can endure. Damage reduces them, but never below 0.
   At 0 #HP, you are #kw_dying, as the Combat page explains.
 
-  Damage is any loss of #HP. Damage stopped by Defend or by temporary #HP doesn't count as
-  damage.
+  #rule[Damage][Damage is any loss of #HP. Damage stopped by Defend or by temporary #HP
+  doesn't count as damage.]
 
   #rule[Temporary #HP][Temporary #HP are lost before your #HP. They don't add up. When you
   would gain more, you choose which amount to keep. They are lost when combat ends.]
@@ -104,8 +104,9 @@
   A #safe_rest is a night of sleep, about 8 hours, somewhere calm enough to sleep. The GM says
   when the heroes can rest.
 
-  After a #safe_rest, you recover all your #HP, your mana, your class
-  resources and the charges of your items, and you heal 1 Wound. Abilities limited per #safe_rest can be used again.
+  #rule[Recovery][After a #safe_rest, you recover all your #HP, your mana, your class
+  resources and the charges of your items, and you heal 1 Wound. Abilities limited per
+  #safe_rest can be used again.]
 ]
 
 #section("Items")[

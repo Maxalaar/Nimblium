@@ -6,11 +6,11 @@
     type: ("Ability", "Stormshifter"),
     blocks: (
       (kind: "passive", effect: [When you roll Initiative, you become #kw_charged.]),
-      (kind: "passive", effect: [You have #kw_advantage on #STR checks to keep your concentration.]),
+      (kind: "passive", effect: [You have #kw_advantage on #STR checks to keep your #kw_concentration.]),
       (kind: "narrative", effect: [You have #kw_advantage on Naturecraft checks.]),
     ),
     levels: [*Level 13:* When a #kw_direbeast_form ends, you may cast a cantrip for free.],
-    reminder: (stormshifter_keywords.direbeast_form, conditions.charged, keywords.advantage),
+    reminder: (keywords.concentration, stormshifter_keywords.direbeast_form, conditions.charged, keywords.advantage),
 )
 
 #let stormborn = creat_ability(ability_data)

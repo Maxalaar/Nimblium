@@ -147,7 +147,9 @@ text is available, so no cards.
   hazards are deliberately left out.
 - **Undead** (Game Master's Guide): in the new style, GMG values.
 - The October 2, 2026 changelog recalculates every stat block (HP, damage, armor) and makes
-  legendary HP per hero, without publishing the new values: we keep the PDF values.
+  legendary HP per hero, without publishing the new values: we keep the PDF values. There are
+  no legendary creatures (2026-11-28): Krogg and Vermis & Skittersnack are bosses with ACT 3
+  and 3 times their book level.
 
 ## Ancestries (`game/ancestries/`)
 

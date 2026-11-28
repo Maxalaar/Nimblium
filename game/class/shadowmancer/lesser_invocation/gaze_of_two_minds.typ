@@ -4,8 +4,9 @@
     name: "Gaze of Two Minds",
     type: ("Ability", "Shadowmancer", "Lesser Invocation"),
     blocks: (
-      (kind: "narrative", effect: [Touch a willing creature. While you keep your Concentration, you perceive through its senses instead of your own.]),
+      (kind: "narrative", effect: [Touch a willing creature. While you keep your #kw_concentration, you perceive through its senses instead of your own.]),
     ),
+    reminder: (keywords.concentration,),
 )
 
 #let gaze_of_two_minds = creat_ability(ability_data)

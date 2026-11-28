@@ -8,6 +8,7 @@
     reach: "4",
     effect: [Choose a willing creature within Reach. It takes 2 less damage. Once per round, when it takes damage, you may take any amount of that damage instead.],
     upcast: [The damage reduction and its Reach each increase by 2.],
+    reminder: (keywords.concentration,),
 )
 
 #let warding_bond = creat_spell(spell_data)

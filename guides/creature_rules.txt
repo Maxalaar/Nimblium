@@ -19,13 +19,14 @@ Do not "fix" these rules from the Nimble books or changelog.
   any active ability it can pay for.
 - **Limits prevent abuse.** A creature with 2 actions must not be able to use its strongest
   attack twice: give that ability a `1/turn` limit.
-- **Legendary creatures** have "Legendary" in their types. They still take a turn after each
-  hero's turn (Nimble rule): this is a game rule and is not written on the card.
-  They have their `ACT` actions on each of these turns. Limits such as `1/round` keep them in
-  check.
-- **Saves, Bloodied, Last Stand.** A legendary creature's Nimble saves become stats (§4), and
-  its other Nimble sections become passive blocks, written in full on its own card (there is
-  no shared Legendary card):
+- **No legendary creatures** (house rule, user ruling 2026-11-28). A Nimble legendary monster
+  becomes a creature like the others, with no "Legendary" type: it acts once per round, on the
+  creatures' turn. Since it acted after each hero's turn, give it 3 actions (`ACT 3`, a
+  cautious start, user ruling 2026-11-28) and 3 times the book's level (the book's level is the
+  party's level, so the boss alone is worth 3 heroes, Building an encounter on the Combat
+  page).
+- **Saves, Bloodied, Last Stand.** A boss's Nimble saves become stats (§4), and its other
+  Nimble sections become passive blocks, written in full on its own card:
   - **Bloodied**: "While this creature is Bloodied, its attacks deal 2d8+3 damage instead."
     (+ Bloodied reminder)
   - **Last Stand**: "When this creature drops to 0 HP, it dies only after taking 20 more
@@ -62,7 +63,7 @@ long overflows visibly. To allow two cards, add `split: true` to the creature: i
 doesn't fit on one card even at the smallest text size, it is compiled into two cards numbered
 "1/2" and "2/2" in their types. The first one has the stats and as many blocks as fit, the
 second one the remaining blocks and the reminders. Use it only when the text can't be shortened
-(legendary creatures).
+(bosses).
 
 ## 3. Text
 

@@ -49,13 +49,21 @@ the verso (recto-verso, never more). The recto holds what is used at the table, 
 what is looked up (rests, conditions...). A section (`#section("Title")[...]`) never splits
 across two columns.
 
+Layout of a section (user ruling 2026-11-28): it opens with one untitled paragraph, the
+general rule. Every other paragraph starts with its name in bold and a period, through
+`#rule[Name][...]`: "**Turn order.** The heroes act first...". No untitled paragraph after the
+first one: give it a name or merge it into the opening paragraph. Names are plain black text,
+never a colored keyword (`#rule[Restrained]`, not `#rule[#kw_restrained]`). Keyword and
+condition definitions (`#keywords.cover`, the Conditions list) keep their colon, as on the
+cards.
+
 Planned areas:
 - **Adventure** (done, recto-verso, the text flows with no forced verso): rounding, stats, skills, checks, advantage, size,
   HP, temporary HP, Rest (no Hit Dice, no Field Rest), items, making a hero (class,
-  ancestry and background, stat arrays, skills, the rest of the sheet) and leveling up. No
+  ancestry and background, stat and skill points, the rest of the sheet) and leveling up. No
   lodging and no downtime. Ancestries and backgrounds are cards.
 - **Combat** (done): turn, pool of 3 actions, attacks, Defense, movement and reach, Cover,
-  grapples in progress, Knockback, Concentration, Dying and Wounds; on the verso the
+  Dying and Wounds (grappling, Knockback and Concentration are on their cards and keywords); on the verso the
   conditions (taken from `game/conditions.typ`) and the creature rules
   (`creature_rules.txt`). The actions themselves are on the cards of `game/actions/` (Basic
   Actions, Grapple, Triggered Actions): the page refers to them without repeating them.

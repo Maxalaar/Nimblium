@@ -2,7 +2,7 @@
 
 #let creature_data = (
     name: "Krogg, Goblin King",
-    type: ("Creature", "Goblin", "Legendary"),
+    type: ("Creature", "Goblin"),
     blocks: (
         (kind: "passive", name: "Bloodied", effect: [While this creature is #kw_bloodied, its abilities deal 2d8+3 damage instead.]),
         (kind: "passive", name: "Last Stand", effect: [When this creature drops to 0 #HP, it dies only after taking 20 more damage. Until then, its #defense is 20.]),
@@ -12,7 +12,8 @@
     reminder: (conditions.bloodied, conditions.grappled),
     hit_points: 75,
     defense: 10,
-    level: "2",
+    level: "6",
+    actions: 3,
     str: 3,
     dex: 3,
     split: true,
@@ -25,6 +26,10 @@ review: style=2026-11-14 changelog=2026-10-02
 
 interpretation: The book says "Krogg's damage increases to 2d8+3" when Bloodied. It applies
 to both abilities, so the card says "its abilities", since Crack Skulls is not an attack.
+
+house-rule: No legendary creatures (user ruling 2026-11-28): Krogg acts once per round, on the
+creatures' turn, with ACT 3 instead of 1 action after each hero's turn, and level 6 instead of 2
+(the book's level is the party's level: alone, he is worth 3 level 2 heroes).
 
 changelog: The 2026-10-02 changelog gives legendary creatures HP per hero, without
 publishing the new values. HP kept from Goblins v1.1.

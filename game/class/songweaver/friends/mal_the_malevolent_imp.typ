@@ -25,4 +25,7 @@ house-rule: A creature that follows the Songweaver instead of being summoned wit
 (user ruling 2026-11-26): a flying spy with LVL+5 HP, DEX +3, INT +2, +5 Stealth and +5
 Perception, who does what its controller asks. The book summons him for 1 night to find out
 dangerous information or take care of a problem, after an Influence check to convince him.
+
+interpretation: +5 Stealth and +5 Perception are skill values: a check adds the stat, so Mal
+rolls +8 Stealth with DEX +3 (user ruling 2026-11-28, stat and skill points).
 */

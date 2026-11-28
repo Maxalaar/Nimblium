@@ -7,6 +7,7 @@
       (kind: "passive", effect: [You can concentrate on 1 Lightning spell and 1 Wind spell at the same time.]),
       (kind: "passive", limitation: per_encounter(1), effect: [A tiered spell you cast costs 1 fewer action and 3 fewer mana.]),
     ),
+    reminder: (keywords.concentration,),
 )
 
 #let master_of_storm = creat_ability(ability_data)

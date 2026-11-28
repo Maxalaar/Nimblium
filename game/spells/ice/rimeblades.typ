@@ -17,7 +17,7 @@
     damage: "2d6",
     effect: [Choose 5 contiguous spaces within Reach. They become #kw_difficult_terrain. Each creature in these spaces takes this spell's damage. Whenever a creature enters one of these spaces, it takes this spell's damage.],
     upcast: [Choose 1 more space. It deals 1 more damage.],
-    reminder: (keywords.difficult_terrain,),
+    reminder: (keywords.concentration, keywords.difficult_terrain,),
 )
 
 #let rimeblades = creat_spell(spell_data)

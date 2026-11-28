@@ -15,7 +15,7 @@
     reach: "8",
     effect: [Enchant the weapon of a creature within Reach. The first time each turn that weapon hits, it deals #KEY additional damage. When it crits, the target becomes #kw_smoldering.],
     upcast: [It deals #KEY more damage.],
-    reminder: (conditions.smoldering,)
+    reminder: (keywords.concentration, conditions.smoldering,)
 )
 
 #let enchant_weapon = creat_spell(spell_data)

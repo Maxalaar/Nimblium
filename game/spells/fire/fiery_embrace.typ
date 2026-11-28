@@ -18,7 +18,7 @@
 
     While an enemy is within Reach, it is #kw_smoldering. Effects that rely on Smoldering don't end it.],
     upcast: [Choose 1 more ally. Its Reach increases by 2.],
-    reminder: (conditions.smoldering,)
+    reminder: (keywords.concentration, conditions.smoldering,)
 )
 
 #let fiery_embrace = creat_spell(spell_data)

@@ -4,9 +4,9 @@
     name: "Otherworldly Might",
     type: ("Ability", "Shadowmancer", "Reaver"),
     blocks: (
-      (kind: "passive", effect: [While you have at least 1 #card_ref("Shadow"), you have #kw_advantage on #STR checks to keep your concentration.]),
+      (kind: "passive", effect: [While you have at least 1 #card_ref("Shadow"), you have #kw_advantage on #STR checks to keep your #kw_concentration.]),
     ),
-    reminder: (keywords.advantage,),
+    reminder: (keywords.concentration, keywords.advantage,),
 )
 
 #let otherworldly_might = creat_ability(ability_data)
