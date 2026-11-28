@@ -5,7 +5,7 @@
     name: "Swiftshift",
     type: ("Ability", "Stormshifter", "Fang & Claw"),
     blocks: (
-      (kind: "passive", effect: [When you roll Initiative, you may use #card_ref("Beastshift") for free.]),
+      (kind: "passive", effect: [When combat starts, you may use #card_ref("Beastshift") for free.]),
       (kind: "passive", limitation: per_turn(1), effect: [While you are in a #kw_direbeast_form, you may use Direbeast from #card_ref("Beastshift") without spending its action, to take another #kw_direbeast_form. You still spend its Direbeast charge.]),
     ),
     reminder: (stormshifter_keywords.direbeast_form,),

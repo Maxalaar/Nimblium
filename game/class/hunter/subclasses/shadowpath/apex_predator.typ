@@ -8,7 +8,7 @@
         "Shadowpath",
     ),
     blocks: (
-      (kind: "passive", effect: [When you roll Initiative, gain 1 #TotH charge.]),
+      (kind: "passive", effect: [When combat starts, gain 1 #TotH charge.]),
     ),
 )
 

@@ -9,25 +9,17 @@
     keywords.primary_die, conditions.prone),
 )[
 
-#section("Initiative and turns")[
-  When the GM calls for Initiative, each hero rolls 1d20 and adds their #DEX. The result gives
-  the number of actions they have for their first turn.
-
-  #values(columns: (1fr, auto), header: ("Initiative", "Actions"),
-    [9 or less], [1],
-    [10 to 19], [2],
-    [20 or more, or a 20 on the die], [3],
-  )
-
-  #rule[Turn order][The heroes act first, in the order of the table, then the creatures.]
+#section("Turns")[
+  A fight is played in rounds. In each round, the heroes take their turns first, in the order
+  they choose, then the creatures take theirs.
 
   #rule[Limits][Limits per turn and per round reset at the end of your turn. An ability limited
   per turn can be used again on another creature's turn.]
 ]
 
 #section("Actions")[
-  At the end of your turn, you lose the actions you have left and get 3 new ones. You spend
-  them on your turn, or when a triggered action allows it.
+  You start a fight with 3 actions. At the end of your turn, you lose the actions you have left
+  and get 3 new ones. You spend them on your turn, or when a triggered action allows it.
 
   #rule[Which actions][Every hero can take the actions of the #card_ref("Basic Actions"),
   #card_ref("Grapple") and #card_ref("Triggered Actions") cards, and of their class and spell
@@ -178,8 +170,8 @@ interpretation: Conditions and keyword definitions are on the Glossary page (use
 
 interpretation: Layout (user ruling 2026-11-28): each section opens with an untitled paragraph,
 then every other paragraph starts with its name in bold and a period; keyword and condition
-definitions keep their colon. Surprise is left out (the GM decides), and Turns and rounds is
-reduced to its Limits rule (the definitions of turn, round and encounter go without saying).
+definitions keep their colon. Surprise is left out (the GM decides), and Turns only says who
+acts first and the Limits rule (the definitions of turn, round and encounter go without saying).
 
 house-rule: Creatures have actions and move for free, monster Defense is a number (house_rules.txt,
 creature_rules.txt).
@@ -215,6 +207,8 @@ weapons (book: a weapon without proficiency can't crit). Unarmed strikes can cri
 (user ruling 2026-11-28; book: only when proficient, and proficient heroes count their fists as
 dual wielded). Climbing has no rule: the GM decides (book: it counts as Difficult Terrain). Changing what you hold costs 1 action (Hands). Armor proficiency stays.
 
-interpretation: The book's Initiative bands ("a single digit", "2 digits") become 9 or less
-and 10 to 19.
+house-rule: No Initiative (user ruling 2026-11-28): the heroes always take their turns first,
+in the order they choose, then the creatures, and every hero starts a fight with 3 actions
+(book: 1d20 + DEX gives 1, 2 or 3 actions for the first turn and the heroes' order). Cards that
+said "When you roll Initiative" say "When combat starts"; bonuses to Initiative are removed.
 */

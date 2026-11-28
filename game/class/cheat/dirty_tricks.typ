@@ -17,7 +17,6 @@
         limitation: per_safe_rest(1),
         effect: [Change the result of one of your checks to 10+#INT.],
       ),
-      (kind: "passive", effect: [When you roll less than 10 on Initiative, you may change the result to 10.]),
       (kind: "narrative", effect: [You may gain #kw_advantage on checks while you play games, compete or place wagers.]),
     ),
     reminder: (keywords.hide, keywords.cover,),
@@ -30,4 +29,6 @@ review: style=2026-11-14 changelog=2026-10-02
 
 interpretation: Renamed from "Cheat" (user ruling 2026-11-28): card names are sober and
 say what the card does, never a line a character would say.
+
+house-rule: No Initiative block (book: change an Initiative roll under 10 to 10) (no Initiative, user ruling 2026-11-28).
 */

@@ -10,7 +10,7 @@
     blocks: (
       (
         kind: "passive",
-        effect: [When you roll Initiative or gain one or more #TotH charges, you may move up to half your #speed, ignoring #kw_difficult_terrain.],
+        effect: [When combat starts or you gain one or more #TotH charges, you may move up to half your #speed, ignoring #kw_difficult_terrain.],
       ),
     ),
     reminder: (keywords.difficult_terrain,),

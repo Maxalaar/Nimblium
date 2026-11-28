@@ -5,7 +5,7 @@
     name: "Stormborn",
     type: ("Ability", "Stormshifter"),
     blocks: (
-      (kind: "passive", effect: [When you roll Initiative, you become #kw_charged.]),
+      (kind: "passive", effect: [When combat starts, you become #kw_charged.]),
       (kind: "passive", effect: [The first critical hit you take each round doesn't end your #kw_concentration.]),
       (kind: "narrative", effect: [You have #kw_advantage on Naturecraft checks.]),
     ),
@@ -18,7 +18,7 @@
 /*
 review: style=2026-11-14 changelog=2026-10-02
 
-changelog: Charged on Initiative, and advantage on every Naturecraft and Concentration check
+changelog: Charged when combat starts, and advantage on every Naturecraft and Concentration check
 (was: lightning resistance, and advantage on 1 such check per day). Level 13 keeps the free
 cantrip when a form ends; maximizing a Wind spell with a Beastshift charge is removed.
 

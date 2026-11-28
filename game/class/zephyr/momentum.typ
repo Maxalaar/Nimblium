@@ -9,7 +9,7 @@
       You lose all your Mom charges when you take damage, and when combat ends.
     ],
     levels: [
-      *Level 14:* When you roll Initiative, you gain 10 Mom charges.
+      *Level 14:* When combat starts, you gain 10 Mom charges.
     ],
 )
 

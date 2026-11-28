@@ -4,13 +4,13 @@
     name: "Burst of Speed",
     type: ("Mechanic", "Zephyr"),
     description: [
-      When you roll Initiative, you gain #DEX Burst of Speed charges (BoS charges).
+      When combat starts, you gain #DEX Burst of Speed charges (BoS charges).
 
       Those you haven't spent are lost when combat ends.
     ],
     levels: [
       *Level 3:* Whenever you gain a Wound, gain 1 BoS charge.\
-      *Level 20:* When you roll Initiative, gain 1 more BoS charge.
+      *Level 20:* When combat starts, gain 1 more BoS charge.
     ],
 )
 

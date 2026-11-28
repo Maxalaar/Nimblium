@@ -4,7 +4,7 @@
     name: "Spellforge",
     type: ("Ability", "Commander", "Spellblade"),
     blocks: (
-      (kind: "passive", effect: [When you roll Initiative, you may cast #card_ref("Enchant Weapon") for free. You may still spend mana to upcast it.]),
+      (kind: "passive", effect: [When combat starts, you may cast #card_ref("Enchant Weapon") for free. You may still spend mana to upcast it.]),
     ),
 )
 

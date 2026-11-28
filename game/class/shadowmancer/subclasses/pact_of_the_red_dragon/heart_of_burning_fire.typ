@@ -4,7 +4,7 @@
     name: "Heart of Burning Fire",
     type: ("Ability", "Shadowmancer", "Pact of the Red Dragon"),
     blocks: (
-      (kind: "passive", effect: [When you roll Initiative, regain 1 use of #card_ref("Pilfered Power"). It is lost at the end of combat if you haven't used it.]),
+      (kind: "passive", effect: [When combat starts, regain 1 use of #card_ref("Pilfered Power"). It is lost at the end of combat if you haven't used it.]),
     ),
 )
 

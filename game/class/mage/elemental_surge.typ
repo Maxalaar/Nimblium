@@ -9,7 +9,7 @@
     blocks: (
       (
         kind: "passive",
-        effect: [When you roll Initiative, regain the mana shown in Levels. This mana is lost at the end of combat if you haven't spent it.],
+        effect: [When combat starts, regain the mana shown in Levels. This mana is lost at the end of combat if you haven't spent it.],
       ),
     ),
     levels: [

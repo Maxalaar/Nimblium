@@ -15,6 +15,13 @@ to a card, add or complete a line here.
   the game down. Choices never change, not even when you level up (changelog: you may change
   them on a level up): a new level only adds new choices. No card, and no Retrain activity
   during downtime.
+- **No Initiative** (user ruling 2026-11-28). Each round, the heroes take their turns first, in
+  the order they choose, then the creatures. Every hero starts a fight with 3 actions (book:
+  1d20 + DEX gives 1, 2 or 3 actions for the first turn, and the heroes' order). A bonus to
+  Initiative gained almost nothing. Cards that said "When you roll Initiative" say "When combat
+  starts". The Initiative bonuses are removed (Human-folk, Swift Feet, Eager for Battle, Swift
+  Deployment, Dirty Tricks), Enduring Soul gives 2 × Vitality temp HP, and the hero sheet has
+  no Initiative box. (`game/rules/combat.typ`, Turns)
 - **No maximum of 3 actions.** Effects that give actions can take you above 3. At the end of
   your turn, the actions you have left are lost and you get exactly 3 (book: up to 3 actions,
   and you get back up to 3). (`game/rules/combat.typ`, Actions)
@@ -252,7 +259,7 @@ to a card, add or complete a line here.
   Regrowth 2/Rest; Orc-folk's Relentless 1/Rest, drops you to 3×KEY HP); KEY only scales
   their effect. Bull-folk charges (1/encounter): after 4 spaces of movement, a melee hit
   deals LVL+KEY more damage and gives Knockback 2. Identity pass (2026-11-27): a bonus belongs to one ancestry
-  only (Vitality to Dwarf-folk, Defense to Turtle-folk, Initiative to Human-folk, checks to
+  only (Vitality to Dwarf-folk, Defense to Turtle-folk, checks to
   Small-folk and Human-folk, a free move to Rabbit-folk); Angel-folk heals, Fiend-folk
   frightens, Goblin-folk swaps with an ally, Rat-folk moves through larger creatures,
   Construct-folk overdrives (1 Wound for 2 actions), Lizard-folk heals itself (2×(LVL+KEY) HP,

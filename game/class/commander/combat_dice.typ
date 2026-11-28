@@ -4,7 +4,7 @@
     name: "Combat Dice",
     type: ("Mechanic", "Commander"),
     description: [
-      When you roll Initiative, gain #STR Combat Dice, of the size shown in Levels.
+      When combat starts, gain #STR Combat Dice, of the size shown in Levels.
 
       Once per attack, you may spend Combat Dice to use a Combat Tactic on that attack. Combat Dice you haven't spent are lost when combat ends.
     ],

@@ -4,7 +4,7 @@
     name: "Rallying Presence",
     type: ("Ability", "Oathsworn", "Sacred Decree"),
     blocks: (
-      (kind: "passive", effect: [When you roll Initiative, your allies within 18 spaces gain temp #HP equal to #STR+#WIL.]),
+      (kind: "passive", effect: [When combat starts, your allies within 18 spaces gain temp #HP equal to #STR+#WIL.]),
       (kind: "passive", effect: [You and allies within your #kw_aura have #kw_advantage against fear and against effects that would move you or knock you #kw_prone.]),
     ),
     reminder: (keywords.aura, keywords.advantage,),

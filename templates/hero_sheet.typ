@@ -204,8 +204,8 @@
     // Right column.
     stack(spacing: 6mm,
       panel("Combat", {
-        // HP (temporary HP included), Defense, Initiative, Speed.
-        grid(columns: (1fr, 18mm, 18mm, 18mm), column-gutter: 2mm,
+        // HP (temporary HP included), Defense, Speed.
+        grid(columns: (1fr, 18mm, 18mm), column-gutter: 2mm,
           block(width: 100%, height: 27mm, stroke: frame, radius: 1.5mm, clip: true, inset: (x: 2mm, top: 1.6mm), {
             grid(columns: (1fr, auto, 1fr), column-gutter: 1.5mm, row-gutter: 0.8mm, align: horizon,
               label[Current], [], label[Max],
@@ -219,7 +219,6 @@
               align(center + horizon, text(fill: dark, weight: "bold", size: 7pt, tracking: 1.5pt)[HIT POINTS])))
           }),
           banded("Defense", "defense", height: 27mm),
-          banded("Initiative", "initiative", height: 27mm, name_size: 5.8pt),
           banded("Speed", "speed", height: 27mm),
         )
         v(2.5mm)

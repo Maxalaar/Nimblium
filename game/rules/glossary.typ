@@ -135,7 +135,6 @@
     combat ends.],
     [#defense], [#DEX + armor #def_label + shield #def_label], [Your #DEX, plus the #def_label
     of the armor and of the shield you wear.],
-    [Initiative], [#DEX], [What you add to your Initiative roll.],
     [Speed], [6], [How many spaces you move. Some cards change it.],
     [Mana], [Your mana pool card], [Its max is on your class's mana pool card. Spend it on
     tiered spells. A #safe_rest brings it back.],

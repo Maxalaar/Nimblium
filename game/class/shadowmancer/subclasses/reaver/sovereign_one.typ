@@ -4,7 +4,7 @@
     name: "Sovereign One",
     type: ("Ability", "Shadowmancer", "Reaver"),
     blocks: (
-      (kind: "passive", effect: [When you roll Initiative, summon 2 #card_ref("Shadow", "Shadows") and your #card_ref("Bonescythe") for free.]),
+      (kind: "passive", effect: [When combat starts, summon 2 #card_ref("Shadow", "Shadows") and your #card_ref("Bonescythe") for free.]),
     ),
 )
 

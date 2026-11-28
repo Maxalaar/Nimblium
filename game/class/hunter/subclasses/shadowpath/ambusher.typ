@@ -8,7 +8,7 @@
         "Shadowpath",
     ),
     blocks: (
-      (kind: "passive", effect: [When you roll Initiative, you may use #card_ref("Hunter's Mark") for free.]),
+      (kind: "passive", effect: [When combat starts, you may use #card_ref("Hunter's Mark") for free.]),
       (kind: "passive", effect: [You have #kw_advantage on the first attack you make each encounter.]),
     ),
 )

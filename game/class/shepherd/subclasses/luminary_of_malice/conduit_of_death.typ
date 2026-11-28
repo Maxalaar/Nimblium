@@ -10,7 +10,7 @@
     blocks: (
       (
         kind: "passive",
-        effect: [When you roll Initiative, regain 1 use of #card_ref("Veilwalker's Blessing"). This use is lost at the end of combat if you haven't spent it.],
+        effect: [When combat starts, regain 1 use of #card_ref("Veilwalker's Blessing"). This use is lost at the end of combat if you haven't spent it.],
       ),
     ),
 )

@@ -9,7 +9,7 @@
       #card_ref("Songweaver's Inspiration") and other Songweaver abilities spend them.
     ],
     levels: [
-      *Level 3:* When you roll Initiative, you regain 2 spent Inspiration charges. You lose them if you haven't spent them when combat ends.
+      *Level 3:* When combat starts, you regain 2 spent Inspiration charges. You lose them if you haven't spent them when combat ends.
     ],
 )
 

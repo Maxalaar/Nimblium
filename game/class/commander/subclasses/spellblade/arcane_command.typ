@@ -6,7 +6,7 @@
     blocks: (
       (kind: "lost", effect: [You lose #card_ref("Weapon Mastery") and your Combat Tactics. You can't use them anymore.]),
       (kind: "passive", effect: [Whenever you could choose a Combat Tactic or a mastery, choose instead another Commander's Order, or a spell of tier 1 or lower from any school.]),
-      (kind: "passive", effect: [When you roll Initiative, gain #INT mana. You lose it when combat ends.]),
+      (kind: "passive", effect: [When combat starts, gain #INT mana. You lose it when combat ends.]),
     ),
 )
 

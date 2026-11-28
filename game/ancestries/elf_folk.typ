@@ -21,7 +21,7 @@ Source: Core Rules p.23-27 (Elf). Book: Lithe, advantage on Initiative, +1 Speed
 
 house-rule: Advantage on an attack, once per turn, KEY times per Rest (balance pass, user ruling 2026-11-27).
 
-house-rule: No advantage on Initiative: Initiative belongs to Human-folk (identity pass, user ruling 2026-11-27).
+house-rule: No advantage on Initiative: there is no Initiative (user ruling 2026-11-28).
 
 house-rule: Uses: 1/encounter, as in the book, instead of KEY times per Rest and once per turn (user
 ruling 2026-11-27). Later notes that say "KEY times per Rest" describe the older version.

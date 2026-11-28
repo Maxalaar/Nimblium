@@ -52,7 +52,7 @@ across two columns.
 
 Layout of a section (user ruling 2026-11-28): it opens with one untitled paragraph, the
 general rule. Every other paragraph starts with its name in bold and a period, through
-`#rule[Name][...]`: "**Turn order.** The heroes act first...". No untitled paragraph after the
+`#rule[Name][...]`: "**Limits.** Limits per turn and per round reset...". No untitled paragraph after the
 first one: give it a name or merge it into the opening paragraph. Names are plain black text,
 never a colored keyword (`#rule[Restrained]`, not `#rule[#kw_restrained]`). Keyword and
 condition definitions (`#keywords.cover`, the Conditions list) keep their colon, as on the
