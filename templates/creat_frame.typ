@@ -260,9 +260,10 @@
   let family = if family == none { family_icon(types) } else { family }
   // The marker found by #card_ref (game/terms.typ) to link to this card is inside its box.
   // The Codex shows the fronts only (typst compile --input faces=front): one box per card,
-  // laid out in its grid (templates/codex.typ).
+  // side by side, 3 per row (templates/codex.typ).
   if sys.inputs.at("faces", default: "both") == "front" {
     box({ metadata((card: name)); card_front(name, types + extra, body, stats: stats, stat_cut: stat_cut, icon: family) })
+    h(front_gap, weak: true)
   } else { metadata((card: name)); box(grid(columns: 2, column-gutter: card_gap,
     card_front(name, types + extra, body, stats: stats, stat_cut: stat_cut, icon: family),
     card_back(name, (if back_types == none { types } else { back_types }) + extra,

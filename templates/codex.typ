@@ -108,7 +108,11 @@
   pagebreak(weak: true)
   codex_mark(..entries)
   codex_entries()
-  // A card file may give several cards (a long creature in two parts): one cell each.
-  let fronts = items.pos().map(c => if c.has("children") { c.children.filter(x => x.func() == box) } else { (c,) }).flatten()
-  align(center, grid(columns: (card_width,) * 3, column-gutter: front_gap, row-gutter: front_gap, ..fronts))
+  // The fronts flow like words, 3 per row (a long creature gives two). The text size is tiny so
+  // that a row is exactly as high as a card (the cards set their own sizes); the width counts
+  // the gap after the 3rd card, which the line keeps before it breaks.
+  // No widow or orphan control: a page takes as many rows as fit.
+  set text(size: 1pt, costs: (widow: 0%, orphan: 0%))
+  set par(leading: front_gap, spacing: front_gap, justify: false, linebreaks: "simple")
+  align(center, block(width: 3 * (card_width + front_gap) + 0.5mm, align(left, items.pos().join())))
 }

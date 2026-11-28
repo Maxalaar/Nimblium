@@ -147,7 +147,8 @@ whole game in one PDF, to read or to share, not to print (`templates/codex.typ`;
 writes the document that lists every part). A cover, an introduction, the contents, then the
 rules pages, the hero sheet, the ancestries and backgrounds, the actions, each class (its class
 sheet, then its cards: Features, each pool, each subclass), the spells by school, the items, the
-creatures and the Glossary. Cards show their front only, 9 per A4 page in a grid, and each group of
+creatures and the Glossary. Cards show their front only, 9 per A4 page (3 per row, a long creature in two parts
+taking two places), and each group of
 cards starts a new page. A band at the top of each card page names the group and its kind
 first ("Class features · Berserker", "Pool of choices · Berserker · Savage Arsenal", "Subclass ·
 Berserker · Mountainheart"),
