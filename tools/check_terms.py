@@ -91,7 +91,7 @@ def content_blocks(source):
 
 # Card names: every card file's main `name:`. A card name in another card's text must go
 # through #card_ref("Name") (game/terms.typ), which shows it in italics and links to that card.
-CARD_DIRS = ["game/class", "game/spells", "game/creatures", "game/actions", "game/items", "game/ancestries"]
+CARD_DIRS = ["game/class", "game/spells", "game/creatures", "game/actions", "game/items", "game/ancestries", "game/backgrounds"]
 CARD_NAME = re.compile(r'#let \w+_data = \(\s*name: "((?:[^"\\]|\\.)*)"')
 CARD_REF = re.compile(r'#card_ref\(\s*"((?:[^"\\]|\\.)*)"(?:\s*,\s*"(?:[^"\\]|\\.)*")?\s*\)')
 # Words that match a card name but don't refer to that card: (file, name).
@@ -102,6 +102,7 @@ REF_EXCEPTIONS = {
     ("game/class/oathsworn/oathsworn_class_sheet.typ", "Vengeance"),  # Oath of Vengeance, not the spell
     ("game/class/mage/mage_class_sheet.typ", "Spellshaper"),           # the kind of ability; the card is cited once
     ("game/items/weapons/weapon_properties.typ", "Light"),      # the weapon property, not the spell
+    ("game/class/commander/commander_class_sheet.typ", "Soldier"),  # the word in the intro, not the background
     ("game/rules/combat.typ", "Light"),
     ("game/rules/adventure.typ", "Celestial"),
     ("game/rules/magic.typ", "Overload"),                       # Elemental Overload, a Chaos Table result                  # the creature type, not the ancestry

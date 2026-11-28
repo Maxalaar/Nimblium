@@ -71,6 +71,10 @@ front and the back side by side (5 mm apart). A clean design, black and white, l
   `("Ability","Cheat","Scoundrel")`, `("Ability","Hunter",thrill_of_the_hunt)`,
   `("Ability","Hunter","Shadowpath")`, `("Ability","Shepherd","Sacred Grace")`. The basic
   actions every hero has are `("Ability","Combat")` (`game/actions/`).
+- Ancestries (`game/ancestries/`) are `type: ("Ancestry",)` and backgrounds
+  (`game/backgrounds/`) `type: ("Background",)`. Every block of an ancestry card has a `name`; a
+  background starts with an unnamed narrative block (where the hero grew up: a block name
+  there only adds clutter), then one named effect.
 
 ### Item (`creat_item.typ`)
 

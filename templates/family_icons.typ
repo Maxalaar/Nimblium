@@ -27,6 +27,7 @@
   "Zephyr": "zephyr.svg",
   "Combat": "combat.svg",
   "Ancestry": "ancestry.svg",
+  "Background": "background.svg",
   "Magic": "magic.svg",
   "Melee": "melee.svg",
   "Ranged": "ranged.svg",

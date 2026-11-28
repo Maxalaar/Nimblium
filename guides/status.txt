@@ -143,7 +143,7 @@ text is available, so no cards.
 ## Rules (`game/rules/`)
 
 - **Adventure**: DONE, recto-verso (with Making a hero and Leveling up, merged from the old
-  Level Up page), up to the October 2, 2026 changelog. Backgrounds are not done yet.
+  Level Up page), up to the October 2, 2026 changelog.
 - **Combat**: DONE, recto-verso (conditions and creatures on the verso), up to the October 2,
   2026 changelog.
 - **Magic**: DONE, recto-verso (the Chaos Table on the verso, public), up to the October 2, 2026 changelog. Spell scrolls and wands
@@ -166,4 +166,9 @@ text is available, so no cards.
   Turtle-folk). Traits that used Hit Dice or saves were
   rewritten (Dwarf, Oozeling, Halfling, Fiendkin, Celestial). Balance pass done 2026-11-27
   (fixed passives, KEY only on limited actives); waiting for playtest.
-- To do: backgrounds.
+
+## Backgrounds (`game/backgrounds/`)
+
+- DONE (first version, to playtest): 19 backgrounds of our own (social origins, not the
+  book's), one card each, type "Background", Scroll Unfurled icon: a narrative block and one
+  small effect, mostly for combat (see `house_rules.txt`).

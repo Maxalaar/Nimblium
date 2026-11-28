@@ -225,6 +225,18 @@ to a card, add or complete a line here.
   frightens, Goblin-folk swaps with an ally, Rat-folk moves through larger creatures,
   Construct-folk overdrives (1 Wound for 2 actions), Lizard-folk heals itself (2×(LVL+KEY) HP,
   2/Rest). Every block of an ancestry card has a name. (`game/ancestries/`)
+- **Backgrounds** (user ruling 2026-11-28): not the book's backgrounds. A background is where
+  you grew up, your social origin: Noble, Fallen, Soldier, Guard, Bureaucrat, Acolyte, Street
+  Kid, Outlaw, Outlander, Laborer, Artisan, Mechanic, Merchant, Scholar, Nomad, Artist, Outcast,
+  Captive, Uncanny. Each card has a clear name, a narrative block with no name (where you grew up, what you
+  did, how you see the world: "To you, the world...") and one small effect tied to that origin,
+  mostly for combat: Noble +1 magic item, Fallen Grudge, Soldier +KEY damage next to an ally
+  and Outcast +KEY damage with no ally within 6 spaces, Guard a free Interpose, Bureaucrat
+  advantage on Influence with officials, Acolyte Last Rites (1/Rest), Street Kid Hide without
+  Cover, Outlaw a free move (like Rabbit-folk's), Outlander ignores Difficult Terrain, Laborer
+  +4 slots, Artisan ignores Defense once, Mechanic regains 1 charge (1/Rest), Merchant Quick
+  Hands, Scholar learns resistances, Nomad +1 speed, Artist Showstopper, Captive temp HP when
+  Bloodied, Uncanny forces a reroll of the Primary Die. (`game/backgrounds/`)
 - **Chaos Table** is public, on the Magic page (book: the GM's secret). The Control Table stays a
   card of the Invoker of Control. (`game/rules/magic.typ`)
 - **No default DC**: each card states the DC of the checks it calls for (usually DC 10+KEY); the

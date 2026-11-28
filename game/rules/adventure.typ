@@ -219,6 +219,6 @@ stat) is left out: it goes without saying.
 interpretation: Starting equipment and gold are left out (user ruling 2026-11-26).
 
 interpretation: Ancestries and backgrounds are not listed here: their traits are played like
-abilities, so they will become cards. Adventuring motivation is role-play, left to the
+abilities, so they are cards (`game/ancestries/`, `game/backgrounds/`). Adventuring motivation is role-play, left to the
 players. Multiclassing and the other optional rules are left out.
 */

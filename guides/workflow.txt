@@ -53,7 +53,7 @@ Planned areas:
 - **Adventure** (done, recto-verso, the text flows with no forced verso): rounding, stats, skills, checks, advantage, size,
   HP, temporary HP, Rest (no Hit Dice, no Field Rest), items, making a hero (class,
   ancestry and background, stat arrays, skills, the rest of the sheet) and leveling up. No
-  lodging and no downtime. Ancestries are cards; backgrounds will be cards.
+  lodging and no downtime. Ancestries and backgrounds are cards.
 - **Combat** (done): turn, pool of 3 actions, attacks, Defense, movement and reach, Cover,
   grapples in progress, Knockback, Concentration, Dying and Wounds; on the verso the
   conditions (taken from `game/conditions.typ`) and the creature rules
@@ -107,7 +107,9 @@ the exports, don't make any more until asked again.
 
 ## Export
 
-`python3 tools/export_cards.py` exports each card to PDF next to its `.typ`. With `--book`,
+`python3 tools/export_cards.py` exports each card to PDF next to its `.typ`. Run it (with
+`--book`) after every change to a card, class sheet or rules page: the user reads the PDFs,
+not the sources. With `--book`,
 it also creates `build/nimblium_cards.pdf`: every card, one per page, where the names written
 with `#card_ref` are clickable links to the card they name (in the individual PDFs, they are
 only in italics).
