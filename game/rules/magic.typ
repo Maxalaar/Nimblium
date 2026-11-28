@@ -4,6 +4,9 @@
 #rules_page(
   name: "Magic",
   intro: [Spells, mana, upcasting and chaos.],
+  reminder: (keywords.advantage, conditions.bloodied, keywords.concentration,
+    keywords.difficult_terrain, keywords.disadvantage, keywords.flying, conditions.hampered,
+    conditions.prone, conditions.silenced, conditions.smoldering),
 )[
 
 #section("Spells")[
@@ -66,21 +69,8 @@
 ]
 
 #section("Reading a spell card")[
-  #values(columns: (14mm, 1fr),
-    [ACT], [The actions it costs to cast. A spell with no ACT is cast without an action, as
-    its text says.],
-    [MANA], [The mana it costs.],
-    [CONC], [It needs #kw_concentration, for up to this long. The card reminds how
-    Concentration works.],
-    [CAST], [Its casting time, in minutes, for a spell cast outside combat.],
-    [DMG], [The damage it deals.],
-    [RNGE], [How far away its target can be.],
-    [REACH], [How far around you it reaches, or the shape of its area, such as Cone 4 or
-    Line 12.],
-    [AREA], [The size of the area it affects.],
-    [AoE], [In its types, the spell affects an area. The Areas rule of the Combat page
-    applies.],
-  )
+  The letters at the top of a spell card, such as ACT, MANA or RNGE, are explained on the
+  Glossary page.
 ]
 
 #section("Utility spells")[
@@ -120,6 +110,9 @@
 
 /*
 review: style=2026-11-14 changelog=2026-10-02
+
+interpretation: The letters of a spell card (ACT, MANA, CAST...) are explained on the Glossary
+page, with those of the other cards (user ruling 2026-11-28): this page only points there.
 
 house-rule: The Chaos Table (Game Master's Guide p.114) is public, on this page (book: the Chaos Table is secret, for the GM). The Chaos
 Table is converted: saves become checks, Armor becomes Defense, the Assess action becomes

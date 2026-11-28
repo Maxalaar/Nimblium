@@ -29,6 +29,6 @@ interpretation: Abilities, spells and items are cards. The sheet lists the items
 their slots) and the armor and shield worn, but not abilities or spells. Combat values (HP,
 Defense, Wounds, resources) are grouped apart from the rest (user request 2026-11-28), and two
 resource boxes leave room for classes with two resources (Zephyr). The sheet gives no
-reminders of how each value is worked out: that is on the Adventure page (Making a hero),
-user ruling 2026-11-28.
+reminders of how each value is worked out: that is on the Glossary page (Hero sheet section,
+user ruling 2026-11-28), which has a line for every field. A new field needs a line there.
 */

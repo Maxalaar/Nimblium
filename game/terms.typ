@@ -79,6 +79,7 @@
 #let kw_knockback = keyword_style[Knockback]
 #let kw_marked = keyword_style[Marked]
 #let kw_poisoned = keyword_style[Poisoned]
+#let kw_primary_die = keyword_style[Primary Die]
 #let kw_prone = keyword_style[Prone]
 #let kw_rage = keyword_style[Rage]
 #let kw_raging = keyword_style[Raging]

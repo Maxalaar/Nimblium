@@ -17,7 +17,7 @@
         kind: "active",
         name: "Attack",
         cost: (actions(1),),
-        effect: [Make an attack with a weapon you hold. The Attack section of the Combat page explains how an attack resolves.],
+        effect: [Choose a creature within the Reach or Range of a weapon you hold. Roll the weapon's damage and deal it to that creature. Its #kw_primary_die can miss or crit.],
       ),
       (
         kind: "active",
@@ -26,7 +26,7 @@
         effect: [You #kw_hide from the creatures you have #kw_cover from.],
       ),
     ),
-    reminder: (keywords.difficult_terrain, keywords.hide, keywords.cover),
+    reminder: (keywords.primary_die, keywords.difficult_terrain, keywords.hide, keywords.cover),
 )
 
 #let basic_actions = creat_ability(ability_data)

@@ -55,25 +55,41 @@ general rule. Every other paragraph starts with its name in bold and a period, t
 first one: give it a name or merge it into the opening paragraph. Names are plain black text,
 never a colored keyword (`#rule[Restrained]`, not `#rule[#kw_restrained]`). Keyword and
 condition definitions (`#keywords.cover`, the Conditions list) keep their colon, as on the
-cards.
+cards. A long section is split into subsections (user ruling 2026-11-28): `#part("Title", intro: [...])`
+gives its title and opening paragraph, then each `#subsection("Name")[...]` follows; each
+subsection can go to the next column on its own. A section title is centered in a gray band across the
+column; a subsection title too, slightly smaller and in a lighter band (user ruling 2026-11-28).
+Every table is a `game_table` (`templates/table.typ`, user ruling 2026-11-28): header in
+small capitals, alternating gray rows; `#values` on the rules pages, the class sheet level table
+and the hero sheet tables all use it. Never a bare `table(...)`. Descriptions in tables are plain sentences, with no "Topic: a, b, c" colon
+(user ruling 2026-11-28): "Knowing spells, magical items and magical creatures."
+
+Reminders (user ruling 2026-11-28): the keywords and conditions a page uses are reminded once,
+at the end of the page, through `rules_page(reminder: (...))`, listed by name, never under each
+section. The Glossary still gathers them all.
 
 Planned areas:
 - **Adventure** (done, recto-verso, the text flows with no forced verso): rounding, stats, skills, checks, advantage, size,
   HP, temporary HP, Rest (no Hit Dice, no Field Rest), items, making a hero (class,
   ancestry and background, stat and skill points, the rest of the sheet) and leveling up. No
   lodging and no downtime. Ancestries and backgrounds are cards.
-- **Combat** (done): turn, pool of 3 actions, attacks, Defense, movement and reach, Cover,
-  Dying and Wounds (grappling, Knockback and Concentration are on their cards and keywords); on the verso the
-  creature rules
-  (`creature_rules.txt`). The actions themselves are on the cards of `game/actions/` (Basic
+- **Combat** (done, recto-verso: the reminders open the verso): turn, pool of 3 actions, attacks, Defense, movement and reach, Cover,
+  Dying and Wounds (grappling, Knockback and Concentration are on their cards and keywords); then the
+  adversaries (`creature_rules.txt`) and Building an encounter. The actions themselves are on the cards of `game/actions/` (Basic
   Actions, Grapple, Triggered Actions): the page refers to them without repeating them.
-- **Magic** (done): schools, casting, mana, upcasting, cantrips, how to read a spell card,
-  utility spells. One page. Spell scrolls merge into the Wand card (game/items/gear/).
-- **Glossary** (done, one side): every condition, then the keywords common to every class,
+- **Magic** (done): schools, casting, mana, upcasting, cantrips (the spell card letters are
+  on the Glossary), utility spells. One page. Spell scrolls merge into the Wand card (game/items/gear/).
+- **Glossary** (done, 3 sides, the only page allowed more than recto-verso, user ruling
+  2026-11-28): on the recto, every condition, then the keywords common to every class,
   then each class's own keywords, all sorted by name and read from their definition files
   (`game/conditions.typ`, `game/keywords.typ`, `game/class/<class>/<class>_keywords.typ`).
   The other pages don't repeat these definitions. A new class keyword file needs a line in its
-  Class keywords list.
+  Class keywords list (one list, with no class names). Its sections, in order: Conditions; Keywords
+  (General, Class); then on the verso Abbreviations (those of the rules); Hero sheet (Identity,
+  Narrative, Equipment, Combat, Levels: each value with its formula, gray and bold at the top
+  of the cell, and how to fill it in); Cards (the letters below the name of spell, item,
+  creature and class cards, then every capsule with what it means) (user ruling 2026-11-28). They are only there: a new stat label on a card
+  template, or a new hero sheet field, needs a line on the verso.
 - No equipment page: equipment will become cards.
 
 Writing:

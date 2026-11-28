@@ -4,6 +4,7 @@
 #rules_page(
   name: "Adventure",
   intro: [Making a hero, checks, rest and growth.],
+  reminder: (keywords.advantage, keywords.disadvantage, conditions.dying),
 )[
 
 #section("Rounding")[
@@ -35,22 +36,22 @@
   Each skill uses one stat. A check with a skill adds the stat and the skill.
 
   #values(columns: (21mm, 9mm, 1fr),
-    [Arcana], [#INT], [Knowing magic: spells, magical items and magical creatures.],
-    [Examination], [#INT], [Studying something closely: clues, wounds, traps, mechanisms.],
-    [Finesse], [#DEX], [Delicate work with your hands: locks, traps, sleight of hand,
-    steering a vehicle.],
-    [Influence], [#WIL], [Getting what you want from people: persuading, deceiving,
-    performing.],
+    [Arcana], [#INT], [Knowing spells, magical items and magical creatures.],
+    [Examination], [#INT], [Studying clues, wounds, traps and mechanisms closely.],
+    [Finesse], [#DEX], [Picking locks, disarming traps, sleight of hand and steering a
+    vehicle.],
+    [Influence], [#WIL], [Persuading, deceiving and performing to get what you want from
+    people.],
     [Insight], [#WIL], [Reading people and situations, guessing motives and lies, having
     thought ahead.],
-    [Lore], [#INT], [Knowing the world: history, kingdoms, religions and the creatures of
+    [Lore], [#INT], [Knowing history, kingdoms, religions and the creatures of
     legend.],
-    [Might], [#STR], [Raw physical effort: lifting, breaking, climbing, swimming.],
-    [Naturecraft], [#WIL], [Living in the wild: surviving, finding your way, tracking,
+    [Might], [#STR], [Lifting, breaking, climbing and swimming.],
+    [Naturecraft], [#WIL], [Surviving in the wild, finding your way, tracking and
     handling animals.],
-    [Perception], [#WIL], [Noticing things: what is hidden, who follows you, what is
+    [Perception], [#WIL], [Noticing what is hidden, who follows you and what is
     wrong.],
-    [Stealth], [#DEX], [Not being noticed: hiding, sneaking, slipping past guards.],
+    [Stealth], [#DEX], [Hiding, sneaking and slipping past guards unnoticed.],
   )
 ]
 
@@ -103,7 +104,7 @@
   when the heroes can rest.
 
   #rule[Recovery][After a #safe_rest, you recover all your #HP, your mana, your class
-  resources and the charges of your items, and you heal 1 Wound. Abilities limited per
+  resources and the charges of your items, and you heal all your Wounds. Abilities limited per
   #safe_rest can be used again.]
 ]
 
@@ -128,18 +129,8 @@
   #rule[3\. Stats and skills][Your stats and skills start at 0. Spend your 5 stat points and 10
   skill points, as Leveling up explains.]
 
-  #rule[4\. The rest of your sheet][Fill in these values.]
-
-  #values(columns: (27mm, 1fr),
-    [Vitality], [Your class sheet's value plus your #STR. Many heals count in Vitality.],
-    [Max #HP], [10, plus #LVL times your Vitality.],
-    [#defense], [Your #DEX, plus your armor's and your shield's bonus.],
-    [Initiative], [Your #DEX.],
-    [Speed], [6.],
-    [Size], [Your ancestry's size.],
-    [Max Wounds], [6.],
-    [Inventory], [#STR + 10 slots.],
-  )
+  #rule[4\. The rest of your sheet][Fill in every other value of your hero sheet, as the
+  Glossary page explains.]
 ]
 
 #section("Leveling up")[
@@ -153,6 +144,10 @@
 
 /*
 review: style=2026-11-14 changelog=2026-10-02
+
+interpretation: How to fill in each value of the hero sheet (Vitality, max HP, Defense...) is on
+the Glossary page, Hero sheet section (user ruling 2026-11-28): Making a hero, step 4, points
+there instead of listing them.
 
 Source: Core Rules p.7-9 and p.17, glossary p.56, and both changelogs. Lodging and Downtime
 are left out on purpose. Speed, range, forced movement, Cover, Hide, grappling, Concentration, Dying,

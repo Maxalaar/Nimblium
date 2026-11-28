@@ -3,7 +3,10 @@
 
 #rules_page(
   name: "Combat",
-  intro: [Turns, actions, attacks, movement and creatures.],
+  intro: [Turns, actions, attacks, movement and adversaries.],
+  reminder: (keywords.advantage, keywords.concentration, keywords.cover,
+    keywords.disadvantage, conditions.dying, keywords.full_cover, keywords.hide,
+    keywords.primary_die, conditions.prone),
 )[
 
 #section("Initiative and turns")[
@@ -48,11 +51,7 @@
 
 #section("Attack")[
   Any spell or ability that can harm an enemy is an attack. Roll its dice and deal that much
-  damage.
-
-  #rule[#primary_die][The leftmost die is the #primary_die. A 1 on it is a miss, and the
-  attack has no effect. Its maximum is a critical hit. Roll it again and add the result, as
-  long as you roll the maximum.]
+  damage. Its #kw_primary_die can miss or crit.
 
   #rule[Areas][An attack on an area can't miss and can't crit. Roll its damage once and apply
   it to every creature in the area. If it calls for a check, each creature rolls its own.
@@ -62,8 +61,8 @@
   #rule[Rushed attacks][Each attack after the first on the same turn has 1 more
   #kw_disadvantage.]
 
-  #rule[#defense][A creature takes its #defense less damage from each attack. Critical hits
-  ignore #defense.]
+  #rule[#defense][A creature takes its #defense less damage from each attack. A hero's
+  #defense only counts when they Defend. Critical hits ignore #defense.]
 
   #rule[Vulnerable and Resistant][A creature takes 10 more damage from a type it is
   Vulnerable to, and 10 less damage from a type it is Resistant to.]
@@ -88,8 +87,8 @@
   #rule[Reach X][A melee attack reaches every space within X spaces. Without a number, it is
   Reach 1.]
 
-  #rule[Range X][A ranged attack reaches X spaces. It has #kw_disadvantage while an enemy is
-  adjacent to you. You may take 1 #kw_disadvantage to add 2 to its range, up to 3 times.]
+  #rule[Range X][A ranged attack reaches X spaces, or up to twice that with #kw_disadvantage.
+  It has #kw_disadvantage while an enemy is adjacent to you.]
 
   #rule[Cone X][It starts at you and goes X spaces out, and X spaces wide at its far end.]
 
@@ -100,16 +99,17 @@
 
 #section("Cover and hiding")[
   Obstacles between you and a ranged attacker give you #kw_cover or #kw_full_cover, and let
-  you hide.
+  you #kw_hide.
 
   #rule[Hiding][Most creatures won't hunt a hidden hero while other dangers remain.]
 ]
 
 #section("Dying and Wounds")[
-  When you drop to 0 #HP, you gain 1 Wound and you are #kw_dying until you regain #HP.
+  Wounds are lasting injuries. You die when you have 6 Wounds. A #safe_rest heals all of them.
 
-  #rule[Wounds][Wounds are lasting injuries. A #safe_rest heals 1 of them. You die when you
-  have 6 Wounds.]
+  #rule[Gaining Wounds][When you drop to 0 #HP, you gain 1 Wound and you are #kw_dying until
+  you regain #HP. While #kw_dying, each time you would take damage, you gain 1 Wound instead,
+  or 2 on a critical hit. Some cards also make you gain Wounds.]
 ]
 
 #section("Armor and shields")[
@@ -120,17 +120,17 @@
   lists.]
 ]
 
-#section("Creatures")[
-  Each creature has 1 action per turn, or the number its card shows as ACT. It moves up to its
+#section("Adversaries")[
+  Adversaries are the creatures the GM plays. Each has 1 action per turn, or the number its card shows as ACT. It moves up to its
   #speed for free, without spending an action. Only heroes make opportunity attacks.
 
-  #rule[Stats and skills][A creature's #STR, #DEX, #INT, #WIL and skills are 0, unless its card
+  #rule[Stats and skills][An adversary's #STR, #DEX, #INT, #WIL and skills are 0, unless its card
   shows them.]
 
   #rule[Minions][#passive_abilities.minion.effect]
 
-  #rule[Building an encounter][Add up the heroes' levels, then the creatures' levels. When the
-  two totals are equal, the fight is balanced. Fewer creature levels make it easier, more make
+  #rule[Building an encounter][Add up the heroes' levels, then the adversaries' levels. When the
+  two totals are equal, the fight is balanced. Fewer adversary levels make it easier, more make
   it harder.]
 ]
 
@@ -142,7 +142,7 @@ review: style=2026-11-14 changelog=2026-10-02
 Source: Core Rules p.10-11 and p.13-15, glossary p.56, both changelogs (grabbing, moving through spaces by size, forced movement by size, cones,
 Concentration, Dying, Opportunity Attacks against any creature, limits reset at the end of
 your turn, multi-target attacks roll normally, Defend after seeing the roll), and
-guides/creature_rules.txt for the Creatures section. The actions themselves (Move, Attack,
+guides/creature_rules.txt for the Adversaries section. The actions themselves (Move, Attack,
 Hide, Grab, Escape, Defend, Interpose, Opportunity Attack) are on the cards of
 game/actions/.
 
@@ -168,6 +168,11 @@ house-rule: Dual wielding is only Advantage on your first attack each round, wit
 weapon in each hand (user ruling 2026-11-28; book: one attack per round has Advantage, roll
 both weapons' damage and keep either, and 2 or 3 STR lift the Light requirement).
 
+interpretation: The Primary Die is a keyword (Glossary), reminded on the Basic Actions card: the
+Attack action says how it plays without sending to this page. A hero's Defense only counts when
+they Defend, a creature's always does, and crits ignore both (changelog; user ruling 2026-11-28
+to say it on the page and on the Defend action).
+
 interpretation: Conditions and keyword definitions are on the Glossary page (user ruling
 2026-11-28): no Conditions list here, and no Difficult Terrain, Cover or Full Cover definition.
 
@@ -181,6 +186,19 @@ creature_rules.txt).
 
 house-rule: There are no Reactions: triggered actions have a "When..." trigger and work on
 your own turn too (writing_rules.txt §4).
+
+house-rule: A Safe Rest heals all your Wounds (user ruling 2026-11-28: one big fight, then a
+rest; book: 1 Wound per Safe Rest). The section lists every way to gain a Wound.
+
+interpretation: The section on the GM's creatures is called Adversaries (user ruling
+2026-11-28): heroes are creatures too, and "creature" keeps its general meaning in the other
+rules. The card type stays "creature".
+
+interpretation: The keywords and conditions the page uses are reminded once, at the end of the
+page (user ruling 2026-11-28), not under each section.
+
+house-rule: Long range (user ruling 2026-11-28): a ranged attack reaches up to twice its Range
+with 1 Disadvantage (book: 1 Disadvantage for each 2 more spaces, up to 3 times).
 
 house-rule: No improvised weapon rule (user ruling 2026-11-28): the GM decides what a chair or a
 rock does.

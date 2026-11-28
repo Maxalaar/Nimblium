@@ -6,6 +6,7 @@
 
 #import "creat_frame.typ": icon_image, ink, hair
 #import "/templates/style.typ": reminder_color
+#import "/templates/table.typ": game_table
 
 #let sheet_tracking = 2pt
 
@@ -103,13 +104,11 @@
   // The Tier column only shows for spellcasting classes.
   let casts = levels.any(((tier, _)) => tier != none)
   let headers = ("Lvl",) + if casts { ("Tier",) } else { () } + ("You gain",)
-  table(
+  game_table(
     columns: (9mm,) + if casts { (11mm,) } else { () } + (1fr,),
     align: (center + horizon,) * (headers.len() - 1) + (left + horizon,),
     inset: (x: 2mm, y: if new_layout { 1.7mm } else { 2.3mm }),
-    stroke: (x, y) => (bottom: if y == 0 { 0.6pt + ink } else { hair + luma(190) }),
-    fill: (x, y) => if y > 0 and calc.even(y) { luma(246) },
-    table.header(..headers.map(h => text(size: 6.5pt, tracking: 1.2pt, weight: "bold", upper(h)))),
+    header: headers,
     // A tier that goes up is in bold; the others are gray.
     ..levels.enumerate().map(((i, (tier, features))) => {
       let previous = if i == 0 { none } else { levels.at(i - 1).at(0) }

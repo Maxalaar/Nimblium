@@ -9,6 +9,7 @@
 
 #import "creat_frame.typ": hair
 #import "/templates/style.typ": reminder_color
+#import "/templates/table.typ": game_table
 
 #let dark = luma(45)           // text of bands and tabs
 #let line_color = luma(130)    // frames and shapes
@@ -134,15 +135,13 @@
 
 // A table to fill in (Equipment, Levels): labels in its header, zebra rows, a light line between
 // columns. cells: for each row, its cells (content, or a field name as a string).
-#let sheet_table(columns: (), header: (), row_height: 6mm, aligns: none, rows: ()) = table(
+#let sheet_table(columns: (), header: (), row_height: 6mm, aligns: none, rows: ()) = game_table(
   columns: columns,
   rows: (auto,) + (row_height,) * rows.len(),
   align: if aligns != none { aligns } else { left + horizon },
   inset: 0mm,
-  stroke: (x, y) => (bottom: if y == 0 { 0.6pt + line_color } else { hair + rule_gray },
-    left: if x > 0 and y > 0 { hair + rule_gray }),
-  fill: (x, y) => if y > 0 and calc.even(y) { luma(248) },
-  table.header(..header.map(h => box(inset: (x: 1.5mm, bottom: 1.2mm), label(h)))),
+  column_lines: true,
+  header: header.map(h => box(inset: (x: 1.5mm, bottom: 1.2mm), label(h))),
   ..rows.map(cells => cells.map(c => if type(c) == str {
     box(width: 100%, height: 100%, inset: (x: 1.5mm), form(c, size: 8.5))
   } else { c })).flatten(),

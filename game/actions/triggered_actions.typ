@@ -12,7 +12,7 @@
         name: "Defend",
         cost: (actions(1),),
         limitation: per_round(1),
-        effect: [When an attack hits you, you take your #defense less damage from it.],
+        effect: [When an attack hits you, you take your #defense less damage from it. A critical hit ignores your #defense.],
       ),
       (
         kind: "active",
@@ -26,7 +26,7 @@
         name: "Opportunity Attack",
         cost: (actions(1),),
         limitation: per_round(1),
-        effect: [When an adjacent creature willingly moves away from you, you may make a melee attack against it with #kw_disadvantage.],
+        effect: [When a creature leaves your Reach, you may make a melee attack against it.],
       ),
     ),
 )
@@ -43,6 +43,10 @@ decide after seeing the roll).
 house-rule: There are no Reactions: these are actions with a "When..." trigger, 1 action and
 1/round (writing_rules.txt §4). Only heroes make Opportunity Attacks, unless a creature's card
 says otherwise.
+
+house-rule: Opportunity Attack (user ruling 2026-11-28): it triggers when a creature leaves your
+Reach, and the attack has no disadvantage (book: an adjacent creature willingly moving away, and
+the attack has disadvantage).
 
 house-rule: Help is removed. Combat rules stay objective: helping an ally is role-play,
 handled by the GM like any narrative action.
