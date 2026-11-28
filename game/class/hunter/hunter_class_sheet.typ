@@ -44,14 +44,14 @@
       (15, card_ref("Apex Predator")),
     )),
     ([Keeper of the Wild Heart], by_level(
-      (3, [#card_ref("Impressive Form"), #card_ref("I Have the High Ground").]),
+      (3, [#card_ref("Impressive Form"), #card_ref("Swift Positioning").]),
       (7, card_ref("Resourceful Herbalist")),
-      (11, card_ref("Ha! I'm Over Here!")),
+      (11, card_ref("Narrow Escape")),
       (15, card_ref("Unparalleled Survivalist")),
     )),
     ([#thrill_of_the_hunt], [
       #card_ref("Addling Arrow")\
-      #card_ref("Come Get Some!")\
+      #card_ref("Taunting Shot")\
       #card_ref("Decoy")\
       #card_ref("Fleet Feet")\
       #card_ref("Grease Trap")\

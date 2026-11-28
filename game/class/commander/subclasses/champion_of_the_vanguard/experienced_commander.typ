@@ -4,7 +4,7 @@
     name: "Experienced Commander",
     type: ("Ability", "Commander", "Champion of the Vanguard"),
     blocks: (
-      (kind: "passive", effect: [#card_ref("Coordinated Strike!") can target 1 more ally.]),
+      (kind: "passive", effect: [#card_ref("Coordinated Strike") can target 1 more ally.]),
     ),
 )
 

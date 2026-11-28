@@ -18,7 +18,7 @@
     (n, [#card_ref("Radiant Judgment"). #card_ref("Lay on Hands").]),
     (1, [#card_ref("Oathsworn Mana Pool"). Radiant cantrips and tier 1 spells. #card_ref("Zealot"). #card_ref("Paragon of Virtue").]),
     (1, [Choose a subclass, Oath of Vengeance, Oath of Refuge or Oathbreaker. Choose 1 Sacred Decree.]),
-    (2, [#card_ref("My Life, for My Friends").]),
+    (2, [#card_ref("Free Interpose").]),
     (2, []),
     (3, [Choose 1 more Sacred Decree.]),
     (3, [Subclass feature. 1 Radiant Utility Spell.]),
@@ -45,25 +45,25 @@
     )),
     ([Oath of Refuge], by_level(
       (3, card_ref("Aura of Refuge")),
-      (7, card_ref("Face Me, Foul Creature!")),
+      (7, card_ref("Taunting Interpose")),
       (11, card_ref("Glorious Reprieve")),
       (15, card_ref("Divine Grace")),
     )),
     (locked[Oathbreaker], by_level(
-      (3, [#card_ref("Dark Benediction"), #card_ref("Paragon of Power"), #card_ref("Aura of Suffering"), #card_ref("We All Suffer"), #card_ref("Bring Me Your Pain").]),
+      (3, [#card_ref("Dark Benediction"), #card_ref("Paragon of Power"), #card_ref("Aura of Suffering"), #card_ref("Shared Burden"), #card_ref("Life Swap").]),
       (7, card_ref("Torment")),
       (11, card_ref("Exploit")),
       (15, card_ref("Bloody Terror")),
     )),
     ([Sacred Decrees], [
       #card_ref("Blinding Aura")\
-      #card_ref("Courage!")\
+      #card_ref("Deathward")\
       #card_ref("Explosive Judgment")\
       #card_ref("Improved Aura")\
       #card_ref("Radiant Aura")\
       #card_ref("Reliable Justice")\
       #card_ref("Shining Mandate")\
-      #card_ref("Stand Fast, Friends!")\
+      #card_ref("Rallying Presence")\
       #card_ref("Unstoppable Protector")\
       #card_ref("Well Armored")
     ]),

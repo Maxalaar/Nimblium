@@ -27,7 +27,7 @@ to a card, add or complete a line here.
 - **No saves, one kind of check.** A check is 1d20 + the stat it names (plus the skill, if it names one), against the
   same DCs; there is no separate "skill check" and "stat check". An effect that the book
   resolves with a save calls for a check by the affected creature, against the DC the card states (usually DC 10+KEY for an effect
-  a hero creates). Cards that said "skill checks" now say "checks", including the *Cheat* card ("change the
+  a hero creates). Cards that said "skill checks" now say "checks", including the *Dirty Tricks* card ("change the
   result of one of your checks to 10+INT"), which now also covers stat checks. Classes have no advantaged or disadvantaged saves, and the class sheets have no
   Saves line. There is no "half on save" rule: each card says what a success does. (`game/rules/adventure.typ`)
 - **Advantage: remove the dice of your choice** (user ruling 2026-11-28). With advantage, you
@@ -113,7 +113,7 @@ to a card, add or complete a line here.
     (book: advantage on Assess and on an Examination check).
 - **Commander.**
   - *Shield Expert*: the free Defend is limited to 1/round (decided on 2026-11-21).
-  - *Survey the Battlefield*: 1 more use of *Coordinated Strike!* per encounter.
+  - *Survey the Battlefield*: 1 more use of *Coordinated Strike* per encounter.
 - **Hunter.**
   - *No Escape*: a 2/round limit, not in the book.
   - *Wild Instinct*: free, 1/round, with no charges: +1 to the next Primary Die against a
@@ -225,7 +225,7 @@ to a card, add or complete a line here.
 - **No Hit Dice, no Field Rest.** Vitality (the class's value + STR; the classes with
   STR as a Key Stat have 1 less than their old Hit Die value) replaces the Hit Die, gives the
   HP per level and counts heals. The Safe Rest is the only rest. Cards that spent Hit
-  Dice were rewritten (Healing Potion, I Can Do This ALL DAY!, Infuse Strength, Enduring Soul,
+  Dice were rewritten (Healing Potion, Second Wind, Infuse Strength, Enduring Soul,
   Field Medic, Song of Rest, Impressive Form, Fiendish Boon, Mountainous Tenacity, Warm
   Pastries). (`game/rules/adventure.typ`, `game/rules/level_up.typ`)
 - **No healing farmed from short fights** (user ruling 2026-11-27): anything that restores HP

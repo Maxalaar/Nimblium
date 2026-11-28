@@ -15,7 +15,7 @@
     ("Armor", [None]),
   ),
   levels: (
-    (n, [#card_ref("Rage"), #card_ref("Fury Dice"), #card_ref("That all you got?!").]),
+    (n, [#card_ref("Rage"), #card_ref("Fury Dice"), #card_ref("Fury Guard").]),
     (n, [#card_ref("Intensifying Fury"). #card_ref("One with the Ancients").]),
     (n, [Choose a subclass, Path of the Mountainheart or Path of the Red Mist. #card_ref("Bloodlust").]),
     (n, [#card_ref("Enduring Rage"). Choose 1 Savage Arsenal ability.]),
@@ -56,13 +56,13 @@
       #card_ref("Eager for Battle")\
       #card_ref("Into the Fray")\
       #card_ref("Mighty Endurance")\
-      #card_ref("MORE BLOOD!")\
+      #card_ref("Wounded Fury")\
       #card_ref("Rampage")\
       #card_ref("Swift Fury")\
       #card_ref("Thunderous Steps")\
       #card_ref("Unstoppable Force")\
       #card_ref("Whirlwind")\
-      #card_ref("You're Next!")
+      #card_ref("Rout")
     ]),
   ),
 )

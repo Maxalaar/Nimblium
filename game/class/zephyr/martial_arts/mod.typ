@@ -1,7 +1,7 @@
 #import "airshift.typ": airshift
 #import "bodily_discipline.typ": bodily_discipline
 #import "enduring_soul.typ": enduring_soul
-#import "i_jump_on_his_back.typ": i_jump_on_his_back
+#import "mount_the_foe.typ": mount_the_foe
 #import "kinetic_barrage.typ": kinetic_barrage
 #import "mighty_soul.typ": mighty_soul
 #import "quickstrike.typ": quickstrike

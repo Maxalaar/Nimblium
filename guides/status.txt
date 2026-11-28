@@ -80,7 +80,7 @@ text is available, so no cards.
   Blows and Supernatural Speed; Burst of Speed (charges) spent by Maneuvers (Slipstream,
   Galeforce Strike, Windstep); Infuse Strength, Swift Feet, Unyielding
   Resolve, Windborne; 10 Martial Arts; Way of Pain and Way of Flame (Echoed Agony and Encompassing Flames are
-  Levels lines on Share My Pain, Exploding Soul and Chain Reaction); class sheet, High Kick
+  Levels lines on Pain Reflection, Exploding Soul and Chain Reaction); class sheet, High Kick
   icon. Announced subclasses: Way of Iron, Way of Hurricanes.
 - **Extra Subclasses**: done in their class as subclasses like the others: Oathbreaker
   (Oathsworn), Spellblade (Commander), Reaver (Shadowmancer).

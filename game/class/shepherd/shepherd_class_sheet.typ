@@ -38,7 +38,7 @@
   ),
   boxes: (
     ([Luminary of Mercy], by_level(
-      (3, [#card_ref("Merciful Healing"), #card_ref("Life is Beautiful").]),
+      (3, [#card_ref("Merciful Healing"), #card_ref("Aura of Life").]),
       (7, card_ref("Conduit of Light")),
       (11, card_ref("Powerful Healer")),
       (15, card_ref("Empowered Conduit")),
@@ -50,13 +50,13 @@
       (15, card_ref("Conduit of Death")),
     )),
     ([Sacred Graces], [
-      #card_ref("Assist Me, My Friend!")\
+      #card_ref("Companion Strike")\
       #card_ref("Empowered Companion")\
       #card_ref("Guiding Spirit")\
       #card_ref("Hasty Companion")\
       #card_ref("Illuminate Soul")\
       #card_ref("Light Bearer")\
-      #card_ref("Not Beyond MY Reach")\
+      #card_ref("Revive the Fallen")\
       #card_ref("Vengeful Spirit")
     ]),
   ),

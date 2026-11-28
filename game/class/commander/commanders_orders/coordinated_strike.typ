@@ -1,7 +1,7 @@
 #import "/global.typ": *
 
 #let ability_data = (
-    name: "Coordinated Strike!",
+    name: "Coordinated Strike",
     type: ("Ability", "Commander", "Commander's Order"),
     blocks: (
       (kind: "active", limitation: (per_round(1), per_encounter(1)), effect: [You and an ally within 6 spaces each make a weapon attack or an unarmed attack, or cast a cantrip, for free.]),
@@ -26,4 +26,7 @@ changelog: 1/encounter at level 1 (was 1/round, INT times per Safe Rest); now al
 unarmed attack. Master Commander (level 5: INT uses per Safe Rest, +1 at 9, 13 and 17, attacks
 ignore disadvantage), Unparalleled Tactics (level 18) and Captain of Legions (level 20: "INT
 allies gain +1 action", was every ally within 12 spaces) are its Levels lines.
+
+interpretation: Renamed from "Coordinated Strike!" (user ruling 2026-11-28): card names are sober and
+say what the card does, never a line a character would say.
 */

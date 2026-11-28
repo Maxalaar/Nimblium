@@ -16,11 +16,11 @@
   ),
   levels: (
     (n, [#card_ref("Sneak Attack"). #card_ref("Vicious Opportunist").]),
-    (n, [#card_ref("Cheat").]),
+    (n, [#card_ref("Dirty Tricks").]),
     (n, [Choose a subclass, Tools of the Scoundrel or Tools of the Silent Blade.]),
     (n, [Choose 1 Underhanded Ability.]),
     (n, [#card_ref("Twist the Blade"). #card_ref("Quick Read").]),
-    (n, [Choose 1 more Underhanded Ability. #card_ref("THAT'S Not What Happened!").]),
+    (n, [Choose 1 more Underhanded Ability. #card_ref("Rigged Roll").]),
     (n, [Subclass feature.]),
     (n, [Choose 1 more Underhanded Ability.]),
     (n, []),
@@ -41,20 +41,20 @@
       (3, [#card_ref("Low Blow"), #card_ref("Sweet Talk").]),
       (7, card_ref("Pocket Sand")),
       (11, card_ref("Escape Plan")),
-      (15, card_ref("Heads I Win, Tails You Lose")),
+      (15, card_ref("Sure Strikes")),
     )),
     ([Tools of the Silent Blade], by_level(
-      (3, [#card_ref("Amidst All This Commotion…"), #card_ref("Leave No Trace").]),
+      (3, [#card_ref("Vanish on Kill"), #card_ref("Leave No Trace").]),
       (7, card_ref("Cunning Strike")),
       (11, card_ref("Professional Skulker")),
-      (15, card_ref("KILL")),
+      (15, card_ref("Assassinate")),
     )),
     ([Underhanded Abilities], [
       #card_ref("Creative Accounting")\
       #card_ref("Exploit Weakness")\
       #card_ref("Feinting Attack")\
-      #card_ref("How'd YOU get here?!")\
-      #card_ref("I'm Outta Here!")\
+      #card_ref("Blink Strike")\
+      #card_ref("Slip Away")\
       #card_ref("Misdirection")\
       #card_ref("Steal Tempo")\
       #card_ref("Sunder Armor Medium")\

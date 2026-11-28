@@ -38,9 +38,9 @@
   ),
   boxes: (
     ([Way of Pain], by_level(
-      (3, card_ref("Bring the Pain")),
-      (7, card_ref("Share My Pain")),
-      (11, card_ref("Pain Sharpens the Mind")),
+      (3, card_ref("Pain Momentum")),
+      (7, card_ref("Pain Reflection")),
+      (11, card_ref("Bloodied Focus")),
     )),
     ([Way of Flame], by_level(
       (3, card_ref("Exploding Soul")),
@@ -48,7 +48,7 @@
       (11, card_ref("Chain Reaction")),
     )),
     ([Martial Arts], [
-      #card_ref("Airshift"), #card_ref("Bodily Discipline"), #card_ref("Cyclonic Pull"), #card_ref("Enduring Soul"), #card_ref("I Jump On His Back!"), #card_ref("Kinetic Barrage"), #card_ref("Mighty Soul"), #card_ref("Quickstrike"), #card_ref("Twisting Deflection"), #card_ref("Windstrider").
+      #card_ref("Airshift"), #card_ref("Bodily Discipline"), #card_ref("Cyclonic Pull"), #card_ref("Enduring Soul"), #card_ref("Mount the Foe"), #card_ref("Kinetic Barrage"), #card_ref("Mighty Soul"), #card_ref("Quickstrike"), #card_ref("Twisting Deflection"), #card_ref("Windstrider").
     ]),
   ),
 )

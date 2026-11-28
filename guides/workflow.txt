@@ -28,7 +28,8 @@ How we work: sources, organization, checks, tracking.
   `game/class/mod.typ`). It is needed to compile and test through `#symbol_name`, even though
   `tools/export_cards.py` finds the files on its own by walking the file system.
 - File names in snake_case, derived from the ability's name, punctuation removed (e.g.
-  "How'd YOU get here?!" → `how_you_get_here.typ`).
+  "Blink Strike" → `blink_strike.typ`). Names are sober and say what the card does, never a
+  line a character would say (user ruling 2026-11-28).
 
 ## Class sheet (`game/class/<name>/<name>_class_sheet.typ`)
 

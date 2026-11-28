@@ -1,10 +1,10 @@
 #import "blinding_aura.typ": blinding_aura
-#import "courage.typ": courage
+#import "deathward.typ": deathward
 #import "explosive_judgment.typ": explosive_judgment
 #import "improved_aura.typ": improved_aura
 #import "radiant_aura.typ": radiant_aura
 #import "reliable_justice.typ": reliable_justice
 #import "shining_mandate.typ": shining_mandate
-#import "stand_fast_friends.typ": stand_fast_friends
+#import "rallying_presence.typ": rallying_presence
 #import "unstoppable_protector.typ": unstoppable_protector
 #import "well_armored.typ": well_armored

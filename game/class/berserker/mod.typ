@@ -2,7 +2,7 @@
 #import "savage_arsenal/mod.typ": *
 #import "rage.typ": rage
 #import "fury_dice.typ": fury_dice
-#import "that_all_you_got.typ": that_all_you_got
+#import "fury_guard.typ": fury_guard
 #import "intensifying_fury.typ": intensifying_fury
 #import "one_with_the_ancients.typ": one_with_the_ancients
 #import "bloodlust.typ": bloodlust

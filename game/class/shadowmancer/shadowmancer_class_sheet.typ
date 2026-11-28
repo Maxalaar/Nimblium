@@ -39,7 +39,7 @@
   boxes: (
     ([Pact of the Red Dragon], by_level(
       (3, [#card_ref("Draconic Crimson Rite"). Fire spells.]),
-      (7, [#card_ref("We'll ALL Burn!"). 1 Fire Utility Spell.]),
+      (7, [#card_ref("Reckless Pyroclasm"). 1 Fire Utility Spell.]),
       (11, card_ref("Heart of Burning Fire")),
       (15, card_ref("Enveloped by the Master")),
     )),
@@ -52,12 +52,12 @@
     (locked[Reaver], by_level(
       (3, [#card_ref("Hollow One"), #card_ref("Bonescythe"), #card_ref("Shadow Exploit").]),
       (7, [#card_ref("Grim Harrow"), #card_ref("Reap").]),
-      (11, [#card_ref("My Blood, My Power"), #card_ref("Otherworldly Might").]),
+      (11, [#card_ref("Blood Casting"), #card_ref("Otherworldly Might").]),
       (15, card_ref("Sovereign One")),
     )),
     ([Invocations], [
       #text(size: 7.5pt, weight: "bold")[LESSER]\
-      #card_ref("Abhorrent Speech"), #card_ref("Beguiling Influence"), #card_ref("Blood Sight"), #card_ref("Eldritch Sense"), #card_ref("Gaze of Two Minds"), #card_ref("Knowledge from Beyond"), #card_ref("My Favored Pet"), #card_ref("Voice of the Dark"), #card_ref("Whispers of the Grave").
+      #card_ref("Abhorrent Speech"), #card_ref("Beguiling Influence"), #card_ref("Blood Sight"), #card_ref("Eldritch Sense"), #card_ref("Gaze of Two Minds"), #card_ref("Knowledge from Beyond"), #card_ref("Shadow Servant"), #card_ref("Voice of the Dark"), #card_ref("Whispers of the Grave").
 
       #text(size: 7.5pt, weight: "bold")[GREATER]\
       #card_ref("Armor of Shadows"), #card_ref("Fiendish Boon"), #card_ref("Hungering Shadows"), #card_ref("One with Shadows"), #card_ref("Repelling Blast"), #card_ref("Shadow Magus"), #card_ref("Shadow Rush"), #card_ref("Shadow Spear"), #card_ref("Shadow Warp"), #card_ref("Swarming Shadows").

@@ -15,7 +15,7 @@
     ("Armor", [Cloth, leather, mail, shields]),
   ),
   levels: (
-    (n, [#card_ref("Coordinated Strike!").]),
+    (n, [#card_ref("Coordinated Strike").]),
     (n, [#card_ref("Combat Dice"). Choose 1 Combat Tactic. #card_ref("Field Medic").]),
     (n, [Choose a subclass, Champion of the Bulwark, Champion of the Vanguard or Spellblade.]),
     (n, [Choose 2 Commander's Orders.]),
@@ -44,10 +44,10 @@
       (15, card_ref("Shield Wall")),
     )),
     ([Champion of the Vanguard], by_level(
-      (3, card_ref("Advance!")),
+      (3, card_ref("Vanguard Charge")),
       (7, card_ref("Experienced Commander")),
       (11, card_ref("Survey the Battlefield")),
-      (15, card_ref("As One!")),
+      (15, card_ref("United Strike")),
     )),
     (locked[Spellblade], by_level(
       (3, [#card_ref("Arcane Command"), #card_ref("Spellforge"), and the Arcane Order of each Commander's Order you know. A spell of tier 1 or lower and a Utility Spell.]),
@@ -57,7 +57,7 @@
     )),
     ([Options], [
       #text(size: 7.5pt, weight: "bold")[COMMANDER'S ORDERS]\
-      #card_ref("Commanding Presence"), #card_ref("Face Me!"), #card_ref("Hold the Line!"), #card_ref("I Can Do This ALL DAY!"), #card_ref("Move it! Move it!"), #card_ref("Reposition!").
+      #card_ref("Commanding Presence"), #card_ref("Protective Taunt"), #card_ref("Rally the Fallen"), #card_ref("Second Wind"), #card_ref("Swift Deployment"), #card_ref("Reposition").
 
       #text(size: 7.5pt, weight: "bold")[ARCANE ORDERS (SPELLBLADE)]\
       #card_ref("Glimmering Decree"), #card_ref("Borne upon the Wind"), #card_ref("Crystalline Armor"), #card_ref("Flashstep"), #card_ref("Rising Phoenix"), #card_ref("Withering Presence").

@@ -43,13 +43,13 @@
     )),
     ([Herald of Courage], by_level(
       (3, card_ref("Inspiring Presence")),
-      (7, card_ref("Fire in My Bones")),
+      (7, card_ref("Rousing Inspiration")),
       (11, card_ref("Unfailing Resolve")),
       (15, card_ref("Chorus of Champions")),
     )),
     ([Options], [
       #text(size: 7.5pt, weight: "bold")[LYRICAL WEAPONRY]\
-      #card_ref("Heroic Ballad"), #card_ref("Inspiring Anthem"), #card_ref("Not My Beautiful Faaace!"), #card_ref("Rhapsody of the Normal"), #card_ref("Song of Domination").
+      #card_ref("Heroic Ballad"), #card_ref("Inspiring Anthem"), #card_ref("Redirect Attack"), #card_ref("Rhapsody of the Normal"), #card_ref("Song of Domination").
 
       #text(size: 7.5pt, weight: "bold")[FRIENDS]\
       #card_ref("Stompy"), #card_ref("Gran Gran"), #card_ref("Mal, the Malevolent Imp"), #card_ref("Linos, the Everfriendly").
@@ -61,7 +61,7 @@
 review: style=2026-11-14 changelog=2026-10-02
 
 Source: Heroes p.55-59 and the 2026-10-02 changelog (the 2nd spell school at level 2, Windbag
-renamed I Know Just the Song, Fire in My Bones at level 7, Unfailing Resolve at level 11).
+renamed I Know Just the Song, Rousing Inspiration at level 7, Unfailing Resolve at level 11).
 Jack of All Trades and Perform! (change your choices on a Safe Rest) are not used: global house
 rule in guides/house_rules.txt. A "People" Person becomes Friends: 2 creatures of your choice that
 follow you (house rule). I Know Just the Song only gives spells: no card, the table says

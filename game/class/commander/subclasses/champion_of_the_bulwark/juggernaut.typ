@@ -4,7 +4,7 @@
     name: "Juggernaut",
     type: ("Ability", "Commander", "Champion of the Bulwark"),
     blocks: (
-      (kind: "active", cost: (actions(1),), effect: [When you use #card_ref("Coordinated Strike!"), your attack deals extra damage equal to your #defense and you add 1 to its #primary_die.]),
+      (kind: "active", cost: (actions(1),), effect: [When you use #card_ref("Coordinated Strike"), your attack deals extra damage equal to your #defense and you add 1 to its #primary_die.]),
     ),
 )
 

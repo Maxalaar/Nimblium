@@ -3,7 +3,7 @@
 #import "oathsworn_mana_pool.typ": oathsworn_mana_pool
 #import "zealot.typ": zealot
 #import "paragon_of_virtue.typ": paragon_of_virtue
-#import "my_life_for_my_friends.typ": my_life_for_my_friends
+#import "free_interpose.typ": free_interpose
 #import "unending_judgment.typ": unending_judgment
 #import "glorious_paragon.typ": glorious_paragon
 #import "sacred_decrees/mod.typ": *
