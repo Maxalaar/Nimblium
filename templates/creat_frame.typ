@@ -10,6 +10,7 @@
 #let card_height = 88mm
 #let card_gap = 5mm              // space between the front and the back
 #let front_gap = 2.5mm           // space between two fronts side by side (the Codex)
+#let front_scale = 94%           // size of the fronts in the Codex, so 3 fit within its margins
 #let ink = black
 #let hair = 0.2pt
 
@@ -262,7 +263,8 @@
   // The Codex shows the fronts only (typst compile --input faces=front): one box per card,
   // side by side, 3 per row (templates/codex.typ).
   if sys.inputs.at("faces", default: "both") == "front" {
-    box({ metadata((card: name)); card_front(name, types + extra, body, stats: stats, stat_cut: stat_cut, icon: family) })
+    box({ metadata((card: name)); scale(front_scale, reflow: true,
+      card_front(name, types + extra, body, stats: stats, stat_cut: stat_cut, icon: family)) })
     h(front_gap, weak: true)
   } else { metadata((card: name)); box(grid(columns: 2, column-gutter: card_gap,
     card_front(name, types + extra, body, stats: stats, stat_cut: stat_cut, icon: family),

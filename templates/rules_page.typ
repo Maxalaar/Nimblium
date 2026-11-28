@@ -7,7 +7,7 @@
 #import "/templates/style.typ": reminder_color
 #import "/templates/table.typ": game_table
 #import "/templates/version.typ": version_stamp
-#import "/templates/codex_marks.typ": codex_entries, document_footer
+#import "/templates/codex_marks.typ": codex_entries, document_footer, page_margin, footer_descent
 
 // Title of a section: centered small capitals in a gray band across the column, as the tabs of
 // the hero sheet. Title of a subsection: the same, slightly smaller, in a lighter band.
@@ -55,8 +55,8 @@
 // reminder: the keyword and condition definitions the page uses, shown once at its end (no line above),
 // in the order given (by name), in gray like a card's reminders.
 #let rules_page(name: "", intro: none, reminder: (), body) = {
-  set page(paper: "a4", margin: (x: 14mm, top: 12mm, bottom: 18mm), columns: 2, header: none,
-    footer-descent: 25%,
+  set page(paper: "a4", margin: page_margin, columns: 2, header: none,
+    footer-descent: footer_descent,
     footer: document_footer(name, version_stamp("Rules: " + name, size: 6.5pt)))
   set columns(gutter: 7mm)
   set text(size: 9.5pt)

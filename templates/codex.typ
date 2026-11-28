@@ -5,8 +5,8 @@
 // of cards starts a new page. Card names written with #card_ref link to their card.
 
 #import "/templates/style.typ": reminder_color
-#import "/templates/creat_frame.typ": card_width, card_height, front_gap
-#import "/templates/codex_marks.typ": codex_mark, codex_entries, codex_page_number
+#import "/templates/creat_frame.typ": card_width, card_height, front_gap, front_scale
+#import "/templates/codex_marks.typ": codex_mark, codex_entries, codex_page_number, page_margin, footer_margin, footer_descent
 
 #let codex_gray = luma(110)
 
@@ -45,8 +45,9 @@
 // The page of the Codex's own pages (cards, cover, introduction, contents).
 #let codex_doc(body) = {
   set document(title: "Nimblium Codex")
-  set page(paper: "a4", margin: (x: 6mm, top: 16mm, bottom: 11mm),
-    header-ascent: 25%,
+  set page(paper: "a4", margin: page_margin,
+    header-ascent: 20%,
+    footer-descent: footer_descent,
     header: context band(),
     footer: align(center, codex_page_number()))
   set text(size: 10pt)
@@ -65,7 +66,7 @@
 )))
 
 // A page of running text with a large title (introduction, contents).
-#let text_page(title, body) = page(header: none, margin: (x: 25mm, y: 25mm), {
+#let text_page(title, body) = page(header: none, margin: (x: 25mm, top: 25mm, bottom: footer_margin), {
   text(size: 22pt, tracking: 5pt, upper(title))
   v(8mm)
   set par(justify: true, leading: 0.65em, spacing: 1.2em)
@@ -114,5 +115,5 @@
   // No widow or orphan control: a page takes as many rows as fit.
   set text(size: 1pt, costs: (widow: 0%, orphan: 0%))
   set par(leading: front_gap, spacing: front_gap, justify: false, linebreaks: "simple")
-  align(center, block(width: 3 * (card_width + front_gap) + 0.5mm, align(left, items.pos().join())))
+  align(center, block(width: 3 * (card_width * front_scale + front_gap) + 0.5mm, align(left, items.pos().join())))
 }
