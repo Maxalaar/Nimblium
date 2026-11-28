@@ -352,6 +352,10 @@ def export_site(versions) -> Path:
 
     cards = []
     index_of = {p: i for i, p in enumerate(card_paths)}
+    order = {}  # the place of each card and page in the game, as in the Codex
+    for kind, _, target in parts:
+        for t in (target if kind == "cards" else [target]):
+            order[t] = len(order)
     for (kind, pairs, target), (path_titles, group_kind) in zip(parts, places):
         if kind != "cards":
             continue
@@ -370,6 +374,7 @@ def export_site(versions) -> Path:
                 "date": versions.get(name, {}).get("date"),
                 "text": versions.get(name, {}).get("text", ""),
                 "pages": pages,
+                "order": order[path],
                 "images": [f"cards/{str(p).zfill(digits)}.svg" for p in pages],
                 "hotspots": [by_page.get(p, []) for p in pages],
             })
@@ -389,7 +394,7 @@ def export_site(versions) -> Path:
         key = ("Rules: " + document_name(target, "rules_page") if target.parent.name == "rules"
                else "Class sheet: " + document_name(target, "class_sheet") if target.name.endswith("_class_sheet.typ")
                else "Hero sheet")
-        docs.append({"id": rel.as_posix(), "name": path_titles[-1], "section": path_titles,
+        docs.append({"id": rel.as_posix(), "name": path_titles[-1], "section": path_titles, "order": order[target],
                      "date": versions.get(key, {}).get("date"), "text": versions.get(key, {}).get("text", ""),
                      "pdf": f"docs/{slug}.pdf", "images": [f"docs/{n}" for n in images]})
 
@@ -423,6 +428,11 @@ def export_site(versions) -> Path:
     data = {"date": max(dates) if dates else None, "cards": cards, "docs": docs, "definitions": definitions}
     (SITE / "data" / "nimblium.js").write_text(
         "window.NIMBLIUM = " + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";\n", encoding="utf-8")
+
+    # The page itself (website/), next to its data.
+    for f in (ROOT / "website").iterdir():
+        if f.is_file():
+            shutil.copy(f, SITE / f.name)
     return SITE
 
 

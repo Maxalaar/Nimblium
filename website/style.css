@@ -1,0 +1,155 @@
+/* Nimblium website: the look of the printed game, gray bands and small capitals. */
+
+:root {
+  --ink: #1e1e1e;
+  --gray: #666;
+  --light: #999;
+  --band: #d2d2d2;
+  --band-light: #ececec;
+  --line: #cfcfcf;
+  --paper: #fbfbf9;
+  --card-w: 280px;
+  font-family: "Libertinus Serif", "Linux Libertine O", "Linux Libertine", Georgia, serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input { font: inherit; color: inherit; }
+
+/* Top bar */
+.top {
+  position: sticky; top: 0; z-index: 5;
+  display: flex; align-items: center; gap: 24px;
+  padding: 12px 20px; background: var(--paper); border-bottom: 1px solid var(--line);
+}
+.brand { display: flex; align-items: baseline; gap: 12px; white-space: nowrap; }
+.title { font-size: 22px; font-weight: bold; letter-spacing: 6px; }
+.date { font-size: 12px; color: var(--light); }
+#search {
+  flex: 1; max-width: 560px; padding: 7px 12px;
+  border: 1px solid var(--line); border-radius: 6px; background: #fff;
+}
+.sizer { display: flex; align-items: center; gap: 6px; margin-left: auto; font-size: 12px; color: var(--gray); letter-spacing: 1px; text-transform: uppercase; }
+.sizer button {
+  width: 28px; height: 28px; padding: 0; border: 1px solid var(--line); border-radius: 50%;
+  background: #fff; cursor: pointer; font-size: 17px; line-height: 1;
+}
+.sizer button:disabled { opacity: .35; cursor: default; }
+
+/* Three columns */
+.layout { display: grid; grid-template-columns: 250px 1fr 290px; align-items: start; }
+.sidebar, .selection {
+  position: sticky; top: 58px; height: calc(100vh - 58px); overflow-y: auto; padding: 14px;
+}
+.sidebar { border-right: 1px solid var(--line); }
+.selection { border-left: 1px solid var(--line); }
+.main { padding: 14px 20px 60px; min-width: 0; }
+
+.band {
+  margin: 4px 0 10px; padding: 5px 8px; border-radius: 4px; background: var(--band);
+  text-align: center; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase;
+}
+.band:not(:first-child) { margin-top: 22px; }
+
+/* Section tree */
+.tree, .tree ul { list-style: none; margin: 0; padding: 0; }
+.tree ul { padding-left: 12px; }
+.tree li > .node {
+  display: flex; justify-content: space-between; gap: 8px; width: 100%;
+  padding: 3px 6px; border: 0; border-radius: 4px; background: none;
+  text-align: left; cursor: pointer; font-size: 14px;
+}
+.tree li > .node:hover { background: var(--band-light); }
+.tree li > .node.active { background: var(--band); font-weight: bold; }
+.tree .count { color: var(--light); font-size: 12px; }
+.tree > li > .node { font-weight: bold; }
+.tree ul { display: none; }
+.tree li.open > ul { display: block; }
+
+.since { display: flex; gap: 8px; align-items: center; }
+.since input { flex: 1; padding: 4px 6px; border: 1px solid var(--line); border-radius: 4px; background: #fff; }
+
+/* Grid of cards and pages */
+.crumb { margin: 0 0 12px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+.grid { display: flex; flex-wrap: wrap; gap: 14px; }
+.tile { position: relative; width: var(--card-w); }
+.tile .face { display: block; cursor: zoom-in; aspect-ratio: 63 / 88; }
+.tile .face img { width: 100%; height: auto; display: block; box-shadow: 0 1px 4px rgba(0, 0, 0, .15); border-radius: 8px; }
+/* An A4 page takes the same place as a card, so a row never moves. */
+.tile.doc .face { display: flex; align-items: center; justify-content: center; }
+.tile.doc .face img { width: auto; height: auto; max-width: 100%; max-height: 100%; border-radius: 2px; }
+.tile .add {
+  position: absolute; top: 6px; right: 6px; z-index: 2;
+  width: 28px; height: 28px; border: 1px solid var(--line); border-radius: 50%;
+  background: #fff; cursor: pointer; font-size: 18px; line-height: 1;
+  opacity: 0; transition: opacity .15s;
+}
+.tile:hover .add, .tile .add.on { opacity: 1; }
+.tile .add.on { background: var(--ink); color: #fff; border-color: var(--ink); font-size: 13px; }
+.empty { color: var(--gray); }
+
+/* A card image with its hover zones over it */
+.card { position: relative; display: block; line-height: 0; }
+.card img { width: 100%; height: auto; display: block; }
+.zone { position: absolute; border-radius: 2px; cursor: help; }
+.zone:hover { background: rgba(0, 0, 0, .07); }
+.zone.card-ref { cursor: pointer; }
+
+/* Selection */
+.selection-actions { display: flex; justify-content: space-between; margin-bottom: 8px; }
+.picked { list-style: none; margin: 0; padding: 0; }
+.picked li {
+  display: flex; align-items: center; gap: 6px; padding: 4px 4px;
+  border-bottom: 1px solid var(--band-light); font-size: 14px; background: var(--paper);
+}
+.picked li.dragging { opacity: .4; }
+.picked .grip { cursor: grab; color: var(--light); user-select: none; }
+.picked .name { flex: 1; cursor: pointer; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.picked .copies { display: flex; align-items: center; gap: 2px; font-size: 12px; color: var(--gray); }
+.picked .copies button, .picked .remove {
+  width: 20px; height: 20px; padding: 0; border: 1px solid var(--line); border-radius: 4px;
+  background: #fff; cursor: pointer; line-height: 1;
+}
+.hint { font-size: 12px; color: var(--light); }
+.option { display: block; margin: 6px 0 10px; font-size: 14px; }
+.primary {
+  width: 100%; padding: 8px; border: 0; border-radius: 6px; background: var(--ink); color: #fff;
+  letter-spacing: 2px; text-transform: uppercase; font-size: 12px; cursor: pointer;
+}
+.primary:disabled { background: var(--band); color: var(--gray); cursor: default; }
+.link { border: 0; background: none; padding: 0; color: var(--gray); font-size: 12px; cursor: pointer; text-decoration: underline; }
+
+/* Viewer: one card or page, large */
+.viewer {
+  position: fixed; inset: 0; z-index: 10; display: flex; align-items: center; justify-content: center;
+  background: rgba(30, 30, 30, .45);
+}
+.viewer[hidden] { display: none; }
+.viewer-box {
+  display: flex; flex-direction: column; max-width: 94vw; max-height: 94vh;
+  background: var(--paper); border-radius: 10px; box-shadow: 0 10px 40px rgba(0, 0, 0, .3);
+}
+.viewer-head { display: flex; justify-content: space-between; align-items: start; gap: 20px; padding: 14px 18px 8px; }
+.viewer-head > div { flex: 1; min-width: 0; }
+.viewer-crumb { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+.viewer-title { font-size: 20px; letter-spacing: 3px; text-transform: uppercase; }
+.close { border: 0; background: none; font-size: 28px; line-height: 1; cursor: pointer; color: var(--gray); }
+.viewer-body { display: flex; gap: 16px; padding: 6px 18px; overflow: auto; }
+.viewer-body .card { width: 380px; max-width: 80vw; flex: none; }
+.viewer-body .card img { border-radius: 14px; box-shadow: 0 1px 6px rgba(0, 0, 0, .2); }
+.viewer-body.pages { flex-direction: column; align-items: center; }
+.viewer-body.pages img { width: 100%; height: auto; box-shadow: 0 1px 6px rgba(0, 0, 0, .2); }
+.viewer-foot { display: flex; gap: 12px; align-items: center; justify-content: flex-end; padding: 10px 18px 14px; font-size: 13px; color: var(--gray); }
+.viewer-foot .primary { width: auto; padding: 8px 18px; }
+
+/* Bubble shown over a keyword or a card name */
+.tip {
+  position: fixed; z-index: 20; max-width: 320px; padding: 8px 10px; pointer-events: none;
+  background: #fff; border: 1px solid var(--line); border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .18); font-size: 14px; line-height: 1.35;
+}
+.tip b { letter-spacing: .5px; }
+.tip.preview { padding: 4px; max-width: none; }
+.tip.preview img { width: 240px; display: block; border-radius: 8px; }

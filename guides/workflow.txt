@@ -184,9 +184,18 @@ GitHub Pages later), from the same documents and in the same order as the Codex 
   sheets the page builds (a long creature gives two pages);
 - `docs/`: the PDF of each A4 document (rules pages, class sheets, hero sheet) and an SVG image
   of each of its pages;
-- `data/nimblium.js`: the index (`window.NIMBLIUM`): for each card its name, types, section
+- `data/nimblium.js`: the index (`window.NIMBLIUM`): for each card its name, types, place in the
+  game (`order`), section
   (["Classes", "Berserker", "Savage Arsenal"]) and kind, version date, text, pages and images,
   and its hover zones; the A4 documents; the definitions of every keyword and condition.
+
+The page itself lives in `website/` (`index.html`, `style.css`, `app.js`, plain HTML and
+JavaScript with no library) and the export copies it into `build/site/`: open
+`build/site/index.html` in a browser, no server needed. It lists every card and A4 page in the
+order of the Codex, with a section tree, a search in the names and texts, a "changed since"
+date, and a selection kept in the browser (copies, order by drag and drop). A click opens a card
+or a page in large; hovering a keyword or a condition shows its definition, hovering a card name
+shows that card, and a click on it opens it. A link `#card=<id>` opens a card directly.
 
 Hover zones: compiled with `--input hotspots=true`, every keyword (`keyword_style`) and card name
 (`#card_ref`) leaves a marker with its place on the card (`templates/site_marks.typ`); the page

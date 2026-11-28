@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nimblium</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--
+  The Nimblium website: browse every card and page of the game, read them with their keywords
+  and card names explained on hover, and gather a selection to print. The data comes from
+  data/nimblium.js, written by tools/export_cards.py; this folder (website/) is copied next to
+  it into build/site/.
+-->
+<header class="top">
+  <div class="brand">
+    <span class="title">NIMBLIUM</span>
+    <span class="date" id="game-date"></span>
+  </div>
+  <input id="search" type="search" placeholder="Search a name, a word of the rules…" autocomplete="off">
+  <div class="sizer" title="Size of the cards">
+    <button type="button" id="smaller" aria-label="Smaller cards">−</button>
+    <span>Size</span>
+    <button type="button" id="bigger" aria-label="Bigger cards">+</button>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="sidebar" id="sidebar">
+    <div class="band">Browse</div>
+    <ul class="tree" id="tree"></ul>
+    <div class="band">Changed since</div>
+    <div class="since">
+      <input id="since" type="date">
+      <button class="link" id="since-clear" type="button">Clear</button>
+    </div>
+  </nav>
+
+  <main class="main">
+    <div class="crumb" id="crumb"></div>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden>Nothing matches.</p>
+  </main>
+
+  <aside class="selection">
+    <div class="band">Selection <span id="selection-count"></span></div>
+    <div class="selection-actions">
+      <button class="link" id="add-shown" type="button">Add all shown</button>
+      <button class="link" id="clear-selection" type="button">Clear</button>
+    </div>
+    <ol class="picked" id="picked"></ol>
+    <p class="hint" id="selection-hint">Click a card, then “Add”, or use the + of a card.</p>
+    <div class="band">Print</div>
+    <label class="option"><input type="checkbox" id="with-backs"> Print the backs too</label>
+    <button class="primary" id="make-pdf" type="button" disabled>Make the PDF</button>
+    <p class="hint">Print sheets come in the next step.</p>
+  </aside>
+</div>
+
+<div class="viewer" id="viewer" hidden>
+  <div class="viewer-box" id="viewer-box" role="dialog" aria-modal="true">
+    <div class="viewer-head">
+      <div>
+        <div class="viewer-crumb" id="viewer-crumb"></div>
+        <div class="viewer-title" id="viewer-title"></div>
+      </div>
+      <button class="close" id="viewer-close" type="button" aria-label="Close">×</button>
+    </div>
+    <div class="viewer-body" id="viewer-body"></div>
+    <div class="viewer-foot" id="viewer-foot"></div>
+  </div>
+</div>
+
+<div class="tip" id="tip" hidden></div>
+
+<script src="data/nimblium.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
