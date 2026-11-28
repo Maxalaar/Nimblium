@@ -59,8 +59,8 @@
       while n < blocks.len() - 1 and fits(blocks.slice(0, n + 1), text_size, min_gap) { n += 1 }
       let first = card(blocks.slice(0, n), stats: stats, part: "1/2")
       let second = card(blocks.slice(n) + extra, part: "2/2")
-      // In the Codex, the two parts sit side by side like any two cards.
-      if sys.inputs.at("faces", default: "both") == "front" { first + second }
+      // With one face only (Codex, website), the two parts are two cards like any other.
+      if sys.inputs.at("faces", default: "both") in ("front", "back") { first + second }
       else { stack(spacing: card_gap, first, second) }
     }
   }

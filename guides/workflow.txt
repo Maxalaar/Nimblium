@@ -173,6 +173,28 @@ renamed file or a new layout changes no date. Never edit `versions.json` by hand
 with the cards. Keys: the card's name, "Class sheet: <class>", "Rules: <page>", "Hero sheet"; a
 renamed card starts with a new date, and the keys of documents that are gone are removed.
 
+## Website data (`build/site/`)
+
+Every export also writes the data of the website (user ruling 2026-11-28: a local page first,
+GitHub Pages later), from the same documents and in the same order as the Codex (`catalog` in
+`tools/export_cards.py`):
+- `cards/<page>.svg`: the front of every card, as a vector image (sharp at any zoom; about
+  170 KB each, 60 KB once compressed by the web server);
+- `fronts.pdf` and `backs.pdf`: every front and every back, one card per page, for the print
+  sheets the page builds (a long creature gives two pages);
+- `docs/`: the PDF of each A4 document (rules pages, class sheets, hero sheet) and an SVG image
+  of each of its pages;
+- `data/nimblium.js`: the index (`window.NIMBLIUM`): for each card its name, types, section
+  (["Classes", "Berserker", "Savage Arsenal"]) and kind, version date, text, pages and images,
+  and its hover zones; the A4 documents; the definitions of every keyword and condition.
+
+Hover zones: compiled with `--input hotspots=true`, every keyword (`keyword_style`) and card name
+(`#card_ref`) leaves a marker with its place on the card (`templates/site_marks.typ`); the page
+lays transparent zones over the image there, to show the definition or the other card. Without
+that input nothing is added and the layout is the same. A keyword shown as "Knockback" uses the
+"Knockback X" definition; a verb such as "Taunt" points to its condition ("Taunted") in
+`export_site`.
+
 ## Review tracking and card notes (`tools/review.py`)
 
 Each card ends with a Typst block comment that holds its management notes. It is not card

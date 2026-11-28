@@ -29,6 +29,7 @@ template may have changed the look); only the date waits for a change of text.
 import datetime
 import json
 import re
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -172,34 +173,18 @@ def cards_in(folder: Path, recursive: bool = False):
     return sorted(p for p in files if is_card(p))
 
 
-def export_codex(versions) -> Path:
-    """The whole game in one PDF: cover, introduction, contents, rules pages, sheets and the
-    fronts of every card, in the order of the game (templates/codex.typ)."""
-    lines = ['#import "/templates/codex.typ": *', "#show: codex_doc"]
-    imports = []
-
-    def card_list(paths):
-        names = []
-        for path in paths:
-            alias = f"card_{len(imports)}"
-            imports.append(f'#import "/{path.relative_to(ROOT).as_posix()}": {path.stem} as {alias}')
-            names.append(alias)
-        return names
-
-    def entries(pairs):
-        return "(" + "".join("(" + ", ".join(json.dumps(x) for x in pair) + "), " for pair in pairs) + ")"
+def catalog():
+    """Every document of the game in the order of the Codex: a list of parts, each a pair
+    ("doc", entries, path) or ("cards", entries, paths). The entries (level, title[, kind]) are the
+    Codex's contents and bookmarks, and the website's sections."""
+    parts = []
 
     def cards(pairs, paths):
         if paths:
-            lines.append(f"#cards({entries(pairs)}, " + ", ".join(card_list(paths)) + ")")
+            parts.append(("cards", pairs, paths))
 
     def document(pairs, path):
-        lines.append(f"#codex_mark(..{entries(pairs)})")
-        lines.append(f'#include "/{path.relative_to(ROOT).as_posix()}"')
-
-    dates = [v["date"] for v in versions.values()]
-    lines.append(f'#cover(date: "{max(dates)}")' if dates else "#cover()")
-    lines += ["#introduction()", "#contents()"]
+        parts.append(("doc", pairs, path))
 
     game = ROOT / "game"
     for i, name in enumerate(["adventure", "combat", "magic"]):
@@ -242,6 +227,52 @@ def export_codex(versions) -> Path:
         cards(([(1, "Creatures")] if i == 0 else []) + [(2, family.name.capitalize())], cards_in(family, recursive=True))
 
     document([(1, "Glossary")], game / "rules" / "glossary.typ")
+    return parts
+
+
+def sections(parts):
+    """For each part, the path of titles it sits in (["Classes", "Berserker", "Savage Arsenal"])
+    and its kind ("Pool of choices"...), following its entries."""
+    stack = {}
+    out = []
+    for _, pairs, _ in parts:
+        kind = None
+        for entry in pairs:
+            level, title = entry[0], entry[1]
+            stack = {k: v for k, v in stack.items() if k < level}
+            stack[level] = title
+            kind = entry[2] if len(entry) > 2 else None
+        out.append(([stack[k] for k in sorted(stack)], kind))
+    return out
+
+
+def export_codex(versions) -> Path:
+    """The whole game in one PDF: cover, introduction, contents, rules pages, sheets and the
+    fronts of every card, in the order of the game (templates/codex.typ)."""
+    lines = ['#import "/templates/codex.typ": *', "#show: codex_doc"]
+    imports = []
+
+    def card_list(paths):
+        names = []
+        for path in paths:
+            alias = f"card_{len(imports)}"
+            imports.append(f'#import "/{path.relative_to(ROOT).as_posix()}": {path.stem} as {alias}')
+            names.append(alias)
+        return names
+
+    def entries(pairs):
+        return "(" + "".join("(" + ", ".join(json.dumps(x) for x in pair) + "), " for pair in pairs) + ")"
+
+    dates = [v["date"] for v in versions.values()]
+    lines.append(f'#cover(date: "{max(dates)}")' if dates else "#cover()")
+    lines += ["#introduction()", "#contents()"]
+
+    for kind, pairs, target in catalog():
+        if kind == "cards":
+            lines.append(f"#cards({entries(pairs)}, " + ", ".join(card_list(target)) + ")")
+        else:
+            lines.append(f"#codex_mark(..{entries(pairs)})")
+            lines.append(f'#include "/{target.relative_to(ROOT).as_posix()}"')
 
     wrapper = ROOT / ".export_codex.typ"
     wrapper.write_text("\n".join(imports + lines) + "\n", encoding="utf-8")
@@ -251,6 +282,148 @@ def export_codex(versions) -> Path:
     finally:
         wrapper.unlink(missing_ok=True)
     return CODEX_PATH
+
+
+SITE = BUILD / "site"
+CARD_W, CARD_H = 63.0, 88.0  # mm
+
+
+def typst_query(wrapper: Path, selector: str, inputs=()):
+    args = ["typst", "query", "--root", str(ROOT)]
+    for i in inputs:
+        args += ["--input", i]
+    out = subprocess.run(args + [str(wrapper), selector, "--field", "value"], check=True,
+                         capture_output=True, text=True).stdout
+    return json.loads(out)
+
+
+def export_site(versions) -> Path:
+    """The website's data, in build/site/ (website/ holds the page itself): a vector image (SVG)
+    of the front of every card, every front and every back in two PDFs (one card per page) for the print
+    sheets, the A4 documents with an image of each page, the definitions of the keywords and
+    conditions, and data/nimblium.js, the index: for each card its name, types, section, date,
+    text, pages, and the places of the keywords and card names that the page shows on hover."""
+    parts = catalog()
+    places = sections(parts)
+    (SITE / "cards").mkdir(parents=True, exist_ok=True)
+    (SITE / "docs").mkdir(parents=True, exist_ok=True)
+    (SITE / "data").mkdir(parents=True, exist_ok=True)
+    for old in list((SITE / "cards").glob("*")) + list((SITE / "docs").glob("*")):
+        old.unlink()
+
+    # Every card on its own page, fronts then backs. A long creature gives two pages.
+    card_paths = [p for kind, _, target in parts if kind == "cards" for p in target]
+    lines = ['#set page(width: 63mm, height: 88mm, margin: 0mm)',
+             '#set text(size: 1pt, costs: (widow: 0%, orphan: 0%))',
+             '#set par(leading: 0mm, spacing: 0mm)']
+    imports = []
+    for i, path in enumerate(card_paths):
+        imports.append(f'#import "/{path.relative_to(ROOT).as_posix()}": {path.stem} as card_{i}')
+        lines.append("#pagebreak(weak: true)")
+        lines.append(f'#context [#metadata((file: {i}, page: here().page()))<card-file>]')
+        lines.append(f"#card_{i}")
+    wrapper = ROOT / ".export_site.typ"
+    wrapper.write_text("\n".join(imports + lines) + "\n", encoding="utf-8")
+    front_inputs = ("faces=front", "hotspots=true")
+    try:
+        for face, inputs in (("front", front_inputs), ("back", ("faces=back",))):
+            args = ["typst", "compile", "--root", str(ROOT)]
+            for i in inputs:
+                args += ["--input", i]
+            subprocess.run(args + [str(wrapper), str(SITE / f"{face}s.pdf")], check=True)
+        args = ["typst", "compile", "--root", str(ROOT), "--format", "svg"]
+        for i in front_inputs:
+            args += ["--input", i]
+        subprocess.run(args + [str(wrapper), str(SITE / "cards" / "{0p}.svg")], check=True)
+        starts = {m["file"]: m["page"] for m in typst_query(wrapper, "<card-file>", front_inputs)}
+        hotspots = typst_query(wrapper, "<hotspot>", front_inputs)
+    finally:
+        wrapper.unlink(missing_ok=True)
+    images = sorted((SITE / "cards").glob("*.svg"))
+    digits = len(images[0].stem) if images else 1
+    total = len(images)
+
+    by_page = {}
+    for h in hotspots:
+        by_page.setdefault(h["page"], []).append({
+            "kind": h["kind"], "key": h["key"],
+            "x": round(h["x"] / CARD_W, 4), "y": round(h["y"] / CARD_H, 4),
+            "w": round(h["w"] / CARD_W, 4), "h": round(h["h"] / CARD_H, 4)})
+
+    cards = []
+    index_of = {p: i for i, p in enumerate(card_paths)}
+    for (kind, pairs, target), (path_titles, group_kind) in zip(parts, places):
+        if kind != "cards":
+            continue
+        for path in target:
+            i = index_of[path]
+            first = starts[i]
+            last = (starts[i + 1] - 1) if i + 1 < len(card_paths) else total
+            pages = list(range(first, last + 1))
+            name = document_name(path, "card")
+            cards.append({
+                "id": path.relative_to(ROOT / "game").with_suffix("").as_posix(),
+                "name": name,
+                "types": card_types(path),
+                "section": path_titles,
+                "kind": group_kind,
+                "date": versions.get(name, {}).get("date"),
+                "text": versions.get(name, {}).get("text", ""),
+                "pages": pages,
+                "images": [f"cards/{str(p).zfill(digits)}.svg" for p in pages],
+                "hotspots": [by_page.get(p, []) for p in pages],
+            })
+
+    # The A4 documents: their PDF, and an image of each page.
+    docs = []
+    for (kind, pairs, target), (path_titles, _) in zip(parts, places):
+        if kind != "doc":
+            continue
+        rel = target.relative_to(ROOT / "game").with_suffix("")
+        slug = rel.as_posix().replace("/", "-")
+        pdf = output_pdf(target)
+        shutil.copy(pdf, SITE / "docs" / f"{slug}.pdf")
+        subprocess.run(["typst", "compile", "--root", str(ROOT), "--format", "svg",
+                        str(target), str(SITE / "docs" / f"{slug}-{{0p}}.svg")], check=True)
+        images = sorted(p.name for p in (SITE / "docs").glob(f"{slug}-*.svg"))
+        key = ("Rules: " + document_name(target, "rules_page") if target.parent.name == "rules"
+               else "Class sheet: " + document_name(target, "class_sheet") if target.name.endswith("_class_sheet.typ")
+               else "Hero sheet")
+        docs.append({"id": rel.as_posix(), "name": path_titles[-1], "section": path_titles,
+                     "date": versions.get(key, {}).get("date"), "text": versions.get(key, {}).get("text", ""),
+                     "pdf": f"docs/{slug}.pdf", "images": [f"docs/{n}" for n in images]})
+
+    # Definitions of every keyword and condition, as plain text, for the hover bubbles.
+    defs_wrapper = ROOT / ".export_site_defs.typ"
+    defs_wrapper.write_text("""#import "/global.typ": *
+#import "/game/class/stormshifter/stormshifter_keywords.typ": stormshifter_keywords
+#import "/templates/site_marks.typ": plain
+#for dict in (conditions, keywords, berserker_keywords, hunter_keywords, mage_keywords, stormshifter_keywords) {
+  for (_, d) in dict { [#metadata(plain(d))<definition>] }
+}
+""", encoding="utf-8")
+    try:
+        raw = typst_query(defs_wrapper, "<definition>")
+    finally:
+        defs_wrapper.unlink(missing_ok=True)
+    definitions = {}
+    for text in raw:
+        name, _, rest = text.partition(":")
+        name, rest = name.strip(), rest.strip()
+        definitions[name] = rest
+        # "Knockback X" is shown as "Knockback" in rules text.
+        if name.endswith(" X"):
+            definitions.setdefault(name[:-2], rest)
+    # Words that point to the definition of another form: to Taunt makes a creature Taunted.
+    for word, target in {"Taunt": "Taunted"}.items():
+        if target in definitions:
+            definitions.setdefault(word, definitions[target])
+
+    dates = [v["date"] for v in versions.values()]
+    data = {"date": max(dates) if dates else None, "cards": cards, "docs": docs, "definitions": definitions}
+    (SITE / "data" / "nimblium.js").write_text(
+        "window.NIMBLIUM = " + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";\n", encoding="utf-8")
+    return SITE
 
 
 def main():
@@ -308,6 +481,10 @@ def main():
     # The Codex is rebuilt every time, so everything is up to date together (--book is ignored).
     codex = export_codex(versions)
     print(f"Codex: {codex.relative_to(ROOT)}")
+
+    # The website's data (build/site/), from the same documents.
+    site = export_site(versions)
+    print(f"Site data: {site.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

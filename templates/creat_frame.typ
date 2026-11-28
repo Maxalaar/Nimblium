@@ -260,11 +260,19 @@
   let extra = if part == none { () } else { (part,) }
   let family = if family == none { family_icon(types) } else { family }
   // The marker found by #card_ref (game/terms.typ) to link to this card is inside its box.
-  // The Codex shows the fronts only (typst compile --input faces=front): one box per card,
-  // side by side, 3 per row (templates/codex.typ).
-  if sys.inputs.at("faces", default: "both") == "front" {
-    box({ metadata((card: name)); scale(front_scale, reflow: true,
+  // --input faces=front shows the fronts only, one box per card side by side: the Codex
+  // (templates/codex.typ, at front_scale with --input codex=true) and the website (full size).
+  // --input faces=back shows the backs only (the website's print sheets).
+  let faces = sys.inputs.at("faces", default: "both")
+  if faces == "front" {
+    let s = if sys.inputs.at("codex", default: "false") == "true" { front_scale } else { 100% }
+    box({ metadata((card: name)); scale(s, reflow: true,
       card_front(name, types + extra, body, stats: stats, stat_cut: stat_cut, icon: family)) })
+    h(front_gap, weak: true)
+  } else if faces == "back" {
+    box({ metadata((card: name))
+      card_back(name, (if back_types == none { types } else { back_types }) + extra,
+                icon: if icon == none { family } else { icon }) })
     h(front_gap, weak: true)
   } else { metadata((card: name)); box(grid(columns: 2, column-gutter: card_gap,
     card_front(name, types + extra, body, stats: stats, stat_cut: stat_cut, icon: family),

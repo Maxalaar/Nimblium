@@ -1,6 +1,7 @@
 // Single source for game vocabulary. Available on every card through global.typ.
 // Use these instead of typing the term by hand; tools/check_terms.py reports raw forms.
 #import "/templates/style.typ": keyword_style, card_ref_style
+#import "/templates/site_marks.typ": hotspot
 
 // Stats and acronyms
 #let STR = "STR"
@@ -100,7 +101,8 @@
 // The second argument is the text shown, for plurals: #card_ref("Shadow", "Shadows").
 // tools/check_terms.py reports card names typed without it.
 #let card_ref(name, ..shown) = {
-  let body = card_ref_style(if shown.pos().len() > 0 { shown.pos().first() } else { name })
+  // On the website, hovering the name shows that card.
+  let body = hotspot("card", name, card_ref_style(if shown.pos().len() > 0 { shown.pos().first() } else { name }))
   context {
     let hits = query(metadata).filter(m => type(m.value) == dictionary and m.value.at("card", default: none) == name)
     if hits.len() > 0 { link(hits.first().location(), body) } else { body }
