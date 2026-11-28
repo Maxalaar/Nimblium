@@ -30,6 +30,19 @@
   }
 }
 
+// The footer of an A4 document, centered on three lines: its name, its page out of its total,
+// then its version date, so that a printed page shows which document it belongs to and whether
+// one is missing. In the Codex, the name and the pages are the Codex's.
+#let document_footer(name, stamp) = context {
+  let rule = box(width: 8mm, height: 0.4pt, fill: luma(170), baseline: -0.3em)
+  let title = if in_codex { "Codex" } else { name }
+  align(center, stack(spacing: 1.3mm,
+    text(size: 7pt, tracking: 1.5pt, fill: luma(90), upper(title)),
+    text(size: 9pt, fill: luma(60), tracking: 1pt)[#rule#h(2.5mm)#counter(page).display()/#counter(page).final().first()#h(2.5mm)#rule],
+    stamp,
+  ))
+}
+
 // A page footer: the version date at the left, the page number in the middle in the Codex.
 #let page_footer(stamp) = grid(columns: (1fr, auto, 1fr), align: (left + horizon, center + horizon, right),
   stamp, codex_page_number(), [])
