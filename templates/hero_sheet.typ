@@ -11,7 +11,7 @@
 #import "/templates/style.typ": reminder_color
 #import "/templates/table.typ": game_table
 #import "/templates/version.typ": version_stamp
-#import "/templates/codex_marks.typ": codex_entries
+#import "/templates/codex_marks.typ": codex_entries, page_footer
 
 #let dark = luma(45)           // text of bands and tabs
 #let line_color = luma(130)    // frames and shapes
@@ -156,7 +156,7 @@
 // What each value is worth is on the Adventure page, not on the sheet.
 #let hero_sheet(stats: (), equipment: 14) = {
   set page(paper: "a4", margin: (x: 12mm, y: 10mm), header: none,
-    footer: align(left, version_stamp("Hero sheet", size: 6pt)))
+    footer: page_footer(version_stamp("Hero sheet", size: 6pt)))
   set text(size: 9pt)
   set par(leading: 0.45em)
   codex_entries()

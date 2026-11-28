@@ -6,12 +6,14 @@
 
 #import "/templates/style.typ": reminder_color
 #import "/templates/creat_frame.typ": card_width, card_height, front_gap
-#import "/templates/codex_marks.typ": codex_mark, codex_entries
+#import "/templates/codex_marks.typ": codex_mark, codex_entries, codex_page_number
 
 #let codex_gray = luma(110)
 
-// The path of entries leading to the last one on this page or before it: "Berserker · Rage".
-#let breadcrumb() = {
+// The band at the top of a page of cards: the kind of group, then where it is ("Pool of choices ·
+// Berserker · Savage Arsenal"), and its page within the group (1/2, 2/2). Darker on the page where
+// the group starts, lighter on the next ones.
+#let band() = {
   let here_page = here().page()
   let before = query(heading).filter(h => h.location().page() <= here_page)
   if before.len() == 0 { return none }
@@ -21,17 +23,32 @@
     let parent = before.filter(h => h.level == level).last(default: none)
     if parent != none { path.insert(0, parent) }
   }
-  path.slice(calc.min(1, path.len() - 1)).map(h => h.body).join([ · ])
+  // "Classes" goes without saying once the class is named.
+  if path.len() > 2 and path.first().body == [Classes] { path = path.slice(1) }
+  // The kind of group comes first: "Subclass · Berserker · Mountainheart". A group named after
+  // its kind ("Class features") shows it once: "Class features · Mage".
+  let kind = last.supplement not in (none, auto, [])
+  if kind and last.body == last.supplement { path = path.slice(0, -1) }
+  let words = path.map(h => h.body).join([ · ])
+  if kind { words = [#last.supplement · #words] }
+  // A group on several pages counts them: 1/2, 2/2. It ends where the next entry starts.
+  let first = last.location().page()
+  let after = query(heading).filter(h => h.location().page() > first)
+  let end = if after.len() > 0 { after.first().location().page() - 1 } else { counter(page).final().first() }
+  if end > first { words = [#words · #(here_page - first + 1)/#(end - first + 1)] }
+  let starts = first == here_page
+  block(width: 100%, fill: if starts { luma(205) } else { luma(236) }, radius: 1mm, inset: (y: 2mm),
+    align(center, text(size: 8.5pt, tracking: 2pt, weight: "bold", fill: if starts { luma(30) } else { luma(110) },
+      upper(words))))
 }
 
 // The page of the Codex's own pages (cards, cover, introduction, contents).
 #let codex_doc(body) = {
   set document(title: "Nimblium Codex")
   set page(paper: "a4", margin: (x: 6mm, top: 16mm, bottom: 11mm),
-    header: context {
-      set text(size: 7pt, tracking: 1.5pt, fill: codex_gray)
-      grid(columns: (1fr, auto), upper(breadcrumb()), str(here().page()))
-    })
+    header-ascent: 25%,
+    header: context band(),
+    footer: align(center, codex_page_number()))
   set text(size: 10pt)
   // Entries are for the contents and the bookmarks: the pages show their own titles.
   show heading: none
@@ -39,7 +56,7 @@
 }
 
 // The cover: name, subtitle and the date of the most recent change in the game.
-#let cover(date: none) = page(header: none, margin: 20mm, align(center + horizon, stack(spacing: 7mm,
+#let cover(date: none) = page(header: none, footer: none, margin: 20mm, align(center + horizon, stack(spacing: 7mm,
   text(size: 44pt, tracking: 12pt, weight: "bold", [NIMBLIUM]),
   text(size: 14pt, tracking: 6pt, fill: codex_gray, [CODEX]),
   v(6mm),
@@ -80,8 +97,10 @@
 
 #let contents() = text_page("Contents")[
   #set text(size: 10pt)
+  #set text(size: 9.5pt)
   #show outline.entry.where(level: 1): it => { v(3mm, weak: true); strong(it) }
-  #outline(title: none, depth: 2, indent: 5mm)
+  #show outline.entry.where(level: 3): it => text(size: 8.5pt, fill: codex_gray, it)
+  #columns(2, gutter: 8mm, outline(title: none, depth: 3, indent: 4mm))
 ]
 
 // A family of cards: a new page, its entries, then its cards side by side, 3 per row.
@@ -89,6 +108,7 @@
   pagebreak(weak: true)
   codex_mark(..entries)
   codex_entries()
-  set par(leading: front_gap, spacing: front_gap, justify: false, linebreaks: "simple")
-  align(center, block(width: 3 * (card_width + front_gap) + 0.5mm, align(left, items.pos().join())))
+  // A card file may give several cards (a long creature in two parts): one cell each.
+  let fronts = items.pos().map(c => if c.has("children") { c.children.filter(x => x.func() == box) } else { (c,) }).flatten()
+  align(center, grid(columns: (card_width,) * 3, column-gutter: front_gap, row-gutter: front_gap, ..fronts))
 }

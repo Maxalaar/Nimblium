@@ -258,13 +258,12 @@
 #let creat_card(name, types, body, stats: (), stat_cut: none, back_types: none, icon: none, family: none, part: none) = {
   let extra = if part == none { () } else { (part,) }
   let family = if family == none { family_icon(types) } else { family }
-  // Marker found by #card_ref (game/terms.typ) to link to this card.
-  metadata((card: name))
-  // The Codex shows the fronts only (typst compile --input faces=front), side by side.
+  // The marker found by #card_ref (game/terms.typ) to link to this card is inside its box.
+  // The Codex shows the fronts only (typst compile --input faces=front): one box per card,
+  // laid out in its grid (templates/codex.typ).
   if sys.inputs.at("faces", default: "both") == "front" {
-    box(card_front(name, types + extra, body, stats: stats, stat_cut: stat_cut, icon: family))
-    h(front_gap, weak: true)
-  } else { box(grid(columns: 2, column-gutter: card_gap,
+    box({ metadata((card: name)); card_front(name, types + extra, body, stats: stats, stat_cut: stat_cut, icon: family) })
+  } else { metadata((card: name)); box(grid(columns: 2, column-gutter: card_gap,
     card_front(name, types + extra, body, stats: stats, stat_cut: stat_cut, icon: family),
     card_back(name, (if back_types == none { types } else { back_types }) + extra,
               icon: if icon == none { family } else { icon })))

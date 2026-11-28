@@ -187,7 +187,7 @@ def export_codex(versions) -> Path:
         return names
 
     def entries(pairs):
-        return "(" + "".join(f"({level}, {json.dumps(title)}), " for level, title in pairs) + ")"
+        return "(" + "".join("(" + ", ".join(json.dumps(x) for x in pair) + "), " for pair in pairs) + ")"
 
     def cards(pairs, paths):
         if paths:
@@ -219,12 +219,15 @@ def export_codex(versions) -> Path:
             head = []
         else:
             head += [(2, name)]
-        cards(head + [(3, "Features")], cards_in(class_dir))
+        cards(head + [(3, "Class features", "Class features")], cards_in(class_dir))
         pools = sorted(d for d in class_dir.iterdir() if d.is_dir() and d.name != "subclasses")
         subclasses = sorted(d for d in (class_dir / "subclasses").iterdir() if d.is_dir()) if (class_dir / "subclasses").is_dir() else []
-        for folder in pools + subclasses:
+        for folder in pools:
             found = cards_in(folder, recursive=True)
-            cards([(3, folder_title(folder, found))], found)
+            cards([(3, folder_title(folder, found), "Pool of choices")], found)
+        for folder in subclasses:
+            found = cards_in(folder, recursive=True)
+            cards([(3, folder_title(folder, found), "Subclass")], found)
 
     for i, school in enumerate(sorted(d for d in (game / "spells").iterdir() if d.is_dir())):
         cards(([(1, "Spells")] if i == 0 else []) + [(2, school.name.capitalize())], cards_in(school, recursive=True))
@@ -243,7 +246,7 @@ def export_codex(versions) -> Path:
     wrapper = ROOT / ".export_codex.typ"
     wrapper.write_text("\n".join(imports + lines) + "\n", encoding="utf-8")
     try:
-        subprocess.run(["typst", "compile", "--root", str(ROOT), "--input", "faces=front",
+        subprocess.run(["typst", "compile", "--root", str(ROOT), "--input", "faces=front", "--input", "codex=true",
                         str(wrapper), str(CODEX_PATH)], check=True)
     finally:
         wrapper.unlink(missing_ok=True)

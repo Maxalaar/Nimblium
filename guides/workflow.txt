@@ -147,8 +147,13 @@ whole game in one PDF, to read or to share, not to print (`templates/codex.typ`;
 writes the document that lists every part). A cover, an introduction, the contents, then the
 rules pages, the hero sheet, the ancestries and backgrounds, the actions, each class (its class
 sheet, then its cards: Features, each pool, each subclass), the spells by school, the items, the
-creatures and the Glossary. Cards show their front only, 9 per A4 page, and each family starts a
-new page with its name in the running header. Names written with `#card_ref` are clickable links
+creatures and the Glossary. Cards show their front only, 9 per A4 page in a grid, and each group of
+cards starts a new page. A band at the top of each card page names the group and its kind
+first ("Class features · Berserker", "Pool of choices · Berserker · Savage Arsenal", "Subclass ·
+Berserker · Mountainheart"),
+and counts the pages of a group on several pages (1/2, 2/2); it is darker on the page where the
+group starts, lighter on the next ones. The contents list
+the groups of each class too, and the page number sits at the bottom center of every page. Names written with `#card_ref` are clickable links
 to their card (in the individual PDFs, they are only in italics). The contents and the PDF
 bookmarks come from entries the Codex announces (`codex_mark`) and each page places at its top
 (`codex_entries`, in `templates/codex_marks.typ`). A new folder of cards (a pool, a school, a

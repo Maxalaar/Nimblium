@@ -8,7 +8,7 @@
 #import "/templates/style.typ": reminder_color
 #import "/templates/table.typ": game_table
 #import "/templates/version.typ": version_stamp
-#import "/templates/codex_marks.typ": codex_entries
+#import "/templates/codex_marks.typ": codex_entries, page_footer
 
 #let sheet_tracking = 2pt
 
@@ -59,7 +59,7 @@
 // boxes: ((title, content), ...) shown side by side under the table.
 #let class_sheet(name: "", icon: none, intro: none, difficulty: none, description: none, info: (), resource: none, levels: (), boxes: ()) = {
   set page(paper: "a4", margin: (x: 14mm, y: 12mm), header: none,
-    footer: align(left, version_stamp("Class sheet: " + name, size: 6pt)))
+    footer: page_footer(version_stamp("Class sheet: " + name, size: 6pt)))
   set text(size: 9.5pt)
   set par(leading: 0.45em)
   codex_entries()
